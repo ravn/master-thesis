@@ -1,3 +1,5 @@
+% $Id$
+
 \chapter{Standard Query Language, Databases and Webservers}
 
 \mycitation{You got to be carefully taught}{South Pacific}{Rogers and
@@ -148,10 +150,41 @@ this a very valuable resource for users.  The SQL-introduction is
 available both online and as a book.
 
 
-\section{Accessing a database from a webserver}
+\section{Some of the possible ways of accessing a database from a webserver}
 \label{sec:accessing-a-database-from-a-webserver}
 
-Armed with a solid SQL knowledge
+Armed with the necessary, solid SQL knowledge, it is reasonable to
+consider the current approaches of interfacing a Web server with a
+SQL-database.  At least the following options exist:
+
+\begin{description}
+\item[ODBC] -- The Microsoft ``\myurl{http://www.microsoft.com/odbc}{Open Database Connectivity}'' which
+  provided for the first database access standard on Windows.  Since
+  superceeded by OLE DB which does basically the same thing on Windows.
+\item[JDBC] -- The ``\myurl{http://www.javasoft.com/jdbc}{JDBC Data
+    Access API}'' does the same thing for Java-programs as ODBC do for
+  Windows-programs.
+\item[Perl DBI] -- The ``Perl Database Interface'' allows Perl
+  programs to speak to Adabas, DBMaker, Fulcrum, Informix, Interbase,
+  Oracle, Solid, Empress, Sybase, Illustra, Ovrimos, PostgreSQL,
+  QBase.
+\item[Python DB-API] -- A rapidly growing set of
+  \myurl{http://www.python.org/topics/database/modules.html}{database
+    interface modules for Python}.  Currently are Informix, Interbase,
+  MySQL, Oracle, Sybase and the generic ODBC interface supported.
+\item[Vendor dependant] -- Each vendor have their own way of moving
+  HTML (and some XML) in the database itself.  These are usually not
+  portable, and therefore not interesting from a generalist point of
+  view.  The databases surveyed 
+  
+\end{description}
+
+
+\section{What databases are available?}
+\label{sec:what-databases-are-available}
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex

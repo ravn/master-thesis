@@ -1,19 +1,200 @@
-\section{Report writing tools}
+% $Id$
 
-\subsection{\LaTeX}
+\chapter{Report writing tools}
+
+When writing a large document like a thesis, you get to appreciate the
+power of the tools available to you in the Open Source community.
+This chapter outlines which tools I have used while writing and my
+experiences with them, with the thought that they might be useful to
+others later, and Open Source is all about not reinventing the wheel
+if it can be avoided.
+
+All the software listed here, is available with a standard Linux
+Redhat 6.1 installation unless noted otherwise in the text.
+
+
+\section{\LaTeX}
+\label{sec:report-writing-tools-latex}
+
 
 Guide is~\cite{a-guide-to-latex}.
 
-Embedding Postscript - see~\cite{the-latex-graphics-companion}.
-\begin{verbatim}
-[ravn@personal-53 gr]$ cat *.eps | wc
- 872378  873482 53187873
-[ravn@personal-53 gr]$ rm *.eps
-[ravn@personal-53 gr]$ make -s
-[ravn@personal-53 gr]$ cat *.eps | wc
- 149509  151878 9063019
-[ravn@personal-53 gr]$
-\end{verbatim}
+
+
+\subsection{Including screen dumps}
+\label{sec:report-writing-tools-latex-eps}
+
+Screen dumps have been captured with
+\myurl{http://www.freshmeat.net/appindex/1998/07/28/901622941.html}{xv}
+(which is now 6 years old and still unbeat) and saved as \texttt{tiff}
+files.  These were then converted to \texttt{png} and \texttt{eps}
+with the
+\myurl{http://www.freshmeat.net/appindex/1999/06/24/930238715.html}{NetPBM
+  package}, which has worked flawlessly.  It is important to remember
+to use \texttt{pnmtops -noturn rle} to get the correct orientation and
+a reasonable compression (25 files shrank from 52 Mb to 9 Mb total).
+
+The \texcommand{includegraphic} (from the \texttt{graphicx} package)
+can read \texttt{png}-files from within \texttt{pdflatex}, and
+\texttt{eps}-files from within
+
+
+The process of embedding Postscript is fully described in
+~\cite{the-latex-graphics-companion}.
+
+% \begin{verbatim}
+% [ravn@personal-53 gr]$ cat *.eps | wc
+%  872378  873482 53187873
+% [ravn@personal-53 gr]$ rm *.eps
+% [ravn@personal-53 gr]$ make -s
+% [ravn@personal-53 gr]$ cat *.eps | wc
+%  149509  151878 9063019
+% [ravn@personal-53 gr]$
+% \end{verbatim} %$
+
+I have had ``\texttt{xdvi}'' active while writing, and if the command
+``\texttt{latex mydocument \&\& killall -USR1 xdvi}'' is used, xdvi
+will automatically update after a successful compilation of the
+TeX-document.  That is very nice when your editing have happened
+within a single physical page.
+
+\section{Emacs} 
+\label{sec:report-writing-tools-emacs} 
+
+
+Emacs is a very well known editor in the Unix-world where its
+extensability allows it to get new functionality by installing
+additional modules.  The standard distribution of Emacs provides:
+
+\begin{description}
+\item[Ispell] -- The M-Tab command (bound to
+  \texttt{TeX-complete-symbol}) runs \texttt{ispell-complete-word} if
+  the current word is not a {\TeX}-command, which suggest possible
+  words starting with the word under point.  The M-\$ command (bound
+  to \texttt{ispell-word}) is also nice when English is not your
+  native tongue.
+\item[CVS] -- Emacs supports \myurl{\texttt{???}}{CVS} directly.  I
+  had my working directory on my portable, and my CVS repository on
+  the MIP system.  This is a good way to backup your work.
+\item[Compile] -- The \texttt{M-x compile} works well with Jade,
+  nsgml, Java and other tools where you may encounter errors in your
+  source.  \texttt{Ctrl-x `} makes Emacs go to the line with the
+  error.
+  
+\end{description}
+
+Additionally I have installed:
+
+
+\begin{description}
+\item[AUC-TeX] -- provides a complete IDE for writing {\LaTeX}
+  documents, including keyboard shortcuts, a debugger, and intelligent
+  commands depending on the state of the files.  \textsf{url?
+    somewhere at sunsite}.  Highly recommended.
+\item[psgmls] -- provides easy entering of tags, and parses DTD's to
+  verify tags, and describe which tags are open at a given cursor
+  location.   Good for writing XML and SGML directly.
+  \myurl{http://www.lysator.liu.se/projects/about\_psgml.html}{The
+    psgml homepage} - \textsf{consider writing a set of AUC-TeX
+    compatible keybindings for DocBook}
+\end{description}
+
+
+
+\section{Available databases}
+\label{sec:available-databases}
+
+The number of database vendors which support Linux (which as for now
+is \textit{the} Open Source operating system which people know about)
+is steadily increasing.  \myurl{http://linas.org/linux/db.html}{This
+  webpage try to keep track of them all}, but I only list the major
+commercial vendors and Open Source projects, where the drivers should
+be of production quality.  The following overview was created March
+2000.
+
+
+\subsection{Cloudscape - Informix}
+\label{sec:cloudscape}
+
+The
+\myurl{http://www.informix.com/informix/press/1999/dec99/cloudscape.htm}{Cloudscape
+  Database} is written in Java, with a JDBC and a HTML interface, has
+many core SQL and Java extensions implemented, and allow distribution
+amongst several Java-machines (using RMI).  Informix bought Cloudscape
+Inc. in October 1999 to get this database system, so it is still very
+new.  They offer
+\myurl{http://www.cloudscape.com/Evaluations/index.html}{a 60 day
+  trial version from their website}.  Pricing is approximately \$900.
+
+
+\subsection{DB2 - IBM}
+\label{sec:db2}
+
+\myurl{http://www-4.ibm.com/software/data/db2/linux/}{DB2 for Linux}
+is available - the \myurl{DB2 Personal Developer's Edition
+  V6.1}{http://www6.software.ibm.com/dl/db2pde/db2pde-p} is available
+for free for non-commercial purposes.  
+
+\myurl{http://www-4.ibm.com/software/data/db2/extenders/xmlext/}{DB2
+  XML Extender} which ``let you store XML documents in DB2 databases
+and new functions that assist you in working with these structured
+documents.''.  It is available for AIX, Solaris and Windows NT.
+  \textsf{Evaluate?} 
+
+  
+
+\subsection{Informix - Informix}
+\label{sec:informix}
+
+http://www.informix.com/datablades/dbmodule/informix1.htm
+
+ 
+\subsection{Ingres - Ingres}
+\label{sec:ingres}
+
+The
+\myurl{http://www.cai.com/products/betas/ingres\_linux/ingres\_linux.htm}{Ingress
+  II database is in a beta stage for Linux}, and can be downloaded for
+free.  It uses Perl, gcc and Apache to provide webserver facilities.
+
+
+
+\subsection{MySQL - TCX}
+\label{sec:mysql}
+
+\myurl{http://www.tcx.se}{MySQL is an Open Source database} which is
+very popular amongst Perl programmers due to
+\myurl{http://www.tcx.se/benchmark.html}{the good performance}
+combined with the free availability of source code and high quality
+drivers.
+
+MySQL only costs money if you run it on a Microsoft operating system,
+or commercially on a server.
+
+\subsection{Oracle}
+\label{sec:oracle}
+
+The complete Oracle 8i product range is available for Linux, with a
+low-end version available for download.  The WebDB tool functions as a
+webserver-interface to any Oracle database.
+
+\subsection{SyBase - Sybase}
+
+Sybase \myurl{http://www.sybase.com/products/linux/}{has Sybase
+  Adaptive Server Enterprise and SQL Anywhere Studio} available for
+  Linux for free as long as they are used for development.  For
+  production installations a license must be bought.  An earlier
+  version is unsupported but may be used without restrictions for
+  production enviroments.
+  
+  Their web integration tool does not appear to have been ported to
+  Linux yet.  The \myurl{http://linas.org/linux/db.html}{Linux
+    database page} lists several third-party tools which provide web
+  functionality.
+
+  
+  
+
 
 %%% Local Variables: 
 %%% mode: latex

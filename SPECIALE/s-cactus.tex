@@ -3,6 +3,7 @@
 \chapter{Sample implementation -- Cactus}
 \label{sec:cactus}
 
+squid:  http://www.squid-cache.org/
 \section{abstract}
 
 \begin{quotation}
@@ -440,6 +441,7 @@ on the server side, and then testing it out.
   version in a year, and the license explicitely prohibits
   disassembly.
 \item[....]....
+\end{description}
 
 My intermediate solution has been to adapt the mswordview to output
 DocBook XML instead of HTML, which provides a text-only
@@ -479,31 +481,73 @@ create table incoming (when datetime, mime varchar(80), user
 
 \begin{itemize}
 \item \textbf{ wmf-anything}: libwmf (no fonts),
+  
   \myurl{http://ourworld.compuserve.com/homepages/kkuhl/}{KVEC} (could
   not render the wmf files from wv),
-  \myurl{http://www.companionsoftware.com/PR/WMRC/WindowsMetafileFaq.html}{WMF docs}
+  
+
+  \myurl{http://www.companionsoftware.com/PR/WMRC/WindowsMetafileFaq.html}{WMF
+    docs}
   
 \end{itemize}
 
-\end{description}
+
+\section{Programs}
 
 
-% $Log$
-% Revision 1.3  2000/03/08 06:51:11  ravn
-% Edited a lot of text in XML
-%
-% Revision 1.2  2000/03/07 23:56:22  ravn
-% Changed to book and moved abstracts into quotations
-%
-% Revision 1.1.1.1  2000/03/02 21:55:32  ravn
-% Speciale files
-%
-% Revision 1.2  2000/02/27 00:06:14  ravn
-% Raw text from THESIS.DOC added at the end.  Not put in place.
-%
-% Revision 1.1  2000/02/27 00:02:05  ravn
-% Initial revision
-%
+\subsection{Linux - an operating system}
+\label{sec:linux}
+
+Linux was chosen as the development platform for these reasons:
+
+\begin{itemize}
+\item High degree of familiarity with the operating system
+\item Almost all Open Source software run ``out-of-the-box'' on Linux
+\item High performance Java Development Kit available from IBM
+\item Remotely maintainable via X/telnet/ssh.
+\item Freely available from the Internet.
+\item Root access possible without interfering with MIP security rules
+\end{itemize}
+
+These rules were also most likely fullfilled by any of
+FreeBSD/NetBSD/OpenBSD/Solaris x86, but I had already burned Redhat
+6.1 on a CD for my portable, so there was no need to look any
+further.  Linux has been a very satisfactory choice.
+
+\subsection{Apache - a high performance web server}
+\label{sec:apache}
+
+There have probably been written more webservers than editors in the
+world of today.  My requirements were simple:
+
+\begin{itemize}
+\item Run Perl programs efficiently
+\item Run Java servlets efficiently
+\item Have a large user base in order to ensure program availability
+\end{itemize}
+
+This basically left a single web-server, namely
+\myurl{http://www.apache.org}{Apache}, which is capable of running
+Perl CGI scripts very efficient with
+\myurl{http://perl.apache.org/}{the \texttt{mod\_perl} module} (which
+uses a resident Perl interpreter combined with caching of the bytecode
+of previously encountered programs).
+
+\textsf{Other potential webservers?  Roxen?  Jetty?}
+
+
+\subsection{Squid - a high performance web cache}
+\label{sec:squid}
+
+\myurl{http://www.squid-cache.org/Doc/FAQ/FAQ-20.html\#what-is-httpd-accelerator}{The
+  http-accellerator mode}
+
+
+\subsection{Cocoon}
+\label{sec:cocoon}
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex

@@ -13,6 +13,7 @@
      '("mycitation" 3)
      '("tag" 1)
      '("myurl" 2)
+     '("texcommand" 1)
      '("ntcommand" 1)
      '("unixcommand" 1)
      '("framepage" 2))
@@ -27,9 +28,10 @@
      "latex2e"
      "bk10"
      "book"
-     "draft"
+     "ddraft"
      "a4paper"
      "s-terms-and-concepts"
+     "s-processed-documents"
      "s-sample-websites"
      "s-xml"
      "s-docbook"

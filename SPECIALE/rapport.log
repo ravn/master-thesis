@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  10 MAR 2000 06:43
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  10 MAR 2000 14:10
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -59,157 +59,206 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-) (rapport.aux
-(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (s-docbook.aux)
-(s-sql.aux) (s-cactus.aux) (s-konsensus.aux) (s-tex-and-latex.aux)
-(s-report-writing-tools.aux) (s-available-hardware-and-software.aux))
+)
+
+LaTeX Warning: Unused global option(s):
+    [ddraft].
+
+(rapport.aux (s-terms-and-concepts.aux) (s-processed-documents.aux)
+(s-sample-websites.aux) (s-xml.aux) (s-docbook.aux) (s-sql.aux) (s-cactus.aux)
+(s-konsensus.aux) (s-tex-and-latex.aux) (s-report-writing-tools.aux)
+(s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 113.
 
 
 (/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
 File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 111.
+(Font)              <17.28> on input line 114.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 111.
+(Font)              <12> on input line 114.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 111.
+(Font)              <8> on input line 114.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 111.
+(Font)              <6> on input line 114.
  [1
 
 
 ] [2]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 149.
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 152.
 
 (/usr/share/texmf/tex/latex/psnfss/omsbch.fd
 File: OMSbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 152.
  [3
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 222.
+(Font)              <7> on input line 225.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 222.
+(Font)              <5> on input line 225.
  [4]
 \openout2 = `s-terms-and-concepts.aux'.
 
  (s-terms-and-concepts.tex
 Overfull \hbox (2.6888pt too wide) in paragraph at lines 42--46
 []\OT1/bch/m/n/10 Either the pro-cess of \OT1/bch/m/it/10 trans-form-ing \OT1/b
-ch/m/n/10 a XML-document into an-other XML-document us-ing a XSL-stylesheet,|
+ch/m/n/10 a XML-document into an-other XML-document us-ing a XSL-stylesheet,
  []
 
 ) [5
 
-] [6
-
 ]
-\openout2 = `s-sample-websites.aux'.
+\openout2 = `s-processed-documents.aux'.
 
- (s-sample-websites.tex [7
+ (s-processed-documents.tex [6
 
-] [8] [9] [10] [11] [12] [13] [14] [15])
-[16] [17
-
-]
-\openout2 = `s-xml.aux'.
-
- (s-xml.tex [18
 
 
 ]
 Chapter 2.
-[19] [20]
+
+Underfull \vbox (badness 1448) has occurred while \output is active []
+
+ [7])
+[8] [9
+
+]
+\openout2 = `s-sample-websites.aux'.
+
+ (s-sample-websites.tex
+File: gr/amazon-1.eps Graphic file (type eps)
+ <gr/amazon-1.eps>
+File: gr/amazon-2.eps Graphic file (type eps)
+ <gr/amazon-2.eps> [10
+
+]
+File: gr/krak-1.eps Graphic file (type eps)
+
+<gr/krak-1.eps>
+File: gr/krak-2.eps Graphic file (type eps)
+ <gr/krak-2.eps>
+File: gr/krak-3.eps Graphic file (type eps)
+ <gr/krak-3.eps> [11] [12] [13]
+File: gr/krak-4.eps Graphic file (type eps)
+ <gr/krak-4.eps>
+File: gr/krak-5a.eps Graphic file (type eps)
+
+<gr/krak-5a.eps>
+File: gr/krak-5b.eps Graphic file (type eps)
+ <gr/krak-5b.eps>
+File: gr/krak-6.eps Graphic file (type eps)
+ <gr/krak-6.eps>
+File: gr/dsb-1.eps Graphic file (type eps)
+ <gr/dsb-1.eps>
+File: gr/dsb-2.eps Graphic file (type eps)
+
+<gr/dsb-2.eps>
+File: gr/dsb-3.eps Graphic file (type eps)
+ <gr/dsb-3.eps>
+File: gr/dsb-4.eps Graphic file (type eps)
+ <gr/dsb-4.eps>
+File: gr/dsb-5.eps Graphic file (type eps)
+ <gr/dsb-5.eps> [14] [15] [16]
+[17] [18]) [19] [20
+
+]
+\openout2 = `s-xml.aux'.
+
+ (s-xml.tex
+Chapter 3.
+[21
+
+
+] [22]
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
 (Font)              using `OT1/cmss/m/n' instead on input line 202.
 
 
-Overfull \hbox (111.7444pt too wide) in paragraph at lines 209--209
-[][]\OT1/bch/m/n/8 The w3c have notes and DTD's de-scrib-ing the first ver-sion
-s of HTML -- \OT1/cmtt/m/n/8 http://www.w3.org/History/19921103-hypertext/hyper
-text/WWW/MarkUp/MarkUp.html| |
+Overfull \hbox (131.36002pt too wide) in paragraph at lines 209--209
+[][]\OT1/bch/m/n/8 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
+ions of HTML...-- \OT1/cmtt/m/n/8 http://www.w3.org/History/19921103-hypertext/
+hypertext/WWW/MarkUp/MarkUp.html| 
  []
 
-[21]
+[23]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 306.
 
 
-[22]
+[24]
 Overfull \hbox (4.82918pt too wide) in paragraph at lines 367--373
 []\OT1/bch/m/n/10 Commecial prod-ucts usu-ally have a viewer which can ap-ply t
-he style sheet di-rectly \OT1/cmtt/m/n/10 examples? Panorama?|
+he style sheet di-rectly \OT1/cmtt/m/n/10 examples? Panorama?
  []
 
-[23]
+[25]
 File: x-outline.xsl  (verbatim)
- [24] [25]
+ [26] [27]
 Overfull \hbox (91.99011pt too wide) in paragraph at lines 578--578
 []\OT1/cmtt/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>f
-ilename</th><th>comment</th><th>iteml</th></tr>[] |
+ilename</th><th>comment</th><th>iteml</th></tr>[] 
  []
 
-[26] [27]) [28]
+[28] [29]) [30]
 \openout2 = `s-docbook.aux'.
 
- (s-docbook.tex) [29
+ (s-docbook.tex) [31
 
 
 ]
 \openout2 = `s-sql.aux'.
 
- (s-sql.tex [30
+ (s-sql.tex [32
 
 
 
 ]
-Chapter 3.
+Chapter 4.
 
-Overfull \hbox (34.6683pt too wide) in paragraph at lines 76--81
+Overfull \hbox (34.6683pt too wide) in paragraph at lines 78--83
 \OT1/bch/m/n/10 SQL has evolved over the years. The lat-est ANSI stan-dard is S
-QL92, which is dis-cussed in [[]],|
+QL92, which is dis-cussed in [[]],
  []
 
-[31]
-Overfull \hbox (4.71483pt too wide) in paragraph at lines 117--117
-[][]\OT1/bch/m/n/8 the tu-to-rial in the MySQL ref-er-ence man-ual -- \OT1/cmtt
-/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#Tutori
-al| |
+[33]
+Overfull \hbox (24.32993pt too wide) in paragraph at lines 119--119
+[][]\OT1/bch/m/n/8 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
+/cmtt/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#T
+utorial| 
  []
 
-[32]) [33] [34
+[34]) [35] [36
 
 ]
 \openout2 = `s-cactus.aux'.
 
  (s-cactus.tex
 Appendix A.
-[35
+[37
 
 
-] [36] [37] [38] [39]) [40]
+] [38] [39] [40] [41] [42]) [43]
 \openout2 = `s-konsensus.aux'.
 
 
@@ -218,8 +267,8 @@ No file s-konsensus.tex.
 
 (s-tex-and-latex.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 1.
-) [41
+(Font)              <14.4> on input line 4.
+) [44
 
 
 
@@ -227,17 +276,28 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 \openout2 = `s-report-writing-tools.aux'.
 
- (s-report-writing-tools.tex) [42
+ (s-report-writing-tools.tex
+Appendix B.
+
+Overfull \hbox (31.18759pt too wide) in paragraph at lines 42--44
+[]\OT1/bch/m/n/10 The pro-cess of em-bed-ding Postscript is fully de-scribed in
+  [[]]. 
+ []
+
+[45
 
 
-]
+
+] [46]) [47]
 \openout2 = `s-available-hardware-and-software.aux'.
 
+ (s-available-hardware-and-software.tex) [48
 
-(s-available-hardware-and-software.tex) [43
 
+] (rapport.bbl
+[49
 
-] (rapport.bbl [44
+] [50
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 7--13
@@ -245,29 +305,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
 a banks.
  []
 
-) [45
+) [51] [52
 
-] [46
-
-] (rapport.toc [47])
+] (rapport.toc [53])
 \tf@toc=\write3
 \openout3 = `rapport.toc'.
 
- [48] (rapport.aux (s-terms-and-concepts.aux)
-(s-sample-websites.aux) (s-xml.aux) (s-docbook.aux) (s-sql.aux) (s-cactus.aux)
-(s-konsensus.aux) (s-tex-and-latex.aux) (s-report-writing-tools.aux)
-(s-available-hardware-and-software.aux))
+ [54] (rapport.aux (s-terms-and-concepts.aux)
+(s-processed-documents.aux) (s-sample-websites.aux) (s-xml.aux) (s-docbook.aux)
+(s-sql.aux) (s-cactus.aux) (s-konsensus.aux) (s-tex-and-latex.aux)
+(s-report-writing-tools.aux) (s-available-hardware-and-software.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1054 strings out of 10891
- 12579 string characters out of 97329
- 63022 words of memory out of 263001
- 3960 multiletter control sequences out of 10000+0
- 23887 words of font info for 57 fonts, out of 400000 for 1000
+ 1090 strings out of 10891
+ 13234 string characters out of 97329
+ 63668 words of memory out of 263001
+ 3993 multiletter control sequences out of 10000+0
+ 22548 words of font info for 55 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 29i,12n,21p,260b,368s stack positions out of 300i,100n,500p,50000b,4000s
+ 29i,12n,21p,261b,368s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (48 pages, 132272 bytes).
+Output written on rapport.dvi (54 pages, 152768 bytes).

@@ -4,5 +4,9 @@
     (LaTeX-add-labels
      "sec:cactus"
      "sec:cactus-choice-of-language"
-     "sec:converters"))))
+     "sec:converters"
+     "sec:linux"
+     "sec:apache"
+     "sec:squid"
+     "sec:cocoon"))))
 
