@@ -1,7 +1,7 @@
-% $Id$
+                                % $Id$
 
 \chapter{Terms and concepts}
-%\section{Terms and concepts}
+                                %\section{Terms and concepts}
 \label{cha:terms-and-concepts}
 
 \mycitation{HTML is a SGML DTD!!}{Me}{1994}
@@ -15,172 +15,53 @@ widely known.  This section lists most of them.
   companinon.  Check that all abbrevs are expanded}
 
 \begin{description}
-
-\item[entity] A named ``unit'' in XML/SGML which expands to a string.
-  This is very similar to a macro without arguments in other
-  languages.
   
-\item[XSL-FO] XSL-formatting objects.  A generic description of the physical
-  layout of a XML-document on paper.  These files can be converted to
-  PDF with FOP or PassiveTeX
-  
-\item[SGML] A family of languages.  The \textit{DTD} specifies which
-  language it is.  SGML can be formatted with FOSI or DSSSL
-  style-sheets.  \unixcommand{jade} can format to HTML, plain text and
-  RTF. 
-  
-\item[XML]
-% A family of languages.  The \textit{DTD} specifies which
-%   language it is.  XML-documents can be transformed with
-%   \textit{XSL}-style sheets to another XML-document (this process is
-%   called \textit{XSLT}).  XML is a subset of \textit{SGML}
-  
-XML is a light-weight version of SGML (both defines document
-languages) designed to be embeddable in a browser.  XML-documents
-\textit{may} comply to a DTD, or be stand-alone (``DTD-less'').  XSL
-is used to convert a XML document into another XML document (XSLT) or
-into the generic page description language XSL-Formatting Objects
-(XSLFO).
-
-
-\item[*ML] Common description of both XML and SGML, where the two have
-  the same applications.
-
-\item[DTD] The Document Type Description is the specification
-  which describes the exact syntax of an *ML document.
-
-  
-\item[XSLT] Either the process of \textit{transforming} a XML-document
-  into another XML-document using a XSL-stylesheet, or the process of
-  \textit{formatting} a document into FO, which then can be further
-  formatted in PDF.
-  
-\item[DOM] The Document Object Model is W3C's first model for
-  representing an XML tree internally.  It requires the whole XML
-  dataset to be read into memory which is a limitation for large
-  projects.  The later SAX interface is more lenient in its memory
-  requirements.
-  
-\item[SAX] Simple API for XML.  An event based approach to XML-parsing
-  and representation.  Has an advantage in that the design allows
-  processing to begin before the whole XML-tree has been read in.
-  Parsers and processors which implement SAX can be interchanged
-  freely, currently allowing for 20 different combinations of parsers
-  and processors.
-
-
-\item[HTML] Hyper Text Markup Language.  The ``language of the web''
-  which was originally designed by a physicist to present articles to
-  other physicists.  Was later hacked upon by Netscape and Microsoft
-  to do things it was never originally meant to do.
-
-  
-\item[DSSSL] SGML Document Style Semantics and Specification Language.
-  It is used to render an SGML document to another format.
-  \unixcommand{jade} can render to RTF, {\TeX} (must be
-  post-processed with \unixcommand{jadetex}), SGML and XML.
-  
-\item[FOSI] \textit{Formatting Output Specification Instance} --
-  Another style sheet for SGML, which I do not know anything about.
-  \myurl{http://navysgml.dt.navy.mil/dtdfosi/repository.html}{The US
-    Navy have a big repository}.
-
-  
-\item[SQL] The Structured Query Language is the standard
-  language for communicating with a database.
-
-  
-\item[XSP] \texttt{XML Servlet Pages} - A technique for combining code
-  with XML in a single page, which is parsed and executed by the
-  webserver when it is requested.
-  
-\item[RTF] \textit{Rich Text Format} - a document description language
-  designed by Microsoft.  Widely supported.  May contain extensions to
-  the original RTF-specification.
-
+\item[*ML] XML/SGML -- Common description of both XML and SGML, where the two have the same applications.
+\item[ASP] Active Server Pages -- Microsofts version of a scripting language intertwined with HTML. Works on Microsoft web servers only.
+\item[Apache] Open Source webserver which runs on a lot of different platforms.  Most Linux distributions include it.
+\item[CGI] The Common Gateway Interface.  The original way to generate pages and other files dynamically.  A CGI-script can be written in any language supported by the web server.
+\item[DOM] The Document Object Model is W3C's first model for representing an XML tree internally.  It requires the whole XML dataset to be read into memory which is a limitation for large projects.  The later SAX interface is more lenient in its memory requirements.
+\item[DSSSL] SGML Document Style Semantics and Specification Language.  It is used to render an SGML document to another format.  \unixcommand{jade} can render to RTF, {\TeX} (must be post-processed with \unixcommand{jadetex}), SGML and XML.
+\item[DTD] The Document Type Description is the specification which describes the exact syntax of an *ML document.
+\item[DocBook] A set of DTD's freely available from the Internet in both an SGML and an XML version.  See~\myvref{sec:docbook}.
+\item[Entity] A named ``unit'' in XML/SGML which expands to a string.  This is very similar to a macro without arguments in other languages.
+\item[FOSI] Formatting Output Specification Instance -- Another style sheet for SGML, which I do not know anything about.  \myurl{http://navysgml.dt.navy.mil/dtdfosi/repository.html}{The US Navy have a big repository}.
+\item[FTP] File Transfer Protocol.  This is both the name of the \textit{protocol} (the method) as well as the \textit{program} implementing the protocol.  ftp can transfer files between a client computer and a server computer, and is a standard on the Internet
+\item[GIF] Graphics Interchange Format  -- An image format well suited for computer generated images with few distinct colors, like icons.  Is hampered by a patent on the compression scheme used and a maximum of 256 colors.  Superceeded by PNG.
+\item[HTML] Hyper Text Markup Language.  The ``language of the web'' which was originally designed by a physicist to present articles to other physicists.  Was later hacked upon by Netscape and Microsoft to do things it was never originally meant to do.
+\item[HTTP] Hyper Text Transfer Protocol.  This is the protocol a web browser needs to speak with a web server, in order to retrieve documents.  Http is intentionally very simple.
+\item[IIS] Microsoft Internet Information Server.  The webserver from Microsoft.
+\item[JPEG] Joint Photographic Experts Group -- An efficient method for representing photographs in computer files.  Efficiency is achieved by discarding the least visible parts of the visual information to the human eye.
+\item[JSP] Java Server Pages.  Suns version of Java intertwined with HTML.  Requires a servlet-capable web server.
 \item[Jade] A DSSSL-engine for SGML documents by James Clark.
-  
-\item[JPEG] \textsf{??} -- An efficient method for representing photographs in
-  computer files.  Efficiency is achieved by discarding the least
-  visible parts of the visual information to the human eye.
-  
-\item[GIF] \textsf{??} -- An image format well suited for computer
-  generated images with few distinct colors, like icons.  Is hampered
-  by a patent on the compression scheme used and a maximum of 256
-  colors.  Superceeded by PNG.
-  
-\item[PNG] \textsf{??} -- The successor to GIF.  Is supported in newer
-  browsers only.
-  
-\item[CGI] The Common Gateway Interface.  The original way to generate
-  pages and other files dynamically.  A CGI-script can be written in
-  any language supported by the web server.
-
-\item[IIS] Microsoft Internet Information Server.  The webserver from
-  Microsoft. 
-  
-\item[ftp] File Transfer Protocol.  This is both the name of the
-  \textit{protocol} (the method) as well as the \textit{program}
-  implementing the protocol.  ftp can transfer files between a client
-  computer and a server computer, and is a standard on the Internet
-  
-\item[http] Hyper Text Transfer Protocol.  This is the protocol a web
-  browser needs to speak with a web server, in order to retrieve
-  documents.  Http is intentionally very simple.
-\item[TCP/IP] This is the procotol which a computer needs to speak to
-  connect to the Internet.  It allows two computer to establish a data
-  stream, where one machine pushes bytes in one end of the stream, and
-  the other machine retrieves the bytes from the other end of the
-  stream, without either computer being concerned about the underlying
-  network.
-  
-\item[SP] \myurl{http://www.jclark.com/sp/index.htm}{SP is a SGML parser} by James Clark.
-  
-\item[Perl] A scripting language which has become popular with Unix
-  system administrators, and which ``was there'' when a need for
-  scripting languages for CGI arose.  Has eminent regular expressions
-  and is generally well-suited for handling text.
-  
-\item[ASP] \textsf{??} -- Microsofts version of a scripting language
-  intertwined with HTML. Works on Microsoft web servers only.
-  
-\item[JSP] Java Server Pages.  Suns version of Java intertwined with
-  HTML.  Requires a servlet-capable web server.
-  
-\item[PHP] \textsf{??} -- The Internet version of a scripting language
-  intertwined with HTML.  Can run as a CGI script in most browsers,
-  but as a module (which is faster) in at least Apache.
-\item[Apache] Open Source webserver which runs on a lot of different
-  platforms.  Most Linux distributions include it.
-
-\item[PassiveTeX] A package for {\TeX} by Sebastian Rahtz which allows
-  FO files to be typeset by PDF{\TeX} directly into PDF.  PassiveTeX
-  understands MathML, but does not yet support tables.
-  
-\item[MIME]
-  \myurl{http://www.oac.uci.edu/indiv/ehood/MIME/MIME.html}{Multipurpose
-    Internet Mail Extensions} which extends the format of Internet
-  mail to allow foreign character sets and inclusion of files.  
-  
-
-\item[MathML] a XML-dialect to describe mathematical formulas.
-
-
-\item[DocBook] A set of DTD's freely available from the Internet.
-  See~\myvref{sec:docbook}.
-\item[TEI] A DTD freely available from the Internet.  
+\item[MIME] {\myurl{http://www.oac.uci.edu/indiv/ehood/MIME/MIME.html}{Multipurpose Internet Mail Extensions}} which extends the format of Internet mail to allow foreign character sets and inclusion of files.
 \item[MIP] The Maersk Mc-Kinney Moller Institute for Production Technology
+\item[MathML] a XML-dialect to describe mathematical formulas.
+\item[PDF] Portable Document Format -- a document description language by Adobe which builds on the experiences with PostScript.
+\item[PHP] A scripting language for producing web pages with embedded code.  Can run as a CGI script in most browsers, but as a module (which is faster) in at least Apache.
+\item[PNG] Portable Network Graphics -- The successor to GIF.  Is supported in newer browsers only.
+\item[PassiveTeX] A package for {\TeX} by Sebastian Rahtz which allows FO files to be typeset by PDF{\TeX} directly into PDF.  PassiveTeX understands MathML, but does not yet support tables.
+\item[Perl] A scripting language which has become popular with Unix system administrators, and which ``was there'' when a need for scripting languages for CGI arose.  Has eminent regular expressions and is generally well-suited for handling text.
+\item[PostScript] -- a page description programming language, which was later evolved into EPS by constraining it to a single page, and PDF by constraining it not to contain code but only data.
+\item[RTF] Rich Text Format -- a document description language designed by Microsoft.  Widely supported.  May contain extensions to the original RTF-specification.
+\item[SAX] Simple API for XML -- An event based approach to XML-parsing and representation.  Has an advantage in that the design allows processing to begin before the whole XML-tree has been read in.  Parsers and processors which implement SAX can be interchanged freely, currently allowing for 20 different combinations of parsers and processors.
+\item[SGML] A family of languages.  The \textit{DTD} specifies which language it is.  SGML can be formatted with FOSI or DSSSL style-sheets.  \unixcommand{jade} can format to HTML, plain text and RTF.
+\item[SP] {\myurl{http://www.jclark.com/sp/index.htm}{SP is a SGML parser}} by James Clark.
+\item[SQL] The Structured Query Language is the standard language for communicating with a database.
+\item[TCP/IP] This is the procotol which a computer needs to speak to connect to the Internet.  It allows two computer to establish a data stream, where one machine pushes bytes in one end of the stream, and the other machine retrieves the bytes from the other end of the stream, without either computer being concerned about the underlying network.
+\item[TEI] Text Encoding Initiative -- A DTD freely available from the Internet.
+\item[XML] XML is a light-weight version of SGML (both defines document languages) designed to be embeddable in a browser.  XML-documents \textit{may} comply to a DTD, or be stand-alone (``DTD-less'').  XSL is used to convert a XML document into another XML document (XSLT) or into the generic page description language XSL-Formatting Objects (XSLFO).
+\item[XSL-FO] XSL-formatting objects.  A generic description of the physical layout of a XML-document on paper.  These files can be converted to PDF with FOP or PassiveTeX
+\item[XSLT] Either the process of \textit{transforming} a XML-document into another XML-document using a XSL-stylesheet, or the process of \textit{formatting} a document into FO, which then can be further formatted in PDF.
+\item[XSP] \texttt{XML Servlet Pages} - A technique for combining code with XML in a single page, which is parsed and executed by the webserver when it is requested.
 
-\item[PostScript] -- a page description programming language, which
-  was later evolved into EPS by constraining it to a single page, and
-  PDF by constraining it not to contain code but only data.
-  
-\item[PDF] Portable Document Format -- a document description
-  language by Adobe which builds on the experiences with PostScript.
+
 \end{description}
 
-  
-    
+
+
+
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "rapport"

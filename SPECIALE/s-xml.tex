@@ -83,7 +83,7 @@ users can disable this behaviour.
 It appears to me that there will be two major uses for XML, one is for
 transporting data between applications (like a database and a
 browser), and the other will be as a media for interchanging
-information between humans.  My expectations is that a few, very well
+information between humans.  My expectations are that a few, very well
 designed, standard XML definitions will be created and that most
 public XML documents will be written to comply with one or more of
 these standards, and web robots (like search engines and web crawlers)
@@ -100,9 +100,9 @@ exciting to see what they can do in 5 years.
 
 \section{``HTML is a SGML DTD'' - the concepts}
 
-Table~\myvref{tab:programming-langugages-and-html} shows how the most
+\myvref{tab:programming-langugages-and-html} shows how the most
 frequently used acronyms relate when mapped to the programming domain.
-See section~\myvref{cha:terms-and-concepts} for the full descriptions.
+See \myvref{cha:terms-and-concepts} for the full descriptions.
 
 
 \begin{table}[htbp]
@@ -376,7 +376,7 @@ SGML/XML document can look, when conforming to the DTD.
 \item \textsf{Others?}
 \end{itemize}
 
-There is a lot of different DTD's available to many different
+There are a lot of different DTD's available to many different
 purposes, since basically everywhere a datafile is needed XML can be
 used with a suitable DTD.   \textsf{ChemML}, \textsf{SVG?}.  If a need
 arises it is just a matter of creating a suitable DTD to work with it.
@@ -410,7 +410,7 @@ Commecial products usually have a viewer which can apply the style
 sheet directly \texttt{examples? Panorama? Framemaker+SGML}, but are
 due to licensing costs and supported user base rarely an option for
 general for documents targeting end-users, and I have not tried any of
-them.  Table~\myvref{tab:distribution-formats} discusses the current
+them.  \myvref{tab:distribution-formats} discusses the current
 \textit{de facto} document formats on the Internet.
 
 
@@ -463,7 +463,7 @@ server side conversion to other formats.  The available Open Source
 software for this is surprisingly small, but that is rapidly
 changing.  Please note that XML style sheets still implies SGML style
 sheets, which is interesting because these are more mature due to
-longer use (see section~\myvref{sec:docbook-xml-to-rtf} for more
+longer use (see \myvref{sec:docbook-xml-to-rtf} for more
 details). 
 
 
@@ -510,7 +510,7 @@ readability.
 Since the DocBook reference is very vague on this matter (the book
 went to press before the XSLT recommendation was finalized) the
 Internet has been a great help.
-Table~\myvref{tab:leading-xslt-processors} lists the tested XSLT
+\myvref{tab:leading-xslt-processors} lists the tested XSLT
 processors which conforms to the W3C XSLT-19991102 recommendation.  
 
 % \textsf{Where should I talk about SAX?}
@@ -568,7 +568,7 @@ high end XSLT-engine embedded as a servlet in Apache, which makes this
 a project to watch.  The technology is at the time of this writing
 still under heavy development, but very promising.  I have used Cocoon
 to create \textit{presenters} in the Cactus sample implementation
-described in chapter~\myvref{sec:cactus} \textsf{??}.
+described in \myvref{sec:cactus} \textsf{??}.
 
 
 % The platform independance of Java indirectly prompted the
@@ -656,7 +656,7 @@ Testing
 XML is currently having the same problems that HTML had in its initial
 years, namely lack of software support.  The difference is that HTML
 is so lenient that it is easy to write HTML by hand in a text editor.
-Not so with XML.
+It is not so with XML.
 
 The difference this time is that Microsoft has been an active
 participant in the \textsf{definition of XML}, and has made
@@ -712,10 +712,10 @@ convert a given DOC file to RTF and process it, with very reasonable
 results.  I have experimented with making this accessible to Linux by
 installing Microsoft Services for Unix on a NT machine with Word
 installed, and using telnet to invoke Majix.  Unfortunately this
-doesn't work.  Another approaches (\textsf{which will be tested if
+doesn't work.  Another approach (\textsf{which will be tested if
   time allows}) includes having a pseudo-user watching a directory on
 a NT-server and launching Majix whenever DOC or RTF documents arive.
-These can at best be described as kludges.
+These can at best be described as work-arounds.
 
 Even though it shows great promise, it has been a year without new
 releases (including the promised Pro version), and the source is not
@@ -823,6 +823,10 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.14  2000/04/22 11:25:42  ravn
+%
+% iabout to remove Figure/Tableetc in front of \myvref
+%
 % Revision 1.13  2000/04/21 23:24:41  ravn
 % working friday
 %

@@ -14,8 +14,8 @@
 \section{The way it started: Handmade web-pages in a
   filesystem on a web-server}
 
-Back in the old days when the world wide web was designed
-(1989), a web server could basically do only two things:
+When the world wide web was designed (1989), a web server could
+basically do only two things:
 
 
 
@@ -101,7 +101,7 @@ to the original ``static web site'' model.
 \label{sec:map-generation-first-web-application} One of the first
 demonstrations of dynamically generated images was the
 \myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer} (see
-figure~\myvref{fig:xerox-1}) which allowed the user to navigate a
+\myvref{fig:xerox-1}) which allowed the user to navigate a
 virtual atlas, where each ``window'' to the map was generated on
 demand.  This initial quick hack has since been superseded by
 professional map companies which produce maps of an uneven quality on
@@ -137,7 +137,7 @@ There is several problems with CGI-scripts:
   equivalent programs written in \texttt{C} or \texttt{C++},
   especially for users with slow modems.
   
-  Recently Java Servlets (see section~\myvref{sec:java-servlets}) have
+  Recently Java Servlets (see \myvref{sec:java-servlets}) have
   appeared as a popular and well-supported alternative to CGI-scripts,
   but requires that the hosting web-server is capable of running a
   Java Virtual Machine.  Servlets are being supported by more and more
@@ -155,9 +155,9 @@ There is several problems with CGI-scripts:
 \end{itemize}
 
 Several solutions to the above problems have emerged.  Of these, Java
-Servlets are discussed in section~\myvref{sec:CGI-servlets}, PHP3
-scripts in section~\myvref{sec:CGI-php3}, and Perl (with the mod\_perl
-acceleration module) in section~\myvref{sec:CGI-modperl}).
+Servlets are discussed in \myvref{sec:CGI-servlets}, PHP3
+scripts in \myvref{sec:CGI-php3}, and Perl (with the mod\_perl
+acceleration module) in \myvref{sec:CGI-modperl}).
 
 Server side scripting never really took off before the PHP3 and ASP
 languages provided \textit{persistent connections} to database
@@ -168,11 +168,11 @@ connections are notoriously expensive in time and processing power to
 establish, so needing to open one for each and every CGI-script were a
 true performance bottleneck.  Just by keeping the connection open (and
 for ASP-scripts - retain the particular database connection for the
-session) was extremely beneficial.  That combined with a very simple
-way to switch between code and HTML plus that every user could use it
-without needing to ask the webmaster to install a potentially
-dangerous CGI-script, meant that the ability to generate webpages
-dynamically suddenly became available to everyone.
+session) was extremely beneficial.  The PHP3 and ASP languages are not
+very complicated, and it is very easy to switch between HTML and
+program code.  Additionally it was not necessary to ask a webmaster to
+install new versions, meaning that the ability to create dynamically
+generate webpages suddenly became available to everyone.
 
 
 \section{When a site grows, it becomes hard to maintain}
@@ -214,7 +214,7 @@ of a few snippets of HTML in each web page to give a characteristic
 site layout.  This relieves the webmaster of the tedious task of
 updating all the HTML-documents on the site manually.
 
-Figure~\myvref{fig:flug-1} show a sample page from the
+\myvref{fig:flug-1} show a sample page from the
 \myurl{http://www.flug.dk}{Fyns GNU/Linux User Group web-site},
 showing the way FLUG chose to do it.  The framework shown is added to
 each HTML-file with a small perl script.
@@ -242,7 +242,7 @@ the appropriate command sequence in the server).
 %
 Many modern websites put a given page in a \textit{context} where the
 navigational framework reflect this context.  See
-figure\myvref{fig:intel-1} for a sample from
+\myvref{fig:intel-1} for a sample from
 \myurl{http://support.intel.com/support/motherboards/desktop/VS440fx/software.htm}{Intel
   regarding the VS440FX motherboard}, where the actual web page has a
 top bar with generic links, a column with links specific to
@@ -305,7 +305,7 @@ web pages, showing that just blindly extracting keywords
 drives users away -- when they feel that they are not getting ``the
 best results'' from the search engine they will look for another one
 that can. \myurl{http://www.google.com}{The Google search engine} (see
-section~\myvref{sec:google}) was such an engine, and users quickly
+\myvref{sec:google}) was such an engine, and users quickly
 started to use it. Recently links to Amazon.com and Fatbrain.com have
 begun to crop up in the top of the search results on Google, implying
 that Google has started to sell search results (where a given link is
@@ -316,8 +316,8 @@ As an alternative to Google I have been recommended
 \myurl{http://www.alltheweb.com}{AllTheWeb}, but which after a bit of
 use appears to be prone to the same polluting documents as AltaVista.
 See the result of ``background icons'' in
-figure~\myvref{fig:alltheweb-2} and what the fifteenth hit actually
-linked to in figure~\myvref{fig:alltheweb-1}. This link was
+\myvref{fig:alltheweb-2} and what the fifteenth hit actually
+linked to in \myvref{fig:alltheweb-1}. This link was
 chosen because the site \textit{expects} the user to have
 arrived from a search on these two terms.
 
@@ -326,7 +326,7 @@ arrived from a search on these two terms.
   icons''.}{alltheweb-2}
 
 \myimage{gr/alltheweb-1}{And what hit 15 was linking to
-  in~\myvref{fig:alltheweb-2}.  This link was chosen
+  in \myvref{fig:alltheweb-2}.  This link was chosen
   because the site in question openly admit that they expect
   search engines to show this story when users search for
   ``beautiful icons'', even though that the story is about sex.  
@@ -345,7 +345,7 @@ detection of bad input in~\cite{goedelescherbach}.
   of the system pages and the first user pages are
   shown.}{mip-1} An example of a document generated from
 meta-data which has been automatically extracted, is the MIP
-``Recently Changed Pages'' (see figure~\myvref{fig:mip-1}) the
+``Recently Changed Pages'' (see \myvref{fig:mip-1}) the
 original version of which I wrote while working for MIP.
 The script traverses three separate set of web pages on the
 server - System pages, System Administrator pages and User
@@ -386,7 +386,7 @@ seen any site on the Internet yet, which is capable of
 \textit{categorizing} the content of the Internet.
 
 The \textit{Yggdrasil} system (see
-section~\myvref{sec:yggdrasil}) was my first attempt to
+\myvref{sec:yggdrasil}) was my first attempt to
 generate a navigational framework from information extracted
 from webpages.  Yggdrasil was to function as the automatic
 webmaster on the intranet, in order to avoid having to
@@ -412,7 +412,7 @@ small amount of meta-information available in consideration.
 
 An example of a good site built with meta-information is
 \myurl{http://www.yahoo.com}{Yahoo} (see
-figure~\myvref{fig:yahoo-1}) which started as a directory over
+\myvref{fig:yahoo-1}) which started as a directory over
 web pages where the maintainers added meta-data to a lot of
 web-sites by categorizing them manually, and use this
 information to regularily generate static navigational
@@ -469,7 +469,7 @@ does, without long and careful studies, and much flapping back and
 forth.  My guess is that today Tanenbaum would write a hyperlinked
 book readable in a browser, perhaps even using Literate
 Programming techniques (these are discussed in
-section~\myvref{sec:literate-programming}).  The only other publicized
+\myvref{sec:literate-programming}).  The only other publicized
 works of large programs I know of are the books by Knuth about {\TeX}
 and the PGP 5.0 source code (which was not printed for humans to read,
 but in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan
@@ -497,7 +497,7 @@ tool for Java programmers today.
 is a tool that creates documentation in form of HTML pages from Java
 source code with embedded comments, where all definitions are parsed
 and hyperlinked to give a full overview of the Java source code in
-question.  See figure~\myvref{fig:acme-1} for a JavaDoc rendered source
+question.  See \myvref{fig:acme-1} for a JavaDoc rendered source
 code at \myurl{http://www.acme.com}{ACME labs.}
 
 JavaDoc is a specialized tool which is only suitable for generating
@@ -534,7 +534,8 @@ publishing abilities of XML will complement the target audience of
 
 \begin{figure}[htbp]
   \begin{center}
-\lstinputlisting[language=Perl,frame=trbl]{sample.pod}
+%\lstinputlisting[language=Perl,frame=trbl]{sample.pod}
+\listinginput{1}{sample.pod}
 \caption{A sample POD-file}
     \label{fig:sample-pod-file}
   \end{center}
@@ -551,9 +552,9 @@ available \myurl{http://www.cpan.org}{documentation for
   Perl} confirms that this goal was reached.  This format
 allows you -- with very elementary mark up -- to put
 documentation and code in the same file, and you may leave
-out either one.  Figure~\myvref{fig:sample-pod-file} is the
+out either one.  \myvref{fig:sample-pod-file} is the
 actual POD-file (marked up by \LaTeX) and
-figure~\myvref{fig:pod-sample-1} show the HTML-version as
+\myvref{fig:pod-sample-1} show the HTML-version as
 rendered by a browser.
 
 
@@ -800,16 +801,16 @@ development process to go faster}.
   about half way down the page from the start which is below
   the part shown.}{zdnet-1} \myimage{gr/zdnet-2}{The
   ``Printer-friendly version'' of
-  figure~\myvref{fig:zdnet-1}}{zdnet-2}
+  \myvref{fig:zdnet-1}}{zdnet-2}
 
 Some web-sites have so many advertisements and auxiliary links in
 their layout, that they need an additional version which is
 well-suited for printing (i.e. only has a single ad, and is
 rendered without margins in a fixed font, or just with a
 minimal set of HTML-tags used).  See
-figure~\myvref{fig:zdnet-1}
+\myvref{fig:zdnet-1}
 \myurl{http://www.zdnet.com/zdnn/stories/news/0,4586,2468874,00.html?chkpt=zdhpnews01}{for
-  an example from ZDNet}, and figure~\myvref{fig:zdnet-2} for the
+  an example from ZDNet}, and \myvref{fig:zdnet-2} for the
 ``Printer-friendly version''.
 
 It is interesting to notice that websites realize that they cannot
@@ -829,7 +830,7 @@ rendered by a reasonably capable browser or print them out on paper.
 That will probably change within a few years when it becomes common
 for other devices than just traditional computers to be connected to
 the Internet.  Mobile phones using WAP do not have as much screen real
-estate (the Nokia 9110 is shown in figure~\myvref{fig:nokia-1}) so such
+estate (the Nokia 9110 is shown in \myvref{fig:nokia-1}) so such
 users will probably prefer short and crisp versions of the documents
 when they use a mobile phone.  Nokia is working with 3com to produce a
 hybrid between a Palm Pilot and a mobile phone.
@@ -850,15 +851,16 @@ write ordinary HTML in a way that is usable by these users, but that
 is rare these days.
 }
 
-Both \myurl{http://www.useit.com/alertbox/990613.html}{Jakob Nielsen}
-and
+There are many good guidelines for making web pages accessible for
+disabled person.  The
+\myurl{http://www.useit.com/alertbox/990613.html}{Jakob Nielsen} and
 \myurl{http://www.si.dk/netsteder/publ/tilgaeng/index.html}{Statens
-  Information (in Danish)} have good guidelines for making pages with
-web content accessible to people with disabilities based on
-\myurl{http://www.w3.org/TR/WAI-WEBCONTENT/}{the work done by the W3C
-  Web Accessory Initiative}.  Pages written with these guidelines in
-mind will work -- not only for disabled readers -- but should be ready
-for the technological advances in the near future.
+  Information (in Danish)} are good places to start.  Both build upon
+the basic work done by
+\myurl{http://www.w3.org/TR/WAI-WEBCONTENT/}{the W3C Web Accessory
+  Initiative}.  Pages written with these guidelines in mind will work
+-- not only for disabled readers -- but should be ready for the
+technological advances in the near future.
 
 \section{SGML/XML:  Generic formats for storing data and meta-data}
 \label{sec:sgml-and-xml-generic-formats}
@@ -868,7 +870,7 @@ new at all, and was solved for the printing industry in the
 1970'ies by the design of the Standard Generalized Markup
 Language (SGML) which is widely used.  HTML and XML are both
 SGML-dialects albeit with different capabilities.  They are
-discussed in chapter~\myvref{cha:sgml-xml-and-dtd's}.  A
+discussed in \myvref{cha:sgml-xml-and-dtd's}.  A
 \textit{Document Type Definition} (DTD) specifies the rules
 that a given document must obey, in order to be compliant
 with that DTD.
@@ -888,7 +890,7 @@ Projects'' (\myurl{http://www.linuxdoc.org/}{The Linux Documentation
 free operating systems available on the Internet.
 
 
-Chapter~\myvref{cha:on-demand-rendering} talks about rendering documents
+\myvref{cha:on-demand-rendering} talks about rendering documents
 to a given format on demand (for example in a web browser).
 
 
@@ -923,7 +925,7 @@ make authoring directly in SGML viable.
 
 Very few tools exist, and the good ones are quite expensive.  The
 general consensus is that the best OpenSource tool is the Emacs editor
-with the PSGML package (see~\myvref{sec:emacs-with-psgml}), and that
+with the PSGML package (see \myvref{sec:emacs-with-psgml}), and that
 this tool is primarily suited for programmers and other people who are
 well acquainted with SGML and XML.
 
@@ -963,7 +965,7 @@ this should be reflected in the working procedure.  My conclusion is:
 
 This conclusion, combined with my experiences with the Yggdrasil
 system, have been one of several design goal in the Cactus system
-which is described in chapter~\myvref{cha:cactus}, and which has been
+which is described in \myvref{cha:cactus}, and which has been
 fulfilled.
 
 

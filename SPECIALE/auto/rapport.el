@@ -11,6 +11,10 @@
      "cha:on-demand-rendering"
      "sec:emacs-with-psgml"
      "sec:java-servlets"
+     "tab:mysql-examiners"
+     "fig:faqomatic-11"
+     "sec:cactus"
+     "cha:cactus"
      "sec:the-importance-of-a-web-cache")
     (TeX-run-style-hooks
      "hyperref"
@@ -19,6 +23,7 @@
      "prettyref"
      "fancyhdr"
      "listings"
+     "moreverb"
      "verbatim"
      "parskip"
      "alltt"

@@ -10,6 +10,12 @@
 
 %\documentclass[11pt,draft,a4paper]{book}
 \documentclass[11pt,ddraft,a4paper]{report}
+
+% black magic to make footnotes not reset at chapters 
+\makeatletter
+\@addtoreset{footnote}{nosuchtag}
+\makeatother
+
 %\includeonly{s-cactus}
 %\documentclass[draft,a4paper]{report}
 
@@ -30,6 +36,7 @@
 \usepackage{alltt}
 \usepackage{parskip}
 \usepackage{verbatim}
+\usepackage{moreverb}
 \usepackage{listings}
 %\usepackage{listing}
 \usepackage{fancyhdr}           % provide headers where I can put the
@@ -57,7 +64,7 @@
   bookmarks,bookmarksopen={false},
   pdfstartview={FitH},
   breaklinks=true,
-  colorlinks,linkcolor={green},citecolor={magenta},
+  colorlinks,linkcolor={black},citecolor={magenta},
   urlcolor={blue}
 ]{hyperref}
 %\RequirePackage[hyperindex,colorlinks,backref,pdfmark]{hyperref}
@@ -95,8 +102,11 @@
 % \lstinputlisting[language=Perl]{create-tables.pl}
 
 \begin{document}
+% And now tell the footnotes not to reset at chapters
+
 
 \myinclude{s-front-matter}
+\tableofcontents
 \myinclude{s-introduction}
 \myinclude{s-dynamically-generated-documents}
 %\myinclude{s-standards}
@@ -127,7 +137,6 @@ Full reference with a lot of annotated URL's.
 %\includegraphics{gr/familie}
 \bibliography{books}
 
-\tableofcontents
 
 \section{Cross references to this page have not been inserted at the
   correct page}
@@ -140,6 +149,10 @@ Full reference with a lot of annotated URL's.
 \label{cha:on-demand-rendering}
 \label{sec:emacs-with-psgml}
 \label{sec:java-servlets}
+\label{tab:mysql-examiners}
+\label{fig:faqomatic-11}
+\label{sec:cactus}
+\label{cha:cactus}
 
 \section{The importance of a web cache}
 \label{sec:the-importance-of-a-web-cache}
