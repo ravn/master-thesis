@@ -1,0 +1,2 @@
+%.png: %.tiff
+	echo " tifftopnm $< | pnmtopng -compression 9 -verbose > $@"
