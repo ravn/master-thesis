@@ -1,0 +1,332 @@
+
+\chapter{Overview of technology available for Linux February 2000}
+\framepage{15cm}{
+Describe what products there are currently available for these
+categories. Evaluate as much as possible.   Conclude that currently
+this is an area in great development.
+}
+
+\section{Webservers}
+\framepage{15cm}{
+Apache, misc Servlet Javaservers (jetty, thttpd, java webserver,
+etc).  Look for comparisons.  Roxen (graphs).  Discuss whether several
+webservers should be run on the same machine to provide better services.
+}
+
+\section{Database engines}
+
+% \framepage{15cm}{
+% Full SQL servers:  MySQL/mSql/DB2/Oracle (spank their FLUG
+% policy)/Informix/PostgresSQL (discuss features:  transactions, unique
+% numbers, in-kernel code, speed, availablity, multi-host
+% capabilities?). Any flat file RDBS?
+
+% Tricks: Menu system in LDAP (lr.dk).
+% }
+
+The number of database vendors which support Linux (which as for now
+is \textit{the} Open Source operating system which people know about)
+is steadily increasing.  \myurl{http://linas.org/linux/db.html}{This
+  webpage try to keep track of them all}, but I only list the major
+commercial vendors and Open Source projects, where the drivers should
+be of production quality.  The following overview was created March
+2000.
+
+\framepage{15cm}{
+  PostgresSQL (discuss features:  transactions, unique
+  numbers, in-kernel code, speed, availablity, multi-host
+  capabilities?). Any flat file RDBS?
+  }
+
+\subsection{Cloudscape - Informix}
+\label{sec:cloudscape}
+
+The
+\myurl{http://www.informix.com/informix/press/1999/dec99/cloudscape.htm}{Cloudscape
+  Database} is written in Java, with a JDBC and a HTML interface, has
+many core SQL and Java extensions implemented, and allow distribution
+amongst several Java-machines (using RMI).  Informix bought Cloudscape
+Inc. in October 1999 to get this database system, so it is still very
+new.  They offer
+\myurl{http://www.cloudscape.com/Evaluations/index.html}{a 60 day
+  trial version from their website}.  Pricing is approximately \$900.
+
+
+\subsection{DB2 - IBM}
+\label{sec:db2}
+
+\myurl{http://www-4.ibm.com/software/data/db2/linux/}{DB2 for Linux}
+is available - the \myurl{DB2 Personal Developer's Edition
+  V6.1}{http://www6.software.ibm.com/dl/db2pde/db2pde-p} is available
+for free for non-commercial purposes.  
+
+\myurl{http://www-4.ibm.com/software/data/db2/extenders/xmlext/}{DB2
+  XML Extender} which ``let you store XML documents in DB2 databases
+and new functions that assist you in working with these structured
+documents.''.  It is available for AIX, Solaris and Windows NT.
+  \textsf{Evaluate?} 
+
+  
+
+\subsection{Informix - Informix}
+\label{sec:informix}
+
+http://www.informix.com/datablades/dbmodule/informix1.htm
+
+ 
+\subsection{Ingres - Ingres}
+\label{sec:ingres}
+
+The
+\myurl{http://www.cai.com/products/betas/ingres\_linux/ingres\_linux.htm}{Ingress
+  II database is in a beta stage for Linux}, and can be downloaded for
+free.  It uses Perl, gcc and Apache to provide webserver facilities.
+
+
+\subsection{mSQL - ?}
+\label{sec:msql}
+
+\textsf{Yes?  Looook for stuff - rememebr to get the mSQL/MySQL book
+  in the databse}
+
+\subsection{MySQL - TCX}
+\label{sec:mysql}
+
+\myurl{http://www.tcx.se}{MySQL is an Open Source database} which is
+very popular amongst Perl programmers due to
+\myurl{http://www.tcx.se/benchmark.html}{the good performance}
+combined with the free availability of source code and high quality
+drivers.
+
+MySQL only costs money if you run it on a Microsoft operating system,
+or commercially on a server.
+
+\subsection{Oracle}
+\label{sec:oracle}
+
+The complete Oracle 8i product range is available for Linux, with a
+low-end version available for download.  The WebDB tool functions as a
+webserver-interface to any Oracle database.
+
+On \myurl{\textsf{??}}{the FLUG meeting ??} we were promised that we
+could have all the Oracle software for Linux we needed (without
+official licenses), and that Oracle Denmark would provide the
+necessary support.  It is interesting that Oracle Denmark unofficially
+seed the Linux communities with pirate copies of their software.
+
+\subsection{SyBase - Sybase}
+
+Sybase \myurl{http://www.sybase.com/products/linux/}{has Sybase
+  Adaptive Server Enterprise and SQL Anywhere Studio} available for
+  Linux for free as long as they are used for development.  For
+  production installations a license must be bought.  An earlier
+  version is unsupported but may be used without restrictions for
+  production enviroments.
+  
+  Their web integration tool does not appear to have been ported to
+  Linux yet.  The \myurl{http://linas.org/linux/db.html}{Linux
+    database page} lists several third-party tools which provide web
+  functionality.
+
+  Even though Microsoft does not provide Linux drivers for the
+  Microsoft SQL-server, the freely available SyBase drivers for Linux
+  appear to be usable.
+
+\subsection{Other approaches to database storage}
+
+\myurl{http://www.lr.dk}{Landbrugets r{\aa}dgivningscenter} uses a
+LDAP-server\footnote{\textsf{Light Directory Access Protocol?} - me
+  thinks} to provide easy access to commonly used web elements.
+
+\textsf{Others?}
+
+
+\section{Browsers}
+\framepage{15cm}{
+MSIE5 (XML support, Solaris), Mozilla (alpha), Netscape (too old),
+HotJava 3.0 (no XML, can be expanded to do XML conversion
+internally?), Opera (?), Amaya (other W3C browsers?), AWTviewer in fop
+(can it do xml directly?),
+}
+
+
+\subsection{Netscape Communicator}
+\label{sec:netscape-communicator}
+
+The Netscape Communicator browser is available and fully supported for
+Linux.  The version available at March 2000 was 4.72 in English only.
+
+This browser have a reputation of being rather picky of its
+environment.  Especially the Java-subsystem is prone to crashing the
+server.  If Java is important, consider HotJava.
+
+
+\subsection{Mozilla - Netscape 6.0}
+\label{sec:mozilla}
+
+\myurl{http://www.mozilla.org}{The Mozilla browser} has been under
+development since 1998, where Netscape -- inspired by the \textsf{the
+Cathedral and the Bazaar} paper -- decided to switch development
+strategy for its incomplete source for Netscape Communicator 5.0 from
+an in-house system to a full-scale OpenSource model housed at
+http://www.mozilla.org.
+
+In the past two years, the OpenSource developers have basically
+rewritten the Communicator into a truly impressive product (this is
+based on the M14 milestone release).  A tentative release is midsummer
+2000.
+
+
+\subsection{Opera}
+\label{sec:opera}
+
+This Norwegian browser from \textsf{??} has been highly successful on
+Windows for providing a good browser to smaller, older machines.  They
+have \textsf{a beta port under development what is the status?  XML?}.  
+
+
+\subsection{HotJava 3.0}
+\label{sec:hotjava}
+
+HotJava is a Netscape 3.0 compatible browser written in Java.
+
+It is a bit slow, especially in updates, but has its force in its
+ability to execute Java applets (which is where Netscape is slow, and
+Microsoft does not comply with the standards).
+
+HotJava requires a Sun JDK-based Java implementation (clones do not
+provide all the functions they need), and I have tested version 1.1.2,
+1.1.4, and 3.0 under Linux, OS/2, Windows, Irix and Solaris, where it
+worked satisfactory.
+
+\textsf{There is no information regarding the status of parsing XML
+  internally.  Full access to the source is probably necessary before
+  any third-party implementations come}
+
+
+Rumours has it that development on this browser has ceased.  I have
+tried to extend version 1.1.4 to show TIFF files, but had to give up
+due to the miserable documentation combined with lack of the source.
+
+Other rumours has it that Sun will release the source for HotJava
+under their Community License (which basically makes the developers
+unpaid employees of Sun) like it has been done previously.  On March
+13 Sun released their first product under a true OpenSource license
+(the Forte product - previously Netbeans), which could indicate that
+they had evaluated their experience with previous releases, and found
+that nothing short of full OpenSource will do.
+
+Today there are so many OpenSource projects that the truly talented
+coders can choose freely what they want to develop on, and they choose
+projects where they can get return in recognition from their equals,
+and where they don't feel that they slave for a company.
+
+Sun has a ``vote for the bug you want fixed'' system for
+Java\textsf{URL}, and the highest rated bug was ``Port Java to Linux''
+for a \textit{very} long time, and with four times the number of votes
+for number 2.  The Blackdown \textsf{Team} ported Java 1.1 to Linux,
+and collaborated with Sun on porting Java 1.2 to Linux.  It took very
+long time, and when they finally had it officially published on the
+Sun Java webpages, Sun did not give credit to the Blackdown Team - not
+on the web pages, not in the code.  The Blackdown Team was highly
+offended, said publicly so, and stopped working on the port!
+
+My personal guess is that this incident taught Sun that they must be
+very observant to the OpenSource culture they want to attract.  It
+must be nurtured and credited in order to create the symbiosis that
+the Mozilla project has demonstrated to be possible.
+
+\subsection{Microsoft Internet Explorer 5.0}
+\label{sec:microsoft-internet-explorer}
+
+Microsoft has created a very nice browser which works well on Windows
+platforms, and which supports a recent version of XML with the
+XSL-stylesheets (\textsf{reference)}.  Since the XSLT standard was
+released January 2000, a release of MSIE50 can be expected ``rather
+soon'' which implements the XSLT standard, allowing the browser to
+render XML files on the client side.  For now, server side processing
+is still the only option.
+
+Microsoft Internet Explorer 5.0 is \textit{not} available for Linux.
+It is, however, available for Solaris and HP-UX so the codebase is
+ported to Unix, and from there it is usually comparatively easy to get
+software to run under Linux.  The Solaris version was incompatible
+with the window manager I was running under Irix, so I have not tested
+it much, but it was very, very similar to the Windows version.
+
+My personal guess is that Microsoft holds back Linux versions of the
+Internet Explorer with Outlook Express until they see a fortunate
+opportunity to release it.  \myurl{\textsf{??}}{A certain lawsuit
+  springs to mind} - I do not expect Microsoft want to be accused of
+monopolizing the Linux market too.
+
+To summarize:  Microsoft Internet Explorer is not available for Linux
+at the time of writing.
+
+\textsf{Try Solaris version of MSIE under KDE}
+
+\subsection{Amaya}
+\label{sec:amaya}
+
+Amaya is the W3C testbed for HTML-development.  Is a nice browser
+combined with a reasonable editor.  \textsf{Does not do XML at all}.
+\textsf{Don't they have a testbed?}
+
+\subsection{AWTviewer in fop}
+\label{sec:awtviewer}
+
+\textsf{probably for fop stuff only}
+
+
+\subsection{StarOffice}
+\label{sec:staroffice}
+
+\textsf{What can we do here?} - try i tout.
+
+StarOffice include a Netscape \textsf{3.0} compatible browser, with
+Java applet support.  It is an integrated part of the StarOffice
+program, which besides Linux is available for Windows, OS/2 and
+Solaris.
+
+
+\subsection{\textsf{OTHER BROWSERS?}}
+
+
+
+\section{XML utilities}
+\framepage{15cm}{
+XT, Xerces, Cocoon, SQL2xml, validators (error recovering?),
+converters to XML (pod2docbook, tex4h, Perl with appropriate modules?,
+wordview modified)?
+
+Show the XML->SQL->XML->HTML on the fly conversion possible with
+Cocoon .... Without auxillary code. All done in W3C style.
+}
+
+
+
+
+
+\section{PDF utilities}
+\framepage{15cm}{
+
+PDF generated by pdflatex is good.  PDF generated by fop isn't.
+createpdf.adobe.com 
+
+pdfzone.  acroread (ok, heavy), xpdf (font problems with bitmaps, ugly
+but fast, gives best result with usepackage{times}, no anti-alias), gv
+(pretty good).  Distiller (check what it can do).  Use pdfinfo to get
+the number of pages in the pdffile.
+
+Conclude that it is possible to have a 100\% Java solution for
+on-the-fly publishing XML to HTML and PDF through a webserver.
+Discuss why developers do it in Java, as opposed to any other language.
+
+Very few utilites support creating PDF.  Discuss how to create PDF.
+
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 

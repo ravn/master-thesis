@@ -58,6 +58,9 @@ will automatically update after a successful compilation of the
 TeX-document.  That is very nice when your editing have happened
 within a single physical page.
 
+For presentation purposes, \textsf{Acroread with packages found at the
+  DK-TUG website at aucdk}
+
 \section{Emacs} 
 \label{sec:report-writing-tools-emacs} 
 
@@ -75,7 +78,8 @@ additional modules.  The standard distribution of Emacs provides:
   native tongue.
 \item[CVS] -- Emacs supports \myurl{\texttt{???}}{CVS} directly.  I
   had my working directory on my portable, and my CVS repository on
-  the MIP system.  This is a good way to backup your work.
+  the MIP system, in order for my CVS files to be automatically backed
+  up. 
 \item[Compile] -- The \texttt{M-x compile} works well with Jade,
   nsgml, Java and other tools where you may encounter errors in your
   source.  \texttt{Ctrl-x `} makes Emacs go to the line with the
@@ -101,100 +105,22 @@ Additionally I have installed:
 
 
 
-\section{Available databases}
-\label{sec:available-databases}
+\subsection{Making them all work together}
+\label{sec:making-them-all-work-together}
 
-The number of database vendors which support Linux (which as for now
-is \textit{the} Open Source operating system which people know about)
-is steadily increasing.  \myurl{http://linas.org/linux/db.html}{This
-  webpage try to keep track of them all}, but I only list the major
-commercial vendors and Open Source projects, where the drivers should
-be of production quality.  The following overview was created March
-2000.
+Using these packages has basically been very easy, but occasionally
+they step on each others toes.  That could normally be circumvented:
 
-
-\subsection{Cloudscape - Informix}
-\label{sec:cloudscape}
-
-The
-\myurl{http://www.informix.com/informix/press/1999/dec99/cloudscape.htm}{Cloudscape
-  Database} is written in Java, with a JDBC and a HTML interface, has
-many core SQL and Java extensions implemented, and allow distribution
-amongst several Java-machines (using RMI).  Informix bought Cloudscape
-Inc. in October 1999 to get this database system, so it is still very
-new.  They offer
-\myurl{http://www.cloudscape.com/Evaluations/index.html}{a 60 day
-  trial version from their website}.  Pricing is approximately \$900.
+\begin{description}
+\item[{\TeX} and RCS] -- The RCS header fields, contain dollar-signs
+  which causes {\TeX} to enter/leave math-mode (like
+  \mbox{\$I}\mbox{d\$}), causing it to be rendered in math italic
+  $which is not suitable for prose$.  By typing it as \texttt{\$
+    \${}Id\$ \$} it is possible to avoid this. The dollar-space-dollar
+  renders the space in math mode and switches back to normal text.
 
 
-\subsection{DB2 - IBM}
-\label{sec:db2}
-
-\myurl{http://www-4.ibm.com/software/data/db2/linux/}{DB2 for Linux}
-is available - the \myurl{DB2 Personal Developer's Edition
-  V6.1}{http://www6.software.ibm.com/dl/db2pde/db2pde-p} is available
-for free for non-commercial purposes.  
-
-\myurl{http://www-4.ibm.com/software/data/db2/extenders/xmlext/}{DB2
-  XML Extender} which ``let you store XML documents in DB2 databases
-and new functions that assist you in working with these structured
-documents.''.  It is available for AIX, Solaris and Windows NT.
-  \textsf{Evaluate?} 
-
-  
-
-\subsection{Informix - Informix}
-\label{sec:informix}
-
-http://www.informix.com/datablades/dbmodule/informix1.htm
-
- 
-\subsection{Ingres - Ingres}
-\label{sec:ingres}
-
-The
-\myurl{http://www.cai.com/products/betas/ingres\_linux/ingres\_linux.htm}{Ingress
-  II database is in a beta stage for Linux}, and can be downloaded for
-free.  It uses Perl, gcc and Apache to provide webserver facilities.
-
-
-
-\subsection{MySQL - TCX}
-\label{sec:mysql}
-
-\myurl{http://www.tcx.se}{MySQL is an Open Source database} which is
-very popular amongst Perl programmers due to
-\myurl{http://www.tcx.se/benchmark.html}{the good performance}
-combined with the free availability of source code and high quality
-drivers.
-
-MySQL only costs money if you run it on a Microsoft operating system,
-or commercially on a server.
-
-\subsection{Oracle}
-\label{sec:oracle}
-
-The complete Oracle 8i product range is available for Linux, with a
-low-end version available for download.  The WebDB tool functions as a
-webserver-interface to any Oracle database.
-
-\subsection{SyBase - Sybase}
-
-Sybase \myurl{http://www.sybase.com/products/linux/}{has Sybase
-  Adaptive Server Enterprise and SQL Anywhere Studio} available for
-  Linux for free as long as they are used for development.  For
-  production installations a license must be bought.  An earlier
-  version is unsupported but may be used without restrictions for
-  production enviroments.
-  
-  Their web integration tool does not appear to have been ported to
-  Linux yet.  The \myurl{http://linas.org/linux/db.html}{Linux
-    database page} lists several third-party tools which provide web
-  functionality.
-
-  
-  
-
+\end{description}
 
 %%% Local Variables: 
 %%% mode: latex

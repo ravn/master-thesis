@@ -1,0 +1,175 @@
+
+\chapter{Overview}
+
+In this thesis I refer to the author Annie, and the layouter Larry.
+
+\section{What is a ``database backed webserver''?}
+
+A web-server is a program which hands out files to any web-browser
+that asks.
+
+A database ``is a spread-sheet that several people can update
+simultaneously'' (\textsf{greenspun}).
+
+A database backed webserver then is simply a web-server which knows how
+to talk to a database server while servicing bypassing web-browsers.
+
+% In order to be useful it must be \textit{fast}!
+
+% A \textit{web server} is a program which waits for requests from web
+% browsers (like Netscape Communicator) and returns do
+
+% A \textit{databased backed webserver} is a webserver which has access
+% to a database at the same time as it serves documents to clients.
+% Such access opens new possibilities, some of which are:
+
+% \begin{itemize}
+% \item The database can protect against race conditions when data is
+%   updated on the server.
+% \item Provide a searching facility more complex than grep.
+% \item Allow fast access to data without worrying about limitations in
+%   file systems
+% \item ``\textsf{users can extract data on their own if they want to}''
+% \item Databases are optimized for disk I/O, webservers for network
+%   I/O.  Those go well together.
+% \item Very large amount of data can be online
+% \item Data can be managed remotely by others than the webmaster
+% \item \textsf{what else?}
+% \end{itemize}
+
+
+\section{Why use a webserver in combination with a database?}
+\label{sec:why-use-a-webserver-in-combination-with-a-database}
+
+In one word: \textit{Synergy}!
+
+The web browser provide a simple, efficient and
+well known user interface available to almost every computer user in
+the world, and the database provide efficient dynamical access to
+data.
+
+The combination of the two allow for the personalized Internet where a
+given webserver can give any user customized information upon request.
+Examples are:
+
+\begin{itemize}
+\item Newspapers - the user may specify that she wants in-depth
+  coverage of international affairs, and do not want sports, and her
+  personal web-edition will then just contain that.  Payment may be
+  per-article instead of per-paper.
+\item Maps/Airlines/Hotels - the user may request the best way to
+travel from A to B at a given time, see the route, and order
+accompanying reservations on-line.
+\item Real stores - the user may browse and order from the inventory.
+  The ordered goods are then delivered by mail or similar.
+\item Virtual stores - the user may browse and order from a virtual
+  inventory.  The order is then dissected and forwarded to the
+  appropriate suppliers to the virtual store.
+
+\item Banks - there is a growing need from customers to be able to do
+  home banking.  If the bank offer a browser based solution, they can
+  support customers regardless of their choice of computer.  The
+  transactions done through such a system will most likely be stored
+  in a database to avoid dataloss.
+\item Program development - The \myurl{http://www.mozilla.org}{Mozilla
+    project} has shown the benefit of up-to-date information regarding
+  just about anything related to the source code.  \textsf{write about
+    it}
+\end{itemize}
+
+
+Since its inception in 1993 the web has grown to be the ``good enough
+for most things'' graphical user interface, capable of showing text
+and graphics as well as provide navigation.  Due to the simplicity of
+HTML it is not hard to build a plain basic client\footnote{Plan basic
+  client implies no Java, no Javascript, no cookies, no plugins, no
+  cascading style sheets, no HTTP-1.1 and almost everything else that
+  characterize the modern browsers from Netscape, Microsoft, Suns and
+  Opera\textsf{??}.  However, if a webpage is well-written it can still
+  be displayed on such a plain basic client. } meaning that just about
+any modern computer with Internet capabilites have browsers available
+for them.
+
+
+
+% \subsection{Protection against race conditions}
+% \label{sec:protection-against-race-conditions}
+
+% A database can provide atomic operations on its data, as opposed to a
+% stock Unix file system, where data unwittingly can be corrupted if two
+% processes try to read and update information at the same time.  The
+% concept is well known from multi-programming \textsf{the eskimo book?}
+
+% Companies like ``valueclick'' and ``\textsf{doubleclick?}'' sell
+% banner ad's (the \textsf{480x120?} pixel advertisements allowing you
+% to click through to the advertisors website if you are interested).
+% These are either sold by the number of \textit{impressions} (shown to a
+% user) or \textit{clicks} (where the user actually clicks on the
+% banner), and these must be counted in order to document that the
+% customer gets what he pays for, and the banner ad provider does not
+% expose more than what the customer paid for.
+
+% Here is a database system essential in order to protect the data from
+% being accidentially overwritten.  ValueClick states that they have
+% \textsf{7 million impressions}  daily, which is around 80
+% impressions pr second.
+
+% \textsf{And what else is new?}
+
+% \subsection{Provide searching facilities}
+% \label{sec:providing-searching-facilities}
+
+% A flat file basically only allow you to search the content and the
+% filename with modifications based on the timestamps of the file.
+% Searchings normally happen linearly through files and directories.
+
+% Since a database may have a lot more attributes, queries can be much
+% more sophisticated, and may even be done against indexed data.
+
+% \subsection{Allow fast access to data without using file systems}
+% \label{sec:allow-fast-access-to-data}
+
+
+
+% \subsection{????}
+
+
+
+% \subsection{Databases are optimized for disk I/O, webservers for network}
+%   I/O.  Those go well together.
+% \subsection{Very large amount of data can be online}
+% \subsection{Data can be managed remotely by others than the webmaster}
+% \subsection{Others?}
+
+
+\framepage{15cm}{
+Provide background information: Quick overview of the technology
+[webserver, database, http, sql, dynamically generated content vs]
+with a graph.  Give simple example.  Explain \textsl{when} things
+happen (on-the-fly vs statically generated pages).  Explain the
+advantages and disadvantages databases have over flat filesystems
+[transactions(protection, atomicity), extra attributes, speed, indexed
+columns, complex queries, scalability(linear search in filesystems,
+multihost db's),]
+}
+
+\section{The new role of the webserver}
+
+\framepage{15cm}{
+Compare original functionality with static HTML-files with content and
+a few CGI-scripts, to the current dynamically generated sites with
+many hits pr day.  Since HTML is generated and provides little
+abstraction it is hard to use on a higher abstraction level, and with
+unreadable code in ASP and PHP3 it is harder.  CSS was not the answer
+since it did not provide any abstraction from the presentation
+(seperate content from layout).
+
+Different needs of the user - wap/pdf/html/braille.  CPU, storage,
+webmaster time prevents all formats being pregenerated.
+}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End:

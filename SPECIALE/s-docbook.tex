@@ -2,14 +2,14 @@
 
 \section{DocBook considerations}
 
-DocBook is a DTD designed for documenting software.  Used by Sun,
-FreeBSD, O'Reilly and others.
+\myurl{http://www.docbook.org}{DocBook} is a DTD designed for
+documenting software.  Used by Sun, FreeBSD, O'Reilly and others.
 
 The SGML is converted to HTML by applying a HTML style sheet for
 DocBook, and sending it through jade with request for a sgml
 conversion.  The stylesheet generates a HTML file pr section in a
-chapter which is rather too much.  The HTML is \_very\_ ugly - all
-induced line breaks are \_within\_ the tags to avoid introducing any
+chapter which is rather too much.  The HTML is \textit{very} ugly - all
+induced line breaks are \textit{within} the tags to avoid introducing any
 artificial whitespace.  The HTML is Lynx-compatible.
 
 The generated navigation tags are a little troublesome in Lynx, but
@@ -19,6 +19,67 @@ navigation bar at the top.
 
 The localization code is manually maintained.
 
+Having XML files in DocBook format (basically having a valid DocBook
+DTD) allow to use all the available DocBook stylesheets (both XSL and
+DSSSL) to \textsf{??} them.  These are:
+
+\begin{description}
+\item[XSL] --
+  \begin{description}
+  \item[XHTML-1.0] -- 
+  \item[HTML-\textsf{4.0}] -- 
+  \item[XSL-FO] -- The W3 page description language.
+    \textsf{Renderer? like fop and the commercial one}
+  \item[\textsf{Others}] ?
+  \end{description}
+\item[DSSSL] --
+  \begin{description}
+  \item[RTF] -- Rich Text Format.  \textsf{Renderers?}
+    
+  \item[MIF] -- Frame format.   \textsf{What about it}
+  \item[{\TeX}] -- Renders with the \textsf{JadeTeX} package.
+  \item[\textsf{Others}] ?? What else can we do with this.
+  \end{description}
+\end{description}
+
+Generally XSL conversions are fast enough to be done ``on-the-fly'',
+where DSSSL conversions are \textsf{too slow for this (timing?)}.
+
+
+
+\section{Converting documents to other formats}
+\label{sec:docbook-converting-documents-to-other-formats}
+
+
+\subsection{SGML to XML}
+\label{docbook-converting-sgml-to-xml}
+
+\begin{alltt}
+  sx -biso-8859-1 -xlower input.sgml $>$ output.xml
+\end{alltt}
+
+The DTD for the document \textit{must} be registered in the
+\textsf{catalog}.  Even so a number of warnings and errors may be
+printed, since some SGML-constructions cannot be represented in XML,
+and some entities are unknown.  \textsf{What can be done about that?}
+
+
+\subsection{XML to RTF}
+\label{sec:docbook-xml-to-rtf}
+
+Use \texttt{jade} with the appropriate stylesheet and \textsf{....}
+
+\begin{alltt}
+         jade -t rtf -d docbook.dsl xml.dcl inputfile.xml
+\end{alltt}
+
+where \texttt{docbook.dsl} is one of the stylesheets from the
+\textsf{DocBook Modular StyleSheets}
+(\texttt{dsssl/docbook/print/docbook.dsl}) and \texttt{xml.dcl} comes
+from the Jade distribution (\texttt{pubtext/xml.dcl})
+
+The resulting RTF-file is compatible with Word-97, Word-95 (claimed by
+author), StarOffice, \textsf{other texteditors} 
 
 
 %%% Local Variables: 

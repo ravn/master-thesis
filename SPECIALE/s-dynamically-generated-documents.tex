@@ -1,0 +1,170 @@
+% $Id$
+
+
+\chapter{Dynamically generated documents}
+\label{cha:dynamically-generated-documents}
+
+% \framepage{10cm}{Abbreviations are explained in ``Terms and
+%   Concepts'' (chapter \vref{cha:terms-and-concepts}).  Please refer to
+%   it to clarify matters.}
+
+\section{The original vision: A Web-server with a file system }
+
+The original capabilities of a web server was: \textsf{Nice figure...}
+
+\begin{itemize}
+\item A underlying file system containing a lot of \textit{static}
+files.  These files were either pages written in HTML, or images in
+GIF or JPEG formats.
+
+\item The \textit{Common Gateway Interface}.  If a given script
+complied to this, the web-server could start it with user-provided
+parameters, and return the result as any kind of file.
+\end{itemize}
+
+That's all.  Such web servers still exist - on \textsf{??}
+\myurl{http://www.netcraft.com}{Netcraft} reported that \textsf{???}
+NCSA servers were active.  \textsf{The number has been pretty constant
+  for some time, while the number of Apache and IIS servers have grown
+  exponentially}.
+
+This scheme works well for even \textit{very} large web-sites.  A
+well-written server which serves documents directly from the
+filesystem can reach impressive numbers.  \textsf{Where was this -
+  look for statistics}.  On
+a modern PC Apache has no problem saturating a 10Mbps Ethernet
+connection (\textsf{what about a 100Mbps connection)}, meaning that
+even for very large and demanding sites the bottleneck will not be
+within the webserver software.
+
+On a related note: The ftp-server \texttt{ftp.cdrom.com} serves at
+least \textsf{??} Gb every day.  That's \textsf{??} Mb pr second, from
+a single machine \textsf{reference?} running
+\myurl{http://www.freebsd.org}{FreeBSD \textsf{??.??}}.  A ftp-session
+have a notably larger overhead than a http-session, so it is not
+unreasonable to expect similar performance from a suitably tuned
+web-server for static files.
+
+
+CGI-scripts turned out to work well.  All kinds of documents - images,
+webpages, progress reports - could be generated comparatively easy in
+the favorit language of the CGI-script author.  Libraries to deal with
+the decoding of parameters, and encoding of the generated result, were
+soon abundant, providing for many enhancements to the original
+``static web site''.
+
+\textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
+
+Unfortunately, there are a few short-comings with CGI-scripts:
+
+\begin{itemize}
+\item \textbf{Runs as a subprocess} -- the script is executed with the
+  same permissions as the webserver itself, including access to
+  \texttt{/etc/passwd} and other possibly sensitive files.  Such
+  scripts had to be \textit{trusted} or - for ISP's - inspected before
+  installation to ensure that the script would behave properly.
+
+  This has been addressed with the development of ``safe languages''
+  where the execution environment is guaranteed that the CGI-script is
+  confined to a ``sandbox''.
+  
+\item \textbf{Incompatible platforms} -- the CGI-programmer may not
+  have access to a C-compiler which can generate binary code for the
+  webserver.
+
+  Interpreted programs which did not require recompilation for a given
+  platform addressed this problem.   The only contender to scripting
+  languages has been Java Servlets.
+  
+\item \textbf{Slow} -- the overhead just for invoking the CGI-program
+  in a subprocess is substantial even for moderate load on the web
+  server.
+
+  This has been addressed by moving the execution environment inside
+  the web server, using threads instead of processes, and caching
+  compiled versions of scripts.  
+
+\end{itemize}
+
+Several solutions to the above problems have emerged.  Java Servlets
+are discussed in section~\vref{sec:CGI-servlets},  PHP3 scripts in
+section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
+accelleration module) in section~\vref{sec:CGI-modperl}).
+
+\section{Larger and more complex sites result in pre-generated pages}
+
+
+\section{When to create documents dynamically}
+
+\section{The consequence - multiple views of a document}
+
+\framepage{15cm}{
+Introduce publishing where HTML is just a backend amongst many (PDF,
+Word, ASCII).
+
+Describe why it is important to be able to render finished versions of
+documents fully automatically from a single \textsl{annotated} source
+(www/print/cdrom/Palm Pilot/braille/handicapped persons,whatever).  The better
+the annotation, the better the output (ref: Stibo).  Describe the need
+for SGML (history/usage) and XML (why/browser support/on-the-fly
+publishing/bleeding edge - being standardized).
+
+Donald Knuth - {\TeX}/Web/Literate Programming - advantages (high
+quality, excellent math, superb algorithms, can be tailored to needs
+(basic interpreter written in TeX) and
+disadvantages (programming language, not abstract) (designed 20 years ago).  Ask Steffen Enni
+about his thoughts.  Javadoc.  Perl POD.  DocBook projects (FreeBSD,
+LDP).  
+}
+
+\section{The user should use current tools to publish documents}
+\framepage{15cm}{
+Publishing a document to the web should be as easy as printing a
+document.  The basic principles are the same - you can do with a
+``Publish''-button and a dialogue box where the essential information
+is provided.  It is not so today - discuss reasons .  Use ``print to
+fax'' software as horrible example of this idea gone wrong.
+
+When the webserver is dumb, you cannot do much.  If there is a
+database underneath, much more is possible.  Discuss the idea of
+having several ways of entering documents in the database (upload via
+form, send as email (fax software can do this too), print to virtual
+printer, scan, fax, voice) and letting the software do the
+conversions.
+
+Use example with print PostScript to file and upload via ftp to
+printer (LexMark).
+
+Writing XML directly is much harder to do than writing HTML (stricter
+syntax, more options, plainly just more to type), and should be aided
+by a good tool.  Alternatively, the user should use well-known tools
+(Word) and mark up according to very strict rules, which is then
+automatically converted to the XML document.  This does not give as
+rich documents, but allows users to publish existing documents with
+very little trouble.
+}
+
+
+\subsection{The importance of a web cache}
+\label{sec:the-importance-of-a-web-cache}
+
+A database query is expensive, and it requires an expert to tune the
+database to run as fast as possible.  It is not, however, always
+necessary to have the webserver do a database query to serve a page -
+often the generated page is valid for a short or long term period,
+and then it is relatively easy to cache the page for this period.
+
+Here is one way to do it:
+
+\begin{itemize}
+\item Configure the script generating the page, to add an
+  ``\texttt{Expires''} header with a reasonable time of expiry
+\item Set up squid (\vref{sec:squid}) in http-accellerator mode, where
+  it transparently adds cache facilities to a webserver, respecting
+  the ``\texttt{Expires}'' header.
+\end{itemize}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 
