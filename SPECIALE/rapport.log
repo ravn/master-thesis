@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  7 APR 2000 23:12
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  9 APR 2000 16:38
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -82,7 +82,7 @@ LaTeX Warning: Unused global option(s):
 (s-sample-websites.aux) (s-xml.aux) (s-docbook.aux) (s-sql.aux)
 (s-users-transparently.aux) (s-active-and-passive-data-acquisition.aux)
 (s-search-engines-and-data-mining.aux) (s-available-technologies.aux)
-(s-cactus.aux) (s-conclusion.aux) (s-konsensus.aux) (s-tex-and-latex.aux)
+(s-koncensus.aux) (s-cactus.aux) (s-conclusion.aux) (s-tex-and-latex.aux)
 (s-report-writing-tools.aux) (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
@@ -177,14 +177,7 @@ Chapter 2.
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[6]
-
-LaTeX Warning: Reference `sec:docbook' on page 7 undefined on input line 166.
-
-
-LaTeX Warning: Reference `sec:docbook' on page 7 undefined on input line 166.
-
-)
+[6])
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
@@ -238,21 +231,8 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 [13]
 File: gr/alltheweb-2.eps Graphic file (type eps)
  <gr/alltheweb-2.eps>
-
-LaTeX Warning: Reference `sec:alta-vista' on page 14 undefined on input line 28
-8.
-
-
-LaTeX Warning: Reference `sec:alta-vista' on page 14 undefined on input line 28
-8.
-
 File: gr/alltheweb-1.eps Graphic file (type eps)
-<gr/alltheweb-1.eps>
-
-LaTeX Warning: Citation `fig:alltheweb-2' on page 14 undefined on input line 30
-8.
-
-
+ <gr/alltheweb-1.eps>
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
@@ -442,13 +422,6 @@ File: gr/krak-5a.eps Graphic file (type eps)
  <gr/krak-5a.eps>
 File: gr/krak-5b.eps Graphic file (type eps)
  <gr/krak-5b.eps>
-
-LaTeX Warning: Reference `fig:krak-6' on page 38 undefined on input line 326.
-
-
-LaTeX Warning: Reference `fig:krak-6' on page 38 undefined on input line 326.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -480,38 +453,38 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [42]
-Overfull \hbox (319.19083pt too wide) in paragraph at lines 380--383
+Overfull \hbox (319.19083pt too wide) in paragraph at lines 381--384
 \OT1/bch/m/n/10.95 Freshmeat.net is a ser-vice for lo-cat-ing soft-ware. [] 
  []
 
 
-Overfull \hbox (313.66772pt too wide) in paragraph at lines 400--400
+Overfull \hbox (313.66772pt too wide) in paragraph at lines 401--401
 [][] 
  []
 
 
-Overfull \hbox (489.64273pt too wide) in paragraph at lines 400--400
+Overfull \hbox (489.64273pt too wide) in paragraph at lines 401--401
 [][] 
  []
 
 
-Overfull \hbox (222.37943pt too wide) in paragraph at lines 400--400
+Overfull \hbox (222.37943pt too wide) in paragraph at lines 401--401
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
 
  []
 
 
-Underfull \hbox (badness 6961) in paragraph at lines 420--420
+Underfull \hbox (badness 6961) in paragraph at lines 421--421
 []\OT1/bch/m/n/10.95 Search en-gines. How do they do it? www.909.dk, www.krak.d
 k, ter-
  []
 
 
-Overfull \hbox (10.57684pt too wide) in paragraph at lines 423--423
+Overfull \hbox (10.57684pt too wide) in paragraph at lines 424--424
 [][]\OT1/bch/m/n/9 ...http://liinwww.ira.uka.de/bibliography/index.html...-- \O
 T1/cmtt/m/n/9 http://liinwww.ira.uka.de/bibliography/index.html| 
  []
@@ -552,12 +525,12 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [49]
-Overfull \hbox (242.54123pt too wide) in paragraph at lines 244--245
+Overfull \hbox (242.54123pt too wide) in paragraph at lines 249--250
 []\OT1/bch/m/n/10.95 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
 [][]\OT1/bch/m/n/9 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
 ions of HTML...--
  []
@@ -567,16 +540,16 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [50]
-Overfull \hbox (311.95544pt too wide) in paragraph at lines 356--357
-[][] 
- []
-
-
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [51]
-Overfull \hbox (6.2138pt too wide) in paragraph at lines 451--455
+Overfull \hbox (311.95544pt too wide) in paragraph at lines 361--362
+[][] 
+ []
+
+
+Overfull \hbox (6.2138pt too wide) in paragraph at lines 456--460
 \OT1/bch/m/n/10.95 style sheets, but only CSS cas-cad-ing style sheets. This []
 . 
  []
@@ -592,9 +565,6 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 [53]
 File: x-outline.xsl  (verbatim)
 
-Underfull \vbox (badness 4156) has occurred while \output is active []
-
-
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
@@ -603,13 +573,13 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [55]
-Overfull \hbox (1.6374pt too wide) in paragraph at lines 594--594
+Overfull \hbox (1.6374pt too wide) in paragraph at lines 599--599
 []  \OT1/cmtt/m/n/10.95 select when, mime, user, how, filename, comment,length(
 item) as l  from incoming[] 
  []
 
 
-Overfull \hbox (145.3546pt too wide) in paragraph at lines 621--621
+Overfull \hbox (145.3546pt too wide) in paragraph at lines 626--626
 []\OT1/cmtt/m/n/10.95 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><t
 h>filename</th><th>comment</th><th>iteml</th></tr>[] 
  []
@@ -619,12 +589,12 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [56]
-Overfull \hbox (1358.61224pt too wide) in paragraph at lines 688--691
+Overfull \hbox (1358.61224pt too wide) in paragraph at lines 693--696
 [][]
  []
 
 
-Overfull \hbox (15.69421pt too wide) in paragraph at lines 688--691
+Overfull \hbox (15.69421pt too wide) in paragraph at lines 693--696
 [] 
  []
 
@@ -633,21 +603,21 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [57]
-Overfull \hbox (390.85733pt too wide) in paragraph at lines 770--782
+Overfull \hbox (390.85733pt too wide) in paragraph at lines 775--787
 \OT1/bch/m/n/10.95 so-lu-tion which very rarely re-quires hu-man in-ter-ven-tio
 n. [] 
- []
-
-
-Overfull \hbox (920.91495pt too wide) in paragraph at lines 790--791
-[][] 
  []
 
 
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[58])
+[58]
+Overfull \hbox (920.91495pt too wide) in paragraph at lines 795--796
+[][] 
+ []
+
+)
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
@@ -675,21 +645,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 l
  []
 
-[61]
-Overfull \hbox (123.1141pt too wide) in paragraph at lines 108--112
+
+Underfull \vbox (badness 2343) has occurred while \output is active []
+
+ [61]
+Overfull \hbox (123.1141pt too wide) in paragraph at lines 112--116
 []\OT1/bch/m/n/10.95 where \OT1/cmtt/m/n/10.95 docbook.dsl \OT1/bch/m/n/10.95 i
 s one of the stylesheets from the [] (\OT1/cmtt/m/n/10.95 dsssl/docbook/print/d
 ocbook.dsl\OT1/bch/m/n/10.95 )
  []
 
 
-Overfull \hbox (51.33293pt too wide) in paragraph at lines 113--115
+Overfull \hbox (51.33293pt too wide) in paragraph at lines 117--119
 []\OT1/bch/m/n/10.95 The re-sult-ing RTF-file is com-pat-i-ble with Word-97, Wo
 rd-95 (claimed by au-thor), StarOf-fice, [] 
  []
 
 
-Overfull \hbox (57.87108pt too wide) in paragraph at lines 126--126
+Overfull \hbox (57.87108pt too wide) in paragraph at lines 130--130
 [][]\OT1/bch/m/n/9 ...their DSSSL scripts for the pur-pose avail-able on the ne
 t...-- \OT1/cmtt/m/n/9 http://www.oreilly.com/people/staff/crism/dsssl/orastyle
 /| 
@@ -700,15 +673,23 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [62]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[63]
 \openout2 = `s-sql.aux'.
 
  (s-sql.tex
-Chapter 7.
-[63
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[64
 
 
 
 ]
+Chapter 7.
+[65]
 Overfull \hbox (82.58868pt too wide) in paragraph at lines 80--85
 \OT1/bch/m/n/10.95 SQL has evolved over the years. The lat-est ANSI stan-dard i
 s SQL92, which is dis-cussed in [[]],
@@ -725,22 +706,22 @@ utorial|
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[64]
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
-[65])
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
 [66]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[67])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[68]
 \openout2 = `s-users-transparently.aux'.
 
  (s-users-transparently.tex)
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[67
+[69
 
 
 ]
@@ -750,7 +731,7 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[68
+[70
 
 
 ]
@@ -760,7 +741,7 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[69
+[71
 
 
 ]
@@ -770,13 +751,13 @@ Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[70
+[72
 
 
 
 ]
 Chapter 8.
-[71]
+[73]
 Overfull \hbox (45.88373pt too wide) in paragraph at lines 95--95
 [][]\OT1/bch/m/n/9 ...Ingress II database is in a beta stage for Linux...-- \OT
 1/cmtt/m/n/9 http://www.cai.com/products/betas/ingres[]linux/ingres[]linux.htm|
@@ -787,7 +768,7 @@ Overfull \hbox (45.88373pt too wide) in paragraph at lines 95--95
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[72]
+[74]
 Overfull \hbox (10.07382pt too wide) in paragraph at lines 126--126
 [][]\OT1/bch/m/n/9 ...Oracle vis-ited FLUG...-- \OT1/cmtt/m/n/9 http://www.flug
 .dk/pages/foredrag/tidligere[]foredrag/tidligere[]foredrag.html| 
@@ -803,11 +784,11 @@ e Stu-dio...--
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[73]
+[75]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[74]
+[76]
 Overfull \hbox (6.24863pt too wide) in paragraph at lines 246--246
 [][]\OT1/bch/m/n/9 ...``vote for the bug you want fixed''...-- \OT1/cmtt/m/n/9 
 http://developer.java.sun.com/developer/bugParade/top25bugs.html| 
@@ -826,7 +807,7 @@ Underfull \vbox (badness 1484) has occurred while \output is active []
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[75]
+[77]
 Underfull \hbox (badness 1622) in paragraph at lines 367--367
 []\OT1/bch/m/n/10.95 XT, Xerces, Co-coon, SQL2xml, val-ida-tors (er-ror re-cov-
 er-ing?), con-vert-ers to XML
@@ -836,82 +817,122 @@ er-ing?), con-vert-ers to XML
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[76])
+[78])
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[77]
+[79]
+\openout2 = `s-koncensus.aux'.
+
+ (s-koncensus.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[80
+
+
+
+]
+Chapter 9.
+
+Overfull \hbox (106.1651pt too wide) in paragraph at lines 38--38
+[][]\OT1/bch/m/n/9 ...the im-por-tance of rep-u-ta-tion in the hacker gift cul-
+ture...-- \OT1/cmtt/m/n/9 http://www.tuxedo.org/ esr/writings/homesteading/home
+steading-8.html| 
+ []
+
+[81]
+Overfull \hbox (10.65822pt too wide) in paragraph at lines 79--79
+[][]\OT1/bch/m/n/9 ...``dk.edb.programmering.perl'' mes-sage...-- \OT1/cmtt/m/n
+/9 http://www.usenet.dk/oss/dk.edb.programmering.perl/intro.txt| 
+ []
+
+
+Overfull \hbox (3.16942pt too wide) in paragraph at lines 109--111
+[]\OT1/bch/m/n/10.95 The web pages would be gen-er-ated au-to-mat-i-cally when-
+ever the un-der-ly-ing files were changed. 
+ []
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[82])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[83]
 \openout2 = `s-cactus.aux'.
 
  (s-cactus.tex
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[78
+[84
 
 
 
 ]
-Chapter 9.
-[79]
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
-[80]
 Chapter 10.
-
-Overfull \hbox (54.2715pt too wide) in paragraph at lines 139--141
-\OT1/bch/m/n/10.95 ypx is from comp.sources.misc vol-ume 40 http://ftp.lth.se/a
-rchive/usenet/comp.sources.misc/volume40/ypx/ 
- []
-
-[81
-
-]
-Overfull \hbox (147.89142pt too wide) in paragraph at lines 198--202
-\OT1/bch/m/n/10.95 more CPU-power is needed. []. 
- []
-
-
-Overfull \hbox (586.8149pt too wide) in paragraph at lines 211--212
-[][] 
- []
-
-
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
-[82]
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
-[83]
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
-[84]
-Overfull \hbox (145.66818pt too wide) in paragraph at lines 508--509
-[][] 
- []
-
-
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
-
-
 [85]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [86]
-Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+Chapter 11.
+
+Overfull \hbox (54.2715pt too wide) in paragraph at lines 141--143
+\OT1/bch/m/n/10.95 ypx is from comp.sources.misc vol-ume 40 http://ftp.lth.se/a
+rchive/usenet/comp.sources.misc/volume40/ypx/ 
+ []
+
+[87
+
+]
+Overfull \hbox (147.89142pt too wide) in paragraph at lines 200--204
+\OT1/bch/m/n/10.95 more CPU-power is needed. []. 
+ []
 
 
-[87]
+Overfull \hbox (586.8149pt too wide) in paragraph at lines 213--214
+[][] 
+ []
+
+
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
 [88]
-Overfull \hbox (22.36736pt too wide) in paragraph at lines 783--783
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[89]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[90]
+Overfull \hbox (145.66818pt too wide) in paragraph at lines 510--511
+[][] 
+ []
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[91]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[92]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[93]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[94]
+Overfull \hbox (22.36736pt too wide) in paragraph at lines 785--785
 [][]\OT1/bch/m/n/9 ...The http-accellerator mode...-- \OT1/cmtt/m/n/9 http://ww
 w.squid-cache.org/Doc/FAQ/FAQ-20.html#what-is-httpd-accelerator| 
  []
@@ -920,36 +941,30 @@ w.squid-cache.org/Doc/FAQ/FAQ-20.html#what-is-httpd-accelerator|
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[89])
+[95])
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[90]
+[96]
 \openout2 = `s-conclusion.aux'.
 
  (s-conclusion.tex
-Chapter 11.
-) [91
+Chapter 12.
+) [97
 
 
 
 ]
-\openout2 = `s-konsensus.aux'.
-
-
-No file s-konsensus.tex.
 \openout2 = `s-tex-and-latex.aux'.
 
-(s-tex-and-latex.tex
+ (s-tex-and-latex.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 4.
 )
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[92
-
-
+[98
 
 
 ]
@@ -980,7 +995,7 @@ th ``\OT1/cmtt/m/n/10.95 dvips\OT1/bch/m/n/10.95 '' and ``\OT1/cmtt/m/n/10.95 p
 stopdf\OT1/bch/m/n/10.95 '' [] 
  []
 
-[93
+[99
 
 
 
@@ -1000,7 +1015,7 @@ Overfull \hbox (63.76398pt too wide) in paragraph at lines 96--101
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[94]
+[100]
 Overfull \hbox (31.75024pt too wide) in paragraph at lines 154--158
 \OT1/bch/m/n/10.95 de-bug-ger, and in-tel-li-gent com-mands de-pend-ing on the 
 state of the files. [].
@@ -1010,7 +1025,7 @@ state of the files. [].
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[95]
+[101]
 \openout2 = `s-available-hardware-and-software.aux'.
 
  (s-available-hardware-and-software.tex
@@ -1023,20 +1038,20 @@ cmtt/m/n/9 http://developer.java.sun.com/developer/bugParade/top25bugs.html|
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[96
+[102
 
 
 ] (rapport.bbl
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[97
+[103
 
 ]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[98
+[104
 
 ]
 Underfull \hbox (badness 4391) in paragraph at lines 7--13
@@ -1066,32 +1081,72 @@ Underfull \hbox (badness 2005) in paragraph at lines 28--34
 []\OT1/bch/m/n/10.95 Michel Goosens, Se-bas-tian Rahtz, and
  []
 
-[99])
+[105])
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[100] (rapport.toc [101
+[106] (rapport.toc [107
 
 ]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[102]
+[108]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[103]
+[109]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[104]
+[110]
+Overfull \hbox (1.29184pt too wide) detected at line 125
+ []\OT1/bch/m/n/10.95 100
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 126
+ []\OT1/bch/m/n/10.95 100
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 127
+ []\OT1/bch/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 128
+ []\OT1/bch/m/n/10.95 101
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 129
+ []\OT1/bch/m/n/10.95 102
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 130
+ []\OT1/bch/m/n/10.95 102
+ []
+
+
 Overfull \hbox (1.29184pt too wide) detected at line 131
- []\OT1/bch/m/n/10.95 105
+ []\OT1/bch/m/n/10.95 102
  []
 
 
 Overfull \hbox (1.29184pt too wide) detected at line 132
- []\OT1/bch/m/n/10.95 105
+ []\OT1/bch/m/n/10.95 103
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 133
+ []\OT1/bch/m/n/10.95 111
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 134
+ []\OT1/bch/m/n/10.95 111
  []
 
 )
@@ -1102,31 +1157,28 @@ Overfull \hbox (1.29184pt too wide) detected at line 132
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[105]
+[111]
 Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-[106] (rapport.aux (s-front-matter.aux) (s-introduction.aux)
+[112] (rapport.aux (s-front-matter.aux) (s-introduction.aux)
 (s-terms-and-concepts.aux) (s-dynamically-generated-documents.aux)
 (s-sample-websites.aux) (s-xml.aux) (s-docbook.aux) (s-sql.aux)
 (s-users-transparently.aux) (s-active-and-passive-data-acquisition.aux)
 (s-search-engines-and-data-mining.aux) (s-available-technologies.aux)
-(s-cactus.aux) (s-conclusion.aux) (s-konsensus.aux) (s-tex-and-latex.aux)
+(s-koncensus.aux) (s-cactus.aux) (s-conclusion.aux) (s-tex-and-latex.aux)
 (s-report-writing-tools.aux) (s-available-hardware-and-software.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 1576 strings out of 10891
- 20448 string characters out of 97329
- 67939 words of memory out of 263001
- 4430 multiletter control sequences out of 10000+0
- 27466 words of font info for 65 fonts, out of 400000 for 1000
+ 1579 strings out of 10891
+ 20485 string characters out of 97329
+ 68979 words of memory out of 263001
+ 4431 multiletter control sequences out of 10000+0
+ 28784 words of font info for 67 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 31i,15n,40p,637b,487s stack positions out of 300i,100n,500p,50000b,4000s
+ 33i,15n,40p,637b,521s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (106 pages, 302996 bytes).
+Output written on rapport.dvi (112 pages, 313384 bytes).

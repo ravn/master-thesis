@@ -1,22 +1,142 @@
 % $Id$
 
-\section{Virtual Sample Project -- Konsensus}
+\chapter{\textit{Konsensus} -- an unimplemented collaborative OpenFAQ system}
+\label{cha:konsensus}
+
+A few years back I authored and maintained
+\myurl{http://www.fido.dk/faq}{a Unix FAQ in the Danish Fidonet},
+where I collected a lot of information and wrote a lot too myself,
+which I then formatted and made available to the community for the
+common benefit.
+
+The typical problem with a FAQ is that the maintainer must be quick to
+update with corrections when users take the time to submit them, and
+be certain to credit the users (to get the incentive for them to see
+their names listed in a community resource).  The maintainer must also
+be sure to review the contents often to ensure that the information is
+up-to-date and correct.
+
+This is a non-trivial task, and after basically giving up on the third
+rewriting of the UNIX-FAQ about halfway through, I concluded that for
+a FAQ to be truly successful a number of criteria must be met:
+
+\begin{itemize}
+
+\item \emph{The information must be current and correct}.  This is
+  what makes people use the resource in the first place.
+  
+\item 
+  \emph{The bottleneck in this system is the maintainer}.  The system
+  should allow users to help you with updating the information in the
+  FAQ!
+
+  
+\item \emph{The person providing the information must be given
+    credit}.  Credit and reputation is the mechanism that gets readers
+  to submit updates and new information.  Eric S. Raymond writes about
+  \myurl{http://www.tuxedo.org/~esr/writings/homesteading/homesteading-8.html}{the
+    importance of reputation in the hacker gift culture} in the paper
+  ``Homesteading the Noosphere''.
+\end{itemize}
+
+I was not the only one to reach such conclusions.  Thomas Boutell
+developed the \myurl{http://www.boutell.com/openfaq/source}{The
+  OpenFAQ system} which divided the FAQ into a page per question with
+the corresponding answer.  If a reader was better informed regarding
+the answer, a link was provided to a fill-out form where the updated
+information could be entered.  The finished form was then saved in the
+system, and an email sent to the FAQ maintainer so that he could check
+that the new text was suitable for updating the old text.  It was the
+maintainers responsibility to maintain the questions.
+
+Even though this approach gives the maintainer an excellent method of
+organizing responses from users, it does not help much in the
+viewpoint of the submitting reader if the maintainer takes too long to
+accept the submission.  It took three weeks for my personal
+submission to be accepted, which was plainly too long.
+
+It is very understandable that the moderator wants to see the new
+submissions before activating them, in order to avoid electronic
+grafitti and vandalism, but that requires a high degree of visibility
+of the moderator.  The site is not capable of running without
+supervision.
+
+The answer to this is to give the users access to post (after they
+have identified themselves) \textit{and} then deal with malicious
+posters when it happens.  It appears that requiring the user to
+specify a valid email address, and get login information by email, is
+sufficient to weed out most of the vandals.
+
+Recognizing this I outlined the ``Konsensus'' system which was
+intended to work in combination with a usenet autoposter for one or
+more groups.  I have been involved in starting the autoposter system
+in the Danish newsgroup, where a given newsgroup is under surveillance
+by a daemon that looks at the email address in the ``From''-field and
+checks with a database whether that address is ``new'' (has posted
+within the last 3 months or so).  If not, an email is sent to that
+address with a canned message (like the
+\myurl{http://www.usenet.dk/oss/dk.edb.programmering.perl/intro.txt}{``dk.edb.programmering.perl''
+  message} which I wrote (the Perl group has many new Perl programmers
+since many Internet Service Providers provide Perl as their
+CGI-scripting language).  This proved to be extremely efficient, since
+the regular posters \textit{knew} that the newcomers would be greeted
+with a welcoming post containing the information they needed, and
+efforts could be saved for dealing with more complicated issues.
+
+Such a welcoming message suffers from exactly the same problem as a
+FAQ, namely that it requires regular attention in order to be as
+useful as intended by the author, so I decided there was a need for a
+system which would allow the users of the newsgroup to collaborate on
+making the welcoming message as useful as possible until they reached
+a consensus (hence the name).
+
+Basically this would involve the following:
+
+\begin{itemize}
+\item The maintainer were responsible for creating, modifying and
+  deleting the questions -- as these were intended to be rather static
+  -- after discussing this either in the news group or via email
+\item The users were responsible for changing the content of each
+  page, by modifying the HTML-source of the answer part of each
+  question.
+  
+\item Each modification would be checked in to RCS, allowing any
+  reader to \textit{go back in time} to see what earlier answers held
+  instead of just having the latest edition which might not be 100
+  percent correct.  These editions would be labeled with the email
+  address of the latest editor.
+  
+\item The web pages would be generated automatically whenever the
+  underlying files were changed.
+  
+\end{itemize}
+
+This were at the time where I was evaluating which language I should
+use for implementing Cactus (see section~\vref{sec:cactus}) so I
+followed both the Java group and the Perl group carefully while doing
+so, which in particular prompted me to look for such software.  The
+problem is that in the same way that the Perl groups are bothered by
+new programmers which ask questions about webservers (and not about
+perl) and therefore belongs in another group, the Java groups are
+bothered by new programmers which ask questions about JavaScript which
+is considered HTML-programming which also belongs in another group.
+
+To make a long story short, I then discovered the
+\myurl{http://www.dartmouth.edu/~jonh/ff-serve/cache/1.html}{FAQ-O-Matic}
+which does most of what I wanted the Konsensus system to do (except
+for the RCS storage with credit), and which runs as a set of CGI
+scripts.   I installed it under Linux, played with it for a while, and
+found it to be  quite suitable for the job.
+
+As I then had decided that Perl would be the best language for the
+daemon part of Cactus due to the library support, I concentrated on
+that from that point.  The Konsensus system can be quite easily
+implemented for a given newsgroup with a FAQ-O-Matic combined with a
+usenet harvester I wrote for Cactus, but I have not actually done so,
+since the Cactus project was much more interesting.
 
 
-\begin{abstract}
-  Konsensus blablabla.
 
-  Konsensus has not been implemented due to time constraints.
-\end{abstract}
-
-\framepage{15cm}{
-  A project to implement community based OpenFAQ's, based on
-  experience with the Danish Unix FAQ for FidoNet, and the long
-  turnaround time for the OpenFAQ moderator.}
-
-Found FAQ-O-Matic which basically provided the needed functionality.
-Check if photo.net can provide similar functionality with the freely
-available services.
   
 %%% Local Variables: 
 %%% mode: latex

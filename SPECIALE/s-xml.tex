@@ -73,18 +73,24 @@ The user may freely choose override some or all of these suggestions.
 This is a radical change from the current situation where HTML allows
 an information provider to be so specific in markup that it makes it
 unusable in some browsers, and without any means for a user to specify
-otherwise.    A sample is the font size change commands, which can
+otherwise.    An example is the font size change commands, which can
 render a site totally unreadable in Netscape.
 
 Hopefully the mechanisms for user customizations will be so well
-developed when XML is commonplace in browsers and web sites, that this
-can be disabled.
+developed when XML is commonplace in browsers and web sites, that 
+users can disable this behaviour.
 
-\textsf{I expect when this happens that} a standard for XML documents
-will quickly arise, providing authors with a good way to provide much
-better markup for search engines and web crawlers.    Already now
-XML-editors are popping up everywhere --  it will be very interesting
-to see what they can do in 5 years.
+It appears to me that there will be two major uses for XML, one is for
+transporting data between applications (like a database and a
+browser), and the other will be as a media for interchanging
+information between humans.  My expectations is that a few, very well
+designed, standard XML definitions will be created and that most
+public XML documents will be written to comply with one or more of
+these standards, and web robots (like search engines and web crawlers)
+will know these standards and be able to extract meta-data from them.
+
+The initial XML-editors are already arriving.  It will be very
+exciting to see what they can do in 5 years.
 
 
 % Looking from the DocBook DTD's this \textsf{section} describes XML,
@@ -145,11 +151,10 @@ XML is a light-weight version of SGML designed to be embeddable in a
 browser.  XML-documents \textit{may} comply to a DTD, or be
 stand-alone (``DTD-less'').  XSL is used to convert a XML document
 into another XML document (XSLT) or into the generic page description
-language XSL-Formatting Objects (XSLFO).
+language XSL-Formatting Objects (XSL-FO).
 
 XHTML is a XML-version designed to be presentable by HTML-4.0
 browsers.
-
 
 \section{The author should provide content, not do layout}
 
@@ -159,15 +164,15 @@ documents.  This was because they were doing physical markup instead
 of logical markup.
 
 \begin{my-detour}
-Modern word processors have been constructed around the ``What you see
-is what you get'' paradigm, where a great deal of effort has been
+  Modern word processors have been constructed around the ``What you
+see is what you get'' paradigm, where a great deal of effort has been
 spent on allowing the user to see exactly on screen what would be
-printed on paper.   Unfortunately the limited resolution and size of a modern
-computer monitor cannot show the whole page in high resolution, and
-the user must therefore work in small ``regions'' without being able
-to see the whole page, or perhaps even several pages \textsf{A tufte
-  reference here?}.  Microsoft Word provides a draft mode where just
-the text is shown without markup;  WordPerfect provides a ``Reveal
+printed on paper.  Unfortunately the limited resolution and size of a
+modern computer monitor cannot show the whole page in high resolution,
+and the user must therefore work in small ``regions'' without being
+able to see the whole page, or perhaps even several pages \textsf{A
+tufte reference here?}.  Microsoft Word provides a draft mode where
+just the text is shown without markup; WordPerfect provides a ``Reveal
 Codes'' mode where the user can edit the text along with the tags.
 \end{my-detour}
   
@@ -811,6 +816,15 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.11  2000/04/07 21:10:47  ravn
+%
+% Opdateringer indtil 6.7 fra hjemmelaesning, og dette er praktisk taget
+% afsluttet.
+%
+% Teksten er blevet rettet til.  Afsnittet om standarder fjernet
+% (indtil videre)  og introduktionen til Let Dokumentpublicering er faldet
+% [paa plads.
+%
 % Revision 1.10  2000/03/23 15:51:07  ravn
 %
 % Rearranged a lot of stuff, and starting to fill out the stuff Immerkaer
