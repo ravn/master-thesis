@@ -74,14 +74,15 @@ in the Danish newsgroup, where a given newsgroup is under surveillance
 by a daemon that looks at the email address in the ``From''-field and
 checks with a database whether that address is ``new'' (has posted
 within the last 3 months or so).  If not, an email is sent to that
-address with a canned message (like the
+address with a canned message like the
 \myurl{http://www.usenet.dk/oss/dk.edb.programmering.perl/intro.txt}{``dk.edb.programmering.perl''
-  message} which I wrote (the Perl group has many new Perl programmers
-since many Internet Service Providers provide Perl as their
-CGI-scripting language).  This proved to be extremely efficient, since
-the regular posters \textit{knew} that the newcomers would be greeted
-with a welcoming post containing the information they needed, and
-efforts could be saved for dealing with more complicated issues.
+message}.  The need for this message is due to the fact that the Perl
+group has many new Perl programmers since many Internet Service
+Providers provide Perl as their CGI-scripting language.  This proved
+to be extremely efficient, since the regular posters \textit{knew}
+that the newcomers would be greeted with a welcoming post containing
+the information they needed, and efforts could be saved for dealing
+with more complicated issues.
 
 Such a welcoming message suffers from exactly the same problem as a
 FAQ, namely that it requires regular attention in order to be as
@@ -95,10 +96,11 @@ Basically this would involve the following:
 \begin{itemize}
 \item The maintainer were responsible for creating, modifying and
   deleting the questions -- as these were intended to be rather static
-  -- after discussing this either in the news group or via email
+  -- after discussing this either in the news group or via email.
+  
 \item The users were responsible for changing the content of each
-  page, by modifying the HTML-source of the answer part of each
-  question.
+page, by modifying the HTML-source of the answer part of each
+question.
 
 \item In addition to specifying the actual content of the individual
   answers, the online edition were to allow comments, where readers
@@ -140,7 +142,7 @@ complete implementation of the facilities I needed for Konsensus.  I
 set up \myurl{http://unixsnedkeren.dk/dk.edb.programmering.perl}{a
   FAQ-O-Matic for the Danish Perl group} (based on the existing
 automailer in April 2000 as a test -- see
-\myvref{fig:faqomatic-11}).  If this
+\myvref{fig:faqomatic-1}).  If this
 any-body-can-update-information concept work well, I will write a
 script that updates the generated mail from the submitted entries,
 allowing this document to be entirely user-supported without the need

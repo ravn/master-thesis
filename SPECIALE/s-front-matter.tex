@@ -1,45 +1,72 @@
 \maketitle
 
-\framepage{15cm}{
-  Dette dokument er under udarbejdelse.
-
-  \textsf{Al tekst i dette
-  skriftsnit er kommentarer til mig selv som jeg skal kigge p{\aa}
-  senere, og skal derfor vurderes derefter.}
-}
-\section{Abstract}
+\section*{Abstract}
 \label{sec:abstract}
 
 
 \begin{quote}
   This thesis discusses database backed websites; their current use as
-  presentation engines, construction, pros and cons, list the current
-  state of the art software, and how web sites in general function as
-  \textit{information presenters}.  Hereafter it is discussed how
-  end-users best can utilize such a system, without giving up their
-  current software, allowing such websites to be used to ease the
-  distribution of information between users, and let the web site
-  provide \textit{information sharing}.
+  presentation engines and discussion of several sample database
+  backed websites.  The weakness of the current situation is
+  discussed, as many sites today are designed for \textit{visual}
+  presentations for humans, which makes them useless in settings where
+  the visual representation is inappropriate for the recipients.  This
+  includes blind people and indexing search engines, because important
+  meta-data about the web-pages are discarded.  The expected
+  popularity of the WAP-technology hasten the need for websites where
+  the content is seperate from the layout, allowing the browsers to
+  retrieve the meta-data and content of a web page, and render it
+  according to the abilities of the recipient.
+  
+  Technologies to do so are discussed (with an emphasis on Open Source
+  implementations), and two sample systems -- \textit{Cactus} and
+  \textit{Konsensus} -- are presented, and discussed.
+  
+  Konsensus has been almost fully implemented by using existing
+  OpenSource software to allow an open group of people to maintain a
+  Frequently Asked Question document for a given subject.
 
-  as well as list my path to interest for meta-data and
-  content-descriptive languages.
-  
-  Technologies are discussed with an emphasis on Open Source software,
-  and two sample programs - ``Cactus'' and ``Consensus'' are
-  presented,  and discussed.  Cactus allows any user to do automated
-  SSP on an Intranet without a human webmaster to convert documents
-  and maintain links.  Consensus allows an open group of people to
-  maintain a set of documents on a webserver.
+  Cactus is a application framework based on a database, which can be
+  used for many purposes.  The proof-of-concept implementation
+  described here, is envisioned to be used in a small workgroup where
+  there occasionally is a need to convert documents and images due to
+  software incompatabilities with the ``outside world''.
 
-  
-  
+  The future home page of the Cactus project will be
+  \myurl{http://cactus.sourceforge.net}{cactus.sourceforge.net}.
 \end{quote}
 
-Stuff to place:  Java has unicode support, multithreads.
+
+\section*{Acknowledgements}
+
+Many people have provided inspiration, comfort, help, and much more
+for me while doing this.  I would in particular like to mention a few:
+
+\begin{description}
+\item[Astrid] -- for being a fantastic support, for being there and
+  for doing just about everything related to the real world for me
+  while writing.  I couldn't have done it without her.
+  
+\item[Laila] -- for providing feedback on several drafts on both
+  content and language, as well as
+  providing support and company.
+
+\item[Matt, Chris, Brian and Burning] -- for support and
+  company during the nights.
+  
+\item[Anders] -- For doing the figures, along with all the rest.
+  
+\item[Jan] -- for providing feedback and providing the graphic for
+  home banking.
+
+\item[Michael, Thomas, Steffen and Peter] -- for bearing with me when
+  I was ranting as well as when I was being carried away by the music.
+   They also found themselves being listeners when things went well.  
 
 
-\textbf{Note: }Framed text is unexpanded keywords which eventually
-will be replaced with prose.
+\end{description}
+
+
 
 %%% Local Variables: 
 %%% mode: latex

@@ -20,37 +20,36 @@ A level-1 auxiliary file: s-tex-and-latex.aux
 A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
-Warning--there's a number but no series in understanding-the-new-sql
 You've used 14 entries,
             2543 wiz_defined-function locations,
-            666 strings with 7699 characters,
-and the built_in function-call counts, 4130 in all, are:
-= -- 382
+            666 strings with 7786 characters,
+and the built_in function-call counts, 4119 in all, are:
+= -- 378
 > -- 134
 < -- 21
 + -- 41
 - -- 36
-* -- 222
-:= -- 701
-add.period$ -- 54
+* -- 221
+:= -- 699
+add.period$ -- 53
 call.type$ -- 14
 change.case$ -- 62
 chr.to.int$ -- 14
-cite$ -- 15
+cite$ -- 14
 duplicate$ -- 207
 empty$ -- 351
 format.name$ -- 60
-if$ -- 848
+if$ -- 844
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 22
 newline$ -- 84
 num.names$ -- 42
-pop$ -- 103
+pop$ -- 104
 preamble$ -- 1
 purify$ -- 86
 quote$ -- 0
-skip$ -- 150
+skip$ -- 152
 stack$ -- 0
 substring$ -- 103
 swap$ -- 23
@@ -58,8 +57,7 @@ text.length$ -- 21
 text.prefix$ -- 10
 top$ -- 0
 type$ -- 68
-warning$ -- 1
+warning$ -- 0
 while$ -- 30
 width$ -- 19
 write$ -- 204
-(There was 1 warning)

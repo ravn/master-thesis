@@ -13,15 +13,12 @@
      "sec:java-servlets"
      "tab:mysql-examiners"
      "fig:faqomatic-11"
-     "sec:cactus"
-     "cha:cactus"
      "sec:the-importance-of-a-web-cache")
     (TeX-run-style-hooks
      "hyperref"
      "graphicx"
      "color"
      "prettyref"
-     "fancyhdr"
      "listings"
      "moreverb"
      "verbatim"
@@ -31,10 +28,9 @@
      "fullpage"
      "charter"
      "latex2e"
-     "rep11"
-     "report"
+     "bk11"
+     "book"
      "11pt"
-     "ddraft"
      "a4paper"
      "s-mycommands"))))
 

@@ -1,16 +1,18 @@
 \chapter{Sample websites and projects}
-\framepage{15cm}{
-slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
-- oooold check on fyn, when was it first developed?), valueclick
-(banners - ask Ask for full story.  What are they running), php3
-documentation online.  photo.net (reread).  Sun's docs.sun.com
-(DocBook SGML)
 
-Talk about standard search engines on web pages.
+% \framepage{15cm}{
+% slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
+% - oooold check on fyn, when was it first developed?), valueclick
+% (banners - ask Ask for full story.  What are they running), php3
+% documentation online.  photo.net (reread).  Sun's docs.sun.com
+% (DocBook SGML)
+%
+% Talk about standard search engines on web pages.
+%
+% http://www.useit.com/alertbox/991017.html
+% }
 
-http://www.useit.com/alertbox/991017.html
-}
-
+\textsf{Beskriv projekt fra Jyllandspostudklip}
 
 \section{slashdot.org - high volume information site for nerds}
 
@@ -40,12 +42,12 @@ of articles they want to see.
 \myimage{gr/slashdot-3}{My personal page at  Slashdot}{slashdot-3}
 
 After logging in, the ``Welcome Back'' screen in
-\myvref{fig:slashdot-3} is shown.  Note that the layout has
-changed, and that I have not moderated anything.  Slashdot uses
-moderation where everybody can grade other posters comments which is
-then available to users for their selection of articles.  Personally I
-have chosen a minimum level of two, meaning that I never see anything
-from Anonymous Cowards (which improves the quality immensely).  Meta
+\myvref{fig:slashdot-3} is shown.  Note that the layout has changed,
+and that I have not moderated anything.  Slashdot uses moderation
+where everybody can grade other posters comments which is then
+available to users for their selection of articles.  Personally I have
+chosen a minimum level of two, meaning that I never see anything from
+Anonymous Cowards (which improves the quality immensely).  Meta
 moderation is intended to control the quality of the moderation, and
 is a volunteer action.
 
@@ -58,8 +60,9 @@ is a volunteer action.
 % \myimage{gr/slashdot-5}{The Slashdot start page 5}{slashdot-5}
 % \myvref{fig:slashdot-5}
 
-
-\begin{verbatim}
+\begin{figure}[htbp]
+  \begin{center}
+\begin{alltt}
 Slashdot Stats
 
 date: 2:37am 
@@ -69,17 +72,24 @@ processes: 65
 yesterday: 209994
 today: 1
 ever: 278137148
-\end{verbatim}
+\end{alltt}
+\caption{The Slashdot statistics for a day in March 2000}
+    \label{fig:slashdot-stats}
+  \end{center}
+\end{figure}
 
-Slashdot provide the ``magnet content'' Greenspun talks about.
-Stories are carefully selected, and the user may even select just a
-few categories in her personal preferences.
+Slashdot provide the ``magnet content'' discussed by Greenspun
+\cite{phillipandalexsguidetowebpublishing}.  Stories are carefully
+selected, and the user may even select just a few categories in her
+personal preferences.
 
-\textit{All} pages are dynamically generated.  The discussion forums for
-any story is active for a reasonable time, where anybody can comment
-on any other comment, and then ``frozen'' when
-the story is archived.  If a user at a later date wishes to see the
-story with the discussion, it is retreived from the backup database.
+\textit{All} pages are dynamically generated --
+\myvref{fig:slashdot-stats} lists this to be around 200,000 pages per
+day.  The discussion forums for any story is active for a reasonable
+time, where anybody can comment on any other comment, and then
+``frozen'' when the story is archived.  If a user at a later date
+wishes to see the story with the discussion, it is retreived from the
+backup database.
 
 The ``Ask Slashdot'' feature is a direct consequence of the fact that
 Slashdot is targeting power computer users.  By allowing carefully
@@ -89,7 +99,13 @@ all the answers are stored in the same way as a story.
 
 Due to the prominent position of new postings up front, many readers
 follow the given links causing the so-called \texttt{Slashdot effect}
-
+where a webserver suddenly gets a lot of simultaneous requests, which
+may overload it so much that it cannot serve all of the incoming
+requests, returning error messages.  The Slashdot Effect is
+\myurl{http://ssadler.phy.bnl.gov/adler/SDE/SlashDotEffect.html}{discussed
+in an Internet paper by Stephen Adler}.  \myvref{fig:slashdoteffect-1}
+is taken from this paper, and shows the number of requests pr second
+for the slashdotted webserver according to its own log.
 
 \myimage{gr/fiw98Zoom}{A webserver log showing the Slashdot effect --
   the red line at approximately 9088.9 shows when the announcement was
@@ -98,21 +114,23 @@ follow the given links causing the so-called \texttt{Slashdot effect}
 \section{Valueclick.com}
   
 ValueClick is one of several banner-ad sellers on the Internet.
-Banner ads are animated images which advertise for a given website.
-The advertiser pay ValueClick for a certain amount of
-``\textit{click-throughs}'' (users who actually click the image to go
-to the advertised site) as opposed to the traditional number of
-exposures.  The former is harder to track than the latter.
+Banner ads are animated images which advertise for a given website,
+and which link to the website in question.  The advertiser pay
+ValueClick for a certain amount of ``\textit{click-throughs}'' (users
+who actually click the image to go to the advertised site) as opposed
+to the traditional number of exposures.  The former is reputedly
+harder to track than the latter.
 
-ValueClick claims on their web that they send out 40 million banner
+ValueClick claims on their web site that they send out 40 million banner
 ads every day -- that is 460 ads a second -- so it is vital for
-business that the counters for each advertiser is accurately updated.
+business that the counters for each advertiser are accurately updated.
 From private email I have learned that their original NT-cluster based
 solutions were not good enough for several reasons, most notably the
 webservers having to wait for the browsers to accept every byte sent
-to them, before they could service the next.  By handling this and
-other similar problems, a single Linux based Pentium machine could
-outperform the rest of the server park.
+to them, before they could service the next user request.  Proper
+handling of this and other similar problems with OpenSource software
+allowed a single Linux based Pentium machine to outperform the rest
+of the server park.
 
 Today ValueClick is based on a large number of FreeBSD machines which
 use MySQL as their database server, and apparently works very well.
@@ -194,13 +212,11 @@ in~\cite{phillipandalexsguidetowebpublishing} this is a very efficient
 method of getting information of a very high quality, and that a
 reasonable way for him to measure the success of a page, is to compare
 the size of the original content to the size of the comments provided
-by users.  At the time of writing, this book has 9
-reviews at \textsf{amazon.co.uk}, but 198 at the mother site at
-\textsf{amazon.com}.  The corresponding HTML-pages are 22 kb (a good
-approximation of the page without comments) and 550
-kb respectively.  That is 24 times as many comments as original text.
-Not bad.
-
+by users.  At the time of writing, this book has 9 reviews at
+\texttt{amazon.co.uk}, but 198 at the mother site at
+\texttt{amazon.com}.  The corresponding HTML-pages are 22 kb (a good
+approximation of the page without comments) and 550 kb respectively.
+That is 24 times as many comments as original text.  Not bad.
 
 Amazon uses very aggressive marketing, which has caused it to be a
 well-known brand name in just a few years.  By giving money to those
@@ -362,11 +378,13 @@ frames (left side and top - the scroll bare on the right indicates the
 actual area available) leave only about 70\% of the area to the
 application itself.
 
-\myimage{gr/dsb-1}{Rejseplanen1}{dsb-1}
-
-\myimage{gr/dsb-3}{Rejseplanen3}{dsb-3}
-\myimage{gr/dsb-4}{Rejseplanen4}{dsb-4}
-\myimage{gr/dsb-5}{Rejseplanen5}{dsb-5}
+\myimage{gr/dsb-1}{Rejseplanen -- welcome page}{dsb-1}
+%\myimage{gr/dsb-2}{Rejseplanen \textsf{??}}{dsb-2}
+\myimage{gr/dsb-3}{Results for a search for a connection between
+  Odense and {\AA}rhus}{dsb-3}
+\myimage{gr/dsb-4}{More details about one of the possible journeys found}{dsb-4}
+\myimage{gr/dsb-5}{Results for a search for a connection between
+  Esbjerg and Malmparken}{dsb-5}
 
 The search returns a number of potential journeys shown in
 \myvref{fig:dsb-3}, with departure and arrival times, total
@@ -400,70 +418,95 @@ them to look in their paper copy.
 
 
 
-\section{Freshmeat.net}
-\label{sec:freshmeat.net}
+% \section{Freshmeat.net}
+% \label{sec:freshmeat.net}
+%
+% Freshmeat.net is a service for locating software.  \textsf{a lot of
+%   products.  users can announce software, and point people toward
+%   homepages and download pages.  Very nice}
+%
+%
+% \framepage{15cm}{
+% \textsf{Check if there still is companies which boost your presence on
+%   web search engines}
+%
+% \textsf{Businesses - notably in porno - discovered this and polluted
+%   their web pages with keywords to boost their chance of being
+%   returned as a result of a search.}
+%
+% \textsf{Look for statistics on search engines and ``sex'' - talk about
+%   that these businesses have a great interest in attracting you since
+%   they cannot rely on you seeing them elsewhere (like usenet spam)}
+%
+% \textsf{look for email about somebody who tried google and was pleased
+%   after being driven away from search engines.   Why does google
+%   tick?}
+% }
 
-Freshmeat.net is a service for locating software.  \textsf{a lot of
-  products.  users can announce software, and point people toward
-  homepages and download pages.  Very nice}
+\section{Searching for images - \texttt{ftpsearch.lycos.com}}
+\label{sec:searching-for-images-ftpsearch-lycos-com}
 
+\textsf{snapshot?}
 
-\framepage{15cm}{
-\textsf{Check if there still is companies which boost your presence on
-  web search engines}
+Many sites provide a ``Search the Internet'' facility, and they
+usually gather the underlying database by using \textit{spiders} to
+examine, retrieve and index all the web-pages they can.
 
-\textsf{Businesses - notably in porno - discovered this and polluted
-  their web pages with keywords to boost their chance of being
-  returned as a result of a search.}
+A few allow more than that.  An interesting by-product of the basic
+web indexing scheme is the Lycos FTP-search facility at
+\myurl{http://ftpsearch.lycos.com}{\textsf{http://ftpsearch.lycos.com}},
+which among many things allow searching for \textit{images} based on
+the filenames of the images found in web pages along with the
+surrounding text, and keywords embedded in the images.
 
-\textsf{Look for statistics on search engines and ``sex'' - talk about
-  that these businesses have a great interest in attracting you since
-  they cannot rely on you seeing them elsewhere (like usenet spam)}
-
-\textsf{look for email about somebody who tried google and was pleased
-  after being driven away from search engines.   Why does google
-  tick?}
-}
-
-\myurl{\textsf{http://ftpsearch.lycos.com}}{\texttt{ftpsearch.lycos.com}}
-is a unique service provided as a byproduct of the main search engine
-at \myurl{http://www.lycos.dk}{www.lycos.dk} where you may search for
-\textit{images} on the web.  The search engine does not look inside
-the images it finds while traversing the net, but looks at the
-filename and the context in the web page for hits.  It works
-reasonably well - most of the cactii images for my project was found
-this way.  
-
-
-\framepage{15cm}{
-\label{sec:google}
-  Search engines.  How do they do it?  www.909.dk, www.krak.dk,
-  terraserver.microsoft.com.  Encyclopedia Brittanica.
-
-  ASP+Access, tinderbox \& bugzilla, javasoft (developers area),
-  LXR+Bonsai.  ``Alle danskere paa nettet'' - Dansk Journalistforbund,
-  Pressemeddelelse. Greenspun selv?
-  }
-
-\section{The Collection of Computer Science Bibliographies}
-\myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
-
-\textsf{screen shot}
-
-This is a great web-site for scientists because in addition to the
-basic search facilities it allows you to download the BibTeX entry for
-the books and articles you find.
-
-\section{Jydske Bank}
-\label{sec:jydske-bank}
-
-\textsf{java snot banking}
-THe only java-solution for home banking.  Any comments?
+This works quite well -- most of the cactii images for my project was
+found this way.
 
 
-\section{3coms elektroniske papir}
+% \framepage{15cm}{
+% \label{sec:google}
+%   Search engines.  How do they do it?  www.909.dk, www.krak.dk,
+%   terraserver.microsoft.com.  Encyclopedia Brittanica.
+%
+%   ASP+Access, tinderbox \& bugzilla, javasoft (developers area),
+%   LXR+Bonsai.  ``Alle danskere paa nettet'' - Dansk Journalistforbund,
+%   Pressemeddelelse. Greenspun selv?
+%   }
 
-\textsf{Beskriv projekt fra Jyllandspostudklip}
+% \section{The Collection of Computer Science Bibliographies}
+% \myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
+%
+% \textsf{screen shot}
+%
+% This is a great web-site for scientists because in addition to the
+% basic search facilities it allows you to download the BibTeX entry for
+% the books and articles you find.
+
+\section{F{\ae}llesbanken}
+\label{sec:faellesbanken}
+
+\textsf{schnaps/shot}
+
+\myurl{http://www.w57.dk}{Jan Bertelsen} reports that the Home Banking
+facility provided by the Danish bank F{\ae}llesbanken is Java based,
+allowing him to use it with his Linux computer at home.  His
+experience is basically that it works well but is slow, especially
+when cryptography is used.
+
+The reported slowness is most likely due to him using the stock
+Netscape browser Java implementation, which is infamous for its
+slowness.
+
+Many people have expressed that they wanted Java based Home Banking
+since that allowed them to choose their operating system freely,
+instead of being forced to use a Microsoft product.   Several
+OS/2-users chose bank based on whether their Home Banking solution
+could run under OS/2 or OS/2's Java.  
+
+
+% \section{3coms elektroniske papir}
+
+% \textsf{Beskriv projekt fra Jyllandspostudklip}
 
 
 \section{Yggdrasil - a simple navigational framework}
@@ -548,12 +591,12 @@ search facility was provided by an \myurl{http://htdig.org}{ht://dig
 installation}, which rebuilt its database every night.
 
 
-This worked very well in the beginning but had a fatal blow when it --
-due to the price of Netscape Navigator -- was decided that the company
-was to have Microsoft Internet Explorer only.  The users were to edit
-their documents in Microsoft Word, which had very poor support for
-exporting to HTML and the facilities for uploading documents to the
-webserver was also rather tedious to use.  Users of Word could not
+This worked very well in the beginning but had a fatal blow when --
+due to the price of Netscape Navigator -- it was decided that the
+company was to use Microsoft Internet Explorer only.  The users were
+to edit their documents in Microsoft Word, which had very poor support
+for exporting to HTML and the facilities for uploading documents to
+the webserver was also rather tedious to use.  Users of Word could not
 enter the information fields recognized by Yggdrasil, making it even
 harder to publish documents.
 
@@ -579,7 +622,8 @@ upload files and provide URL's to document on the web, which is then
 converted to one of numerous formats.  The default is to autodetect
 the file type, and convert to a viewable format.
 
-
+I discovered this site so late that I did not have time to investigate
+it fully, but I find it so interesting that I wanted it to be listed here.
 
 
 

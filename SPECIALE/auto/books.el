@@ -26,5 +26,10 @@
      "goosens-rahtz-mittelbach:the-latex-graphics-companion"
      "franquin:vakse-viggo-4"
      "brooks:the-mythical-man-month"
-     "goosens-rahtz:the-latex-web-companion"))))
+     "goosens-rahtz:the-latex-web-companion"
+     "stern-maceachern:writing-apache-modules-with-perl-and-c"
+     "roelofs:png-the-definitive-guide"
+     "frisch:essential-system-administration"
+     "franquin:det-var-kattens-viggo"
+     "bedre-blanketter"))))
 

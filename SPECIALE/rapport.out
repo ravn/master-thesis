@@ -1,5 +1,4 @@
-\BOOKMARK [1]{section.0.1}{Abstract}{}
-\BOOKMARK [0]{chapter.1}{Overview}{}
+\BOOKMARK [0]{chapter.1}{Introduction}{}
 \BOOKMARK [1]{section.1.1}{What is a ``database backed webserver''?}{chapter.1}
 \BOOKMARK [1]{section.1.2}{Why use a webserver in combination with a database?}{chapter.1}
 \BOOKMARK [1]{section.1.3}{The new role of the webserver}{chapter.1}
@@ -28,28 +27,26 @@
 \BOOKMARK [1]{section.3.5}{Deja - where did Usenet go?}{chapter.3}
 \BOOKMARK [1]{section.3.6}{www.krak.dk}{chapter.3}
 \BOOKMARK [1]{section.3.7}{The Journey Planner - www.rejseplanen.dk}{chapter.3}
-\BOOKMARK [1]{section.3.8}{Freshmeat.net}{chapter.3}
-\BOOKMARK [1]{section.3.9}{The Collection of Computer Science Bibliographies}{chapter.3}
-\BOOKMARK [1]{section.3.10}{Jydske Bank}{chapter.3}
-\BOOKMARK [1]{section.3.11}{3coms elektroniske papir}{chapter.3}
-\BOOKMARK [1]{section.3.12}{Yggdrasil - a simple navigational framework}{chapter.3}
-\BOOKMARK [1]{section.3.13}{The TOM browser - converting documents online}{chapter.3}
+\BOOKMARK [1]{section.3.8}{Searching for images - ftpsearch.lycos.com}{chapter.3}
+\BOOKMARK [1]{section.3.9}{Jydske Bank}{chapter.3}
+\BOOKMARK [1]{section.3.10}{3coms elektroniske papir}{chapter.3}
+\BOOKMARK [1]{section.3.11}{Yggdrasil - a simple navigational framework}{chapter.3}
+\BOOKMARK [1]{section.3.12}{The TOM browser - converting documents online}{chapter.3}
 \BOOKMARK [0]{chapter.4}{SGML, XML and DTD's}{}
 \BOOKMARK [1]{section.4.1}{``HTML is a SGML DTD'' - the concepts}{chapter.4}
 \BOOKMARK [1]{section.4.2}{The author should provide content, not do layout}{chapter.4}
-\BOOKMARK [1]{section.4.3}{The creation of HTML}{chapter.4}
-\BOOKMARK [1]{section.4.4}{The creation of XML}{chapter.4}
-\BOOKMARK [1]{section.4.5}{XHTML - XML compliant HTML}{chapter.4}
-\BOOKMARK [1]{section.4.6}{Which dialect of SGML should be used?}{chapter.4}
-\BOOKMARK [1]{section.4.7}{How can a *ML document be viewed?}{chapter.4}
-\BOOKMARK [2]{subsection.4.7.1}{SGML style sheets}{section.4.7}
-\BOOKMARK [2]{subsection.4.7.2}{XML style sheets}{section.4.7}
-\BOOKMARK [1]{section.4.8}{Converting documents to XML}{chapter.4}
-\BOOKMARK [2]{subsection.4.8.1}{Majix - RTF/(DOC) to XML}{section.4.8}
-\BOOKMARK [2]{subsection.4.8.2}{pod2docbook - POD to XML}{section.4.8}
-\BOOKMARK [2]{subsection.4.8.3}{tex4h - convert TeX to XML}{section.4.8}
-\BOOKMARK [2]{subsection.4.8.4}{wordview with friends}{section.4.8}
-\BOOKMARK [1]{section.4.9}{Rendering HTML on the fly}{chapter.4}
+\BOOKMARK [1]{section.4.3}{Why the need for XML when HTML is available?}{chapter.4}
+\BOOKMARK [1]{section.4.4}{XHTML - XML compliant HTML}{chapter.4}
+\BOOKMARK [1]{section.4.5}{Which dialect of SGML should be used?}{chapter.4}
+\BOOKMARK [1]{section.4.6}{How can a *ML document be viewed?}{chapter.4}
+\BOOKMARK [2]{subsection.4.6.1}{SGML style sheets}{section.4.6}
+\BOOKMARK [2]{subsection.4.6.2}{XML style sheets}{section.4.6}
+\BOOKMARK [1]{section.4.7}{Converting documents to XML}{chapter.4}
+\BOOKMARK [2]{subsection.4.7.1}{Majix - RTF/(DOC) to XML}{section.4.7}
+\BOOKMARK [2]{subsection.4.7.2}{pod2docbook - POD to XML}{section.4.7}
+\BOOKMARK [2]{subsection.4.7.3}{tex4h - convert TeX to XML}{section.4.7}
+\BOOKMARK [2]{subsection.4.7.4}{wordview with friends}{section.4.7}
+\BOOKMARK [1]{section.4.8}{Rendering HTML on the fly}{chapter.4}
 \BOOKMARK [0]{chapter.5}{The DocBook and TEI DTD's}{}
 \BOOKMARK [1]{section.5.1}{DocBook considerations}{chapter.5}
 \BOOKMARK [1]{section.5.2}{TEI -- Text Encoding Initiative}{chapter.5}
@@ -94,12 +91,12 @@
 \BOOKMARK [1]{section.7.5}{XML utilities}{chapter.7}
 \BOOKMARK [1]{section.7.6}{PDF utilities}{chapter.7}
 \BOOKMARK [0]{chapter.8}{Konsensus -- an unimplemented collaborative OpenFAQ system}{}
-\BOOKMARK [0]{chapter.9}{Cactus - a web based document publication and data-driven conversion framework}{}
+\BOOKMARK [0]{chapter.9}{Cactus - data-driven document publication and conversion}{}
 \BOOKMARK [1]{section.9.1}{Philosophy}{chapter.9}
 \BOOKMARK [1]{section.9.2}{Cactus seen from the users perspective}{chapter.9}
 \BOOKMARK [1]{section.9.3}{Design}{chapter.9}
-\BOOKMARK [2]{subsection.9.3.1}{Data acquisition}{section.9.3}
-\BOOKMARK [2]{subsection.9.3.2}{Examining an item}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.1}{Data gathering}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.2}{Examininers}{section.9.3}
 \BOOKMARK [2]{subsection.9.3.3}{Derivers}{section.9.3}
 \BOOKMARK [2]{subsection.9.3.4}{Converters}{section.9.3}
 \BOOKMARK [2]{subsection.9.3.5}{Compressors}{section.9.3}
@@ -116,7 +113,7 @@
 \BOOKMARK [1]{section.9.9}{Daemons and SQL tables}{chapter.9}
 \BOOKMARK [0]{chapter.10}{Implementation}{}
 \BOOKMARK [2]{subsection.10.0.1}{Hardware/software considerations}{section.9.9}
-\BOOKMARK [2]{subsection.10.0.2}{Data acquisition}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.2}{Data gatherping}{section.9.9}
 \BOOKMARK [2]{subsection.10.0.3}{Derivers}{section.9.9}
 \BOOKMARK [2]{subsection.10.0.4}{Converters}{section.9.9}
 \BOOKMARK [2]{subsection.10.0.5}{Examiners}{section.9.9}
@@ -127,7 +124,10 @@
 \BOOKMARK [1]{section.10.1}{Why the name Cactus?}{chapter.10}
 \BOOKMARK [1]{section.10.2}{The design of Cactus}{chapter.10}
 \BOOKMARK [1]{section.10.3}{Overview}{chapter.10}
-\BOOKMARK [0]{chapter.11}{Cactus - sample set of filters}{}
+\BOOKMARK [0]{chapter.11}{Cactus - sample filter sets}{}
+\BOOKMARK [1]{section.11.1}{Network Adobe Acrobat PDF-printer}{chapter.11}
+\BOOKMARK [1]{section.11.2}{Image conversion}{chapter.11}
+\BOOKMARK [1]{section.11.3}{XML publishing}{chapter.11}
 \BOOKMARK [0]{chapter.12}{Cactus - possible candidates for filters}{}
 \BOOKMARK [1]{section.12.1}{Background}{chapter.12}
 \BOOKMARK [2]{subsection.12.1.1}{System description}{section.12.1}

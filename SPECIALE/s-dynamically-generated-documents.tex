@@ -38,12 +38,12 @@ Such simple web servers still exist - for example
 unmaintained since 1996 -- NCSA recommend that the Apache server
 should be used instead).  Even so
 \myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February 2000
-  Netcraft survey} reported that 17172 NCSA servers were active, and
+  Netcraft survey} reported that 17,172 NCSA servers were active, and
 could be reached from Netcraft.
 
 In August 1995 the number of
 \myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
-  running the NSCA server was 10835}, meaning that number has
+  running the NSCA server was 10,835}, meaning that number has
 increased slightly in that period.  For comparison the total number of
 public webservers on the Internet in the same period grew from 19
 thousand to 11 million, with Apache and Microsoft Internet Information
@@ -73,15 +73,15 @@ relatives.
 On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a
 \textit{lot} of files every day.  On March 14 2000
 \myurl{http://www.emsphone.com/stats/cdrom.html}{the transfer
-  statistics} said that the average output that day was 79.3 Mbit/s
+statistics} said that the average output that day was 79.3 Mbit/s
 (with a peak of 95.8 Mbit/s).  The average output on a yearly basis
 was 86.2 Mbit/s (which is 933 Gb/day in average).
 \myurl{ftp://ftp.cdrom.com/.message}{This single machine runs FreeBSD}
-(see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).
-Since an ftp-session has a notably larger overhead than an
-http-session (since an ftp-session includes that the \texttt{ftp}-user
-does a login to the system), it is not unreasonable to expect similar
-performance from a suitably tuned web-server serving static files.
+(see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).  As
+an ftp-session includes that the \texttt{ftp}-user does a login to the
+system, it needs more system resources than a http-request, and it is
+therefore not unreasonable to expect similar or better performance
+from a suitably tuned web-server serving static files.
 
 
 \subsection{CGI-scripts}
@@ -104,7 +104,7 @@ demonstrations of dynamically generated images was the
 \myvref{fig:xerox-1}) which allowed the user to navigate a
 virtual atlas, where each ``window'' to the map was generated on
 demand.  This initial quick hack has since been superseded by
-professional map companies which produce maps of an uneven quality on
+professional map companies which produce maps of a varying quality on
 demand, like \myurl{http://maps.yahoo.com/py/maps.py}{Yahoo Maps} (USA
 only) and \myurl{http://www.mapquest.com}{MapQuest} (covers Europe
 too).
@@ -112,7 +112,7 @@ too).
 
 % \textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
 
-There is several problems with CGI-scripts:
+There are several problems with CGI-scripts:
 
 \begin{itemize}
 \item \textbf{Scripts run as subprocesses} -- the script is executed
@@ -124,18 +124,18 @@ There is several problems with CGI-scripts:
   
   This has been addressed with the development of \textit{safe
     languages} where the execution environment is guaranteed that the
-  CGI-script is confined to a restricted area where it cannot do any
-    damage (a so-called \textit{sandbox}).
+    CGI-script process is confined to a restricted area where it
+    cannot do any damage (a so-called \textit{sandbox}).
 
 \item \textbf{Incompatible platforms} -- the CGI-programmer may not
   have access to a C-compiler which can generate binary code for the
   machine running the webserver.
 
-  This has caused interpreted languages like Perl to be very popular.
-  Perl programs can be run immediately on a given platform without
-  needing to be recompiled, and are for most purposes as fast as the
-  equivalent programs written in \texttt{C} or \texttt{C++},
-  especially for users with slow modems.
+  This has caused interpreted and easily extendable languages like
+  Perl to be very popular.  Perl programs can be run immediately on a
+  given platform without needing to be recompiled, and are for most
+  purposes as fast as the equivalent programs written in \texttt{C} or
+  \texttt{C++}, especially for users with slow modems.
   
   Recently Java Servlets (see \myvref{sec:java-servlets}) have
   appeared as a popular and well-supported alternative to CGI-scripts,
@@ -154,14 +154,14 @@ There is several problems with CGI-scripts:
 
 \end{itemize}
 
-Several solutions to the above problems have emerged.  Of these, Java
-Servlets are discussed in \myvref{sec:CGI-servlets}, PHP3
-scripts in \myvref{sec:CGI-php3}, and Perl (with the mod\_perl
-acceleration module) in \myvref{sec:CGI-modperl}).
+% Several solutions to the above problems have emerged.  Of these, Java
+% Servlets are discussed in \myvref{sec:CGI-servlets}, PHP3
+% scripts in \myvref{sec:CGI-php3}, and Perl (with the mod\_perl
+% acceleration module) in \myvref{sec:CGI-modperl}).
 
 Server side scripting never really took off before the PHP3 and ASP
 languages provided \textit{persistent connections} to database
-servers, which was unavailable to the standard CGI-scripts.
+servers, which was unavailable to the standard CGI-scripts.  
 
 Persistent connections provide a real performance boost!  Database
 connections are notoriously expensive in time and processing power to
@@ -171,8 +171,9 @@ for ASP-scripts - retain the particular database connection for the
 session) was extremely beneficial.  The PHP3 and ASP languages are not
 very complicated, and it is very easy to switch between HTML and
 program code.  Additionally it was not necessary to ask a webmaster to
-install new versions, meaning that the ability to create dynamically
-generate webpages suddenly became available to everyone.
+install new versions -- you just put a suitably named file along with
+your html-files -- so the ability to create dynamically generate
+webpages suddenly became available to everyone.
 
 
 \section{When a site grows, it becomes hard to maintain}
@@ -188,7 +189,7 @@ has grown way beyond what they originally expected, and that
   non-trivial task
 \item The information tree described by the links is very difficult to
   change, since all links must be checked and potentially changed.
-\item When pages are moved or deleted, it becomes difficult to ensure
+\item When pages are moved or deleted, it becomes difficult to check
   that all links pointing to these pages are dealt with appropriately.
   \myurl{http://www.useit.com/alertbox/980614.html}{Jakob Nielsen}
   uses the term \textit{linkrot} to describe web sites with many
@@ -209,10 +210,10 @@ The list is endless.
   bar and the logo was added automatically by a script by
   Tobias Bardino.}{flug-1}
 
-One of the easiest things to automate for a webmaster is the insertion
-of a few snippets of HTML in each web page to give a characteristic
-site layout.  This relieves the webmaster of the tedious task of
-updating all the HTML-documents on the site manually.
+An easy thing to automate for a webmaster is the insertion of a few
+snippets of HTML in each web page to give a characteristic site
+layout.  This relieves the webmaster of the tedious task of updating
+all the HTML-documents on the site manually.
 
 \myvref{fig:flug-1} show a sample page from the
 \myurl{http://www.flug.dk}{Fyns GNU/Linux User Group web-site},
@@ -232,10 +233,10 @@ times of the files, since failing to do so invalidates local copies in
 browsers and webcaches, even though that the contents of the pages is
 unchanged as such.  (Modern webservers allow a webpage to include
 other files with
-\myurl{http://www.apache.org/docs/mod/mod\_include.html}{Server Side
-  Includes}, which takes care of all this - except doing it
-unconditionally on every page.  The user must still remember to insert
-the appropriate command sequence in the server).
+\myurl{http://www.apache.org/docs/mod/mod_include.html}%
+{\textit{Server Side Includes}}, which takes care of all this - except
+doing it unconditionally on every page.  The user must still remember
+to insert the appropriate command sequence in the server).
 
 \myimage{gr/intel-1}{The web page for drivers for the Intel VS440FX
   motherboard}{intel-1}%
@@ -280,8 +281,8 @@ rules can be constructed to extract information from webpages, the
 basic rule is still that
 
 \begin{center}
-  \fbox{\textit{A human must enter the basic
-  information for categorizing a given webdocument}. }
+  \textit{A human must enter the basic
+  information for categorizing a given web document}.
 \end{center}
 
 Computers are simply not good enough yet to guess this information
@@ -300,8 +301,8 @@ It didn't take long for web authors (especially those with adult
 material) to realize that the best way to get their web pages
 frequently returned in a top position at AltaVista was by putting as
 many potential search terms in META-tags in each and every of their
-web pages, showing that just blindly extracting keywords
-\textit{uncrititically} is too simple a method.  Additionally this
+web pages, showing that extracting keywords blindly 
+is too simple a method.  Additionally this
 drives users away -- when they feel that they are not getting ``the
 best results'' from the search engine they will look for another one
 that can. \myurl{http://www.google.com}{The Google search engine} (see
@@ -319,8 +320,8 @@ See the result of ``background icons'' in
 \myvref{fig:alltheweb-2} and what the fifteenth hit actually
 linked to in \myvref{fig:alltheweb-1}. This link was
 chosen because the site \textit{expects} the user to have
-arrived from a search on these two terms.
-
+arrived from a search on these two terms, and even explicitly 
+says so in \myvref{fig:alltheweb-1}.
 
 \myimage{gr/alltheweb-2}{AllTheWeb search for ``background
   icons''.}{alltheweb-2}
@@ -348,8 +349,8 @@ meta-data which has been automatically extracted, is the MIP
 ``Recently Changed Pages'' (see \myvref{fig:mip-1}) the
 original version of which I wrote while working for MIP.
 The script traverses three separate set of web pages on the
-server - System pages, System Administrator pages and User
-pages (one set per user) - and generates a list for each set
+server -- System pages, System Administrator pages and User
+pages (one set per user) -- and generates a list for each set
 sorted by title.  Each file listed has its age in days next
 to it.
 
@@ -383,7 +384,7 @@ processes is correct and up-to-date.
 Such an effort requires that the data is much more systematically
 organized than they are today, including better mark-up.  I have not
 seen any site on the Internet yet, which is capable of
-\textit{categorizing} the content of the Internet.
+\textit{categorizing} the content of the Internet properly.
 
 The \textit{Yggdrasil} system (see
 \myvref{sec:yggdrasil}) was my first attempt to
@@ -411,15 +412,14 @@ small amount of meta-information available in consideration.
 \myimage{gr/yahoo-1}{The British Yahoo site.}{yahoo-1}
 
 An example of a good site built with meta-information is
-\myurl{http://www.yahoo.com}{Yahoo} (see
-\myvref{fig:yahoo-1}) which started as a directory over
-web pages where the maintainers added meta-data to a lot of
-web-sites by categorizing them manually, and use this
-information to regularily generate static navigational
-pages.  At a time Yahoo really suffered by a lot of broken
-links as the meta-data was not maintained, but today Yahoo
-usually links to a page that \textit{is} there (by verifying
-that a target page existed).
+\myurl{http://www.yahoo.com}{Yahoo} (see \myvref{fig:yahoo-1} for the
+British edition) which started as a directory over web pages where the
+maintainers added meta-data to a lot of web-sites by categorizing them
+manually, and use this information to regularily generate static
+navigational pages.  At a time Yahoo really suffered by a lot of
+broken links as the meta-data was not maintained, but today Yahoo
+actively verifies that the target links exist and remove those that
+doesn't.
 
 
 \section{Documentation - meta-data of programs}
@@ -432,7 +432,8 @@ that a target page existed).
   incentive toward proper maintenance, and an insurance that the
   documentation will always be handy to the program user.  Such
   programs are called
-  \textit{self-documenting}}{\cite{brooks:the-mythical-man-month}}{1975}
+  \textit{self-documenting}}{Brooks:  The Mythical Man Month
+  \cite{brooks:the-mythical-man-month}}{1975}
 
 Given there is a need for meta-data about the documents, the question
 is then \textit{where} should the authors put the meta-data?
@@ -454,26 +455,28 @@ The quote above (from \cite{brooks:the-mythical-man-month}) show that
 the thought that documentation should be as close to the thing it
 documents as possible isn't new.  For programs, this means that the
 documentation should be \textit{in the same file} as the code.
-Comments are usually just that -- brief comments -- and are often
-meant to explain \textit{what} the code does instead of \textit{why}?
-The abstraction level is not high enough in the traditional comments.
+Traditional comments are usually just that -- brief comments -- and
+are often meant to clarify \textit{what} the code does instead of
+\textit{why}?  The abstraction level is not high enough in the
+traditional comments in most programming languages.
 
 Andrew S. Tanenbaum writes excellent books about Computer Science, and
-his Operating Systems book \cite{tanenbaumoperatingsystems} contains
-the complete source listing with line numbers of his Minix operating
-system, along with a cross-reference of all identifiers.  That was the
-best the printing industry could do in 1987 (and is typical for
-several other printed versions of source code), and that was not good
-enough for teaching.  It is very hard to get a grasp of what the code
-does, without long and careful studies, and much flapping back and
-forth.  My guess is that today Tanenbaum would write a hyperlinked
-book readable in a browser, perhaps even using Literate
-Programming techniques (these are discussed in
-\myvref{sec:literate-programming}).  The only other publicized
-works of large programs I know of are the books by Knuth about {\TeX}
-and the PGP 5.0 source code (which was not printed for humans to read,
-but in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan
-  the PGP source to circumvent the USA crypto export regulations}).
+his \textit{Operating Systems} book \cite{tanenbaumoperatingsystems}
+contains the complete source listing with line numbers of his Minix
+operating system, along with a cross-reference of all identifiers.
+That was the best the printing industry could do in 1987 (and is
+typical for several other printed versions of source code), which my
+personal experience as the student instructor in the operating systems
+course showed not to be good enough for teaching.  It is very hard to
+get a grasp of what the code does, without long and careful studies,
+and much flapping back and forth.  My guess is that today Tanenbaum
+would write a hyperlinked book readable in a browser, perhaps even
+using Literate Programming techniques (these are discussed in
+\myvref{sec:literate-programming}).  The only other publicized works
+of large programs I know of are the books by Knuth about {\TeX} and
+the PGP 5.0 source code (which was not printed for humans to read, but
+in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan the
+PGP source to circumvent the USA cryptographic export regulations}).
 
 The great news is that the industry recognizes the
 usefulness of documentation on the web, and the need for
@@ -553,7 +556,8 @@ available \myurl{http://www.cpan.org}{documentation for
 allows you -- with very elementary mark up -- to put
 documentation and code in the same file, and you may leave
 out either one.  \myvref{fig:sample-pod-file} is the
-actual POD-file (marked up by \LaTeX) and
+actual POD-file, where only the lines 1-2 and 8-11 are executable
+code, the other POD-fragments are ignored by the interpreter.
 \myvref{fig:pod-sample-1} show the HTML-version as
 rendered by a browser.
 
@@ -564,9 +568,9 @@ All the info-files at
 website for my small firm) have been written as POD files,
 and converted to HTML, with some finishing touches done with
 another Perlscript which has been evolved from
-\myurl{http://www.fido.dk/faq/unix-faq/unix\_r23.htm}{several
-  previous projects}.  Code truly lives forever, even though
-it is very difficult to locate the start and end tags of a
+\myurl{http://www.fido.dk/faq/unix-faq/unix_r23.htm}%
+several of my previous projects.  Code truly lives forever, even
+though it is very difficult to locate the start and end tags of a
 given HTML-construction without parsing the whole file.
 
 Due to this and all the rest of the \textit{ad hoc} code in both
@@ -605,43 +609,30 @@ Programming}.
 
 Donald E. Knuth has written the {\TeX}-system used to typeset this
 report, and documented it by publishing the source code to the entire
-system in four books.  The {\TeX}-system has impressed since it is of
-an extremely high quality, both in code and documentation, and
-he \myurl{http://truetex.com/knuthchk.htm}{actually offers money to those
-  who find errors in his code}.
+system in four books.  The {\TeX}-system is of an extremely high
+quality, both in code and documentation, and he
+\myurl{http://truetex.com/knuthchk.htm}{actually offers money to those
+who find errors in his code}.
 
 In order to write both documentation and code of such high quality,
 Knuth developed his own method of coding which he named ``Literate
-Programming'', in which the author works with a single file containing
-the documentation \textit{as it is to be presented to the
-  reader}.  Knuth uses a {\TeX}-dialect, in which he
-explains his solution to a given problem, and all code is
-provided as small \textit{chunks} with a name.   All chunks
-with the same name are concatenated in a single chunk, which
-is then inserted whenever that name is used.
+Programming'', in which the author works with a single document
+containing the documentation \textit{as it is to be presented to the
+reader}.  Knuth uses a {\TeX}-dialect, in which he explains his
+solution to a given problem, and all code is provided as small
+\textit{chunks} with a name which may include references to other
+chunks.  All chunks with the same name are concatenated in a single
+chunk, which is then inserted whenever that name is used.
 
 This file format is the \texttt{web}-format!  This way of
 programming is discussed in detail
 in~\cite{sewell:weaving-a-program}, and a lot of references
 are available on
 \myurl{http://www.literateprograming.org}{literateprograming.org}.
-A web-program can be processed in two ways:
 
-\begin{itemize}
-\item
-The \texttt{weave} tool converts the web-file to a \texttt{tex}-file
-to be processed by {\TeX}, and printed.
-
-\item The \texttt{tangle} tool generates the actual code to be
-compiled, by joining chunks with the same name, and inserting them in
-other chunks that reference them (a simple macro expansion),
-eventually producing one or more flat files which can be compiled,
-along with information links each code chunk back to the original web document.
-
-\end{itemize}
-
+\begin{figure}[htbp]
+  \begin{center}
 \begin{verbatim}
-
               sample.web
                 /   \
                /     \
@@ -656,7 +647,26 @@ along with information links each code chunk back to the original web document.
                          |
                       executable
 \end{verbatim}
+    \caption{The possible pathways with \texttt{web}}
+    \label{fig:web-pathways}
+  \end{center}
+\end{figure}
 
+
+A web-program can be processed in two ways [see \myvref{fig:web-pathways}]:
+
+\begin{itemize}
+\item
+The \texttt{weave} tool converts the web-file to a \texttt{tex}-file
+to be processed by {\TeX}, and printed.
+
+\item The \texttt{tangle} tool generates the actual code to be
+compiled, by joining chunks with the same name, and inserting them in
+other chunks that reference them (a simple macro expansion),
+eventually producing one or more flat files which can be compiled,
+along with information links each code chunk back to the original web document.
+
+\end{itemize}
 The problem with Knuth is that things that work well for him, does not
 always work quite as well for the rest of us.  No editors - not even
 Emacs - are currently capable of helping where a given file is
@@ -711,11 +721,13 @@ My personal experiences with Literate Programs can be summarized as:
   model since the IDE does not provide hooks to provide this
   processing.
 
-\item A critical point is whether the intermediate files are visible
-  to the author! In order to be usable, \textit{all} derived files
+\item
+
+  A critical point is whether the intermediate files are visible to
+  the author! In order to be usable, \textit{all} derived files
   \textit{must} refer to the original document in a transparent
   fashion, meaning that the user should not have to worry about
-  intermediate files.  (In the same way that the C-processor works
+  intermediate files.  (In the same way that the C preprocessor works
   under Unix).
 \end{itemize}
 
@@ -734,7 +746,7 @@ do software development.
 Rational Rose provides for a lot of things relevant to a large
 software project like reverse engineering of existing code, but also
 for
-\myurl{http://www.rational.com/sitewide/support/whitepapers/dynamic.jtmpl?doc\_key=350}{several
+\myurl{http://www.rational.com/sitewide/support/whitepapers/dynamic.jtmpl?doc_key=350}{several
   views of the document} depending on what abstraction level the
 authors are working on.  In this way they are able to provide the
 author an environment where the software model can be designed
@@ -972,10 +984,25 @@ fulfilled.
 
 
 
-\section{Small search engines for a web site}
-\label{sec:search-engines}
+% \section{Small search engines for a web site}
+% \label{sec:search-engines}
 
-\textsf{Remember something about this}
+% Every site but the smallest \textit{must} provide a searching
+% facility.  It is essential to let the users locate the information
+% they need as fast as possible, in order to leave the impression of a
+% well functioning website.  Search results must be fast and accurate!
+
+% Several options exist:
+
+% \begin{itemize}
+% \item \textbf{Utilizing a public search engine}  --
+% \end{itemize}
+
+% to give the best .  This is essenti
+% There a re several approaches to providing search facilities for a web
+% site.
+
+
 
 %%% Local Variables:
 %%% mode: latex

@@ -2,6 +2,8 @@
  (function
   (lambda ()
     (LaTeX-add-labels
+     "cha:cactus"
+     "sec:cactus"
      "sec:cactus-philosophy"
      "sec:cactus-seen-from-the-users-perspective"
      "sec:cactus-design"
@@ -10,7 +12,10 @@
      "sec:cactus-daemons-and-sql-tables"
      "sec:cactus-implementation"
      "sec:the-design-of-cactus"
-     "cha:cactus-sample-set-of-filters"
+     "cha:cactus-sample-filter-sets"
+     "sec:network-adobe-acrobat-pdf-printer"
+     "sec:image-conversion"
+     "sec:xml-publishing"
      "cha:cactus-possible-candidates-for-filters"
      "sec:cactus-choice-of-language"
      "sec:converters"

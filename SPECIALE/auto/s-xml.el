@@ -5,6 +5,9 @@
      "cha:sgml-xml-and-dtd's"
      "tab:programming-langugages-and-html"
      "tab:distribution-formats"
-     "tab:leading-xslt-processors"
+     "fig:screenshot-x-outline.xsl"
+     "fig:listing-x-outline.xsl"
+     "fig:src-public_html-incoming.xml"
+     "fig:src-public_html-incoming.xsl"
      "tab:conversion-tools-to-xml"))))
 

@@ -34,7 +34,7 @@ Jr. Frederick P.~Brooks.
 \bibitem[Gre98]{greenspun:sql-for-web-nerds}
 Phil Greenspun.
 \newblock Sql for web nerds.
-\newblock http://photo.net/sql/, 1998.
+\newblock \protect{\url{http://photo.net/sql/}{photo.net/sql}}, 1998.
 \newblock Excellent introductory text to SQL.
 
 \bibitem[Gre99]{phillipandalexsguidetowebpublishing}
@@ -43,6 +43,7 @@ Phillip Greenspun.
   1-55860-534-7.
 \newblock Morgan Kaufmann Publishers, Inc, 1999.
 \newblock An excellent guide to running websites seen from an OpenSource view.
+  Available online at \url{http://photo.net}{photo.net}.
 
 \bibitem[Hof79]{goedelescherbach}
 Douglas Hofstadter.
@@ -70,9 +71,9 @@ Donald~E. Knuth.
 
 \bibitem[MS97]{understanding-the-new-sql}
 Jim Melton and Alan~R. Simon.
-\newblock {\em Understanding the New SQL: A Complete Guide}.
-\newblock Number ISBN 1-55860-245-3. Morgan Kaufmann Publishers, San Francisco,
-  California, 1997.
+\newblock {\em Understanding the New SQL: A Complete Guide}, volume ISBN
+  1-55860-245-3.
+\newblock Morgan Kaufmann Publishers, San Francisco, California, 1997.
 \newblock A good introduction and reference to SQL-92. Defines the requirements
   for the various levels of SQL 92 compliancy .
 

@@ -8,9 +8,9 @@
 
 
 
-%\documentclass[11pt,draft,a4paper]{book}
-\documentclass[11pt,ddraft,a4paper]{report}
-
+\documentclass[11pt,a4paper]{book}
+%\documentclass[11pt,ddraft,a4paper]{report}
+%
 % black magic to make footnotes not reset at chapters 
 \makeatletter
 \@addtoreset{footnote}{nosuchtag}
@@ -39,7 +39,7 @@
 \usepackage{moreverb}
 \usepackage{listings}
 %\usepackage{listing}
-\usepackage{fancyhdr}           % provide headers where I can put the
+%\usepackage{fancyhdr}           % provide headers where I can put the
                                 % filenames.
 \usepackage{prettyref}
 \usepackage[usenames]{color}
@@ -64,7 +64,7 @@
   bookmarks,bookmarksopen={false},
   pdfstartview={FitH},
   breaklinks=true,
-  colorlinks,linkcolor={black},citecolor={magenta},
+  colorlinks,linkcolor={blue},citecolor={magenta},
   urlcolor={blue}
 ]{hyperref}
 %\RequirePackage[hyperindex,colorlinks,backref,pdfmark]{hyperref}
@@ -78,22 +78,26 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{Thorbj{\o}rn Ravn Andersen}
+\author{Thorbj{\o}rn Ravn Andersen -- \href{mailto:ravn\@mip.sdu.dk}{ravn@mip.sdu.dk}}
 
 \title{{\Huge \textbf{Web based information systemes}}\\
-  Dynamic Webpublishing with XML\\ 
-  \textit{D R A F T -- $ $Revision$ $}} % Math hack for RCS
+  Dynamic Webpublishing with XML}
+%  \textit{D R A F T -- $ $Revision$ $}} % Math hack for RCS
 
 \bibliographystyle{alpha}
 %\bibliographystyle{plainnat}
 
 % While writing - this provides fileinformation on includes
-\lhead{\currentinputfile}
-\pagestyle{fancy}
+%\lhead{\currentinputfile}
+%\pagestyle{fancy}
 %
 % allow C-c C-f C-f to be easy shortcut to standout text
 %\renewcommand{\textsl}[1]{\colorbox{black}{{\textcolor{white}#1}}}
 \renewcommand{\textsf}[1]{\fbox{{\sl{#1}}}}
+
+% Remove confusion about _ in url's by declaring them normal
+% characters.  
+\catcode`\_\active\def_{\string_}%
 
 % End.
 
@@ -151,17 +155,17 @@ Full reference with a lot of annotated URL's.
 \label{sec:java-servlets}
 \label{tab:mysql-examiners}
 \label{fig:faqomatic-11}
-\label{sec:cactus}
-\label{cha:cactus}
+% \label{sec:cactus}
+% \label{cha:cactus}
 
 \section{The importance of a web cache}
 \label{sec:the-importance-of-a-web-cache}
 
-A database query is expensive, and it requires an expert to tune the
-database to run as fast as possible.  It is not, however, always
-necessary to have the webserver do a database query to serve a page -
-often the generated page is valid for a short or long term period,
-and then it is relatively easy to cache the page for this period.
+% A database query is expensive, and it requires an expert to tune the
+% database to run as fast as possible.  It is not, however, always
+% necessary to have the webserver do a database query to serve a page -
+% often the generated page is valid for a short or long term period,
+% and then it is relatively easy to cache the page for this period.
 
 Here is one way to do it:
 
