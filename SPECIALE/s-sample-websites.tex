@@ -1,0 +1,259 @@
+\section{Sample websites}
+\framepage{15cm}{
+slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
+- oooold check on fyn, when was it first developed?), valueclick
+(banners - ask Ask for full story.  What are they running), php3
+documentation online.  photo.net (reread).  Sun's docs.sun.com
+(DocBook SGML)
+
+Talk about standard search engines on web pages.
+}
+
+
+\subsection{slashdot.org - high volume information site for nerds}
+\framepage{15cm}{
+
+Describe setup.  Describe flow, and the slashdot effect.  What
+hardware/software.
+}
+
+\subsection{Valueclick.com}
+\framepage{15cm}{
+
+Banner provider.  Interview Ask for details, about how the NT-cluster
+was replaced with a small Linuxbox with MySQL and a squid in
+http-accelleration mode.  Explain the problems with having fat
+processes serving slow modems.
+}
+\subsection{Politiken}
+\framepage{15cm}{
+
+Talk with Lars.  Politiken genrates their pages on the fly.
+}
+
+\subsection{Amazon - an Internet bookstore}
+\label{sec:amazon-an-internet-bookstore}
+
+The \myurl{http://www.amazon.co.uk}{Amazon Internet bookstore}
+pioneered the virtual Internet bookstore, where the potential buyers
+use their browser to see the virtual inventory of literally millions
+of books, and order their selections.  These are processed by Amazon
+and forwarded to subcontracters who deliver the purchased goods by
+mail to the buyers.  The concept has since been copied \textsf{by
+  several others}.  
+
+\myimage{gr/amazon-1}{The frontpage of Amazon.co.uk.  An ISBN-number
+  has been entered in the very prominent search box}{amazon-1}
+
+The Amazon frontpage is shown in figure~\vref{fig:amazon-1}.  Note the
+high amount of potentially interesting links, and the prominently
+placed search box.  Due to the limited domain of books, the search
+engine can make assumptions about what the user is requesting
+information about.  In this case a ten-digit number was entered which
+happened to be an ISBN-number, which in most other search engines
+should have been entered as ``ISBN-1-55860-5347'', and the page for
+the corresponding book was returned (see figure~\vref{fig:amazon-2}).
+
+\myimage{gr/amazon-2}{The result of the search in figure~\vref{fig:amazon-1}}{amazon-2}
+
+This page shows the essential information like author, price, and the
+number of pages, but also an image of the cover, the rank on the
+Amazon sales list, and a direct link to purchase the book (Amazon
+remembers your credit card information, allowing for their patented
+``One-click-purchase'' technology).  What makes the Amazon web page
+truly better that a printed catalogue is that the users are encouraged
+to submit feedback, and the information Amazon collects from online
+sales.  These features are important for Amazon:
+
+\begin{itemize}
+\item \textbf{Average customer rating} - this is the essence of all
+  the reviewers opinions, on a scale from 0 to 5.
+\item \textbf{Reviews} - readers take the time to create comprehensive
+  reviews of the books, all of which Amazon then places prominently on
+  the page, with due credit to the individual author.   Recently a
+  ``Was this review helpful to you?'' button was added to each review,
+  and the result of each poll is shown along with the review, giving
+  the content more value.
+\item \textbf{Similar books} - if a previous buyer bought other books
+  along with this one, they might be interesting to this person too.
+  Links are presented to those books, as well as to the general
+  categories this book was placed in by the Amazon librarian.
+
+\item \textbf{Expected content} - Amazon can be expected to have
+  \textit{any} English book in their database.  Users expect to be
+  able to find a given book in the Amazon database, and usually do.
+  Personally I have never looked in vain at Amazon for English books.
+\end{itemize}
+
+Amazon explicitely invites those who read the page to review it, with
+special treatment for the author and the publisher.  \textsf{As
+  Greenspun observes, then this is the most efficient material}.  At
+the time of writing, this book has 9 reviews at \textsf{amazon.co.uk},
+but 198 at the mother site at \textsf{amazon.com}.  The corresponding
+HTML-pages are 22 kb and 550 kb respectively, which gives an an impressive
+\textsf{Greenspun factor} (setting the UK-version to be 100\%
+\textsf{??-provider}) of 25.
+
+Conclusion:  The Amazon family of sites are very good, and do what
+they can to improve with the help of visitors.  Amazon have been able
+to keep their leader status in the virtual bookshop niche, by provide excellent
+
+
+% \subsection{The United States Library of Congress}
+% \label{sec:congress}
+
+% \textsf{CHANGED TO CATALOG.LOC.GOV - much improved...}
+
+% The \myurl{http://www.loc.gov}{United States Library of Congress} is
+% the definite place to search if you actually need a given physical
+% book.  Unfortunately their website does not help much getting it.  The
+% front page have a ``Search'' links to
+% \myurl{http://www.loc.gov/catalog/}{a page with a choice} between 
+% ``Simple Search'', and ``Advanced Search''.
+% Figure~\vref{fig:congress-1} shows the ``Simple Search'' page with the
+% title ``art of computer programming'' entered, wishing to get
+% references to the Donald Knuth tomes.  
+
+% \myimage{gr/congress-1}{The Library of Congress ``Simple Search''
+%   page}{congress-1}
+
+% The corresponding ``Advanced Search'' page is shown as
+% figure~\vref{fig:congress-2} (\textsf{compare to google} and its
+% simple syntax).  The close correspondence between the form and the
+% resulting SQL-statement, makes it difficult to use for most users.
+
+% \myimage{gr/congress-2}{The Library of Congress ``Advanced Search''
+%   page}{congress-2}
+
+% The result of the search is shown as figure~\vref{fig:congress-3}.  It
+% is very clear that the web interface calls an underlying search
+% engine, and basically submits the textual results back as a web page
+% (with a few navigational links added).
+
+% \myimage{gr/congress-3}{The result of the search in
+%   figure~\vref{fig:congress-1}}{congress-3}
+
+% \myimage{gr/congress-4}{``More on this record'' for record 1 in figure
+%   ~\vref{fig:congress-3}}{congress-4}
+
+% Figure~\vref{fig:congress-4} shows the expanded view of the first
+% record.  The web page is again pure text with a few annotations which
+% deals with presentation only, meaning that this is web-wise a dead
+% end.  The similarity to the original Odin-WWW interface written around
+% 1996 is stunning (Odin was upgraded December 1999 so a screen shot
+% cannot be shown), and is a clear indication of how fast the
+% expectations regarding the facilities of a given website have changed.
+
+% Conclusion:  This is clearly not a top priority for the Library of Congress
+
+
+\subsection{www.krak.dk}
+
+The Danish map manufacturer \myurl{http://www.krak.dk}{Krak A/S} has
+a reputation of being the definite guide on maps, especially on
+driving maps in Copenhagen.  Their website have been up for about two
+years now, and have been steadily improved with new facilities and
+cross-references.  The start page is shown in figure~\vref{fig:krak-1},
+and is seperated in two parts; namely white pages (phone number
+based), and pink pages (company based).
+
+\myimage{gr/krak-1}{Welcome page (and search form) for www.krak.dk}{krak-1}
+
+The fields in the white page section are Name, Road, House number, Zip
+code, City and Phonenumber.  The fields in the pink page section are
+Company and Phonenumber.  The form has been filled out with a search request
+for ``Odense Universitet'', and the results are shown in
+figure~\vref{fig:krak-2}. 
+
+\myimage{gr/krak-2}{Result of searching for ``Odense University''}{krak-2}
+
+Each line containing an answer may have icons referencing
+to facilities regarding the location of the answer.  These answers
+have pointers to 
+Rejseplanen, the Route Planner, and a map reference.  Additionally
+pointers to a web page, and an email address could have been provided
+by the users.  Clicking the map icon of the first line actually
+referring to Odense University brings us to figure~\vref{fig:krak-3}.
+
+\myimage{gr/krak-3}{Following the map icon for the first ``Odense
+  University'' reference}{krak-3}
+
+The blue dot usually indicates the location of the address in
+question, but in this case it is a bit off (the University is located
+500 meters further to the south).  When a map is display, the
+navigation area below the image allows for zooming and moving the
+contents of the shown area.  By selecting ``Zoom out'' and ``x8'' a
+new map is shown (see figure~\vref{fig:krak-4}), where it is evident
+that the database show a great deal of detail.  Roads, residential
+areas, streams, train stations, the motor way and green areas are
+shown.  These maps provide a level of information corresponding to
+Krak's printed maps.
+
+\myimage{gr/krak-4}{The map in figure~\vref{fig:krak-3} zoomed out
+  with a factor 8}{krak-4}
+
+Now go back to the list of results from the search for ``Odense
+University''.  The Car-icon gives a route to the listed location,
+where you must fill in the source yourself.  Figure~\vref{fig:krak-5a}
+show the form filled in with my own address and the address of the
+university, and ``Route on map'' (Rute på kort) gives a visual route
+between the two locations.
+
+\myimage{gr/krak-5a}{???????????????????????
+  University'' reference}{krak-5a}
+
+This map is shown in figure~\vref{fig:krak-5b}, and is perfectly
+adequate for a person driving a car.  For cyclists it is often a good
+idea to look for short-cuts, if you are well known in the area.
+
+\myimage{gr/krak-5b}{???????????????????????
+  University'' reference}{krak-5b}
+
+If you need step-by-step directions, Krak can provide that too.
+Select the ``\textsf{???}'' button and print out the directions.
+
+\myimage{gr/krak-6}{???????????????????????
+  University'' reference}{krak-6}
+
+
+\framepage{15cm}{ Necessary to do rendering according to
+  requests.  Cannot be predicted reasonably.  What have been done?
+  How does it work?  What about }
+\subsection{rejseplanen.dk}
+
+\subsection{www.rejseplanen.dk}
+\label{sec:www.rejseplanen.dk}
+
+
+\subsection{Freshmeat.net}
+\label{sec:freshmeat.net}
+
+\subsection{Google/Altavista}
+
+\framepage{15cm}{
+  Search engines.  How do they do it?  www.909.dk, www.krak.dk,
+  terraserver.microsoft.com.  Encyclopedia Brittanica.
+
+  ASP+Access, tinderbox \& bugzilla, javasoft (developers area),
+  LXR+Bonsai.  ``Alle danskere paa nettet'' - Dansk Journalistforbund,
+  Pressemeddelelse. Greenspun selv?
+  }
+
+\subsection{The Collection of Computer Science Bibliographies}
+\myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
+
+
+
+\subsection{Cactus -- document capture and conversion}
+
+\framepage{15cm}{
+Two out of four methods are implemented (email, printer).  (Increase
+blob limit in DBI::MySQL).  Sample PDF viewer, perhaps simple XLS viewer.
+
+Demonstrate that Cocoon can provide the navigational framework.
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 

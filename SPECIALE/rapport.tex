@@ -69,7 +69,8 @@
   \begin{figure}[htbp]
     \begin{center}
       \ifx\pdfoutput\undefined
-        [Graphic: \href{#1.png}{#1}]
+%        [Graphic: \href{#1.png}{#1}]
+        \includegraphics[scale=0.4]{#1}
       \else
         \includegraphics[scale=0.4]{#1}
       \fi
@@ -422,6 +423,11 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.5  2000/03/05 02:32:16  ravn
+% Added lots of pictures with relatively little dialoue.
+%
+% Making progress.
+%
 % Revision 1.4  2000/03/04 23:52:38  ravn
 % Converted TIFF files to PNG and found out how to put them in
 % the PDF file with the \myimage command (which currently avoids the problem
