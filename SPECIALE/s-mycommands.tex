@@ -18,7 +18,9 @@
 % \myurl{http://sunsite.auc.dk}{The Danish SunSite}
 %\newcommand{\myurl}[2]{\begin{underline}{#2}\end{underline}\footnote{{#1}}}
 %\newcommand{\myurl}[2]{\href{#1}{#2}}
-\newcommand{\myurl}[2]{{#2}\footnote{\ldots{#2}\ldots -- {\tt #1}}}
+% \hfil magic by Soeren Sandmann <sandmann@daimi.au.dk>
+\newcommand{\myurl}[2]{{#2}\footnote{\ldots{#2}\ldots \hfil\penalty1000\hfilneg\hskip-5em\hbox{}\hskip5em%
+{\tt #1}}}
 
 % \tag{hr}  ->  <hr>
 \newcommand{\tag}[1]{$<$#1$>$}

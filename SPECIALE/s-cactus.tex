@@ -6,8 +6,159 @@
 %   files they can buy an upgrade }.}{William H. Gates III}{\textsf{??}}
 
 
-\chapter{Cactus - a web based document publication system}
+\chapter{Cactus - a web based document publication and conversion
+  framework}
+
+\label{cha:cactus}
 \label{sec:cactus}
+
+In the previous chapters I have talked a lot about web publishing and
+how the computers can help the authors by letting them work with tools
+they know at the writing tasks they know.
+
+The Cactus system were designed to fulfil the following goals within
+reasonable limits:
+
+\begin{itemize}
+\item Publishing documents must be as easy as possible for authors
+
+\item The publishing process should be fully automatic, without the
+  need for human web masters
+
+\item The software requirements of the audience should be as small as
+  possible
+
+\item The system must run under Linux, and be highly customizable
+
+\end{itemize}
+
+This chapter describes the full design of Cactus, as I see fit for a
+production system.  Due to time constraints I have implemented a
+functional subset as a proof-of-concept of the ideas behind Cactus, in
+a way that still allows it to be used as a practical tool.
+
+The above mentioned goals have been fullfilled to my personal
+satisfaction even though the program turned out differently than I
+originally envisioned. Cactus is today a system which
+
+\begin{itemize}
+  
+\item Accepts electronic documents from many sources
+  
+\item Applies filters repeatedly to convert each document to as many
+  other forms as possible
+  
+\item Allows easy access to the documents through a webbrowser
+  
+\item Provides a public service - all information is available to
+  everyone
+  
+\item Allows documents to expire if they are not intended for long
+  term storage
+
+\end{itemize}
+
+
+
+\section{Philosophy}
+\label{sec:cactus-philosophy}
+
+Cactus is not an application but a \textit{framework} for configuring
+a lot of filters which can transform documents from one form to
+another based on \textit{MIME-types} which is gaining momentum for a
+simple, standard way of specifying the content of a file.  MIME was
+first used by e-mail programs, and was later adapted in the
+HTTP-protocol underlying the world wide web.
+
+Cactus is a well defined framework for transforming documents
+automatically based on a set of \textit{filters} each of which
+implement a basic functionality for a specific MIME-type.
+
+In itself Cactus is just handling \textit{typed blob}s (Binary Large
+OBjects), but by having filters which on an individual basis can
+handle the documents in many fashions a complete document management
+system can be implemented by a capable user.
+
+By combining Perl and PHP3 with the latest XML+XSLT technology with an
+underlying SQL-database, Cactus makes it is possible to present any
+kind of information in a browser, and implement a complete homogeneous
+site with a reasonable amount of work.
+
+By providing suitable \textit{examiners} of documents, which can
+extract classificational information it is a simple task to provide
+functionality similar to Yggdrasil.  
+
+
+\section{Cactus seen from the users perspective}
+\label{sec:cactus-seen-from-the-users-perspective}
+
+\section{Design}
+\label{sec:cactus-design}
+
+\myimage{gr/overview}{The grand overview}{overview}
+\myimage{gr/gather}{The grand overview}{gather}
+\myimage{gr/items}{The grand overview}{items}
+\myimage{gr/xexample}{The grand overview}{xexample}
+
+\section{Overall view}
+\label{sec:cactus-overall-view}
+
+\section{Data flow}
+\label{sec:cactus-data-flow}
+
+\subsection{Input sources}
+
+\subsection{Output formats}
+
+\section{Daemons and SQL tables}
+\label{sec:cactus-daemons-and-sql-tables}
+
+\section{Implementation}
+\label{sec:cactus-implementation}
+
+\subsection{Hardware/software considerations}
+
+
+\subsection{Data acquisition}
+
+
+
+
+\subsubsection{Email}
+\subsubsection{Printing}
+\subsubsection{Fax}
+\subsubsection{Scanning}
+\subsubsection{Voice mail}
+
+\subsection{Derivers}
+
+\subsection{Converters}
+
+\subsection{Examiners}
+
+\subsection{...}
+
+
+\subsection{Database}
+
+\subsection{Web server}
+
+\subsection{Making it all work under Linux}
+   
+   Source code
+
+   If I get the time I will make this a literate form. Perl modules with
+   the literate programing extension?
+
+
+\section{Why the name ``Cactus''?}
+
+
+
+\section{The design of Cactus}
+\label{sec:the-design-of-cactus}
+
+I set the following goals for Cactus:
 
 Cactus were two projects
 
@@ -27,13 +178,16 @@ allowing it to capture the data sent.  The format preserving the most
 information is email with an attached file, as the others use a visual
 or audible representation of the original data.
 
+
+
+
 \section{Overview}
 
-   My idea with Cactus was from the start to create a web-based facility
-   which would ease the process of publishing and sharing information via
-   the Internet.
+My idea with Cactus was from the start to create a web-based facility
+which would ease the process of publishing and sharing information via
+the Internet.
 
-   [The short comings of Yggdrasil]
+[The short comings of Yggdrasil]
 
    I set the following goals for Cactus:
      * Publishing documents must be as easy as possible for authors
@@ -56,42 +210,12 @@ or audible representation of the original data.
        storage
 
 
-   Philosophy
-
-
-
-
-   Cactus seen from the users perspective
-
-
-   Design
-
-   Overall view
-
-   Data flow
-
-   Break down in tables and processes
-
-   Good decisions. Bad decisions.
-
-
-   Implementation
-
-   Considerations language, SQL database, platform,
-
-
-   Source code
-
-   If I get the time I will make this a literate form. Perl modules with
-   the literate programing extension?
 
 
 
 
 
-
-
-\chapter{Go away}
+\chapter{Possible filters for Cactus}
 
 
 
