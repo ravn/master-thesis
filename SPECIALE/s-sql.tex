@@ -1,0 +1,159 @@
+\chapter{Standard Query Language, Databases and Webservers}
+
+\mycitation{You got to be carefully taught}{South Pacific}{Rogers and
+  Hammerstein} 
+
+\section{SQL}
+
+SQL (the Standard Query Language) was developed in the early 1970'es
+by Don Chamberlin and Ray Boyce at IBM Research, to implement the
+mathematical notation in which E. F. Codd had defined relational
+databases~\cite{a-relational-model-of-data-for-large-shared-databanks}.
+Today SQL has grown into the \textit{de-facto} standard for
+communicating with a relational database, which is being enforced with
+the modern ODBC and JDBC drivers which provides a ``tunnel'' between
+the client program and the database where the client can send a
+SQL-command and get the result back, without caring about \textit{how}
+the data are transmitted.
+
+Unfortunately this is as much abstraction as you will get from these
+``SQL drivers'' -- the ability to execute a SQL-command and retrieve
+the result.  Any further abstraction from plain SQL is still left to
+the application programmer which means that even the state-of-the-art
+applications talk to the database in a command-line fashion.   The SQL
+looks like this (liftet from the MySQL tutorial):
+
+\begin{verbatim}
+
+
+CREATE TABLE shop (
+ article INT(4) UNSIGNED ZEROFILL DEFAULT '0000' NOT NULL,
+ dealer  CHAR(20)                 DEFAULT ''     NOT NULL,
+ price   DOUBLE(16,2)             DEFAULT '0.00' NOT NULL,
+ PRIMARY KEY(article, dealer));
+
+INSERT INTO shop VALUES
+(1,'A',3.45),(1,'B',3.99),(2,'A',10.99),(3,'B',1.45),(3,'C',1.69),
+(3,'D',1.25),(4,'D',19.95);
+
+SELECT * FROM shop;
+
+\end{verbatim}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \begin{tabular}{|r|l|r|}
+\hline\hline
+ article & dealer & price\\
+\hline
+    0001 & A      &  3.45\\
+    0001 & B      &  3.99\\
+    0002 & A      & 10.99\\
+    0003 & B      &  1.45\\
+    0003 & C      &  1.69\\
+    0003 & D      &  1.25\\
+    0004 & D      & 19.95\\
+\hline
+    \end{tabular}
+
+    \caption{The output from the SQL-example}
+    \label{fig:mysql-tutorial-example-output}
+  \end{center}
+\end{figure}
+which then returns the table shown in figure~\vref{fig:mysql-tutorial-example-output}:
+
+\begin{verbatim}
+\end{verbatim}
+
+The table shown here was originally in ASCII; inside an application
+program it is common to take a row at a time retrieving a structure
+with the content of each field.
+
+
+\subsection{SQL - really a standard?}
+\label{sec:how-standardized-is-sql}
+
+SQL has evolved over the years.  The latest ANSI standard is SQL92,
+which is discussed in~\cite{understanding-the-new-sql}, \textsf{as
+  well as the standard bodies online}, and it provides several levels
+of compliancy a given SQL-database can adhere to.  Even so, there are
+several facilites which is not covered by the standard:
+
+\begin{itemize}
+\item \textbf{unique numbers} -- having a row or function which
+  generates a unique number every time it is called.  This is called
+  \textit{sequence numbers} in Oracle, and \textsf{?} in MySQL.
+\item \textbf{date and time functions} -- querying for the current
+  date and handling date/time fields in the database is not standard.
+  Additionally it is common for a vendor to have additional formats
+  for timestamps which is incompatible with other vendors.
+\item \textsf{others?}
+\end{itemize}
+
+These vendor specific extensions from SQL92 are normally done in order
+to allow faster database queries, and are therefore interesting for
+the application programmer who wants the fastest possible
+implementation.  Unfortunately this usually ties the application
+dependent to a specific database server, which rarely is in the
+interest of customers (who might have a database already they wish to
+use), meaning that the application programmer must be aware which
+facilities are acceptable to use.  I have not found application
+frameworks which provide a generic SQL interface and parse it to the
+underlying database.
+
+
+
+\subsection{SQL - getting started}
+\label{sec:sql-getting-started}
+
+I was reintroduced to SQL rather abruptly in October 1999, where I
+needed one or more good introductory texts for ASP-programming with
+MS-Access as the database backend\footnote{I learned quite a lot in
+  those few days.  Basically ASP is a very good idea, and Frontpage is
+  extremely unsuited for working with it}, and found almost none on
+the Internet.  Martin Damsbo, who had previously written the
+PHP3+MySQL based WACO system~\cite{mez-waco}, pointed me towards
+\myurl{http://sunsite.auc.dk/mysql/Manual\_chapter/manual\_Tutorial.html\#Tutorial}{the
+  tutorial in the MySQL reference manual}, which was what he had used.
+
+The MySQL tutorial is reasonable for a person knowledgeable in SQL to
+get acquainted with the MySQL database, but it falls a bit short of
+being a generic introduction.
+
+I decided to dvelwe into MySQL since it had excellent Perl support,
+which I had chosen for developing the Cactus system
+(see~\vref{sec:cactus-choice-of-language} for reasons), and was
+OpenSource software available on Linux.
+
+
+A \textit{much} better choice for me was
+\myurl{http://photo.net/sql}{Phil Greenspuns SQL-introduction}
+(see~\cite{greenspun-sql}) which was specifically written as
+introductory material for college students, based on his long-term
+real-life experience with the heavy duty web-service at
+\myurl{http://www.arsdigita.com}{ArsDigita}, which also serves
+\myurl{http://photo.net}{photo.net} where this SQL-introduction
+resides..
+
+Greenspun start with the basics and moves to advanced
+topics in a steady pace, and is an excellent read.  There is a strong
+emphasis on Oracle 8i, but is easily adapted to other databases like
+MySQL.  He has numerous examples, and several references and
+evaluations of other texts.  Additionally the text is sprinkled with
+thumbnail photos, which links to a large version along with a link to
+another part of his site.
+
+This in addition with the comments from the readers to the text, makes
+this a very valuable resource for users.  The SQL-introduction is
+available both online and as a book.
+
+
+\section{Accessing a database from a webserver}
+\label{sec:accessing-a-database-from-a-webserver}
+
+Armed with a solid SQL knowledge
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 
