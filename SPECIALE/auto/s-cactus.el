@@ -12,6 +12,8 @@
      "sec:cactus-daemons-and-sql-tables"
      "sec:cactus-implementation"
      "sec:the-design-of-cactus"
+     "cha:cactus-sample-set-of-filters"
+     "cha:cactus-possible-candidates-for-filters"
      "sec:cactus-choice-of-language"
      "sec:converters"
      "sec:linux"

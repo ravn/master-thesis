@@ -6,100 +6,168 @@
 %   files they can buy an upgrade }.}{William H. Gates III}{\textsf{??}}
 
 
-\chapter{Cactus - a web based document publication and conversion
-  framework}
+\chapter{\textit{Cactus} - a web based document publication and data-driven
+  conversion framework}
 
 \label{cha:cactus}
 \label{sec:cactus}
 
-In the previous chapters I have talked a lot about web publishing and
-how the computers can help the authors by letting them work with tools
-they know at the writing tasks they know.
+In the previous chapters I have talked a lot about web
+publishing and how the computers can help the authors by
+letting them work with tools they know at the writing tasks
+they know.
 
-The Cactus system were designed to fulfil the following goals within
-reasonable limits:
+The \textit{Cactus} system is my ``proof-of-concept''
+implementation of a system which can do document conversion
+and publication without any intrinsic knowledge of the data
+in question, and in a way which is basically transparent to
+the users by letting them use it as a simple service where
+they use the tools they know.  
+
+This chapter explain the architecture of Cactus,
+chapter~\vref{cha:cactus-sample-set-of-filters} list a small
+set of external filters I have implemented to provide
+\textsf{....}, and
+chapter~\vref{cha:cactus-possible-candidates-for-filters}
+discuss a large number of possible filters I have been
+investigating.
+
+The goals for Cactus were:
 
 \begin{itemize}
-\item Publishing documents must be as easy as possible for authors
-
-\item The publishing process should be fully automatic, without the
-  need for human web masters
-
-\item The software requirements of the audience should be as small as
-  possible
-
-\item The system must run under Linux, and be highly customizable
+\item Publishing documents must be as easy as possible for
+  authors
+  
+\item The publishing process should be fully automatic,
+  without the need for human web masters
+  
+\item The software requirements of the audience should be as
+  small as possible
+  
+\item The system must run under Linux, and be highly
+  customizable
 
 \end{itemize}
 
-This chapter describes the full design of Cactus, as I see fit for a
-production system.  Due to time constraints I have implemented a
-functional subset as a proof-of-concept of the ideas behind Cactus, in
-a way that still allows it to be used as a practical tool.
-
-The above mentioned goals have been fullfilled to my personal
-satisfaction even though the program turned out differently than I
-originally envisioned. Cactus is today a system which
+The above mentioned goals have been fullfilled to my
+personal satisfaction even though the program turned out
+differently than I originally envisioned. Cactus is today a
+system which
 
 \begin{itemize}
   
 \item Accepts electronic documents from many sources
   
-\item Applies filters repeatedly to convert each document to as many
-  other forms as possible
+\item Applies filters repeatedly to convert each document to
+  as many other forms as possible
   
-\item Allows easy access to the documents through a webbrowser
+\item Allows easy access to the documents through a
+  web browser
   
-\item Provides a public service - all information is available to
-  everyone
+\item Provides a public service - all information is
+  available to everyone
   
-\item Allows documents to expire if they are not intended for long
-  term storage
+\item Allows documents to expire if they are not intended
+  for long term storage
 
 \end{itemize}
 
-
+Due to time constraints I have not implemented as much of
+the Cactus system as I would have liked to.  \textsf{...}
 
 \section{Philosophy}
 \label{sec:cactus-philosophy}
 
-Cactus is not an application but a \textit{framework} for configuring
-a lot of filters which can transform documents from one form to
-another based on \textit{MIME-types} which is gaining momentum for a
-simple, standard way of specifying the content of a file.  MIME was
-first used by e-mail programs, and was later adapted in the
-HTTP-protocol underlying the world wide web.
+The Cactus philosophy is related to the
+\myurl{http://www.acme.com/software/pbmplus/}{\texttt{pbmplus}
+  software package from Jef Poskanzer} which is a very powerful image
+manipulation package, based on three very simple image formats (namely
+PBM, PGM and PPM for binary, gray-scale and color images
+respectively).  Then there is a lot of filters manipulating these
+images (these may be piped together to combine effects), and a number
+of conversion programs to and from a large set of common graphics
+formats.  This approach has proven to be very successful indeed, and
+Cactus functions as the arbiter for applying such \textit{filters} to
+\textit{items}  in
+order to do the conversions and derivations to make the files that the
+users require.
 
-Cactus is a well defined framework for transforming documents
-automatically based on a set of \textit{filters} each of which
-implement a basic functionality for a specific MIME-type.
+Cactus works with items which are considered to be data streams with
+attributes owned by somebody.  Cactus itself is only working with the
+data as a file containing raw data with a MIME-type, and calls
+externally defined filters (may be any kind of program that converts
+an input file to an output file) to interpret and manipulate the
+information inside as appropriate.
 
-In itself Cactus is just handling \textit{typed blob}s (Binary Large
-OBjects), but by having filters which on an individual basis can
-handle the documents in many fashions a complete document management
-system can be implemented by a capable user.
+The database tables used by Cactus provide a number of attributes
+which may be interpreted and set by the various filters.  This allows
+the \textit{presenter} filters to provide better and more informative
+views of the items.
 
-By combining Perl and PHP3 with the latest XML+XSLT technology with an
-underlying SQL-database, Cactus makes it is possible to present any
-kind of information in a browser, and implement a complete homogeneous
-site with a reasonable amount of work.
+By using an underlying database for data storage it is possible to have
+simultaneous acquisition, conversion, derivation, compacting and
+archiving of data while presenting data as web pages. Experiments have
+shown that a modern home PC is sufficient to run Cactus for a small
+work group.
 
-By providing suitable \textit{examiners} of documents, which can
-extract classificational information it is a simple task to provide
-functionality similar to Yggdrasil.  
 
+
+% By providing suitable \textit{examiners} of documents, which can
+% extract classificational information it is a simple task to provide
+% functionality similar to Yggdrasil.  
+
+% Cactus is as such not an application but a
+% \textit{framework} for handling and converting documents
+% without any intrinsic knowledge about the 
+
+% configuring a lot of filters which
+% can transform documents from one form to another based on
+% \textit{MIME-types} which is gaining momentum for a simple,
+% standard way of specifying the content of a file.  MIME was
+% first used by e-mail programs, and was later adapted in the
+% HTTP-protocol underlying the world wide web.
 
 \section{Cactus seen from the users perspective}
 \label{sec:cactus-seen-from-the-users-perspective}
 
+For a user, Cactus is deceivingly simple.  A casual user follows this algorith:
+
+
+\begin{enumerate}
+\item Submit the document to Cactus by one of many ways, like email or by printing it
+  to a virtual printer
+  
+\item Wait a few minutes
+\item Go to the Cactus home page and locate the upload.  There is a
+  list of recent uploads pr user, and a quick list listing the very
+  most recent uploads.
+\item Find the versions needed of each item.  URLs to items can be
+  mailed to others for them to view, and other versions of items can
+  be downloaded if so needed.
+\end{enumerate}
+
+
+\myimage{gr/overview}{The grand overview}{overview}
+
+
+The basic idea is summarized in figure~\vref{fig:overview}.
+
 \section{Design}
 \label{sec:cactus-design}
 
-\myimage{gr/overview}{The grand overview}{overview}
+Hello...
+
 \myimage{gr/gather}{The grand overview}{gather}
+
+boo
+
 \myimage{gr/items}{The grand overview}{items}
+
+baeh
+
 \myimage{gr/xexample}{The grand overview}{xexample}
 
+Hello done.
 \section{Overall view}
 \label{sec:cactus-overall-view}
 
@@ -210,14 +278,12 @@ the Internet.
        storage
 
 
+\chapter{Cactus - sample set of filters}
+\label{cha:cactus-sample-set-of-filters}
 
 
-
-
-
-\chapter{Possible filters for Cactus}
-
-
+\chapter{Cactus - possible candidates for filters}
+\label{cha:cactus-possible-candidates-for-filters}
 
 
 % \subsection{Yggdrasil - a simple navigational framework}
@@ -749,7 +815,7 @@ used with Cactus on the server side, and then testing it out.
   
 \item[StarOffice 5.1] -- the German office suite for several platforms
   have excellent filters for importing Office files in general, but
-  cannot be automated from the commandline.  A StarBasic program must
+  cannot be automated from the command line.  A StarBasic program must
   be written and invoked to do the job -- a request on the StarOffice
   newsgroups for a tool to do this, did not get any response.  Due to
   lack of time I did not pursue this further.

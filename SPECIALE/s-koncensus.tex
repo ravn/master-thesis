@@ -99,6 +99,11 @@ Basically this would involve the following:
 \item The users were responsible for changing the content of each
   page, by modifying the HTML-source of the answer part of each
   question.
+
+\item In addition to specifying the actual content of the individual
+  answers, the online edition were to allow comments, where readers
+  could provide additional information to elaborate on the various
+  items if the reader needed additional information.
   
 \item Each modification would be checked in to RCS, allowing any
   reader to \textit{go back in time} to see what earlier answers held
@@ -125,16 +130,16 @@ To make a long story short, I then discovered the
 \myurl{http://www.dartmouth.edu/~jonh/ff-serve/cache/1.html}{FAQ-O-Matic}
 which does most of what I wanted the Konsensus system to do (except
 for the RCS storage with credit), and which runs as a set of CGI
-scripts.   I installed it under Linux, played with it for a while, and
-found it to be  quite suitable for the job.
-
-As I then had decided that Perl would be the best language for the
-daemon part of Cactus due to the library support, I concentrated on
-that from that point.  The Konsensus system can be quite easily
-implemented for a given newsgroup with a FAQ-O-Matic combined with a
-usenet harvester I wrote for Cactus, but I have not actually done so,
-since the Cactus project was much more interesting.
-
+scripts.  I installed it under Linux, played with it for a while, and
+found it to be quite suitable for the job.  Combined with a commentary
+service as the one provided by ArsDigital, this would provide a
+complete implementation of the facilities I needed for Konsensus.  I
+set up a FAQ-O-Matic for the Danish Perl group (based on the existing
+automailer in April 2000 as a test).  If this
+any-body-can-update-information concept work well, I will write a
+script that updates the generated mail from the submitted entries,
+allowing this document to be entirely user-supported without the need
+of a maintainer.
 
 
   

@@ -16,6 +16,7 @@
      "graphicx"
      "color"
      "fancyhdr"
+     "listings"
      "verbatim"
      "varioref"
      "parskip"

@@ -20,11 +20,10 @@ A level-1 auxiliary file: s-tex-and-latex.aux
 A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
-Warning--I didn't find a database entry for "fig:alltheweb-2"
 Warning--there's a number but no series in understanding-the-new-sql
 You've used 13 entries,
             2633 wiz_defined-function locations,
-            674 strings with 7860 characters,
+            673 strings with 7845 characters,
 and the built_in function-call counts, 4570 in all, are:
 = -- 418
 > -- 168
@@ -63,4 +62,4 @@ warning$ -- 1
 while$ -- 39
 width$ -- 0
 write$ -- 195
-(There were 2 warnings)
+(There was 1 warning)
