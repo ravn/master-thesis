@@ -47,23 +47,24 @@ The goals for Cactus were:
 
 \begin{itemize}
 \item Publishing documents must be as \textit{easy as
-    possible} for authors
+    possible} for authors.
 
 \item The publishing process should be \textit{fully
-    automatic}, without the need for human web masters
+    automatic}, without the need for human web masters.
 
 \item The software base required from the audience should be
-  \textit{as small as possible}
-
-\item The system must run under Unix, preferably Linux
+  \textit{as small as possible}.
 
 \item The amount of intrinsic knowledge hard-wired into the
-  system should be as small as possible
+  system should be as small as possible.
 
 \item In order to let Cactus use as many external programs as
   possible, the execution environment for these must be very
   flexible.
 
+\item In order to have as many external programs available as
+  possible, it is important to use an
+  \myurl{http://www.opensource.org}{Open Source} platform.  
 \end{itemize}
 
 The above mentioned goals have been fulfilled to my
@@ -89,7 +90,15 @@ system which:
 
 \item Capable of using most utilities which can be executed from a
   command line, as filters.
+
+\item Runs under the Redhat 6.1 Linux distribution.  
 \end{itemize}
+
+I have used Linux due to its wide availability, the fact that most
+Open Source programs run under Linux, and my familiarity with the
+system, but Cactus should run under any modern Unix variant with Perl
+and MySQL.  For full functionality Java and Apache with the JServ,
+mod_perl and mod_php extensions must be available.
 
 Due to an underestimate of the effort needed to program the
 database, I have not implemented as much of
@@ -175,19 +184,19 @@ Please see~\myvref{fig:viggo-cactus} for a Danish explanation.
   file}{cactus-splitted-email-from-lars}
 
 \myimage{gr/cactus-generated-pdf-from-lars}{The PDF-rendering of Lars'
-    print layout (named ``Lidt Guf'')}{cactus-generated-pdf-from-lars}
+  print layout (named ``Lidt Guf'')}{cactus-generated-pdf-from-lars}
   
-For a user, Cactus is intended to be a black box, where documents
- are inserted and the converted results are viewed in a browser.  As
- the users use their usual tools to interface with Cactus, it is easy
- to get the general idea about how Cactus works. A normal document
- publication would be like this:
+For a user, Cactus is intended to be a black box, where documents are
+inserted and the converted results are viewed in a browser.  As the
+users use their usual tools to interface with Cactus, it is easy to
+get the general idea about how Cactus works. A normal document
+publication would be like this:
 
 
 \begin{enumerate}
-\item Submit the document to Cactus by one of many ways,
-  like sending it as an attachment to an email or by
-  printing it to a virtual printer.
+\item Submit the document to Cactus by one of many ways, like sending
+  it as an attachment to an email or by printing it to a virtual
+  printer.
 
 \item Wait a few minutes.
 
@@ -360,6 +369,8 @@ These are complemented by
 % \myimage{gr/xexample}{The processing of an email with a GIF
 %   and a compressed tar-archive attached}{xexample}
 
+\subsection{Example: Dissection of an email with two attachments}
+
 \begin{figure}[htbp]
   \begin{center}
 \begin{verbatim}
@@ -446,8 +457,28 @@ individual types.
 
 \subsection{Data gathering}
 
-\myimage{gr/gather}{The data pathways into the
-  \texttt{incoming} table in Cactus. }{gather}
+% NOTE:  Expanded graph to make it more readable!
+
+%\myimage{gr/gather}{The data pathways into the
+%  \texttt{incoming} table in Cactus. }{gather}
+
+\begin{figure}[tbhp]
+    \begin{center}
+      
+%       \ifx\pdfoutput\undefined
+% % dvi
+% %        [Graphic: \href{#1.png}{#1}]
+%         \includegraphics[scale=0.4]{#1}
+%       \else
+% % pdf
+%         \includegraphics[scale=0.4]{#1}
+%       \fi
+      \includegraphics[scale=0.7]{gr/gather} 
+%      \includegraphics{#1} 
+      \caption{The data pathways into the \texttt{incoming} table in Cactus.}
+      \label{fig:gather}
+    \end{center}
+  \end{figure}
 
 Data can be gathered by just about any process that is able
 to open a connection to the Cactus database.

@@ -17,3 +17,6 @@ rapport.pdf: rapport.tex Makefile
 
 clean:
 	rm *.aux *.dvi *~
+
+publish:
+	scp rapport.pdf unixsnedkeren.dk:public_html/ravn/speciale

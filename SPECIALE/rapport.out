@@ -59,14 +59,15 @@
 \BOOKMARK [1]{section.8.2}{Why the name Cactus?}{chapter.8}
 \BOOKMARK [1]{section.8.3}{Cactus seen from the users perspective}{chapter.8}
 \BOOKMARK [1]{section.8.4}{Design}{chapter.8}
-\BOOKMARK [2]{subsection.8.4.1}{Data gathering}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.2}{Examiners}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.3}{Derivers}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.4}{Converters}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.5}{Compressors}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.6}{Archivers}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.7}{Janitors}{section.8.4}
-\BOOKMARK [2]{subsection.8.4.8}{Presenters}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.1}{Example: Dissection of an email with two attachments}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.2}{Data gathering}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.3}{Examiners}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.4}{Derivers}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.5}{Converters}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.6}{Compressors}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.7}{Archivers}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.8}{Janitors}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.9}{Presenters}{section.8.4}
 \BOOKMARK [1]{section.8.5}{Executing external commands}{chapter.8}
 \BOOKMARK [1]{section.8.6}{SQL tables}{chapter.8}
 \BOOKMARK [1]{section.8.7}{Implementing a search engine}{chapter.8}
@@ -115,9 +116,9 @@
 \BOOKMARK [0]{chapter.D}{Source code listings}{}
 \BOOKMARK [1]{section.D.1}{Programs}{chapter.D}
 \BOOKMARK [2]{subsection.D.1.1}{src/config.pl}{section.D.1}
-\BOOKMARK [2]{subsection.D.1.2}{src/cactus/examiner_d.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.2}{src/cactus/examiner\137d.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.3}{src/cactus/process-incoming.pl}{section.D.1}
-\BOOKMARK [2]{subsection.D.1.4}{src/cactus/workqueue_d.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.4}{src/cactus/workqueue\137d.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.5}{src/cactus/wrap.sh}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.6}{src/examiners/message-rfc822.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.7}{src/extractors/message-rfc822.pl}{section.D.1}
@@ -128,13 +129,13 @@
 \BOOKMARK [2]{subsection.D.1.12}{src/sql/reset-tables.sh}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.13}{src/sql/Makefile}{section.D.1}
 \BOOKMARK [1]{section.D.2}{Presenters}{chapter.D}
-\BOOKMARK [2]{subsection.D.2.1}{src/public_html/get.php}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.2}{src/public_html/h2.php}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.3}{src/public_html/index.xml}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.4}{src/public_html/index.xsl}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.5}{src/public_html/known-problems.xml}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.6}{src/public_html/list-docs.xml}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.7}{src/public_html/list_items.xml}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.8}{src/public_html/list_users.xml}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.9}{src/public_html/queries.xsl}{section.D.2}
-\BOOKMARK [2]{subsection.D.2.10}{src/public_html/search.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.1}{src/public\137html/get.php}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.2}{src/public\137html/h2.php}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.3}{src/public\137html/index.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.4}{src/public\137html/index.xsl}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.5}{src/public\137html/known-problems.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.6}{src/public\137html/list\137docs.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.7}{src/public\137html/list\137items.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.8}{src/public\137html/list\137users.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.9}{src/public\137html/queries.xsl}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.10}{src/public\137html/search.xml}{section.D.2}

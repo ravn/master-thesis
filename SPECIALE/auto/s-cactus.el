@@ -7,6 +7,7 @@
      "sec:cactus-seen-from-the-users-perspective"
      "sec:cactus-design"
      "fig:xexample"
+     "fig:gather"
      "cha:cactus-implementation"
      "fig:cactus-procmailrc"
      "cha:cactus-sample-filter-sets"
