@@ -32,9 +32,9 @@ between different levels of the system.
   
   \textit{Programming languages}, like C, provides the abstraction of
   a ``virtual machine''.  The programmer does not have to worry about
-  how large an integer, and how the best way to implement a loop on
-  this particular processor is.  The compiler takes care of that,
-  leaving the programmer to concentrate on problems at a higher
+  the physical size of a character, and what the best way to implement
+  a loop on this particular processor is.  The compiler takes care of
+  that, leaving the programmer to concentrate on problems at a higher
   abstraction level.
   
 \end{itemize}
@@ -68,7 +68,7 @@ with XML being defined as a subset of SGML - and they will be able to
 fully present XML documents individually tailored to the users
 preferences.  The author can provide richly annotated content, along
 with a suggested way to view the content (in form of a style sheet).
-The user may freely choose override some or all of these suggestions.
+The user may freely choose to override some or all of these suggestions.
 
 This is a radical change from the current situation where HTML allows
 an information provider to be so specific in markup that it makes it
@@ -163,7 +163,7 @@ consistently marking their documents up, resulting in suboptimal
 documents.  This was because they were doing physical markup instead
 of logical markup.
 
-\begin{my-detour}
+\mydetour{
   Modern word processors have been constructed around the ``What you
 see is what you get'' paradigm, where a great deal of effort has been
 spent on allowing the user to see exactly on screen what would be
@@ -174,7 +174,7 @@ able to see the whole page, or perhaps even several pages \textsf{A
 tufte reference here?}.  Microsoft Word provides a draft mode where
 just the text is shown without markup; WordPerfect provides a ``Reveal
 Codes'' mode where the user can edit the text along with the tags.
-\end{my-detour}
+}
   
 The most recent versions of Word and WordPerfect \textsf{wp9 should
   have sgml builtin} have had styles built
@@ -463,7 +463,7 @@ server side conversion to other formats.  The available Open Source
 software for this is surprisingly small, but that is rapidly
 changing.  Please note that XML style sheets still implies SGML style
 sheets, which is interesting because these are more mature due to
-longer use (see section\~vref{sec:docbook-xml-to-rtf} for more
+longer use (see section~\vref{sec:docbook-xml-to-rtf} for more
 details). 
 
 
@@ -539,7 +539,8 @@ processors which conforms to the W3C XSLT-19991102 recommendation.
 
 During testing it showed very quickly that the Java tools are quick
 enough to use for casual use (\textsf{do a few benchmarks}), even
-though they are not yet tuned for optimal performance.  Additionally
+though they are not yet tuned for optimal performance.
+%Additionally
 
 
 Even so, implementations in C
@@ -550,6 +551,8 @@ job.  The advantages of Java over C (\textsf{reference big list,
 \begin{itemize}
 \item Very hard to do pointer access
 \item A large set of tested libries
+\item ``Write once, run anywhere'' -- no recompilation is needed when
+  moving to another platform
 \end{itemize}
 
 Xalan is at the time of this writing in a development state, and
@@ -563,18 +566,22 @@ parsing the whole document.
 When the Cocoon project stabilizes they will have a
 high end XSLT-engine embedded as a servlet in Apache, which makes this
 a project to watch.  The technology is at the time of this writing
-still immature, but very promising.
+still under heavy development, but very promising.  I have used Cocoon
+to create \textit{presenters} in the Cactus sample implementation
+described in chapter~\vref{sec:cactus} \textsf{??}.
 
-The platform independance of Java indirectly prompted the
-implementation of remote filters in Cactus.  Very early in the
-evaluation Xalan threw the above mentioned exception when processing a
-medium sized DocBook document.  In order to rule out errors in the
-underlying Java environment on Asserballe (see
-section~\vref{sec:asserballe} for technical details) an identical run
-was made with JDK 1.2 on Aalborg.  The same error occured, but in less
-than one second instead of ten.  Experiments showed that Java programs
-consistently runs 15 times faster on Aalborg than on Asserballe.
-\textsf{and so what?}
+
+% The platform independance of Java indirectly prompted the
+% implementation of remote filters in Cactus.  Very early in the
+% evaluation Xalan threw the above mentioned exception when processing a
+% medium sized DocBook document.
+% In order to rule out errors in the
+% underlying Java environment on Asserballe (see
+% section~\vref{sec:asserballe} for technical details) an identical run
+% was made with JDK 1.2 on Aalborg.  The same error occured, but in less
+% than one second instead of ten.  Experiments showed that Java programs
+% consistently runs 15 times faster on Aalborg than on Asserballe.
+% \textsf{and so what?}
 
 \textsf{\texttt{incoming.xml}}
 \begin{verbatim}
@@ -721,7 +728,7 @@ conversions.
 \subsection{pod2docbook - POD to XML}
 
 The POD format is created for writing documentation for the Perl
-programming language, and was created to be ``\ldots an idiot- proof
+programming language, and was created to be ``\ldots an idiot-proof
 common source for nroff, TeX, and other markup languages, as used for
 online documentation'' by Larry Wall (\textsf{the perlpod manual
   page}).
@@ -816,6 +823,9 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.12  2000/04/09 14:36:44  ravn
+%  WSrote section on Konsensus
+%
 % Revision 1.11  2000/04/07 21:10:47  ravn
 %
 % Opdateringer indtil 6.7 fra hjemmelaesning, og dette er praktisk taget

@@ -13,7 +13,10 @@
 \label{cha:cactus}
 \label{sec:cactus}
 
-\textsf{Install a text/html -> text/plain, and application/pdf -> application/eps filter, each eps can then be filtered to text/plain with text2ps.  Make a search engine in the text/plain things, and one that looks in any file}
+\textsf{Install a text/html -> text/plain, and application/pdf ->
+  application/eps filter, each eps can then be filtered to text/plain
+  with text2ps.  Make a search engine in the text/plain things, and
+  one that looks in any file}
 
 
 In the previous chapters I have talked a lot about web
@@ -21,7 +24,7 @@ publishing and how the computers can help the authors by
 letting them work with tools they know at the writing tasks
 they know.
 
-The \textit{Cactus} system is my ``proof-of-concept''
+The \textit{Cactus} system is my proof-of-concept
 implementation of a system which can do document conversion
 and publication without any intrinsic knowledge of the data
 in question, and in a way which is basically transparent to
@@ -180,7 +183,7 @@ nothing to do):
 
 \begin{description}
   
-\item[\textsf{Validators}] -- validates whether the content
+\item[Validators] -- validates whether the content
   of the item is conforming to the MIME-type provided and
   the data valid.  If not, a MIME-type is synthesized
   according to filename and content.
@@ -206,7 +209,8 @@ nothing to do):
 \item[Converters] -- create another version of a given item
   \textit{fast}.  These are intended for conversions of data
   with users waiting, like \texttt{pnm} to
-  \textit{uncompressed} \texttt{png}.  The generated
+  \texttt{png} (\textit{uncompressed} as the gzip algorithm is slow,
+  especially for large images).  The generated
   versions are stored in the database and compressed when
   the system is otherwise idle.
 
@@ -233,7 +237,7 @@ nothing to do):
   compression schemes in the data format of the item.
   Sample formats are \texttt{png} and \texttt{tiff}.
   
-\item[\textsf{Optimizers}] --
+%\item[\textsf{Optimizers}] --
   
 % A converter is usually designed for being usable in
 %   a real-time interactive setting (also called being fast), which
@@ -308,9 +312,9 @@ each are present in the implementation section.
 \myimage{gr/gather}{The data pathways into the
   \texttt{incoming} table in Cactus. }{gather}
 
-Figure~\vref{fig:gather} shows some of the possible ways to
-acquire data into Cactus.  I have envisioned several ways to
-submit data to Cactus:
+Figure~\vref{fig:gather} shows some of the possible ways to acquire
+data into Cactus [\textsf{``scanner'' in image}].  I have envisioned
+several ways to submit data to Cactus:
 
 \begin{description}
 \item[Email] -- a user may easily submit any file, by
@@ -360,22 +364,22 @@ for production use.
 \subsection{Examining an item}
 
 Cactus in itself have no notion of an item besides it being
-a raw bitstream with a MIME-type.  With the addition of an \textem{examiner} for a given MIME-type
+a raw bitstream with a MIME-type.  With the addition of an \textit{examiner} for a given MIME-type
 Cactus can be made aware of whatever is inside an
 item.  An examiner must do two things, and print the
 findings back on \texttt{stdout} as lines of 
 (MIME-type, space, value):
 
 \begin{enumerate}
-\item Provide information about the item in question and
-  report it back to Cactus in order to have the attributes
-  set in the database.  Each attribute should be listed as
-  the MIM
-  ``\texttt{x-cactus}/\textit{attribute}'' followed by a value
-\item Provide a full list of contained items within.  These
-  should be listed with a value that uniquely allows the
-  corresponding extractor to identify the item in question
-  when given the MIME-type and the value.
+\item Provide information about the item in question and report it
+  back to Cactus in order to have the attributes set in the database.
+  Each attribute should be listed as the MIME-type
+  \texttt{x-cactus}/\textit{attribute} followed by a value.
+  
+\item Provide a full list of contained items within.  These should be
+  listed with a value that uniquely allows the corresponding extractor
+  to identify the item in question when given the MIME-type and the
+  value.
 \end{enumerate}
 
 Examiners are found in the \texttt{examiners} table (see
@@ -393,7 +397,7 @@ examination.
 
 \subsection{Converters}
 
-Converters are currently implemented as \textem{derivers}.
+Converters are currently implemented as \textit{derivers}.
 Converters should be used for reversible actions like
 PostScript to PDF and vice versa.
 
@@ -461,9 +465,9 @@ information and show it to the users through a webbrowser:
 
 \begin{itemize}
 \item An individual item.  The URL
-  \texttt{http://asserballe/~cactus/get.php?id=XX} returns
+  \texttt{http://asserballe/\~{}cactus/get.php?id=XX} returns
   the given item with the correct MIME-type.  Additionally
-  the URL \texttt{http://asserballe/~cactus/get.php?md5=XX}
+  the URL \texttt{http://asserballe/\~{}cactus/get.php?md5=XX}
   is recognized which is persistent across database
   rebuilds.
   
@@ -486,7 +490,7 @@ returned table.
 
 \section{SQL tables}
 
-Perhaps the single-most best design desicion was to use a database for \textem{all} storage needs of Cactus.
+Perhaps the single-most best design desicion was to use a database for \textit{all} storage needs of Cactus.
 
 The following tables are used:
 
@@ -525,9 +529,9 @@ EXAMINERS
 I have implemented a very simple search engine, with two possibilities
 
 \begin{itemize}
-\item A plain text search.  The user enters a search term, which is then used in a \texttt{select ... from items,mime where items.mimeid=mime.mimeid and mime.mimetype="text/plain" and items.item like "\%\textem{searchstring}\%"}.  This SQL-statement will select those text versions which contain the search string exactly, and list them.
+\item A plain text search.  The user enters a search term, which is then used in a \texttt{select ... from items,mime where items.mimeid=mime.mimeid and mime.mimetype="text/plain" and items.item like "\%\textit{searchstring}\%"}.  This SQL-statement will select those text versions which contain the search string exactly, and list them.
 
-\item A straight binary search.  The search is very similar to the text search, except that \textem{all} items are searched through.
+\item A straight binary search.  The search is very similar to the text search, except that \textit{all} items are searched through.
 
 \end{itemize}
 
@@ -612,7 +616,7 @@ If I get the time I will make this a literate form. Perl
 modules with the literate programing extension?
 
 
-\section{Why the name ``Cactus''?}
+\section{Why the name \textit{Cactus}?}
 
 
 
@@ -830,7 +834,7 @@ squid: http://www.squid-cache.org/
 \item \textbf{automatic conversion} - system will
   automatically convert a given document to what the user
   can see (or want).  Browser sends a capability string with
-  each request - use that to provide stuff directly, or
+  each request -- use that to provide stuff directly, or
   generate a ``this is available'' summary.
   
 \item \textbf{automated navigational framework} - each

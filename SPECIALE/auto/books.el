@@ -24,5 +24,6 @@
      "descartes-bunce:programming-the-perl-dbi"
      "christiansen-torkington:perl-cookbook"
      "goosens-rahtz-mittelbach:the-latex-graphics-companion"
-     "franquin:vakse-viggo-4"))))
+     "franquin:vakse-viggo-4"
+     "brooks:the-mythical-man-month"))))
 

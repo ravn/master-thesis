@@ -40,7 +40,8 @@
 % \myimage{filename}{Title}{reference}
 % the if seperates between pdf and non pdf.
 \newcommand{\myimage}[3]{
-  \begin{figure}[htbp]
+%  \begin{figure}[htbp]
+  \begin{figure}[thbp]
     \begin{center}
       
 %       \ifx\pdfoutput\undefined
@@ -58,7 +59,8 @@
   \end{figure}
 }
 
-\newenvironment{my-detour}{\begin{quotation}\small}{\end{quotation}}
+%\newcommand{\mydetour}[1]{\framepage{12cm}{\small{}#1}}
+\newcommand{\mydetour}[1]{{\small\em{}#1}}
 
 
 % \myinclude{foobar} - includes file and set top header

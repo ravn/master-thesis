@@ -13,7 +13,7 @@
 
 \section{The way it started: Handmade web-pages in a filesystem on a web-server}
 
-Back in the old days when the world wide web was designed, a web
+Back in the old days when the world wide web was designed (1989), a web
 server could basically do only two things:
 
 
@@ -28,26 +28,27 @@ server could basically do only two things:
   as the document to send.
 \end{itemize}
 
-That was all.
+Nothing else!
 
-\begin{my-detour}
+\mydetour{
 
-  Such web servers still exist - for example
-  \myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} (which has
-  been unmaintained since 1996 -- NCSA recommend that the Apache server
-  should be used instead).  Even so
-  \myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February
-    2000 Netcraft survey} reported that 17172 NCSA servers were
-  active, and could be reached from Netcraft.
+Such simple web servers still exist - for example
+\myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} (which has been
+unmaintained since 1996 -- NCSA recommend that the Apache server
+should be used instead).  Even so
+\myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February 2000
+  Netcraft survey} reported that 17172 NCSA servers were active, and
+could be reached from Netcraft.
 
-  In August 1995 the number of
-  \myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
-    running the NSCA server was 10835}, meaning that number has
-  increased slightly in that period.  For comparison the total number
-  of public webservers on the Internet in the same period grew from 19
-  thousand to 11 million, with Apache and Microsoft Internet
-  Information Server accounting for 8.8 million of these.
-\end{my-detour}
+In August 1995 the number of
+\myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
+  running the NSCA server was 10835}, meaning that number has
+increased slightly in that period.  For comparison the total number of
+public webservers on the Internet in the same period grew from 19
+thousand to 11 million, with Apache and Microsoft Internet Information
+Server accounting for 8.8 million of these.
+  
+}
 
 
 Even with such a simple model, it works well for even \textit{very}
@@ -56,16 +57,16 @@ large web-sites which only generates few documents dynamically.
 A well-tuned server which serves documents directly from the
 filesystem can reach impressive numbers.
 \myurl{http://www.acme.com/software/thttpd/benchmarks.html}{ACME
-  software has a webserver benchmark} from 1998, which have
+  software has a webserver benchmark} from 1998, with which they have
 benchmarked several webservers, where Apache did not come out top.
 
 
 On a modern PC the Apache webserver has no problem saturating a 10
-Mbps Ethernet connection , meaning that even for very large and
+Mbps Ethernet connection, meaning that even for very large and
 demanding sites the bottleneck should be determined by the hardware!
 Phillip Greenspun talks about databases with added webserver
 capability in \cite{phillipandalexsguidetowebpublishing}, and conclude
-that these are generally much slower than there non-database
+that these are generally much slower than their non-database
 relatives.
 
 On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a
@@ -76,9 +77,10 @@ On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a
 was 86.2 Mbit/s (which is 933 Gb/day in average).
 \myurl{ftp://ftp.cdrom.com/.message}{This single machine runs FreeBSD}
 (see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).
-Since an ftp-session have a notably larger overhead than an
-http-session, it is not unreasonable to expect similar performance
-from a suitably tuned web-server serving static files.
+Since an ftp-session has a notably larger overhead than an
+http-session (since an ftp-session includes that the \texttt{ftp}-user
+does a login to the system), it is not unreasonable to expect similar
+performance from a suitably tuned web-server serving static files.
 
 
 \subsection{CGI-scripts}
@@ -100,7 +102,7 @@ demonstrations of dynamically generated images was the
 \myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer} (see
 figure~\vref{fig:xerox-1}) which allowed the user to navigate a
 virtual atlas, where each ``window'' to the map was generated on
-demand.  This initial quick hack has since been superceeded by
+demand.  This initial quick hack has since been superseded by
 professional map companies which produce maps of an uneven quality on
 demand, like \myurl{http://maps.yahoo.com/py/maps.py}{Yahoo Maps} (USA
 only) and \myurl{http://www.mapquest.com}{MapQuest} (covers Europe
@@ -109,7 +111,7 @@ too).
 
 % \textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
 
-The problems with CGI-scripts have several reasons:
+There is several problems with CGI-scripts:
 
 \begin{itemize}
 \item \textbf{Scripts run as subprocesses} -- the script is executed
@@ -118,10 +120,11 @@ The problems with CGI-scripts have several reasons:
   scripts had to be \textit{trusted} or - for Internet Service
   Providers - inspected before installation to ensure that the script
   would behave properly.
-
-  This has been addressed with the development of ``safe languages''
-  where the execution environment is guaranteed that the CGI-script is
-  confined to a ``sandbox''.
+  
+  This has been addressed with the development of \textit{safe
+    languages} where the execution environment is guaranteed that the
+  CGI-script is confined to a restricted area where it cannot do any
+    damage (a so-called \textit{sandbox}).
 
 \item \textbf{Incompatible platforms} -- the CGI-programmer may not
   have access to a C-compiler which can generate binary code for the
@@ -131,10 +134,13 @@ The problems with CGI-scripts have several reasons:
   Perl programs can be run immediately on a given platform without
   needing to be recompiled, and are for most purposes as fast as the
   equivalent programs written in \texttt{C} or \texttt{C++},
-  especially for users with slow modems.  Recently Java Servlets (see
-  section~\vref{sec:java-servlets}) have appeared as a popular and
-  well-supported alternative to CGI-scripts, which is being supported
-  by more and more web servers.
+  especially for users with slow modems.
+  
+  Recently Java Servlets (see section~\vref{sec:java-servlets}) have
+  appeared as a popular and well-supported alternative to CGI-scripts,
+  but requires that the hosting web-server is capable of running a
+  Java Virtual Machine.  Servlets are being supported by more and more
+  web servers.
 
 \item \textbf{Slow} -- the overhead just for invoking the CGI-program
   in a subprocess is substantial even for moderate load on the web
@@ -153,19 +159,19 @@ scripts in section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
 acceleration module) in section~\vref{sec:CGI-modperl}).
 
 Server side scripting never really took off before the PHP3 and ASP
-languages provided ``persistent connections'' to a database servers,
-which was unavailable to the standard CGI-scripts.
+languages provided \textit{persistent connections} to database
+servers, which was unavailable to the standard CGI-scripts.
 
 Persistent connections provide a real performance boost!  Database
-connections are notoriously ``expensive'' to establish, so needing to
-open one for each and every CGI-script were a true performance
-bottleneck.  Just by keeping the connection open (and for ASP-scripts
-- retain the particular database connection for the session) was
-extremely beneficial.  That combined with a very simple way to switch
-between code and HTML plus that every user could use it without
-needing to ask the webmaster to install a potentially dangerous
-CGI-script, meant that the ability to generate webpages dynamically
-became available to everyone.
+connections are notoriously expensive in time and processing power to
+establish, so needing to open one for each and every CGI-script were a
+true performance bottleneck.  Just by keeping the connection open (and
+for ASP-scripts - retain the particular database connection for the
+session) was extremely beneficial.  That combined with a very simple
+way to switch between code and HTML plus that every user could use it
+without needing to ask the webmaster to install a potentially
+dangerous CGI-script, meant that the ability to generate webpages
+dynamically suddenly became available to everyone.
 
 
 \section{When a site grows, it becomes hard to maintain}
@@ -177,7 +183,7 @@ has grown way beyond what they originally expected, and that
 \begin{itemize}
 \item their handwritten HTML pages are hard to keep up-to-date.  A
   minor change in site layout, must be manually updated in all the
-  affected files.  Creating scripts to do this, helps but is still a
+  affected files.  Creating scripts to do this helps, but is still a
   non-trivial task
 \item The information tree described by the links is very difficult to
   change, since all links must be checked and potentially changed.
@@ -200,7 +206,7 @@ The list is endless.
 
 \myimage{gr/flug-1}{The Fyns GNU/Linux User Group web-site.  The side
   bar and the logo was added automatically by a script by
-  Tobias Bardino}{flug-1}
+  Tobias Bardino.}{flug-1}
 
 One of the easiest things to automate for a webmaster is the insertion
 of a few snippets of HTML in each web page to give a characteristic
@@ -302,8 +308,10 @@ best results'' from the search engine they will look for another one
 that can. \myurl{http://www.google.com}{The Google search engine} (see
 section~\vref{sec:google}) was such an engine, and users quickly
 started to use it. Recently links to Amazon.com and Fatbrain.com have
-begun to crop up in the top of the search results on Google, and as a
-direct result users are going elsewhere.
+begun to crop up in the top of the search results on Google, implying
+that Google has started to sell search results (where a given link is
+returned with a much better score than warranted by the search term
+the user provided), and as a direct result users are going elsewhere.
 
 \myimage{gr/alltheweb-1}{And what hit 15 was linking to in~\vref{fig:alltheweb-2}}{alltheweb-1}
 
@@ -378,14 +386,14 @@ generate a tree structure of web-pages to navigate the categories.
 Additionally lists of ``Documents sorted by author'' and ``Documents
 sorted by date'' were generated to help users locate documents.
 
-\begin{my-detour}
+\mydetour{
 This was on a closed Intranet, where the users were interested in
 using this as a tool.  The incentive for ``breaking the system'' was
 very low, and the tool worked well.
 
 Yggdrasil worked very well initially especially when its very low
 amount of meta-information is taken in consideration.
-\end{my-detour}
+}
 
 \myimage{gr/yahoo-1}{The British Yahoo site}{yahoo-1}An example of a
 good site built with meta-information is
@@ -399,6 +407,16 @@ page that \textit{is} there (by verifying that a target page existed).
 
 
 \section{Documentation - meta-data of programs}
+
+\mycitation{Program documentation is notoriously poor, and maintenance
+  is worse.  Changes made in the program do not promptly, accurately,
+  and invariably appear in the [separate paper documentation].  The
+  solution, I think, is to merge the files, to incorporate the
+  documentation in the source program.  This is at once a powerful
+  incentive toward proper maintenance, and an insurance that the
+  documentation will always be handy to the program user.  Such
+  programs are called
+  \textit{self-documenting}}{\cite{brooks:the-mythical-man-month}}{1975}
 
 Given there is a need for meta-data about the documents, the question
 is then \textit{where} should the authors put the meta-data?
@@ -416,16 +434,16 @@ programming language and the programmers working environment itself
 helped as much as it possibly could, it would be easier for the
 programmers to keep the documentation synchronized with the code.
 
-Experience has shown (\framebox{\textsf{references man month}}) that
-documentation should be as close to the thing it documents as
-possible.  For programs, this means that the documentation should be
-\textit{in the same file} as the code.  Comments are usually just that
--- brief comments -- and are often meant to explain \textit{what} the
-code does instead of \textit{why}?  The abstraction level is not high
-enough in the traditional comments.
+The quote above (from \cite{brooks:the-mythical-man-month}) show that
+the thought that documentation should be as close to the thing it
+documents as possible isn't new.  For programs, this means that the
+documentation should be \textit{in the same file} as the code.
+Comments are usually just that -- brief comments -- and are often
+meant to explain \textit{what} the code does instead of \textit{why}?
+The abstraction level is not high enough in the traditional comments.
 
 Andrew S. Tanenbaum writes excellent books about Computer Science, and
-his Operating Systems book [\cite{tanenbaumoperatingsystems}] contains
+his Operating Systems book \cite{tanenbaumoperatingsystems} contains
 the complete source listing with line numbers of his Minix operating
 system, along with a cross-reference of all identifiers.  That was the
 best the printing industry could do in 1987 (and is typical for
@@ -439,21 +457,21 @@ section~\vref{sec:literate-programming}.  The only other publicized
 works of large programs I know of is the books by Knuth about {\TeX}
 and the PGP 5.0 source code (which was not printed for humans to read,
 but in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan
-  the PGP source to circumvent the USA crypto export regulations}.
+  the PGP source to circumvent the USA crypto export regulations}).
 
 The great news is that the industry recognizes the usefulness of
 documentation on the web, and the need for programmers themselves to
 create such documentation.  In order to gain wide acceptance such
 meta-data management systems must be \textit{standards}, either as
 \textit{de-facto standards} or defined by a standards body like ANSI
-or W3C.  No such standard has arisen yet, but a XML-dialect will most
+or W3C.  No such standard has arisen yet, but an XML-dialect will most
 likely be written for the purpose.
 
-\begin{my-detour}
+\mydetour{
   The rest of this section detours into other areas of computer
   science, where having several views on the data in question has
   proven beneficial.
-\end{my-detour}
+}
 
 \subsection{Javadoc - embedding web-information in programs}
 \label{sec:javadoc}
@@ -508,7 +526,7 @@ programs, and the overwhelming amount of freely available
 \myurl{http://www.cpan.org}{documentation for Perl} confirms that this
 goal was reached.  This format allows you -- with very elementary
 markup -- to put documentation and code in the same file, and you may
-leave out either one.
+leave out either one.  \textsf{sample or explain more}
 
 All the info-files at
 \myurl{http://www.unixsnedkeren.dk}{Unixsnedkeren.dk} (the website for
@@ -531,7 +549,7 @@ know about.
 Recently a \texttt{Lip::Pod} filter have been added to CPAN which
 allows a mixed mode documentation output -- where both code
 and documentation is output allowing a simple form of \textit{Literate
-Programming}.
+Programming}.  \textsf{Code rearrangement?}
 
 
 
@@ -756,7 +774,8 @@ for printing, they have to offer two different version of each
 article.
 
 \myimage{gr/nokia-1}{Browsing the Internet on the large [sic] display
-  of a Nokia 9110}{nokia-1}
+  of a Nokia 9110.  Nokia do not state the dimensions of the
+  display}{nokia-1}
 
 These are two different \textit{views} of the same basic document.
 ZDNet are expecting their visitors to either see their documents on a
@@ -770,7 +789,7 @@ users will probably prefer short and crisp versions of the documents
 when they use a mobile phone.  Nokia is working with 3com to produce a
 hybrid between a Palm Pilot and a mobile phone.
 
-\begin{my-detour}
+\mydetour{
   
 This tendency might as a side-effect be beneficial for the currently
 rather overlooked blind computer users (see
@@ -784,7 +803,7 @@ also be beneficial to these users since it will be easy to write a
 renderer for their preferred format.  Of course, it is possible to
 write ordinary HTML in a way that is usable by these users, but that
 is rare these days.
-\end{my-detour}
+}
 
 Both \myurl{http://www.useit.com/alertbox/990613.html}{Jakob Nielsen}
 and
@@ -807,7 +826,7 @@ capabilities.  Chapter~\vref{cha:sgml-xml-and-dtd's} talks a lot more
 about this.
 
 For now it is sufficient to say that it is possible to store both data
-and meta-data in a convenient form in a SGML or XML file, but that
+and meta-data in a convenient form in an SGML or XML file, but that
 these files must be rendered into the formats expected by the users,
 like HTML, PDF or what else tomorrow may bring of new, exiting
 formats.  Since SGML describes the \textit{content} and not the

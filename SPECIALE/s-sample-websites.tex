@@ -92,7 +92,7 @@ follow the given links causing the so-called \texttt{Slashdot effect}
 
 
 \myimage{gr/fiw98Zoom}{A webserver log showing the Slashdot effect --
-  the red line at approximately 9050 shows when the announcement was
+  the red line at approximately 9088.9 shows when the announcement was
   made on Slashdot}{slashdoteffect-1}
 
 \section{Valueclick.com}
@@ -145,7 +145,7 @@ placed search box.  Due to the limited domain of books, the search
 engine can make assumptions about what the user is requesting
 information about.  In this case a ten-digit number was entered which
 happened to be an ISBN-number, which in most other search engines
-should have been entered as ``ISBN-1-55860-5347'', and the page for
+should have been entered as ``ISBN 1-55860-5347'', and the page for
 the corresponding book was returned (see figure~\vref{fig:amazon-2}).
 
 \myimage{gr/amazon-2}{The result of the search in figure~\vref{fig:amazon-1}}{amazon-2}
@@ -178,22 +178,30 @@ Amazon:
   along with this one, they might be interesting to this person too.
   Links are presented to those books, as well as to the general
   categories this book was placed in by the Amazon librarian.
-
+  
 \item \textbf{Expected content} - Amazon can be expected to have
   \textit{any} English book in their database.  Users expect to be
-  able to find a given book in the Amazon database, and usually do.
-  Personally I have never looked in vain at Amazon for English books.
+  able to find a given book in the Amazon database, and usually do.  I
+  normally find what I am looking for.  John Immerk{\ae}r reports that
+  Amazon occasionally do not have all the books he need in their
+  database.
+
 \end{itemize}
 
-Amazon explicitely invites those who read the page to review the book
+Amazon explicitly invites those who read the page to review the book
 if they have read it, with special treatment for the author and the
-publisher.  \textsf{As Greenspun observes, then this is the most
-  efficient material}.  At the time of writing, this book has 9
+publisher.  As Greenspun observes
+in~\cite{phillipandalexsguidetowebpublishing} this is a very efficient
+method of getting information of a very high quality, and that a
+reasonable way for him to measure the success of a page, is to compare
+the size of the original content to the size of the comments provided
+by users.  At the time of writing, this book has 9
 reviews at \textsf{amazon.co.uk}, but 198 at the mother site at
-\textsf{amazon.com}.  The corresponding HTML-pages are 22 kb and 550
-kb respectively, which gives an an impressive \textsf{Greenspun
-  factor} (setting the UK-version to be 100\% \textsf{??-provider}) of
-25.
+\textsf{amazon.com}.  The corresponding HTML-pages are 22 kb (a good
+approximation of the page without comments) and 550
+kb respectively.  That is 24 times as many comments as original text.
+Not bad.
+
 
 Amazon uses very aggressive marketing, which has caused it to be a
 well-known brand name in just a few years.  By giving money to those
@@ -232,20 +240,28 @@ also for tracking the users as they wander around the site.
 \section{Deja - where did Usenet go?}
 \label{sec:deja}
 
-\textsf{Write about this if there is time for it}
+Deja (originally DejaNews) has evolved around the
+\myurl{http://www.deja.com/usenet}{Deja Usenet archive}, where all
+Usenet postings since March 1995 has been archived (accounting for 500
+gigabytes of disk space) and can be searched in.
 
-\myurl{http://www.deja.com/usenet}{Deja Usenet archive}
+In addition to the normal search for a given message, the search
+possibilities of Deja can also produce complete profiles of a given
+author based on email address or full name, allowing anyone to get a
+good idea of your personal interests on Usenet.
+
+Due to its long-term storage facility, Deja is a good place to go if
+your local news-server has expired a given posting.
+
 
 
 \section{www.krak.dk}
 \label{sec:www.krak.dk}
 
-Making maps on demand was one of the earliest applications for the
-web.  The \textsf{web map application was started in 199?} was
-discussed in section~\vref{sec:map-generation-first-web-application},
-and has since been followed by \textsf{yahoo map, whoelse.}
-
-In Denmark, the well renowned Danish map manufacturer
+Making maps on demand was one of the earliest applications for the web
+as mentioned in
+section~\vref{sec:map-generation-first-web-application}.  In Denmark,
+the well renowned Danish map manufacturer
 \myurl{http://www.krak.dk}{Krak A/S} opened their Internet phone
 directory and web map generation service in direct competition with
 numerous other directory services.  Their advantage was up-to-date
@@ -255,46 +271,53 @@ being a byproduct of a search for something else.  This has proven to
 be so powerful a combination of services that all other phone
 directory services has been left far behind.
 
-The website has been steadily improved with new
-facilities and cross-references, as well as more precise data (In
-\textsf{??} 1999 it could not locate ``Herlev Hovedgade 205'' on the
-map, so the whole of the road was inked on the map.  This is corrected
-today).  The start page is shown in
-figure~\vref{fig:krak-1}, and is seperated in two parts; namely white
-pages (phone number based), and pink pages (company based).
+The website has been steadily improved with new facilities and
+cross-references, as well as more precise data (In 1999 it could not
+locate ``Herlev Hovedgade 205'' on the map, so the whole of the road
+was inked on the map.  This is corrected today).  The start page is
+shown in figure~\vref{fig:krak-1}, and is seperated in two parts;
+namely white pages (phone number based), and pink pages (company
+based).
 
 \myimage{gr/krak-1}{Welcome page (and search form) for www.krak.dk}{krak-1}
 
 The fields in the white page section are Name, Road, House number, Zip
 code, City and Phone number.  The fields in the pink page section are
-Company and Phone number.  The form has been filled out with a search request
-for ``Odense Universitet'', and the results are shown in
-figure~\vref{fig:krak-2}. 
+Company and Phone number.  The form has been filled out with a search
+request for ``Odense Universitet'', and the results are shown in
+figure~\vref{fig:krak-2}.
 
 \myimage{gr/krak-2}{Result of searching for ``Odense University''}{krak-2}
 
-Each line containing an answer may have icons referencing
-to facilities regarding the location of the answer.  These answers
-have pointers to 
-Rejseplanen, the Route Planner, and a map reference.  Additionally
-pointers to a web page, and an email address could have been provided
-by the users.  Clicking the map icon of the first line actually
-referring to Odense University brings us to figure~\vref{fig:krak-3}.
+Each line containing an answer may have icons referencing to
+facilities regarding the location of the answer.  These answers have
+pointers to Rejseplanen, the Route Planner, and a map reference.
+Additionally pointers to a web page, and an email address could have
+been provided by the users.  Clicking the map icon of the first line
+actually referring to Odense University brings us to
+figure~\vref{fig:krak-3}.
 
 \myimage{gr/krak-3}{Following the map icon for the first ``Odense
   University'' reference}{krak-3}
 
 The blue dot usually indicates the location of the address but in this
 case the map is not 100\% correct (Moseskovvejen does not go all the
-way south-east to the parking lot, and the University is located 500
-meters further to the south).  When a map is display, the navigation
-area below the image allows for zooming and moving the contents of the
-shown area.  By selecting ``Zoom out'' and ``x8'' and clicking on the
-blue dot a new map is shown (see figure~\vref{fig:krak-4}), where it
-is evident that the database show a great deal of detail.  Roads,
-residential areas, streams, train stations, the motor way and green
-areas are shown.  These maps provide a level of information
-corresponding to Krak's printed maps.
+way south-east to the parking lot\footnote{John Immerk{\ae}r has a
+  theory that this is caused by the limited resolution of the database
+  used to draw the maps.  The forest is very rough in the edges, and
+  no bicycle paths are shown. This is most likely done to make the map
+  drawing faster in the server.  The abrupt ending of Moseskovvejen is
+  most likely a result of the bicycle path ending there, and the total
+  width of the road being too narrow to be included in the map
+  database} -- and the University is located 500 meters further to the
+south).  When a map is display, the navigation area below the image
+allows for zooming and moving the contents of the shown area.  By
+selecting ``Zoom out'' and ``x8'' and clicking on the blue dot a new
+map is shown (see figure~\vref{fig:krak-4}), where it is evident that
+the database show a great deal of detail.  Roads, residential areas,
+streams, train stations, the motor way and green areas are shown.
+These maps provide a level of information corresponding to Krak's
+printed maps.
 
 \myimage{gr/krak-4}{The map in figure~\vref{fig:krak-3} zoomed out
   with a factor 8}{krak-4}
@@ -310,19 +333,21 @@ time it will take.
 \myimage{gr/krak-5a}{The entry box where the starting and ending point
   is entered}{krak-5a}
 
-This map is shown in figure~\vref{fig:krak-5b}, and is perfectly
-adequate for a person driving a car.  For cyclists it is often a good
-idea to look for short-cuts, if you are well known in the area.
+This map is shown in figure~\vref{fig:krak-5b} (and explained in words
+in figure~\vref{fig:krak-6}), and is perfectly adequate for a person
+driving a car.  For cyclists it is often a good idea to look for
+short-cuts, if you are well known in the area.  
 
 \myimage{gr/krak-5b}{The route from my home to the University}{krak-5b}
 
-%\myimage{gr/krak-6}{???????????????????????
-%  University'' reference}{krak-6}
+\myimage{gr/krak-6}{The route in figure~\vref{fig:krak-5b} explained
+  in words}{krak-6}
 
 If you need step-by-step directions, Krak can provide that too.
-Select the ``\textsf{???}'' button and print out the directions.
-Careful studies of these directions can give an idea of the network
-grid that the route planner use for finding the shortest road.
+Select the tiny car button next to the entry and print out the
+directions.  Careful studies of these directions can give an idea of
+the network grid that the route planner use for finding the shortest
+road.
 
 %\textsf{what is~\vref{fig:krak-6}?}
 
@@ -407,7 +432,7 @@ at \myurl{http://www.lycos.dk}{www.lycos.dk} where you may search for
 the images it finds while traversing the net, but looks at the
 filename and the context in the web page for hits.  It works
 reasonably well - most of the cactii images for my project was found
-this way.  \textsf{Check on details how they do it.}
+this way.  
 
 
 \framepage{15cm}{
@@ -423,7 +448,7 @@ this way.  \textsf{Check on details how they do it.}
 \section{The Collection of Computer Science Bibliographies}
 \myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
 
-\textsf{screens hot}
+\textsf{screen shot}
 
 This is a great web-site for scientists because in addition to the
 basic search facilities it allows you to download the BibTeX entry for
@@ -432,6 +457,7 @@ the books and articles you find.
 \section{Jydske Bank}
 \label{sec:jydske-bank}
 
+\textsf{java snot banking}
 THe only java-solution for home banking.  Any comments?
 
 
@@ -518,7 +544,8 @@ The users were expected to
 \end{enumerate}
 
 Yggdrasil in itself consisted of about 10 pages of perl code.  The
-search facility was provided by an ht://dig installation.
+search facility was provided by an \myurl{http://htdig.org}{ht://dig
+installation}, which rebuilt its database every night.
 
 
 This worked very well in the beginning but had a fatal blow when it --

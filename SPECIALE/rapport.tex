@@ -87,7 +87,6 @@
 
 \myinclude{s-front-matter}
 \myinclude{s-introduction}
-\myinclude{s-terms-and-concepts}
 \myinclude{s-dynamically-generated-documents}
 %\myinclude{s-standards}
 \myinclude{s-sample-websites}
@@ -103,7 +102,7 @@
 \myinclude{s-conclusion}
 \appendix
 
-
+\myinclude{s-terms-and-concepts}
 \myinclude{s-tex-and-latex}
 \myinclude{s-report-writing-tools}
 
@@ -144,7 +143,7 @@ Here is one way to do it:
 
 \begin{itemize}
 \item Configure the script generating the page, to add an
-  ``\texttt{Expires''} header with a reasonable time of expiry
+  ``\texttt{Expires}'' header with a reasonable time of expiry
 \item Set up squid (\vref{sec:squid}) in http-accellerator mode, where
   it transparently adds cache facilities to a webserver, respecting
   the ``\texttt{Expires}'' header.
