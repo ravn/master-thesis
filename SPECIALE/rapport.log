@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  14 MAR 2000 19:57
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  15 MAR 2000 05:35
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -38,6 +38,9 @@ Package: verbatim 1997/04/30 v1.5k LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\headwidth=\dimen103
+)
 (/usr/share/texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -57,8 +60,8 @@ Package graphics Info: Driver file: dvips.def on input line 80.
 (/usr/share/texmf/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
 ) (s-mycommands.tex)
 (rapport.aux (s-front-matter.aux) (s-introduction.aux)
 (s-terms-and-concepts.aux) (s-dynamically-generated-documents.aux)
@@ -70,19 +73,19 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 74.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
 File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
@@ -149,28 +152,32 @@ Chapter 3.
 
 ]
 
-LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 9
-0.
+LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 1
+03.
 
 
-LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 9
-0.
+LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 1
+03.
 
 
-LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 91.
+LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 104.
 
 
-LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 91.
+LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 104.
 
 
-LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 92
-.
+LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 10
+5.
 
 
-LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 92
-.
+LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 10
+5.
 
-[8]) [9]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8])
+[9]
 \openout2 = `s-standards.aux'.
 
  (s-standards.tex) [10
@@ -182,8 +189,8 @@ LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 92
  (s-sample-websites.tex [11
 
 
-] [12] [13] [14]
-[15] [16] [17] [18] [19]) [20]
+] [12] [13] [14] [15]
+[16] [17] [18] [19]) [20]
 \openout2 = `s-available-technologies.aux'.
 
  (s-available-technologies.tex
@@ -381,12 +388,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1135 strings out of 10891
- 14230 string characters out of 97329
- 66849 words of memory out of 263001
- 4011 multiletter control sequences out of 10000+0
+ 1229 strings out of 10891
+ 15123 string characters out of 97329
+ 68091 words of memory out of 263001
+ 4102 multiletter control sequences out of 10000+0
  22848 words of font info for 56 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 30i,12n,21p,261b,368s stack positions out of 300i,100n,500p,50000b,4000s
+ 33i,12n,40p,261b,513s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (63 pages, 174756 bytes).
+Output written on rapport.dvi (63 pages, 179824 bytes).

@@ -5,6 +5,7 @@
      "books")
     (TeX-run-style-hooks
      "graphicx"
+     "fancyhdr"
      "verbatim"
      "varioref"
      "alltt"

@@ -32,7 +32,7 @@
 %\usepackage{parskip}
 \usepackage{varioref}           % gives better references
 \usepackage{verbatim}
-%\usepackage{fancyhdr}           % provide headers where I can put the filenames.
+\usepackage{fancyhdr}           % provide headers where I can put the filenames.
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
 % hyperref breaks \vref :-(
@@ -65,6 +65,11 @@
 
 %\bibliographystyle{alpha}
 \bibliographystyle{plainnat}
+
+% While writing - this provides fileinformation on includes
+\lhead{\currentinputfile}
+\pagestyle{fancy}
+% End.
 
 \begin{document}
 \myinclude{s-front-matter}

@@ -22,28 +22,41 @@ complied to this, the web-server could start it with user-provided
 parameters, and return the result as any kind of file.
 \end{itemize}
 
-That's all.  Such web servers still exist - on \textsf{??}
-\myurl{http://www.netcraft.com}{Netcraft} reported that \textsf{???}
-NCSA servers were active.  \textsf{The number has been pretty constant
-  for some time, while the number of Apache and IIS servers have grown
-  exponentially}.
+That's all.  Such web servers still exist - for example
+\myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} which has been
+unmaintained since 1996 (NCSA recommend that the Apache server should
+be used instead).  Even so
+\myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February 2000
+  Netcraft survey} reported that \textsf{17172} NCSA servers were
+active.
 
-This scheme works well for even \textit{very} large web-sites.  A
-well-written server which serves documents directly from the
-filesystem can reach impressive numbers.  \textsf{Where was this -
-  look for statistics}.  On
-a modern PC Apache has no problem saturating a 10Mbps Ethernet
-connection (\textsf{what about a 100Mbps connection)}, meaning that
-even for very large and demanding sites the bottleneck will not be
-within the webserver software.
+In August 1995 the number of
+\myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
+  running NSCA was 10835}, meaning that number has increased slightly
+in that period.  For comparison the total number of public webservers
+on the Internet in the same period grew from 19 thousand to 11
+million, with Apache and Microsoft Internet Information Server
+accounting for 8.8 million of these.
 
-On a related note: The ftp-server \texttt{ftp.cdrom.com} serves at
-least \textsf{??} Gb every day.  That's \textsf{??} Mb pr second, from
-a single machine \textsf{reference?} running
-\myurl{http://www.freebsd.org}{FreeBSD \textsf{??.??}}.  A ftp-session
-have a notably larger overhead than a http-session, so it is not
-unreasonable to expect similar performance from a suitably tuned
-web-server for static files.
+The very simple CGI-interface works well for even \textit{very} large
+web-sites.  A well-written server which serves documents directly from
+the filesystem can reach impressive numbers.  \textsf{Where was this -
+  look for statistics}.  On a modern PC Apache has no problem
+saturating a 10Mbps Ethernet connection (\textsf{what about a 100Mbps
+  connection)}, meaning that even for very large and demanding sites
+the bottleneck will not be within the webserver software.
+
+On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a lot
+of files everyday.  On March 14'th 2000
+\myurl{http://www.emsphone.com/stats/cdrom.html}{the transfer
+  statistics} said that the average output was 79.3 Mbit/s (with a
+peak of 95.8 Mbit/s).  The average output on a yearly basis was 86.2
+Mbit/s, which is 933 Gb/day in average).
+\myurl{ftp://ftp.cdrom.com/.message}{This lone machine runs FreeBSD}
+(see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).  A
+ftp-session have a notably larger overhead than a http-session, so it
+is not unreasonable to expect similar performance from a suitably
+tuned web-server for static files.
 
 
 CGI-scripts turned out to work well.  All kinds of documents - images,
