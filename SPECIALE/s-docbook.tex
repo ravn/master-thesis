@@ -21,31 +21,52 @@ navigation bar at the top.
 
 The localization code is manually maintained.
 
-Having XML files in DocBook format (basically having a valid DocBook
-DTD) allow to use all the available DocBook stylesheets (both XSL and
-DSSSL) to \textsf{??} them.  These are:
+It is possible to have a DocBook XML-file which can be processed both
+with XSL-stylesheets \textit{and} DSSSL-stylesheets, by letting the
+!DOCTYPE header point to the DocBook XML DTD along with
+system-dependent path (which is required by XML).  A sample header for
+DocBook is listed below:
 
-\begin{description}
-\item[XSL] --
-  \begin{description}
-  \item[XHTML-1.0] -- 
-  \item[HTML-\textsf{4.0}] -- 
-  \item[XSL-FO] -- The W3 page description language.
-    \textsf{Renderer? like fop and the commercial one}
-  \item[\textsf{Others}] ?
-  \end{description}
-\item[DSSSL] --
-  \begin{description}
-  \item[RTF] -- Rich Text Format.  \textsf{Renderers?}
-    
-  \item[MIF] -- Frame format.   \textsf{What about it}
-  \item[{\TeX}] -- Renders with the \textsf{JadeTeX} package.
-  \item[\textsf{Others}] ?? What else can we do with this.
-  \end{description}
-\end{description}
+\begin{verbatim}
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE article 
+  PUBLIC "-//Norman Walsh//DTD Simplified DocBk XML V3.1.3.6//EN" 
+  "/home/ravn/sgml/docbk/db315/docbookx.dtd">
+\end{verbatim}
 
-Generally XSL conversions are fast enough to be done ``on-the-fly'',
-where DSSSL conversions are \textsf{too slow for this (timing?)}.
+If the \texttt{standalone="yes"} field is set in the \tag{?xml?}-tag
+instead, it means that the XML-tools will not validate the contents
+against the DTD \textsf{does this increase performance?}, but still
+apply the style sheets.
+
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}[tb]{|l|p{12cm}|}
+\hline\hline
+Format & Command \\
+\hline
+  XHTML-1.0 & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/xhtml/docbook.xsl \$@\\
+  HTML-\textsf{4.0} & java com.jclark.xsl.sax.Driver \$$<$
+  ../docbook/html/docbook.xsl \$@ \\
+
+  XSL-FO & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/fo/docbook.xsl \$@ \\
+  RTF & jade -t rtf -d \$(HOME)/sgml/dsssl/docbook/print/docbook.dsl \$(HOME)/jade/pubtext/xml.dcl \$$<$\\
+  MIF (Frame) & \\
+  {\TeX} & \\
+  PDF (from FO) & java org.apache.fop.apps.CommandLine $< $@\\
+  PDF (from FO) & tex '\&pdffotex' document.fo \\
+  PDF (via {\TeX} & \\
+  OThers? & \\
+\hline
+    \end{tabular}
+    \caption{Output formats possible for a DocBook XML document}
+    \label{tab:output-formats-possible-for-a-docbook-xml-document}
+  \end{center}
+\end{table}
+
+Generally XSL conversions (commands starting with java) are fast
+enough to be done ``on-the-fly'', where DSSSL conversions (commands
+starting with jade) are \textsf{too slow for this (timing?)}.
 
 
 

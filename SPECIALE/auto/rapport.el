@@ -16,6 +16,7 @@
      "sec:the-importance-of-a-web-cache")
     (TeX-run-style-hooks
      "graphicx"
+     "color"
      "fancyhdr"
      "verbatim"
      "varioref"
@@ -28,7 +29,7 @@
      "bk11"
      "book"
      "11pt"
-     "ddraft"
+     "draft"
      "a4paper"
      "s-mycommands"))))
 

@@ -4,7 +4,7 @@
 %\section{Terms and concepts}
 \label{cha:terms-and-concepts}
 
-\mycitation{``HTML is a SGML DTD''}{?}{?}
+\mycitation{``HTML is a SGML DTD''}{\textsf{?}}{\textsf{?}}
 
 
 This report uses a lot of abbreviations, many of which may not be
@@ -18,20 +18,27 @@ widely known.  This section lists mosts of them.
   This is very similar to a macro without arguments in other
   languages.
   
-\item[FO] Formatting objects.  A generic description of the physical
-  layout of a XML-document on paper.  FOP converts this to PDF.
-  \textsf{Several users have expressed doubt about this XSLT
-    transformation}
+\item[XSL-FO] XSL-formatting objects.  A generic description of the physical
+  layout of a XML-document on paper.  These files can be converted to
+  PDF with FOP or PassiveTeX
   
 \item[SGML] A family of languages.  The \textit{DTD} specifies which
   language it is.  SGML can be formatted with FOSI or DSSSL
   style-sheets.  \unixcommand{jade} can format to HTML, plain text and
   RTF. 
   
-\item[XML] A family of languages.  The \textit{DTD} specifies which
-  language it is.  XML-documents can be transformed with
-  \textit{XSL}-style sheets to another XML-document (this process is
-  called \textit{XSLT}).  XML is a subset of \textit{SGML}
+\item[XML]
+% A family of languages.  The \textit{DTD} specifies which
+%   language it is.  XML-documents can be transformed with
+%   \textit{XSL}-style sheets to another XML-document (this process is
+%   called \textit{XSLT}).  XML is a subset of \textit{SGML}
+  
+XML is a light-weight version of SGML (both defines document
+languages) designed to be embeddable in a browser.  XML-documents
+\textit{may} comply to a DTD, or be stand-alone (``DTD-less'').  XSL
+is used to convert a XML document into another XML document (XSLT) or
+into the generic page description language XSL-Formatting Objects
+(XSLFO).
 
 
 \item[*ML] Common description of both XML and SGML, where the two have
@@ -131,6 +138,10 @@ extensions to the original RTF-specification.
   module (which is faster) in at least Apache.
 \item[Apache] Open Source webserver which runs on a lot of different
   platforms.  Most Linux distributions include it.
+
+\item[PassiveTeX] A package for {\TeX} by Sebastian Rahtz which allows
+  FO files to be typeset by {\TeX} directly.
+
 \end{description}
 
   

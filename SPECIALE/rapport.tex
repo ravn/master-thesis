@@ -9,7 +9,7 @@
 % in such a tag when the report is finished.
 
 
-\documentclass[11pt,ddraft,a4paper]{book}
+\documentclass[11pt,draft,a4paper]{book}
 %\documentclass[draft,a4paper]{report}
 
 %\usepackage{concrete}          % ok - legible
@@ -30,7 +30,9 @@
 \usepackage{parskip}
 \usepackage{varioref}           % gives better references
 \usepackage{verbatim}
-\usepackage{fancyhdr}           % provide headers where I can put the filenames.
+\usepackage{fancyhdr}           % provide headers where I can put the
+                                % filenames.
+\usepackage{color}
 %\usepackage{myshowlocation}
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
@@ -68,6 +70,10 @@
 % While writing - this provides fileinformation on includes
 \lhead{\currentinputfile}
 \pagestyle{fancy}
+%
+% allow C-c C-f C-f to be easy shortcut to standout text
+%\renewcommand{\textsl}[1]{\colorbox{black}{{\textcolor{white}#1}}}
+\renewcommand{\textsf}[1]{\fbox{{\sl{#1}}}}
 
 % End.
 
@@ -78,13 +84,13 @@
 \myinclude{s-dynamically-generated-documents}
 \myinclude{s-standards}
 \myinclude{s-sample-websites}
-\myinclude{s-available-technologies}
 \myinclude{s-xml}
 \myinclude{s-docbook}
 \myinclude{s-sql}
 \myinclude{s-users-transparently}
 \myinclude{s-active-and-passive-data-acquisition}
 \myinclude{s-search-engines-and-data-mining}
+\myinclude{s-available-technologies}
 \myinclude{s-cactus}
 \myinclude{s-conclusion}
 \appendix

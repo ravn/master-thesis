@@ -3,29 +3,42 @@
 \chapter{SGML, XML and DTD's}
 \label{cha:sgml-xml-and-dtd's}
 
+\mycitation{\textsf{If you don't read the manual before you enter the
+  dungeon, you might end up being killed}}{Advice in Nethack}{about 1993}
+
 A major ingredient in developing large, complex systems with several
 layers of data and meta-data, is the ability to \textit{abstract}
 between different levels of the system.
 
 \begin{itemize}
-\item Operating systems understand the ``file'' abstraction, so the
+\item
+
+  Operating systems understand the ``file'' abstraction, so the
   programmer does not have to think about the underlying hardware when
-  reading and writing information.
-\item Expensive printers provide the PostScript language which is an
+  reading and writing information, and these operations are normally
+  optimized for speed.
+
+\item
+
+  Expensive printers provide the PostScript language which is an
   abstraction for ``electronic paper''.  Any Postscript file can be
   printed to any PostScript printer, without considering the specifics
   of the device.
-\item Programming languages, like C, provides the abstraction of a
+  
+\item
+
+  Programming languages, like C, provides the abstraction of a
   ``virtual machine''.  The programmer does not have to worry about
   how large an integer, and how the best way to implement a loop on
   this particular processor is.  The compiler takes care of that,
   leaving the programmer to concentrate on problems at a higher
   abstraction level.
+  
 \end{itemize}
 
 
 
-The same thing happened in the printing industry, where SGML (Standard
+The same need arose in the printing industry, where SGML (Standard
 General Markup Language) was developed in
 \myurl{http://www.sgmlsource.com/history/roots.htm}{the late sixties
 and early seventies} to facilitate a transfer from ``specific coding''
@@ -50,14 +63,26 @@ Today, almost 30 years later, this is coming to the users of the world
 wide web, as the presenting technology moves into the web browsers -
 with XML being defined as a subset of SGML - and they will be able to
 fully present XML documents individually tailored to the users
-preferences.  This is a radical change from the current situation
-where HTML allows an information provider to be so specific in markup
-that it makes it unusable in some browsers.
+preferences.  The author can provide richly annotated content, along
+with a suggested way to view the content (in form of a style sheet).
+The user may freely choose override some or all of these suggestions.
 
-\textsf{When XML is common place in browsers, we will hopefully have
-  much more content in webpages allowing for better search engines,
-  less usage on system dependent facilities, and better tools for
-  writing XML }
+This is a radical change from the current situation where HTML allows
+an information provider to be so specific in markup that it makes it
+unusable in some browsers, and without any means for a user to specify
+otherwise.    A sample is the font size change commands, which can
+render a site totally unreadable in Netscape.
+
+Hopefully the mechanisms for user customizations will be so well
+developed when XML is commonplace in browsers and web sites, that this
+can be disabled.
+
+\textsf{I expect when this happens that} a standard for XML documents
+will quickly arise, providing authors with a good way to provide much
+better markup for search engines and web crawlers.    Already now
+XML-editors are popping up everywhere --  it will be very interesting
+to see what they can do in 5 years.
+
 
 % Looking from the DocBook DTD's this \textsf{section} describes XML,
 % how it was developed from SGML inspired by the short comings of HTML,
@@ -777,6 +802,10 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.9  2000/03/20 13:02:50  ravn
+%
+% Added all updates from looktrhough at home.
+%
 % Revision 1.8  2000/03/18 06:06:51  ravn
 % Wrote a lot on the dynam,ically generated chapter with a lot of information regarding the need for meta-information stored in the files, plus added screen shos
 %
