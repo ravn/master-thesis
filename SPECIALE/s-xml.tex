@@ -1,39 +1,188 @@
 % $Id$
 
-\section{SGML, XML and DocBook}
+\chapter{SGML, XML and DTD's}
 
-\begin{quotation}
-\textsf{  ``HTML is a SGML DTD''.  Tim Berners-Lee 1991. \myurl{??
-    URL}{Where was this said?}}
-\end{quotation}
+A major ingredient in developing large, complex systems is the ability
+to \textit{abstract} between different levels of the system.
 
-Looking from the DocBook DTD's this \textsf{section} describes XML,
-how it was developed from SGML inspired by the short comings of HTML,
-and how it is used,` including viewing, authoring, and conversions
-(transforms, formatting).
+\begin{itemize}
+\item Operating systems provide the ``file'' abstraction, so the
+  programmer does not have to think about the underlying hardware when
+  reading and writing information.
+\item Expensive printers provide the PostScript language which is an
+  abstraction for ``electronic paper''.  Any Postscript file can be
+  printed to any PostScript printer
+\item Programming languages, like C, provides the abstraction of a
+  ``virtual machine''.  The programmer does not have to worry about
+  how large an integer, and how the best way to implement a loop on
+  this particular processor is.  The compiler takes care of that,
+  leaving the programmer to concentrate on problems at a higher
+  abstraction level.
+\end{itemize}
+
+\url{http://www.sgmlsource.com/history/roots.htm}{SGML history}
+
+The same thing happened in the printing industry, where SGML (Standard
+General Markup Language) was developed in the late sixties and early
+seventies to facilitate a transfer from ``specific coding'' to
+``generic coding'' (Goldfarb mentions using ``heading'' instead of
+``format-17'').  This allows authors to concentrate on \textit{what}
+they write, instead of \textit{how} it is presented.  In Goldfarb's
+own words in 1971:
+
+\begin{quote}
+  The principle of separating document description from application
+  function makes it possible to describe the attributes common to all
+  documents of the same type. ... [The] availability of such 'type
+  descriptions' could add new function to the text processing system.
+  Programs could supply markup for an incomplete document, or
+  interactively prompt a user in the entry of a document by displaying
+  the markup. A generalized markup language then, would permit full
+  information about a document to be preserved, regardless of the way
+  the document is used or represented.
+\end{quote}
+
+Today, almost 30 years later, this is coming to the users of the world
+wide web, as the presenting technology moves into the web browsers -
+with XML being defined as a subset of SGML - and they become able to
+fully present XML documents individually tailored to the users
+preferences.  This is a radical change from the current situation
+where HTML allows an information provider to be so specific in markup
+that it makes it unusable in some browsers.
+
+\textsf{When XML is common place in browsers, we will hopefully have
+  much more content in webpages allowing for better search engines,
+  less usage on system dependent facilities, and better tools for
+  writing XML }
+
+% Looking from the DocBook DTD's this \textsf{section} describes XML,
+% how it was developed from SGML inspired by the short comings of HTML,
+% and how it is used,` including viewing, authoring, and conversions
+% (transforms, formatting).
+
+\section{``HTML is a SGML DTD'' - the concepts}
+
+Table~\vref{tab:programming-langugages-and-html} shows how the most
+frequently used acronyms relate when mapped to the programming domain.
+See section~\vref{sec:terms-and-concepts} for the full descriptions.
 
 
+\begin{table}[htbp]
+  \begin{center}
+    \begin{tabular}{|l|l|}
+      \hline\hline
+      \textbf{Documents} &  \textbf{Programs} \\
+      \hline
+      SGML &Family of programming \\
+           & languages  (C/Pascal/Lisp...) \\
+      \hline
+      XML  & Another family of programming \\
+           & languages. (XML is a subset of SGML) \\
+      \hline
+      DTD  & \textsf{Backus}-Naur notation of a \\
+           & given language, defining how it looks\\
+      \hline
+      HTML & A certain programming language\\
+           & like C \\
+      \hline
+      XHMTL & Another programing language like Java \\
+           & Well written programs can run both in C and Java\\
+      \hline
+      DSSSL & A report generator which takes a XML program \\
+           & as input and produce a report, another\\
+           & program or something else \\
+      \hline
+      XSL  & A report generator which takes a XML program \\
+           & as input and produce a report, another\\
+           & program or something else \\
+      \hline
+    \end{tabular}
+    \caption{The analogy between programming languages and SGML}
+    \label{tab:programming-langugages-and-html}
+  \end{center}
+\end{table}
 
-\subsection{The need for separation between content, layout and
-  \textsf{??} \textsf{rewrite?}}
+Basically SGML (Standard General Markup Language) covers a large
+family of document markup languages, which all share that a given
+SGML-document \textit{must} comply to a DTD (Document Type
+Definition).  DSSSL is used to convert a SGML document into something
+else.  DSSSL's are written in a Scheme like language.
 
-WYSIWYG tools often cause the author to concentrate on the visual
-layout instead of the document content.  Seperating the writing
-process from the layout process, results in documents which can be
-visualized in many different ways depending on the actual needs.  If
-the content describe the layout too, it is hard to change the layout
-without revising the text.
+XML is a light-weight version of SGML designed to be embeddable in a
+browser.  XML-documents \textit{may} comply to a DTD, or be
+stand-alone (``DTD-less'').  XSL is used to convert a XML document
+into another XML document (XSLT) or into XSL-Formatting Objects (XSLFO).
 
-The better annotation a document has, the more possible ways it can be
-visualised.  Blind people may require braille and aural versions of a
-document (possibly in parallel \textsf{ARTICLE ABOUT MULTIPLE VOICES
-  SPACIALLY SEPERATED}), and mobile phone users may require short,
-crisp headlines with most text omitted.  If a document is
-properly annotated it can be visualised effectively for these and
-other users.
+XHTML is a XML-version designed to be parsable by HTML-4.0 browsers.
 
-\textsf{!!} The \textsf{needs of blind people} are very different
-from the \textsf{needs of mobile phone users}, yet 
+
+\subsection{The author should not do layout}
+
+\textsf{I need articles here.}
+
+SGML came originally to because the authors at IBM were doing layout
+while writing, and they were not consistent in doing so, resulting in
+suboptimal documents.
+
+Modern word processors have been constructed around the ``What you see
+is what you get'' paradigm, where a great deal of effort has been
+spent on allowing the user to see exactly on screen what would be
+printed on paper.   Unfortunately the limited resolution and size of a modern
+computer monitor cannot show the whole page in high resolution, and
+the user must therefore work in small ``windows'' without being able
+to see the whole page, or perhaps even several pages \textsf{A tufte
+  reference here?}.  Microsoft Word provides a draft mode where just
+the text is shown without markup;  WordPerfect provides a ``Reveal
+Codes'' mode where the user can edit the text along with the tags.
+
+The most recent versions of Word and WordPerfect have had styles built
+in, where the user could specify ``heading'' and similar categories
+for selected text, but have been very passive in helping users to
+employ these categories, meaning that most of these
+document have had almost no semantic markup, but only visual markup.
+
+In combination with this the web publishing tools by Microsoft and
+others have blatantly ignored web standards, and used all kinds of
+font modifying tags instead of the HTML-tags conveying \textit{meaning}
+about the text.  These tags often implement the particular settings
+that the author had on her word processor, so that the author is
+effectively doing layout on the web.
+
+This is not a new phenonomen, however.  The best way to typeset
+mathematics have been the \myurl{http://www.tug.org}{\protect{TeX}
+  system}, (see section~\textsf{ref{sec:tex-and-latex}}) where the
+author basically is told to write what she wants to and let {TeX} do
+the rendering.  Even so, it is often very tempting even for the most
+dedicated purist to want to change the layout to make a small visual
+change, simply because they \textit{can}.  Unfortunately very few have
+the expertise to do this right, so the changes usually make it worse.
+I have seen a book where the author had prepared camera-ready copy for
+his {\LaTeX}-document.  The book was printed in A5, but he had handled
+this merely by increasing the margins of a normal page, and nothing
+else.  The result was that the layout looked awkward - the line
+spacing seemedq too large for the page.  This would not have happened
+if a professional layouter had produced the book.
+
+A layouter may also want to change the whole layout of a book, for
+example if a new edition is to be part of a series with another
+distinct style.  The publisher may want to turn the book into webpages
+on a CD-ROM, or into a Braille version for blind persons.  It might
+even be read aloud by a computer.
+
+It should not bother the author during the writing process how the
+finished document will look, as long as she marks up the document
+appropriately.
+
+As the possible annotations are decided by the DTD, it is important to
+choose a DTD carefully.  A well annotated document can be used for
+many purposes, not all of which was envisioned when the document was
+written.  Ten years ago no one heard about the world wide web - within
+the next few years, it will probably be the main use of SGML in the
+world.   
+
+
+% \textsf{!!} The \textsf{needs of blind people} are very different
+% from the \textsf{needs of mobile phone users}, yet 
 
 \subsection{The design and evolution of SGML}
 
@@ -611,6 +760,11 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.3  2000/03/05 02:32:16  ravn
+% Added lots of pictures with relatively little dialoue.
+%
+% Making progress.
+%
 % Revision 1.2  2000/03/04 21:39:15  ravn
 %
 %

@@ -2,5 +2,7 @@
  (function
   (lambda ()
     (LaTeX-add-bibitems
-     "sedgewick-algorithms-in-c"))))
+     "sedgewick-algorithms-in-c"
+     "understandingthenewsql"
+     "appliedcryptography"))))
 

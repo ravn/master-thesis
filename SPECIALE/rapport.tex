@@ -11,7 +11,7 @@
 % in such a tag when the report is finished.
 
 
-\documentclass[ddraft,a4paper]{article}
+\documentclass[draft,a4paper]{book}
 
 %\usepackage{concrete}          % ok - legible
 %\usepackage{beton}             % ok - legible
@@ -90,12 +90,13 @@
 \title{Database backed Websites \\
   \textit{D R A F T -- $ $Revision$ $}} % Math hack for RCS
 
-\bibliographystyle{alpha}
+%\bibliographystyle{alpha}
+\bibliographystyle{plainnat}
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
+\begin{quote}
   This thesis discusses database backed websites; their current use as
   presentation engines, construction, pros and cons, list the current
   state of the art software, and how web sites in general function as
@@ -112,13 +113,17 @@
   and maintain links.  Consensus allows an open group of people to
   maintain a set of documents on a webserver.
   
-\end{abstract}
+\end{quote}
 
 Stuff to place:  Java has unicode support, multithreads.
 
 
 \textbf{Note: }Framed text is unexpanded keywords which eventually
 will be replaced with prose.
+
+\chapter{???}
+
+In this thesis I refer to the author Annie, and the layouter Larry.  
 
 \section{What is a database backed webserver?}
 
@@ -199,7 +204,8 @@ happen (on-the-fly vs statically generated pages).  Explain the
 advantages and disadvantages databases have over flat filesystems
 [transactions(protection, atomicity), extra attributes, speed, indexed
 columns, complex queries, scalability(linear search in filesystems,
-multihost db's),}
+multihost db's),]
+}
 
 \section{The new role of the webserver}
 
@@ -331,7 +337,7 @@ internally?), Opera (?), Amaya (other W3C browsers?), AWTviewer in fop
 \framepage{15cm}{
 XT, Xerces, Cocoon, SQL2xml, validators (error recovering?),
 converters to XML (pod2docbook, tex4h, Perl with appropriate modules?,
-wordview modified?
+wordview modified)?
 
 Show the XML->SQL->XML->HTML on the fly conversion possible with
 Cocoon .... Without auxillary code. All done in W3C style.
@@ -354,7 +360,9 @@ on-the-fly publishing XML to HTML and PDF through a webserver.
 Discuss why developers do it in Java, as opposed to any other language.
 
 Very few utilites support creating PDF.  Discuss how to create PDF.
+
 }
+
 % \section{SGML, XML and DocBook}
 % The history and usage of SGML.  Creation of XML.  Describe document
 % validation, and conversion (XSLT) to XML and other formats.  Freedom
@@ -367,6 +375,7 @@ Very few utilites support creating PDF.  Discuss how to create PDF.
 % from if they conform to the w3c standards (DOM and SAX).   Who uses DocBook at
 % the moment?  Man pages in DocBook on Solaris (look on machine).  IE50
 % cannot show ``simple'' DocBook XML yet but it is the goal of that project.
+
 \include{s-xml}
 \include{s-docbook}
 
@@ -409,6 +418,7 @@ powerful and easy for best results.
 
 \include{s-cactus}
 \include{s-konsensus}
+\include{s-tex-and-latex}
 
 %\section{Available hardware and software}
 \include{s-available-hardware-and-software}
@@ -425,53 +435,3 @@ Full reference with a lot of annotated URL's.
 % and all that was ever heard from him again, was the sound of Tubular Bells! 
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% $Log$
-% Revision 1.6  2000/03/06 02:02:40  ravn
-% Added outcommentet section on the Library of Congress.
-%
-% Revision 1.5  2000/03/05 02:32:16  ravn
-% Added lots of pictures with relatively little dialoue.
-%
-% Making progress.
-%
-% Revision 1.4  2000/03/04 23:52:38  ravn
-% Converted TIFF files to PNG and found out how to put them in
-% the PDF file with the \myimage command (which currently avoids the problem
-% in plain latex altogether.
-% )
-%
-% The PDF file is really looking good, and print well.
-%
-% Revision 1.3  2000/03/04 21:39:14  ravn
-%
-%
-% Added a lot of information.  Prepared for screendumps.
-%
-% Revision 1.2  2000/03/03 01:27:43  ravn
-%
-%
-% Entered stuff in CVS.  The notes on databases have been added, and the
-% section moved to s-sample-databases (me thinks).
-%
-% Revision 1.1.1.1  2000/03/02 21:55:31  ravn
-% Speciale files
-%
-% Revision 1.6  2000/02/23 02:22:41  ravn
-% Moved XML section to seperate file.  Added framepage.
-%
-% Revision 1.5  2000/02/18 04:31:26  ravn
-% Version shipped to immerkaer.
-%
-% Revision 1.4  2000/02/18 03:14:37  ravn
-% Added extra paragraphcs after talking to jimm
-%
-% Revision 1.3  2000/02/15 18:35:37  ravn
-% Updated to include misc notes from MIP file system.
-%
-% Revision 1.2  2000/02/14 04:52:10  ravn
-% Added much more text.  Played with fonts.
-%
-% Revision 1.1  2000/02/14 02:52:22  ravn
-% Initial revision
-%

@@ -24,9 +24,9 @@
      "fullpage"
      "charter"
      "latex2e"
-     "art10"
-     "article"
-     "ddraft"
+     "bk10"
+     "book"
+     "draft"
      "a4paper"
      "s-terms-and-concepts"
      "s-sample-websites"
@@ -34,5 +34,6 @@
      "s-docbook"
      "s-cactus"
      "s-konsensus"
+     "s-tex-and-latex"
      "s-available-hardware-and-software"))))
 
