@@ -27,7 +27,7 @@
 \BOOKMARK [1]{section.3.6}{www.krak.dk}{chapter.3}
 \BOOKMARK [1]{section.3.7}{The Journey Planner - www.rejseplanen.dk}{chapter.3}
 \BOOKMARK [1]{section.3.8}{Searching for images - ftpsearch.lycos.com}{chapter.3}
-\BOOKMARK [1]{section.3.9}{Home banking -- sample bank: F\346llesbanken}{chapter.3}
+\BOOKMARK [1]{section.3.9}{Home banking -- sample bank: F\346lleskassen}{chapter.3}
 \BOOKMARK [1]{section.3.10}{Yggdrasil - a simple navigational framework}{chapter.3}
 \BOOKMARK [1]{section.3.11}{The TOM browser - converting documents online}{chapter.3}
 \BOOKMARK [0]{chapter.4}{SGML, XML and DTD's}{}
@@ -47,13 +47,14 @@
 \BOOKMARK [0]{chapter.5}{The DocBook and TEI DTD's}{}
 \BOOKMARK [1]{section.5.1}{DocBook considerations}{chapter.5}
 \BOOKMARK [1]{section.5.2}{A sample DocBook XML document}{chapter.5}
+\BOOKMARK [1]{section.5.3}{Making it as easy as possible for authors to write in DocBook}{chapter.5}
 \BOOKMARK [0]{chapter.6}{Standard Query Language, Databases and Webservers}{}
 \BOOKMARK [1]{section.6.1}{SQL}{chapter.6}
 \BOOKMARK [1]{section.6.2}{SQL -- getting started}{chapter.6}
 \BOOKMARK [1]{section.6.3}{Some of the possible ways of accessing a database from a webserver}{chapter.6}
 \BOOKMARK [1]{section.6.4}{What database should be used?}{chapter.6}
-\BOOKMARK [0]{chapter.7}{Konsensus -- an unimplemented collaborative OpenFAQ system}{}
-\BOOKMARK [0]{chapter.8}{Cactus - data-driven document publication and conversion}{}
+\BOOKMARK [0]{chapter.7}{Konsensus -- a community backed OpenFAQ system}{}
+\BOOKMARK [0]{chapter.8}{Cactus - a framework for web based document conversion and presentation}{}
 \BOOKMARK [1]{section.8.1}{Philosophy}{chapter.8}
 \BOOKMARK [1]{section.8.2}{Why the name Cactus?}{chapter.8}
 \BOOKMARK [1]{section.8.3}{Cactus seen from the users perspective}{chapter.8}
@@ -77,12 +78,11 @@
 \BOOKMARK [2]{subsection.9.2.3}{Fax and Voice mail}{section.9.2}
 \BOOKMARK [2]{subsection.9.2.4}{Scanning}{section.9.2}
 \BOOKMARK [2]{subsection.9.2.5}{Shared directories on a network}{section.9.2}
-\BOOKMARK [1]{section.9.3}{Derivers}{chapter.9}
-\BOOKMARK [1]{section.9.4}{Converters}{chapter.9}
-\BOOKMARK [1]{section.9.5}{Examiners}{chapter.9}
-\BOOKMARK [1]{section.9.6}{Presenters}{chapter.9}
-\BOOKMARK [1]{section.9.7}{Database}{chapter.9}
-\BOOKMARK [1]{section.9.8}{Web server}{chapter.9}
+\BOOKMARK [1]{section.9.3}{Derivers and converters}{chapter.9}
+\BOOKMARK [1]{section.9.4}{Examiners}{chapter.9}
+\BOOKMARK [1]{section.9.5}{Presenters}{chapter.9}
+\BOOKMARK [1]{section.9.6}{Database}{chapter.9}
+\BOOKMARK [1]{section.9.7}{Web server}{chapter.9}
 \BOOKMARK [0]{chapter.10}{Cactus - sample filter sets}{}
 \BOOKMARK [1]{section.10.1}{``Print to PDF'' functionality}{chapter.10}
 \BOOKMARK [1]{section.10.2}{Image conversion to GIF, PNG and JPEG}{chapter.10}
@@ -92,11 +92,8 @@
 \BOOKMARK [0]{chapter.A}{Terms and concepts}{}
 \BOOKMARK [0]{chapter.B}{Report writing tools}{}
 \BOOKMARK [1]{section.B.1}{LaTeX}{chapter.B}
-\BOOKMARK [2]{subsection.B.1.1}{Creating PDF files}{section.B.1}
-\BOOKMARK [2]{subsection.B.1.2}{Including screen dumps}{section.B.1}
-\BOOKMARK [2]{subsection.B.1.3}{Finding back to the source document from xdvi}{section.B.1}
+\BOOKMARK [2]{subsection.B.1.1}{Finding back to the source document from xdvi}{section.B.1}
 \BOOKMARK [1]{section.B.2}{Emacs}{chapter.B}
-\BOOKMARK [2]{subsection.B.2.1}{Making them all work together}{section.B.2}
 \BOOKMARK [0]{chapter.C}{Overview of technologies available for Linux February 2000}{}
 \BOOKMARK [1]{section.C.1}{Database engines}{chapter.C}
 \BOOKMARK [2]{subsection.C.1.1}{Cloudscape - Informix}{section.C.1}
@@ -105,7 +102,6 @@
 \BOOKMARK [2]{subsection.C.1.4}{MySQL - TCX}{section.C.1}
 \BOOKMARK [2]{subsection.C.1.5}{Oracle}{section.C.1}
 \BOOKMARK [2]{subsection.C.1.6}{SyBase - Sybase}{section.C.1}
-\BOOKMARK [2]{subsection.C.1.7}{Other approaches to database storage}{section.C.1}
 \BOOKMARK [1]{section.C.2}{Available browsers}{chapter.C}
 \BOOKMARK [2]{subsection.C.2.1}{Netscape Communicator}{section.C.2}
 \BOOKMARK [2]{subsection.C.2.2}{Mozilla - Netscape 6.0}{section.C.2}
@@ -120,7 +116,7 @@
 \BOOKMARK [1]{section.D.1}{Programs}{chapter.D}
 \BOOKMARK [2]{subsection.D.1.1}{src/config.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.2}{src/cactus/examiner_d.pl}{section.D.1}
-\BOOKMARK [2]{subsection.D.1.3}{src/cactus/process-incoming.pll}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.3}{src/cactus/process-incoming.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.4}{src/cactus/workqueue_d.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.5}{src/cactus/wrap.sh}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.6}{src/examiners/message-rfc822.pl}{section.D.1}
@@ -130,4 +126,15 @@
 \BOOKMARK [2]{subsection.D.1.10}{src/modperl/MyTreePrinter.pm}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.11}{src/sql/create-tables.pl}{section.D.1}
 \BOOKMARK [2]{subsection.D.1.12}{src/sql/reset-tables.sh}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.13}{src/sql/Makefile}{section.D.1}
 \BOOKMARK [1]{section.D.2}{Presenters}{chapter.D}
+\BOOKMARK [2]{subsection.D.2.1}{src/public_html/get.php}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.2}{src/public_html/h2.php}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.3}{src/public_html/index.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.4}{src/public_html/index.xsl}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.5}{src/public_html/known-problems.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.6}{src/public_html/list-docs.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.7}{src/public_html/list_items.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.8}{src/public_html/list_users.xml}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.9}{src/public_html/queries.xsl}{section.D.2}
+\BOOKMARK [2]{subsection.D.2.10}{src/public_html/search.xml}{section.D.2}

@@ -17,8 +17,9 @@ As mentioned in
 it would be beneficial to have a simple, server based tool for
 automatic conversion of a DocBook XML document into a set of formats
 suitable for printing and web publishing, in order to relieve the
-author of the task of running the right utilities to produce a given
-version of a given document.
+author of the chores of installing and maintaining the rich
+environment necessary for a full set of commands for conversion of
+the documents.
 
 \textit{Cactus} is a such system for automatic conversion of
 documents, images and other files into other formats.  Originally
@@ -161,8 +162,8 @@ Please see~\myvref{fig:viggo-cactus} for a Danish explanation.
 
 \myimage{gr/cactus-main}{The Cactus entry screen}{cactus-main}
 
-\myimage{gr/overview}{The basic idea behind
-  Cactus.}{overview}
+% \myimage{gr/overview}{The basic idea behind
+%   Cactus.}{overview}
 
 
 \myimage{gr/cactus-ten-most-recent}{Ten most recent
@@ -175,11 +176,12 @@ Please see~\myvref{fig:viggo-cactus} for a Danish explanation.
 
 \myimage{gr/cactus-generated-pdf-from-lars}{The PDF-rendering of Lars'
     print layout (named ``Lidt Guf'')}{cactus-generated-pdf-from-lars}
-
-  For a user, Cactus is intended to look as shown
-in~\myvref{fig:overview}..  As the users use their usual tools to
-interface with Cactus, it is easy to get the general idea about how
-Cactus works. A normal document publication would be like this:
+  
+For a user, Cactus is intended to be a black box, where documents
+ are inserted and the converted results are viewed in a browser.  As
+ the users use their usual tools to interface with Cactus, it is easy
+ to get the general idea about how Cactus works. A normal document
+ publication would be like this:
 
 
 \begin{enumerate}
@@ -566,7 +568,8 @@ as the start of a PostScript file contains comments of the form:
 
 The Examiner listed, looks for lines starting with
 ``\texttt{\%\%Title:}'' and uses the rest as the title of the document
-printed in the PostScript file.
+printed in the PostScript file.  The result is printed to stdout as a
+``\texttt{x-cactus/title Extracted-title}'' pair.  
 
 \subsection{Derivers}
 
@@ -1007,14 +1010,17 @@ email to the Cactus user\footnote{For this to be activated, the mail
   transfer agent (like PostFix, qmail and sendmail) must have procmail
   enabled.  If the current MTA doesn't have that, then upgrade to
   PostFix.}.
+\myimage{gr/cactus-original-from-lars}{The
+  original version of a submitted email}{cactus-original-from-lars}
+
 
 The listed actions logging to \texttt{work/_logfile}, submit the email
 as standard input to the program \texttt{src/cactus/enter-document.pl}
-with the MIME-type \texttt{message/rfc822}\footnote{The
-\texttt{message/rfc822} MIME-type is the same that is used by
-Netscape, and allows the Netscape user to view any forwarded Usenet
-message directly, including uuencoded images etc.}, and store a copy
-in \texttt{work/incoming-mail}.  The script opens the database, and
+with the MIME-type \texttt{message/rfc822} (which is the same as used
+by Netscape, and allows the Netscape user to view any forwarded Usenet
+message directly with enclosed files -- see
+\myvref{fig:cactus-original-from-lars}), and store a copy in
+\texttt{work/incoming-mail}.  The script opens the database, and
 inserts the email into the \texttt{incoming} table, with the given
 MIME-type, user and submittal date.
 
@@ -1077,14 +1083,14 @@ paper in the automatic document feeder, press the Scan button, and let
 Cactus consider the whole batch as a set of images from the same
 container.
 
-The scanner works well with USB under Windows 98, and is supported by
-SANE (the Linux scanner project) when using the SCSI-interface well
-enough to be used reasonably well in Gimp but SANE crashes once in a
-while.  The automatic document feeder were not well enough supported
-to warrant usage, and due to time constraints I reluctantly decided to
-use the accompanying software under NT at Dorthe Anickas machine
-instead of starting to enhance the ADF support in SANE, by using the
-``Shared-Directory'' approach.
+This is a very good scanner and it works well with USB under Windows
+98, and is supported by SANE (the Linux scanner project) when using
+the SCSI-interface well enough to be used reasonably well in Gimp but
+SANE crashes once in a while.  The automatic document feeder were not
+well enough supported to warrant usage, and due to time constraints I
+reluctantly decided to use the accompanying software under NT at
+Dorthe Anickas machine instead of starting to enhance the ADF support
+in SANE, by using the ``Shared-Directory'' approach.
 
 
 \subsection{Shared directories on a network}
@@ -1093,43 +1099,56 @@ This solution requires a daemon to watch a given directory to see when
 new files arrive, and move them into the database.
 
 \begin{itemize}
-\item
-For Windows clients this
-directory is made publicly visible by setting up SAMBA correctly for a
-commonly writable shared directory.
-
+\item For Windows clients this directory is made publicly visible by
+  setting up SAMBA correctly for a commonly writable shared directory.
+  
 \item For Unix this is made by creating a setuserid directory which is
   world writable and mountable for all trustworthy servers.
 \end{itemize}
 
-\section{Derivers}
+\section{Derivers and converters}
 
-\section{Converters}
+These are implemented as executing one or more external commands, and
+are described as they are used in the sample filter sets in
+\myvref{cha:cactus-sample-filter-sets}.
 
 \section{Examiners}
 
+I only wrote examiners for two basic types, namely an email message
+(\texttt{message/rfc822}) and a PostScript file
+(\texttt{application/postscript}) but this was also sufficient to set
+many document titles and dismantle email messages.  
+
+
 \section{Presenters}
 
-#
+Presenters can be written in any language with access to the
+underlying database.  Those employed in producing the proof-of-concept
+prototype are listed in \myvref{sec:presenters}.  At least three types
+of presenters can be imagined:
+
 \begin{itemize}
-\item An individual item.  The URL
+\item Presenting an individual item.  The URL
 \texttt{http://asserballe/\~{}cactus/get.php?id=XX} extracts the item
 with the given ID from the database along with its MIME-type, and
 return it to the browser.  Additionally the URL
 \texttt{http://asserballe/\~{}cactus/get.php?md5=XX} is recognized
 which is persistent across database rebuilds.
 
-\item Through JDBC to any Java program, like the SQL-processor in
-Cocoon which returns a complete XML-representation of query results,
-which can then be manipulated with XSLT operations.  This is used to
-generate all XML-based information in the proof-of-concept
-implementation.
-
-\item Directly to PHP3, on a line-by-line basis for each line in the
-  result of the SQL-query.
-
-\item To the DBI::MySQL module in Perl, also on a
+\item Presenting a query from the database: Through JDBC to any Java
+  program, like the SQL-processor in Cocoon which returns a complete
+  XML-representation of query results, which can then be manipulated
+  with XSLT operations.  This is used to generate all XML-based
+  information in the proof-of-concept implementation.   SQL-queries
+  can also be handled directly by PHP3, on a line-by-line basis for each line in the
+  result of the SQL-query, and by the DBI::MySQL module in Perl, also on a
   line-by-line basis.
+
+\item Manipulating external data.   The php3 script producing the
+  graphic titles (like the ``Cactus'' title of
+  \myvref{fig:cactus-ten-most-recent}) did so with a text string and a
+  True Type font.
+  
 \end{itemize}
 
 
@@ -1166,6 +1185,46 @@ The latest JDBC driver from \myurl{http://www.mysql.org}{MySQL
 
 
 \section{Web server}
+
+The web server configuration was as follows:
+
+\begin{description}
+
+\item[Apache] -- version 1.3.11.  I had trouble building this with
+  dynamic linking, so a static version was used instead.  This
+  requires all needed modules to be compiled in.  The stock Redhat
+  does not have the JServ component available.
+
+\item[mod_perl] -- version 1.21.   Embeds a Perl interpreter in the
+  webserver for faster CGI scripts written in Perl. 
+
+\item[mod_php] -- PHP 3.0.15.  Provides the facility to execute PHP3
+    scripts. 
+  \item[Apache JServ] -- version 1.1.  Allow Apache to execute
+    servlets (needed for Cocoon).
+\end{description}
+  
+Follow the installation instructions carefully, since it is a bit
+tricky!  The standard httpd.conf for Apache was modified to recognize
+the .php and .php3 file types, to use the jserv.conf file, to use the
+/perl/ directory to point to script files in /home/cactus/src/modperl.
+
+
+
+Note: A problem not solved was that it is possible to specify an
+incorrect URL to Apache, similar to
+\texttt{http://localhost/perl/bigscript.pl/foo/} which causes Apache
+to look for a number of files in this path which appears to be a
+directory.  For some reasons the perl/bigscript.pl is executed for
+each path lookup, meaning that if this bigscript.pl performs a big,
+slow operation running twelwe of these can basically block the whole
+machine until the many simultaneous operations have finished.
+
+I believe this is a bug in Apache, unless I have missed a
+configuration parameter.
+
+
+
 
 % \section{Making it all work under Linux}
 
@@ -1470,7 +1529,9 @@ CLASSPATH=/home/cactus/src/jars/xt.jar:/home/cactus/src/jars/sax.jar:/home/cactu
   }
 
 Again a rendering with XT, but this time to XSL-FO.  The FO target is
-not as good as the HTML target.
+not as good as the HTML target, most likely because of limited
+resources for development, and since this is a much less visible
+target than the web oriented XHTML/HTML-4.0 targets.
 
 \subsection*{text/x-fo to application/pdf (sent to file)}
   {\footnotesize
@@ -1484,10 +1545,12 @@ pdflatex '&/home/cactus/src/passivetex/pdffotex' {@source-name}</dev/null
 
 Currently the best results for rendering FO for printing is
 \myurl{http://users.ox.ac.uk/~rahtz/passivetex/}{Sebastian Rahtz'
-  PassiveTeX} with the \myurl{}{PDF-\TeX} variant of {\TeX} to produce
-PDF files directly.  It must be called twice to get cross references
-right.  Setting \texttt{TEXINPUTS} informs {\TeX} where to find the
-files needed by the \texttt{pdffotex}-format.
+  PassiveTeX} with the
+\myurl{ftp://ftp.cstug.cz/pub/tex/local/cstug/thanh/pdftex}{PDF-\TeX}
+variant of {\TeX} to produce PDF files directly.  It must be called
+twice to get cross references right.  Setting \texttt{TEXINPUTS}
+informs {\TeX} where to find the files needed by the
+\texttt{pdffotex}-format.
 
 \myimage{gr/cactus-20000506-5}{The PDF version.}{cactus-20000506-5}
 
@@ -1713,10 +1776,11 @@ limit the number of colors used in the image to a number less than 256
 
 For large numbers \texttt{ppmquant} ended up allocating so much memory
 that it caused other processes to be denied the memory \textit{they}
-needed for their execution.  Processes like sendmail, apache and X,
+needed for their execution, instead of just being limited to e.g. 16
+Mb of virtual memory.  Processes like sendmail, apache and X, 
 exit in such a situation which eventually leaves the system in a
 useless state.  The problem was reproducible, meaning that every time
-the database was rebuilt the machine hung.  Rather inconvenient.
+the database was rebuilt the machine slowly froze and eventually hanged.
 
 The initial solution -- just to get going -- was to add more swap
 space, and start looking for a way to set a hard limit with respect to

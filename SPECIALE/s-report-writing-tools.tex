@@ -29,8 +29,8 @@ found third edition to be substantially better than the second edition.
 % PDF-version.  
 
 
-\subsection{Creating PDF files}
-\label{sec:report-writing-creating-pdf-files}
+%\subsection{Creating PDF files}
+%\label{sec:report-writing-creating-pdf-files}
 
 I have had good success with the following approach to creating
 PDF-files from a \LaTeX-file
@@ -71,8 +71,8 @@ much better with printing the PDF-file with
 \texttt{-helpall} option to get a full overview).
 
 
-\subsection{Including screen dumps}
-\label{sec:report-writing-tools-latex-eps}
+%\subsection{Including screen dumps}
+%\label{sec:report-writing-tools-latex-eps}
 
 Screen dumps have been captured with
 \myurl{http://www.freshmeat.net/appindex/1998/07/28/901622941.html}{xv}
@@ -170,7 +170,16 @@ additional modules.  The standard distribution of Emacs provides:
 \item[CVS] -- Emacs supports CVS directly.  I
   had my working directory on my portable, and my CVS repository on
   the MIP system, in order for my CVS files to be automatically backed
-  up. 
+  up.  For this to work with ssh the following environment variables
+  needs to be set
+\begin{verbatim}
+export CVSROOT=:ext:ravn@silkeborg.mip.sdu.dk:/home/ravn/CVS/SPECIALE
+export CVS_RSH=ssh
+\end{verbatim}
+Use the \texttt{eval `ssh-agent`} and \texttt{ssh-add} commands before
+starting X will provide full ssh-access for all programs started in X,
+including Emacs thus providing full CVS support within Emacs.
+
 \item[Compile] -- The \texttt{M-x compile} works well with Jade,
   nsgml, Java and other tools where you may encounter errors in your
   source.  \texttt{Ctrl-x `} makes Emacs go to the line with the
@@ -185,7 +194,7 @@ Additionally I have installed:
 \begin{description}
 \item[AUC-TeX] -- provides a complete IDE for writing {\LaTeX}
   documents, including keyboard shortcuts, a debugger, and intelligent
-  commands depending on the state of the files. Highly recommended.
+  commands depending on the state of the files. 
   
 \item[psgmls] -- provides easy entering of tags, and parses DTD's to
   verify tags, and describe which tags are open as well as valid at a
@@ -196,8 +205,8 @@ Additionally I have installed:
 \end{description}
 
 
-\subsection{Making them all work together}
-\label{sec:making-them-all-work-together}
+%\subsection{Making them all work together}
+%\label{sec:making-them-all-work-together}
 
 Using these packages has basically been very easy, but occasionally
 they step on each others toes.  That could normally be circumvented:
