@@ -9,7 +9,10 @@
      "sec:CGI-php3"
      "sec:CGI-servlets"
      "fig:mip-recently-changed-pages"
-     "sec:html-meta-tags")
+     "sec:html-meta-tags"
+     "cha:on-demand-rendering"
+     "sec:emacs-with-psgml"
+     "sec:the-importance-of-a-web-cache")
     (TeX-run-style-hooks
      "graphicx"
      "fancyhdr"
@@ -19,10 +22,11 @@
      "alltt"
      "isolatin1"
      "fullpage"
-     "bookman"
+     "charter"
      "latex2e"
-     "bk10"
+     "bk11"
      "book"
+     "11pt"
      "draft"
      "a4paper"
      "s-mycommands"))))

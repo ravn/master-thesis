@@ -8,11 +8,13 @@
 %   Concepts'' (chapter \vref{cha:terms-and-concepts}).  Please refer to
 %   it to clarify matters.}
 
-\section{The original vision: A Web-server with a file system }
+!!! PUT SAMPLE OF FILENAME INSTEAD OF TT-FILENAME-/TT in SOMEWHERE.
 
-\textsf{Badly phrased ...} 
-The original capabilities of a web server was : \textsf{Nice
-  figure... Mention URL}
+
+\section{The way it started: Handmade web-pages in a filesystem on a web-server}
+
+\textsf{Badly phrased ...}  The original capabilities of a web server
+was : \textsf{Nice figure... Mention URL}
 
 \begin{itemize}
 \item A underlying file system containing a lot of \textit{static}
@@ -130,11 +132,16 @@ the webmaster has to do the updates manually.  Updating HTML-documents
 manually is at best a tedious pain, because it is hard, repetitive,
 mindless labour, which should be left to a computer.
 
-See figure\textsf{??} for a navigational framework on the Fyns
-GNU/Linux User Group home page.
+\myimage{gr/flug-1}{The Fyns GNU/Linux User Group web-site.  The side
+  bar and the top graphic was added
+  automatically}{flug-1}
 
-\textsf{Reference to FLUG.DK}
+Figure~\vref{fig:flug-1} shows a sample page from the Fyns GNU/Linux
+User Group web-site, showing the way FLUG chose to do it.  The
+framework is added to the HTML-file with a small perl script which
+must be run to publish each page.
 
+\textsf{Does it hang together?}.
 The most simple version of this, is to say that every web page on the
 site must have a static header usually containing at least a link to the entry
 page and a search engine, but where the header is the same for every
@@ -151,15 +158,17 @@ with \textsf{Server Side Includes}, which takes care of all this - except
 doing it unconditionally on every page.  The user must still remember
 to insert the appropriate command sequence in the server).
 
-Many modern websites put a given page in a \textit{context} where the
-navigational framework reflect this context.  See
-figure\textsf{vref{intel-1}} for a sample from
-\myurl{http://www.intel.com/...}{Intel regarding the VS440FX
-  motherboard}.    This requires more discipline for the web author
-writing each page,
-but can still be implemented by including the appropriate
-HTML-snippet, since these are the same for all pages regarding this
-motherboard.  
+\myimage{gr/intel-1}{The web page for drivers for the Intel VS440FX
+  motherboard}{intel-1}%
+%
+Many modern websites put a given page in a
+\textit{context} where the navigational framework reflect this
+context.  See figure\vref{fig:intel-1} for a sample from
+\myurl{http://support.intel.com/support/motherboards/desktop/VS440fx/software.htm}{Intel
+  regarding the VS440FX motherboard}.  This requires more discipline
+for the web author writing each page, but can still be implemented by
+including the appropriate HTML-snippet, since these are the same for
+all pages regarding this motherboard.
 
 \textsf{Reference to INTEL.COM with navigational fraework for
   motherboard vs440fx}.
@@ -169,7 +178,7 @@ this site, it should be created automatically.  Doing so requires
 meta-data about the individual pages in order to place them correct in
 the framework.
 
-\section{A good website needs meta-information}
+\section{A good website needs meta-information about its documents}
 
 What to a webmaster is a nice, and well maintained web-site, is to a
 computer just a bunch of directories of files with bytes in them.  In
@@ -298,8 +307,8 @@ possible.  For programs, that means that the documentation should be
 done by using comments embedded in the source code.
 
 \framepage{15cm}{\textsf{grow terse - does not stand on its own - hard
-  to maintain - abstraction layer: the idea was to \textit{hide} the
-  code and just show the meta-data}}
+    to maintain even for the author - abstraction layer: the idea was
+    to \textit{hide} the code and just show the meta-data}}
 
 \textsf{Typical example is Tanenbaum Minix with source listing with
   line numbers and a cross reference - bladre from og tilbage hele
@@ -337,8 +346,29 @@ they have become used to hyper-linked documentation in a browser to
 accompany any code they are to use.  This tendency is a good step in
 the right direction.
 
+
+\subsection{The Plain Old Documentation format for Perl}
+\label{sec:perlpod}
+
+\textsf{list an example and say that this works well.  Just look at CPAN}
+
 \subsection{Literate Programming - Knuths approach \textsf{??}}
 \label{sec:literate-programming}
+
+\textsf{THIS MIGHT HAVE TO BE MOVED}
+
+\mycitation{I believe that the time is ripe for significantly better
+  documentation of programs, and that we can best achieve this by
+  considering programs to be works of literature. Hence, my title:
+  "Literate Programming." Let us change our traditional attitude to
+  the construction of programs: Instead of imagining that our main
+  task is to instruct a *computer* what to do, let us concentrate
+  rather on explaining to *human beings* what we want a computer to
+  do.}%
+{Donald Knuth}%
+{\cite{knuthliterateprogramming} quoted from
+  \myurl{http://www.literateprogramming.com/}{The Literate Programming
+    web site}}
 
 Donald E. Knuth has written the {\TeX}-system used to typeset this
 report, and documented it by publishing the source code to the entire
@@ -392,7 +422,26 @@ may be counter-productive if these are hard to navigate.
 \textsf{Many tried this- cloned the functionality -etc - I tried it,
   and wrote a few programs with it.}
 
-My experience with Literate Programs can be summarized as:
+Many people have experimented with the possibilities of a
+weave/tangle pair resulting in several software packages, notably:
+
+\myurl{http://www.ross.net/funnelweb/}{FunnelWeb},\myurl{http://www.eecs.harvard.edu/~nr/noweb/}{noweb}
+
+\textit{http://w3.pppl.gov/~krommes/fweb.html\#SEC3}
+
+There is
+\myurl{http://www.webring.org/cgi-bin/webring?ring=litprog;list}{a
+  webring for Literate Programming}, which is an excellent place to
+look for further information.  The Collection of Computer Science
+Bibliographies provides
+\myurl{http://liinwww.ira.uka.de/searchbib/SE/litprog}{a search engine
+  in literate programming publications}.
+
+Oasis has \myurl{http://www.oasis-open.org/cover/xmlLitProg.html}{a
+  page on Literate Programing with XML and SGML} \textsf{what about
+  it? - note the references for working with the TEI DTD}
+
+My previous experience with Literate Programs can be summarized as:
 
 \begin{itemize}
 \item The documentation gets bigger and better, simply because the
@@ -405,14 +454,18 @@ graphs.
   using your favorite tools for editing, compiling and debugging.
   Users of most integrated development environments cannot use this
   model since the IDE does not provide hooks to provide this processing.
-
+  
+\item A critical point is whether the intermediate files are visible
+  to the author! In order to be usable, \textit{all} derived files
+  \textit{must} refer to the original document in a transparent
+  fashion, meaning that the user should not have to worry about
+  intermediate files.  (In the same way that the C-processor works
+  under Unix).
 \end{itemize}
 
-Critical observation: In order to be usable, all tools \textit{must}
-create derived files that transparently refers back to the original
-web-document, in order for all corrections to be made to the
-web-document instead of the various derived files.
-
+My conclusion was that the Literate Programming paradigm does not pay
+off as a individual programmer, but may work very well for a larger
+programming team where good, current documentation is critical.
 
 \subsection{Rational Rose - the other way around}
 \label{sec:rational-rose}
@@ -424,29 +477,164 @@ another approach, \textsf{work on meta-data with hidden code in the
   Experiences from users}.  
 
 
-\section{The consequence - multiple views of a document}
+
+\subsection{Compiling source code into an executable}
+\label{sec:compiling-source-into-an-executable}
+
+Most software projects does not consist of a single huge source file
+which would take ages to compile, but of several smaller files, which
+can be compiled individually and linked to an executable file.  If a
+file with source code is changed, it is not necessary to recompile
+each and every file but only those which depend on this particular
+source file, and then relink the executable to incorporate the
+changes.
+
+This is possible because the authors has provided meta-data about the
+system, regarding which source files the system contains, which
+commands to call to compile and link the source files, which libraries
+should be included, etc.  Normally an Integrated Development
+Environment (like \myurl{http://www.borland.com/bcppbuilder/}{Borland
+  C++Builder}, \myurl{http://msdn.microsoft.com/visualc/}{Microsoft
+  Visual C++}, or \myurl{http://www-4.ibm.com/software/ad/}{the Visual
+  Age products from IBM}) knows about these things, or a
+\myurl{http://www.eng.hawaii.edu/Tutor/Make/}{Makefile} is constructed
+to utilize the known relations built into \unixcommand{make} as well
+as allow the author to add new ones.
+
+In effect, adding meta-data allows the program development process to
+go faster.
+
+\subsection{\textsf{anything else with meta-data?}}
+
+
+\section{Requiring multiple views of a document}
+\label{sec:requiring-multiple-views-of-a-document}
+
+\myimage{gr/zdnet-1}{The ZDNet presentation of a story}{zdnet-1}
+\myimage{gr/zdnet-2}{The ``Printer-friendly version'' of
+  figure~\vref{fig:zdnet-1}}{zdnet-2}
+
+Some web-sites have so many advertisements and auxiliary links in
+their layout, that they need an additional version which is
+well-suited for printing (i.e. only has a single ad).  See
+figure~\vref{fig:zdnet-1}
+\myurl{http://www.zdnet.com/zdnn/stories/news/0,4586,2468874,00.html?chkpt=zdhpnews01}{for
+  an example from ZDNet}, and figure~\vref{fig:zdnet-2} for the
+``Printer-friendly version''.
+
+\textsf{websites realizing that they cannot just offer an
+  advertisement ladden service, without allowing for a reasonable
+  paper version.  Since their HTML cannot ``remove'' the ads for
+  printing, they have to offer two different version of each article.}
+
+\myimage{gr/nokia-1}{Browsing the Internet on the large [sic] display
+  of a Nokia 9110}{nokia-1}
+
+These are two different \textit{views} of the same basic document.
+ZDNet are expecting their visitors to either see their documents on a
+CRT rendered by a reasonably capable browser or print them out on
+paper.  That will probably change within a few years when it becomes
+common for other devices than just traditional computers to be
+connected to the Internet.  Mobile phones using WAP do not have as
+much screen real estate (the Nokia 9110 is shown in
+figure~\vref{fig:nokia-1}) so such users may with good reason prefer
+short and crisp versions of the documents when they use a mobile
+phone.  Nokia is working with 3com to produce a hybrid between a Palm
+Pilot and a mobile phone.  Users have been known to request documents
+in a format suitable for reading on a Palm Pilot.  
+
+This tendency might as a side-effect be beneficial for the blind
+computer users (see
+\myurl{http://www.webring.org/cgi-bin/webring?ring=blind\&list}{the
+  Blind Webring} for more information) .  They must normally use
+text-to-braille software or a ``screen reader'' in order to use
+computers, neither of which work well with web pages loaded with
+graphics, but when web authors must write for many kinds of media
+instead of just a particular version of a given browser, this will
+also be beneficial to these users.  Of course, it is possible to write
+ordinary HTML in a way that is usable by these users \textsf{statens
+  guide for webpublikationer}, but that is rare these days.
+
+
+\section{SGML/XML:  Generic formats for storing data and meta-data}
+\label{sec:sgml-and-xml-generic-formats}
+
+The problem of representing data in a generic way is not new at all,
+and was solved for the printing industry in the 1970'ies by the design
+of the Standard Generalized Markup Language (SGML) which is widely
+used.  SGML was deemed too complicated for web browsers, and a trimmed
+version was named XML and standardized in 1998.
+Chapter~\vref{cha:sgml-xml-and-dtd's} talks a lot more about this.
+
+For now it is sufficient to say that it is possible to store both data
+and meta-data in a convenient form in a SGML or XML file, but that
+these files must be rendered into the formats expected by the users,
+like HTML, PDF or what else tomorrow may bring of new, exiting
+formats.  Since SGML describes the \textit{content} and not the
+layout, it is ``just'' a matter of creating a renderer for any new
+format and add it to the collection.
+
+This has been recognized by almost all of the ``Documentation
+Projects'' (\myurl{http://www.linuxdoc.org/}{The Linux Documentation
+  Project}, \myurl{http://www.freebsd.org/docproj/docproj.html}{The
+  FreeBSD Documentation Project} and others) accompanying the various
+free operating systems available on the Internet.
+
+
+Chapter~\vref{cha:on-demand-rendering} talks about rendering documents
+to a given format on demand (for example in a web browser).
+
+\textsf{Others? It seems to me that stuff is missing here.} 
+
+
+% \framepage{15cm}{
+% Introduce publishing where HTML is just a backend amongst many (PDF,
+% Word, ASCII).
+
+% Describe why it is important to be able to render finished versions of
+% documents fully automatically from a single \textsl{annotated} source
+% (www/print/cdrom/Palm Pilot/braille/handicapped persons,whatever).  The better
+% the annotation, the better the output (ref: Stibo).  Describe the need
+% for SGML (history/usage) and XML (why/browser support/on-the-fly
+% publishing/bleeding edge - being standardized).
+
+% Donald Knuth - {\TeX}/Web/Literate Programming - advantages (high
+% quality, excellent math, superb algorithms, can be tailored to needs
+% (basic interpreter written in TeX) and
+% disadvantages (programming language, not abstract) (designed 20 years ago).  Ask Steffen Enni
+% about his thoughts.  Javadoc.  Perl POD.  DocBook projects (FreeBSD,
+% LDP).  
+% }
+
+\section{The user should use familiar tools to publish documents}
+\label{sec:the-user-should-use-familiar-tools-to-publish-documents}
 
 \framepage{15cm}{
-Introduce publishing where HTML is just a backend amongst many (PDF,
-Word, ASCII).
+SGML-editing is hard and tedious - this is one thing that the folks in
+the \myurl{news:comp.text.sgml}{\texttt{comp.text.sgml}} and
+\myurl{news:comp.text.xml}{\texttt{comp.text.xml}} newsgroups agree
+upon.  Tools are essential for authors.
 
-Describe why it is important to be able to render finished versions of
-documents fully automatically from a single \textsl{annotated} source
-(www/print/cdrom/Palm Pilot/braille/handicapped persons,whatever).  The better
-the annotation, the better the output (ref: Stibo).  Describe the need
-for SGML (history/usage) and XML (why/browser support/on-the-fly
-publishing/bleeding edge - being standardized).
+Very few tools exist, and the good ones are quite expensive.  The
+general consensus is that the best OpenSource tool is the Emacs editor
+with the PSGML package (see~\vref{sec:emacs-with-psgml}), and that
+this tool is primarily suited for programmers and other people who are
+well acquainted with SGML and XML.
 
-Donald Knuth - {\TeX}/Web/Literate Programming - advantages (high
-quality, excellent math, superb algorithms, can be tailored to needs
-(basic interpreter written in TeX) and
-disadvantages (programming language, not abstract) (designed 20 years ago).  Ask Steffen Enni
-about his thoughts.  Javadoc.  Perl POD.  DocBook projects (FreeBSD,
-LDP).  
-}
+\textsf{PRINT DIRECTLY TO A PDF FILE - WEB PUBLISHING}
 
-\section{The user should use current tools to publish documents}
-\framepage{15cm}{
+Computers should \textit{help} you do your work, and users are
+generally most productive with the tools they know.  Why should an
+author use SGML with an editor she loathes, if precisely the same result can be
+achieved by using a word processor she is familiar with?
+
+In order to automate the conversion from e.g. Word to the equivalent
+SGML file, it is important that the author uses only those
+constructions that the conversion program understands.  This is most
+likely given as a set of macros that must be used, as well as a
+verification program which the author can use at any time to check
+whether her document is conformant.
+
 Publishing a document to the web should be as easy as printing a
 document.  The basic principles are the same - you can do with a
 ``Publish''-button and a dialogue box where the essential information
@@ -471,26 +659,6 @@ automatically converted to the XML document.  This does not give as
 rich documents, but allows users to publish existing documents with
 very little trouble.
 }
-
-
-\section{The importance of a web cache}
-\label{sec:the-importance-of-a-web-cache}
-
-A database query is expensive, and it requires an expert to tune the
-database to run as fast as possible.  It is not, however, always
-necessary to have the webserver do a database query to serve a page -
-often the generated page is valid for a short or long term period,
-and then it is relatively easy to cache the page for this period.
-
-Here is one way to do it:
-
-\begin{itemize}
-\item Configure the script generating the page, to add an
-  ``\texttt{Expires''} header with a reasonable time of expiry
-\item Set up squid (\vref{sec:squid}) in http-accellerator mode, where
-  it transparently adds cache facilities to a webserver, respecting
-  the ``\texttt{Expires}'' header.
-\end{itemize}
 
 %%% Local Variables: 
 %%% mode: latex

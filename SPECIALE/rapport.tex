@@ -9,15 +9,15 @@
 % in such a tag when the report is finished.
 
 
-\documentclass[draft,a4paper]{book}
+\documentclass[11pt,draft,a4paper]{book}
 %\documentclass[draft,a4paper]{report}
 
 %\usepackage{concrete}          % ok - legible
 %\usepackage{beton}             % ok - legible
 %\usepackage{times}             % ok - standard
 %\usepackage{utopia}            % ok
-%\usepackage{charter}           % ok - very legible, good in PDF
-\usepackage{bookman}            % ok - legible while typing
+\usepackage{charter}           % ok - very legible, good in PDF
+%\usepackage{bookman}            % ok - legible while typing
 %\usepackage{helvetic}          % no change
 %\usepackage{palatino}          % ok - nice, like it
 %\usepackage{lucidabr}          % No good, due to missing fonts here.
@@ -31,6 +31,7 @@
 \usepackage{varioref}           % gives better references
 \usepackage{verbatim}
 \usepackage{fancyhdr}           % provide headers where I can put the filenames.
+%\usepackage{myshowlocation}
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
 % hyperref breaks \vref :-(
@@ -67,6 +68,7 @@
 % While writing - this provides fileinformation on includes
 \lhead{\currentinputfile}
 \pagestyle{fancy}
+
 % End.
 
 \begin{document}
@@ -112,6 +114,28 @@ Full reference with a lot of annotated URL's.
 \label{sec:CGI-servlets}
 \label{fig:mip-recently-changed-pages}
 \label{sec:html-meta-tags}
+\label{cha:on-demand-rendering}
+\label{sec:emacs-with-psgml}
+
+\section{The importance of a web cache}
+\label{sec:the-importance-of-a-web-cache}
+
+A database query is expensive, and it requires an expert to tune the
+database to run as fast as possible.  It is not, however, always
+necessary to have the webserver do a database query to serve a page -
+often the generated page is valid for a short or long term period,
+and then it is relatively easy to cache the page for this period.
+
+Here is one way to do it:
+
+\begin{itemize}
+\item Configure the script generating the page, to add an
+  ``\texttt{Expires''} header with a reasonable time of expiry
+\item Set up squid (\vref{sec:squid}) in http-accellerator mode, where
+  it transparently adds cache facilities to a webserver, respecting
+  the ``\texttt{Expires}'' header.
+\end{itemize}
+
 
 \end{document}
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -41,6 +41,14 @@ Douglas Hofstaedter.
   regarding computers, molecular biology and Bach, as well as the depth of
   self-reference. For fellow readers only: I am positive I have found the end
   of the book.
+
+\bibitem[Knuth(1992)]{knuthliterateprogramming}
+Donald~E. Knuth.
+\newblock {\em Literate Programming}, volume ISBN 0-937073-80-6.
+\newblock Stanford, California: Center for the Study of Language and
+  Information, 1992.
+\newblock \myurl{http://www-cs-faculty.stanford.edu/~knuth/lp.html}{Knuths own
+  page}.
 
 \bibitem[Kopka and Daly(1999)]{a-guide-to-latex}
 Helmut Kopka and Patrick~W. Daly.

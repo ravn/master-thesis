@@ -9,5 +9,7 @@
      "sec:linux"
      "sec:apache"
      "sec:squid"
-     "sec:cocoon"))))
+     "sec:cocoon"
+     "sec:cactus-filters"
+     "sec:filter-ps-to-pdf"))))
 

@@ -1,9 +1,9 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  17 MAR 2000 15:33
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  18 MAR 2000 06:53
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
-(/usr/share/texmf/tex/latex/base/bk10.clo
-File: bk10.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
+(/usr/share/texmf/tex/latex/base/bk11.clo
+File: bk11.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -18,9 +18,8 @@ File: bk10.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf/tex/latex/psnfss/bookman.sty
-Package: bookman 1999/03/29 PSNFSS v.7.2 Bookman font as default roman : S Raht
-z
+(/usr/share/texmf/tex/latex/psnfss/charter.sty
+Package: charter 1998/01/07: PSNFSS v.2 LaTeX2e package loading charter 
 )
 (/usr/share/texmf/tex/latex/misc/fullpage.sty
 Style Option FULLPAGE Version 2 as of 15 Dec 1988
@@ -75,38 +74,30 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Try loading font information for OT1+pbk on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 74.
 
-(/usr/share/texmf/tex/latex/psnfss/ot1pbk.fd
-File: ot1pbk.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pbk.
+(/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
+File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
 )
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 72.
 \openout2 = `s-front-matter.aux'.
 
  (s-front-matter.tex
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <17.28> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <12> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -116,73 +107,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+pag on input line 7.
-
-(/usr/share/texmf/tex/latex/psnfss/ot1pag.fd
-File: ot1pag.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pag.
-)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 7.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 8.
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 16.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 34.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 34.
+(Font)              <10.95> on input line 7.
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-(/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 73.
- [2]
+
+[2]
 \openout2 = `s-introduction.aux'.
 
  (s-introduction.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <20.74> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <20.74> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 2.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for OMS+pbk on input line 56.
-(/usr/share/texmf/tex/latex/psnfss/omspbk.fd
-File: omspbk.fd 
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 56.
+(/usr/share/texmf/tex/latex/psnfss/omsbch.fd
+File: OMSbch.fd 
 )
-LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
  [3
 
 
 
 ]
-Underfull \hbox (badness 1577) in paragraph at lines 154--154
-[]\OT1/pbk/l/n/10 Provide back-ground in-for-ma-tion: Quick overview of the tec
-h-nol-ogy [web-server,
- []
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 75.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 75.
+)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-) [4]
+
+[4]
 \openout2 = `s-terms-and-concepts.aux'.
 
  (s-terms-and-concepts.tex
@@ -191,13 +146,11 @@ Chapter 2.
 
 
 
-]
-Overfull \hbox (8.47066pt too wide) in paragraph at lines 76--78
-[]\OT1/pbk/l/n/10 The Struc-tured Query Lan-guage is the \OT1/pag/m/n/10 stan-d
-ard \OT1/pbk/l/n/10 lan-guage for com-mu-ni-cat-ing with a database. |
- []
+])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-) [6]
+
+[6]
 \openout2 = `s-dynamically-generated-documents.aux'.
 
  (s-dynamically-generated-documents.tex
@@ -206,215 +159,466 @@ Chapter 3.
 
 
 
-] [8]
-Overfull \hbox (9.83115pt too wide) in paragraph at lines 208--213
-\OT1/pbk/l/n/10 bil-ity of build-ing an un-break-able sys-tem for au-to-matic d
-e-tec-tion of bad in-put in [[]]. |
+]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[8]
+Overfull \hbox (89.56006pt too wide) in paragraph at lines 168--168
+[][]\OT1/bch/m/n/9 ...Intel re-gard-ing the VS440FX moth-er-board...-- \OT1/cmt
+t/m/n/9 http://support.intel.com/support/motherboards/desktop/VS440fx/software.
+htm| |
  []
 
-[9] [10]
-LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
-(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 302.
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 316.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 316.
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 340.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 340.
- [11]
-Underfull \hbox (badness 1348) in paragraph at lines 446--446
-\OT1/pbk/l/n/10 fully au-to-mat-i-cally from a sin-gle \OT1/pbk/l/sl/10 an-no-t
-ated \OT1/pbk/l/n/10 source (www/print/cdrom/Palm Pi-
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[9]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[10]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[11]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 311.
+
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[12]
+
+LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
+(Font)              using `OT1/cmss/m/n' instead on input line 355.
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[13]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[14]
+Overfull \hbox (50.98718pt too wide) in paragraph at lines 522--522
+[][]\OT1/bch/m/n/9 ...for an ex-am-ple from ZD-Net...-- \OT1/cmtt/m/n/9 http://
+www.zdnet.com/zdnn/stories/news/0,4586,2468874,00.html?chkpt=zdhpnews01| |
  []
 
-[12]) [13]
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[15]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[16]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[17])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[18]
 \openout2 = `s-standards.aux'.
 
- (s-standards.tex) [14
+ (s-standards.tex)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[19
 
 
 ]
 \openout2 = `s-sample-websites.aux'.
 
  (s-sample-websites.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[20
+
+
+
+]
 Chapter 4.
-[15
+
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+ [21]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
+[22]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-] [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-[18] [19] [20] [21] [22] [23] [24] [25]
-Underfull \hbox (badness 4752) in paragraph at lines 355--355
-[]\OT1/pbk/l/n/10 Search en-gines. How do they do it? www.909.dk, www.krak.dk, 
-ter-
+[23]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[24]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[25]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[26]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[27]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[28]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[29]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[30]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[31]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[32]
+Underfull \hbox (badness 6961) in paragraph at lines 355--355
+[]\OT1/bch/m/n/10.95 Search en-gines. How do they do it? www.909.dk, www.krak.d
+k, ter-
  []
 
 
-Overfull \hbox (12.77078pt too wide) in paragraph at lines 358--358
-[][]\OT1/pbk/l/n/8 ...http://liinwww.ira.uka.de/bibliography/index.html...-- \O
-T1/pcr/m/n/8 http://liinwww.ira.uka.de/bibliography/index.html| |
+Overfull \hbox (10.57684pt too wide) in paragraph at lines 358--358
+[][]\OT1/bch/m/n/9 ...http://liinwww.ira.uka.de/bibliography/index.html...-- \O
+T1/cmtt/m/n/9 http://liinwww.ira.uka.de/bibliography/index.html| |
  []
 
-[26]) [27]
+)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[33]
 \openout2 = `s-available-technologies.aux'.
 
- (s-available-technologies.tex [28
+ (s-available-technologies.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[34
 
 
 
 ]
 Chapter 5.
-[29]
-Overfull \hbox (49.27448pt too wide) in paragraph at lines 82--82
-[][]\OT1/pbk/l/n/8 ...Ingress II database is in a beta stage for Linux...-- \OT
-1/pcr/m/n/8 http://www.cai.com/products/betas/ingres[]linux/ingres[]linux.htm| 
-|
+[35]
+Overfull \hbox (45.88373pt too wide) in paragraph at lines 82--82
+[][]\OT1/bch/m/n/9 ...Ingress II database is in a beta stage for Linux...-- \OT
+1/cmtt/m/n/9 http://www.cai.com/products/betas/ingres[]linux/ingres[]linux.htm|
+ |
  []
 
 
-Overfull \hbox (5.08191pt too wide) in paragraph at lines 120--120
-[][]\OT1/pbk/l/n/8 ...has Sybase Adap-tive Server En-ter-prise and SQL Any-wher
-e Stu-dio...-- \OT1/pcr/m/n/8 http://www.sybase.com/products/linux/| |
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+[][]\OT1/bch/m/n/9 ...has Sybase Adap-tive Server En-ter-prise and SQL Any-wher
+e Stu-dio...--
  []
 
-[30] [31] [32] [33]) [34]
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[37]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[38]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[39]
+Underfull \hbox (badness 1622) in paragraph at lines 331--331
+[]\OT1/bch/m/n/10.95 XT, Xerces, Co-coon, SQL2xml, val-ida-tors (er-ror re-cov-
+er-ing?), con-vert-ers to XML
+ []
+
+)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[40]
 \openout2 = `s-xml.aux'.
 
  (s-xml.tex
 Chapter 6.
-[35
+[41
 
 
 
-] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 209--209
-[][]\OT1/pbk/l/n/8 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
+]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[42]
+Overfull \hbox (6.3773pt too wide) in paragraph at lines 129--139
+[]\OT1/bch/m/n/10.95 Modern word pro-ces-sors have been con-structed around the
+ ``What you see is what you get'' paradigm,|
+ []
+
+
+Underfull \vbox (badness 7832) has occurred while \output is active []
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[][]\OT1/bch/m/n/9 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
 ions of HTML...--
  []
 
-[37] [38] [39] [40]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 457.
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[44]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[45]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[46]
 File: x-outline.xsl  (verbatim)
- [41]
-Overfull \hbox (22.24501pt too wide) in paragraph at lines 551--551
-[]  \OT1/pcr/m/n/10 se-lect when, mime, user, how, file-name, com-ment,length(i
-tem) as l  from incoming[] |
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[47]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[48]
+Overfull \hbox (1.6374pt too wide) in paragraph at lines 552--552
+[]  \OT1/cmtt/m/n/10.95 select when, mime, user, how, filename, comment,length(
+item) as l  from incoming[] |
  []
 
-[42]
-Overfull \hbox (172.24501pt too wide) in paragraph at lines 578--578
-[]\OT1/pcr/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>fi
-lename</th><th>comment</th><th>iteml</th></tr>[] |
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[49]
+Overfull \hbox (145.3546pt too wide) in paragraph at lines 579--579
+[]\OT1/cmtt/m/n/10.95 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><t
+h>filename</th><th>comment</th><th>iteml</th></tr>[] |
  []
 
-[43] [44]) [45]
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[50]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[51]
+Underfull \vbox (badness 3029) has occurred while \output is active []
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[52])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[53]
 \openout2 = `s-docbook.aux'.
 
  (s-docbook.tex
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 30.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <10> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 30.
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-Overfull \hbox (126.62216pt too wide) in paragraph at lines 76--80
-[]\OT1/pbk/l/n/10 where \OT1/pcr/m/n/10 doc-book.dsl \OT1/pbk/l/n/10 is one of 
-the stylesheets from the \OT1/pag/m/n/10 Doc-Book Mod-u-lar StyleSheets \OT1/pb
-k/l/n/10 (\OT1/pcr/m/n/10 dsssl/docbook/print/docbook.dsl\OT1/pbk/l/n/10 )|
+
+[54
+
+
+]
+Overfull \hbox (109.6761pt too wide) in paragraph at lines 76--80
+[]\OT1/bch/m/n/10.95 where \OT1/cmtt/m/n/10.95 docbook.dsl \OT1/bch/m/n/10.95 i
+s one of the stylesheets from the \OT1/cmss/b/n/10.95 Doc-Book Mod-u-lar StyleS
+heets \OT1/bch/m/n/10.95 (\OT1/cmtt/m/n/10.95 dsssl/docbook/print/docbook.dsl\O
+T1/bch/m/n/10.95 )|
  []
 
-[46
+)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-]) [47]
+[55]
 \openout2 = `s-sql.aux'.
 
- (s-sql.tex [48
+ (s-sql.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[56
 
 
 
 ]
 Chapter 7.
-[49]
-Overfull \hbox (92.36786pt too wide) in paragraph at lines 78--83
-\OT1/pbk/l/n/10 SQL has evolved over the years. The lat-est ANSI stan-dard is S
-QL92, which is dis-cussed in [[]],|
+[57]
+Overfull \hbox (82.58868pt too wide) in paragraph at lines 78--83
+\OT1/bch/m/n/10.95 SQL has evolved over the years. The lat-est ANSI stan-dard i
+s SQL92, which is dis-cussed in [[]],|
  []
 
 
-Overfull \hbox (84.27466pt too wide) in paragraph at lines 119--119
-[][]\OT1/pbk/l/n/8 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
-/pcr/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#Tu
-torial| |
+Overfull \hbox (82.06305pt too wide) in paragraph at lines 119--119
+[][]\OT1/bch/m/n/9 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
+/cmtt/m/n/9 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#T
+utorial| |
  []
 
-[50]
-Overfull \hbox (11.37265pt too wide) in paragraph at lines 131--139
-\OT1/pbk/l/n/10 term real-life ex-pe-ri-ence with the heavy duty web-service at
- Ar-s-Digita[], which also serves photo.net[]|
- []
 
-) [51]
+Underfull \vbox (badness 1515) has occurred while \output is active []
+
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[58]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[59])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[60]
 \openout2 = `s-users-transparently.aux'.
 
- (s-users-transparently.tex) [52
+ (s-users-transparently.tex)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[61
 
 
 ]
 \openout2 = `s-active-and-passive-data-acquisition.aux'.
 
+ (s-active-and-passive-data-acquisition.tex)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-(s-active-and-passive-data-acquisition.tex) [53
+
+[62
 
 
 ]
 \openout2 = `s-search-engines-and-data-mining.aux'.
 
+ (s-search-engines-and-data-mining.tex)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-(s-search-engines-and-data-mining.tex) [54
+
+[63
 
 
 ]
 \openout2 = `s-conclusion.aux'.
 
  (s-conclusion.tex
-Chapter 8.
-) [55
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[64
 
 
 
 ]
+Chapter 8.
+) [65]
 \openout2 = `s-cactus.aux'.
 
- (s-cactus.tex [56
+ (s-cactus.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[66
 
 
 
 ]
 Appendix A.
-[57]
-Overfull \hbox (2.0327pt too wide) in paragraph at lines 71--76
-\OT1/pbk/l/n/10 The Yg-gdrasil sys-tem was de-signed to pro-vide a sim-ple, con
--sis-tent nav-i-ga-tional frame-work around|
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [67]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[68]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[69]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[70]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[71]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[72]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[73]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[74]
+Overfull \hbox (22.36736pt too wide) in paragraph at lines 552--552
+[][]\OT1/bch/m/n/9 ...The http-accellerator mode...-- \OT1/cmtt/m/n/9 http://ww
+w.squid-cache.org/Doc/FAQ/FAQ-20.html#what-is-httpd-accelerator| |
  []
 
-[58] [59] [60] [61] [62]
-LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 456.
-LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <7> not available
-(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 456.
- [63]
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
-[][]\OT1/pbk/l/n/8 ...The http-accellerator mode...-- \OT1/pcr/m/n/8 http://www
-.squid-cache.org/Doc/FAQ/FAQ-20.html#what-is-httpd-
- []
 
-) [64]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[75])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[76]
 \openout2 = `s-konsensus.aux'.
 
 
@@ -424,10 +628,13 @@ No file s-konsensus.tex.
 (s-tex-and-latex.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
 )
-LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 91.
- [65
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[77
 
 
 
@@ -435,89 +642,125 @@ LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <7> not available
 ]
 \openout2 = `s-report-writing-tools.aux'.
 
- (s-report-writing-tools.tex [66
+ (s-report-writing-tools.tex
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[78
 
 
 
 ]
 Appendix B.
 
-Overfull \hbox (71.32043pt too wide) in paragraph at lines 42--44
-[]\OT1/pbk/l/n/10 The pro-cess of em-bed-ding Postscript is fully de-scribed in
-  [[]]. |
+Overfull \hbox (62.35226pt too wide) in paragraph at lines 42--44
+[]\OT1/bch/m/n/10.95 The pro-cess of em-bed-ding Postscript is fully de-scribed
+ in  [[]]. |
  []
 
-[67]
-Overfull \hbox (10.24501pt too wide) in paragraph at lines 73--73
-[]\OT1/pcr/m/n/10 \usepackage{fancyhdr}           % pro-vide head-ers where I c
-an put the file-names. |
- []
+[79]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
-[68]) [69]
+
+[80])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[81]
 \openout2 = `s-available-hardware-and-software.aux'.
 
- (s-available-hardware-and-software.tex) [70
+ (s-available-hardware-and-software.tex)
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
 
 
-] (rapport.bbl [71
+[82
+
+
+] (rapport.bbl
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[83
 
 ]
-[72
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[84
 
 ]
-LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <24.88> not available
-(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
-
-Underfull \hbox (badness 3514) in paragraph at lines 7--13
-[]\OT1/pbk/l/n/10 E.F. Codd.  A re-la-tional model of data for large shared dat
-a banks.
+Underfull \hbox (badness 4391) in paragraph at lines 7--13
+[]\OT1/bch/m/n/10.95 E.F. Codd.  A re-la-tional model of data for large shared 
+data banks.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--13
-\OT1/pbk/l/n/10 http://www.acm.org/classics/nov95/, 1970.  The pa-per that de-s
-cribed re-
+\OT1/bch/m/n/10.95 http://www.acm.org/classics/nov95/, 1970.  The pa-per that d
+e-scribed re-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--13
-\OT1/pbk/l/n/10 la-tional databases math-e-mat-i-cally. The his-tory is ex-plai
-ned in http://www-
+\OT1/bch/m/n/10.95 la-tional databases math-e-mat-i-cally. The his-tory is ex-p
+lained in http://www-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
-[]\OT1/pbk/l/n/10 Martin Damsbo.  Web ac-cess course or-ga-nizer.
+[]\OT1/bch/m/n/10.95 Martin Damsbo.  Web ac-cess course or-ga-nizer.
  []
 
-LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
-(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 23.
-) [73] [74
 
-] (rapport.toc [75] [76] [77])
+Underfull \hbox (badness 2005) in paragraph at lines 22--28
+[]\OT1/bch/m/n/10.95 Michel Goosens, Se-bas-tian Rahtz, and
+ []
+
+[85])
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[86] (rapport.toc [87
+
+]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[88]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[89]
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[90])
 \tf@toc=\write3
 \openout3 = `rapport.toc'.
 
- [78] (rapport.aux (s-front-matter.aux) (s-introduction.aux) (s-terms-and-conce
-pts.aux)
-(s-dynamically-generated-documents.aux) (s-standards.aux)
-(s-sample-websites.aux) (s-available-technologies.aux) (s-xml.aux)
-(s-docbook.aux) (s-sql.aux) (s-users-transparently.aux)
+
+Overfull \vbox (1.59999pt too high) has occurred while \output is active []
+
+
+[91] (rapport.aux (s-front-matter.aux) (s-introduction.aux)
+(s-terms-and-concepts.aux) (s-dynamically-generated-documents.aux)
+(s-standards.aux) (s-sample-websites.aux) (s-available-technologies.aux)
+(s-xml.aux) (s-docbook.aux) (s-sql.aux) (s-users-transparently.aux)
 (s-active-and-passive-data-acquisition.aux)
 (s-search-engines-and-data-mining.aux) (s-conclusion.aux) (s-cactus.aux)
 (s-konsensus.aux) (s-tex-and-latex.aux) (s-report-writing-tools.aux)
 (s-available-hardware-and-software.aux))
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1361 strings out of 10891
- 17043 string characters out of 97329
- 66574 words of memory out of 263001
- 4231 multiletter control sequences out of 10000+0
- 21274 words of font info for 58 fonts, out of 400000 for 1000
+ 1315 strings out of 10891
+ 16438 string characters out of 97329
+ 66744 words of memory out of 263001
+ 4179 multiletter control sequences out of 10000+0
+ 26636 words of font info for 65 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 36i,13n,40p,261b,478s stack positions out of 300i,100n,500p,50000b,4000s
+ 32i,13n,40p,277b,517s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (78 pages, 211324 bytes).
+Output written on rapport.dvi (91 pages, 220904 bytes).

@@ -11,5 +11,6 @@
      "a-guide-to-latex"
      "mez-waco"
      "goedelescherbach"
-     "tanenbaumoperatingsystems"))))
+     "tanenbaumoperatingsystems"
+     "knuthliterateprogramming"))))
 
