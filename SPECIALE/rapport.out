@@ -13,9 +13,9 @@
 \BOOKMARK [1]{section.2.5}{Documentation - meta-data of programs}{chapter.2}
 \BOOKMARK [2]{subsection.2.5.1}{Case study: JavaDoc - embedding web-information in programs}{section.2.5}
 \BOOKMARK [2]{subsection.2.5.2}{Case study: The Plain Old Documentation format for Perl}{section.2.5}
-\BOOKMARK [2]{subsection.2.5.3}{Literate Programming - Knuths approach to different views of the source}{section.2.5}
-\BOOKMARK [2]{subsection.2.5.4}{Rational Rose - the other way around}{section.2.5}
-\BOOKMARK [2]{subsection.2.5.5}{Compiling source code into an executable}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.3}{Case study: Literate Programming - Knuths approach to different views of the source}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.4}{Example: Rational Rose - the other way around}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.5}{Example: Compiling source code into an executable}{section.2.5}
 \BOOKMARK [1]{section.2.6}{Multiple views of a web document}{chapter.2}
 \BOOKMARK [1]{section.2.7}{SGML/XML: Generic formats for storing data and meta-data}{chapter.2}
 \BOOKMARK [1]{section.2.8}{The user should use familiar tools to publish documents}{chapter.2}
@@ -103,27 +103,27 @@
 \BOOKMARK [2]{subsection.9.3.3}{Derivers}{section.9.3}
 \BOOKMARK [2]{subsection.9.3.4}{Converters}{section.9.3}
 \BOOKMARK [2]{subsection.9.3.5}{Compressors}{section.9.3}
-\BOOKMARK [2]{subsection.9.3.6}{Optimizers}{section.9.3}
-\BOOKMARK [2]{subsection.9.3.7}{Archivers}{section.9.3}
-\BOOKMARK [2]{subsection.9.3.8}{Janitors}{section.9.3}
-\BOOKMARK [2]{subsection.9.3.9}{Presenters}{section.9.3}
-\BOOKMARK [1]{section.9.4}{SQL tables}{chapter.9}
-\BOOKMARK [1]{section.9.5}{Implementing a search engine}{chapter.9}
-\BOOKMARK [1]{section.9.6}{Overall view}{chapter.9}
-\BOOKMARK [1]{section.9.7}{Data flow}{chapter.9}
-\BOOKMARK [2]{subsection.9.7.1}{Input sources}{section.9.7}
-\BOOKMARK [2]{subsection.9.7.2}{Output formats}{section.9.7}
-\BOOKMARK [1]{section.9.8}{Daemons and SQL tables}{chapter.9}
+\BOOKMARK [2]{subsection.9.3.6}{Archivers}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.7}{Janitors}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.8}{Presenters}{section.9.3}
+\BOOKMARK [1]{section.9.4}{Executing external commands}{chapter.9}
+\BOOKMARK [1]{section.9.5}{SQL tables}{chapter.9}
+\BOOKMARK [1]{section.9.6}{Implementing a search engine}{chapter.9}
+\BOOKMARK [1]{section.9.7}{Overall view}{chapter.9}
+\BOOKMARK [1]{section.9.8}{Data flow}{chapter.9}
+\BOOKMARK [2]{subsection.9.8.1}{Input sources}{section.9.8}
+\BOOKMARK [2]{subsection.9.8.2}{Output formats}{section.9.8}
+\BOOKMARK [1]{section.9.9}{Daemons and SQL tables}{chapter.9}
 \BOOKMARK [0]{chapter.10}{Implementation}{}
-\BOOKMARK [2]{subsection.10.0.1}{Hardware/software considerations}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.2}{Data acquisition}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.3}{Derivers}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.4}{Converters}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.5}{Examiners}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.6}{...}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.7}{Database}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.8}{Web server}{section.9.8}
-\BOOKMARK [2]{subsection.10.0.9}{Making it all work under Linux}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.1}{Hardware/software considerations}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.2}{Data acquisition}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.3}{Derivers}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.4}{Converters}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.5}{Examiners}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.6}{...}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.7}{Database}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.8}{Web server}{section.9.9}
+\BOOKMARK [2]{subsection.10.0.9}{Making it all work under Linux}{section.9.9}
 \BOOKMARK [1]{section.10.1}{Why the name Cactus?}{chapter.10}
 \BOOKMARK [1]{section.10.2}{The design of Cactus}{chapter.10}
 \BOOKMARK [1]{section.10.3}{Overview}{chapter.10}

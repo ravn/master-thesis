@@ -146,11 +146,17 @@ group with a limited set of filters.
 
 \myimage{gr/overview}{The basic idea behind
   Cactus}{overview}
+\myimage{gr/cactus-ten-most-recent}{Ten most recent
+  submissions}{cactus-ten-most-recent}
+\myimage{gr/cactus-splitted-email-from-lars}{The ``Lidt Guf''-email
+  split into components}{cactus-splitted-email-from-lars}
 
-For a user, Cactus is not difficult, since she uses her
-usual tools to interface with Cactus. A normal document
-publication would be like this:
+For a user, Cactus is intended to look as shown
+in~\myvref{fig:overview}..  As the users use their usual tools to
+interface with Cactus, it is easy to get the general idea about how
+Cactus works. A normal document publication would be like this:
 
+  
 
 \begin{enumerate}
 \item Submit the document to Cactus by one of many ways,
@@ -159,28 +165,47 @@ publication would be like this:
   
 \item Wait a few minutes
   
-\item Go to the Cactus home page and locate the upload.
-  There is a list of recent uploads pr user, and a quick
-  list listing the very most recent uploads.  [An
-  unimplemented option is to email the user when the
-  requested document conversions have been completed]
-  
-\item Find the versions needed of each item.  URLs to items
-  can be mailed to others for them to view, and other
-  versions of items can be downloaded if so needed.
-\end{enumerate}
+\item Go to the Cactus home page and locate the upload.  There is a
+  list of recent uploads pr user, and a quick list listing the very
+  most recent uploads (see \myvref{fig:cactus-ten-most-recent} on
+  page~\pageref{fig:cactus-ten-most-recent}).  [An unimplemented
+  option is to email the user when the requested document conversions
+  have been completed]
 
-The users view of Cactus is shown in
-\myvref{fig:overview}.
+\item The status page for the item shows all the files that Cactus
+  have generated (see \myvref{fig:cactus-splitted-email-from-lars} on
+  page~\pageref{fig:cactus-splitted-email-from-lars}).  The versions
+  needed of each item can be viewed and downloaded.  URLs to items can
+  be mailed to others for them to view, and other versions of items
+  can be downloaded if so needed.
+\end{enumerate}
 
 \section{Design}
 \label{sec:cactus-design}
 
-Cactus is all about database tables, and several program
-working simultaneously on the data in the tables.  I have
-identified the following types of programs which should be
-running all the time (and sleeping when they have nothing to
-do):
+The single most important design decision was to store all data in a
+database!  Previously flat-files had been used, but by moving to using
+a standard database instead the following benefits were made possible:
+
+\begin{description}
+\item[Multi-programming] -- the database manages that several programs
+  may access the data at the same time
+\item[Atomic updates] --  there is no chance that clients may access
+  incomplete data by reading data another process is writing before it
+  is done.  This makes the clients simple.
+\item[Network accessibility] -- clients are not confined to run on the
+  same computer as the database
+\item[Language independance] -- clients may be written in any language
+  supported by the database
+\item[Easy retrieval of data] -- data handling is abstracted into
+   simple ``SELECT'' and ``UPDATE'' statements.
+\end{description}
+
+As a direct result of these possibilities Cactus is now a system
+evolving around database tables, and several program working
+simultaneously driven by the data in the tables.  I have identified
+the following types of programs which should be running all the time
+(and sleeping when they have nothing to do):
 
 \begin{description}
   
@@ -535,54 +560,90 @@ These rules are not enforced but are merely guidelines.
 
 \section{SQL tables}
 
-Perhaps the single-most best design desicion was to use a database for \textit{all} storage needs of Cactus.
+Perhaps the single-most best design desicion was to use a database for
+all storage needs of Cactus.
 
 The following tables are used:
 
-INCOMING:
 
-This table is used by all data acquirers to store their unvalidated data in.  A
-data acquierer should only accept information from known and trusted sources,
-and fill out the \texttt{owner} attribute and as many others as it can.
-Currently the MIME-type must be set to a valid value too.
+\begin{description}
 
-USERS:
+\item[Incoming] --
+  This table (see~\myvref{tab:sql-incoming}) is used
+  by all data acquirers to store their data in as plain strings.  A
+  data acquierer should only accept information from known and trusted
+  sources, and fill out the \texttt{owner} attribute and as many
+  others as it can.  Currently the MIME-type must be set to a valid
+  value too.  The \textsf{src/cactus/process-incoming.pl} script reads
+  all entries in this table which does not have the
+  \texttt{processed\_p} flag set, decides the userid and mimeid fields
+  based on the \texttt{users} and \texttt{mime} tables (creates an
+  entry if none exists), calculates the MD5-hash value of the data
+  stream and sets empty default values for the rest of the fields and
+  insert it in the \texttt{items} table.
 
-This table contains all users known to the system.  If an unknown user comes in, she is created.  No external way of validating users is implemented yet.  For full names it would feasible to create entries from the global user list from the computer system which Cactus will be a part of.  The proof-of-concept implementation uses a password file from the MIP unix network.
+  \input{../src/sql/incoming}
+
+%\item[compressors] 
+%  \input{../src/sql/compressors}
+  
+\item[Derivers] -- This table (see~\myvref{tab:sql-derivers}) contains
+  a filter which convert from one MIME-id to another MIME-id (like
+  \texttt{image/jpeg} to \texttt{image/gif}).  The \texttt{stdout}
+  flag is 't' if the command in \texttt{filter} prints the generated
+  output to the stdout pipe instead of a file.  The
+  \texttt{cost\_base} and \texttt{cost\_pr\_kb} are values to estimate
+  the CPU-seconds to execute the command based on the size of the
+  file.  These values must currently be estimated manually.
+
+\input{../src/sql/derivers}
+
+\item[Examiners] -- 
 
 
 
-MIME
+\input{../src/sql/examiners}
 
-This table contains the mimetypes known to the system.  When an unknown mimetype is encountered it is created.   All mimetypes should be entered in lowercase to facilitate compliancy with the RFC\textsf{1522}?
+\item[Items] -- This table contains an entry for each submitted item,
+  as well as each derived and converted item.
 
-ITEMS
+\input{../src/sql/items}
 
-This table contains an entry for each submitted item, as well as each derived and converted item.  
+\item[MIME] -- This table contains the mimetypes known to the system.
+  When an unknown MIME type is encountered it is created.  All MIME
+  types should be entered in lowercase to facilitate compliancy with
+  the MIME standard.
 
-DERIVERS
+\input{../src/sql/mime}
 
-This table contains commands for converting from one mimeid to another mimeid.  The following strings may be used:
+\item[Users] -- This table contains all users known to the system.  If
+  an unknown user comes in, she is created.  No external way of
+  validating users is implemented yet.  For full names it would
+  feasible to create entries from the global user list from the
+  computer system which Cactus will be a part of.  The
+  proof-of-concept implementation uses a password file from the MIP
+  unix network.
 
+\input{../src/sql/users}
 
-EXAMINERS
+\item[Workqueue] --
+  
+\input{../src/sql/workqueue}
 
-
+\end{description}
 
 \section{Implementing a search engine}
 
-I have implemented a very simple search engine, with two possibilities
+I have implemented a very simple search engine which allows users to
+look through all entries in the \texttt{items} table, and look for
+substrings of the title.
 
-\begin{itemize}
-\item A plain text search.  The user enters a search term, which is then used in a \texttt{select ... from items,mime where items.mimeid=mime.mimeid and mime.mimetype="text/plain" and items.item like "\%\textit{searchstring}\%"}.  This SQL-statement will select those text versions which contain the search string exactly, and list them.
-
-\item A straight binary search.  The search is very similar to the text search, except that \textit{all} items are searched through.
-
-\end{itemize}
-
-
-
-\textsf{Tjah, jeg er naaet hertil :-)}
+A plain text search.  The user enters a search term, which is
+  then used in a \texttt{select ... from items,mime where
+    items.mimeid=mime.mimeid and mime.mimetype="text/plain" and
+    items.item like "\%\textit{searchstring}\%"}.  This SQL-statement
+  will select those text versions which contain the search string
+  exactly, and list them.
 
 
 
@@ -611,22 +672,11 @@ Hello done.
   with text2ps.  Make a search engine in the text/plain things, and
   one that looks in any file}
 
-\myimage{gr/cactus-ten-most-recent}{Ten most recent
-  submissions}{cactus-ten-most-recent}
 \myimage{gr/cactus-generated-pdf-from-lars}{cactus-generated-pdf-from-lars}{cactus-generated-pdf-from-lars}
 \myimage{gr/cactus-splitted-email-from-jimm}{cactus-splitted-email-from-jimm}{cactus-splitted-email-from-jimm}
 \myimage{gr/cactus-original-from-lars}{cactus-original-from-lars}{cactus-original-from-lars}
-\myimage{gr/cactus-splitted-email-from-lars}{cactus-splitted-email-from-lars}{cactus-splitted-email-from-lars}
 \myimage{gr/cactus-main}{cactus-main}{cactus-main}
 \myimage{gr/cactus-documents-pr-user}{cactus-main.pnm cactus-documents-pr-user}{cactus-main.pnm cactus-documents-pr-user}
-\input{../src/sql/compressors}
-\input{../src/sql/derivers}
-\input{../src/sql/examiners}
-\input{../src/sql/items}
-\input{../src/sql/mime}
-\input{../src/sql/users}
-\input{../src/sql/workqueue}
-\input{../src/sql/incoming}
 
 
 This section describes the proof-of-concept implementation of Cactus.  
@@ -635,7 +685,7 @@ This section describes the proof-of-concept implementation of Cactus.
 \label{sec:cactus-implementation}
 The \filename{\~{}cactus/.procmailrc} contains
 
-\listinginput{10000}{procmailrc}
+\listinginput{1}{procmailrc}
 
   which means that the 
 \subsection{Hardware/software considerations}
