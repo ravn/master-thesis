@@ -6,3 +6,6 @@ er praktiske resulater og afproevninger nok?
 
 oslash er forkert defineret.
 outline mangler article.gif og dokumentation
+
+ved default_derivers.txt maa der ikke vaere mellemrum mellem
+, og " for at mysql kan parse det korrekt.

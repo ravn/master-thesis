@@ -26,9 +26,9 @@
      "fullpage"
      "charter"
      "latex2e"
-     "bk11"
+     "bk10"
      "book"
-     "11pt"
+     "10pt"
      "draft"
      "a4paper"
      "s-mycommands"))))

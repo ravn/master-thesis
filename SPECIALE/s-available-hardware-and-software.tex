@@ -15,24 +15,33 @@ Urls in long banes for this.
 \begin{itemize}
 \item Pentium-S 133 MHz PC with 128 Mb RAM and 10 Gb IDE disk
 \item Linux Redhat 6.1  
-\item MySQL \textsf{2.3.?? - security updates}
-\item Apache \texttt{1.??} with mod\_perl, ApacheJServ, Cocoon.
-\item IBM JDK 1.1.8.
-\item CGI, DBI::\textsf{???} perl modules for writing CGI scripts and
-  accessing MySQL databases.
+\item \myurl{http://www.mysql.org}{MySQL} 3.22.22
+\item \texttt{Apache/1.3.11 (Unix) PHP/3.0.15 ApacheJServ/1.1 mod_perl/1.21
+}
+\item \myurl{http://xml.apache.org}{Cocoon 1.7.1} for rendering XML to
+  HTML on the fly.  Can do SQL-requests, and render them easily to
+  HTML.
+\item \myurl{http://www.ibm.com/java/jdk/118/linux/}{IBM JDK 1.1.8 for
+    Linux}.  This is currently the fastest and most reliable Java
+  engine for Linux.
+\item \myurl{http://www.php.net}{PHP} for dynamic web-pages with none
+  or some SQL-data.
+\item \myurl{http://www.perl.com}{Perl 5.6.0} for doing complex
+  background tasks with DBI::MySQL perl modules for accessing
+  the MySQL databases.
 \end{itemize}
 
-The choice of JDK was made at a time when \textsf{top bug at Javasoft}
-was ``please provide a port of Java to Linux'', and where IBM beat Sun
-to it by porting their Java 1.1.6 implementation to Linux.  The
-benchmarks showed it to be as fast as their Windows and OS/2 ports,
-which at that time was the fastest Just In Time compilers on the
-PC-platform.  It performs very well on Linux, and the installed
-version is just a maintainance upgrade.
+The choice of JDK was made at a time when
+\myurl{http://developer.java.sun.com/developer/bugParade/top25bugs.html}
+top bug at Javasoft Developer Connection} was ``please provide a port
+of Java to Linux'', and where IBM beat Sun to it by porting their Java
+1.1.6 implementation to Linux.  The benchmarks showed it to be as fast
+as their Windows and OS/2 ports, which at that time was the fastest
+Just In Time compilers on the PC-platform.  It performs very well on
+Linux, and the installed version is just a maintainance upgrade.
 
 MySQL and the corresponding JDBC driver \textit{must} be the latest
 stable versions due to security and bug fixes.
-
 
 
 \subsection{Aalborg}
