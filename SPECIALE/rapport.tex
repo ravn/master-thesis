@@ -68,12 +68,16 @@
 \newcommand{\myimage}[3]{
   \begin{figure}[htbp]
     \begin{center}
-      \ifx\pdfoutput\undefined
-%        [Graphic: \href{#1.png}{#1}]
-        \includegraphics[scale=0.4]{#1}
-      \else
-        \includegraphics[scale=0.4]{#1}
-      \fi
+      
+%       \ifx\pdfoutput\undefined
+% % dvi
+% %        [Graphic: \href{#1.png}{#1}]
+%         \includegraphics[scale=0.4]{#1}
+%       \else
+% % pdf
+%         \includegraphics[scale=0.4]{#1}
+%       \fi
+      \includegraphics[scale=0.5]{#1} 
       \caption{#2}
       \label{fig:#3}
     \end{center}
@@ -423,6 +427,9 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.6  2000/03/06 02:02:40  ravn
+% Added outcommentet section on the Library of Congress.
+%
 % Revision 1.5  2000/03/05 02:32:16  ravn
 % Added lots of pictures with relatively little dialoue.
 %
