@@ -1,4 +1,4 @@
-\section{Sample websites}
+\chapter{Sample websites}
 \framepage{15cm}{
 slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
 - oooold check on fyn, when was it first developed?), valueclick
@@ -10,7 +10,7 @@ Talk about standard search engines on web pages.
 }
 
 
-\subsection{slashdot.org - high volume information site for nerds}
+\section{slashdot.org - high volume information site for nerds}
 \framepage{15cm}{
 
 Describe setup.  Describe flow, and the slashdot effect.  What
@@ -42,7 +42,7 @@ ever: 278137148
 
 
 
-\subsection{Valueclick.com}
+\section{Valueclick.com}
 \framepage{15cm}{
 
 Banner provider.  Interview Ask for details, about how the NT-cluster
@@ -50,13 +50,13 @@ was replaced with a small Linuxbox with MySQL and a squid in
 http-accelleration mode.  Explain the problems with having fat
 processes serving slow modems.
 }
-\subsection{Politiken}
+\section{Politiken}
 \framepage{15cm}{
 
 Talk with Lars.  Politiken genrates their pages on the fly.
 }
 
-\subsection{Amazon - an Internet bookstore}
+\section{Amazon - an Internet bookstore}
 \label{sec:amazon-an-internet-bookstore}
 
 The \myurl{http://www.amazon.co.uk}{Amazon Internet bookstore}
@@ -124,7 +124,7 @@ they can to improve with the help of visitors.  Amazon have been able
 to keep their leader status in the virtual bookshop niche, by provide excellent
 
 
-% \subsection{The United States Library of Congress}
+% \section{The United States Library of Congress}
 % \label{sec:congress}
 
 % \textsf{CHANGED TO CATALOG.LOC.GOV - much improved...}
@@ -172,16 +172,30 @@ to keep their leader status in the virtual bookshop niche, by provide excellent
 % Conclusion:  This is clearly not a top priority for the Library of Congress
 
 
-\subsection{www.krak.dk}
+\section{www.krak.dk}
 \label{sec:www.krak.dk}
 
-The Danish map manufacturer \myurl{http://www.krak.dk}{Krak A/S} has
-a reputation of being the definite guide on maps, especially on
-driving maps in Copenhagen.  Their website have been up for about two
-years now, and have been steadily improved with new facilities and
-cross-references.  The start page is shown in figure~\vref{fig:krak-1},
-and is seperated in two parts; namely white pages (phone number
-based), and pink pages (company based).
+Making maps on demand was one of the earliest applications for the
+web.  The \textsf{web map application was started in 199?} was
+discussed in section~\vref{sec:map-generation-first-web-application},
+and has since been followed by \textsf{yahoo map, whoelse.}
+
+In Denmark, the well renowned Danish map manufacturer
+\myurl{http://www.krak.dk}{Krak A/S} opened their \textsf{web map in
+199?} in direct competition with \textsf{909, 118 and who else?} since
+they provided a \textsf{person/number lookup facility}.  Their
+advantage was up-to-date data \textsf{from the Telephone companies}
+combined with an ability to generate a map for a given address,
+whether it was entered directly or being a byproduct of a search for
+something else.
+
+The website has been steadily improved with new
+facilities and cross-references, as well as more precise data (In
+\textsf{??} 1999 it could not locate ``Herlev Hovedgade 205'' on the
+map, so the whole of the road was inked on the map.  This is corrected
+today).  The start page is shown in
+figure~\vref{fig:krak-1}, and is seperated in two parts; namely white
+pages (phone number based), and pink pages (company based).
 
 \myimage{gr/krak-1}{Welcome page (and search form) for www.krak.dk}{krak-1}
 
@@ -247,7 +261,7 @@ Select the ``\textsf{???}'' button and print out the directions.
   How does it work?  What about }
 
 
-\subsection{The Journay Planner - www.rejseplanen.dk}
+\section{The Journey Planner - www.rejseplanen.dk}
 \label{sec:www.rejseplanen.dk}
 
 DSB (Danish Rail) have a journey planner which is based on train
@@ -279,10 +293,57 @@ Figure~\vref{fig:dsb-4}
 Figure~\vref{fig:dsb-5}
 
 
-\subsection{Freshmeat.net}
+\section{Freshmeat.net}
 \label{sec:freshmeat.net}
 
-\subsection{Google/Altavista}
+\section{Google/Altavista}
+\label{sec:google}
+\label{sec:alta-vista}
+
+
+was the first web site to proudly
+present a search interface to \textit{all} the web pages on the
+Internet\footnote{Later it was revealed that AltaVista only indexed up
+  to 50 pages for a given site, meaning that big sites simply weren't
+  indexed.  That gave the other search engines like Lycos and
+  \textsf{Inktomy} a parameter to compete on}, where they extracted
+words from the individual web pages to create their search indexes.
+They gave extra weight to the descriptions that the web page authors
+entered themselves in the META-tags (see~\vref{sec:html-meta-tags}),
+in order to present the ``hits'' sorted with the best hit at the top.
+
+
+\begin{enumerate}
+\item Words in META-tags
+\item Words in titles and headlines
+\item Word in the body of the text
+\end{enumerate}
+
+
+\textsf{Check if there still is companies which boost your presence on
+  web search engines}
+
+\textsf{Businesses - notably in porno - discovered this and polluted
+  their web pages with keywords to boost their chance of being
+  returned as a result of a search.}
+
+\textsf{Look for statistics on search engines and ``sex'' - talk about
+  that these businesses have a great interest in attracting you since
+  they cannot rely on you seeing them elsewhere (like usenet spam)}
+
+\textsf{look for email about somebody who tried google and was pleased
+  after being driven away from search engines.   Why does google
+  tick?}
+
+\myurl{\textsf{http://ftpsearch.lycos.com}}{\texttt{ftpsearch.lycos.com}}
+is a unique service provided as a byproduct of the main search engine
+at \myurl{http://www.lycos.dk}{www.lycos.dk} where you may search for
+\textit{images} on the web.  The search engine does not look inside
+the images it finds while traversing the net, but looks at the
+filename and the context in the web page for hits.  It works
+reasonably well - most of the cactii images for my project was found
+this way.  \textsf{Check on details how they do it.}
+
 
 \framepage{15cm}{
   Search engines.  How do they do it?  www.909.dk, www.krak.dk,
@@ -293,16 +354,16 @@ Figure~\vref{fig:dsb-5}
   Pressemeddelelse. Greenspun selv?
   }
 
-\subsection{The Collection of Computer Science Bibliographies}
+\section{The Collection of Computer Science Bibliographies}
 \myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
 
 
-\subsection{Jydske Bank}
+\section{Jydske Bank}
 \label{sec:jydske-bank}
 
 THe only java-solution for home banking.  Any comments?
 
-\subsection{Cactus -- document capture and conversion}
+\section{Cactus -- document capture and conversion}
 
 \framepage{15cm}{
 Two out of four methods are implemented (email, printer).  (Increase

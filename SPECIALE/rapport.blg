@@ -1,12 +1,20 @@
 This is BibTeX, Version 0.99c (Web2C 7.3.1)
 The top-level auxiliary file: rapport.aux
 The style file: plainnat.bst
+A level-1 auxiliary file: s-front-matter.aux
+A level-1 auxiliary file: s-introduction.aux
 A level-1 auxiliary file: s-terms-and-concepts.aux
-A level-1 auxiliary file: s-processed-documents.aux
+A level-1 auxiliary file: s-dynamically-generated-documents.aux
+A level-1 auxiliary file: s-standards.aux
 A level-1 auxiliary file: s-sample-websites.aux
+A level-1 auxiliary file: s-available-technologies.aux
 A level-1 auxiliary file: s-xml.aux
 A level-1 auxiliary file: s-docbook.aux
 A level-1 auxiliary file: s-sql.aux
+A level-1 auxiliary file: s-users-transparently.aux
+A level-1 auxiliary file: s-active-and-passive-data-acquisition.aux
+A level-1 auxiliary file: s-search-engines-and-data-mining.aux
+A level-1 auxiliary file: s-conclusion.aux
 A level-1 auxiliary file: s-cactus.aux
 A level-1 auxiliary file: s-konsensus.aux
 A level-1 auxiliary file: s-tex-and-latex.aux
@@ -14,45 +22,45 @@ A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
 Warning--there's a number but no series in understanding-the-new-sql
-You've used 7 entries,
+You've used 9 entries,
             2633 wiz_defined-function locations,
-            623 strings with 6140 characters,
-and the built_in function-call counts, 2572 in all, are:
-= -- 238
-> -- 108
-< -- 8
-+ -- 43
-- -- 33
-* -- 141
-:= -- 441
-add.period$ -- 29
-call.type$ -- 7
-change.case$ -- 35
-chr.to.int$ -- 7
-cite$ -- 8
-duplicate$ -- 128
-empty$ -- 224
-format.name$ -- 44
-if$ -- 535
+            645 strings with 7028 characters,
+and the built_in function-call counts, 3240 in all, are:
+= -- 298
+> -- 128
+< -- 12
++ -- 51
+- -- 39
+* -- 177
+:= -- 557
+add.period$ -- 37
+call.type$ -- 9
+change.case$ -- 43
+chr.to.int$ -- 9
+cite$ -- 10
+duplicate$ -- 168
+empty$ -- 286
+format.name$ -- 52
+if$ -- 673
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 8
-newline$ -- 48
-num.names$ -- 28
-pop$ -- 83
+missing$ -- 12
+newline$ -- 60
+num.names$ -- 36
+pop$ -- 103
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 40
 quote$ -- 0
-skip$ -- 100
+skip$ -- 130
 stack$ -- 0
-substring$ -- 45
-swap$ -- 9
-text.length$ -- 2
+substring$ -- 57
+swap$ -- 13
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 57
+type$ -- 69
 warning$ -- 1
-while$ -- 21
+while$ -- 27
 width$ -- 0
-write$ -- 106
+write$ -- 136
 (There was 1 warning)

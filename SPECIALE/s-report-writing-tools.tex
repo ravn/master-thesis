@@ -61,6 +61,34 @@ within a single physical page.
 For presentation purposes, \textsf{Acroread with packages found at the
   DK-TUG website at aucdk}
 
+\subsection{Finding back to the source document from xdvi}
+
+When reading the typeset document (either in \unixcommand{xdvi},
+\unixcommand{acroread} or on paper) it is often a problem to find the
+appropriate \texttt{tex}-file.  I used this trick which was deduced
+from the \textsf{appropriate latex book here Daly?}, which puts the
+filename to the left in the running header on each page.
+
+\begin{verbatim}
+\usepackage{fancyhdr}           % provide headers where I can put the filenames.
+% Trick from page 16 in fancyhdr documentation
+\newcommand{\currentinputfile}{}
+\newcommand{\myinclude}[1]{%
+  \renewcommand{\currentinputfile}{File:\texttt{#1}}\include{#1}%
+  \renewcommand{\currentinputfile}{}}
+
+\lhead{\currentinputfile}
+\pagestyle{fancy}
+
+...
+\begin{document}
+\myinclude{s-front-matter}
+\myinclude{s-introduction}
+...
+\end{verbatim}
+
+\textsf{Modified xdvik}!
+
 \section{Emacs} 
 \label{sec:report-writing-tools-emacs} 
 
@@ -74,8 +102,10 @@ additional modules.  The standard distribution of Emacs provides:
   \texttt{TeX-complete-symbol}) runs \texttt{ispell-complete-word} if
   the current word is not a {\TeX}-command, which suggest possible
   words starting with the word under point.  The M-\$ command (bound
-  to \texttt{ispell-word}) is also nice when English is not your
-  native tongue.
+  to \texttt{ispell-word}) is a great help when in doubt about a
+  word.  The \textsf{flyspell-mode} highlights words while you type,
+  akin to the wavy underline used in MS-Word. 
+
 \item[CVS] -- Emacs supports \myurl{\texttt{???}}{CVS} directly.  I
   had my working directory on my portable, and my CVS repository on
   the MIP system, in order for my CVS files to be automatically backed

@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  15 MAR 2000 10:02
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  17 MAR 2000 15:33
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -18,8 +18,9 @@ File: bk10.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf/tex/latex/psnfss/charter.sty
-Package: charter 1998/01/07: PSNFSS v.2 LaTeX2e package loading charter 
+(/usr/share/texmf/tex/latex/psnfss/bookman.sty
+Package: bookman 1999/03/29 PSNFSS v.7.2 Bookman font as default roman : S Raht
+z
 )
 (/usr/share/texmf/tex/latex/misc/fullpage.sty
 Style Option FULLPAGE Version 2 as of 15 Dec 1988
@@ -28,6 +29,7 @@ ISO-latin-1 input coding, version 0.9 of 1-Jun-1992.)
 (/usr/share/texmf/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
+(/usr/share/texmf/tex/latex/misc/parskip.sty)
 (/usr/share/texmf/tex/latex/tools/varioref.sty
 Package: varioref 1999/02/24 v1.2a package for extended references (FMi)
 \c@vrcnt=\count88
@@ -73,30 +75,38 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Try loading font information for OT1+pbk on input line 72.
 
-(/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
-File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
+(/usr/share/texmf/tex/latex/psnfss/ot1pbk.fd
+File: ot1pbk.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pbk.
 )
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 72.
 \openout2 = `s-front-matter.aux'.
 
  (s-front-matter.tex
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <17.28> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <17.28> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <12> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -105,43 +115,89 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 
-]) [2]
+]
+LaTeX Font Info:    Try loading font information for OT1+pag on input line 7.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1pag.fd
+File: ot1pag.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pag.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 7.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <14.4> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 16.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 34.
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 1998/07/06 Fontinst v1.800 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 73.
+ [2]
 \openout2 = `s-introduction.aux'.
 
-
-(s-introduction.tex
+ (s-introduction.tex
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 56.
-(/usr/share/texmf/tex/latex/psnfss/omsbch.fd
-File: OMSbch.fd 
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <20.74> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <20.74> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <24.88> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OMS+pbk on input line 56.
+(/usr/share/texmf/tex/latex/psnfss/omspbk.fd
+File: omspbk.fd 
 )
-LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/pbk/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 75.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 75.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <6> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 75.
  [3
 
 
 
-]) [4]
-\openout2 = `s-terms-and-concepts.aux'.
-
-
-(s-terms-and-concepts.tex
-Chapter 2.
-
-Overfull \hbox (2.6888pt too wide) in paragraph at lines 43--47
-[]\OT1/bch/m/n/10 Either the pro-cess of \OT1/bch/m/it/10 trans-form-ing \OT1/b
-ch/m/n/10 a XML-document into an-other XML-document us-ing a XSL-stylesheet,|
+]
+Underfull \hbox (badness 1577) in paragraph at lines 154--154
+[]\OT1/pbk/l/n/10 Provide back-ground in-for-ma-tion: Quick overview of the tec
+h-nol-ogy [web-server,
  []
 
+) [4]
+\openout2 = `s-terms-and-concepts.aux'.
+
+ (s-terms-and-concepts.tex
+Chapter 2.
 [5
 
 
 
-]) [6]
+]
+Overfull \hbox (8.47066pt too wide) in paragraph at lines 76--78
+[]\OT1/pbk/l/n/10 The Struc-tured Query Lan-guage is the \OT1/pag/m/n/10 stan-d
+ard \OT1/pbk/l/n/10 lan-guage for com-mu-ni-cat-ing with a database. |
+ []
+
+) [6]
 \openout2 = `s-dynamically-generated-documents.aux'.
 
  (s-dynamically-generated-documents.tex
@@ -150,185 +206,215 @@ Chapter 3.
 
 
 
-]
+] [8]
+Overfull \hbox (9.83115pt too wide) in paragraph at lines 208--213
+\OT1/pbk/l/n/10 bil-ity of build-ing an un-break-able sys-tem for au-to-matic d
+e-tec-tion of bad in-put in [[]]. |
+ []
 
-LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 1
-03.
+[9] [10]
+LaTeX Font Info:    Font shape `OT1/pag/m/it' in size <10> not available
+(Font)              Font shape `OT1/pag/m/sl' tried instead on input line 302.
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 316.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <12> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 316.
+LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pag/b/n' tried instead on input line 340.
+LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <12> not available
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 340.
+ [11]
+Underfull \hbox (badness 1348) in paragraph at lines 446--446
+\OT1/pbk/l/n/10 fully au-to-mat-i-cally from a sin-gle \OT1/pbk/l/sl/10 an-no-t
+ated \OT1/pbk/l/n/10 source (www/print/cdrom/Palm Pi-
+ []
 
-
-LaTeX Warning: Reference `sec:CGI-servlets' on page 8 undefined on input line 1
-03.
-
-
-LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 104.
-
-
-LaTeX Warning: Reference `sec:CGI-php3' on page 8 undefined on input line 104.
-
-
-LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 10
-5.
-
-
-LaTeX Warning: Reference `sec:CGI-modperl' on page 8 undefined on input line 10
-5.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8])
-[9]
+[12]) [13]
 \openout2 = `s-standards.aux'.
 
- (s-standards.tex) [10
+ (s-standards.tex) [14
 
 
 ]
 \openout2 = `s-sample-websites.aux'.
 
  (s-sample-websites.tex
-
-LaTeX Warning: Reference `fig:slashdot-1' on page 11 undefined on input line 28
-.
-
-
-LaTeX Warning: Reference `fig:slashdot-1' on page 11 undefined on input line 28
-.
-
-[11
-
-
-] [12] [13] [14] [15] [16] [17] [18] [19] [20]) [21]
-\openout2 = `s-available-technologies.aux'.
-
-
-(s-available-technologies.tex [22
-
-
-
-]
 Chapter 4.
-[23] [24]
-Overfull \hbox (15.32828pt too wide) in paragraph at lines 167--173
-\OT1/bch/m/n/10 Com-mu-ni-ca-tor 5.0 from an in-house sys-tem to a full-scale O
-pen-Source model housed at http://www.mozilla.org. |
+[15
+
+
+
+] [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+[18] [19] [20] [21] [22] [23] [24] [25]
+Underfull \hbox (badness 4752) in paragraph at lines 355--355
+[]\OT1/pbk/l/n/10 Search en-gines. How do they do it? www.909.dk, www.krak.dk, 
+ter-
  []
 
-[25]
 
-LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 292.
+Overfull \hbox (12.77078pt too wide) in paragraph at lines 358--358
+[][]\OT1/pbk/l/n/8 ...http://liinwww.ira.uka.de/bibliography/index.html...-- \O
+T1/pcr/m/n/8 http://liinwww.ira.uka.de/bibliography/index.html| |
+ []
 
 [26]) [27]
-\openout2 = `s-xml.aux'.
+\openout2 = `s-available-technologies.aux'.
 
- (s-xml.tex [28
+ (s-available-technologies.tex [28
 
 
 
 ]
 Chapter 5.
-[29] [30]
-Overfull \hbox (131.36002pt too wide) in paragraph at lines 209--209
-[][]\OT1/bch/m/n/8 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
-ions of HTML...-- \OT1/cmtt/m/n/8 http://www.w3.org/History/19921103-hypertext/
-hypertext/WWW/MarkUp/MarkUp.html| |
+[29]
+Overfull \hbox (49.27448pt too wide) in paragraph at lines 82--82
+[][]\OT1/pbk/l/n/8 ...Ingress II database is in a beta stage for Linux...-- \OT
+1/pcr/m/n/8 http://www.cai.com/products/betas/ingres[]linux/ingres[]linux.htm| 
+|
  []
 
-[31]
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 306.
-
-
-[32]
-Overfull \hbox (4.82918pt too wide) in paragraph at lines 367--373
-[]\OT1/bch/m/n/10 Commecial prod-ucts usu-ally have a viewer which can ap-ply t
-he style sheet di-rectly \OT1/cmtt/m/n/10 examples? Panorama?|
+Overfull \hbox (5.08191pt too wide) in paragraph at lines 120--120
+[][]\OT1/pbk/l/n/8 ...has Sybase Adap-tive Server En-ter-prise and SQL Any-wher
+e Stu-dio...-- \OT1/pcr/m/n/8 http://www.sybase.com/products/linux/| |
  []
 
-[33]
+[30] [31] [32] [33]) [34]
+\openout2 = `s-xml.aux'.
+
+ (s-xml.tex
+Chapter 6.
+[35
+
+
+
+] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
+[][]\OT1/pbk/l/n/8 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
+ions of HTML...--
+ []
+
+[37] [38] [39] [40]
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <9> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 457.
 File: x-outline.xsl  (verbatim)
- [34] [35]
-Overfull \hbox (91.99011pt too wide) in paragraph at lines 578--578
-[]\OT1/cmtt/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>f
-ilename</th><th>comment</th><th>iteml</th></tr>[] |
+ [41]
+Overfull \hbox (22.24501pt too wide) in paragraph at lines 551--551
+[]  \OT1/pcr/m/n/10 se-lect when, mime, user, how, file-name, com-ment,length(i
+tem) as l  from incoming[] |
  []
 
-[36] [37]) [38]
+[42]
+Overfull \hbox (172.24501pt too wide) in paragraph at lines 578--578
+[]\OT1/pcr/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>fi
+lename</th><th>comment</th><th>iteml</th></tr>[] |
+ []
+
+[43] [44]) [45]
 \openout2 = `s-docbook.aux'.
 
  (s-docbook.tex
-Overfull \hbox (74.40623pt too wide) in paragraph at lines 76--80
-[]\OT1/bch/m/n/10 where \OT1/cmtt/m/n/10 docbook.dsl \OT1/bch/m/n/10 is one of 
-the stylesheets from the \OT1/cmss/b/n/10 Doc-Book Mod-u-lar StyleSheets \OT1/b
-ch/m/n/10 (\OT1/cmtt/m/n/10 dsssl/docbook/print/docbook.dsl\OT1/bch/m/n/10 )|
+LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pag/b/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <10> not available
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 30.
+
+Overfull \hbox (126.62216pt too wide) in paragraph at lines 76--80
+[]\OT1/pbk/l/n/10 where \OT1/pcr/m/n/10 doc-book.dsl \OT1/pbk/l/n/10 is one of 
+the stylesheets from the \OT1/pag/m/n/10 Doc-Book Mod-u-lar StyleSheets \OT1/pb
+k/l/n/10 (\OT1/pcr/m/n/10 dsssl/docbook/print/docbook.dsl\OT1/pbk/l/n/10 )|
  []
 
-) [39
+[46
 
 
-]
+]) [47]
 \openout2 = `s-sql.aux'.
 
- (s-sql.tex [40
+ (s-sql.tex [48
 
 
 
 ]
-Chapter 6.
-
-Overfull \hbox (34.6683pt too wide) in paragraph at lines 78--83
-\OT1/bch/m/n/10 SQL has evolved over the years. The lat-est ANSI stan-dard is S
+Chapter 7.
+[49]
+Overfull \hbox (92.36786pt too wide) in paragraph at lines 78--83
+\OT1/pbk/l/n/10 SQL has evolved over the years. The lat-est ANSI stan-dard is S
 QL92, which is dis-cussed in [[]],|
  []
 
-[41]
-Overfull \hbox (24.32993pt too wide) in paragraph at lines 119--119
-[][]\OT1/bch/m/n/8 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
-/cmtt/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#T
-utorial| |
+
+Overfull \hbox (84.27466pt too wide) in paragraph at lines 119--119
+[][]\OT1/pbk/l/n/8 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
+/pcr/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#Tu
+torial| |
  []
 
-[42]) [43]
+[50]
+Overfull \hbox (11.37265pt too wide) in paragraph at lines 131--139
+\OT1/pbk/l/n/10 term real-life ex-pe-ri-ence with the heavy duty web-service at
+ Ar-s-Digita[], which also serves photo.net[]|
+ []
+
+) [51]
 \openout2 = `s-users-transparently.aux'.
 
- (s-users-transparently.tex) [44
+ (s-users-transparently.tex) [52
 
 
 ]
 \openout2 = `s-active-and-passive-data-acquisition.aux'.
 
 
-(s-active-and-passive-data-acquisition.tex) [45
+(s-active-and-passive-data-acquisition.tex) [53
 
 
 ]
 \openout2 = `s-search-engines-and-data-mining.aux'.
 
 
-(s-search-engines-and-data-mining.tex) [46
+(s-search-engines-and-data-mining.tex) [54
 
 
 ]
 \openout2 = `s-conclusion.aux'.
 
  (s-conclusion.tex
-Chapter 7.
-) [47
+Chapter 8.
+) [55
 
 
 
 ]
 \openout2 = `s-cactus.aux'.
 
- (s-cactus.tex [48
+ (s-cactus.tex [56
 
 
 
 ]
 Appendix A.
-[49] [50] [51] [52] [53] [54]) [55]
+[57]
+Overfull \hbox (2.0327pt too wide) in paragraph at lines 71--76
+\OT1/pbk/l/n/10 The Yg-gdrasil sys-tem was de-signed to pro-vide a sim-ple, con
+-sis-tent nav-i-ga-tional frame-work around|
+ []
+
+[58] [59] [60] [61] [62]
+LaTeX Font Info:    Font shape `OT1/pbk/bx/n' in size <7> not available
+(Font)              Font shape `OT1/pbk/b/n' tried instead on input line 456.
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <7> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 456.
+ [63]
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[][]\OT1/pbk/l/n/8 ...The http-accellerator mode...-- \OT1/pcr/m/n/8 http://www
+.squid-cache.org/Doc/FAQ/FAQ-20.html#what-is-httpd-
+ []
+
+) [64]
 \openout2 = `s-konsensus.aux'.
 
 
@@ -338,7 +424,10 @@ No file s-konsensus.tex.
 (s-tex-and-latex.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 4.
-) [56
+)
+LaTeX Font Info:    Font shape `OT1/pbk/m/sl' in size <7> not available
+(Font)              Font shape `OT1/pbk/l/sl' tried instead on input line 91.
+ [65
 
 
 
@@ -346,42 +435,71 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 \openout2 = `s-report-writing-tools.aux'.
 
- (s-report-writing-tools.tex
+ (s-report-writing-tools.tex [66
+
+
+
+]
 Appendix B.
 
-Overfull \hbox (31.18759pt too wide) in paragraph at lines 42--44
-[]\OT1/bch/m/n/10 The pro-cess of em-bed-ding Postscript is fully de-scribed in
+Overfull \hbox (71.32043pt too wide) in paragraph at lines 42--44
+[]\OT1/pbk/l/n/10 The pro-cess of em-bed-ding Postscript is fully de-scribed in
   [[]]. |
  []
 
-[57
+[67]
+Overfull \hbox (10.24501pt too wide) in paragraph at lines 73--73
+[]\OT1/pcr/m/n/10 \usepackage{fancyhdr}           % pro-vide head-ers where I c
+an put the file-names. |
+ []
 
-
-
-]) [58]
+[68]) [69]
 \openout2 = `s-available-hardware-and-software.aux'.
 
- (s-available-hardware-and-software.tex) [59
+ (s-available-hardware-and-software.tex) [70
 
 
-] (rapport.bbl [60
+] (rapport.bbl [71
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 7--13
-[]\OT1/bch/m/n/10 E.F. Codd.  A re-la-tional model of data for large shared dat
+[72
+
+]
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <24.88> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 1.
+
+Underfull \hbox (badness 3514) in paragraph at lines 7--13
+[]\OT1/pbk/l/n/10 E.F. Codd.  A re-la-tional model of data for large shared dat
 a banks.
  []
 
-) [61
 
-] [62
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
+\OT1/pbk/l/n/10 http://www.acm.org/classics/nov95/, 1970.  The pa-per that de-s
+cribed re-
+ []
 
-] (rapport.toc [63] [64])
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
+\OT1/pbk/l/n/10 la-tional databases math-e-mat-i-cally. The his-tory is ex-plai
+ned in http://www-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
+[]\OT1/pbk/l/n/10 Martin Damsbo.  Web ac-cess course or-ga-nizer.
+ []
+
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <7> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 23.
+) [73] [74
+
+] (rapport.toc [75] [76] [77])
 \tf@toc=\write3
 \openout3 = `rapport.toc'.
 
- [65] (rapport.aux (s-front-matter.aux)
-(s-introduction.aux) (s-terms-and-concepts.aux)
+ [78] (rapport.aux (s-front-matter.aux) (s-introduction.aux) (s-terms-and-conce
+pts.aux)
 (s-dynamically-generated-documents.aux) (s-standards.aux)
 (s-sample-websites.aux) (s-available-technologies.aux) (s-xml.aux)
 (s-docbook.aux) (s-sql.aux) (s-users-transparently.aux)
@@ -390,19 +508,16 @@ a banks.
 (s-konsensus.aux) (s-tex-and-latex.aux) (s-report-writing-tools.aux)
 (s-available-hardware-and-software.aux))
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1234 strings out of 10891
- 15184 string characters out of 97329
- 68120 words of memory out of 263001
- 4106 multiletter control sequences out of 10000+0
- 22848 words of font info for 56 fonts, out of 400000 for 1000
+ 1361 strings out of 10891
+ 17043 string characters out of 97329
+ 66574 words of memory out of 263001
+ 4231 multiletter control sequences out of 10000+0
+ 21274 words of font info for 58 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 33i,12n,40p,261b,513s stack positions out of 300i,100n,500p,50000b,4000s
+ 36i,13n,40p,261b,478s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (65 pages, 181224 bytes).
+Output written on rapport.dvi (78 pages, 211324 bytes).

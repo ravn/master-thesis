@@ -5,8 +5,6 @@
 
 % $Id$
 %
-% Log at the end.
-%
 % Text in \textsf{###} is ``to be checked''.  No fields must be left
 % in such a tag when the report is finished.
 
@@ -18,8 +16,8 @@
 %\usepackage{beton}             % ok - legible
 %\usepackage{times}             % ok - standard
 %\usepackage{utopia}            % ok
-\usepackage{charter}            % ok - very legible, good in PDF
-%\usepackage{bookman}           % ok - legible
+%\usepackage{charter}           % ok - very legible, good in PDF
+\usepackage{bookman}            % ok - legible while typing
 %\usepackage{helvetic}          % no change
 %\usepackage{palatino}          % ok - nice, like it
 %\usepackage{lucidabr}          % No good, due to missing fonts here.
@@ -29,7 +27,7 @@
 %\usepackage{parskip}
 % \usepackage{draft}
 \usepackage{alltt}
-%\usepackage{parskip}
+\usepackage{parskip}
 \usepackage{varioref}           % gives better references
 \usepackage{verbatim}
 \usepackage{fancyhdr}           % provide headers where I can put the filenames.
@@ -98,10 +96,22 @@
 \section{Bibliography with Web references}
 Full reference with a lot of annotated URL's.
 
+
+
 %\includegraphics{gr/familie}
 \bibliography{books}
 
 \tableofcontents
+
+\section{Cross references to this page have not been inserted at the
+  correct page}
+
+\label{fig:slashdot-1}
+\label{sec:CGI-modperl}
+\label{sec:CGI-php3}
+\label{sec:CGI-servlets}
+\label{fig:mip-recently-changed-pages}
+\label{sec:html-meta-tags}
 
 \end{document}
 

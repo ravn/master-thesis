@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{9}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -32,6 +32,16 @@ Phil Greenspun.
 \newblock http://photo.net/sql/, 1998.
 \newblock Excellent introductory text to SQL.
 
+\bibitem[Hofstaedter(1979)]{goedelescherbach}
+Douglas Hofstaedter.
+\newblock {\em G{\"o}del, Escher, Bach - an Eternal Golden Braid}, volume
+  ISBN:??
+\newblock ??, 1979.
+\newblock A very deep book which has influenced my thinking in many ways, both
+  regarding computers, molecular biology and Bach, as well as the depth of
+  self-reference. For fellow readers only: I am positive I have found the end
+  of the book.
+
 \bibitem[Kopka and Daly(1999)]{a-guide-to-latex}
 Helmut Kopka and Patrick~W. Daly.
 \newblock {\em A guide to {\LaTeX}}, volume ISBN: 0-201-39825-7.
@@ -51,5 +61,14 @@ Robert Sedgewick.
 \newblock {\em Algorithms in C}.
 \newblock Addison-Wesley, 1990.
 \newblock ISBN 0-201-51425-7.
+
+\bibitem[Tanenbaum(1987)]{tanenbaumoperatingsystems}
+Andrew~S. Tanenbaum.
+\newblock {\em Operating systems - design and implementation}, volume ISBN:
+  0-13-637331-3.
+\newblock Prentice-Hall International, Inc., 1987.
+\newblock An excellent book in the inner workings of operating systems in
+  general and Minix in particular. The complete source code is listed in the
+  back of the book. \textsl{Minix was the direct inspiration of Linux.}
 
 \end{thebibliography}

@@ -10,7 +10,9 @@
 
 \section{The original vision: A Web-server with a file system }
 
-The original capabilities of a web server was: \textsf{Nice figure...}
+\textsf{Badly phrased ...} 
+The original capabilities of a web server was : \textsf{Nice
+  figure... Mention URL}
 
 \begin{itemize}
 \item A underlying file system containing a lot of \textit{static}
@@ -22,13 +24,15 @@ complied to this, the web-server could start it with user-provided
 parameters, and return the result as any kind of file.
 \end{itemize}
 
-That's all.  Such web servers still exist - for example
+That's all.  
+
+Such web servers still exist - for example
 \myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} which has been
 unmaintained since 1996 (NCSA recommend that the Apache server should
 be used instead).  Even so
 \myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February 2000
   Netcraft survey} reported that \textsf{17172} NCSA servers were
-active.
+active, and could be reached from Netcraft.
 
 In August 1995 the number of
 \myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
@@ -38,13 +42,15 @@ on the Internet in the same period grew from 19 thousand to 11
 million, with Apache and Microsoft Internet Information Server
 accounting for 8.8 million of these.
 
-The very simple CGI-interface works well for even \textit{very} large
-web-sites.  A well-written server which serves documents directly from
-the filesystem can reach impressive numbers.  \textsf{Where was this -
-  look for statistics}.  On a modern PC Apache has no problem
-saturating a 10Mbps Ethernet connection (\textsf{what about a 100Mbps
-  connection)}, meaning that even for very large and demanding sites
-the bottleneck will not be within the webserver software.
+Even with such a simple model, it works well for even \textit{very}
+large web-sites which only generates few documents dynamically.
+
+A well-tuned server which serves documents directly from the
+filesystem can reach impressive numbers.  \textsf{Where was this -
+look for statistics}.  On a modern PC Apache has no problem saturating
+a 10Mbps Ethernet connection (\textsf{what about a 100Mbps
+connection)}, meaning that even for very large and demanding sites the
+bottleneck will not be within the webserver software.
 
 On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a lot
 of files everyday.  On March 14'th 2000
@@ -58,13 +64,20 @@ ftp-session have a notably larger overhead than a http-session, so it
 is not unreasonable to expect similar performance from a suitably
 tuned web-server for static files.
 
-
-CGI-scripts turned out to work well.  All kinds of documents - images,
-webpages, progress reports - could be generated comparatively easy in
-the favorit language of the CGI-script author.  Libraries to deal with
-the decoding of parameters, and encoding of the generated result, were
+For the occasional dynamically generated document CGI-scripts turned
+out to work well.  All kinds of documents - images, webpages, progress
+reports - could be generated comparatively easy in the favorit
+language of the CGI-script author.  Libraries to deal with the
+decoding of parameters, and encoding of the generated result, were
 soon abundant, providing for many enhancements to the original
 ``static web site''.
+
+\label{sec:map-generation-first-web-application} One of the first
+demonstrations of dynamically generated images was the \textsf{map
+generator somewhere on the web (this ??? quick hack has since been
+superceeded by professional map companies which produce high quality
+maps on demand)}.
+
 
 \textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
 
@@ -85,15 +98,17 @@ Unfortunately, there are a few short-comings with CGI-scripts:
   have access to a C-compiler which can generate binary code for the
   webserver.
 
-  Interpreted programs which did not require recompilation for a given
-  platform addressed this problem.   The only contender to scripting
-  languages has been Java Servlets.
+  This has caused interpreted programs like Perl to be very popular.  These do
+  not require recompilation for a given platform, and are for most
+  purposes as fast as the equivalent programs written in C.   Recently
+  Java servlets has shown as a popular and well-supported alternative
+  to CGI-scripts.
   
 \item \textbf{Slow} -- the overhead just for invoking the CGI-program
   in a subprocess is substantial even for moderate load on the web
-  server.
+  server, since the web-server must ``fork'' a new process.
 
-  This has been addressed by moving the execution environment inside
+  This has been addressed by putting the execution environment inside
   the web server, using threads instead of processes, and caching
   compiled versions of scripts.  
 
@@ -102,12 +117,312 @@ Unfortunately, there are a few short-comings with CGI-scripts:
 Several solutions to the above problems have emerged.  Java Servlets
 are discussed in section~\vref{sec:CGI-servlets},  PHP3 scripts in
 section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
-accelleration module) in section~\vref{sec:CGI-modperl}).
+acceleration module) in section~\vref{sec:CGI-modperl}).
 
-\section{Larger and more complex sites result in pre-generated pages}
+\section{Navigational structure should not be maintained by the author}
+
+\textsf{reference?}  Almost all dynamic web-sites which add and delete
+web pages run into the problem of maintaining site-integrity,
+regarding ensuring that all the ``links'' point to the correct
+document.    For external document all you can do is to check
+occasionally that the page is still there, but for internal documents
+the webmaster has to do the updates manually.  Updating HTML-documents
+manually is at best a tedious pain, because it is hard, repetitive,
+mindless labour, which should be left to a computer.
+
+See figure\textsf{??} for a navigational framework on the Fyns
+GNU/Linux User Group home page.
+
+\textsf{Reference to FLUG.DK}
+
+The most simple version of this, is to say that every web page on the
+site must have a static header usually containing at least a link to the entry
+page and a search engine, but where the header is the same for every
+page.
+
+In the original webservers this required that every webpage was
+modified to include the snippet of HTML which produced this header,
+which is a relatively easy task with a modern scripting language like
+Perl.  Note that care must be taken not to change the modification times of the
+files, since failing to do so invalidates local copies in browsers
+and webcaches, even though that the contents of the pages \textsf{is}
+unchanged.  (Modern webservers allow a webpage to include other files
+with \textsf{Server Side Includes}, which takes care of all this - except
+doing it unconditionally on every page.  The user must still remember
+to insert the appropriate command sequence in the server).
+
+Many modern websites put a given page in a \textit{context} where the
+navigational framework reflect this context.  See
+figure\textsf{vref{intel-1}} for a sample from
+\myurl{http://www.intel.com/...}{Intel regarding the VS440FX
+  motherboard}.    This requires more discipline for the web author
+writing each page,
+but can still be implemented by including the appropriate
+HTML-snippet, since these are the same for all pages regarding this
+motherboard.  
+
+\textsf{Reference to INTEL.COM with navigational fraework for
+  motherboard vs440fx}.
+
+In order to ensure integrity in the navigational framework for a site
+this site, it should be created automatically.  Doing so requires
+meta-data about the individual pages in order to place them correct in
+the framework.
+
+\section{A good website needs meta-information}
+
+What to a webmaster is a nice, and well maintained web-site, is to a
+computer just a bunch of directories of files with bytes in them.  In
+order to get any use of a computer in maintaining these, it is
+important to have easily accessible information about the desired
+functionality and the files to work with.  Even though complicated
+rules can be constructed to extract information from webpages, the
+basic rule is still that
+
+\begin{center}
+  \fbox{\textit{A human must enter the basic
+  information for categorizing a given webdocument}. }
+\end{center}
 
 
-\section{When to create documents dynamically}
+
+\textsf{check spelling of altavista}
+Incidentially this is also the reason why Internet search engines like
+needs elaborate information extraction techniques in order
+to remain useful.  AltaVista (which is discussed in
+section~\vref{sec:alta-vista}) was the first Internet Search engine
+for \textit{all} webpages. \textsf{Check precise way to do it and
+  expand the text a bit.  Web pages were considered in isolation or
+  compared with the rest of the site?}
+
+It didn't take long for web authors (especially those with adult
+material) to realize that the best way to get their web pages
+frequently returned in a top position at AltaVista was by putting as
+many potential search terms in META-tags in each and every of their
+web pages, showing that just blindly extracting keywords
+\textsf{uncrititically} is too simple a method.  The Google search
+engine (see~\vref{sec:google}) uses \textsf{heuristics} to assert the
+quality of the results, and is - in my opinion - the only usable
+search engine for the net today.
+
+The search engines failed because they had no control over authors and
+the authors had a desire for ``breaking the system''.  For further
+reading, Douglas Hofstaedter talks a lot about the impossibility of
+building an unbreakable system for automatic detection of bad input
+in~\cite{goedelescherbach}.
+
+
+\textsf{Screen shot of webpage here}
+
+An example of a document generated from meta-data which has been
+automatically extracted, is the MIP ``Recently Changed Pages'' (see
+figure~\vref{fig:mip-recently-changed-pages}) the original version of
+which I wrote while working for MIP as a student programmer.  The
+script traverses three disjunkt set of web pages on the server -
+System pages, Sysop pages and user pages (one set per user) - and
+generates a list for each set sorted by title.  Each file listed has
+its age in days next to it.
+
+The meta-information extracted was:
+
+\begin{itemize}
+\item \textbf{Title} - used for the link, and sorting the entries in a
+  set.  Extracted from the content of each document, with a default of
+  the filename if no title was present.
+\item \textbf{Age} - extracted from the underlying filesystem which
+  registers the last change of the document
+\item \textbf{User} (for the user pages) - also extracted from the
+  filesystem (\textsf{or was it from the URL?}).  It is also used to
+  look up the picture of the user.
+\item \textbf{Size} - \textsf{Did I use it?  For anything?  Check code}
+\end{itemize}
+
+To me this is just about all the useful information a flat
+Unix-filesystem can provide.  Additionally nothing is guaranteed about
+the contents of a HTML-file - even the title is not even always
+there, making it unreliable to rely on authors providing the
+information expected by any automatic process.
+
+If more meta-data than the above is needed, the authors must be
+involved and as a part of their web-authoring, deliberately and
+carefully ensure that the meta-information needed by the automatic
+processes is correct and up-to-date.
+
+The \textit{Yggdrasil system} (see section~\vref{sec:yggdrasil}) was
+my first attempt to generate a navigational framework from information
+extracted from webpages.  Yggdrasil was to function as the automatic
+webmaster on the intranet, in order to avoid having to assign staff to
+do so.  Then the individual employee could publish information in form
+of a webpage, add a category either in the title or as a META-tag, and
+trigger the next update of the framework.  This update would scan all
+web-pages, and extract tuples of (author, category code, publishing
+date, title, size) of those web-pages which had a category code, and
+generate a tree structure of web-pages to navigate the categories.
+Additionally lists of ``Documents sorted by author'' and ``Documents
+sorted by date'' were generated to help users locate documents.
+
+This was on a closed Intranet, where the users were interested in
+using this as a tool.  The incentive for ``breaking the system'' was
+very low.
+
+Yggdrasil worked very well initially especially when its very low
+amount of meta-information is taken in consideration.
+
+\textsf{Screen shot from Yahoo} \textsf{vref{fig}}An example of a good
+site built with meta-information is
+\myurl{http://www.yahoo.com}{Yahoo} which started as a directory over
+web pages where the maintainers manually categorized \textit{many} web
+sites, and used this information to regularily generate static
+navigational pages .  This works really well - I often use Yahoo as an
+electronic librarian, allowing me to find a website on a given topic I
+have never seen before (and Google to find it again at a later date) - 
+
+The question is then \textit{where} should the author put the meta-data?
+
+\section{Avoid chaos - keep information in its place}
+
+In the programming world, a very visible example of meta-data is the
+documentation for programs.  Experience has shown that it is
+notoriously hard for programmers to keep the documentation up-to-date,
+since it is usually considered a \textsf{get good quote from somewhere
+  :-)}, which is not felt a part of the ``creative, fun'' process of
+writing programs.  If the writing of documentation was well
+established as an integrated part of program development, and the
+programming language itself helped as much as it could, it would be
+much easier for the programmers to keep the documentation updated.
+
+Experience has shown (\textsf{references} man month) that
+documentation should be as close to the thing it documents as
+possible.  For programs, that means that the documentation should be
+\textit{in the same file} as the code.  This has traditionally been
+done by using comments embedded in the source code.
+
+\framepage{15cm}{\textsf{grow terse - does not stand on its own - hard
+  to maintain - abstraction layer: the idea was to \textit{hide} the
+  code and just show the meta-data}}
+
+\textsf{Typical example is Tanenbaum Minix with source listing with
+  line numbers and a cross reference - bladre from og tilbage hele
+  tiden.  1991 technology?  Designed for teaching.  Well written
+  books, but horrible programmer \cite{tanenbaumoperatingsystems}}.
+
+This observation is not new.  \textsf{New is that industry recognizes
+  the usefulness of documentation on the web, and the need for
+  programmers themselves to create such documentation.  In order to
+  gain wide acceptance such meta-data management systems must be
+  \textit{standards}, either as \textit{de-facto standards} or as a
+  standard body.  }
+
+\subsection{Javadoc - embedding web-information in programs}
+\label{sec:javadoc}
+
+\textsf{Get a screen shot}
+
+This is perhaps the most visible meta-data management tool available
+to programmers today.  \textsf{JavaDoc} is a tool that creates
+documentation in form of HTML pages from Java source code with
+embedded comments, \textsf{where all definitions are parsed to give a
+  full overview of the Java source code}.
+
+Javadoc is a specialized tool which is only suitable for generating
+web-pages from Java source code, but as Sun both use it for their
+reference documentation (\textsf{url to that}) as well as ship it with
+every copy of Java Development Kit, it is a tool which is widely
+available.  Programmers with a need to document their code, will most
+likely use javadoc to do so.  \textsf{link to the java code at
+ACME.com}
+
+Javadoc has also raised the expectations of the programmers, since
+they have become used to hyper-linked documentation in a browser to
+accompany any code they are to use.  This tendency is a good step in
+the right direction.
+
+\subsection{Literate Programming - Knuths approach \textsf{??}}
+\label{sec:literate-programming}
+
+Donald E. Knuth has written the {\TeX}-system used to typeset this
+report, and documented it by publishing the source code to the entire
+system in four books.  The {\TeX}-system has impressed since it is of
+an extremely high quality, both in code and documentation.
+\textsf{Knuth offers money to those who find bugs in his code - on an
+  exponential scheme}.
+
+\textsf{references to the TeX book, MetaFont book, Literate
+  Programming Book, nuweb (my observations)}
+
+In order to write both documentation and code of such high quality,
+Knuth developed his own method of coding \textsf{which he named
+``Literate Programming''}, in which the author works with a single
+file containing the documentation \textit{as it is to be presented to
+the reader} written in a {\TeX}-dialect, with the actual code (with a
+few characters escaped) listed in named chunks along with their
+documentation, as it fits the author to present them.  This file
+format is the \texttt{web}-format!
+
+\begin{itemize}
+\item 
+The \texttt{weave} tool converts the web-file to a \texttt{tex}-file
+to be processed by {\TeX}, and printed.
+
+\item The \texttt{tangle} tool generates the actual code to be
+compiled, by joining chunks with the same name, and inserting them in
+other chunks that reference them (a simple macro expansion),
+eventually producing one or more flat files which can be compiled.
+
+\end{itemize}
+
+\textsf{We definitively needs a sample of this!}
+
+\textsf{Reference to literateprograming.org}
+
+The problem with Knuth is that things that work well for him, does not
+work quite as well for the rest of us.   No editors - not even Emacs -
+can help where a given file is separated in a lot of regions, being 
+either {\TeX}-code or source code, meaning that the editor cannot
+provide the supporting functions which a programmer might have become
+accustomed to.
+
+You cannot code verbatim - some characters are reserved for other
+purposes and must be written differently, which may be very annoying
+to learn.  Additionally the concept of chunks all over the document
+may be counter-productive if these are hard to navigate.
+
+\textsf{What else}
+
+\textsf{Many tried this- cloned the functionality -etc - I tried it,
+  and wrote a few programs with it.}
+
+My experience with Literate Programs can be summarized as:
+
+\begin{itemize}
+\item The documentation gets bigger and better, simply because the
+printed documents look better that way.  What would pass as a single
+line comment in a source file, looks almost pathetic when typeset.
+The full power of {\TeX} also encourages usages of illustrations and
+graphs.  
+
+\item The program development gets cumbersome.  You may have trouble
+  using your favorite tools for editing, compiling and debugging.
+  Users of most integrated development environments cannot use this
+  model since the IDE does not provide hooks to provide this processing.
+
+\end{itemize}
+
+Critical observation: In order to be usable, all tools \textit{must}
+create derived files that transparently refers back to the original
+web-document, in order for all corrections to be made to the
+web-document instead of the various derived files.
+
+
+\subsection{Rational Rose - the other way around}
+\label{sec:rational-rose}
+
+\textsf{Talk to BNJ}.  Rational Rose - a UML development tool - uses
+another approach, \textsf{work on meta-data with hidden code in the
+  nodes, and generate code to actually run.  Allows
+  reverse-engineering to make code development easier.
+  Experiences from users}.  
+
 
 \section{The consequence - multiple views of a document}
 
@@ -158,7 +473,7 @@ very little trouble.
 }
 
 
-\subsection{The importance of a web cache}
+\section{The importance of a web cache}
 \label{sec:the-importance-of-a-web-cache}
 
 A database query is expensive, and it requires an expert to tune the

@@ -3,6 +3,7 @@
   (lambda ()
     (LaTeX-add-labels
      "sec:cactus"
+     "sec:yggdrasil"
      "sec:cactus-choice-of-language"
      "sec:converters"
      "sec:linux"

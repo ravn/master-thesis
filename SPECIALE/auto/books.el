@@ -9,5 +9,7 @@
      "greenspun-sql"
      "a-relational-model-of-data-for-large-shared-databanks"
      "a-guide-to-latex"
-     "mez-waco"))))
+     "mez-waco"
+     "goedelescherbach"
+     "tanenbaumoperatingsystems"))))
 
