@@ -19,6 +19,7 @@
      "hyperref"
      "graphicx"
      "verbatim"
+     "varioref"
      "isolatin1"
      "fullpage"
      "charter"

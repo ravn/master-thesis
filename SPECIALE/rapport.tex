@@ -1,5 +1,7 @@
-% -*- mode: LaTeX; tex-command: "pdflatex" -*-
 % -*- mode: LaTeX -*-
+
+
+% -*- mode: LaTeX; tex-command: "pdflatex" -*-
 
 % $Id$
 %
@@ -25,6 +27,7 @@
 \usepackage{isolatin1}
 %\usepackage{parskip}
 % \usepackage{draft}
+\usepackage{varioref}           % gives better references
 \usepackage{verbatim}
 \usepackage[pdftex]{graphicx}
 \usepackage[%pdftex,
@@ -33,7 +36,8 @@
   pdfsubject={pdfsubject},
   pdfkeywords={pdfkeywords},
   pdfpagemode={UseOutlines},
-  bookmarks,bookmarksopen,
+  pagebackref,hyperindex,,
+  bookmarks,bookmarksopen={false},
   pdfstartview={FitH},
   colorlinks,linkcolor={blue},citecolor={blue},
   urlcolor={red}
@@ -53,7 +57,8 @@
 \newcommand{\ntcommand}[1]{``\texttt{{#1}}''}
 
 % \myurl{http://sunsite.auc.dk}{The Danish SunSite}
-\newcommand{\myurl}[2]{\begin{underline}{#2}\end{underline}\footnote{{#1}}}
+%\newcommand{\myurl}[2]{\begin{underline}{#2}\end{underline}\footnote{{#1}}}
+\newcommand{\myurl}[2]{\url{#1}{#2}}
 
 % \tag{hr}  ->  <hr>
 \newcommand{\tag}[1]{$<$#1$>$}
@@ -64,7 +69,7 @@
   \begin{figure}[htbp]
     \begin{center}
       \ifx\pdfoutput\undefined
-        [Graphic: #1]
+        [Graphic: \href{#1.png}{#1}]
       \else
         \includegraphics[scale=0.4]{#1}
       \fi
@@ -407,6 +412,8 @@ Full reference with a lot of annotated URL's.
 
 %\includegraphics{gr/familie}
 \bibliography{books}
+
+\tableofcontents
 \end{document}
 
 %
@@ -415,6 +422,14 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.4  2000/03/04 23:52:38  ravn
+% Converted TIFF files to PNG and found out how to put them in
+% the PDF file with the \myimage command (which currently avoids the problem
+% in plain latex altogether.
+% )
+%
+% The PDF file is really looking good, and print well.
+%
 % Revision 1.3  2000/03/04 21:39:14  ravn
 %
 %
