@@ -1,12 +1,19 @@
 M= #Makefile
 
-%.png: %.tiff $(M)
-	tifftopnm $< | ppmquant 250| pnmtopng -compression 9 -verbose > $@
+%.pnm: %.tiff $(M)
+	tifftopnm $<  >$@
 
-%.eps: %.tiff $(M)
-	tifftopnm -quiet $< | pnmtops -noturn -rle -quiet> $@
+%.pnm: %.jpg $(M)
+	djpeg $<  >$@
 
-PNG=$(addsuffix .png, $(basename $(wildcard *.tiff)))
-EPS=$(addsuffix .eps, $(basename $(wildcard *.tiff)))
+%.png: %.pnm
+	<$< ppmquant 250| pnmtopng -compression 9 -verbose > $@
+
+%.eps: %.pnm
+	<$< pnmtops -noturn -rle -quiet> $@
+
+
+PNG=$(addsuffix .png, $(basename $(wildcard *.tiff) $(wildcard *.jpg)))
+EPS=$(addsuffix .eps, $(basename $(wildcard *.tiff) $(wildcard *.jpg)))
 
 all:  $(EPS) $(PNG)

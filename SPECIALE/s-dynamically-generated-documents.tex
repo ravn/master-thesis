@@ -8,11 +8,8 @@
 %   Concepts'' (chapter \vref{cha:terms-and-concepts}).  Please refer to
 %   it to clarify matters.}
 
-\mycitation{\textsf{404 Document not found}}{\textsf{?}}{\textsf{?}}
+\mycitation{404 Document not found}{}{}
 
-!!! PUT SAMPLE OF FILENAME INSTEAD OF TT-FILENAME-/TT in SOMEWHERE.
-
-SKRIV NOGET OM STATELESS
 
 \section{The way it started: Handmade web-pages in a filesystem on a web-server}
 
@@ -25,24 +22,24 @@ server could basically do only two things:
 \item Serve \textit{static} files directly from an underlying file
   system.  These files were either pages written in HTML, or images in
   GIF or JPEG formats.
-  
+
 \item Call a program complying to the \textit{Common Gateway
     Interface} with user-submitted parameters, and return its output
   as the document to send.
 \end{itemize}
 
-That was all!
+That was all.
 
 \begin{my-detour}
-  
+
   Such web servers still exist - for example
   \myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} (which has
-  been unmaintained since 1996. NCSA recommend that the Apache server
+  been unmaintained since 1996 -- NCSA recommend that the Apache server
   should be used instead).  Even so
   \myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February
     2000 Netcraft survey} reported that 17172 NCSA servers were
   active, and could be reached from Netcraft.
-  
+
   In August 1995 the number of
   \myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
     running the NSCA server was 10835}, meaning that number has
@@ -60,27 +57,28 @@ A well-tuned server which serves documents directly from the
 filesystem can reach impressive numbers.
 \myurl{http://www.acme.com/software/thttpd/benchmarks.html}{ACME
   software has a webserver benchmark} from 1998, which have
-benchmarked several webservers.
+benchmarked several webservers, where Apache did not come out top.
 
 
-On a modern PC Apache has no problem saturating a 10 Mbps Ethernet
-connection , meaning that even for very large and demanding sites the
-bottleneck should be determined by the hardware!  Phillip Greenspun
-talks about databases with added webserver capability in
-\cite{phillipandalexsguidetowebpublishing}, and conclude that these are
-generally much slower than there non-database relatives.
+On a modern PC the Apache webserver has no problem saturating a 10
+Mbps Ethernet connection , meaning that even for very large and
+demanding sites the bottleneck should be determined by the hardware!
+Phillip Greenspun talks about databases with added webserver
+capability in \cite{phillipandalexsguidetowebpublishing}, and conclude
+that these are generally much slower than there non-database
+relatives.
 
 On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a
 \textit{lot} of files every day.  On March 14 2000
 \myurl{http://www.emsphone.com/stats/cdrom.html}{the transfer
   statistics} said that the average output that day was 79.3 Mbit/s
 (with a peak of 95.8 Mbit/s).  The average output on a yearly basis
-was 86.2 Mbit/s, which is 933 Gb/day in average).
+was 86.2 Mbit/s (which is 933 Gb/day in average).
 \myurl{ftp://ftp.cdrom.com/.message}{This single machine runs FreeBSD}
 (see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).
 Since an ftp-session have a notably larger overhead than an
 http-session, it is not unreasonable to expect similar performance
-from a suitably tuned web-server when serving static files.
+from a suitably tuned web-server serving static files.
 
 
 \subsection{CGI-scripts}
@@ -117,25 +115,27 @@ The problems with CGI-scripts have several reasons:
 \item \textbf{Scripts run as subprocesses} -- the script is executed
   with the same permissions as the webserver itself, including access
   to \texttt{/etc/passwd} and other possibly sensitive files.  Such
-  scripts had to be \textit{trusted} or - for ISP's - inspected before
-  installation to ensure that the script would behave properly.
+  scripts had to be \textit{trusted} or - for Internet Service
+  Providers - inspected before installation to ensure that the script
+  would behave properly.
 
   This has been addressed with the development of ``safe languages''
   where the execution environment is guaranteed that the CGI-script is
   confined to a ``sandbox''.
-  
+
 \item \textbf{Incompatible platforms} -- the CGI-programmer may not
   have access to a C-compiler which can generate binary code for the
   machine running the webserver.
-  
+
   This has caused interpreted languages like Perl to be very popular.
   Perl programs can be run immediately on a given platform without
   needing to be recompiled, and are for most purposes as fast as the
-  equivalent programs written in C or C++.  Recently Java Servlets
-  (see section~\vref{sec:java-servlets}) have appeared as a popular
-  and well-supported alternative to CGI-scripts, which is being
-  supported by more and more web servers.
-  
+  equivalent programs written in \texttt{C} or \texttt{C++},
+  especially for users with slow modems.  Recently Java Servlets (see
+  section~\vref{sec:java-servlets}) have appeared as a popular and
+  well-supported alternative to CGI-scripts, which is being supported
+  by more and more web servers.
+
 \item \textbf{Slow} -- the overhead just for invoking the CGI-program
   in a subprocess is substantial even for moderate load on the web
   server, since the web-server must ``fork'' a new process for each
@@ -143,7 +143,7 @@ The problems with CGI-scripts have several reasons:
 
   This has been addressed by putting the execution environment inside
   the web server, using threads instead of processes, and caching
-  compiled versions of scripts.  
+  compiled versions of scripts.
 
 \end{itemize}
 
@@ -182,23 +182,24 @@ has grown way beyond what they originally expected, and that
 \item The information tree described by the links is very difficult to
   change, since all links must be checked and potentially changed.
 \item When pages are moved or deleted, it becomes difficult to ensure
-  that all links pointing to these pages are dealt with
-  appropriately.  Jakob Nielsen uses the term \textit{linkrot} to
-  describe web sites with many broken links.
+  that all links pointing to these pages are dealt with appropriately.
+  \myurl{http://www.useit.com/alertbox/980614.html}{Jakob Nielsen}
+  uses the term \textit{linkrot} to describe web sites with many
+  broken links.
 \item In the case of external links it becomes even harder to ensure
   that all links are valid at all times.
 \end{itemize}
 
 The answer to these problems is usually \textit{automation}.  A script
 to ensure that the  ``Last updated 2000-03-12 by whoever'' string at
-the bottom of each page is correct.   A script to ensure that all
+the bottom of each page is up to date.   A script to ensure that all
 internal links are valid.  A script to update the layout of tables.
-And so on.
+The list is endless.
 
 \section{Navigational structure should not be maintained by the author}
 
 \myimage{gr/flug-1}{The Fyns GNU/Linux User Group web-site.  The side
-  bar and the top graphic was added automatically by a script by
+  bar and the logo was added automatically by a script by
   Tobias Bardino}{flug-1}
 
 One of the easiest things to automate for a webmaster is the insertion
@@ -257,9 +258,9 @@ manage (if the webmasters work on different machines) and it is not
 very easy to change if the global layout of the web server changes.
 
 In order to ensure integrity in the navigational framework for a site
-this size, it should be created automatically.  Doing so requires
-meta-data about the individual pages in order to place them correct in
-the framework.
+this size, it should be generated automatically.  Doing so requires
+meta-data about the individual pages in order to place them correctly
+in the framework.
 
 \section{A good website needs meta-information about its documents}
 
@@ -279,6 +280,8 @@ basic rule is still that
 Computers are simply not good enough yet to guess this information
 themselves.
 
+\myimage{gr/alltheweb-2}{AllTheWeb search for ``background icons''}{alltheweb-2}
+
 Incidentially this is also the reason why Internet search engines like
 \myurl{http://www.altavista.com}{AltaVista} needs elaborate
 information extraction techniques in order to remain useful.
@@ -288,10 +291,6 @@ was immediately a great success since the Internet had already grown
 to a size where help was essential to find any page if you didn't have
 a direct URL to it already.
 
-% \textsf{Check precise way to do it and expand the text a bit.  Web
-%   pages were considered in isolation or compared with the rest of the
-%  site?}
-
 It didn't take long for web authors (especially those with adult
 material) to realize that the best way to get their web pages
 frequently returned in a top position at AltaVista was by putting as
@@ -300,21 +299,30 @@ web pages, showing that just blindly extracting keywords
 \textit{uncrititically} is too simple a method.  Additionally this
 drives users away -- when they feel that they are not getting ``the
 best results'' from the search engine they will look for another one
-that can.  The Google search engine (see section~\vref{sec:google})
-was such an engine, and users quickly started to use it. Recently
-links to Amazon.com and Fatbrain.com have begun to crop up in the top
-of the search results on Google, and as a direct result users are
-going elsewhere.  I have been recommended
-\myurl{http://www.alltheweb.com}{AllTheWeb} as a good alternative, but
-which after a bit of use appears to be prone to the same polluting
-documents as AltaVista.
+that can. \myurl{http://www.google.com}{The Google search engine} (see
+section~\vref{sec:google}) was such an engine, and users quickly
+started to use it. Recently links to Amazon.com and Fatbrain.com have
+begun to crop up in the top of the search results on Google, and as a
+direct result users are going elsewhere.
+
+\myimage{gr/alltheweb-1}{And what hit 15 was linking to in \cite{fig:alltheweb-2}}{alltheweb-1}
+
+As an alternative to Google I have been recommended
+\myurl{http://www.alltheweb.com}{AllTheWeb}, but which after a bit of
+use appears to be prone to the same polluting documents as AltaVista.
+See the result of ``background icons'' in
+figure~\vref{fig:alltheweb-2} and what the fifteenth hit actually
+linked to in figure~\vref{fig:alltheweb-1}.
 
 
-AltaVista failed then, because they had no control over authors and
-the authors had a desire for ``breaking the system''.  For further
-reading, Douglas Hofstadter talks a lot about the impossibility of
-building an unbreakable system for automatic detection of bad input
-in~\cite{goedelescherbach}.
+
+AltaVista failed then as AllTheWeb fails now, because they had no
+control over authors and the authors had a desire for ``breaking the
+system''.  For further reading, Douglas Hofstadter talks a lot about
+the impossibility of building an unbreakable system for automatic
+detection of bad input in~\cite{goedelescherbach}.
+
+
 
 \myimage{gr/mip-1}{The MIP Recently Changed Pages.  The last of the
   system pages and the first user pages are shown.}{mip-1}
@@ -323,7 +331,7 @@ automatically extracted, is the MIP ``Recently Changed Pages'' (see
 figure~\vref{fig:mip-1}) the original version of
 which I wrote while working for MIP.  The
 script traverses three disjunkt set of web pages on the server -
-System pages, Sysop pages and User pages (one set per user) - and
+System pages, System Administrator pages and User pages (one set per user) - and
 generates a list for each set sorted by title.  Each file listed has
 its age in days next to it.
 
@@ -338,23 +346,24 @@ The meta-information extracted was:
 \item \textbf{User} (for the user pages) - also extracted from the
   filesystem.  It is also used to look up the picture of the user.
 \item \textbf{Size} - which is intended to provide a hint to the user
-  about the size of the page in question. 
+  about the size of the page in question.   It is not used in the
+  depicted page.
 \end{itemize}
 
-To me this is just about all the useful information a flat
+This is just about all the useful information a flat
 Unix-filesystem can provide.  Additionally nothing at all is
 guaranteed about the contents of a HTML-file - even the title is not
-even always there! 
+even always there!
 
 If more meta-data than the above is needed, the authors must be
 involved and as a part of their web-authoring, deliberately and
 carefully ensure that the meta-information needed by the automatic
 processes is correct and up-to-date.
 
-Such an effor requires that the data is much more systematically
+Such an effort requires that the data is much more systematically
 organized than they are today, including better mark-up.  I have not
 seen any site on the Internet yet, which is capable of
-\textit{categorize} the content of the Internet.
+\textit{categorizing} the content of the Internet.
 
 The \textit{Yggdrasil system} (see section~\vref{sec:yggdrasil}) was
 my first attempt to generate a navigational framework from information
@@ -369,41 +378,43 @@ generate a tree structure of web-pages to navigate the categories.
 Additionally lists of ``Documents sorted by author'' and ``Documents
 sorted by date'' were generated to help users locate documents.
 
+\begin{my-detour}
 This was on a closed Intranet, where the users were interested in
 using this as a tool.  The incentive for ``breaking the system'' was
 very low, and the tool worked well.
 
 Yggdrasil worked very well initially especially when its very low
 amount of meta-information is taken in consideration.
+\end{my-detour}
 
 \myimage{gr/yahoo-1}{The British Yahoo site}{yahoo-1}An example of a
 good site built with meta-information is
-\myurl{http://www.yahoo.com}{Yahoo} (see figure~\vref{fig:yahoo-1}
+\myurl{http://www.yahoo.com}{Yahoo} (see figure~\vref{fig:yahoo-1})
 which started as a directory over web pages where the maintainers
 added meta-data to a lot of web-sites by categorizing them manually,
 and use this information to regularily generate static navigational
 pages.  At a time Yahoo really suffered by a lot of broken links as
 the meta-data was not maintained, but today Yahoo usually links to a
-page that \textit{is} there.
+page that \textit{is} there (by verifying that a target page existed).
 
 
-\section{Avoid chaos by keeping information together}
+\section{Documentation - meta-data of programs}
 
 Given there is a need for meta-data about the documents, the question
 is then \textit{where} should the authors put the meta-data?
 
 
 In the programming world, a very visible example of meta-data is the
-documentation for programs.  Experience has shown that it is
-notoriously hard for programmers to keep the documentation up-to-date,
-since it is usually considered a part of the coding process that is
-not really necessary and definitively not felt to be a part of the
-``creative, fun'' process of writing programs!  If the writing of
-documentation was well established as an integrated part of program
-development, and the programming language and the programmers working
-environment itself helped as much as it possibly could, it would be
-easier for the programmers to keep the documentation synchronized with
-the code.
+documentation for programs, since the computers themselves do not need
+them.  Experience has shown that it is notoriously hard for
+programmers to keep the documentation up-to-date, since it is usually
+considered a part of the coding process that is not really necessary
+and definitively not felt to be a part of the ``creative, fun''
+process of writing programs!  If the writing of documentation was well
+established as an integrated part of program development, and the
+programming language and the programmers working environment itself
+helped as much as it possibly could, it would be easier for the
+programmers to keep the documentation synchronized with the code.
 
 Experience has shown (\framebox{\textsf{references man month}}) that
 documentation should be as close to the thing it documents as
@@ -424,24 +435,31 @@ does, without long and careful studies, and much flapping back and
 forth.  My guess is that today Tanenbaum would write a hyperlinked
 book readable in a browser, perhaps even using the Literate
 Programming techniques discussed in
-section~\vref{sec:literate-programming}.
+section~\vref{sec:literate-programming}.  The only other publicized
+works of large programs I know of is the books by Knuth about {\TeX}
+and the PGP 5.0 source code (which was not printed for humans to read,
+but in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan
+  the PGP source to circumvent the USA crypto export regulations}.
 
 The great news is that the industry recognizes the usefulness of
 documentation on the web, and the need for programmers themselves to
 create such documentation.  In order to gain wide acceptance such
 meta-data management systems must be \textit{standards}, either as
 \textit{de-facto standards} or defined by a standards body like ANSI
-or W3C.  \textsf{Some text is missing here}
+or W3C.  No such standard has arisen yet, but a XML-dialect will most
+likely be written for the purpose.
 
-The rest of this section detours into other areas of computer science,
-where having several views on the data in question has proven
-beneficial.
+\begin{my-detour}
+  The rest of this section detours into other areas of computer
+  science, where having several views on the data in question has
+  proven beneficial.
+\end{my-detour}
 
 \subsection{Javadoc - embedding web-information in programs}
 \label{sec:javadoc}
 
 \myimage{gr/acme-1}{The ACME documentation of the \texttt{Acme.Phase}
-  class rendered by JavaDoc}{acme-1}
+  class generated by JavaDoc}{acme-1}
 
 This is perhaps the most visible and generally available meta-data
 tool for Java programmers today.
@@ -457,7 +475,7 @@ web-pages from Java source code, but as Sun
 \myurl{http://java.sun.com/products/jdk/1.2/docs/api/overview-summary.html}{use
   JavaDoc for their reference documentation} as well as ship it with
 every copy of Java Development Kit, it is a tool which is widely
-available.  Programmers who need to document their code, will most
+available.  Java programmers who need to document their code, will most
 likely use JavaDoc to do so.
 
 Javadoc has also raised the expectations of the programmers, since
@@ -465,7 +483,7 @@ they have become used to hyper-linked documentation in a browser to
 accompany any code they are to use.  This tendency is a good step in
 the right direction.
 
-Others recognize this too.  On March 13, 2000 a
+Others recognize this too.  On March 13, 2000
 \myurl{http://relativity.yi.org/WebSite/opensource-javadoc/}{an open
   letter pleading for the release of JavaDoc as OpenSource} was posted
 to the Internet.  They argued amongst other things that a number of
@@ -473,7 +491,7 @@ bugs needed to be fixed, and new techology like XML/XSL should be
 employed too.  Hopefully this will influence Sun to help the
 developers as much as possible by opening up this source too.
 
-Meanwhile, the \myurl{http://xml.apache.org/cocoon/javadoc.html}{an
+Meanwhile, \myurl{http://xml.apache.org/cocoon/javadoc.html}{an
   Apache effort to parse JavaDoc documents into XML} is underway.
 This has great potential when it gets running, since the dynamic
 publishing abilities of XML will complement the target audience of
@@ -486,10 +504,11 @@ publishing abilities of XML will complement the target audience of
 The
 \myurl{http://www.cpan.org/doc/manual/html/pod/perlpod.html}{perlpod}
 format was designed to be simple to write and easy to use in Perl
-programs, and the overwhelming amount of documentation for Perl
-confirms that this goal was reached.  This format allows you  --
-with very elementary markup -- to put documentation and code in the
-same file, and you may leave out either one.
+programs, and the overwhelming amount of freely available
+\myurl{http://www.cpan.org}{documentation for Perl} confirms that this
+goal was reached.  This format allows you -- with very elementary
+markup -- to put documentation and code in the same file, and you may
+leave out either one.
 
 All the info-files at
 \myurl{http://www.unixsnedkeren.dk}{Unixsnedkeren.dk} (the website for
@@ -554,41 +573,59 @@ references are available on
 web-program can be processed in two ways:
 
 \begin{itemize}
-\item 
+\item
 The \texttt{weave} tool converts the web-file to a \texttt{tex}-file
 to be processed by {\TeX}, and printed.
 
 \item The \texttt{tangle} tool generates the actual code to be
 compiled, by joining chunks with the same name, and inserting them in
 other chunks that reference them (a simple macro expansion),
-eventually producing one or more flat files which can be compiled.
+eventually producing one or more flat files which can be compiled,
+along with information links each code chunk back to the original web document.
 
 \end{itemize}
 
-\textsf{We definitively needs a sample of this!}
+\begin{verbatim}
+
+              sample.web
+                /   \
+               /     \
+           weave    tangle
+             /         \
+            /           \
+        sample.tex    a.c b.c ...
+           |             |
+           |             |
+         ....         compiler
+                         |
+                         |
+                      executable
+\end{verbatim}
 
 The problem with Knuth is that things that work well for him, does not
 always work quite as well for the rest of us.  No editors - not even
 Emacs - are currently capable of helping where a given file is
-separated in a lot of regions, being either {\TeX}-code or source
-code, meaning that the editor cannot provide the supporting functions
-which a programmer might have become accustomed to.
+separated in a lot of logical regions, being either {\TeX}-code or
+source code, meaning that the editor cannot provide the supporting
+functions which a programmer might have become accustomed to.
 
 You cannot code verbatim - some characters are reserved for other
 purposes and must be written differently, which may be very annoying
 to learn.  Additionally the concept of chunks all over the document
 may be counter-productive if these are hard to navigate.
 
-Many people have experimented with the possibilities of a
-weave/tangle pair resulting in several software packages, notably:
-
-\myurl{http://www.ross.net/funnelweb/}{FunnelWeb},\myurl{http://www.eecs.harvard.edu/~nr/noweb/}{noweb},
-\myurl{http://w3.pppl.gov/~krommes/fweb.html\#SEC3}{funnelweb}
+Many people have experimented with the possibilities of a weave/tangle
+pair resulting in several software packages, some of which are
+\myurl{http://www.ross.net/funnelweb/}{FunnelWeb},
+\myurl{http://www.eecs.harvard.edu/~nr/noweb/}{noweb},
+\myurl{http://w3.pppl.gov/~krommes/fweb.html\#SEC3}{fweb} and
+\myurl{http://www.tu-chemnitz.de/~ukn/UNIX/nuwebdoc/nuwebdoc.html}{nuweb}.
 
 I did a few projects with nuweb just to try it, which was language
 independent and therefore well suited to Perl, and I found it
 reasonably well working, when {\TeX} and Emacs had been taught that
-the .tex and .pl files were derived from a web-file.
+the .tex and .pl files were derived from a web-file.  I submitted
+patches for using nuweb with AUC-TeX.
 
 There is
 \myurl{http://www.webring.org/cgi-bin/webring?ring=litprog;list}{a
@@ -600,23 +637,24 @@ Bibliographies provides
 
 Oasis has \myurl{http://www.oasis-open.org/cover/xmlLitProg.html}{a
   page on Literate Programing with XML and SGML} where a number of
-approaches are listed with references.
+approaches are listed with references.  This appears to be the only
+resource so far.
 
 My personal experiences with Literate Programs can be summarized as:
 
 \begin{itemize}
 \item The documentation gets bigger and better, simply because the
-printed documents look better that way.  What would pass as a single
-line comment in a source file, looks almost pathetic when typeset.
-The full power of {\TeX} also encourages usages of illustrations and
-graphs.  
+  printed documents look better that way.  What would pass as a single
+  line comment in a source file, looks very small when typeset.  The
+  full power of {\TeX} also encourages usages of illustrations and
+  graphs.
 
 \item The program development gets cumbersome.  You may have trouble
   using your favorite tools for editing, compiling and debugging.
   Users of most integrated development environments cannot use this
   model since the IDE does not provide hooks to provide this
   processing.
-  
+
 \item A critical point is whether the intermediate files are visible
   to the author! In order to be usable, \textit{all} derived files
   \textit{must} refer to the original document in a transparent
@@ -646,6 +684,9 @@ authors are working on.  In this way they are able to provide the
 author an environment where the software model can be designed
 seperately from the writing of the code.
 
+Design patterns are used to provide commonly known building blocks to
+build up the abstractions.
+
 Bo Nørregård Jørgensen told me that he would expect it to be
 beneficial to use Rational Rose in a software project when it has an
 underlying model and has 7 modules or more.
@@ -655,7 +696,7 @@ underlying model and has 7 modules or more.
 
 Most software projects known to me does not consist of a single huge
 source file which would take ages to compile, but of several smaller
-files, which can be compiled individually and linked to an executable
+files, which can be compiled individually and finally linked to an executable
 file.  If a file with source code is changed, it is not necessary to
 recompile each and every file but only those which depend on this
 particular source file, and then relink the executable to incorporate
@@ -673,31 +714,32 @@ Environment (like \myurl{http://www.borland.com/bcppbuilder/}{Borland
 to utilize the known relations built into \unixcommand{make} as well
 as allow the author to add new ones.
 
-The real advantage comes in environments (multi-threaded, multi-CPU)
-where several compilations can run in parallel.  This can be done
-safely by using meta-data to localize compilations which are
-independent from one another and execute these simultaneously.  MIP
-have had a 24-CPU Silicon Graphics machine in which using a
-parallelizing ``make'' could reduce compilation times with a factor of
-20.   Not all software projects were easily parallelized - if the
-Makefile did not list all dependencies explicitely but expected that
-the normal compilation order would produce the unlisted files, the
-parallelized compilation would fail.
-
-\medskip
-
-In effect, adding meta-data to the project allow the program
-development process to go faster.
+The real advantage comes in environments where several compilations
+can run in parallel due to multi-threaded and/or multi-CPU systems.
+This can be done safely by using meta-data to localize compilations
+which are independent from one another and execute these
+simultaneously.  MIP used to have a 24-CPU Silicon Graphics machine
+where a parallelizing ``make'' could reduce compilation times with a
+factor of 20 or more.  Not all software projects were easily
+parallelized - if the Makefile did not list all dependencies
+explicitly but expected that the normal compilation order would
+produce the unlisted files, the parallelized compilation would fail.
 
 
-\section{Requiring multiple views of a document}
-\label{sec:requiring-multiple-views-of-a-document}
+
+To summarize, \textit{adding meta-data to the project allow the program
+development process to go faster}.
+
+
+\section{Multiple views of a web document}
+\label{sec:multiple-views-of-a-web-document}
 
 \myimage{gr/zdnet-1}{The ZDNet presentation of a story -- notice how
   little of the initial screen that is dedicated to the story about
-  ``Microsoft may try to boost WinCE, Linux-style''}{zdnet-1}
-\myimage{gr/zdnet-2}{The ``Printer-friendly version'' of
-  figure~\vref{fig:zdnet-1}}{zdnet-2}
+  ``Microsoft may try to boost WinCE, Linux-style''.  The ``Printer
+  Friendly version'' icon is about half way down the page from the
+  start}{zdnet-1} \myimage{gr/zdnet-2}{The ``Printer-friendly
+  version'' of figure~\vref{fig:zdnet-1}}{zdnet-2}
 
 Some web-sites have so many advertisements and auxiliary links in
 their layout, that they need an additional version which is
@@ -728,6 +770,8 @@ users will probably prefer short and crisp versions of the documents
 when they use a mobile phone.  Nokia is working with 3com to produce a
 hybrid between a Palm Pilot and a mobile phone.
 
+\begin{my-detour}
+  
 This tendency might as a side-effect be beneficial for the currently
 rather overlooked blind computer users (see
 \myurl{http://www.webring.org/cgi-bin/webring?ring=blind\&list}{the
@@ -740,12 +784,13 @@ also be beneficial to these users since it will be easy to write a
 renderer for their preferred format.  Of course, it is possible to
 write ordinary HTML in a way that is usable by these users, but that
 is rare these days.
+\end{my-detour}
 
 Both \myurl{http://www.useit.com/alertbox/990613.html}{Jakob Nielsen}
-and \myurl{Statens Information [in
-  Danish]}{http://www.si.dk/netsteder/publ/tilgaeng/index.html} have
-good guidelines for making pages with web content accessible to people
-with disabilities based on
+and
+\myurl{http://www.si.dk/netsteder/publ/tilgaeng/index.html}{Statens
+  Information [in Danish]} have good guidelines for making pages with
+web content accessible to people with disabilities based on
 \myurl{http://www.w3.org/TR/WAI-WEBCONTENT/}{the work done by the W3C
   Web Accessory Initiative}.  Pages written with these guidelines in
 mind will work -- not only for disabled readers -- but should be ready
@@ -766,8 +811,8 @@ and meta-data in a convenient form in a SGML or XML file, but that
 these files must be rendered into the formats expected by the users,
 like HTML, PDF or what else tomorrow may bring of new, exiting
 formats.  Since SGML describes the \textit{content} and not the
-layout, it is ``just'' a matter of creating a renderer for any new
-format and add it to the collection.
+layout, a new output format is ``just'' a matter of creating a
+renderer for any new format and add it to the collection.
 
 This has been recognized by almost all of the ``Documentation
 Projects'' (\myurl{http://www.linuxdoc.org/}{The Linux Documentation
@@ -781,7 +826,6 @@ to a given format on demand (for example in a web browser).
 
 
 
-% \framepage{15cm}{
 % Introduce publishing where HTML is just a backend amongst many (PDF,
 % Word, ASCII).
 
@@ -797,17 +841,17 @@ to a given format on demand (for example in a web browser).
 % (basic interpreter written in TeX) and
 % disadvantages (programming language, not abstract) (designed 20 years ago).  Ask Steffen Enni
 % about his thoughts.  Javadoc.  Perl POD.  DocBook projects (FreeBSD,
-% LDP).  
-% }
+% LDP).
+
 
 \section{The user should use familiar tools to publish documents}
 \label{sec:the-user-should-use-familiar-tools-to-publish-documents}
 
-\framepage{15cm}{
-SGML-editing is hard and tedious - this is one thing that the folks in
-the \myurl{news:comp.text.sgml}{\texttt{comp.text.sgml}} and
+Editing SGML manually is hard and tedious - this is one thing that the
+folks in the \myurl{news:comp.text.sgml}{\texttt{comp.text.sgml}} and
 \myurl{news:comp.text.xml}{\texttt{comp.text.xml}} newsgroups agree
-upon.  Tools are essential for authors.
+upon, and quite sophisticated tools are essential to make authoring
+directly in SGML viable.
 
 Very few tools exist, and the good ones are quite expensive.  The
 general consensus is that the best OpenSource tool is the Emacs editor
@@ -815,46 +859,53 @@ with the PSGML package (see~\vref{sec:emacs-with-psgml}), and that
 this tool is primarily suited for programmers and other people who are
 well acquainted with SGML and XML.
 
-\textsf{PRINT DIRECTLY TO A PDF FILE - WEB PUBLISHING}
-
 Computers should \textit{help} you do your work, and users are
 generally most productive with the tools they know.  Why should an
-author use SGML with an editor she loathes, if almost the same result
+author use SGML with an editor she dislikes, if almost the same result
 can be achieved by using a word processor she is familiar with?
 
-In order to automate the conversion from e.g. Word to the equivalent
-SGML file, it is important that the author uses only those
+Automated conversions from one document format to another is a
+non-trivial matter, in particular when the target format contains more
+meta-data than the original.  It is therefore important that the
+author is fully aware of the underlying processes and use only those
 constructions that the conversion program understands.  This is most
 likely given as a set of macros that must be used, as well as a
 verification program which the author can use at any time to check
-whether her document is conformant.
+whether her document is complying to the DTD.  These rules must be
+strictly enforced during the writing process in order for the author
+to be as productive as possible.
 
-Publishing a document to the web should be as easy as printing a
-document.  The basic principles are the same - you can do with a
-``Publish''-button and a dialogue box where the essential information
-is provided.  It is not so today - discuss reasons .  Use ``print to
-fax'' software as horrible example of this idea gone wrong.
+In addition to this, the publishing process should be as simple as
+possible.  For comparison is it quite a complicated task to print a
+document.  Numerous variables regarding choice of printer driver,
+location of physical device, transporting the bytes across the cables,
+and communicating with the printer to ensure that all is well during
+printing.  This complicated task is today as simple as pressing a
+``Print'' button and checking a few things in a dialogue box. (This is
+the same approach Adobe uses in their Acrobat software -- they capture
+the output to a printer and convert it directly to PDF).
 
-When the webserver is dumb, you cannot do much.  If there is a
-database underneath, much more is possible.  Discuss the idea of
-having several ways of entering documents in the database (upload via
-form, send as email (fax software can do this too), print to virtual
-printer, scan, fax, voice) and letting the software do the
-conversions.
+Web publishing is not any more complicated or difficult than that, and
+this should be reflected in the working procedure.  My conclusion is:
 
-Use example with print PostScript to file and upload via ftp to
-printer (LexMark).
+\begin{center}
+  \textit{Publishing a document to the web should be as easy as
+    printing a document.}
+\end{center}
 
-Writing XML directly is much harder to do than writing HTML (stricter
-syntax, more options, plainly just more to type), and should be aided
-by a good tool.  Alternatively, the user should use well-known tools
-(Word) and mark up according to very strict rules, which is then
-automatically converted to the XML document.  This does not give as
-rich documents, but allows users to publish existing documents with
-very little trouble.
-}
+This conclusion, combined with my experiences with the Yggdrasil
+system, have been one of several design goal in the Cactus system
+which is described in section~\vref{sec:cactus}, and which has been
+fulfilled.
 
-%%% Local Variables: 
+
+
+\section{Small search engines for a web site}
+\label{sec:search-engines}
+
+\textsf{Remember something about this}
+
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "rapport"
-%%% End: 
+%%% End:

@@ -4,7 +4,7 @@
 %\section{Terms and concepts}
 \label{cha:terms-and-concepts}
 
-\mycitation{``HTML is a SGML DTD''}{\textsf{?}}{\textsf{?}}
+\mycitation{HTML is a SGML DTD!}{Me}{1994}
 
 
 This report uses a lot of abbreviations, many of which may not be
@@ -44,7 +44,7 @@ into the generic page description language XSL-Formatting Objects
 \item[*ML] Common description of both XML and SGML, where the two have
   the same applications.
 
-\item[DTD] The \textsf{Document T? Description} is the specification
+\item[DTD] The Document Type Description is the specification
   which describes the exact syntax of the *XML
 
 
@@ -52,17 +52,19 @@ into the generic page description language XSL-Formatting Objects
   another XML-document using a XSL-stylesheet, or the process of
   \textit{formatting} a document into FO, which then can be further
   formatted in PDF.
-
-\item[DOM] \textsf{W3C's initial model for representing an XML tree
-    internally.  Superceeded by SAX (\textsf{for java?)}}
   
-\item[SAX] Simple Application \textsf{interface for?} XML.  An event
-  based approach to XML-parsing and representation.  Has an advantage
-  in that the design allows processing to begin before the whole
-  XML-tree has been read in.  (\textsf{URL?}).  Parsers and
-  \textsf{processors?} which implement SAX can be selected freely,
-  currently allowing for \textsf{20 different combinations of parsers
-    and whashallicallem}.
+\item[DOM] The Document Object Model is W3C's first model for
+  representing an XML tree internally.  It requires the whole XML
+  dataset to be read into memory which is a limitation for large
+  projects.  The later SAX interface is more lenient in its memory
+  requirements.
+  
+\item[SAX] Simple API for XML.  An event based approach to XML-parsing
+  and representation.  Has an advantage in that the design allows
+  processing to begin before the whole XML-tree has been read in.
+  Parsers and processors which implement SAX can be interchanged
+  freely, currently allowing for 20 different combinations of parsers
+  and processors.
 
 
 \item[HTML] Hyper Text Markup Language.  The ``language of the web''
@@ -71,39 +73,43 @@ into the generic page description language XSL-Formatting Objects
   to do things it was never originally meant to do.
 
   
-\item[DSSSL] \textsf{SGML style sheets something}.  Is used to render
-  an SGML document to another format.  \unixcommand{jade} can render
-  to \textsf{FOT}, RTF, {\TeX} (must be post-processed with
-  \unixcommand{jadetex}), SGML and XML.  \textsf{Is this a standard?}
+\item[DSSSL] SGML Document Style Semantics and Specification Language.
+  It is used to render an SGML document to another format.
+  \unixcommand{jade} can render to RTF, {\TeX} (must be
+  post-processed with \unixcommand{jadetex}), SGML and XML.
   
-\item[FOSI]  \textsf{Another style sheet for SGML}, which I do
-  not know anything about.  Apparently the US Navy uses it a lot.
-\textsf{  Check in DocBook.}
+\item[FOSI] Another style sheet for SGML, which I do not know anything
+  about.
+  \myurl{http://navysgml.dt.navy.mil/dtdfosi/repository.html}{The US
+    Navy have a big repository}.
 
   
-\item[SQL] The Structured Query Language is the \textsf{standard}
+\item[SQL] The Structured Query Language is the standard
   language for communicating with a database.
 
   
 \item[XSP] \texttt{XML Servlet Pages} - A technique for combining code
   with XML in a single page, which is parsed and executed by the
   webserver when it is requested.
-
+  
 \item[RTF] \textit{Rich Text Format} - a document description language
-\textsf{designed by microsoft}.  Widely supported.  May contain
-extensions to the original RTF-specification.
+  designed by Microsoft.  Widely supported.  May contain extensions to
+  the original RTF-specification.
 
 \item[Jade] A DSSSL-engine for SGML documents by James Clark.
-
+  
 \item[JPEG] An efficient method for representing photographs in
-  computer files.  Efficiency is achieved by discarding parts of the
-  visual information which is hardest for the human eye to see.
+  computer files.  Efficiency is achieved by discarding the least
+  visible parts of the visual information to the human eye.
+  
 \item[GIF] An image format well suited for computer generated images
   with few distinct colors, like icons.  Is hampered by a patent on
   the compression scheme used and a maximum of 256 colors.
   Superceeded by PNG.
+  
 \item[PNG] The successor to GIF.  Is supported in newer browsers
-  only.  
+  only.
+  
 \item[CGI] The Common Gateway Interface.  The original way to generate
   pages and other files dynamically.  A CGI-script can be written in
   any language supported by the web server.
@@ -124,11 +130,15 @@ extensions to the original RTF-specification.
   stream, where one machine pushes bytes in one end of the stream, and
   the other machine retrieves the bytes from the other end of the
   stream, without either computer being concerned about the underlying
-  network. 
-\item[SP] A \textsf{what}?
+  network.
+  
+\item[SP] \myurl{http://www.jclark.com/sp/index.htm}{SP is a SGML parser} by James Clark.
+  
 \item[Perl] A scripting language which has become popular with Unix
   system administrators, and which ``was there'' when a need for
-  scripting languages for CGI arose.  Has eminent regular expressions.
+  scripting languages for CGI arose.  Has eminent regular expressions
+  and is generally well-suited for handling text.
+  
 \item[ASP] Microsofts version of a scripting language intertwined with
   HTML. Works on Microsoft web servers only.
 \item[JSP] Java Server Pages.  Suns version of Java intertwined with
@@ -141,20 +151,25 @@ extensions to the original RTF-specification.
 
 \item[PassiveTeX] A package for {\TeX} by Sebastian Rahtz which allows
   FO files to be typeset by PDF{\TeX} directly into PDF.  PassiveTeX
-  understands MathML.
-
-\item[MIME] \textsf{What daelen is dass. RFC-etellerandet...}
+  understands MathML, but does not yet support tables.
+  
+\item[MIME]
+  \myurl{http://www.oac.uci.edu/indiv/ehood/MIME/MIME.html}{Multipurpose
+    Internet Mail Extensions} which extends the format of Internet
+  mail to allow foreign character sets and inclusion of files.  
+  
 
 \item[MathML] a XML-dialect to describe mathematical formulas.
-  \textsf{URL to W3c}.
+
+
+\item[DocBook] A set of DTD's freely available from the Internet.
+  See~\vref{sec:docbook}.
+\item[TEI] A DTD freely available from the Internet.  
+\item[MIP] The Maersk Mc-Kinney Moller Institute for Production Technology
+
 \end{description}
 
   
-\framepage{15cm}{
-Explain XML, XSL, XSLT, HTML (yes!), SQL, SAX, DOM, XSP and whatever
-fancy terms come to mind.  Draw graph of what happens with an XML
-document.}
-
     
 %%% Local Variables: 
 %%% mode: latex

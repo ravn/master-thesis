@@ -5,7 +5,6 @@ A level-1 auxiliary file: s-front-matter.aux
 A level-1 auxiliary file: s-introduction.aux
 A level-1 auxiliary file: s-terms-and-concepts.aux
 A level-1 auxiliary file: s-dynamically-generated-documents.aux
-A level-1 auxiliary file: s-standards.aux
 A level-1 auxiliary file: s-sample-websites.aux
 A level-1 auxiliary file: s-xml.aux
 A level-1 auxiliary file: s-docbook.aux
@@ -25,7 +24,7 @@ Warning--I didn't find a database entry for "fig:alltheweb-2"
 Warning--there's a number but no series in understanding-the-new-sql
 You've used 13 entries,
             2633 wiz_defined-function locations,
-            675 strings with 7875 characters,
+            674 strings with 7860 characters,
 and the built_in function-call counts, 4570 in all, are:
 = -- 418
 > -- 168

@@ -4,11 +4,9 @@
     (LaTeX-add-bibliographies
      "books")
     (LaTeX-add-labels
-     "fig:slashdot-1"
      "sec:CGI-modperl"
      "sec:CGI-php3"
      "sec:CGI-servlets"
-     "fig:mip-recently-changed-pages"
      "sec:html-meta-tags"
      "cha:on-demand-rendering"
      "sec:emacs-with-psgml"

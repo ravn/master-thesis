@@ -13,22 +13,51 @@ http://www.useit.com/alertbox/991017.html
 
 
 \section{slashdot.org - high volume information site for nerds}
-\framepage{15cm}{
 
-Describe setup.  Describe flow, and the slashdot effect.  What
-hardware/software.
-}
-
-\myimage{gr/slashdot-1}{The Slashdot start page}{fig:slashdot-1}
+\myimage{gr/slashdot-1}{The Slashdot start page}{slashdot-1}
 
 \myurl{http://slashdot.org}{SlashDot} was started in September 1997
 with the slogan ``News for nerds - Stuff that matters'', and do so by
-providing dynamically generated web pages with a lot of stories
+providing dynamically generated web pages with a lot of articles
 categorized with an icon, where a short summary is shown along with
 links to the full story, several references to the orignal sources,
 the authors email address, plus an overview of the number of comments
 in the discussion forum.  See figure~\vref{fig:slashdot-1} for the top
 of the start page at March 14 2000.
+
+\myimage{gr/slashdot-2}{A Slashdot article with the top of the comments}{slashdot-2}
+
+When the ``Read more'' link to a given article is followed, a page is
+shown with the full text of the posting, followed by a long list of
+comments submitted by readers (see figure~\vref{fig:slashdot-2}), and
+a login box.
+
+Unregistered readers are allowed to post under the generic name of
+``Anonymous Coward'', where registration allows readers to select
+their own handle, full name, home page link, page layout and what kind
+of articles they want to see.
+
+\myimage{gr/slashdot-3}{My personal page at  Slashdot}{slashdot-3}
+
+After logging in, the ``Welcome Back'' screen in
+figure~\vref{fig:slashdot-3} is shown.  Note that the layout has
+changed, and that I have not moderated anything.  Slashdot uses
+moderation where everybody can grade other posters comments which is
+then available to users for their selection of articles.  Personally I
+have chosen a minimum level of two, meaning that I never see anything
+from Anonymous Cowards (which improves the quality immensely).  Meta
+moderation is intended to control the quality of the moderation, and
+is a volunteer action.
+
+% Customization... Left out
+%\myimage{gr/slashdot-4}{The Slashdot start page 4}{slashdot-4}
+
+
+% \vref{fig:slashdot-4}
+
+% \myimage{gr/slashdot-5}{The Slashdot start page 5}{slashdot-5}
+% \vref{fig:slashdot-5}
+
 
 \begin{verbatim}
 Slashdot Stats
@@ -58,6 +87,13 @@ selected questions to a highly visible spot, the original inquirer is
 usually able to get a very qualified answer.  The question along with
 all the answers are stored in the same way as a story.
 
+Due to the prominent position of new postings up front, many readers
+follow the given links causing the so-called \texttt{Slashdot effect}
+
+
+\myimage{gr/fiw98Zoom}{A webserver log showing the Slashdot effect --
+  the red line at approximately 9050 shows when the announcement was
+  made on Slashdot}{slashdoteffect-1}
 
 \section{Valueclick.com}
   
@@ -164,8 +200,7 @@ well-known brand name in just a few years.  By giving money to those
 who link to their pages, as well as pay search engines to have links
 to the Amazon site show up at the top in just about every search, they
 have managed to be just about the only Internet bookstore known to
-most people.  In section~vref{\textsf{??}} I discuss why this approach
-ruins search engines for the ordinary users.
+most people.  
 
 Conclusion: The Amazon family of sites are very good, and do what they
 can to improve with the help of visitors.  Amazon have been able to
@@ -181,14 +216,14 @@ day.
 \myimage{gr/b-and-o-1}{The Bang and Olufsen pages -- notice the three
   randomly selected images at the top}{b-and-o-1} The
 \myurl{http://www.bang-olufsen.com/}{Bang and Olufsen} web-site was
-previously very unusual in the way that they offered navigation.
-Their front page contained very few links, and some product images
-which could be clicked and lead to a large set of pages (see
-figure~\vref{fig:b-and-o-1}, with three random clickable images at the
-top.  These were chosen randomly from the large set of such pages (600
-or more) and put at the top.  This has been highly efficient in
-keeping people wandering around and reading their pages, giving these
-people an unusual experience.
+previously very unusual in the way that they offered random
+navigation.  Their front page contained very few links, and some
+product images which could be clicked and lead to a large set of pages
+(see figure~\vref{fig:b-and-o-1}, with three random clickable images
+at the top.  These were chosen randomly from the large set of such
+pages (600 or more) and put at the top.  This has been highly
+efficient in keeping people wandering around and reading their pages,
+giving these people an unusual experience.
 
 The underlying database is both used for storing the many pages, but
 also for tracking the users as they wander around the site.
@@ -197,54 +232,9 @@ also for tracking the users as they wander around the site.
 \section{Deja - where did Usenet go?}
 \label{sec:deja}
 
+\textsf{Write about this if there is time for it}
 
-
-% \section{The United States Library of Congress}
-% \label{sec:congress}
-
-% \textsf{CHANGED TO CATALOG.LOC.GOV - much improved...}
-
-% The \myurl{http://www.loc.gov}{United States Library of Congress} is
-% the definite place to search if you actually need a given physical
-% book.  Unfortunately their website does not help much getting it.  The
-% front page have a ``Search'' links to
-% \myurl{http://www.loc.gov/catalog/}{a page with a choice} between 
-% ``Simple Search'', and ``Advanced Search''.
-% Figure~\vref{fig:congress-1} shows the ``Simple Search'' page with the
-% title ``art of computer programming'' entered, wishing to get
-% references to the Donald Knuth tomes.  
-
-% \myimage{gr/congress-1}{The Library of Congress ``Simple Search''
-%   page}{congress-1}
-
-% The corresponding ``Advanced Search'' page is shown as
-% figure~\vref{fig:congress-2} (\textsf{compare to google} and its
-% simple syntax).  The close correspondence between the form and the
-% resulting SQL-statement, makes it difficult to use for most users.
-
-% \myimage{gr/congress-2}{The Library of Congress ``Advanced Search''
-%   page}{congress-2}
-
-% The result of the search is shown as figure~\vref{fig:congress-3}.  It
-% is very clear that the web interface calls an underlying search
-% engine, and basically submits the textual results back as a web page
-% (with a few navigational links added).
-
-% \myimage{gr/congress-3}{The result of the search in
-%   figure~\vref{fig:congress-1}}{congress-3}
-
-% \myimage{gr/congress-4}{``More on this record'' for record 1 in figure
-%   ~\vref{fig:congress-3}}{congress-4}
-
-% Figure~\vref{fig:congress-4} shows the expanded view of the first
-% record.  The web page is again pure text with a few annotations which
-% deals with presentation only, meaning that this is web-wise a dead
-% end.  The similarity to the original Odin-WWW interface written around
-% 1996 is stunning (Odin was upgraded December 1999 so a screen shot
-% cannot be shown), and is a clear indication of how fast the
-% expectations regarding the facilities of a given website have changed.
-
-% Conclusion:  This is clearly not a top priority for the Library of Congress
+\myurl{http://www.deja.com/usenet}{Deja Usenet archive}
 
 
 \section{www.krak.dk}
@@ -256,13 +246,14 @@ discussed in section~\vref{sec:map-generation-first-web-application},
 and has since been followed by \textsf{yahoo map, whoelse.}
 
 In Denmark, the well renowned Danish map manufacturer
-\myurl{http://www.krak.dk}{Krak A/S} opened their \textsf{web map in
-199?} in direct competition with \textsf{909, 118 and who else?} since
-they provided a \textsf{person/number lookup facility}.  Their
-advantage was up-to-date data \textsf{from the Telephone companies}
-combined with an ability to generate a map for a given address,
-whether it was entered directly or being a byproduct of a search for
-something else.
+\myurl{http://www.krak.dk}{Krak A/S} opened their Internet phone
+directory and web map generation service in direct competition with
+numerous other directory services.  Their advantage was up-to-date
+data from the databases of Tele Danmark combined with an ability to
+generate a map for a given address, whether it was entered directly or
+being a byproduct of a search for something else.  This has proven to
+be so powerful a combination of services that all other phone
+directory services has been left far behind.
 
 The website has been steadily improved with new
 facilities and cross-references, as well as more precise data (In
@@ -275,8 +266,8 @@ pages (phone number based), and pink pages (company based).
 \myimage{gr/krak-1}{Welcome page (and search form) for www.krak.dk}{krak-1}
 
 The fields in the white page section are Name, Road, House number, Zip
-code, City and Phonenumber.  The fields in the pink page section are
-Company and Phonenumber.  The form has been filled out with a search request
+code, City and Phone number.  The fields in the pink page section are
+Company and Phone number.  The form has been filled out with a search request
 for ``Odense Universitet'', and the results are shown in
 figure~\vref{fig:krak-2}. 
 
@@ -390,31 +381,6 @@ Freshmeat.net is a service for locating software.  \textsf{a lot of
   products.  users can announce software, and point people toward
   homepages and download pages.  Very nice}
 
-\section{Altavista - the search engine}
-\label{sec:alta-vista}
-
-
-AltaVista was the first web site to proudly present a search interface
-to \textit{all} the web pages on the Internet\footnote{Later it was
-  revealed that AltaVista only indexed up to 50 pages for a given
-  site, meaning that big sites simply weren't indexed.  That gave the
-  other search engines like Lycos and \textsf{Inktomy} a parameter to
-  compete on}, where they extracted words from the individual web
-pages to create their search indexes.  They gave extra weight to the
-descriptions that the web page authors entered themselves in the
-META-tags (see~\vref{sec:html-meta-tags}), in order to present the
-``hits'' sorted with the best hit at the top.
-
-
-\begin{enumerate}
-\item Words in META-tags
-\item Words in titles and headlines
-\item Word in the body of the text
-\end{enumerate}
-
-\myimage{gr/alltheweb-2}{AllTheWeb search for ``background icons''}{alltheweb-2}
-
-\myimage{gr/alltheweb-1}{And what hit 15 was linking to in \cite{fig:alltheweb-2}}{alltheweb-1}
 
 \framepage{15cm}{
 \textsf{Check if there still is companies which boost your presence on

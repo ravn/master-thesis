@@ -9,7 +9,8 @@
 
 \section{What is a ``database backed webserver''?}
 
-A web-server is a program which hands out files to any web-browser
+\framepage{15cm}{
+  A web-server is a program which hands out files to any web-browser
 that asks.
 
 A database ``is a spread-sheet that several people can update
@@ -17,6 +18,7 @@ simultaneously'' (\textsf{greenspun}).
 
 A database backed webserver then is simply a web-server which knows how
 to talk to a database server while servicing bypassing web-browsers.
+}
 
 % In order to be useful it must be \textit{fast}!
 
@@ -47,6 +49,7 @@ to talk to a database server while servicing bypassing web-browsers.
 
 In one word: \textit{Synergy}!
 
+
 The web browser provide a simple, efficient and
 well known user interface available to almost every computer user in
 the world, and the database provide efficient dynamical access to
@@ -57,28 +60,33 @@ given webserver can give any user customized information upon request.
 Examples are:
 
 \begin{itemize}
-\item Newspapers - the user may specify that she wants in-depth
-  coverage of international affairs, and do not want sports, and her
-  personal web-edition will then just contain that.  Payment may be
-  per-article instead of per-paper.
-\item Maps/Airlines/Hotels - the user may request the best way to
-travel from A to B at a given time, see the route, and order
-accompanying reservations on-line.
-\item Real stores - the user may browse and order from the inventory.
-  The ordered goods are then delivered by mail or similar.
-\item Virtual stores - the user may browse and order from a virtual
-  inventory.  The order is then dissected and forwarded to the
-  appropriate suppliers to the virtual store.
+\item \textbf{Newspapers} -- the user may specify that she wants
+  in-depth coverage of international affairs, and do not want sports,
+  and her personal web-edition will then just contain that.  Payment
+  may be per-article instead of per-paper.
+  
+\item \textbf{Maps/Airlines/Hotels} -- the user may request the best
+  way to travel from A to B at a given time, see the route, and order
+  accompanying reservations on-line.
 
-\item Banks - there is a growing need from customers to be able to do
-  home banking.  If the bank offer a browser based solution, they can
-  support customers regardless of their choice of computer.  The
-  transactions done through such a system will most likely be stored
-  in a database to avoid dataloss.
-\item Program development - The \myurl{http://www.mozilla.org}{Mozilla
-    project} has shown the benefit of up-to-date information regarding
-  just about anything related to the source code.  \textsf{write about
-    it}
+\item \textbf{Real stores} -- the user may browse and order from the inventory.
+  The ordered goods are then delivered by mail, delivery boy or
+  similar.
+  
+\item \textbf{Virtual stores} -- the user may browse and order from a
+  virtual inventory.  The order is then analyzed and forwarded to the
+  appropriate suppliers to the virtual store.
+  
+\item \textbf{Banks} -- there is a growing need from customers to be
+  able to do home banking.  If the bank offer a browser based
+  solution, they can support customers regardless of their choice of
+  computer.  The transactions done through such a system will most
+  likely be stored in a database to avoid data loss.
+  
+\item \textbf{Program development} -- The
+  \myurl{http://www.mozilla.org}{Mozilla project} has shown the
+  benefit of up-to-date information regarding just about anything
+  related to the source code.
 \end{itemize}
 
 

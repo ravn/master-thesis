@@ -3,8 +3,9 @@
 \chapter{SGML, XML and DTD's}
 \label{cha:sgml-xml-and-dtd's}
 
-\mycitation{\textsf{If you don't read the manual before you enter the
-  dungeon, you might end up being killed}}{Advice in Nethack}{about 1993}
+\mycitation{If you don't read the manual before you enter the
+    dungeon, you might end up being killed}{Rumour in the Nethack
+  computer game}{about 1993}
 
 A major ingredient in developing large, complex systems with several
 layers of data and meta-data, is the ability to \textit{abstract}
@@ -12,23 +13,25 @@ between different levels of the system.
 
 \begin{itemize}
 \item
-
-  Operating systems understand the ``file'' abstraction, so the
+  
+  \textit{Operating systems} provide the ``file'' abstraction, so the
   programmer does not have to think about the underlying hardware when
   reading and writing information, and these operations are normally
   optimized for speed.
 
 \item
-
-  Expensive printers provide the PostScript language which is an
-  abstraction for ``electronic paper''.  Any Postscript file can be
+  
+  Expensive printers provide the \textit{PostScript language} which is
+  an abstraction for ``electronic paper''.  Any Postscript file can be
   printed to any PostScript printer, without considering the specifics
-  of the device.
+  of the device.  This was a major step forward from the traditional
+  matrix printer where the application had to generate bitmaps for the
+  printer to print.
   
 \item
-
-  Programming languages, like C, provides the abstraction of a
-  ``virtual machine''.  The programmer does not have to worry about
+  
+  \textit{Programming languages}, like C, provides the abstraction of
+  a ``virtual machine''.  The programmer does not have to worry about
   how large an integer, and how the best way to implement a loop on
   this particular processor is.  The compiler takes care of that,
   leaving the programmer to concentrate on problems at a higher
@@ -144,7 +147,8 @@ stand-alone (``DTD-less'').  XSL is used to convert a XML document
 into another XML document (XSLT) or into the generic page description
 language XSL-Formatting Objects (XSLFO).
 
-XHTML is a XML-version designed to be parsable by HTML-4.0 browsers.
+XHTML is a XML-version designed to be presentable by HTML-4.0
+browsers.
 
 
 \section{The author should provide content, not do layout}
@@ -154,6 +158,7 @@ consistently marking their documents up, resulting in suboptimal
 documents.  This was because they were doing physical markup instead
 of logical markup.
 
+\begin{my-detour}
 Modern word processors have been constructed around the ``What you see
 is what you get'' paradigm, where a great deal of effort has been
 spent on allowing the user to see exactly on screen what would be
@@ -164,7 +169,8 @@ to see the whole page, or perhaps even several pages \textsf{A tufte
   reference here?}.  Microsoft Word provides a draft mode where just
 the text is shown without markup;  WordPerfect provides a ``Reveal
 Codes'' mode where the user can edit the text along with the tags.
-
+\end{my-detour}
+  
 The most recent versions of Word and WordPerfect \textsf{wp9 should
   have sgml builtin} have had styles built
 in, where the user could specify ``heading'' and similar categories
@@ -180,7 +186,7 @@ that the author had on her word processor, so that the author is
 effectively doing layout on the web.
 
 This is not a new phenonomen, however.  The best way to typeset
-mathematics have been the \myurl{http://www.tug.org}{\protect{TeX}
+mathematics have been the \myurl{http://www.tug.org}{\protect{\LaTeX}
   system}, (see section~\textsf{ref{sec:tex-and-latex}}) where the
 author basically is told to write what she wants to and let {TeX} do
 the rendering.  Even so, it is often very tempting even for the most
@@ -188,17 +194,19 @@ dedicated purist to want to change the layout to make a small visual
 change, simply because they \textit{can}.  Unfortunately very few have
 the expertise to do this right, so the changes usually make it worse.
 I have seen a book where the author had prepared camera-ready copy for
-his {\LaTeX}-document.  The book was printed in A5, but he had handled
-this merely by increasing the margins of a normal page, and nothing
-else.  The result was that the layout looked awkward - the line
-spacing seemed too large for the page.  This would not have happened
-if a professional layouter had produced the book!
+his {\LaTeX}-document.  The book was printed in A5, but he had
+apparently handled this merely by increasing the margins of a normal
+page, and nothing else.  The result was that the layout looked awkward
+- the line spacing seemed too large for the page.  This would not have
+happened if a professional layouter had produced the book!
 
 A layouter may also want to change the whole layout of a book, for
 example if a new edition is to be part of a series with another
 distinct style.  The publisher may want to turn the book into webpages
 or a CD-ROM, or into a Braille version for blind persons.  It might
 even be read aloud by a computer.
+
+\textsf{HER SKAL O'REILLY DIMSEN IND!}
 
 It should not bother the author during the writing process how the
 finished document will look, as long as she marks up the document
@@ -279,7 +287,7 @@ The resulting language for designing languages has these features:
   be in quotes.
   
 \item Easy to parse and generate.  The strict syntax makes the parser
-  simple.
+  much simpler than a SGML parser.
 
 \item The DTD is not mandatory.  DTD-less documents does not have a
   DTD to conform to, and must only be well-formed.  \textsf{Unicode?}
@@ -309,7 +317,8 @@ guidelines are followed:
 \item Element names and attributes must be given in lower case
   
 \item Empty elements must either have an end tag, or the start tag
-  must end with ``/$>$''.  I.e. a horizontal line is written as
+  must end with ``/$>$''.  I.e. a horizontal line which is written as
+  \tag{hr} in HTML, must be written as
   ``$<$hr /$>$'', where the space is important to make this acceptable
   to HTML-4.0 parsers.
 %\item \textsf{More stuff... Netvwork lag}
@@ -802,6 +811,11 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.10  2000/03/23 15:51:07  ravn
+%
+% Rearranged a lot of stuff, and starting to fill out the stuff Immerkaer
+% told me.
+%
 % Revision 1.9  2000/03/20 13:02:50  ravn
 %
 % Added all updates from looktrhough at home.
