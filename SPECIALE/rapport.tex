@@ -1,5 +1,5 @@
-% -*- mode: LaTeX -*-
 % -*- mode: LaTeX; tex-command: "pdflatex" -*-
+% -*- mode: LaTeX -*-
 
 % $Id$
 %
@@ -9,7 +9,7 @@
 % in such a tag when the report is finished.
 
 
-\documentclass[draft,a4paper]{article}
+\documentclass[ddraft,a4paper]{article}
 
 %\usepackage{concrete}          % ok - legible
 %\usepackage{beton}             % ok - legible
@@ -26,7 +26,7 @@
 %\usepackage{parskip}
 % \usepackage{draft}
 \usepackage{verbatim}
-\usepackage{graphicx}
+\usepackage[pdftex]{graphicx}
 \usepackage[%pdftex,
   pdftitle={Database backed Websites},
   pdfauthor={Thorbjoern Ravn Andersen},
@@ -58,6 +58,21 @@
 % \tag{hr}  ->  <hr>
 \newcommand{\tag}[1]{$<$#1$>$}
 
+% \myimage{filename}{Title}{reference}
+% the if seperates between pdf and non pdf.
+\newcommand{\myimage}[3]{
+  \begin{figure}[htbp]
+    \begin{center}
+      \ifx\pdfoutput\undefined
+        [Graphic: #1]
+      \else
+        \includegraphics[scale=0.4]{#1}
+      \fi
+      \caption{#2}
+      \label{fig:#3}
+    \end{center}
+  \end{figure}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{ Thorbj{\o}rn Ravn Andersen}
@@ -88,6 +103,7 @@
   maintain a set of documents on a webserver.
   
 \end{abstract}
+
 Stuff to place:  Java has unicode support, multithreads.
 
 
@@ -389,7 +405,7 @@ powerful and easy for best results.
 \section{Bibliography with Web references}
 Full reference with a lot of annotated URL's.
 
-\includegraphics{gr/familie.eps}
+%\includegraphics{gr/familie}
 \bibliography{books}
 \end{document}
 
@@ -399,6 +415,11 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.3  2000/03/04 21:39:14  ravn
+%
+%
+% Added a lot of information.  Prepared for screendumps.
+%
 % Revision 1.2  2000/03/03 01:27:43  ravn
 %
 %

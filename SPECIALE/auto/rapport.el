@@ -4,10 +4,12 @@
     (LaTeX-add-bibliographies
      "books")
     (LaTeX-add-labels
+     "fig:#3"
      "sec:protection-against-race-conditions"
      "sec:providing-searching-facilities"
      "sec:allow-fast-access-to-data")
     (TeX-add-symbols
+     '("myimage" 3)
      '("tag" 1)
      '("myurl" 2)
      '("ntcommand" 1)
@@ -23,7 +25,7 @@
      "latex2e"
      "art10"
      "article"
-     "draft"
+     "ddraft"
      "a4paper"
      "s-terms-and-concepts"
      "s-sample-websites"
