@@ -25,6 +25,7 @@
      "draft"
      "a4paper"
      "s-terms-and-concepts"
+     "s-sample-websites"
      "s-xml"
      "docbook"
      "s-cactus"

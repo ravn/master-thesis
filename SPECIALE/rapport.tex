@@ -8,6 +8,7 @@
 % Text in \textsf{###} is ``to be checked''.  No fields must be left
 % in such a tag when the report is finished.
 
+
 \documentclass[draft,a4paper]{article}
 
 %\usepackage{concrete}          % ok - legible
@@ -255,49 +256,8 @@ hardware instead of licenses).
 
 }
 
-\section{Sample websites}
-\framepage{15cm}{
-slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
-- oooold check on fyn, when was it first developed?), valueclick
-(banners - ask Ask for full story.  What are they running), php3
-documentation online.  photo.net (reread).  Sun's docs.sun.com
-(DocBook SGML)
-}
+\include{s-sample-websites}
 
-\subsection{slashdot.org - high volume information site for nerds}
-\framepage{15cm}{
-
-Describe setup.  Describe flow, and the slashdot effect.  What
-hardware/software.
-}
-
-\subsection{Valueclick.com}
-\framepage{15cm}{
-
-Banner provider.  Interview Ask for details, about how the NT-cluster
-was replaced with a small Linuxbox with MySQL and a squid in
-http-accelleration mode.  Explain the problems with having fat
-processes serving slow modems.
-}
-\subsection{Politiken}
-\framepage{15cm}{
-
-Talk with Lars.  Politiken genrates their pages on the fly.
-}
-\subsection{krak.dk / rejseplanen.dk}
-
-\framepage{15cm}{
-Necessary to do rendering according to requests.  Cannot be predicted
-reasonably.  What have been done?  How does it work?  What about 
-}
-\subsection{Cactus -- document capture and conversion}
-
-\framepage{15cm}{
-Two out of four methods are implemented (email, printer).  (Increase
-blob limit in DBI::MySQL).  Sample PDF viewer, perhaps simple XLS viewer.
-
-Demonstrate that Cocoon can provide the navigational framework.
-}
 \section{Overview of technology available for Linux February 2000}
 \framepage{15cm}{
 Describe what products there are currently available for these
@@ -427,6 +387,9 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.1.1.1  2000/03/02 21:55:31  ravn
+% Speciale files
+%
 % Revision 1.6  2000/02/23 02:22:41  ravn
 % Moved XML section to seperate file.  Added framepage.
 %

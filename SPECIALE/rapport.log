@@ -1,10 +1,6 @@
-This is pdfTeX, Version 3.14159-13d (Web2C 7.3.1) (format=pdflatex 1999.11.10)  2 MAR 2000 22:14
-**rapport
-(rapport.tex[/usr/share/texmf/pdftex/config/pdftex.cfg]
-LaTeX2e <1998/12/01> patch level 1
-Babel <v3.6x> and hyphenation patterns for american, french, german, ngerman, d
-anish, italian, nohyphenation, loaded.
-(/usr/share/texmf/tex/latex/base/article.cls
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  2 MAR 2000 23:52
+**\nonstopmode\input{rapport.tex}
+(rapport.tex (/usr/share/texmf/tex/latex/base/article.cls
 Document Class: article 1999/01/07 v1.4a Standard LaTeX document class
 (/usr/share/texmf/tex/latex/base/size10.clo
 File: size10.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
@@ -77,42 +73,27 @@ Package hyperref Info: Link coloring OFF on input line 1264.
 LaTeX Info: Redefining \ref on input line 1914.
 LaTeX Info: Redefining \pageref on input line 1915.
 )
-*hyperref using default driver pdftex*
-(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
-(/usr/share/texmf/tex/latex/psnfss/pifont.sty
-Package: pifont 1999/03/29 PSNFSS v.7.2 Pi font support : S Rahtz
-LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
-
-(/usr/share/texmf/tex/latex/psnfss/upzd.fd
-File: upzd.fd 1998/07/06 font definitions for U/pzd.
-)
-LaTeX Font Info:    Try loading font information for U+psy on input line 64.
-
-(/usr/share/texmf/tex/latex/psnfss/upsy.fd
-File: upsy.fd 1998/07/06 font definitions for U/psy.
-))
-\Fld@listcount=\count91
-\@outlinefile=\write3
-) (rapport.aux
-(s-terms-and-concepts.aux) (s-xml.aux) (docbook.aux) (s-cactus.aux)
-(s-konsensus.aux) (s-available-hardware-and-software.aux))
+*hyperref using default driver hypertex*
+(/usr/share/texmf/tex/latex/hyperref/hypertex.def) (rapport.aux
+(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (docbook.aux)
+(s-cactus.aux) (s-konsensus.aux) (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 59.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
 File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
@@ -120,32 +101,28 @@ File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
 
 Package hyperref Warning:  draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 58.
-(rapport.out) (rapport.out)
-\openout3 = `rapport.out'.
-
+Package hyperref Info: Link coloring OFF on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 59.
+(Font)              <17.28> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 59.
+(Font)              <12> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 59.
+(Font)              <8> on input line 60.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 59.
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 92.
- (/usr/share/texmf/tex/latex/psnfss/omsbch.fd
+(Font)              <6> on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 93.
+(/usr/share/texmf/tex/latex/psnfss/omsbch.fd
 File: OMSbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
+ [1
 
-[1
-
-[/usr/share/texmf/dvips/config/pdftex.map]]
+]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 164.
+(Font)              <7> on input line 165.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 164.
+(Font)              <5> on input line 165.
  [2]
 \openout2 = `s-terms-and-concepts.aux'.
 
@@ -159,7 +136,14 @@ ch/m/n/10 a XML-document into an-other XML-document us-ing a XSL-stylesheet,|
 
 ] [4
 
-] [5] [6]
+]
+\openout2 = `s-sample-websites.aux'.
+
+ (s-sample-websites.tex) [5
+
+] [6
+
+]
 \openout2 = `s-xml.aux'.
 
  (s-xml.tex
@@ -212,20 +196,19 @@ No file s-konsensus.tex.
 ] (rapport.bbl) [23
 
 ] (rapport.aux
-(s-terms-and-concepts.aux) (s-xml.aux) (docbook.aux) (s-cactus.aux)
-(s-konsensus.aux) (s-available-hardware-and-software.aux))
+(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (docbook.aux)
+(s-cactus.aux) (s-konsensus.aux) (s-available-hardware-and-software.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1838 strings out of 10621
- 24005 string characters out of 93330
- 71492 words of memory out of 263001
- 4737 multiletter control sequences out of 10000+0
- 26726 words of font info for 66 fonts, out of 400000 for 1000
+ 1619 strings out of 10891
+ 21304 string characters out of 97329
+ 66549 words of memory out of 263001
+ 4555 multiletter control sequences out of 10000+0
+ 19529 words of font info for 48 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 29i,12n,30p,237b,370s stack positions out of 300i,100n,500p,50000b,4000s
-<cmtt9.pfb><cmssi10.pfb><cmmi10.pfb><cmss12.pfb><cmtt10.pfb><8r.enc><bchr8a.p
-fb><cmss10.pfb><cmsy10.pfb><bchb8a.pfb><bchri8a.pfb><bchr8a.pfb>
-Output written on rapport.pdf (23 pages, 223277 bytes).
+ 30i,12n,27p,261b,370s stack positions out of 300i,100n,500p,50000b,4000s
+
+Output written on rapport.dvi (23 pages, 70636 bytes).
