@@ -7,60 +7,60 @@ A level-1 auxiliary file: s-terms-and-concepts.aux
 A level-1 auxiliary file: s-dynamically-generated-documents.aux
 A level-1 auxiliary file: s-standards.aux
 A level-1 auxiliary file: s-sample-websites.aux
-A level-1 auxiliary file: s-available-technologies.aux
 A level-1 auxiliary file: s-xml.aux
 A level-1 auxiliary file: s-docbook.aux
 A level-1 auxiliary file: s-sql.aux
 A level-1 auxiliary file: s-users-transparently.aux
 A level-1 auxiliary file: s-active-and-passive-data-acquisition.aux
 A level-1 auxiliary file: s-search-engines-and-data-mining.aux
-A level-1 auxiliary file: s-conclusion.aux
+A level-1 auxiliary file: s-available-technologies.aux
 A level-1 auxiliary file: s-cactus.aux
+A level-1 auxiliary file: s-conclusion.aux
 A level-1 auxiliary file: s-konsensus.aux
 A level-1 auxiliary file: s-tex-and-latex.aux
 A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
 Warning--there's a number but no series in understanding-the-new-sql
-You've used 11 entries,
+You've used 12 entries,
             2633 wiz_defined-function locations,
-            661 strings with 7417 characters,
-and the built_in function-call counts, 3902 in all, are:
-= -- 358
-> -- 148
-< -- 15
-+ -- 60
-- -- 45
-* -- 213
-:= -- 672
-add.period$ -- 44
-call.type$ -- 11
-change.case$ -- 52
-chr.to.int$ -- 11
-cite$ -- 12
-duplicate$ -- 208
-empty$ -- 348
-format.name$ -- 60
-if$ -- 810
+            667 strings with 7628 characters,
+and the built_in function-call counts, 4236 in all, are:
+= -- 388
+> -- 158
+< -- 17
++ -- 64
+- -- 48
+* -- 231
+:= -- 730
+add.period$ -- 48
+call.type$ -- 12
+change.case$ -- 56
+chr.to.int$ -- 12
+cite$ -- 13
+duplicate$ -- 228
+empty$ -- 379
+format.name$ -- 64
+if$ -- 879
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 16
-newline$ -- 71
-num.names$ -- 44
-pop$ -- 123
+missing$ -- 18
+newline$ -- 77
+num.names$ -- 48
+pop$ -- 133
 preamble$ -- 1
-purify$ -- 48
+purify$ -- 52
 quote$ -- 0
-skip$ -- 159
+skip$ -- 174
 stack$ -- 0
-substring$ -- 70
-swap$ -- 16
-text.length$ -- 5
+substring$ -- 76
+swap$ -- 18
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 81
+type$ -- 87
 warning$ -- 1
-while$ -- 33
+while$ -- 36
 width$ -- 0
-write$ -- 165
+write$ -- 180
 (There was 1 warning)

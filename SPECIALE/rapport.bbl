@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -37,6 +37,13 @@ Phil Greenspun.
 \newblock Sql for web nerds.
 \newblock http://photo.net/sql/, 1998.
 \newblock Excellent introductory text to SQL.
+
+\bibitem[Greenspun(1999)]{phillipandalexsguidetowebpublishing}
+Phillip Greenspun.
+\newblock {\em Phillip and Alex's Guide to Web Publishing}, volume ISBN:
+  1-55860-534-7.
+\newblock Morgan Kaufmann Publishers, Inc, 1999.
+\newblock An excellent guide to running websites seen from an OpenSource view.
 
 \bibitem[Hofstadter(1979)]{goedelescherbach}
 Douglas Hofstadter.

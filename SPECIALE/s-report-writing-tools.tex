@@ -7,7 +7,7 @@ power of the tools available to you in the Open Source community.
 This chapter outlines which tools I have used while writing and my
 experiences with them, with the thought that they might be useful to
 others later, and Open Source is all about not reinventing the wheel
-if it can be avoided.
+if it can be avoided.  
 
 All the software listed here, is available with a standard Linux
 Redhat 6.1 installation unless noted otherwise in the text.
@@ -20,6 +20,36 @@ Redhat 6.1 installation unless noted otherwise in the text.
 Guide is~\cite{a-guide-to-latex}.
 
 
+\subsection{Creating PDF files}
+\label{sec:report-writing-creating-pdf-files}
+
+I have had good success with the following approach to creating
+PDF-files from a \LaTeX-file.
+
+\begin{itemize}
+\item Use a PostScript font!  Many \LaTeX-installations use the
+  standard \TeX-font 'Computer Modern' as a bitmap font, which doesn't
+  look good as a PDF-file at other resolutions.   Try
+  \texttt{\texcommand{usepackage}\{times\}} or
+  \texttt{\texcommand{usepackage}\{bookman\}} to see if that helps.
+\item Use ``\unixcommand{pdflatex}'' to generate the PDF-file
+  directly.  Included graphics may have to be converted to
+  \texttt{png} instead of \texttt{eps}.  The traditional approach with
+  \unixcommand{dvips} and \unixcommand{pstopdf} \textsf{from
+    Ghostscript}
+\item Develop the document to work with both \unixcommand{latex} and
+  \unixcommand{pdflatex}.  The edit-compile-view cycle is much faster
+  with \unixcommand{latex} and \unixcommand{xdvi} than with
+  \unixcommand{pdflatex} and \unixcommand{acroread}.
+\end{itemize}
+
+I have had problems with printing the PostScript file from
+\unixcommand{dvips} directly to some HP-printers.  Results have been
+much better with printing from \myurl{\textsf{www.adobe.com}}{Acrobat
+Reader} (can be done directly from the command-line with
+\unixcommand{cat source.pdf | acroread -toPostScript | lpr} -- use the
+\texttt{-helpall} option to get a full overview).
+
 
 \subsection{Including screen dumps}
 \label{sec:report-writing-tools-latex-eps}
@@ -27,8 +57,8 @@ Guide is~\cite{a-guide-to-latex}.
 Screen dumps have been captured with
 \myurl{http://www.freshmeat.net/appindex/1998/07/28/901622941.html}{xv}
 (which is now 6 years old and still unbeat) and saved as \texttt{tiff}
-files.  These were then converted to \texttt{png} and \texttt{eps}
-with the
+files.  These were then converted to \texttt{png} with
+\unixcommand{pnmtopng} and to \texttt{eps} with the
 \myurl{http://www.freshmeat.net/appindex/1999/06/24/930238715.html}{NetPBM
   package}, which has worked flawlessly.  It is important to remember
 to use \texttt{pnmtops -noturn rle} to get the correct orientation and
@@ -36,7 +66,7 @@ a reasonable compression (25 files shrank from 52 Mb to 9 Mb total).
 
 The \texcommand{includegraphic} (from the \texttt{graphicx} package)
 can read \texttt{png}-files from within \texttt{pdflatex}, and
-\texttt{eps}-files from within
+\texttt{eps}-files from within \texttt{latex}
 
 
 The process of embedding Postscript is fully described in
