@@ -8,7 +8,8 @@
 
 
 
-\documentclass[11pt,ddraft,a4paper]{book}
+%\documentclass[11pt,draft,a4paper]{book}
+\documentclass[11pt,ddraft,a4paper]{report}
 %\includeonly{s-cactus}
 %\documentclass[draft,a4paper]{report}
 
@@ -28,29 +29,39 @@
 % \usepackage{draft}
 \usepackage{alltt}
 \usepackage{parskip}
-\usepackage{varioref}           % gives better references
 \usepackage{verbatim}
 \usepackage{listings}
+%\usepackage{listing}
 \usepackage{fancyhdr}           % provide headers where I can put the
                                 % filenames.
-\usepackage{color}
+\usepackage{prettyref}
+\usepackage[usenames]{color}
+\definecolor{navyblue}{rgb}{0,0,0,5}
+
 %\usepackage{myshowlocation}
 \usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
-% hyperref breaks \vref :-(
-% 
-% \usepackage[%pdftex,
-%   pdftitle={Database backed Websites},
-%   pdfauthor={Thorbjoern Ravn Andersen},
-%   pdfsubject={pdfsubject},
-%   pdfkeywords={pdfkeywords},
-%   pdfpagemode={UseOutlines},
-%   pagebackref,hyperindex,,
-%   bookmarks,bookmarksopen={false},
-%   pdfstartview={FitH},
-%   colorlinks,linkcolor={blue},citecolor={blue},
-%   urlcolor={red}
-% ]{hyperref}
+%hyperref breaks \vref :-(
+
+% colors in dvipsnam.def
+\usepackage[%pdftex,
+  pdftitle={Database backed web sites},
+  pdfauthor={Thorbjoern Ravn Andersen},
+  pdfsubject={pdfsubject},
+  pdfkeywords={pdfkeywords},
+  pdfpagemode=None,
+%  pdfpagemode=FullScreen,
+%  pdftoolbar=false,
+  backref,%pagebackref,
+  hyperindex,,
+  bookmarks,bookmarksopen={false},
+  pdfstartview={FitH},
+  breaklinks=true,
+  colorlinks,linkcolor={green},citecolor={magenta},
+  urlcolor={blue}
+]{hyperref}
+%\RequirePackage[hyperindex,colorlinks,backref,pdfmark]{hyperref}
+%\usepackage{varioref}           % gives better references
 
 \input{s-mycommands}
 
@@ -66,8 +77,8 @@
   Dynamic Webpublishing with XML\\ 
   \textit{D R A F T -- $ $Revision$ $}} % Math hack for RCS
 
-%\bibliographystyle{alpha}
-\bibliographystyle{plainnat}
+\bibliographystyle{alpha}
+%\bibliographystyle{plainnat}
 
 % While writing - this provides fileinformation on includes
 \lhead{\currentinputfile}
@@ -144,7 +155,7 @@ Here is one way to do it:
 \begin{itemize}
 \item Configure the script generating the page, to add an
   ``\texttt{Expires}'' header with a reasonable time of expiry
-\item Set up squid (\vref{sec:squid}) in http-accellerator mode, where
+\item Set up squid (\myvref{sec:squid}) in http-accellerator mode, where
   it transparently adds cache facilities to a webserver, respecting
   the ``\texttt{Expires}'' header.
 \end{itemize}

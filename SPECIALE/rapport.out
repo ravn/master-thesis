@@ -1,68 +1,163 @@
-\BOOKMARK [1]{section.1}{What is a database backed webserver?}{}
-\BOOKMARK [2]{subsection.1.1}{Protection against race conditions}{section.1}
-\BOOKMARK [2]{subsection.1.2}{Provide searching facilities}{section.1}
-\BOOKMARK [2]{subsection.1.3}{Allow fast access to data without using file systems}{section.1}
-\BOOKMARK [2]{subsection.1.4}{????}{section.1}
-\BOOKMARK [2]{subsection.1.5}{Databases are optimized for disk I/O, webservers for network}{section.1}
-\BOOKMARK [2]{subsection.1.6}{Very large amount of data can be online}{section.1}
-\BOOKMARK [2]{subsection.1.7}{Data can be managed remotely by others than the webmaster}{section.1}
-\BOOKMARK [2]{subsection.1.8}{Others?}{section.1}
-\BOOKMARK [1]{section.2}{The new role of the webserver}{}
-\BOOKMARK [1]{section.3}{Terms and concepts}{}
-\BOOKMARK [1]{section.4}{The consequence - multiple views of a document}{}
-\BOOKMARK [1]{section.5}{The user should use current tools to publish documents}{}
-\BOOKMARK [1]{section.6}{The need for well-defined standards}{}
-\BOOKMARK [1]{section.7}{Why is Open Source essential?}{}
-\BOOKMARK [1]{section.8}{Sample websites}{}
-\BOOKMARK [2]{subsection.8.1}{slashdot.org - high volume information site for nerds}{section.8}
-\BOOKMARK [2]{subsection.8.2}{Valueclick.com}{section.8}
-\BOOKMARK [2]{subsection.8.3}{Politiken}{section.8}
-\BOOKMARK [2]{subsection.8.4}{Amazon - an Internet bookstore}{section.8}
-\BOOKMARK [2]{subsection.8.5}{www.krak.dk}{section.8}
-\BOOKMARK [2]{subsection.8.6}{The Journay Planner - www.rejseplanen.dk}{section.8}
-\BOOKMARK [2]{subsection.8.7}{Freshmeat.net}{section.8}
-\BOOKMARK [2]{subsection.8.8}{Google/Altavista}{section.8}
-\BOOKMARK [2]{subsection.8.9}{The Collection of Computer Science Bibliographies}{section.8}
-\BOOKMARK [2]{subsection.8.10}{Cactus -- document capture and conversion}{section.8}
-\BOOKMARK [1]{section.9}{Overview of technology available for Linux February 2000}{}
-\BOOKMARK [2]{subsection.9.1}{Webservers}{section.9}
-\BOOKMARK [2]{subsection.9.2}{Database engines}{section.9}
-\BOOKMARK [2]{subsection.9.3}{Browsers}{section.9}
-\BOOKMARK [2]{subsection.9.4}{XML utilities}{section.9}
-\BOOKMARK [2]{subsection.9.5}{PDF utilities}{section.9}
-\BOOKMARK [1]{section.10}{SGML, XML and DocBook}{}
-\BOOKMARK [2]{subsection.10.1}{The need for separation between content, layout and ?? rewrite?}{section.10}
-\BOOKMARK [2]{subsection.10.2}{The design and evolution of SGML}{section.10}
-\BOOKMARK [2]{subsection.10.3}{The creation of HTML}{section.10}
-\BOOKMARK [2]{subsection.10.4}{The creation of XML}{section.10}
-\BOOKMARK [2]{subsection.10.5}{XHTML - XML compliant HTML}{section.10}
-\BOOKMARK [2]{subsection.10.6}{What DTD should be used?}{section.10}
-\BOOKMARK [2]{subsection.10.7}{How can a *ML document be viewed?}{section.10}
-\BOOKMARK [3]{subsubsection.10.7.1}{SGML style sheets}{subsection.10.7}
-\BOOKMARK [3]{subsubsection.10.7.2}{XML style sheets}{subsection.10.7}
-\BOOKMARK [2]{subsection.10.8}{Converting documents to XML}{section.10}
-\BOOKMARK [3]{subsubsection.10.8.1}{Majix - RTF/(DOC) to XML}{subsection.10.8}
-\BOOKMARK [3]{subsubsection.10.8.2}{pod2docbook - POD to XML}{subsection.10.8}
-\BOOKMARK [3]{subsubsection.10.8.3}{tex4h - convert TeX to XML}{subsection.10.8}
-\BOOKMARK [3]{subsubsection.10.8.4}{wordview with friends}{subsection.10.8}
-\BOOKMARK [2]{subsection.10.9}{Formatting HTML on the fly}{section.10}
-\BOOKMARK [1]{section.11}{DocBook considerations}{}
-\BOOKMARK [1]{section.12}{Can users transparently harness the power of XML for webpublishing?}{}
-\BOOKMARK [1]{section.13}{Active and passive data collection for a webserver}{}
-\BOOKMARK [1]{section.14}{Search engines and datamining}{}
-\BOOKMARK [1]{section.15}{Conclusion}{}
-\BOOKMARK [1]{section.A}{Sample implementation -- Cactus}{}
-\BOOKMARK [2]{subsection.A.1}{System description}{section.A}
-\BOOKMARK [2]{subsection.A.2}{Background}{section.A}
-\BOOKMARK [2]{subsection.A.3}{Installation}{section.A}
-\BOOKMARK [3]{subsubsection.A.3.1}{"Ease of publishing" is crucial}{subsection.A.3}
-\BOOKMARK [3]{subsubsection.A.3.2}{Document preparation and conversion must be fully automatic}{subsection.A.3}
-\BOOKMARK [2]{subsection.A.4}{The implementation of Cactus.}{section.A}
-\BOOKMARK [2]{subsection.A.5}{Converters}{section.A}
-\BOOKMARK [3]{subsubsection.A.5.1}{Microsoft Word}{subsection.A.5}
-\BOOKMARK [3]{subsubsection.A.5.2}{TeX and LaTeX}{subsection.A.5}
-\BOOKMARK [2]{subsection.A.6}{MySQL}{section.A}
-\BOOKMARK [1]{section.B}{Available hardware and software}{}
-\BOOKMARK [2]{subsection.B.1}{Asserballe}{section.B}
-\BOOKMARK [2]{subsection.B.2}{Aalborg}{section.B}
-\BOOKMARK [1]{section.C}{Bibliography with Web references}{}
+\BOOKMARK [1]{section.0.1}{Abstract}{}
+\BOOKMARK [0]{chapter.1}{Overview}{}
+\BOOKMARK [1]{section.1.1}{What is a ``database backed webserver''?}{chapter.1}
+\BOOKMARK [1]{section.1.2}{Why use a webserver in combination with a database?}{chapter.1}
+\BOOKMARK [1]{section.1.3}{The new role of the webserver}{chapter.1}
+\BOOKMARK [1]{section.1.4}{How to read this document}{chapter.1}
+\BOOKMARK [0]{chapter.2}{Dynamically generated documents}{}
+\BOOKMARK [1]{section.2.1}{The way it started: Handmade web-pages in a filesystem on a web-server}{chapter.2}
+\BOOKMARK [2]{subsection.2.1.1}{CGI-scripts}{section.2.1}
+\BOOKMARK [1]{section.2.2}{When a site grows, it becomes hard to maintain}{chapter.2}
+\BOOKMARK [1]{section.2.3}{Navigational structure should not be maintained by the author}{chapter.2}
+\BOOKMARK [1]{section.2.4}{A good website needs meta-information about its documents}{chapter.2}
+\BOOKMARK [1]{section.2.5}{Documentation - meta-data of programs}{chapter.2}
+\BOOKMARK [2]{subsection.2.5.1}{Case study: JavaDoc - embedding web-information in programs}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.2}{Case study: The Plain Old Documentation format for Perl}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.3}{Literate Programming - Knuths approach to different views of the source}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.4}{Rational Rose - the other way around}{section.2.5}
+\BOOKMARK [2]{subsection.2.5.5}{Compiling source code into an executable}{section.2.5}
+\BOOKMARK [1]{section.2.6}{Multiple views of a web document}{chapter.2}
+\BOOKMARK [1]{section.2.7}{SGML/XML: Generic formats for storing data and meta-data}{chapter.2}
+\BOOKMARK [1]{section.2.8}{The user should use familiar tools to publish documents}{chapter.2}
+\BOOKMARK [1]{section.2.9}{Small search engines for a web site}{chapter.2}
+\BOOKMARK [0]{chapter.3}{Sample websites and projects}{}
+\BOOKMARK [1]{section.3.1}{slashdot.org - high volume information site for nerds}{chapter.3}
+\BOOKMARK [1]{section.3.2}{Valueclick.com}{chapter.3}
+\BOOKMARK [1]{section.3.3}{Amazon - an Internet bookstore}{chapter.3}
+\BOOKMARK [1]{section.3.4}{Bang and Olufsen}{chapter.3}
+\BOOKMARK [1]{section.3.5}{Deja - where did Usenet go?}{chapter.3}
+\BOOKMARK [1]{section.3.6}{www.krak.dk}{chapter.3}
+\BOOKMARK [1]{section.3.7}{The Journey Planner - www.rejseplanen.dk}{chapter.3}
+\BOOKMARK [1]{section.3.8}{Freshmeat.net}{chapter.3}
+\BOOKMARK [1]{section.3.9}{The Collection of Computer Science Bibliographies}{chapter.3}
+\BOOKMARK [1]{section.3.10}{Jydske Bank}{chapter.3}
+\BOOKMARK [1]{section.3.11}{3coms elektroniske papir}{chapter.3}
+\BOOKMARK [1]{section.3.12}{Yggdrasil - a simple navigational framework}{chapter.3}
+\BOOKMARK [1]{section.3.13}{The TOM browser - converting documents online}{chapter.3}
+\BOOKMARK [0]{chapter.4}{SGML, XML and DTD's}{}
+\BOOKMARK [1]{section.4.1}{``HTML is a SGML DTD'' - the concepts}{chapter.4}
+\BOOKMARK [1]{section.4.2}{The author should provide content, not do layout}{chapter.4}
+\BOOKMARK [1]{section.4.3}{The creation of HTML}{chapter.4}
+\BOOKMARK [1]{section.4.4}{The creation of XML}{chapter.4}
+\BOOKMARK [1]{section.4.5}{XHTML - XML compliant HTML}{chapter.4}
+\BOOKMARK [1]{section.4.6}{Which dialect of SGML should be used?}{chapter.4}
+\BOOKMARK [1]{section.4.7}{How can a *ML document be viewed?}{chapter.4}
+\BOOKMARK [2]{subsection.4.7.1}{SGML style sheets}{section.4.7}
+\BOOKMARK [2]{subsection.4.7.2}{XML style sheets}{section.4.7}
+\BOOKMARK [1]{section.4.8}{Converting documents to XML}{chapter.4}
+\BOOKMARK [2]{subsection.4.8.1}{Majix - RTF/(DOC) to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.2}{pod2docbook - POD to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.3}{tex4h - convert TeX to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.4}{wordview with friends}{section.4.8}
+\BOOKMARK [1]{section.4.9}{Rendering HTML on the fly}{chapter.4}
+\BOOKMARK [0]{chapter.5}{The DocBook and TEI DTD's}{}
+\BOOKMARK [1]{section.5.1}{DocBook considerations}{chapter.5}
+\BOOKMARK [1]{section.5.2}{TEI -- Text Encoding Initiative}{chapter.5}
+\BOOKMARK [1]{section.5.3}{Converting documents to other formats}{chapter.5}
+\BOOKMARK [2]{subsection.5.3.1}{SGML to XML}{section.5.3}
+\BOOKMARK [2]{subsection.5.3.2}{XML to RTF}{section.5.3}
+\BOOKMARK [0]{chapter.6}{Standard Query Language, Databases and Webservers}{}
+\BOOKMARK [1]{section.6.1}{SQL}{chapter.6}
+\BOOKMARK [2]{subsection.6.1.1}{SQL - really a standard?}{section.6.1}
+\BOOKMARK [1]{section.6.2}{SQL -- getting started}{chapter.6}
+\BOOKMARK [1]{section.6.3}{Some of the possible ways of accessing a database from a webserver}{chapter.6}
+\BOOKMARK [1]{section.6.4}{What databases are available?}{chapter.6}
+\BOOKMARK [1]{section.6.5}{What database should we use?}{chapter.6}
+\BOOKMARK [1]{section.6.6}{Can users transparently harness the power of XML for webpublishing?}{chapter.6}
+\BOOKMARK [1]{section.6.7}{Active and passive data acquisition for a database backed webserver}{chapter.6}
+\BOOKMARK [1]{section.6.8}{Search engines and data mining}{chapter.6}
+\BOOKMARK [0]{chapter.7}{Overview of technology available for Linux February 2000}{}
+\BOOKMARK [1]{section.7.1}{Webservers}{chapter.7}
+\BOOKMARK [1]{section.7.2}{Search engines}{chapter.7}
+\BOOKMARK [1]{section.7.3}{Database engines}{chapter.7}
+\BOOKMARK [2]{subsection.7.3.1}{Cloudscape - Informix}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.2}{DB2 - IBM}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.3}{Informix - Informix}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.4}{Ingres - Ingres}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.5}{mSQL - ?}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.6}{MySQL - TCX}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.7}{Oracle}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.8}{SyBase - Sybase}{section.7.3}
+\BOOKMARK [2]{subsection.7.3.9}{Other approaches to database storage}{section.7.3}
+\BOOKMARK [1]{section.7.4}{Browsers}{chapter.7}
+\BOOKMARK [2]{subsection.7.4.1}{Netscape Communicator}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.2}{Mozilla - Netscape 6.0}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.3}{Opera}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.4}{HotJava 3.0}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.5}{Microsoft Internet Explorer 5.0}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.6}{Amaya}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.7}{StarOffice}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.8}{W3 - browsing inside Emacs}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.9}{Lynx - browsing in textmode}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.10}{Perltools?}{section.7.4}
+\BOOKMARK [2]{subsection.7.4.11}{OTHER BROWSERS?}{section.7.4}
+\BOOKMARK [1]{section.7.5}{XML utilities}{chapter.7}
+\BOOKMARK [1]{section.7.6}{PDF utilities}{chapter.7}
+\BOOKMARK [0]{chapter.8}{Konsensus -- an unimplemented collaborative OpenFAQ system}{}
+\BOOKMARK [0]{chapter.9}{Cactus - a web based document publication and data-driven conversion framework}{}
+\BOOKMARK [1]{section.9.1}{Philosophy}{chapter.9}
+\BOOKMARK [1]{section.9.2}{Cactus seen from the users perspective}{chapter.9}
+\BOOKMARK [1]{section.9.3}{Design}{chapter.9}
+\BOOKMARK [2]{subsection.9.3.1}{Data acquisition}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.2}{Examining an item}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.3}{Converters}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.4}{Derivers}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.5}{Compressors}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.6}{Optimizers}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.7}{Archivers}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.8}{Janitors}{section.9.3}
+\BOOKMARK [2]{subsection.9.3.9}{Presenters}{section.9.3}
+\BOOKMARK [1]{section.9.4}{SQL tables}{chapter.9}
+\BOOKMARK [1]{section.9.5}{Implementing a search engine}{chapter.9}
+\BOOKMARK [1]{section.9.6}{Overall view}{chapter.9}
+\BOOKMARK [1]{section.9.7}{Data flow}{chapter.9}
+\BOOKMARK [2]{subsection.9.7.1}{Input sources}{section.9.7}
+\BOOKMARK [2]{subsection.9.7.2}{Output formats}{section.9.7}
+\BOOKMARK [1]{section.9.8}{Daemons and SQL tables}{chapter.9}
+\BOOKMARK [0]{chapter.10}{Implementation}{}
+\BOOKMARK [2]{subsection.10.0.1}{Hardware/software considerations}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.2}{Data acquisition}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.3}{Derivers}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.4}{Converters}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.5}{Examiners}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.6}{...}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.7}{Database}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.8}{Web server}{section.9.8}
+\BOOKMARK [2]{subsection.10.0.9}{Making it all work under Linux}{section.9.8}
+\BOOKMARK [1]{section.10.1}{Why the name Cactus?}{chapter.10}
+\BOOKMARK [1]{section.10.2}{The design of Cactus}{chapter.10}
+\BOOKMARK [1]{section.10.3}{Overview}{chapter.10}
+\BOOKMARK [0]{chapter.11}{Cactus - sample set of filters}{}
+\BOOKMARK [0]{chapter.12}{Cactus - possible candidates for filters}{}
+\BOOKMARK [1]{section.12.1}{Background}{chapter.12}
+\BOOKMARK [2]{subsection.12.1.1}{System description}{section.12.1}
+\BOOKMARK [2]{subsection.12.1.2}{Background}{section.12.1}
+\BOOKMARK [2]{subsection.12.1.3}{Installation}{section.12.1}
+\BOOKMARK [2]{subsection.12.1.4}{The implementation of Cactus.}{section.12.1}
+\BOOKMARK [2]{subsection.12.1.5}{Converters}{section.12.1}
+\BOOKMARK [2]{subsection.12.1.6}{MySQL}{section.12.1}
+\BOOKMARK [1]{section.12.2}{Programs}{chapter.12}
+\BOOKMARK [2]{subsection.12.2.1}{Linux - an operating system}{section.12.2}
+\BOOKMARK [2]{subsection.12.2.2}{Apache - a high performance web server}{section.12.2}
+\BOOKMARK [2]{subsection.12.2.3}{Squid - a high performance web cache}{section.12.2}
+\BOOKMARK [2]{subsection.12.2.4}{Cocoon}{section.12.2}
+\BOOKMARK [1]{section.12.3}{Filters}{chapter.12}
+\BOOKMARK [2]{subsection.12.3.1}{ps to pdf}{section.12.3}
+\BOOKMARK [1]{section.12.4}{Scanning in mail}{chapter.12}
+\BOOKMARK [0]{chapter.13}{Conclusion}{}
+\BOOKMARK [1]{section.13.1}{Conclusion}{chapter.13}
+\BOOKMARK [0]{chapter.A}{Terms and concepts}{}
+\BOOKMARK [1]{section.A.1}{TeX and LaTeX}{chapter.A}
+\BOOKMARK [0]{chapter.B}{Report writing tools}{}
+\BOOKMARK [1]{section.B.1}{LaTeX}{chapter.B}
+\BOOKMARK [2]{subsection.B.1.1}{Creating PDF files}{section.B.1}
+\BOOKMARK [2]{subsection.B.1.2}{Including screen dumps}{section.B.1}
+\BOOKMARK [2]{subsection.B.1.3}{Finding back to the source document from xdvi}{section.B.1}
+\BOOKMARK [1]{section.B.2}{Emacs}{chapter.B}
+\BOOKMARK [2]{subsection.B.2.1}{Making them all work together}{section.B.2}
+\BOOKMARK [1]{section.B.3}{Available hardware and software}{chapter.B}
+\BOOKMARK [2]{subsection.B.3.1}{Asserballe}{section.B.3}
+\BOOKMARK [2]{subsection.B.3.2}{Aalborg}{section.B.3}
+\BOOKMARK [1]{section.B.4}{Bibliography with Web references}{chapter.B}
+\BOOKMARK [1]{section.B.5}{Cross references to this page have not been inserted at the correct page}{chapter.B}
+\BOOKMARK [1]{section.B.6}{The importance of a web cache}{chapter.B}

@@ -5,16 +5,17 @@
 \label{cha:dynamically-generated-documents}
 
 % \framepage{10cm}{Abbreviations are explained in ``Terms and
-%   Concepts'' (chapter \vref{cha:terms-and-concepts}).  Please refer to
+%   Concepts'' (chapter \myvref{cha:terms-and-concepts}).  Please refer to
 %   it to clarify matters.}
 
 \mycitation{404 Document not found}{}{}
 
 
-\section{The way it started: Handmade web-pages in a filesystem on a web-server}
+\section{The way it started: Handmade web-pages in a
+  filesystem on a web-server}
 
-Back in the old days when the world wide web was designed (1989), a web
-server could basically do only two things:
+Back in the old days when the world wide web was designed
+(1989), a web server could basically do only two things:
 
 
 
@@ -100,7 +101,7 @@ to the original ``static web site'' model.
 \label{sec:map-generation-first-web-application} One of the first
 demonstrations of dynamically generated images was the
 \myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer} (see
-figure~\vref{fig:xerox-1}) which allowed the user to navigate a
+figure~\myvref{fig:xerox-1}) which allowed the user to navigate a
 virtual atlas, where each ``window'' to the map was generated on
 demand.  This initial quick hack has since been superseded by
 professional map companies which produce maps of an uneven quality on
@@ -136,7 +137,7 @@ There is several problems with CGI-scripts:
   equivalent programs written in \texttt{C} or \texttt{C++},
   especially for users with slow modems.
   
-  Recently Java Servlets (see section~\vref{sec:java-servlets}) have
+  Recently Java Servlets (see section~\myvref{sec:java-servlets}) have
   appeared as a popular and well-supported alternative to CGI-scripts,
   but requires that the hosting web-server is capable of running a
   Java Virtual Machine.  Servlets are being supported by more and more
@@ -154,9 +155,9 @@ There is several problems with CGI-scripts:
 \end{itemize}
 
 Several solutions to the above problems have emerged.  Of these, Java
-Servlets are discussed in section~\vref{sec:CGI-servlets}, PHP3
-scripts in section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
-acceleration module) in section~\vref{sec:CGI-modperl}).
+Servlets are discussed in section~\myvref{sec:CGI-servlets}, PHP3
+scripts in section~\myvref{sec:CGI-php3}, and Perl (with the mod\_perl
+acceleration module) in section~\myvref{sec:CGI-modperl}).
 
 Server side scripting never really took off before the PHP3 and ASP
 languages provided \textit{persistent connections} to database
@@ -213,7 +214,7 @@ of a few snippets of HTML in each web page to give a characteristic
 site layout.  This relieves the webmaster of the tedious task of
 updating all the HTML-documents on the site manually.
 
-Figure~\vref{fig:flug-1} show a sample page from the
+Figure~\myvref{fig:flug-1} show a sample page from the
 \myurl{http://www.flug.dk}{Fyns GNU/Linux User Group web-site},
 showing the way FLUG chose to do it.  The framework shown is added to
 each HTML-file with a small perl script.
@@ -241,7 +242,7 @@ the appropriate command sequence in the server).
 %
 Many modern websites put a given page in a \textit{context} where the
 navigational framework reflect this context.  See
-figure\vref{fig:intel-1} for a sample from
+figure\myvref{fig:intel-1} for a sample from
 \myurl{http://support.intel.com/support/motherboards/desktop/VS440fx/software.htm}{Intel
   regarding the VS440FX motherboard}, where the actual web page has a
 top bar with generic links, a column with links specific to
@@ -270,7 +271,7 @@ in the framework.
 
 \section{A good website needs meta-information about its documents}
 
-What to a webmaster is a nice, and well maintained web-site, is to a
+What to a webmaster is a nice and well maintained web-site, is to a
 computer just a bunch of directories of files with bytes in them.  In
 order to get any use of a computer in maintaining these, it is
 important to have easily accessible information about the desired
@@ -285,8 +286,6 @@ basic rule is still that
 
 Computers are simply not good enough yet to guess this information
 themselves.
-
-\myimage{gr/alltheweb-2}{AllTheWeb search for ``background icons''}{alltheweb-2}
 
 Incidentially this is also the reason why Internet search engines like
 \myurl{http://www.altavista.com}{AltaVista} needs elaborate
@@ -306,22 +305,32 @@ web pages, showing that just blindly extracting keywords
 drives users away -- when they feel that they are not getting ``the
 best results'' from the search engine they will look for another one
 that can. \myurl{http://www.google.com}{The Google search engine} (see
-section~\vref{sec:google}) was such an engine, and users quickly
+section~\myvref{sec:google}) was such an engine, and users quickly
 started to use it. Recently links to Amazon.com and Fatbrain.com have
 begun to crop up in the top of the search results on Google, implying
 that Google has started to sell search results (where a given link is
 returned with a much better score than warranted by the search term
 the user provided), and as a direct result users are going elsewhere.
 
-\myimage{gr/alltheweb-1}{And what hit 15 was linking to in~\vref{fig:alltheweb-2}}{alltheweb-1}
-
 As an alternative to Google I have been recommended
 \myurl{http://www.alltheweb.com}{AllTheWeb}, but which after a bit of
 use appears to be prone to the same polluting documents as AltaVista.
 See the result of ``background icons'' in
-figure~\vref{fig:alltheweb-2} and what the fifteenth hit actually
-linked to in figure~\vref{fig:alltheweb-1}.
+figure~\myvref{fig:alltheweb-2} and what the fifteenth hit actually
+linked to in figure~\myvref{fig:alltheweb-1}. This link was
+chosen because the site \textit{expects} the user to have
+arrived from a search on these two terms.
 
+
+\myimage{gr/alltheweb-2}{AllTheWeb search for ``background
+  icons''.}{alltheweb-2}
+
+\myimage{gr/alltheweb-1}{And what hit 15 was linking to
+  in~\myvref{fig:alltheweb-2}.  This link was chosen
+  because the site in question openly admit that they expect
+  search engines to show this story when users search for
+  ``beautiful icons'', even though that the story is about sex.  
+  }{alltheweb-1}
 
 
 AltaVista failed then as AllTheWeb fails now, because they had no
@@ -332,16 +341,17 @@ detection of bad input in~\cite{goedelescherbach}.
 
 
 
-\myimage{gr/mip-1}{The MIP Recently Changed Pages.  The last of the
-  system pages and the first user pages are shown.}{mip-1}
-An example of a document generated from meta-data which has been
-automatically extracted, is the MIP ``Recently Changed Pages'' (see
-figure~\vref{fig:mip-1}) the original version of
-which I wrote while working for MIP.  The
-script traverses three disjunkt set of web pages on the server -
-System pages, System Administrator pages and User pages (one set per user) - and
-generates a list for each set sorted by title.  Each file listed has
-its age in days next to it.
+\myimage{gr/mip-1}{The MIP Recently Changed Pages.  The last
+  of the system pages and the first user pages are
+  shown.}{mip-1} An example of a document generated from
+meta-data which has been automatically extracted, is the MIP
+``Recently Changed Pages'' (see figure~\myvref{fig:mip-1}) the
+original version of which I wrote while working for MIP.
+The script traverses three separate set of web pages on the
+server - System pages, System Administrator pages and User
+pages (one set per user) - and generates a list for each set
+sorted by title.  Each file listed has its age in days next
+to it.
 
 The meta-information extracted was:
 
@@ -350,18 +360,20 @@ The meta-information extracted was:
   set.  Extracted from the content of each document, with a default of
   the filename if no title was present.
 \item \textbf{Age} - extracted from the underlying filesystem which
-  registers the last change of the document
+  registers the last change of the document.
 \item \textbf{User} (for the user pages) - also extracted from the
   filesystem.  It is also used to look up the picture of the user.
-\item \textbf{Size} - which is intended to provide a hint to the user
-  about the size of the page in question.   It is not used in the
-  depicted page.
+
+%\item \textbf{Size} - which is intended to provide a hint to the user
+%  about the size of the page in question.   It is not used in the
+%  depicted page.
+
 \end{itemize}
 
-This is just about all the useful information a flat
-Unix-filesystem can provide.  Additionally nothing at all is
-guaranteed about the contents of a HTML-file - even the title is not
-even always there!
+The flat Unix-filesystem can only provide one thing more,
+namely the size of the file, and nothing at all is
+guaranteed about the contents of a HTML-file - even the
+title is not even always there!
 
 If more meta-data than the above is needed, the authors must be
 involved and as a part of their web-authoring, deliberately and
@@ -373,37 +385,41 @@ organized than they are today, including better mark-up.  I have not
 seen any site on the Internet yet, which is capable of
 \textit{categorizing} the content of the Internet.
 
-The \textit{Yggdrasil system} (see section~\vref{sec:yggdrasil}) was
-my first attempt to generate a navigational framework from information
-extracted from webpages.  Yggdrasil was to function as the automatic
-webmaster on the intranet, in order to avoid having to assign staff to
-do so.  Then the individual employee could publish information in form
-of a webpage, add a category either in the title or as a META-tag, and
-trigger the next update of the framework.  This update would scan all
-web-pages, and extract tuples of (author, category code, publishing
-date, title, size) of those web-pages which had a category code, and
-generate a tree structure of web-pages to navigate the categories.
-Additionally lists of ``Documents sorted by author'' and ``Documents
-sorted by date'' were generated to help users locate documents.
+The \textit{Yggdrasil} system (see
+section~\myvref{sec:yggdrasil}) was my first attempt to
+generate a navigational framework from information extracted
+from webpages.  Yggdrasil was to function as the automatic
+webmaster on the intranet, in order to avoid having to
+assign staff to do so.  Then the individual employee could
+publish information in form of a webpage, add a category
+either in the title or as a META-tag, and trigger the next
+update of the framework.  This update would scan all
+web-pages, and extract tuples of (author, category code,
+publishing date, title, size) of those web-pages which had a
+category code, and generate a tree structure of web-pages to
+navigate the categories.  Additionally lists of ``Documents
+sorted by author'' and ``Documents sorted by date'' were
+generated to help users locate documents.
 
-\mydetour{
-This was on a closed Intranet, where the users were interested in
-using this as a tool.  The incentive for ``breaking the system'' was
-very low, and the tool worked well.
+Yggdrasil was used on a closed Intranet without external
+access and the users were interested in using this as a
+tool.  The incentive for ``breaking the system'' was very
+low, and the tool worked well, especially when you take the
+small amount of meta-information available in consideration.
 
-Yggdrasil worked very well initially especially when its very low
-amount of meta-information is taken in consideration.
-}
 
-\myimage{gr/yahoo-1}{The British Yahoo site}{yahoo-1}An example of a
-good site built with meta-information is
-\myurl{http://www.yahoo.com}{Yahoo} (see figure~\vref{fig:yahoo-1})
-which started as a directory over web pages where the maintainers
-added meta-data to a lot of web-sites by categorizing them manually,
-and use this information to regularily generate static navigational
-pages.  At a time Yahoo really suffered by a lot of broken links as
-the meta-data was not maintained, but today Yahoo usually links to a
-page that \textit{is} there (by verifying that a target page existed).
+\myimage{gr/yahoo-1}{The British Yahoo site.}{yahoo-1}
+
+An example of a good site built with meta-information is
+\myurl{http://www.yahoo.com}{Yahoo} (see
+figure~\myvref{fig:yahoo-1}) which started as a directory over
+web pages where the maintainers added meta-data to a lot of
+web-sites by categorizing them manually, and use this
+information to regularily generate static navigational
+pages.  At a time Yahoo really suffered by a lot of broken
+links as the meta-data was not maintained, but today Yahoo
+usually links to a page that \textit{is} there (by verifying
+that a target page existed).
 
 
 \section{Documentation - meta-data of programs}
@@ -451,33 +467,29 @@ several other printed versions of source code), and that was not good
 enough for teaching.  It is very hard to get a grasp of what the code
 does, without long and careful studies, and much flapping back and
 forth.  My guess is that today Tanenbaum would write a hyperlinked
-book readable in a browser, perhaps even using the Literate
-Programming techniques discussed in
-section~\vref{sec:literate-programming}.  The only other publicized
-works of large programs I know of is the books by Knuth about {\TeX}
+book readable in a browser, perhaps even using Literate
+Programming techniques (these are discussed in
+section~\myvref{sec:literate-programming}).  The only other publicized
+works of large programs I know of are the books by Knuth about {\TeX}
 and the PGP 5.0 source code (which was not printed for humans to read,
 but in order to \myurl{http://zone.pspt.fi/pgp/faq/pgp55scan.txt}{scan
   the PGP source to circumvent the USA crypto export regulations}).
 
-The great news is that the industry recognizes the usefulness of
-documentation on the web, and the need for programmers themselves to
-create such documentation.  In order to gain wide acceptance such
-meta-data management systems must be \textit{standards}, either as
-\textit{de-facto standards} or defined by a standards body like ANSI
-or W3C.  No such standard has arisen yet, but an XML-dialect will most
-likely be written for the purpose.
+The great news is that the industry recognizes the
+usefulness of documentation on the web, and the need for
+programmers themselves to create such documentation.  In
+order to gain wide acceptance such meta-data management
+systems must be \textit{standards}, either as \textit{de
+  facto standards} or defined by a well-known organization
+like ANSI or W3C.  No such standard has arisen yet, but an
+XML-dialect will most likely be written for the purpose.
 
-\mydetour{
-  The rest of this section detours into other areas of computer
-  science, where having several views on the data in question has
-  proven beneficial.
-}
 
-\subsection{Javadoc - embedding web-information in programs}
+\subsection{Case study: JavaDoc - embedding web-information in programs}
 \label{sec:javadoc}
 
-\myimage{gr/acme-1}{The ACME documentation of the \texttt{Acme.Phase}
-  class generated by JavaDoc}{acme-1}
+\myimage{gr/acme-1}{The ACME documentation of the
+  \texttt{Acme.Phase} class generated by JavaDoc}{acme-1}
 
 This is perhaps the most visible and generally available meta-data
 tool for Java programmers today.
@@ -485,7 +497,7 @@ tool for Java programmers today.
 is a tool that creates documentation in form of HTML pages from Java
 source code with embedded comments, where all definitions are parsed
 and hyperlinked to give a full overview of the Java source code in
-question.  See figure~\vref{fig:acme-1} for a JavaDoc rendered source
+question.  See figure~\myvref{fig:acme-1} for a JavaDoc rendered source
 code at \myurl{http://www.acme.com}{ACME labs.}
 
 JavaDoc is a specialized tool which is only suitable for generating
@@ -496,18 +508,19 @@ every copy of Java Development Kit, it is a tool which is widely
 available.  Java programmers who need to document their code, will most
 likely use JavaDoc to do so.
 
-Javadoc has also raised the expectations of the programmers, since
+JavaDoc has also raised the expectations of the programmers, since
 they have become used to hyper-linked documentation in a browser to
-accompany any code they are to use.  This tendency is a good step in
-the right direction.
+accompany any code they want to use.  
 
 Others recognize this too.  On March 13, 2000
-\myurl{http://relativity.yi.org/WebSite/opensource-javadoc/}{an open
-  letter pleading for the release of JavaDoc as OpenSource} was posted
-to the Internet.  They argued amongst other things that a number of
-bugs needed to be fixed, and new techology like XML/XSL should be
-employed too.  Hopefully this will influence Sun to help the
-developers as much as possible by opening up this source too.
+\myurl{http://relativity.yi.org/WebSite/opensource-javadoc/}{an
+  open letter pleading for the release of JavaDoc as
+  OpenSource} was posted to the Internet.  They argued
+amongst other things that a number of bugs needed to be
+fixed, and new techology like XML/XSL should be employed
+too.  Hopefully this will influence Sun to help Java
+developers as much as possible by opening up this source
+too.
 
 Meanwhile, \myurl{http://xml.apache.org/cocoon/javadoc.html}{an
   Apache effort to parse JavaDoc documents into XML} is underway.
@@ -516,29 +529,46 @@ publishing abilities of XML will complement the target audience of
   JavaDoc, namely programmers who need reference documentation in an
   electronic form.
 
-\subsection{The Plain Old Documentation format for Perl}
+\subsection{Case study: The Plain Old Documentation format for Perl}
 \label{sec:perlpod}
+
+\begin{figure}[htbp]
+  \begin{center}
+\lstinputlisting[language=Perl,frame=trbl]{sample.pod}
+\caption{A sample POD-file}
+    \label{fig:sample-pod-file}
+  \end{center}
+\end{figure}
+
+\myimage{gr/pod-sample-1}{The HTML generated by
+  \texttt{pod2html} looks like this}{pod-sample-1}
 
 The
 \myurl{http://www.cpan.org/doc/manual/html/pod/perlpod.html}{perlpod}
-format was designed to be simple to write and easy to use in Perl
-programs, and the overwhelming amount of freely available
-\myurl{http://www.cpan.org}{documentation for Perl} confirms that this
-goal was reached.  This format allows you -- with very elementary
-markup -- to put documentation and code in the same file, and you may
-leave out either one.  \textsf{sample or explain more}
+format was designed to be simple to write and easy to use in
+Perl programs, and the overwhelming amount of freely
+available \myurl{http://www.cpan.org}{documentation for
+  Perl} confirms that this goal was reached.  This format
+allows you -- with very elementary mark up -- to put
+documentation and code in the same file, and you may leave
+out either one.  Figure~\myvref{fig:sample-pod-file} is the
+actual POD-file (marked up by \LaTeX) and
+figure~\myvref{fig:pod-sample-1} show the HTML-version as
+rendered by a browser.
+
+
 
 All the info-files at
-\myurl{http://www.unixsnedkeren.dk}{Unixsnedkeren.dk} (the website for
-my small firm) have been written as POD files, and converted to HTML,
-with some finishing touches done with another Perlscript modified for
-the one I wrote for
-\myurl{http://www.fido.dk/faq/unix-faq/unix\_r23.htm}{the FAQ for the
-  Unix echo in the Danish Fidonet}.  Code truly lives forever, even
-though it is very difficult to locate the start and end tags of a
+\myurl{http://www.unixsnedkeren.dk}{Unixsnedkeren.dk} (the
+website for my small firm) have been written as POD files,
+and converted to HTML, with some finishing touches done with
+another Perlscript which has been evolved from
+\myurl{http://www.fido.dk/faq/unix-faq/unix\_r23.htm}{several
+  previous projects}.  Code truly lives forever, even though
+it is very difficult to locate the start and end tags of a
 given HTML-construction without parsing the whole file.
 
-Due to this and all the rest of the \textit{ad-hoc} code in both
+Due to this and all the rest of the \textit{ad hoc} code in both
 \unixcommand{pod2html} and my own code, I am convinced that another
 approach to rendering POD-files should be taken, and I have submitted
 patches to the \unixcommand{pod2docbook} command in order to create
@@ -549,7 +579,9 @@ know about.
 Recently a \texttt{Lip::Pod} filter have been added to CPAN which
 allows a mixed mode documentation output -- where both code
 and documentation is output allowing a simple form of \textit{Literate
-Programming}.  \textsf{Code rearrangement?}
+Programming}.
+
+%\textsf{Code rearrangement?}
 
 
 
@@ -574,21 +606,25 @@ Donald E. Knuth has written the {\TeX}-system used to typeset this
 report, and documented it by publishing the source code to the entire
 system in four books.  The {\TeX}-system has impressed since it is of
 an extremely high quality, both in code and documentation, and
-\myurl{http://truetex.com/knuthchk.htm}{actually offer money to those
+he \myurl{http://truetex.com/knuthchk.htm}{actually offers money to those
   who find errors in his code}.
 
 In order to write both documentation and code of such high quality,
 Knuth developed his own method of coding which he named ``Literate
 Programming'', in which the author works with a single file containing
-the documentation \textit{as it is to be presented to the reader}
-written in a {\TeX}-dialect, with the actual code (with a few
-characters escaped) listed in named chunks along with their
-documentation, in the order it fits the author to present them.  This
-file format is the \texttt{web}-format!  This way of programming is
-discussed in detail in~\cite{sewell:weaving-a-program}, and a lot of
-references are available on
-\myurl{http://www.literateprograming.org}{literateprograming.org}.  A
-web-program can be processed in two ways:
+the documentation \textit{as it is to be presented to the
+  reader}.  Knuth uses a {\TeX}-dialect, in which he
+explains his solution to a given problem, and all code is
+provided as small \textit{chunks} with a name.   All chunks
+with the same name are concatenated in a single chunk, which
+is then inserted whenever that name is used.
+
+This file format is the \texttt{web}-format!  This way of
+programming is discussed in detail
+in~\cite{sewell:weaving-a-program}, and a lot of references
+are available on
+\myurl{http://www.literateprograming.org}{literateprograming.org}.
+A web-program can be processed in two ways:
 
 \begin{itemize}
 \item
@@ -639,11 +675,12 @@ pair resulting in several software packages, some of which are
 \myurl{http://w3.pppl.gov/~krommes/fweb.html\#SEC3}{fweb} and
 \myurl{http://www.tu-chemnitz.de/~ukn/UNIX/nuwebdoc/nuwebdoc.html}{nuweb}.
 
-I did a few projects with nuweb just to try it, which was language
-independent and therefore well suited to Perl, and I found it
-reasonably well working, when {\TeX} and Emacs had been taught that
-the .tex and .pl files were derived from a web-file.  I submitted
-patches for using nuweb with AUC-TeX.
+Experiments with nuweb showed that it was language
+independent (therefore well suited to Perl), working
+reasonably well, and easy to integrate with {\TeX} and Emacs
+using AUC-\TeX.  The major problem was adding code to make
+AUC-\TeX aware that the \texttt{.tex}-file was generated
+from another file.
 
 There is
 \myurl{http://www.webring.org/cgi-bin/webring?ring=litprog;list}{a
@@ -705,15 +742,19 @@ seperately from the writing of the code.
 Design patterns are used to provide commonly known building blocks to
 build up the abstractions.
 
-Bo Nørregård Jørgensen told me that he would expect it to be
-beneficial to use Rational Rose in a software project when it has an
-underlying model and has 7 modules or more.
+Bo N{\o}rreg{\aa}rd J{\o}rgensen, Ph.D. student at MIP, told
+me that he would expect it to be beneficial to use Rational
+Rose in a software project when it has an underlying model
+and has 7 modules or more, where a module is a unit of code
+that serves as a building block for the physical structure
+of a system.
+                       
 
 \subsection{Compiling source code into an executable}
 \label{sec:compiling-source-into-an-executable}
 
-Most software projects known to me does not consist of a single huge
-source file which would take ages to compile, but of several smaller
+Most software projects known to me do not consist of a single huge
+source file which would take a long time to compile, but of several smaller
 files, which can be compiled individually and finally linked to an executable
 file.  If a file with source code is changed, it is not necessary to
 recompile each and every file but only those which depend on this
@@ -752,19 +793,23 @@ development process to go faster}.
 \section{Multiple views of a web document}
 \label{sec:multiple-views-of-a-web-document}
 
-\myimage{gr/zdnet-1}{The ZDNet presentation of a story -- notice how
-  little of the initial screen that is dedicated to the story about
-  ``Microsoft may try to boost WinCE, Linux-style''.  The ``Printer
-  Friendly version'' icon is about half way down the page from the
-  start}{zdnet-1} \myimage{gr/zdnet-2}{The ``Printer-friendly
-  version'' of figure~\vref{fig:zdnet-1}}{zdnet-2}
+\myimage{gr/zdnet-1}{The ZDNet presentation of a story --
+  notice how little of the initial screen that is dedicated
+  to the story about ``Microsoft may try to boost WinCE,
+  Linux-style''.  The ``Printer Friendly version'' icon is
+  about half way down the page from the start which is below
+  the part shown.}{zdnet-1} \myimage{gr/zdnet-2}{The
+  ``Printer-friendly version'' of
+  figure~\myvref{fig:zdnet-1}}{zdnet-2}
 
 Some web-sites have so many advertisements and auxiliary links in
 their layout, that they need an additional version which is
-well-suited for printing (i.e. only has a single ad).  See
-figure~\vref{fig:zdnet-1}
+well-suited for printing (i.e. only has a single ad, and is
+rendered without margins in a fixed font, or just with a
+minimal set of HTML-tags used).  See
+figure~\myvref{fig:zdnet-1}
 \myurl{http://www.zdnet.com/zdnn/stories/news/0,4586,2468874,00.html?chkpt=zdhpnews01}{for
-  an example from ZDNet}, and figure~\vref{fig:zdnet-2} for the
+  an example from ZDNet}, and figure~\myvref{fig:zdnet-2} for the
 ``Printer-friendly version''.
 
 It is interesting to notice that websites realize that they cannot
@@ -784,7 +829,7 @@ rendered by a reasonably capable browser or print them out on paper.
 That will probably change within a few years when it becomes common
 for other devices than just traditional computers to be connected to
 the Internet.  Mobile phones using WAP do not have as much screen real
-estate (the Nokia 9110 is shown in figure~\vref{fig:nokia-1}) so such
+estate (the Nokia 9110 is shown in figure~\myvref{fig:nokia-1}) so such
 users will probably prefer short and crisp versions of the documents
 when they use a mobile phone.  Nokia is working with 3com to produce a
 hybrid between a Palm Pilot and a mobile phone.
@@ -808,7 +853,7 @@ is rare these days.
 Both \myurl{http://www.useit.com/alertbox/990613.html}{Jakob Nielsen}
 and
 \myurl{http://www.si.dk/netsteder/publ/tilgaeng/index.html}{Statens
-  Information [in Danish]} have good guidelines for making pages with
+  Information (in Danish)} have good guidelines for making pages with
 web content accessible to people with disabilities based on
 \myurl{http://www.w3.org/TR/WAI-WEBCONTENT/}{the work done by the W3C
   Web Accessory Initiative}.  Pages written with these guidelines in
@@ -818,12 +863,15 @@ for the technological advances in the near future.
 \section{SGML/XML:  Generic formats for storing data and meta-data}
 \label{sec:sgml-and-xml-generic-formats}
 
-The problem of representing content in a generic way is not new at
-all, and was solved for the printing industry in the 1970'ies by the
-design of the Standard Generalized Markup Language (SGML) which is
-widely used.  HTML and XML are both SGML-dialects abeit with different
-capabilities.  Chapter~\vref{cha:sgml-xml-and-dtd's} talks a lot more
-about this.
+The problem of representing content in a generic way is not
+new at all, and was solved for the printing industry in the
+1970'ies by the design of the Standard Generalized Markup
+Language (SGML) which is widely used.  HTML and XML are both
+SGML-dialects albeit with different capabilities.  They are
+discussed in chapter~\myvref{cha:sgml-xml-and-dtd's}.  A
+\textit{Document Type Definition} (DTD) specifies the rules
+that a given document must obey, in order to be compliant
+with that DTD.
 
 For now it is sufficient to say that it is possible to store both data
 and meta-data in a convenient form in an SGML or XML file, but that
@@ -840,7 +888,7 @@ Projects'' (\myurl{http://www.linuxdoc.org/}{The Linux Documentation
 free operating systems available on the Internet.
 
 
-Chapter~\vref{cha:on-demand-rendering} talks about rendering documents
+Chapter~\myvref{cha:on-demand-rendering} talks about rendering documents
 to a given format on demand (for example in a web browser).
 
 
@@ -866,15 +914,16 @@ to a given format on demand (for example in a web browser).
 \section{The user should use familiar tools to publish documents}
 \label{sec:the-user-should-use-familiar-tools-to-publish-documents}
 
-Editing SGML manually is hard and tedious - this is one thing that the
-folks in the \myurl{news:comp.text.sgml}{\texttt{comp.text.sgml}} and
-\myurl{news:comp.text.xml}{\texttt{comp.text.xml}} newsgroups agree
-upon, and quite sophisticated tools are essential to make authoring
-directly in SGML viable.
+Editing SGML manually is hard and tedious - this is one
+thing that is generally agreed upon in the
+\myurl{news:comp.text.sgml}{\texttt{comp.text.sgml}} and
+\myurl{news:comp.text.xml}{\texttt{comp.text.xml}}
+newsgroups, and quite sophisticated tools are essential to
+make authoring directly in SGML viable.
 
 Very few tools exist, and the good ones are quite expensive.  The
 general consensus is that the best OpenSource tool is the Emacs editor
-with the PSGML package (see~\vref{sec:emacs-with-psgml}), and that
+with the PSGML package (see~\myvref{sec:emacs-with-psgml}), and that
 this tool is primarily suited for programmers and other people who are
 well acquainted with SGML and XML.
 
@@ -908,13 +957,13 @@ Web publishing is not any more complicated or difficult than that, and
 this should be reflected in the working procedure.  My conclusion is:
 
 \begin{center}
-  \textit{Publishing a document to the web should be as easy as
-    printing a document.}
+  \textit{Publishing a document to the web, ought to be just
+    as easy as printing a document.}
 \end{center}
 
 This conclusion, combined with my experiences with the Yggdrasil
 system, have been one of several design goal in the Cactus system
-which is described in section~\vref{sec:cactus}, and which has been
+which is described in chapter~\myvref{cha:cactus}, and which has been
 fulfilled.
 
 

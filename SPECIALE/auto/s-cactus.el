@@ -2,8 +2,6 @@
  (function
   (lambda ()
     (LaTeX-add-labels
-     "cha:cactus"
-     "sec:cactus"
      "sec:cactus-philosophy"
      "sec:cactus-seen-from-the-users-perspective"
      "sec:cactus-design"
