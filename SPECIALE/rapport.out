@@ -1,0 +1,63 @@
+\BOOKMARK [1]{section.1}{What is a database backed webserver?}{}
+\BOOKMARK [2]{subsection.1.1}{Protection against race conditions}{section.1}
+\BOOKMARK [2]{subsection.1.2}{Provide searching facilities}{section.1}
+\BOOKMARK [2]{subsection.1.3}{Allow fast access to data without using file systems}{section.1}
+\BOOKMARK [2]{subsection.1.4}{????}{section.1}
+\BOOKMARK [2]{subsection.1.5}{Databases are optimized for disk I/O, webservers for network}{section.1}
+\BOOKMARK [2]{subsection.1.6}{Very large amount of data can be online}{section.1}
+\BOOKMARK [2]{subsection.1.7}{Data can be managed remotely by others than the webmaster}{section.1}
+\BOOKMARK [2]{subsection.1.8}{Others?}{section.1}
+\BOOKMARK [1]{section.2}{The new role of the webserver}{}
+\BOOKMARK [1]{section.3}{Terms and concepts}{}
+\BOOKMARK [1]{section.4}{The consequence - multiple views of a document}{}
+\BOOKMARK [1]{section.5}{The user should use current tools to publish documents}{}
+\BOOKMARK [1]{section.6}{The need for well-defined standards}{}
+\BOOKMARK [1]{section.7}{Why is Open Source essential?}{}
+\BOOKMARK [1]{section.8}{Sample websites}{}
+\BOOKMARK [2]{subsection.8.1}{slashdot.org - high volume information site for nerds}{section.8}
+\BOOKMARK [2]{subsection.8.2}{Valueclick.com}{section.8}
+\BOOKMARK [2]{subsection.8.3}{Politiken}{section.8}
+\BOOKMARK [2]{subsection.8.4}{krak.dk / rejseplanen.dk}{section.8}
+\BOOKMARK [2]{subsection.8.5}{Cactus -- document capture and conversion}{section.8}
+\BOOKMARK [1]{section.9}{Overview of technology available for Linux February 2000}{}
+\BOOKMARK [2]{subsection.9.1}{Webservers}{section.9}
+\BOOKMARK [2]{subsection.9.2}{Database engines}{section.9}
+\BOOKMARK [2]{subsection.9.3}{Browsers}{section.9}
+\BOOKMARK [2]{subsection.9.4}{XML utilities}{section.9}
+\BOOKMARK [2]{subsection.9.5}{PDF utilities}{section.9}
+\BOOKMARK [1]{section.10}{SGML, XML and DocBook}{}
+\BOOKMARK [2]{subsection.10.1}{The need for separation between content, layout and ?? rewrite?}{section.10}
+\BOOKMARK [2]{subsection.10.2}{The design and evolution of SGML}{section.10}
+\BOOKMARK [2]{subsection.10.3}{The creation of HTML}{section.10}
+\BOOKMARK [2]{subsection.10.4}{The creation of XML}{section.10}
+\BOOKMARK [2]{subsection.10.5}{XHTML - XML compliant HTML}{section.10}
+\BOOKMARK [2]{subsection.10.6}{What DTD should be used?}{section.10}
+\BOOKMARK [2]{subsection.10.7}{How can a *ML document be viewed?}{section.10}
+\BOOKMARK [3]{subsubsection.10.7.1}{SGML style sheets}{subsection.10.7}
+\BOOKMARK [3]{subsubsection.10.7.2}{XML style sheets}{subsection.10.7}
+\BOOKMARK [2]{subsection.10.8}{Converting documents to XML}{section.10}
+\BOOKMARK [3]{subsubsection.10.8.1}{Majix - RTF/(DOC) to XML}{subsection.10.8}
+\BOOKMARK [3]{subsubsection.10.8.2}{pod2docbook - POD to XML}{subsection.10.8}
+\BOOKMARK [3]{subsubsection.10.8.3}{tex4h - convert TeX to XML}{subsection.10.8}
+\BOOKMARK [3]{subsubsection.10.8.4}{wordview with friends}{subsection.10.8}
+\BOOKMARK [2]{subsection.10.9}{Formatting HTML on the fly}{section.10}
+\BOOKMARK [1]{section.11}{DocBook considerations}{}
+\BOOKMARK [1]{section.12}{Can users transparently harness the power of XML for webpublishing?}{}
+\BOOKMARK [1]{section.13}{Active and passive data collection for a webserver}{}
+\BOOKMARK [1]{section.14}{Search engines and datamining}{}
+\BOOKMARK [1]{section.15}{Conclusion}{}
+\BOOKMARK [1]{section.A}{Sample implementation -- Cactus}{}
+\BOOKMARK [2]{subsection.A.1}{System description}{section.A}
+\BOOKMARK [2]{subsection.A.2}{Background}{section.A}
+\BOOKMARK [2]{subsection.A.3}{Installation}{section.A}
+\BOOKMARK [3]{subsubsection.A.3.1}{"Ease of publishing" is crucial}{subsection.A.3}
+\BOOKMARK [3]{subsubsection.A.3.2}{Document preparation and conversion must be fully automatic}{subsection.A.3}
+\BOOKMARK [2]{subsection.A.4}{The implementation of Cactus.}{section.A}
+\BOOKMARK [2]{subsection.A.5}{Converters}{section.A}
+\BOOKMARK [3]{subsubsection.A.5.1}{Microsoft Word}{subsection.A.5}
+\BOOKMARK [3]{subsubsection.A.5.2}{TeX and LaTeX}{subsection.A.5}
+\BOOKMARK [2]{subsection.A.6}{MySQL}{section.A}
+\BOOKMARK [1]{section.B}{Available hardware and software}{}
+\BOOKMARK [2]{subsection.B.1}{Asserballe}{section.B}
+\BOOKMARK [2]{subsection.B.2}{Aalborg}{section.B}
+\BOOKMARK [1]{section.C}{Bibliography with Web references}{}

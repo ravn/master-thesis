@@ -1,0 +1,492 @@
+% $Id$
+
+\section{Sample implementation -- Cactus}
+
+\begin{abstract}
+  The Cactus system fills a gap in the current integration of the web
+  with normal office procedures, as it provides easy web publishing
+  for occasional authors, by letting them submit documents in several
+  ways with their usual software.
+
+  The system automatically produces other versions of the documents on
+  demand of the users reading the documents, as well as provide the
+  navigational framework, relieving the local webmaster from these
+  tedious and error prone tasks.  
+\end{abstract}
+
+\subsection{System description}
+
+\framepage{15cm}{
+Cactus is a sample implementation of the following issues:
+
+\begin{itemize}
+\item \textbf{easy publishing} - users can publish via
+email/fax/print/watch usenet/www which is processed into the SQL
+database, and confirmed.
+
+\item \textbf{automatic conversion} - system will automatically
+convert a given document to what the user can see (or want).  Browser
+sends a capability string with each request - use that to provide
+stuff directly, or generate a ``this is available'' summary.
+
+\item \textbf{automated navigational framework} - each document has an
+  annotation which tells Cactus where to place it in the navigational
+  hierachy.  The corresponding navigational pages are automatically
+  generated and updated when new documents arrive.  This also ensures
+  system integrity without ``broken links''.
+\end{itemize}
+
+Implementation languages - possibly Java or Perl.  Perl chosen due to
+better library support (with source).  Rex thingie in Java.  How can
+MIME, TAR, etc be done in Perl (remember jubilations!).  Using Apache
+with Cocoon (perhaps) and MySQL.  Graph algoritms
+in~\cite{sedgewick-algorithms-in-c}.
+
+Good summary from 19991114.    Speed of PNG gzipping?  PNG
+uncompressed intiially and then later compressed by pngcrunch.
+}
+
+Utilities:  mswordview, xls2xml
+
+\subsection{Background}
+
+\framepage{15cm}{ Explain the history.  Yggdrasil to address the need
+  of an automatic webmaster $\rightarrow$ analysis (seperate file
+  written earlier).  Cactus to address the difficulties of publishing
+  information to Yggdrasil.}
+
+
+Explain Cactus as a successor to Yggdrasil.
+
+The Yggdrasil system was designed to provide a simple, consistent
+navigational framework around a dynamic set of web pages provided by
+users, as well as providing a "recently changed pages"-list plus an
+overview of pages written by each person.  This was a very successful
+idea in the start, but gradually lost momentum due to these factors:
+
+The development platform was changed from Unix to NT, which made it
+much more difficult for the users to access their web-directories, as
+these were no more a part of their home directory\footnote{The Apache
+  webserver uses the ~/public\_html directory for the users personal
+  web pages.  The transition to NT meant that the users - in addition
+  to their normal file manipulations - should telnet to a Unix server,
+  and change the file attributes every time the file was updated.  }
+
+The internal document format became Microsoft Word, which at that time
+could not be converted to HTML.  Such documents were therefore unable
+to be published.
+
+The users could trigger an update by sending an empty email to the
+system, as well as rely on an automatic nightly update.  The trigger
+mechanism was not brought along when the email system was converted to
+NT.
+
+New users was not informed about the system.
+
+\subsection{Installation}
+Perlmodules.  MySQL server. SAMBA.
+
+
+[Rephrase following paragraph]
+
+I have concluded the following goals for CACTUS, in order to avoid
+repeating history:
+
+\begin{enumerate}
+\item "Ease of publishing" is crucial.
+  
+\item Document preparations and transformations must be fully
+  automatic.
+  
+\item The organisation using the system must be fully doing so.
+
+\end{enumerate}
+
+\subsubsection{"Ease of publishing" is crucial}
+
+CACTUS uses two approaches in order to make publishing as easy as
+possible for the users, namely
+
+\begin{center}
+  Documents are accepted in their native format, and in numerous ways.
+\end{center}
+
+Discussions with potential users showed [...] to be realistic ways in
+which CACTUS would be used:
+
+As a document storage for various versions of a document, being
+developed and emailed back and forth between authors and peers.  By
+allowing CACTUS to accept documents as email attachments, it would be
+very easy to enter each draft in CACTUS by including it on the list of
+authors or peers.  In this way the archival of the document in CACTUS
+is completely transparent.  As a fax machine.  When replacing a fax
+machine with a computer, it is very easy to send a copy of the
+temporary image of the fax to CACTUS, before printing it.  The fax
+system is then enhanced with the possibilities of the web, relieving
+the need for the physical copy.  As a printer.  Cactus provides a
+"printer", which makes a web-version out of any document the users can
+print.  Users can then share final versions of documents without
+requiring the recipients to have the software in question.  Either the
+Adobe Acrobat Reader can be used, or the primitive multiple image
+viewer in Cactus.
+
+The full list of the publishing methods in Cactus is listed [....]
+
+The users were primarily expecting to use these file formats:
+
+\begin{itemize}
+  
+\item 
+  Word DOC and RTF files.   These are the storage formats of the
+  Microsoft word processor Word.  
+\item 
+  HTML files.  The common format for the web.
+\item 
+  LaTeX files.   This typesetting program is very popular with
+  mathematically oriented academics.
+\item 
+  GIF, JPEG, TIFF and PNG images.   These and many more are in common use.  Cactus use PNG internally [except possibly for JPEG].  The full list of supported
+formats is listed in the implementation section [see somewhere].
+\item 
+  PostScript and PDF files.
+\item 
+  Fax images.
+\end{itemize}
+
+\subsubsection{Document preparation and conversion must be fully automatic}
+
+There was a strong consensus amongst the users, that it would be very
+nice not to have to convert the documents manually every time they
+were to publish a document.  Therefore Cactus accepts several document
+formats as described above, and abandons the requirement that the
+users should convert their documents to HTML before publishing.
+
+The system have some very different views on the documents depending
+on which representation the user needs - not all make sense for all
+documents:
+
+\begin{enumerate}
+\item The unaltered original.  This file is always available, allowing
+  users with the correct software to continue working with it.
+
+\item A normalised version of a document.  This could be a PNG version
+  of a TIFF image or BMP image which can be viewed by all modern
+  browsers, and an XML version of a document.  If a suitable encoding
+  can be found, even images and sound can be represented in XML so
+  that this does not overlap the textual representation.
+
+\item A visual representation of the original.  This is the "look of
+  the file", i.e. as it would look when printed to paper, and allows
+  users without the corresponding software to view and print the
+  contents.
+
+\item A textual representation of the original.  This is the "meaning
+  of the file", which could say that the line "foo bar" is a level 2
+  heading, providing search capability.
+
+  
+\item An audio representation of a "document".  This is e.g. an
+  message left on an answering machine.
+\end{enumerate}
+
+Conversions between all these document representation must be
+automated as much as possible.  [write about the Cactus framework for
+providing existing and future filter types].  The normalised document
+is the only one created when a document enters Cactus - the rest are
+created on demand to avoid overfilling the underlying database, but
+cached for a reasonable time to improve performance.
+
+[....]
+
+
+The organisation using the system must be doing fully so.[ rephrase]
+
+In order for such a system to be successfully used within an
+organisation, it is vital that the organisation is using it
+whole-heartedly.  [and more of the same].
+
+
+Note on derivers:
+
+A deriver is a pipeline which derives another version of an item.
+E.g. PNG to GIF,
+
+There are the following tasks:
+\begin{description}
+  
+\item[Derivers] - derive another version of a given item.  In theory,
+  this is a reversible operation.  These should generally be designed
+  to be as fast as possible, since these will be called from
+  CGI-programs with users waiting.  Avoid compression (gzip should
+  maximally be level 1).
+
+\item[Converters] - create another item from one or more originals.
+  This could be a multi-part MIME file which should be assembled into
+  a fresh original.  It could be a DVI file from several source files
+  (tex files and images).  These should generally be reasonably fast,
+  since their speed specifies how fast a new item can be made
+  available to the system.
+
+\item[Optimisers] - A deriver is usually designed for being usable in
+  a real-time interactive setting (also called being fast), which
+  normally means that the result is sub-optimal.  An optimiser
+  complements this by doing a suitable optimisation step whenever the
+  system is sufficiently idle.  This could be running "pngcrunch" on
+  PNG files (which yields 30\% on Ghostscript output), or "tifftotiff"
+  on TIFF files.  The idea is that the file is still the same basic
+  type, and can be used without further modification.  It is an
+  "in-place optimisation".  Some file formats are using the gzip
+  compression scheme internally.  These would not benefit further from
+  archiving.
+  
+\item[Archivers] - creates a long-term storage version of an item.
+  This would typically be running "gzip -9" on the content, creating a
+  new entry (with a new mimetype), and marking the item as decachable.
+  The dearchiving process must be fast, since it might be needed by a
+  deriver without notice.
+  
+\item[Validators] [spelling] - validates whether the content of the
+  item is consistent with the MIME-type, and is it conforming to the
+  standard.  (Can a gzip-stream be decompressed? is a PostScript file
+  parsing correctly? etc.).  If a type is unknown, guess MIME-type
+  from filename and/or contents, and validate it.  If all fails,
+  assign a type of application/octet-stream.
+
+\item[Examiner] - looks into an item to look for references and
+  encoded data.  A reference may be an URL or an emailaddress in a
+  signature.  Encoded data could be an uuencoded image in a Usenet
+  posting, or a pointer to a usenet article.
+\end{description}
+
+These are complemented by
+
+\begin{description}
+\item[Acquirers] - gathers items from "outside" Cactus and enters it
+  in the "incoming" table with an appropriate MIME-type.  An acquirer
+  could accept email, emulate a printer, retrieve Usenet articles,
+  etc.
+
+\item[Janitors] - cleans up whenever the system is otherwise idle, or
+  when the cache is full.  Derived items can be emptied of content,
+  originals can be archived.  Expired items can be purged completely
+  from the database, along with all their derived items.
+
+\item[Presenters] - extracts data, and present them.  This could be a
+  CGI-script presenting a given item as a http-stream.  A PDF item
+  could be presented as a window with two frames, the leftmost
+  containing a thumbnail pr page, and the rightmost a high resolution
+  version of a given page.  The page should be cut in smaller pieces
+  to allow easier processing by Unix Netscape.
+\end{description}
+
+In an ideal world we have infinite storage and infinite CPU-speed,
+meaning that everything would be done instantly when we need it.  In
+order to decide the order in which to do tasks, a price system must be
+developed which would guarantee that the system processes every item,
+that the system is still responsive while converting,
+
+
+What to do when the system runs so full that archiving cannot be done
+fast enough.  Can data be moved to "outside storage?".
+
+
+
+\subsection{The implementation of Cactus.}
+
+
+
+Goals:
+
+\begin{itemize}
+\item Stable, well-known and remotely administrative platform-
+  Linux/Solaris
+\item Platform independence - the resulting system must not be tied to
+  Unix
+ 
+\item Modular - in order to minimise actual development, software
+  libraries should be used as much as possible.
+  
+\item Extensible - it should be easy for the system administrator to
+  enhance functionality.
+\end{itemize}
+
+Choosing an implementation language:
+
+Since platform independence was important for the system, it was
+quickly found that reasonable choices would include scripting
+languages plus Java.  Scripting languages are fully interpreted
+allowing a script to run on numerous platforms without change.  Java
+is the only compiled language with this property, due to the "Write
+once, Run everywhere" philosophy from Sun, plus the tight integration
+with Internet technologies in Java.
+
+Initially I wanted to write the core of Cactus in Java, and spent a
+couple of weeks evaluating the language but found that
+
+
+  The mentality of the Java-community on the Internet, is very influenced by the shareware philosophy typical for the PC-user.   Everything useful cost money, source
+code is not revealed, and the general tendency is for large, stand-alone applications.
+
+Nobody had written a publicly available, stand-alone MIME-parser in Java.  Several RFC's should be implemented and tested, in order to get email-parsing in Cactus.
+
+The general level of abstraction is - in my opinion - too low in Java, while the "core language" is enormous.
+
+
+
+[?]
+
+
+
+Information extraction from items.
+
+
+
+A given document contains one or more items, which again may contain
+further information.  Cactus uses the MIME-type of a given item, to
+select the information scanning method with a fall back to the generic
+application/octet-stream examiner.
+
+The application/octet-stream is parsed for:
+
+The text is scanned for URL?s, either with the Tom Christensen urlify
+or the program posted or commented by Abigail.  These include ftp,
+http, gopher, mailto and news references.  These are stored as
+external references.
+
+The text/plain is parsed for
+
+uuencoded data in a text stream.  These start with ?begin \#\#\#
+name?, contain lines matching \#\#\#\#, and ends with ?end?.  Such a
+file is then assigned a validated MIME-type based on the name of the
+file, and entered in the system as a derived item.
+
+An text/html item is parsed for:
+
+normal references in \tag{a}-anchors.  While doing this, the text to
+be rendered is extraced and parsed as a text/plain stream, in order to
+get the sequence right (may be changed).  The \tag{meta} tags are
+examined in order to extract keywords for the label.
+
+
+
+\subsection{Converters}
+\label{sec:converters}
+
+
+\subsubsection{Microsoft Word}
+
+The Microsoft Word DOC-format is widely used, but apparently so hard
+to use that even Microsoft cannot do it \textsf{reference to Word97
+  not being able to create Word95 files}, and the reason why Cactus
+was started in the first place.  I have spent a great deal of time
+looking for suitable software which could have been used with Cactus
+on the server side, and then testing it out.
+
+\begin{description}
+\item[Microsoft Word] - The best solution would be able to actually
+  run Word itself, but apparently this is integrated so well with
+  Windows that it cannot run on other systems like WINE
+  (\textsf{URL}).  Since Microsoft previously have deliberately made
+  the Windows 3.1 version of Internet Explorer 4 unable to run in the
+  WinOS/2 subsystem for OS/2, I strongly suspect that this is also the
+  case here.  
+\item[Viewer for Microsoft Word] - the Word Viewer is also available
+  for 16 bit versions of Windows, which behave better in WINE.
+  \textsf{ A full Windows installation was not available to me when I
+    tested this - this might have improved}.  This can be used for
+  producing the PostScript printouts.
+\item[Corel WordPerfect 8 for Linux] - This is generally a very nice
+  word processor, but the import filter for Word crashed WP when I
+  tried it with a large document.  Filters should be better in
+  WordPerfect 9, which is due for Linux medio 2000.
+\item[StarOffice 5.1] - the German office suite for several platforms
+  have excellent filters for importing Office files in general, but
+  cannot be automated from the commandline.  A StarBasic program must
+  be written and invoked to do the job \textsf{ask on newsgroups.}.
+  This is currently untested, but probably the way to go. Since I did
+  the testing, Sun have bought StarOffice - most likely since they
+  need an network based office suite for Java, which StarOffice
+  provide with thin clients and a Solaris based server - and promise
+  to make the source generally available.  This has not happened yet,
+  but it is currently the most likely alternative to the Microsoft
+  Office solution.
+  
+\item[AbiWord] - An Open Source word processor which shows great
+  promise.  It was not able to parse my test documents in Word.
+
+  
+\item[mswordview] \textsf{Others?} an Open Source Word to HTML
+  converter which currently do text well, but have trouble with graphs
+  which are converted to the WMF format.
+\item[Do-it-myself] - If you ask Microsoft very nicely, you can get a
+  copy of the Microsoft Office Binary File Format Specification, and
+  write a personal parser of Word.  It took Microsoft 6 months to
+  answer my email request, and then they just sent me the license
+  twice with no specification.  Second time they got it right.
+  Unfortunately, the license was so restrictive that I decided not
+  even to \textit{look} at the specification.
+\item[Majix] - This small RTF to XML converter can also parse DOC
+  files, by invoking Word to save the DOC file as RTF.  This shows
+  great promise, except that this mechanism requires the GUI to be
+  available for Word (it needs to pop up the window).  The ingenious
+  scenario of a telnet server on a NT-machine, which accepted remote
+  logins from Cactus, started Majix which again started Word, did not
+  work.  Word hangs.   Additionally the company has not released a new
+  version in a year, and the license explicitely prohibits
+  disassembly.
+\item[....]....
+
+My intermediate solution has been to adapt the mswordview to output
+DocBook XML instead of HTML, which provides a text-only
+display.\textsf{Yes?}
+
+
+\subsubsection{{\TeX} and {\LaTeX}}
+
+
+
+
+\subsection{MySQL}
+On asserballe
+
+\begin{verbatim}
+
+
+create table incoming (when datetime, mime varchar(80), user
+  varchar(80), how varchar(80), filename varchar(255), comment varchar(80),
+  item longblob);
+
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| when     | datetime     | YES  |     | NULL    |       |
+| mime     | varchar(80)  | YES  |     | NULL    |       |
+| user     | varchar(80)  | YES  |     | NULL    |       |
+| how      | varchar(80)  | YES  |     | NULL    |       |
+| filename | varchar(255) | YES  |     | NULL    |       |
+| comment  | varchar(80)  | YES  |     | NULL    |       |
+| item     | longblob     | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+
+\end{verbatim}
+
+
+
+
+\end{description}
+
+
+% $Log$
+% Revision 1.2  2000/02/27 00:06:14  ravn
+% Raw text from THESIS.DOC added at the end.  Not put in place.
+%
+% Revision 1.1  2000/02/27 00:02:05  ravn
+% Initial revision
+%
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 

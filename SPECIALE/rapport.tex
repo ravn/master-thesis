@@ -1,0 +1,447 @@
+% -*- mode: LaTeX -*-
+% -*- mode: LaTeX; tex-command: "pdflatex" -*-
+
+% $Id$
+%
+% Log at the end.
+%
+% Text in \textsf{###} is ``to be checked''.  No fields must be left
+% in such a tag when the report is finished.
+
+\documentclass[draft,a4paper]{article}
+
+%\usepackage{concrete}          % ok - legible
+%\usepackage{beton}             % ok - legible
+%\usepackage{times}             % ok - standard
+%\usepackage{utopia}            % ok
+\usepackage{charter}            % ok - very legible, good in PDF
+%\usepackage{bookman}           % ok - legible
+%\usepackage{helvetic}          % no change
+%\usepackage{palatino}          % ok - nice, like it
+%\usepackage{lucidabr}          % No good, due to missing fonts here.
+%\usepackage{a4wide}
+\usepackage{fullpage}
+\usepackage{isolatin1}
+%\usepackage{parskip}
+% \usepackage{draft}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% new commands
+%
+% \framepage{15cm}{text}
+\newcommand{\framepage}[2]{\begin{center}\fbox{\begin{minipage}{#1}#2
+      \end{minipage}}\end{center}}
+
+% \unixcommand{emacs}
+\newcommand{\unixcommand}[1]{``\texttt{{#1}}''}
+% \ntcommand{jview}
+\newcommand{\ntcommand}[1]{``\texttt{{#1}}''}
+
+% \myurl{http://sunsite.auc.dk}{The Danish SunSite}
+\newcommand{\myurl}[2]{\begin{underline}{#2}\end{underline}\footnote{{#1}}}
+
+% \tag{hr}  ->  <hr>
+\newcommand{\tag}[1]{$<$#1$>$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{ Thorbj{\o}rn Ravn Andersen}
+
+\title{Database backed Websites \\
+  \textit{D R A F T -- $ $Revision$ $}} % Math hack for RCS
+
+\bibliographystyle{alpha}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  This thesis discusses database backed websites; their current use as
+  presentation engines, construction, pros and cons, list the current
+  state of the art software, and how web sites in general function as
+  \textit{information presenters}.  Hereafter it is discussed how
+  end-users best can utilize such a system, without giving up their
+  current software, allowing such websites to be used to ease the
+  distribution of information between users, and let the web site
+  provide \textit{information sharing}.
+  
+  Technologies are discussed with an emphasis on Open Source software,
+  and two sample programs - ``Cactus'' and ``Consensus'' are
+  presented,  and discussed.  Cactus allows any user to do automated
+  SSP on an Intranet without a human webmaster to convert documents
+  and maintain links.  Consensus allows an open group of people to
+  maintain a set of documents on a webserver.
+  
+\end{abstract}
+Stuff to place:  Java has unicode support, multithreads.
+
+
+\textbf{Note: }Framed text is unexpanded keywords which eventually
+will be replaced with prose.
+
+\section{What is a database backed webserver?}
+
+A \textit{databased backed webserver} is a webserver which has access
+to a database at the same time as it serves documents to clients.
+Such access opens new possibilities, some of which are:
+
+\begin{itemize}
+\item The database can protect against race conditions when data is
+  updated on the server.
+\item Provide a searching facility more complex than grep.
+\item Allow fast access to data without worrying about limitations in
+  file systems
+\item ``\textsf{users can extract data on their own if they want to}''
+\item Databases are optimized for disk I/O, webservers for network
+  I/O.  Those go well together.
+\item Very large amount of data can be online
+\item Data can be managed remotely by others than the webmaster
+\item \textsf{what else?}
+\end{itemize}
+
+
+\subsection{Protection against race conditions}
+\label{sec:protection-against-race-conditions}
+
+A database can provide atomic operations on its data, as opposed to a
+stock Unix file system, where data unwittingly can be corrupted if two
+processes try to read and update information at the same time.  The
+concept is well known from multi-programming \textsf{the eskimo book?}
+
+Companies like ``valueclick'' and ``\textsf{doubleclick?}'' sell
+banner ad's (the \textsf{480x120?} pixel advertisements allowing you
+to click through to the advertisors website if you are interested).
+These are either sold by the number of \textit{impressions} (shown to a
+user) or \textit{clicks} (where the user actually clicks on the
+banner), and these must be counted in order to document that the
+customer gets what he pays for, and the banner ad provider does not
+expose more than what the customer paid for.
+
+Here is a database system essential in order to protect the data from
+being accidentially overwritten.  ValueClick states that they have
+\textsf{7 million impressions}  daily, which is around 80
+impressions pr second.
+
+\textsf{And what else is new?}
+
+\subsection{Provide searching facilities}
+\label{sec:providing-searching-facilities}
+
+A flat file basically only allow you to search the content and the
+filename with modifications based on the timestamps of the file.
+Searchings normally happen linearly through files and directories.
+
+Since a database may have a lot more attributes, queries can be much
+more sophisticated, and may even be done against indexed data.
+
+\subsection{Allow fast access to data without using file systems}
+\label{sec:allow-fast-access-to-data}
+
+
+
+\subsection{????}
+
+
+
+\subsection{Databases are optimized for disk I/O, webservers for network}
+  I/O.  Those go well together.
+\subsection{Very large amount of data can be online}
+\subsection{Data can be managed remotely by others than the webmaster}
+\subsection{Others?}
+
+
+\framepage{15cm}{
+Provide background information: Quick overview of the technology
+[webserver, database, http, sql, dynamically generated content vs]
+with a graph.  Give simple example.  Explain \textsl{when} things
+happen (on-the-fly vs statically generated pages).  Explain the
+advantages and disadvantages databases have over flat filesystems
+[transactions(protection, atomicity), extra attributes, speed, indexed
+columns, complex queries, scalability(linear search in filesystems,
+multihost db's),}
+
+\section{The new role of the webserver}
+
+\framepage{15cm}{
+Compare original functionality with static HTML-files with content and
+a few CGI-scripts, to the current dynamically generated sites with
+many hits pr day.  Since HTML is generated and provides little
+abstraction it is hard to use on a higher abstraction level, and with
+unreadable code in ASP and PHP3 it is harder.  CSS was not the answer
+since it did not provide any abstraction from the presentation
+(seperate content from layout).
+
+Different needs of the user - wap/pdf/html/braille.  CPU, storage,
+webmaster time prevents all formats being pregenerated.
+}
+
+
+% \section{Terms and concepts}
+% \framepage{15cm}{
+% Explain XML, XSL, XSLT, HTML (yes!), SQL, SAX, DOM, XSP and whatever
+% fancy terms come to mind.  Draw graph of what happens with an XML
+% document.}
+\include{s-terms-and-concepts}
+
+\section{The consequence - multiple views of a document}
+\emph{Please read the ``Terms and Concepts'' before continuing.}
+
+\framepage{15cm}{
+Introduce publishing where HTML is just a backend amongst many (PDF,
+Word, ASCII).
+
+Describe why it is important to be able to render finished versions of
+documents fully automatically from a single \textsl{annotated} source
+(www/print/cdrom/Palm Pilot/braille/handicapped persons,whatever).  The better
+the annotation, the better the output (ref: Stibo).  Describe the need
+for SGML (history/usage) and XML (why/browser support/on-the-fly
+publishing/bleeding edge - being standardized).
+
+Donald Knuth - {\TeX}/Web/Literate Programming - advantages (high
+quality, excellent math, superb algorithms, can be tailored to needs
+(basic interpreter written in TeX) and
+disadvantages (programming language, not abstract) (designed 20 years ago).  Ask Steffen Enni
+about his thoughts.  Javadoc.  Perl POD.  DocBook projects (FreeBSD,
+LDP).  
+}
+
+\section{The user should use current tools to publish documents}
+\framepage{15cm}{
+Publishing a document to the web should be as easy as printing a
+document.  The basic principles are the same - you can do with a
+``Publish''-button and a dialogue box where the essential information
+is provided.  It is not so today - discuss reasons .  Use ``print to
+fax'' software as horrible example of this idea gone wrong.
+
+When the webserver is dumb, you cannot do much.  If there is a
+database underneath, much more is possible.  Discuss the idea of
+having several ways of entering documents in the database (upload via
+form, send as email (fax software can do this too), print to virtual
+printer, scan, fax, voice) and letting the software do the
+conversions.
+
+Use example with print PostScript to file and upload via ftp to
+printer (LexMark).
+
+Writing XML directly is much harder to do than writing HTML (stricter
+syntax, more options, plainly just more to type), and should be aided
+by a good tool.  Alternatively, the user should use well-known tools
+(Word) and mark up according to very strict rules, which is then
+automatically converted to the XML document.  This does not give as
+rich documents, but allows users to publish existing documents with
+very little trouble.
+}
+
+\section{The need for well-defined standards}
+\framepage{15cm}{
+The need for open, well-defined standards.  HTML, PDF, PNG (versus
+GIF) RFC-things (SMTP, POP3, IMAP, MIME) good examples.  Word
+counterexample (look for Bill Gates saying people can buy an upgrade
+to read Word97 files in Word95).  Adobe has good documentation on
+their PostScript and PDF document formats (doing theirs to have it
+well supp orted).  HTML is widely documented in RFC.
+}
+
+\section{Why is Open Source essential?}
+\framepage{15cm}{
+Independence from hardware and software vendors, allowing free choice
+of hardware platform and operating system, as well as the possibility
+to fix bugs and use other products.  (Examples: XT versus Xerces, Java
+Interpreter for Linux, servlet technologies, cheap - use money for
+hardware instead of licenses).   
+
+}
+
+\section{Sample websites}
+\framepage{15cm}{
+slashdot.org (examine code - ask developer),  Politiken, DynaWeb (SGI
+- oooold check on fyn, when was it first developed?), valueclick
+(banners - ask Ask for full story.  What are they running), php3
+documentation online.  photo.net (reread).  Sun's docs.sun.com
+(DocBook SGML)
+}
+
+\subsection{slashdot.org - high volume information site for nerds}
+\framepage{15cm}{
+
+Describe setup.  Describe flow, and the slashdot effect.  What
+hardware/software.
+}
+
+\subsection{Valueclick.com}
+\framepage{15cm}{
+
+Banner provider.  Interview Ask for details, about how the NT-cluster
+was replaced with a small Linuxbox with MySQL and a squid in
+http-accelleration mode.  Explain the problems with having fat
+processes serving slow modems.
+}
+\subsection{Politiken}
+\framepage{15cm}{
+
+Talk with Lars.  Politiken genrates their pages on the fly.
+}
+\subsection{krak.dk / rejseplanen.dk}
+
+\framepage{15cm}{
+Necessary to do rendering according to requests.  Cannot be predicted
+reasonably.  What have been done?  How does it work?  What about 
+}
+\subsection{Cactus -- document capture and conversion}
+
+\framepage{15cm}{
+Two out of four methods are implemented (email, printer).  (Increase
+blob limit in DBI::MySQL).  Sample PDF viewer, perhaps simple XLS viewer.
+
+Demonstrate that Cocoon can provide the navigational framework.
+}
+\section{Overview of technology available for Linux February 2000}
+\framepage{15cm}{
+Describe what products there are currently available for these
+categories. Evaluate as much as possible.   Conclude that currently
+this is an area in great development.
+}
+
+\subsection{Webservers}
+\framepage{15cm}{
+Apache, misc Servlet Javaservers (jetty, thttpd, java webserver,
+etc).  Look for comparisons.  Roxen (graphs).  Discuss whether several
+webservers should be run on the same machine to provide better services.
+}
+
+\subsection{Database engines}
+\framepage{15cm}{
+Full SQL servers:  MySQL/mSql/DB2/Oracle (spank their FLUG
+policy)/Informix/PostgresSQL (discuss features:  transactions, unique
+numbers, in-kernel code, speed, availablity, multi-host
+capabilities?). Any flat file RDBS?
+
+Tricks: Menu system in LDAP (lr.dk).
+}
+
+\subsection{Browsers}
+\framepage{15cm}{
+MSIE5 (XML support, Solaris), Mozilla (alpha), Netscape (too old),
+HotJava 3.0 (no XML, can be expanded to do XML conversion
+internally?), Opera (?), Amaya (other W3C browsers?), AWTviewer in fop
+(can it do xml directly?),
+}
+
+\subsection{XML utilities}
+\framepage{15cm}{
+XT, Xerces, Cocoon, SQL2xml, validators (error recovering?),
+converters to XML (pod2docbook, tex4h, Perl with appropriate modules?,
+wordview modified?
+
+Show the XML->SQL->XML->HTML on the fly conversion possible with
+Cocoon .... Without auxillary code. All done in W3C style.
+}
+
+
+\subsection{PDF utilities}
+\framepage{15cm}{
+
+PDF generated by pdflatex is good.  PDF generated by fop isn't.
+createpdf.adobe.com 
+
+pdfzone.  acroread (ok, heavy), xpdf (font problems with bitmaps, ugly
+but fast, gives best result with usepackage{times}, no anti-alias), gv
+(pretty good).  Distiller (check what it can do).  Use pdfinfo to get
+the number of pages in the pdffile.
+
+Conclude that it is possible to have a 100\% Java solution for
+on-the-fly publishing XML to HTML and PDF through a webserver.
+Discuss why developers do it in Java, as opposed to any other language.
+
+Very few utilites support creating PDF.  Discuss how to create PDF.
+}
+% \section{SGML, XML and DocBook}
+% The history and usage of SGML.  Creation of XML.  Describe document
+% validation, and conversion (XSLT) to XML and other formats.  Freedom
+% from restrictions of HTML.  Problems with tons and tons of DTD's.  The
+% need for well-documented standard, robust, supported DTD's (current
+% ones: TEI, ebook [buh], DocBook).  HTML conversion utilities can be
+% tailored to generated DocBook XML for SSP (currently pod2docbook,
+% Excel xls2xml).  Found that SGML (jade) is powerful but too slow for
+% on-the-fly stuff, as opposed to XML rendererer.  Several to choose
+% from if they conform to the w3c standards (DOM and SAX).   Who uses DocBook at
+% the moment?  Man pages in DocBook on Solaris (look on machine).  IE50
+% cannot show ``simple'' DocBook XML yet but it is the goal of that project.
+\include{s-xml}
+\include{docbook}
+
+\section{Can users transparently harness the power of XML for
+webpublishing?}
+\framepage{15cm}{
+Discuss how users can use their current tools to publish information
+to the web (Cactus principles:  data capture and automatic conversion)
+by automatic conversion to XML and on-the-fly conversion on the way
+out of the webserver (while still having access to the original file
+provided by the user).   This also allows people to view files made
+with software products not available to them.
+}
+
+\section{Active and passive data collection for a webserver}
+\framepage{15cm}{
+
+[just thoughts]
+User can ``push'' data to the system, or the system can actively watch
+a resource (directory, webpage, usenet server, ``channels'') and
+update whenever new data is available.  www.mind-it.com.  RDF-format
+from netscape to push headlines.
+}
+
+\section{Search engines and datamining}
+\framepage{15cm}{
+htdig (process website) swish (process files for website) are ok.
+With database you can ask the database directly (currently in blobs)
+but with more analysis of the files you can do better.  ``Which author
+wrote this back in 1948''.
+}
+
+\section{Conclusion}
+\framepage{15cm}{
+Databases are great, yea!  Webservers are great, yea!  Things must be
+powerful and easy for best results.
+}
+
+\appendix
+
+\include{s-cactus}
+\include{s-konsensus}
+
+%\section{Available hardware and software}
+\include{s-available-hardware-and-software}
+\section{Bibliography with Web references}
+Full reference with a lot of annotated URL's.
+
+\bibliography{books}
+\end{document}
+
+%
+% and all that was ever heard from him again, was the sound of Tubular Bells! 
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% $Log$
+% Revision 1.6  2000/02/23 02:22:41  ravn
+% Moved XML section to seperate file.  Added framepage.
+%
+% Revision 1.5  2000/02/18 04:31:26  ravn
+% Version shipped to immerkaer.
+%
+% Revision 1.4  2000/02/18 03:14:37  ravn
+% Added extra paragraphcs after talking to jimm
+%
+% Revision 1.3  2000/02/15 18:35:37  ravn
+% Updated to include misc notes from MIP file system.
+%
+% Revision 1.2  2000/02/14 04:52:10  ravn
+% Added much more text.  Played with fonts.
+%
+% Revision 1.1  2000/02/14 02:52:22  ravn
+% Initial revision
+%

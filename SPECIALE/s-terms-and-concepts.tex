@@ -1,0 +1,93 @@
+% $Id$
+
+\section{Terms and concepts}
+
+\begin{quotation}
+  ``HTML is a SGML DTD''
+\end{quotation}
+
+This report uses a lot of abbreviations, many of which may not be
+widely known.  This section lists mosts of them.
+
+\begin{description}
+
+\item[entity] A named ``unit'' in XML/SGML which expands to a string.
+  This is very similar to a macro without arguments in other
+  languages.
+  
+\item[FO] Formatting objects.  A generic description of the physical
+  layout of a XML-document on paper.  FOP converts this to PDF.
+  \textsf{Several users have expressed doubt about this XSLT
+    transformation}
+  
+\item[SGML] A family of languages.  The \textit{DTD} specifies which
+  language it is.  SGML can be formatted with FOSI or DSSSL
+  style-sheets.  \unixcommand{jade} can format to HTML, plain text and
+  RTF. 
+  
+\item[XML] A family of languages.  The \textit{DTD} specifies which
+  language it is.  XML-documents can be transformed with
+  \textit{XSL}-style sheets to another XML-document (this process is
+  called \textit{XSLT}).  XML is a subset of \textit{SGML}
+
+
+\item[*ML] Common description of both XML and SGML, where the two have
+  the same applications.
+
+\item[DTD] The \textsf{Document T? Description} is the specification
+  which describes the exact syntax of the *XML
+
+
+\item[XSLT] Either the process of \textit{transforming} a XML-document into
+  another XML-document using a XSL-stylesheet, or the process of
+  \textit{formatting} a document into FO, which then can be further
+  formatted in PDF.
+
+\item[DOM] \textsf{W3C's initial model for representing an XML tree
+    internally.  Superceeded by SAX (\textsf{for java?)}}
+  
+\item[SAX] Simple Application \textsf{interface for?} XML.  An event
+  based approach to XML-parsing and representation.  Has an advantage
+  in that the design allows processing to begin before the whole
+  XML-tree has been read in.  (\textsf{URL?}).  Parsers and
+  \textsf{processors?} which implement SAX can be selected freely,
+  currently allowing for \textsf{20 different combinations of parsers
+    and whashallicallem}.
+
+
+\item[HTML] Hyper Text Markup Language.  The ``language of the web''
+  which was originally designed by a physicist to present articles to
+  other physicists.  Was later hacked upon by Netscape and Microsoft
+  to do things it was never originally meant to do.
+
+  
+\item[DSSSL] \textsf{SGML style sheets something}.  Is used to render
+  an SGML document to another format.  \unixcommand{jade} can render
+  to \textsf{FOT}, RTF, {\TeX} (must be post-processed with
+  \unixcommand{jadetex}), SGML and XML.  \textsf{Is this a standard?}
+  
+\item[FOSI]  \textsf{Another style sheet for SGML}, which I do
+  not know anything about.  Apparently the US Navy uses it a lot.
+  Check in DocBook.
+
+  
+\item[SQL] The Structured Query Language is the \textsf{standard}
+  language for communicating with a database.
+
+  
+\item[XSP] \texttt{XML Servlet Pages} - A technique for combining code
+  with XML in a single page, which is parsed and executed by the
+  webserver when it is requested.
+
+\end{description}
+
+\framepage{15cm}{
+Explain XML, XSL, XSLT, HTML (yes!), SQL, SAX, DOM, XSP and whatever
+fancy terms come to mind.  Draw graph of what happens with an XML
+document.}
+
+    
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 

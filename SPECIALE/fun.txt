@@ -1,0 +1,6 @@
+
+Replace with "latex boo.tex && killall -USR1 xdvi.bin" for automatic
+update.
+
+
+

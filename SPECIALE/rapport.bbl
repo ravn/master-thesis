@@ -1,0 +1,9 @@
+\begin{thebibliography}{Sed90}
+
+\bibitem[Sed90]{sedgewick-algorithms-in-c}
+Robert Sedgewick.
+\newblock {\em Algorithms in C}.
+\newblock Addison-Wesley, 1990.
+\newblock ISBN 0-201-51425-7.
+
+\end{thebibliography}

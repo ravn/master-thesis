@@ -1,0 +1,49 @@
+% $Id$
+
+\section{Available hardware and software}
+\label{sec:availabe-hardware-and-software}
+
+This section lists the hardware I have used during development of
+Cactus.  
+
+
+\subsection{Asserballe}
+\label{sec:asserballe}
+
+Urls in long banes for this.
+
+\begin{itemize}
+\item Pentium-S 133 MHz PC with 128 Mb RAM and 10 Gb IDE disk
+\item Linux Redhat 6.1  
+\item MySQL \textsf{2.3.?? - security updates}
+\item Apache \texttt{1.??} with mod\_perl, ApacheJServ, Cocoon.
+\item IBM JDK 1.1.8.
+\item CGI, DBI::\textsf{???} perl modules for writing CGI scripts and
+  accessing MySQL databases.
+\end{itemize}
+
+The choice of JDK was made at a time when \textsf{top bug at Javasoft}
+was ``please provide a port of Java to Linux'', and where IBM beat Sun
+to it by porting their Java 1.1.6 implementation to Linux.  The
+benchmarks showed it to be as fast as their Windows and OS/2 ports,
+which at that time was the fastest Just In Time compilers on the
+PC-platform.  It performs very well on Linux, and the installed
+version is just a maintainance upgrade.
+
+MySQL and the corresponding JDBC driver \textit{must} be the latest
+stable versions due to security and bug fixes.
+
+
+
+\subsection{Aalborg}
+\label{sec:aalborg}
+
+
+(4-CPU UltraSparc 440MHz with Sun JDK 1.2)
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "rapport"
+%%% End: 
