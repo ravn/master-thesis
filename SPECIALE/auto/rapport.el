@@ -35,5 +35,6 @@
      "s-cactus"
      "s-konsensus"
      "s-tex-and-latex"
+     "s-report-writing-tools"
      "s-available-hardware-and-software"))))
 
