@@ -4,7 +4,6 @@
     (LaTeX-add-labels
      "cha:sgml-xml-and-dtd's"
      "tab:programming-langugages-and-html"
-     "tab:distribution-formats"
      "fig:listing-x-outline.xsl"
      "fig:src-public_html-incoming.xml"
      "fig:src-public_html-incoming.xsl"

@@ -29,9 +29,13 @@ basically do only two things:
   as the document to send.
 \end{itemize}
 
-Nothing else!
+Nothing else! Even with such a simple model, it works well for even
+\textit{very} large web-sites which only generates few documents
+dynamically.
 
-\mydetour{
+
+
+%\mydetour{
 
 Such simple web servers still exist - for example
 \myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} (which has been
@@ -49,11 +53,8 @@ public webservers on the Internet in the same period grew from 19
 thousand to 11 million, with Apache and Microsoft Internet Information
 Server accounting for 8.8 million of these.
   
-}
+%}
 
-
-Even with such a simple model, it works well for even \textit{very}
-large web-sites which only generates few documents dynamically.
 
 A well-tuned server which serves documents directly from the
 filesystem can reach impressive numbers.
@@ -100,10 +101,10 @@ to the original ``static web site'' model.
 \myimage{gr/xerox-1}{The original Xerox PARC Map Viewer}{xerox-1}
 \label{sec:map-generation-first-web-application} One of the first
 demonstrations of dynamically generated images was the
-\myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer} (see
+\myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer.} (see
 \myvref{fig:xerox-1}) which allowed the user to navigate a
 virtual atlas, where each ``window'' to the map was generated on
-demand.  This initial quick hack has since been superseded by
+demand.  This initial quick hack has since been supersedeed by
 professional map companies which produce maps of a varying quality on
 demand, like \myurl{http://maps.yahoo.com/py/maps.py}{Yahoo Maps} (USA
 only) and \myurl{http://www.mapquest.com}{MapQuest} (covers Europe
@@ -131,7 +132,7 @@ There are several problems with CGI-scripts:
   have access to a C-compiler which can generate binary code for the
   machine running the webserver.
 
-  This has caused interpreted and easily extendable languages like
+  This has caused an interpreted and easily extendable language like
   Perl to be very popular.  Perl programs can be run immediately on a
   given platform without needing to be recompiled, and are for most
   purposes as fast as the equivalent programs written in \texttt{C} or
@@ -145,7 +146,7 @@ There are several problems with CGI-scripts:
 
 \item \textbf{Slow} -- the overhead just for invoking the CGI-program
   in a subprocess is substantial even for moderate load on the web
-  server, since the web-server must ``fork'' a new process for each
+  server, since the web-server must start a new process for each
   request.
 
   This has been addressed by putting the execution environment inside
@@ -166,14 +167,14 @@ servers, which was unavailable to the standard CGI-scripts.
 Persistent connections provide a real performance boost!  Database
 connections are notoriously expensive in time and processing power to
 establish, so needing to open one for each and every CGI-script were a
-true performance bottleneck.  Just by keeping the connection open (and
-for ASP-scripts - retain the particular database connection for the
-session) was extremely beneficial.  The PHP3 and ASP languages are not
-very complicated, and it is very easy to switch between HTML and
-program code.  Additionally it was not necessary to ask a webmaster to
-install new versions -- you just put a suitably named file along with
-your html-files -- so the ability to create dynamically generate
-webpages suddenly became available to everyone.
+true performance bottleneck.  Letting the webserver maintain a set of
+open database connections available to CGI-programs provided for much
+better response times.  The PHP3 and ASP languages are not very
+complicated, and it is very easy to switch between HTML and program
+code.  Additionally it was not necessary to ask a webmaster to install
+new versions -- you just put a suitably named file along with your
+html-files -- so the ability to create dynamically generate web pages
+suddenly became available to everyone.
 
 
 \section{When a site grows, it becomes hard to maintain}
@@ -186,7 +187,7 @@ has grown way beyond what they originally expected, and that
 \item their handwritten HTML pages are hard to keep up-to-date.  A
   minor change in site layout, must be manually updated in all the
   affected files.  Creating scripts to do this helps, but is still a
-  non-trivial task
+  non-trivial task.
 \item The information tree described by the links is very difficult to
   change, since all links must be checked and potentially changed.
 \item When pages are moved or deleted, it becomes difficult to check
@@ -218,7 +219,7 @@ all the HTML-documents on the site manually.
 \myvref{fig:flug-1} show a sample page from the
 \myurl{http://www.flug.dk}{Fyns GNU/Linux User Group web-site},
 showing the way FLUG chose to do it.  The framework shown is added to
-each HTML-file with a small perl script.
+each HTML-file with a small Perl script.
 
 This is a typical static framework for a site, where every web page
 basically is ``inserted'' in the home page since the set of links is
@@ -236,7 +237,7 @@ other files with
 \myurl{http://www.apache.org/docs/mod/mod_include.html}%
 {\textit{Server Side Includes}}, which takes care of all this - except
 doing it unconditionally on every page.  The user must still remember
-to insert the appropriate command sequence in the server).
+to insert the appropriate command sequence in each page).
 
 \myimage{gr/intel-1}{The web page for drivers for the Intel VS440FX
   motherboard}{intel-1}%
@@ -245,7 +246,7 @@ Many modern websites put a given page in a \textit{context} where the
 navigational framework reflect this context.  See
 \myvref{fig:intel-1} for a sample from
 \myurl{http://support.intel.com/support/motherboards/desktop/VS440fx/software.htm}{Intel
-  regarding the VS440FX motherboard}, where the actual web page has a
+  regarding the VS440FX motherboard.}, where the actual web page has a
 top bar with generic links, a column with links specific to
 motherboards in general, and a review form at the bottom asking
 whether this information was useful to the reader (this question is
@@ -273,7 +274,7 @@ in the framework.
 \section{A good website needs meta-information about its documents}
 
 What to a webmaster is a nice and well maintained web-site, is to a
-computer just a bunch of directories of files with bytes in them.  In
+computer just a number of directories of files with bytes in them.  In
 order to get any use of a computer in maintaining these, it is
 important to have easily accessible information about the desired
 functionality and the files to work with.  Even though complicated
@@ -346,7 +347,7 @@ detection of bad input in~\cite{goedelescherbach}.
   shown.}{mip-1} An example of a document generated from
 meta-data which has been automatically extracted, is the MIP
 ``Recently Changed Pages'' (see \myvref{fig:mip-1}) the
-original version of which I wrote while working for MIP.
+original version of which I wrote while working for MIP{}.
 The script traverses three separate set of web pages on the
 server -- System pages, System Administrator pages and User
 pages (one set per user) -- and generates a list for each set
@@ -373,7 +374,7 @@ The meta-information extracted was:
 The flat Unix-filesystem can only provide one thing more,
 namely the size of the file, and nothing at all is
 guaranteed about the contents of a HTML-file - even the
-title is not even always there!
+title is not always there!
 
 If more meta-data than the above is needed, the authors must be
 involved and as a part of their web-authoring, deliberately and
@@ -412,13 +413,13 @@ small amount of meta-information available in consideration.
 
 An example of a good site built with meta-information is
 \myurl{http://www.yahoo.com}{Yahoo} (see \myvref{fig:yahoo-1} for the
-British edition) which started as a directory over web pages where the
-maintainers added meta-data to a lot of web-sites by categorizing them
-manually, and use this information to regularily generate static
-navigational pages.  At a time Yahoo really suffered by a lot of
-broken links as the meta-data was not maintained, but today Yahoo
-actively verifies that the target links exist and remove those that
-doesn't.
+\myurl{http://www.yahoo.co.uk}{British edition}) which started as a
+directory over web pages where the maintainers added meta-data to a
+lot of web-sites by categorizing them manually, and use this
+information to regularily generate static navigational pages.  At a
+time Yahoo really suffered by a lot of broken links as the meta-data
+was not maintained, but today Yahoo actively verifies that the target
+links exist and remove those that doesn't.
 
 
 \section{Documentation - meta-data of programs}
@@ -534,18 +535,6 @@ publishing abilities of XML will complement the target audience of
 \subsection{Case study: The Plain Old Documentation format for Perl}
 \label{sec:perlpod}
 
-\begin{figure}[htbp]
-  \begin{center}
-%\lstinputlisting[language=Perl,frame=trbl]{sample.pod}
-\listinginput{1}{sample.pod}
-\caption{A sample POD-file}
-    \label{fig:sample-pod-file}
-  \end{center}
-\end{figure}
-
-\myimage{gr/pod-sample-1}{The HTML generated by
-  \texttt{pod2html} looks like this}{pod-sample-1}
-
 The
 \myurl{http://www.cpan.org/doc/manual/html/pod/perlpod.html}{perlpod}
 format was designed to be simple to write and easy to use in
@@ -560,6 +549,18 @@ code, the other POD-fragments are ignored by the interpreter.
 \myvref{fig:pod-sample-1} show the HTML-version as
 rendered by a browser.
 
+\begin{figure}[htbp]
+  \begin{center}
+%\lstinputlisting[language=Perl,frame=trbl]{sample.pod}
+\listinginput{1}{sample.pod}
+\caption{A sample POD-file}
+    \label{fig:sample-pod-file}
+  \end{center}
+\end{figure}
+
+\myimage{gr/pod-sample-1}{The HTML generated by
+  \texttt{pod2html} looks like this}{pod-sample-1}
+
 
 
 All the info-files at
@@ -568,7 +569,7 @@ website for my small firm) have been written as POD files,
 and converted to HTML, with some finishing touches done with
 another Perlscript which has been evolved from
 \myurl{http://www.fido.dk/faq/unix-faq/unix_r23.htm}%
-several of my previous projects.  Code truly lives forever, even
+{several of my previous projects}.  Code truly lives forever, even
 though it is very difficult to locate the start and end tags of a
 given HTML-construction without parsing the whole file.
 
@@ -576,9 +577,8 @@ Due to this and all the rest of the \textit{ad hoc} code in both
 \unixcommand{pod2html} and my own code, I am convinced that another
 approach to rendering POD-files should be taken, and I have submitted
 patches to the \unixcommand{pod2docbook} command in order to create
-DocBook XML in addition to the current DocBook SGML.  This will
-add the rendering possibilities of the XSL-world to those Perl already
-know about.
+both SGML and XML in the DocBook variant.  This will add the rendering
+possibilities of the XSL-world to those Perl already know about.
 
 Recently a \texttt{Lip::Pod} filter have been added to CPAN which
 allows a mixed mode documentation output -- where both code
@@ -602,11 +602,12 @@ Programming}.
   rather on explaining to *human beings* what we want a computer to
   do.}%
 {Donald Knuth}%
-{\cite{knuthliterateprogramming} quoted from
-  \myurl{http://www.literateprogramming.com/}{The Literate Programming
-    web site}}
+{\cite{knuthliterateprogramming}
+  quoted from
+  The Literate Programming
+  web site}
 
-Donald E. Knuth has written the {\TeX}-system used to typeset this
+ Donald E. Knuth has written the {\TeX}-system used to typeset this
 report, and documented it by publishing the source code to the entire
 system in four books.  The {\TeX}-system is of an extremely high
 quality, both in code and documentation, and he
@@ -617,16 +618,18 @@ In order to write both documentation and code of such high quality,
 Knuth developed his own method of coding which he named ``Literate
 Programming'', in which the author works with a single document
 containing the documentation \textit{as it is to be presented to the
-reader}.  Knuth uses a {\TeX}-dialect, in which he explains his
-solution to a given problem, and all code is provided as small
-\textit{chunks} with a name which may include references to other
-chunks.  All chunks with the same name are concatenated in a single
-chunk, which is then inserted whenever that name is used.
+reader}.  Knuth uses a {\TeX}-dialect, in which he explains his many
+small solutions to the small problems, which is then eventually added
+up to solving the complete problem.  Here all the code is provided as
+small \textit{chunks} with a name for each sub-solution which may
+include references to other chunks.  All chunks with the same name are
+concatenated in a single chunk, which is then inserted whenever that
+name is used in a larger solution.
 
-This file format is the \texttt{web}-format!  This way of
-programming is discussed in detail
-in~\cite{sewell:weaving-a-program}, and a lot of references
-are available on
+This file format is the \texttt{web}-format, which incidentally is a
+decade older than the World Wide Web.  This way of programming is
+discussed in detail in~\cite{sewell:weaving-a-program}, and a lot of
+references are available on
 \myurl{http://www.literateprograming.org}{literateprograming.org}.
 
 \begin{figure}[htbp]
@@ -718,7 +721,10 @@ My personal experiences with Literate Programs can be summarized as:
   using your favorite tools for editing, compiling and debugging.
   Users of most integrated development environments cannot use this
   model since the IDE does not provide hooks to provide this
-  processing.
+  processing.   For best results the computer language in which the
+  program is being written should have been \textit{designed} for
+  Literate Programming from the start, in order to make room for the
+  necessary markup for the purpose.
 
 \item
 
@@ -726,8 +732,8 @@ My personal experiences with Literate Programs can be summarized as:
   the author! In order to be usable, \textit{all} derived files
   \textit{must} refer to the original document in a transparent
   fashion, meaning that the user should not have to worry about
-  intermediate files.  (In the same way that the C preprocessor works
-  under Unix).
+  intermediate files, in the same way that the C preprocessor
+  (\texttt{cpp}) is invisible under Unix when compiling C programs.
 \end{itemize}
 
 My conclusion was that the Literate Programming paradigm does not pay
@@ -754,7 +760,7 @@ seperately from the writing of the code.
 Design patterns are used to provide commonly known building blocks to
 build up the abstractions.
 
-Bo N{\o}rreg{\aa}rd J{\o}rgensen, Ph.D. student at MIP, told
+Bo N{\o}rreg{\aa}rd J{\o}rgensen, Ph.D. student at MIP{}, told
 me that he would expect it to be beneficial to use Rational
 Rose in a software project when it has an underlying model
 and has 7 modules or more, where a module is a unit of code
@@ -973,7 +979,7 @@ this should be reflected in the working procedure.  My conclusion is:
 
 \begin{center}
   \textit{Publishing a document to the web, ought to be just
-    as easy as printing a document.}
+    as easy as printing a document to paper.}
 \end{center}
 
 This conclusion, combined with my experiences with the Yggdrasil

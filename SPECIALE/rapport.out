@@ -37,61 +37,57 @@
 \BOOKMARK [1]{section.4.4}{XHTML - XML compliant HTML}{chapter.4}
 \BOOKMARK [1]{section.4.5}{Which dialect of SGML should be used?}{chapter.4}
 \BOOKMARK [1]{section.4.6}{How can a *ML document be viewed?}{chapter.4}
-\BOOKMARK [2]{subsection.4.6.1}{XML style sheets and Cocoon}{section.4.6}
-\BOOKMARK [1]{section.4.7}{Converting documents to XML}{chapter.4}
-\BOOKMARK [2]{subsection.4.7.1}{Majix - RTF/(DOC) to XML}{section.4.7}
-\BOOKMARK [2]{subsection.4.7.2}{pod2docbook - POD to XML}{section.4.7}
-\BOOKMARK [2]{subsection.4.7.3}{tex4h - convert TeX to XML}{section.4.7}
-\BOOKMARK [2]{subsection.4.7.4}{wv}{section.4.7}
-\BOOKMARK [1]{section.4.8}{Rendering HTML on the fly}{chapter.4}
+\BOOKMARK [1]{section.4.7}{Cocoon and XSQL - tying XML, SQL and XSLT together }{chapter.4}
+\BOOKMARK [1]{section.4.8}{Converting documents to XML}{chapter.4}
+\BOOKMARK [2]{subsection.4.8.1}{Majix - RTF/(DOC) to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.2}{pod2docbook - POD to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.3}{tex4h - convert TeX to XML}{section.4.8}
+\BOOKMARK [2]{subsection.4.8.4}{wv}{section.4.8}
+\BOOKMARK [1]{section.4.9}{Rendering HTML on the fly}{chapter.4}
 \BOOKMARK [0]{chapter.5}{The DocBook and TEI DTD's}{}
 \BOOKMARK [1]{section.5.1}{DocBook considerations}{chapter.5}
 \BOOKMARK [1]{section.5.2}{A sample DocBook XML document}{chapter.5}
 \BOOKMARK [0]{chapter.6}{Standard Query Language, Databases and Webservers}{}
 \BOOKMARK [1]{section.6.1}{SQL}{chapter.6}
-\BOOKMARK [2]{subsection.6.1.1}{SQL - really a standard?}{section.6.1}
 \BOOKMARK [1]{section.6.2}{SQL -- getting started}{chapter.6}
 \BOOKMARK [1]{section.6.3}{Some of the possible ways of accessing a database from a webserver}{chapter.6}
 \BOOKMARK [1]{section.6.4}{What database should be used?}{chapter.6}
 \BOOKMARK [0]{chapter.7}{Konsensus -- an unimplemented collaborative OpenFAQ system}{}
 \BOOKMARK [0]{chapter.8}{Cactus - data-driven document publication and conversion}{}
 \BOOKMARK [1]{section.8.1}{Philosophy}{chapter.8}
-\BOOKMARK [1]{section.8.2}{Cactus seen from the users perspective}{chapter.8}
-\BOOKMARK [1]{section.8.3}{Design}{chapter.8}
-\BOOKMARK [2]{subsection.8.3.1}{Data gathering}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.2}{Examininers}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.3}{Derivers}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.4}{Converters}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.5}{Compressors}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.6}{Archivers}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.7}{Janitors}{section.8.3}
-\BOOKMARK [2]{subsection.8.3.8}{Presenters}{section.8.3}
-\BOOKMARK [1]{section.8.4}{Executing external commands}{chapter.8}
-\BOOKMARK [1]{section.8.5}{SQL tables}{chapter.8}
-\BOOKMARK [1]{section.8.6}{Implementing a search engine}{chapter.8}
-\BOOKMARK [1]{section.8.7}{Overall view}{chapter.8}
-\BOOKMARK [1]{section.8.8}{Data flow}{chapter.8}
-\BOOKMARK [2]{subsection.8.8.1}{Input sources}{section.8.8}
-\BOOKMARK [2]{subsection.8.8.2}{Output formats}{section.8.8}
-\BOOKMARK [1]{section.8.9}{Daemons and SQL tables}{chapter.8}
+\BOOKMARK [1]{section.8.2}{Why the name Cactus?}{chapter.8}
+\BOOKMARK [1]{section.8.3}{Cactus seen from the users perspective}{chapter.8}
+\BOOKMARK [1]{section.8.4}{Design}{chapter.8}
+\BOOKMARK [2]{subsection.8.4.1}{Data gathering}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.2}{Examiners}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.3}{Derivers}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.4}{Converters}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.5}{Compressors}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.6}{Archivers}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.7}{Janitors}{section.8.4}
+\BOOKMARK [2]{subsection.8.4.8}{Presenters}{section.8.4}
+\BOOKMARK [1]{section.8.5}{Executing external commands}{chapter.8}
+\BOOKMARK [1]{section.8.6}{SQL tables}{chapter.8}
+\BOOKMARK [1]{section.8.7}{Implementing a search engine}{chapter.8}
 \BOOKMARK [0]{chapter.9}{Implementation}{}
-\BOOKMARK [2]{subsection.9.0.1}{Hardware/software considerations}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.2}{Data gatherping}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.3}{Derivers}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.4}{Converters}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.5}{Examiners}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.6}{...}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.7}{Database}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.8}{Web server}{section.8.9}
-\BOOKMARK [2]{subsection.9.0.9}{Making it all work under Linux}{section.8.9}
-\BOOKMARK [1]{section.9.1}{Why the name Cactus?}{chapter.9}
-\BOOKMARK [1]{section.9.2}{The design of Cactus}{chapter.9}
-\BOOKMARK [1]{section.9.3}{Overview}{chapter.9}
+\BOOKMARK [1]{section.9.1}{Hardware/software considerations}{chapter.9}
+\BOOKMARK [1]{section.9.2}{Data gathering}{chapter.9}
+\BOOKMARK [2]{subsection.9.2.1}{Email}{section.9.2}
+\BOOKMARK [2]{subsection.9.2.2}{Printing to Cactus}{section.9.2}
+\BOOKMARK [2]{subsection.9.2.3}{Fax and Voice mail}{section.9.2}
+\BOOKMARK [2]{subsection.9.2.4}{Scanning}{section.9.2}
+\BOOKMARK [2]{subsection.9.2.5}{Shared directories on a network}{section.9.2}
+\BOOKMARK [1]{section.9.3}{Derivers}{chapter.9}
+\BOOKMARK [1]{section.9.4}{Converters}{chapter.9}
+\BOOKMARK [1]{section.9.5}{Examiners}{chapter.9}
+\BOOKMARK [1]{section.9.6}{Presenters}{chapter.9}
+\BOOKMARK [1]{section.9.7}{Database}{chapter.9}
+\BOOKMARK [1]{section.9.8}{Web server}{chapter.9}
 \BOOKMARK [0]{chapter.10}{Cactus - sample filter sets}{}
 \BOOKMARK [1]{section.10.1}{``Print to PDF'' functionality}{chapter.10}
 \BOOKMARK [1]{section.10.2}{Image conversion to GIF, PNG and JPEG}{chapter.10}
 \BOOKMARK [1]{section.10.3}{Generating HTML, RTF and PDF from DocBook XML}{chapter.10}
-\BOOKMARK [0]{chapter.11}{Cactus - what does the future bring?}{}
+\BOOKMARK [0]{chapter.11}{Cactus - what may the future bring?}{}
 \BOOKMARK [0]{chapter.12}{Conclusion}{}
 \BOOKMARK [0]{chapter.A}{Terms and concepts}{}
 \BOOKMARK [0]{chapter.B}{Report writing tools}{}
@@ -120,3 +116,18 @@
 \BOOKMARK [2]{subsection.C.2.7}{StarOffice}{section.C.2}
 \BOOKMARK [2]{subsection.C.2.8}{W3 - browsing inside Emacs}{section.C.2}
 \BOOKMARK [2]{subsection.C.2.9}{Lynx - browsing in textmode}{section.C.2}
+\BOOKMARK [0]{chapter.D}{Source code listings}{}
+\BOOKMARK [1]{section.D.1}{Programs}{chapter.D}
+\BOOKMARK [2]{subsection.D.1.1}{src/config.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.2}{src/cactus/examiner_d.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.3}{src/cactus/process-incoming.pll}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.4}{src/cactus/workqueue_d.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.5}{src/cactus/wrap.sh}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.6}{src/examiners/message-rfc822.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.7}{src/extractors/message-rfc822.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.8}{src/lpd/filter}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.9}{src/modperl/details.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.10}{src/modperl/MyTreePrinter.pm}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.11}{src/sql/create-tables.pl}{section.D.1}
+\BOOKMARK [2]{subsection.D.1.12}{src/sql/reset-tables.sh}{section.D.1}
+\BOOKMARK [1]{section.D.2}{Presenters}{chapter.D}

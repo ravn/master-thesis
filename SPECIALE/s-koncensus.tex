@@ -1,13 +1,19 @@
 % $Id$
 
-\chapter{\textit{Konsensus} -- an unimplemented collaborative OpenFAQ system}
+\chapter{\textit{Konsensus} -- a
+%n unimplemented
+community backed OpenFAQ system}
 \label{cha:konsensus}
 
 A few years back I authored and maintained
 \myurl{http://www.fido.dk/faq}{a Unix FAQ in the Danish Fidonet},
 where I collected a lot of information and wrote a lot too myself,
 which I then formatted and made available to the community for the
-common benefit.
+common benefit, in order to have a definitive reference where
+inexperienced users could be directed to, both to answer a particular
+question, but also to allow them to seek out answers for themselves
+without having to ask.  The Unix FAQ worked well for quite a while
+I had the time and energy to work on it on a regular basis.
 
 The typical problem with a FAQ is that the maintainer must be quick to
 update with corrections when users take the time to submit them, and
@@ -17,7 +23,7 @@ be sure to review the contents often to ensure that the information is
 up-to-date and correct.
 
 This is a non-trivial task, and after basically giving up on the third
-rewriting of the UNIX-FAQ about halfway through, I concluded that for
+rewriting of the Unix FAQ about halfway through, I concluded that for
 a FAQ to be truly successful a number of criteria must be met:
 
 \begin{itemize}
@@ -26,17 +32,28 @@ a FAQ to be truly successful a number of criteria must be met:
   what makes people use the resource in the first place.
   
 \item 
-  \emph{The bottleneck in this system is the maintainer}.  The system
+  \emph{The bottleneck in this system is the human maintainer}.  The system
   should allow users to help you with updating the information in the
   FAQ!
 
   
-\item \emph{The person providing the information must be given
-    credit}.  Credit and reputation is the mechanism that gets readers
-  to submit updates and new information.  Eric S. Raymond writes about
-  \myurl{http://www.tuxedo.org/\~{}esr/writings/homesteading/homesteading-8.html}{the
+\item \emph{The person providing the information \underline{must} be
+    given full credit}.  Credit and reputation is the mechanism that
+  gets readers to submit updates and new information.  Eric S. Raymond
+  writes about
+  \myurl{http://www.tuxedo.org/~esr/writings/homesteading/homesteading-8.html}{the
     importance of reputation in the hacker gift culture} in the paper
-  ``Homesteading the Noosphere''.
+  ``Homesteading the Noosphere''.  If a person is not given credit,
+  then s/he has no incentive for adding value to the given project.
+
+\item \textit{Use other peoples code!}  Instead of designing a format,
+and write all the necessary tools to handle it by yourself then reuse
+what others have already done.  This let you avoid having to
+repeatedly reinvent and maintain the wheel, and -- as an added benefit
+-- leads you into \textit{data driven} programming, where tools tend
+to be very generic and the data specify what kind of behaviour the
+tool should do.
+  
 \end{itemize}
 
 I was not the only one to reach such conclusions.  Thomas Boutell
@@ -70,11 +87,11 @@ sufficient to weed out most of the vandals.
 Recognizing this I outlined the ``Konsensus'' system which was
 intended to work in combination with a usenet autoposter for one or
 more groups.  I have been involved in starting the autoposter system
-in the Danish newsgroup, where a given newsgroup is under surveillance
-by a daemon that looks at the email address in the ``From''-field and
-checks with a database whether that address is ``new'' (has posted
-within the last 3 months or so).  If not, an email is sent to that
-address with a canned message like the
+in the Danish newsgroups, where a given newsgroup is under
+surveillance by a daemon that looks at the email address in the
+``From''-field and checks with a database whether that address is
+``new'' (has posted within the last 3 months or so).  If not, an email
+is sent to that address with a canned message like the
 \myurl{http://www.usenet.dk/oss/dk.edb.programmering.perl/intro.txt}{``dk.edb.programmering.perl''
 message}.  The need for this message is due to the fact that the Perl
 group has many new Perl programmers since many Internet Service
@@ -82,7 +99,8 @@ Providers provide Perl as their CGI-scripting language.  This proved
 to be extremely efficient, since the regular posters \textit{knew}
 that the newcomers would be greeted with a welcoming post containing
 the information they needed, and efforts could be saved for dealing
-with more complicated issues.
+with more complicated issues, instead of writing long, elaborate
+replies to simple questions.
 
 Such a welcoming message suffers from exactly the same problem as a
 FAQ, namely that it requires regular attention in order to be as
@@ -107,48 +125,73 @@ question.
   could provide additional information to elaborate on the various
   items if the reader needed additional information.
   
-\item Each modification would be checked in to RCS, allowing any
-  reader to \textit{go back in time} to see what earlier answers held
-  instead of just having the latest edition which might not be 100
-  percent correct.  These editions would be labeled with the email
-  address of the latest editor.
+\item Each modification would be checked in to RCS (an archival system
+for source code common on Unix), allowing any reader to \textit{go
+back in time} to see what earlier answers held instead of just having
+the latest edition which might not be 100 percent correct, or
+deliberately vandalised by someone.  Each edition would be labeled
+with the email address of the person who edited this version.
   
 \item The web pages would be generated automatically whenever the
   underlying files were changed.
   
 \end{itemize}
 
-This were at the time where I was evaluating which language I should
-use for implementing Cactus (see \myvref{sec:cactus}) so I
-followed both the Java group and the Perl group carefully while doing
-so, which in particular prompted me to look for such software.  The
-problem is that in the same way that the Perl groups are bothered by
-new programmers which ask questions about webservers (and not about
-perl) and therefore belongs in another group, the Java groups are
-bothered by new programmers which ask questions about JavaScript which
-is considered HTML-programming which also belongs in another group.
+This was at the time when I was evaluating whether I should implement
+Cactus in Java or Perl (see \myvref{cha:cactus}) so I followed both
+the Java group and the Perl group carefully while doing so, and found
+that there was a dire need for a system which allowed the community of
+a given newsgroup to \textit{participate} in maintaining a FAQ for the
+group basically without a maintainer.
+
+The problem with the newsgroups were (and are still) that in the same
+way that the Perl groups are bothered by new programmers which ask
+questions about webservers (and not about Perl) and therefore belongs
+in another group, the Java groups are bothered by new programmers
+which ask questions about JavaScript which is considered
+HTML-programming which also belongs in another group.
 
 \myimage{gr/faqomatic-1}{The FAQ-O-Matic of the
   dk.edb.programmering.perl autorobot letter}{faqomatic-1}
 
 To make a long story short, I then discovered the
-\myurl{http://www.dartmouth.edu/\~{}jonh/ff-serve/cache/1.html}{FAQ-O-Matic}
+\myurl{http://www.dartmouth.edu/~jonh/ff-serve/cache/1.html}{FAQ-O-Matic}
 which does most of what I wanted the Konsensus system to do (except
 for the RCS storage with credit), and which runs as a set of CGI
 scripts.  I installed it under Linux, played with it for a while, and
 found it to be quite suitable for the job.  Combined with a commentary
-service as the one provided by ArsDigital, this would provide a
+service as the one provided by ArsDigita, this would provide a
 complete implementation of the facilities I needed for Konsensus.  I
 set up \myurl{http://unixsnedkeren.dk/dk.edb.programmering.perl}{a
-  FAQ-O-Matic for the Danish Perl group} (based on the existing
-automailer in April 2000 as a test -- see
-\myvref{fig:faqomatic-1}).  If this
-any-body-can-update-information concept work well, I will write a
+  FAQ-O-Matic for the Danish Perl group} in April 2000.  If the
+``any-body-can-update-information'' concept work well, I will write a
 script that updates the generated mail from the submitted entries,
 allowing this document to be entirely user-supported without the need
 of a maintainer.
 
-  
+I will then have most of the original functionality envisioned for
+Koncensus implemented simply by gluing together two existing
+OpenSource projects, instead of coding every thing from scratch.  This
+\textit{code reuse} idea is the way to build new functionality fast!
+
+%\mydetour{
+  The ideas of code reuse are very visible in Java, where the various
+  kind of portable data get more and more abstract.  Initially the
+  individual Java class could be used in applets, JAR-files function
+  as distribution packages (which work very well), beans allow for
+  simple, black boxes, etc.
+
+  The same ideas goes for XML and XSLT, even though that the
+  separation between code and data is much sharper.
+%  }
+
+
+
+My personal expectations is that with a bit of work to make this
+easily maintainable for numerous groups, this will grow to supply most
+of those Danish Usenet groups which needs it, with fully user
+maintained welcoming messages.
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "rapport"

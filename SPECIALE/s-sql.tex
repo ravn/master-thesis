@@ -74,8 +74,8 @@ table for presentation purposes); inside an application program it is
 common forthe application to work with a row at a time.
 
 
-\subsection{SQL - really a standard?}
-\label{sec:how-standardized-is-sql}
+%\section{SQL - really a standard?}
+%\label{sec:how-standardized-is-sql}
 
 SQL has evolved over the years.  The latest ANSI standard is SQL92,
 which is discussed in~\cite{understanding-the-new-sql}, and it
@@ -91,7 +91,7 @@ by the standard:
   date and handling date/time fields in the database is not standard.
   Additionally it is common for a vendor to have additional formats
   for timestamps which is incompatible with other vendors.
-\item \textsf{Stored procedures} -- the methods for extending the core
+\item \textbf{Stored procedures} -- the methods for extending the core
   SQL-engine varies wildly from vendor to vendor.
 \end{itemize}
 
@@ -139,7 +139,7 @@ introductory material for college students, based on his long-term
 real-life experience with the heavy duty web-service at
 \myurl{http://www.arsdigita.com}{ArsDigita}, which also serves
 \myurl{http://photo.net}{photo.net} where this SQL-introduction
-resides..
+resides.
 
 Greenspun start with the basics and moves to advanced
 topics in a steady pace, and is an excellent read.  There is a strong
@@ -166,24 +166,30 @@ SQL-database.  At least the following options exist:
 \begin{description}
 \item[ODBC] -- The Microsoft \myurl{http://www.microsoft.com/odbc}{``Open Database Connectivity''} which
   provided for the first database access standard on Windows.  Since
-  superceeded by OLE DB which does basically the same thing on Windows.
+  superceeded by OLE DB which does basically the same thing on
+  Windows.  Gives a standard way to submit a SQL-statement to a
+  database, and get the result back a row at a time.
 \item[JDBC] -- The ``\myurl{http://www.javasoft.com/jdbc}{JDBC Data
     Access API}'' does the same thing for Java-programs as ODBC do for
-  Windows-programs.
+  Windows-programs.  This is generally working very well for MySQL and
+  Oracle, where I have had flawless operation.
+  
 \item[DBI] -- The \myurl{http://theoryx5.uwinnipeg.ca/mod_perl/cpan-search?join=and;arrange=file;download=auto;stem=no;case=clike;site=ftp.funet.fi;age=\&request=cat\&catinfo=709}{``Perl Database Interface''}
   allows Perl programs to speak to Adabas, DBMaker, Fulcrum, Informix,
   Interbase, Oracle, Solid, Empress, Sybase, Illustra, Ovrimos,
-  PostgreSQL, QBase.
+  PostgreSQL, QBase.  Again the interface allows the programmer to
+  submit a SQL-statement, and get the result back a row at a time.
 \item[Python DB-API] -- A rapidly growing set of
   \myurl{http://www.python.org/topics/database/modules.html}{database
     interface modules for Python}.  Currently are Informix, Interbase,
-  MySQL, Oracle, Sybase and the generic ODBC interface supported.
-\item[Vendor dependant] -- Each vendor have their own way of moving
-  HTML response (and some XML) into the database itself, basically
-  allowing the database server to respond to webrequests, but these are
-  more often than not very slow.
-
+  MySQL, Oracle, Sybase and the generic ODBC interface supported.  I
+  am not familiar with Python but those who are consider it a good
+  programming language.
   
+\item[Vendor dependant] -- Each vendor have their own way of moving
+HTML response (and some XML) into the database itself, basically
+allowing the database server to respond to webrequests, but these are
+more often than not rather slow.
 \end{description}
 
 
@@ -196,9 +202,9 @@ SQL-database.  At least the following options exist:
 That question does not have a defintive answer.  It depends on the
 needs as well as the environment in which it needs to run, as well as
 the needed capabilities of the database.  If the implementation
-language and platform is fixed (like Perl on solaris, or visual C on
-Windows) the most important parameter is most likely driver support
-for the given databases.
+language and platform is fixed (like Perl on Solaris, or Visual C on
+Windows) the most important parameter is most likely \textit{driver
+support} for the given databases.
 
 For Windows development, it is important to look at ODBC and JDBC
 drivers, and their quality.  For other platforms there might be native

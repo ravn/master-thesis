@@ -30,8 +30,9 @@ increasing number of companies and OpenSource projects.
 
 
 \item[\myurl{http://www.uic.edu/orgs/tei/}{TEI}] -- Text Encoding
-  Initiative.  A DTD intended to be used with ``preparation and interchange of electronic texts for scholarly research, and to satisfy a broad range of
-uses by the language industries more generally.''
+Initiative.  A DTD intended to be used with ``preparation and
+interchange of electronic texts for scholarly research, and to satisfy
+a broad range of uses by the language industries more generally.''
 
 \item[\myurl{http://www.openebook.org/faq.htm}{eBook}] -- the eBook
   format is intended for ``Authors, editors, publishers and content
@@ -96,29 +97,29 @@ is a very pleasant feature.
   \begin{center}
     \begin{tabular}[tb]{|l|p{12cm}|}
 \hline\hline
-Format & Command \\
+Format & Conversion command from original (\$\(<\)) to destination (\$@)\\
 \hline
-  XHTML-1.0 & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/xhtml/docbook.xsl \$@\\
-  HTML-4.0 & java com.jclark.xsl.sax.Driver \$$<$
+  XHTML-1.0 & java com.jclark.xsl.sax.Driver \$\(<\) ../docbook/xhtml/docbook.xsl \$@\\
+  HTML-4.0 & java com.jclark.xsl.sax.Driver \$\(<\)
   ../docbook/html/docbook.xsl \$@ \\
 
-  XSL-FO & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/fo/docbook.xsl \$@ \\
-  RTF & jade -t rtf -d .../docbook/print/docbook.dsl .../jade/pubtext/xml.dcl \$$<$\\
-  MIF (Frame) & \\
-  {\TeX} & Use \texttt{jade} with the \texttt{-t tex} option.  Note
+  XSL-FO & java com.jclark.xsl.sax.Driver \$\(<\) ../docbook/fo/docbook.xsl \$@ \\
+  RTF & jade -t rtf -d .../docbook/print/docbook.dsl .../jade/pubtext/xml.dcl \$\(<\)\\
+  MIF (Frame) & jade -t mif ... \\
+  {\TeX} & jade -t tex ... Note
   that the special {\TeX}-dialect \texttt{jadetex} must be used to
   process this output.\\
   
-  PDF (from FO) & \texttt{tex '\&pdffotex' document.fo}  (Note:  This
+  PDF (from FO) & \texttt{tex '\&pdffotex' document.fo}  \\
+  & (Note:  This
   makes much prettier output than FOP)\\
   
-  PDF (from FO) & \texttt{java org.apache.fop.apps.CommandLine \$$<$
+  PDF (from FO) & \texttt{java org.apache.fop.apps.CommandLine \$\(<\)
   \$@}   \\
   
-  OThers? & \\
 \hline
     \end{tabular}
-    \caption{Output formats possible for a DocBook XML document}
+    \caption{Some of the output formats possible for a DocBook XML document}
     \label{tab:output-formats-possible-for-a-docbook-xml-document}
   \end{center}
 \end{table}
@@ -126,7 +127,7 @@ Format & Command \\
 Table \myvref{tab:output-formats-possible-for-a-docbook-xml-document}
 lists several of the possible formats which a DocBook document can be
 rendered to.  See \myvref{sec:xml-publishing} for a functioning set of
-Cactus filters implementing a DocBook publishing engine.  
+Cactus filters implementing a DocBook publishing engine.
 
 Most of these transformations are currently rather slow, currently
 making them unsuitable for ``on-the-fly'' rendering.  XSL-conversions
@@ -207,6 +208,62 @@ particular document conforms to
 
 
 \listinginput{1}{../sample/AMANDA-README.xml}
+
+
+\section{Making it as easy as possible for authors to write in DocBook}
+\label{sec:making-it-as-easy-as-possible-for-authors-to-write-in-docbook}
+
+The multitude of different programs necessary to convert documents to
+and from DocBook means that the author has to use several widely
+different tools in order to do the different tasks which a modern word
+processor like Microsoft Word have built in as standard.  Since the
+original idea behind recommending a *ML dialect for the original
+format of the documents, was to allow the author to write without
+worrying about how the document was to be presented, it would follow
+that spirit to allow the author to publish her works with as little
+work as possible.  This means automation of the various underlying
+processes for converting to HTML, RTF, PDF etc.
+
+This could be done quite easily with installing all the necessary
+programs on the authors computer, and providing a few scripts to call
+in order to do a given task, but still leaves the author to do these
+manually depending on the output format needed, and with the job to
+keep the software installation current and correct.   This means a lot
+of irrelevant maintainance, which the author could put to better use
+by writing instead.  
+
+Another solution in a networked environment which also is in
+compliance with the finding in
+\myvref{sec:the-user-should-use-familiar-tools-to-publish-documents},
+namely that publishing a document to the web, ought to be just as easy
+as printing a document to paper, would be that the author has access
+to a DocBook publishing engine, which accepts DocBook documents (in
+either SGML or XML) and uses the very best tools to produce the best
+output possible.  In order to be as usable as possible it must be as
+easy to use as possible, and in order to be available to the most
+authors it need to be usable without \textit{any} special software.
+Very little software can be considered available to everyone even
+today, but I do not find it unreasonable to expect that an author
+using a computer has a browser installed and has access to email.
+
+A good solution for such an author would be a system, where the
+document could be submitted by email and converted to many formats,
+where the converted result could be retreived with a browser from a
+web site, without the author having to worry at all about the
+conversion process.  Such a system should be managed centrally and be
+easily extendable and customizable, in order make it easily
+maintainable.
+
+The sample system for this thesis -- named \textit{Cactus} (see
+\myvref{cha:cactus}) -- does exactly this, and is generic enough to be
+usable for a lot of other purposes depending on the actual
+configuration.
+
+That alone does not make the system generic enough to make it work
+well in a networked environent, but building upon the framework of
+a modern SQL database provides a lot more flexibility than just
+working on a flat file system.   For this reason Cactus was developed
+to run on top of a MySQL relational database.
 
 %%% Local Variables: 
 %%% mode: latex

@@ -174,7 +174,8 @@ consistently marking their documents up, resulting in suboptimal
 documents.  This was because they were doing physical markup instead
 of logical markup.
 
-\mydetour{ Modern word processors have for a long time been constructed around the
+%\mydetour{
+  Modern word processors have for a long time been constructed around the
   ``What you see is what you get'' paradigm, where a great deal of
   effort has been spent on allowing the user to see exactly on screen
   what would be printed on paper.  Unfortunately the limited
@@ -184,7 +185,8 @@ of logical markup.
   perhaps even several pages. Microsoft Word provides a draft mode
   where just the text is shown without markup; WordPerfect provides a
   ``Reveal Codes'' mode where the user can edit the text along with
-  the tags.  }
+  the tags.
+  %}
   
 Recent versions of Word and WordPerfect have had styles built in,
 where the user could specify ``heading'' and similar categories for
@@ -222,16 +224,18 @@ distinct style.  The publisher may want to turn the book into webpages
 or a CD-ROM, or into a Braille version for blind persons.  It might
 even be read aloud by a computer.
 
-\mydetour{ The publisher ``\myurl{http://www.ora.com}{O'Reilly and
+%\mydetour{
+  The publisher ``\myurl{http://www.ora.com}{O'Reilly and
 associates}'' is well-renowned for providing high quality reference
 books, and have for quite some time had their authors write in SGML.
 A very visible benefit of this, is that creating indexed HTML-editions
 of their books on CD-ROM is very easy since it basically is just a
 matter of applying a different style sheet to the documents in
 question.  Recently they have made
-\myurl{http://www.oreilly.com/people/staff/crism/dsssl/orastyle/}{theirDSSSL
-scripts for the purpose available on the net}, allowing others to do
-the same.  }
+\myurl{http://www.oreilly.com/people/staff/crism/dsssl/orastyle/}{their
+DSSSL scripts for the purpose available on the net}, allowing others
+to do the same.
+%}
 
 It should not bother the author during the writing process how the
 finished document will look, as long as she marks up the document
@@ -322,7 +326,7 @@ XML was as HTML built on SGML, but with a much stricter syntax than
 HTML and a lot less facilities than in SGML.  XML is a new standard
 even by Internet standards - it was made a W3C recommandation in 1998,
 and the accompanying XSLT and XPath were made W3C recommendations in
-November 1999.
+November 1999.  
 
 % \textsf{What was the design goals}
 
@@ -342,7 +346,8 @@ than a HTML parser.
   DTD to conform to, and must only be well-formed.  This allows the
   use of XML as a dynamic data description language where the input is
   unknown beforehand.  The DTD can be applied when the need arise to
-  validate the input.
+  validate the input.  A well written DTD can be used both for the
+  SGML and XML versions of a given document, without change.
 
 \item
   XML is based on Unicode, allowing for easy use of non-ASCII
@@ -368,25 +373,24 @@ separated data file used in the database world).
 
 \section{XHTML - XML compliant HTML}
 
-A big problem with XML in general is that it cannot be viewed by
+A big problem with XML in general is that it cannot be presented by
 anything the majority of users have today.  It is possible, however,
 to specify a form of XML called
 \myurl{http://www.w3.org/TR/xhtml1/}{XHTML} which bridges the gap
 between the two worlds of XML and HTML.  Documents corresponding to a
-XHTML DTD are parsable by HTML-4.0 compliant browsers if a few, simple
-guidelines are followed:
+XHTML DTD can be presented by HTML-4.0 compliant browsers.  The
+differences from HTML-4.0 are:
 
 \begin{itemize}
 \item Elements (the HTML tags) must be closed correctly.
   
-\item Attribute values must be quoted
-\item Element names and attributes must be given in lower case
+\item Attribute values must be quoted.
+\item Element names and attributes must be given in lower case.
   
 \item Empty elements must either have an end tag, or the start tag
-  must end with ``/$>$''.  I.e. a horizontal line which is written as
-  \tag{hr} in HTML, must be written as
-  ``$<$hr /$>$'', where the space is important to make this acceptable
-  to HTML-4.0 parsers.
+must end with ``/$>$''.  I.e. a horizontal line which is written as
+\tag{hr} in HTML, must be written as ``$<$hr /$>$'', where the space
+is important to make this acceptable to HTML-4.0 parsers.
 %\item \textsf{More stuff... Netvwork lag}
 \end{itemize}
 
@@ -399,7 +403,7 @@ HTML: <hr noshade>
 XML:  <hr noshade="" />
 \end{verbatim}
 
-This is a very important technology since it allows the generation of
+This is a very important XML-dialect since it allows the generation of
 viewable web pages with XML-tools only, and allow such a XHTML file to
 be \textit{read} for further processing by XML-tools.
 
@@ -448,64 +452,62 @@ already done such work.
 
 \section{How can a *ML document be viewed?}
 
-In order to be rendered into a view, a \textit{style sheet} must be
-applied to the document (unless it is an XHTML document).  Style
-sheets convert the tags in the document to a given output format
-
-
+Users do very rarely want to view XML-documents directly.  In order to
+render an XML document into something viewable, a \textit{style sheet}
+must be applied to the document (unless it already is an XHTML document).
+Style sheets convert the tags in the document to a given output
+format, where the W3C already has defined XML and XSL-FO as targets.
 
 %\textsf{GRAPH DEPICTING STYLE SHEETS BEING APPLIED FOR DIFFERENT
 %  OUTPUT FORMATS}
 
-
-
-
-
-Commercial products usually have a viewer which can apply the style
-sheet directly%
+Commercial products usually have a viewer which can apply some style
+sheets directly%
 %\texttt{examples? Panorama? Framemaker+SGML}
 , but are due to licensing costs and supported user base rarely an
 option for general for documents targeting end-users, and I have not
-tried any of them.  \myvref{tab:distribution-formats} discusses the
-current \textit{de facto} document formats on the Internet.
+tried any of them.
+
+% \myvref{tab:distribution-formats} discusses the
+% current \textit{de facto} document formats on the Internet.
 
 
-\begin{table}[htbp]
-  \begin{center}
-    \begin{tabular}{|l|p{10cm}|}
-      \hline\hline
-      Format & \\
-      \hline
+% \begin{table}[htbp]
+%   \begin{center}
+%     \begin{tabular}{|l|p{10cm}|}
+%       \hline\hline
+%       Format & \\
+%       \hline
 
-      HTML & Browsers are available for any modern platform.  HTML-4.0
-      compliant browsers include Netscape Navigator 4 and Internet Explorer
-      4 \\ 
+%       HTML & Browsers are available for any modern platform.  HTML-4.0
+%       compliant browsers include Netscape Navigator 4 and Internet Explorer
+%       4 \\ 
       
-      PDF & Adobe Acrobat Reader is available for most mainstream
-      platforms from \myurl{Adobe}{http://www.adobe.com}.  The Adobe
-      Acrobat Viewer is available for any platform with Java.  The
-      Open Source project
-      \myurl{http://www.ghostscript.com}{Ghostscript} is available for
-      very many platforms. \\
+%       PDF & Adobe Acrobat Reader is available for most mainstream
+%       platforms from \myurl{Adobe}{http://www.adobe.com}.  The Adobe
+%       Acrobat Viewer is available for any platform with Java.  The
+%       Open Source project
+%       \myurl{http://www.ghostscript.com}{Ghostscript} is available for
+%       very many platforms. \\
       
-      Microsoft Word & The \texttt{doc} and \texttt{rtf} file formats
-      are widely used, but needs a full word processor to format
-      properly.  Anything else but Microsoft Word gives inferior
-      results, and Word only runs on Windows.
-      \\
-      \texttt{tex} and \texttt{dvi}& These require some part of the
-      {\TeX} system to be installed on the recipients computer.  This
-      is rare for non-academic people.\\
-      PostScript & This is perhaps the most generic representation of
-      a printed document and would fit well for most purposes.
-      Unfortunately only few people have a PostScript interpreter
-      installed on their computer\\
-      \hline
-    \end{tabular}
-    \caption{Frequently encountered document distribution formats}
-    \label{tab:distribution-formats}
-  \end{center}
-\end{table}
+%       Microsoft Word & The \texttt{doc} and \texttt{rtf} file formats
+%       are widely used, but needs a full word processor to format
+%       properly.  Anything else but Microsoft Word gives inferior
+%       results, and Word only runs on Windows.
+%       \\
+%       \texttt{tex} and \texttt{dvi}& These require some part of the
+%       {\TeX} system to be installed on the recipients computer.  This
+%       is rare for non-academic people.\\
+%       PostScript & This is perhaps the most generic representation of
+%       a printed document and would fit well for most purposes.
+%       Unfortunately only few people have a PostScript interpreter
+%       installed on their computer\\
+%       \hline
+%     \end{tabular}
+%     \caption{Frequently encountered document distribution formats}
+%     \label{tab:distribution-formats}
+%   \end{center}
+% \end{table}
 
 The most portable way for web users is to convert the XML to HTML
 server side, and then provide for an alternative rendering into PDF if
@@ -516,18 +518,24 @@ which is interesting because these are more mature as they have been
 used for a longer time.  The browsers are not yet capable of doing
 these transformation themselves, but upcoming versions show promise:
 
+The Microsoft Internet Explorer will most likely be the first full
+browser to have XSLT built in.  Version 5.0 can display an XML
+document as a tree of tags which can be navigated, but without full
+XSL capabilities.
+
 The Microsoft Internet Explorer 5.5 (not yet available at the time of
 writing) will be able to transform XML documents with XSL-style sheets
-internally complying with the W3C recommendation.  The previous
-version of IE was available on Windows, Solaris and HPUX.
+internally, complying -- hopefully -- with the W3C recommendation.
+The previous version of IE was available on Windows, Solaris and HPUX.
 
-The Mozilla browser in its pending release as Netscape Navigator 5.0
-will not be able to apply XSL-style sheets, but only CSS cascading
-style sheets.  There are however forces working for having full XML
-with XSLT support in Netscape 6.0 (which is what the Mozilla release
-was renamed to after AOL merged with Time-Warner).
+The Mozilla browser in its pending release as Netscape Navigator 6.0
+is as of the Milestone 15 build not capable of applying XSLT to XML
+documents, but there are forces working for building it in in order to
+have full XML with XSLT support in the released version of Netscape
+6.0.
 
-For the immediate future web publishing in XML should be done server side.
+For the immediate future web publishing in XML should be done server
+side, with an XSLT rendering engine like Cocoon.
 
 
 % \subsection{SGML style sheets}
@@ -545,7 +553,15 @@ For the immediate future web publishing in XML should be done server side.
 %
 % \textsf{Show a sample stylesheet}
 
-\subsection{XML style sheets and Cocoon}
+\section{Cocoon and XSQL - tying XML, SQL and XSLT together }
+
+\mycitation{Once you've understood what the XSQL Page Processor
+  running inside the
+  XSQL Servlet does, you'll realize that Oracle XSQL Pages is really
+  just a very thin layer of convenience functionality allowing you to
+  leverage the tremendous flexibility and power of SQL, XML, and XSLT
+  to
+  really do the ``heavy lifting''.}{Steve Muench}{\myurl{http://technet.oracle.com//tech/xml/xsql_servlet/}{http://technet.oracle.com//tech/xml/xsql_servlet/}}
 
 XSL - the XML style sheets - are written in an XML-dialect, where the
 tags in the name space ``xsl:'' describe what is to be done with the
@@ -555,7 +571,7 @@ sorting of subtrees, and several programming constructions like
 existing tags can be altered, and it should be sufficient for most
 tasks.  Templates are used to specify \textit{when} and \textit{where}
 a given action should be taken.   XSLT refers to the \textit{process}
-of applying an XSL.
+of applying an XSL to a XML tree.
 
 
 % {\small
@@ -569,7 +585,7 @@ The style sheet listed in \myvref{fig:listing-x-outline.xsl} -- taken from
 the DocBook distribution -- creates an outline of a DocBook document
 by looking for headline tags, and make a tree of them. Line breaks
 have been introduced for readability.  See
-\myvref{fig:outline-xsl-1} for a sample.
+\myvref{fig:outline-xsl-1} for a sample run.
 
 \begin{figure}[tbp]
   \begin{center}
@@ -580,11 +596,18 @@ have been introduced for readability.  See
   \end{center}
 \end{figure}
 
-As discussed previously the XSLT process should happen in the web
-server, and only the resulting HTML or XHTML-pages should be sent to
-the browser.  Few OpenSource projects at the time strive to implement
-such a facility in web servers, because the standards are so new.  I
-decided to evaluate the
+As discussed previously the XSLT process is currently only viable to
+use on the web server, and just the resulting HTML or XHTML-pages
+should be sent to the browser.  Few OpenSource projects at the time
+strive to implement such a facility in web servers, because the
+standards are so new.
+
+One of the most exciting things about this new technology, is that you
+may have specialized processors in an XML-data pathway.  The
+XSLT-processors have already been mentioned, but others are beginning
+to appear.
+
+I decided to evaluate the
 \myurl{http://xml.apache.org/cocoon/index.html}{Cocoon project} which
 is an Apache project, but has it as their goal to be usable in any
 servlet-capable web server.  To the hosting webserver Cocoon looks
@@ -598,22 +621,37 @@ the following
   established, a statement executed, and the result returned as a
   user-specificed XML-tree, suitable for further processing.
   
+\item[XSQL] -- A very similar project to SQLProcessor from Oracle,
+  which is geared towards dealing with Oracle databases, both with
+  servlet-technology but also as stand-alone, where Oracle have
+  provided tools to enter XML-tables (preferrably in the format of the
+  output from another XSQL-query) into a similar Oracle database, thus
+  allowing Oracle to be the end-point of a series of XML-operations.
+  This is much better than generating SQL-statements for each item
+  individually, since the technicalities with optimizing batch-job
+  submittal, doing \texttt{commit} regularily, etc. are dealt with
+  automatically.  The process is purely data driven.   XSQL was
+  released March 2000.
+
 \item Perform transformations based on the browsers identification
   string.
 \end{description}
 
 A site-wide layout is easy to implement, just be applying a standard
-style-sheet on the root element, for each and every document.  I did
-this for the Cactus presenters and it is very easy to maintain.
+style-sheet on the root element, for each and every document, and
+ensure that all style-sheets used include the global site
+configuration sheet.  I did this for the Cactus presenters and it is
+very easy to maintain.
 
 My general feeling with working with the XSLT technology (while
 writing presenters for Cactus in Cocoon) have been that the basic
 approach of keeping the information to go before, in and after any
-given template is a very efficient way to do this, and requires a line
-of thought similar to programming in a functional language.  See lines
+given template is a very efficient way to do this (all the relevant
+information is placed in a single place), and requires a line of
+thought similar to programming in a functional language.  See lines
 14--20 in \myvref{fig:listing-x-outline.xsl} where the \textit{root
-tag} (named ``/'') is replaced with a \tag{html} and a \tag{body} tag
-which then contains the templates contained within the root tag.
+  tag} (named ``/'') is replaced with a \tag{html} and a \tag{body}
+tag which then contains the templates contained within the root tag.
 
 Since the DocBook reference is very vague on style sheets (the book
 went to press before the XSLT recommendation was finalized) the
@@ -646,21 +684,25 @@ Internet has been a great help.
 %   \end{center}
 % \end{table}
 
+When choosing a XSLT-processor it is either C-based or a Java-based.
+A frequent concern about Java programs is whether it is fast enough.
 During the initial evaluation of Cocoon it was found that Java tools
 are quick ``enough'' for casual use, even though they are not yet
-tuned for optimal performance.
-%Additionally
-
+tuned for optimal performance.  The Oracle XML parser, and XSTL tools
+(as of May 2000) are available in both a C++ and a Java version.
+Since the operations are purely datadriven it should be irrelevant
+which language the conversion tools were written in.
 
 Even so, implementations in C should only be considered by designers
-if Java clearly cannot do the job.  Some of the advantages of Java
-over C in program development are:
+if the Java solution is clearly too inefficient for the job in
+question.  Some of the advantages of Java over C in program
+development are:
 
 \begin{itemize}
-\item Very hard to do pointer access
-\item A large set of tested libries
+\item Very hard to do pointer access.
+\item A large set of tested libraries.
 \item ``Write once, run anywhere'' -- no recompilation is needed when
-  moving to another platform
+  moving to another platform, and a simple distribution file format.
 \end{itemize}
 
 \begin{figure}[tbp]
@@ -687,8 +729,8 @@ When the Cocoon project stabilizes they will have a
 high end XSLT-engine embedded as a servlet in Apache, which makes this
 a project to watch.  The technology is at the time of this writing
 still under heavy development, but very promising.  I have used Cocoon
-to create \textit{presenters} in the Cactus sample implementation
-described in \myvref{sec:cactus-implementation}.
+to create \textit{presenters} in the Cactus sample implementation.
+%described in \myvref{sec:cactus-implementation}. 
 
 A sample set of XML and XSL files\footnote{These files select and
   render all entries from the \texttt{incoming}-table.  Since that
@@ -965,9 +1007,16 @@ their view of the presented documents.   Should frames be used, should
 it be in text mode, should it be friendlier to blind people, should
 large or small images be used etc.
 
-I have primarily been looking at XML-based dynamic renderings, which
-at the moment is still in the development phase -- the software has
-not stabilized yet in order to be tuned into maximum performance.   
+For this thesis I have primarily been looking at XML-based dynamic
+renderings, which at the moment is still in the development phase --
+the software has not stabilized yet in order to be tuned into maximum
+performance.
+
+
+
+
+
+
 
 
 % \framepage{15cm}{
@@ -989,6 +1038,9 @@ not stabilized yet in order to be tuned into maximum performance.
 % }
 
 % $Log$
+% Revision 1.18  2000/05/07 16:17:45  ravn
+% worked all sunday
+%
 % Revision 1.17  2000/05/06 12:20:19  ravn
 % Editing after 14 days at home...
 %

@@ -83,12 +83,6 @@ Jim Melton and Alan~R. Simon.
 \newblock A good introduction and reference to SQL-92. Defines the requirements
   for the various levels of SQL 92 compliancy .
 
-\bibitem[Sed90]{sedgewick-algorithms-in-c}
-Robert Sedgewick.
-\newblock {\em Algorithms in C}.
-\newblock Addison-Wesley, 1990.
-\newblock ISBN 0-201-51425-7.
-
 \bibitem[Sew89]{sewell:weaving-a-program}
 Wayne Sewel.
 \newblock {\em Weaving a Program -- Literate Programming in Web}, volume ISBN:

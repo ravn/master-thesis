@@ -23,6 +23,11 @@ it deals with both basic things and advanced stuff, where the
 traditional LaTeX-books thend to concentrate on just one of these.  I
 found third edition to be substantially better than the second edition.
 
+% They recommend the \texttt{variouref} package to get pagenumbers on
+% your references to figures, tables etc. but that packages does not
+% work well with the hyperref package used to generate links in the
+% PDF-version.  
+
 
 \subsection{Creating PDF files}
 \label{sec:report-writing-creating-pdf-files}
@@ -40,7 +45,7 @@ PDF-files from a \LaTeX-file
   look good as a PDF-file at other resolutions.   Try
   \texttt{\texcommand{usepackage}\{times\}} or
   \texttt{\texcommand{usepackage}\{bookman\}} to see if that helps.
-\item Use ``\unixcommand{pdflatex}'' to generate the PDF-file
+\item Use \unixcommand{pdflatex} to generate the PDF-file
   directly.  Included graphics may have to be converted to
   \texttt{png} instead of \texttt{eps}.  The PDF file generated from
   pdflatex is at least as good as the one generated with
@@ -71,12 +76,13 @@ much better with printing the PDF-file with
 
 Screen dumps have been captured with
 \myurl{http://www.freshmeat.net/appindex/1998/07/28/901622941.html}{xv}
-(which is now 6 years old and still unbeat) and saved as \texttt{tiff}
-files.  These were then converted to \texttt{png} with
-\unixcommand{pnmtopng} and to \texttt{eps} with the
+(which is now 6 years old and still the best general image tool on
+Unix) and saved as \texttt{tiff} files.  These were then converted to
+\texttt{png} with \unixcommand{pnmtopng} and to \texttt{eps} with the
+\texttt{pnmtops} program in the 
 \myurl{http://www.freshmeat.net/appindex/1999/06/24/930238715.html}{NetPBM
   package}, which has worked flawlessly.  It is important to remember
-to use \texttt{pnmtops -noturn rle} to get the correct orientation and
+to use \texttt{pnmtops -noturn -rle} to get the correct orientation and
 a reasonable compression (25 files shrank from 52 Mb to 9 Mb total).
 
 The \texcommand{includegraphic} (from the \texttt{graphicx} package)
@@ -99,10 +105,10 @@ Companion~\cite{goosens-rahtz-mittelbach:the-latex-graphics-companion}.
 % \end{verbatim} %$
 
 I have had ``\texttt{xdvi}'' active while writing, and if the command
-``\texttt{latex mydocument \&\& killall -USR1 xdvi}'' is used, xdvi
-will automatically update after a successful compilation of the
-TeX-document.  That is very nice when your editing have happened
-within a single physical page.
+``\texttt{latex mydocument \&\& killall -USR1 xdvi}'' is used to
+format the document, xdvi will automatically update after a successful
+compilation without any further human interaction.  That is very nice
+when your editing have happened within a single physical page.
 
 For presentation purposes, the Danish TeX users group has a
 \myurl{http://sunsite.auc.dk/dk-tug/presentation.html}{description
@@ -169,7 +175,8 @@ additional modules.  The standard distribution of Emacs provides:
   nsgml, Java and other tools where you may encounter errors in your
   source.  \texttt{Ctrl-x `} makes Emacs go to the line with the
   error.
-  
+\item[Grep] -- The \texttt{M-x grep} and \texttt{M-x grep-find}
+  commands are excellent for locating strings in your documents.
 \end{description}
 
 Additionally I have installed:
@@ -179,14 +186,14 @@ Additionally I have installed:
 \item[AUC-TeX] -- provides a complete IDE for writing {\LaTeX}
   documents, including keyboard shortcuts, a debugger, and intelligent
   commands depending on the state of the files. Highly recommended.
+  
 \item[psgmls] -- provides easy entering of tags, and parses DTD's to
-  verify tags, and describe which tags are open at a given cursor
-  location.  Good for writing XML and SGML directly.
-  \myurl{http://www.lysator.liu.se/projects/about_psgml.html}{The
-    psgml homepage}.  I have considered writing a set of AUC-TeX
-  compatible keybindings for DocBook in SGML-mode.
+  verify tags, and describe which tags are open as well as valid at a
+  given cursor location.  Good for writing XML and SGML directly.  See
+  \myurl{http://www.lysator.liu.se/projects/about_psgml.html}{the
+    psgml homepage} for details.  I have considered writing a set of
+  AUC-TeX compatible keybindings for DocBook in SGML-mode.
 \end{description}
-
 
 
 \subsection{Making them all work together}
@@ -202,8 +209,6 @@ they step on each others toes.  That could normally be circumvented:
   $which is not suitable for prose$.  By typing it as \texttt{\$
     \${}Id\$ \$} it is possible to avoid this. The dollar-space-dollar
   renders the space in math mode and switches back to normal text.
-
-
 \end{description}
 
 %%% Local Variables: 

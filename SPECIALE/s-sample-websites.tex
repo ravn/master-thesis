@@ -483,14 +483,14 @@ found this way.
 % basic search facilities it allows you to download the BibTeX entry for
 % the books and articles you find.
 
-\section{Home banking -- sample bank: F{\ae}llesbanken}
+\section{Home banking -- sample bank: F{\ae}lleskassen}
 \label{sec:faellesbanken}
 
 % NB...  fejlstavning i filnavn...
-\myimage{gr/faelleskasssen-1}{Web banking in F{\ae}llesbanken}{faelleskassen-1}
+\myimage{gr/faelleskasssen-1}{Web banking in F{\ae}lleskassen}{faelleskassen-1}
 
 \myurl{http://www.w57.dk}{Jan Bertelsen} reports that the Home Banking
-facility provided by the Danish bank F{\ae}llesbanken is Java based,
+facility provided by the Danish bank F{\ae}lleskassen is Java based,
 allowing him to use it with his Linux computer at home (see
 \myvref{fig:faelleskassen-1}).  His experience is basically that it
 works well but is slow, especially when cryptography is used.
@@ -589,9 +589,13 @@ The users were expected to
   update would normally take less than 30 seconds.
 \end{enumerate}
 
-Yggdrasil in itself consisted of about 10 pages of perl code.  The
-search facility was provided by an \myurl{http://htdig.org}{ht://dig
-installation}, which rebuilt its database every night.
+Yggdrasil in itself consisted of about 10 pages of perl code, most of
+which dealt with generating lists in HTML (most, if not all, of the
+list generating code would today be dealt with by generating a tree
+structure of the navigation hierachy in XML which would then rendered by
+a standard XML-transformation tool).  The search facility was provided
+by an \myurl{http://htdig.org}{ht://dig installation}, which rebuilt
+its database every night.
 
 
 This worked very well in the beginning but had a fatal blow when --

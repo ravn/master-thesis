@@ -6,7 +6,7 @@ integrating these tools in a normal working environment while
 requiring very little of the end-user, both in terms of software but
 also the effort in learning new programs and ways to work.
 
-\subsection*{Implementation languages}
+\subsection*{Freedom when choosing implementation languages}
 
 Even though I have not implemented Cactus fully, I am very satisfied
 with it, especially regarding the ease with which an application
@@ -16,17 +16,17 @@ to develop and test filters outside of Cactus, and first moving inside
 when the individual parts of the filter have been tested and tried.
 
 The MySQL support in both Perl, PHP3 and Java have allowed me to
-choose freely amount all three platforms when choosing a language for
-a given task, giving a freedom of how to do things that has been very,
-very nice, as well as giving a lot of opportunities, especially with
-Java.
+choose without restriction amount all three platforms when choosing a
+language for a given task, giving a freedom of how to do things that
+has been very, very nice, as well as giving a lot of opportunities,
+especially with Java.
 
 The Cocoon technology allowing on-the-fly rendering of XML-documents
 to HTML has been fun to work with -- especially with the ability to do
 SQL-requests directly in the XML-file -- as well as being an
 intellectual challenge.  The XML and XSTL concepts are easy to work
 with, but I found the XPath language for doing expressions extremely
-nasty and \textit{very} hard to learn properly.
+cumbersome and \textit{very} hard to learn properly.
 
 
 
@@ -36,7 +36,7 @@ The impact of building Cactus around a database has truly been
 \textit{incredible}, and has been the area in which I have learned the
 most, and even though the learning curve has been much steeper than
 anticipated, this is much overshadowed by the ease of which new things
-can be implemented -- the search engine took about 5 minutes -- and
+can be implemented -- the basic search engine took about 5 minutes -- and
 the amount of tedious administration which is handled transparently by
 the database.  Several programs running on multiple computers can do
 work without having to implement elaborate synchronization mechanisms,
@@ -53,8 +53,23 @@ limitation that I have had to work around, namely the lack of
 sub-selects which means that derivers and data gatherers needs to
 implement the extract, do work, error check, and reinsert result
 themselves making them unnecessarily complex, which should properly be
-placed in the database.   A more suitable database for this purpose
-should be found, and the scripts adapted to work with it.
+placed in the database.  Additionally the treatment of a boolean set
+was buggy. A more suitable database for this purpose should be found,
+and the scripts adapted to work with it.
+
+\subsection*{An inefficient way of working}
+
+People at MIP work -- due to historical reasons -- primarily with
+robots, and very little with the thoughts described in the preceeding
+chapters, since this is a thesis deliberately chosen as a personal
+interest of mine.  As a direct consequence I have not had an academic
+network with which to discuss the ideas and ``play ball'', which has
+resulted in some dead ends, and a large amount of labour since I have
+had to discover and learn about XML, XSLT, PHP3 and \textit{all} of
+the other tools on my own.  This project would have worked better for
+a team of two or three.
+
+
 
 
 \subsection*{The future of Cactus}
@@ -65,18 +80,21 @@ and improve on it.  This I didn't do, primarily because it took much
 longer than expected to learn SQL well enough to have things work.  I
 do not expect the current installation to live long on MIP, but I
 intend to continue development into a more full-fledged software
-package, where other developers can help.
+package, where other developers can help.  The official homepage of
+the Cactus project is
+\myurl{http://cactus.sourceforge.net}{cactus.sourceforge.net}.
 
 It was demonstrated in \myvref{sec:xml-publishing} that Cactus can be
 used to automatically generate web documents in many formats from a
 single well-formed source file written in XML, which was sent to the
-system as an email.   The difference in abstraction level is truly
-incredible!
+system as an email.   The difference in abstraction level for the
+author is very noticable.
 
-It is my strong belief that this is the way that web publishing should
-work -- trouble-free to publish, and trouble-free to view -- for both
-XML based documents but also more common word processor formats.  I hope
-that my work can help in achieving that goal.
+It is my strong belief that \textit{this} is the way that web
+publishing should work -- trouble-free to publish, and trouble-free to
+view -- for both XML based documents but also more common word
+processor formats.  I hope that my work can help in achieving that
+goal.
 
 
 
@@ -84,7 +102,8 @@ that my work can help in achieving that goal.
 \begin{center}
 
 \vspace{2cm}
-Odense 2000-05-07
+
+{\AA}rhus, \today
 
 \vspace{2cm}
 Thorbj{\o}rn Ravn Andersen
