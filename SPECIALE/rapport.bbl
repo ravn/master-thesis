@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -17,6 +17,12 @@ Martin Damsbo.
 \newblock http://www.mip.sdu.dk/~mez/waco, 1999.
 \newblock MIP Intranet.
 
+\bibitem[Dybvig(1996)]{Dybvig:1996:SPL}
+R.~Kent Dybvig.
+\newblock {\em The {Scheme} programming language: {ANSI Scheme}}.
+\newblock Pren{\-}tice-Hall PTR, Upper Saddle River, NJ 07458, USA, second
+  edition, 1996.
+
 \bibitem[Goosens et~al.(1997)Goosens, Rahtz, and
   Mittelbach]{the-latex-graphics-companion}
 Michel Goosens, Sebastian Rahtz, and Frank Mittelbach.
@@ -32,8 +38,8 @@ Phil Greenspun.
 \newblock http://photo.net/sql/, 1998.
 \newblock Excellent introductory text to SQL.
 
-\bibitem[Hofstaedter(1979)]{goedelescherbach}
-Douglas Hofstaedter.
+\bibitem[Hofstadter(1979)]{goedelescherbach}
+Douglas Hofstadter.
 \newblock {\em G{\"o}del, Escher, Bach - an Eternal Golden Braid}, volume
   ISBN:??
 \newblock ??, 1979.

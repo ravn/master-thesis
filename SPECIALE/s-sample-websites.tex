@@ -40,21 +40,37 @@ today: 1
 ever: 278137148
 \end{verbatim}
 
+Slashdot provide the ``magnet content'' Greenspun talks about.
+Stories are carefully selected, and the user may even select just a
+few categories in her personal preferences.
+
+\textit{All} pages are dynamically generated.  The discussion forums for
+any story is active for a reasonable time, where anybody can comment
+on any other comment, and then ``frozen'' when
+the story is archived.  If a user at a later date wishes to see the
+story with the discussion, it is retreived from the backup database.
+
+The ``Ask Slashdot'' feature is a direct consequence of the fact that
+Slashdot is targeting power computer users.  By allowing carefully
+selected questions to a highly visible spot, the original inquirer is
+usually able to get a very qualified answer.  The question along with
+all the answers are stored in the same way as a story.
 
 
 \section{Valueclick.com}
 \framepage{15cm}{
+  
+  Banner provider.  Check their online specs. Interview Ask for
+  details, about how the NT-cluster was replaced with a small Linuxbox
+  with MySQL and a squid in http-accelleration mode.  Explain the
+  problems with having fat processes serving slow modems.  }
 
-Banner provider.  Interview Ask for details, about how the NT-cluster
-was replaced with a small Linuxbox with MySQL and a squid in
-http-accelleration mode.  Explain the problems with having fat
-processes serving slow modems.
-}
-\section{Politiken}
-\framepage{15cm}{
 
-Talk with Lars.  Politiken genrates their pages on the fly.
-}
+% \section{Politiken}
+% \framepage{15cm}{
+
+% Talk with Lars.  Politiken genrates their pages on the fly.
+% }
 
 \section{Amazon - an Internet bookstore}
 \label{sec:amazon-an-internet-bookstore}
@@ -88,7 +104,12 @@ remembers your credit card information, allowing for their patented
 ``One-click-purchase'' technology).  What makes the Amazon web page
 truly better that a printed catalogue is that the users are encouraged
 to submit feedback, and the information Amazon collects from online
-sales.  These features are important for Amazon:
+sales to provide information to potential customers about other books
+that might interest them, because they interested other customers
+which bought the book they are looking at now.
+
+These features are distinct for a page for a purchasable item at
+Amazon:
 
 \begin{itemize}
 \item \textbf{Average customer rating} - this is the essence of all
@@ -97,8 +118,9 @@ sales.  These features are important for Amazon:
   reviews of the books, all of which Amazon then places prominently on
   the page, with due credit to the individual author.   Recently a
   ``Was this review helpful to you?'' button was added to each review,
-  and the result of each poll is shown along with the review, giving
-  the content more value.
+  and the result of each poll is shown along with the review, allowing
+  a customer to rapidly determine how to rate the review.
+
 \item \textbf{Similar books} - if a previous buyer bought other books
   along with this one, they might be interesting to this person too.
   Links are presented to those books, as well as to the general
@@ -110,18 +132,53 @@ sales.  These features are important for Amazon:
   Personally I have never looked in vain at Amazon for English books.
 \end{itemize}
 
-Amazon explicitely invites those who read the page to review it, with
-special treatment for the author and the publisher.  \textsf{As
-  Greenspun observes, then this is the most efficient material}.  At
-the time of writing, this book has 9 reviews at \textsf{amazon.co.uk},
-but 198 at the mother site at \textsf{amazon.com}.  The corresponding
-HTML-pages are 22 kb and 550 kb respectively, which gives an an impressive
-\textsf{Greenspun factor} (setting the UK-version to be 100\%
-\textsf{??-provider}) of 25.
+Amazon explicitely invites those who read the page to review the book
+if they have read it, with special treatment for the author and the
+publisher.  \textsf{As Greenspun observes, then this is the most
+  efficient material}.  At the time of writing, this book has 9
+reviews at \textsf{amazon.co.uk}, but 198 at the mother site at
+\textsf{amazon.com}.  The corresponding HTML-pages are 22 kb and 550
+kb respectively, which gives an an impressive \textsf{Greenspun
+  factor} (setting the UK-version to be 100\% \textsf{??-provider}) of
+25.
 
-Conclusion:  The Amazon family of sites are very good, and do what
-they can to improve with the help of visitors.  Amazon have been able
-to keep their leader status in the virtual bookshop niche, by provide excellent
+Amazon uses very aggressive marketing, which has caused it to be a
+well-known brand name in just a few years.  By giving money to those
+who link to their pages, as well as pay search engines to have links
+to the Amazon site show up at the top in just about every search, they
+have managed to be just about the only Internet bookstore known to
+most people.  In section~vref{\textsf{??}} I discuss why this approach
+ruins search engines for the ordinary users.
+
+Conclusion: The Amazon family of sites are very good, and do what they
+can to improve with the help of visitors.  Amazon have been able to
+keep their leader status in the virtual bookshop niche, by living up
+to the customers expectations.  Hopefully, they will make money one day.
+
+
+
+\section{Bang and Olufsen}
+\label{sec:bang-and-olufsen}
+
+\myimage{gr/b-and-o-1}{The Bang and Olufsen pages -- notice the three
+  randomly selected images at the top}{b-and-o-1} The
+\myurl{http://www.bang-olufsen.com/}{Bang and Olufsen} web-site was
+previously very unusual in the way that they offered navigation.
+Their front page contained very few links, and some product images
+which could be clicked and lead to a large set of pages (see
+figure~\vref{fig:b-and-o-1}, with three random clickable images at the
+top.  These were chosen randomly from the large set of such pages (600
+or more) and put at the top.  This has been highly efficient in
+keeping people wandering around and reading their pages, giving these
+people an unusual experience.
+
+The underlying database is both used for storing the many pages, but
+also for tracking the users as they wander around the site.
+
+
+\section{Deja - where did Usenet go?}
+\label{sec:deja}
+
 
 
 % \section{The United States Library of Congress}
@@ -218,16 +275,17 @@ referring to Odense University brings us to figure~\vref{fig:krak-3}.
 \myimage{gr/krak-3}{Following the map icon for the first ``Odense
   University'' reference}{krak-3}
 
-The blue dot usually indicates the location of the address in
-question, but in this case it is a bit off (the University is located
-500 meters further to the south).  When a map is display, the
-navigation area below the image allows for zooming and moving the
-contents of the shown area.  By selecting ``Zoom out'' and ``x8'' a
-new map is shown (see figure~\vref{fig:krak-4}), where it is evident
-that the database show a great deal of detail.  Roads, residential
-areas, streams, train stations, the motor way and green areas are
-shown.  These maps provide a level of information corresponding to
-Krak's printed maps.
+The blue dot usually indicates the location of the address but in this
+case the map is not 100\% correct (Moseskovvejen does not go all the
+way south-east to the parking lot, and the University is located 500
+meters further to the south).  When a map is display, the navigation
+area below the image allows for zooming and moving the contents of the
+shown area.  By selecting ``Zoom out'' and ``x8'' and clicking on the
+blue dot a new map is shown (see figure~\vref{fig:krak-4}), where it
+is evident that the database show a great deal of detail.  Roads,
+residential areas, streams, train stations, the motor way and green
+areas are shown.  These maps provide a level of information
+corresponding to Krak's printed maps.
 
 \myimage{gr/krak-4}{The map in figure~\vref{fig:krak-3} zoomed out
   with a factor 8}{krak-4}
@@ -237,7 +295,8 @@ University''.  The Car-icon gives a route to the listed location,
 where you must fill in the source yourself.  Figure~\vref{fig:krak-5a}
 show the form filled in with my own address and the address of the
 university, and ``Route on map'' (Rute på kort) gives a visual route
-between the two locations.
+between the two locations, along with an estimate of the distance and
+time it will take.
 
 \myimage{gr/krak-5a}{???????????????????????
   University'' reference}{krak-5a}
@@ -249,16 +308,14 @@ idea to look for short-cuts, if you are well known in the area.
 \myimage{gr/krak-5b}{???????????????????????
   University'' reference}{krak-5b}
 
-If you need step-by-step directions, Krak can provide that too.
-Select the ``\textsf{???}'' button and print out the directions.
-
 \myimage{gr/krak-6}{???????????????????????
   University'' reference}{krak-6}
 
-
-\framepage{15cm}{ Necessary to do rendering according to
-  requests.  Cannot be predicted reasonably.  What have been done?
-  How does it work?  What about }
+If you need step-by-step directions, Krak can provide that too.
+Select the ``\textsf{???}'' button and print out the directions.
+Careful studies of these directions can give an idea of the network
+grid that the route planner use for finding the shortest road.
+\textsf{what is~\vref{fig:krak-6}?}
 
 
 \section{The Journey Planner - www.rejseplanen.dk}
@@ -274,43 +331,66 @@ application itself.
 
 \myimage{gr/dsb-1}{Rejseplanen1}{dsb-1}
 
-\textsf{Figure~\vref{fig:dsb-2} is the same as the previous figure}???
+% \textsf{Figure~\vref{fig:dsb-2} is the same as the previous figure}???
 
-\myimage{gr/dsb-2}{Rejseplanen2}{dsb-2}
-
-The search returns a number of potential journeys, with departure and
-arrival times, total expected travel time, and the number of changes
-necessary during the journey.  The departure corresponding the best
-for the indicated period is highlighted with the blue bar.
+% \myimage{gr/dsb-2}{Rejseplanen2}{dsb-2}
 
 \myimage{gr/dsb-3}{Rejseplanen3}{dsb-3}
-
-Figure~\vref{fig:dsb-3}
-
 \myimage{gr/dsb-4}{Rejseplanen4}{dsb-4}
-Figure~\vref{fig:dsb-4}
 \myimage{gr/dsb-5}{Rejseplanen5}{dsb-5}
-Figure~\vref{fig:dsb-5}
+
+The search returns a number of potential journeys shown in
+figure~\vref{fig-dsb-3}, with departure and arrival times, total
+expected travel time, and the number of changes necessary during the
+journey.  The departure corresponding the best for the indicated
+period is highlighted with the blue bar.  By accepting the default
+selection in the blue bar, and scrolling down to press a button,
+figure~\vref{fig:dsb-4} is shown.  This is a direct connection, and
+it is possible to reserve a seat directly from this screen.
+
+A more complicated request is shown in figure~\vref{fig:dsb-5} where a
+connection from Malmparken (suburb to Copenhagen) to Esbjerg (Western
+Jutland) is requested.  A route involving three trains and a bus is
+suggested, which is very reasonable and probably the fastest too.
+
+Rejseplanen is helped by the fact that the number of nodes in the grid
+can be small compared to \texttt{www.krak.dk}, but the presentation is
+not good enough.  It is generally too hard to get to the information
+if you need a slightly alternate view from what the programmers
+expected.
+
+I used to live next to Odense Sygehus, which is a stop on the
+Odense-Svendborg railroad, but where not all trains stop.  The
+question regarding whether it would be faster to walk to the Odense
+Sygehus station or take my bicycle to Odense Station was very hard to
+answer by Rejseplanen, since it does not just simply allow access to
+the underlying database.  I ended up calling the station and asking
+them to look in their paper copy.
+
+
 
 
 \section{Freshmeat.net}
 \label{sec:freshmeat.net}
 
-\section{Google/Altavista}
-\label{sec:google}
+Freshmeat.net is a service for locating software.  \textsf{a lot of
+  products.  users can announce software, and point people toward
+  homepages and download pages.  Very nice}
+
+\section{Altavista - the search engine}
 \label{sec:alta-vista}
 
 
-was the first web site to proudly
-present a search interface to \textit{all} the web pages on the
-Internet\footnote{Later it was revealed that AltaVista only indexed up
-  to 50 pages for a given site, meaning that big sites simply weren't
-  indexed.  That gave the other search engines like Lycos and
-  \textsf{Inktomy} a parameter to compete on}, where they extracted
-words from the individual web pages to create their search indexes.
-They gave extra weight to the descriptions that the web page authors
-entered themselves in the META-tags (see~\vref{sec:html-meta-tags}),
-in order to present the ``hits'' sorted with the best hit at the top.
+AltaVista was the first web site to proudly present a search interface
+to \textit{all} the web pages on the Internet\footnote{Later it was
+  revealed that AltaVista only indexed up to 50 pages for a given
+  site, meaning that big sites simply weren't indexed.  That gave the
+  other search engines like Lycos and \textsf{Inktomy} a parameter to
+  compete on}, where they extracted words from the individual web
+pages to create their search indexes.  They gave extra weight to the
+descriptions that the web page authors entered themselves in the
+META-tags (see~\vref{sec:html-meta-tags}), in order to present the
+``hits'' sorted with the best hit at the top.
 
 
 \begin{enumerate}
@@ -319,7 +399,7 @@ in order to present the ``hits'' sorted with the best hit at the top.
 \item Word in the body of the text
 \end{enumerate}
 
-
+\framepage{15cm}{
 \textsf{Check if there still is companies which boost your presence on
   web search engines}
 
@@ -334,7 +414,7 @@ in order to present the ``hits'' sorted with the best hit at the top.
 \textsf{look for email about somebody who tried google and was pleased
   after being driven away from search engines.   Why does google
   tick?}
-
+}
 \myurl{\textsf{http://ftpsearch.lycos.com}}{\texttt{ftpsearch.lycos.com}}
 is a unique service provided as a byproduct of the main search engine
 at \myurl{http://www.lycos.dk}{www.lycos.dk} where you may search for
@@ -346,6 +426,7 @@ this way.  \textsf{Check on details how they do it.}
 
 
 \framepage{15cm}{
+\label{sec:google}
   Search engines.  How do they do it?  www.909.dk, www.krak.dk,
   terraserver.microsoft.com.  Encyclopedia Brittanica.
 
@@ -357,6 +438,11 @@ this way.  \textsf{Check on details how they do it.}
 \section{The Collection of Computer Science Bibliographies}
 \myurl{http://liinwww.ira.uka.de/bibliography/index.html}{http://liinwww.ira.uka.de/bibliography/index.html}
 
+\textsf{screens hot}
+
+This is a great web-site for scientists because in addition to the
+basic search facilities it allows you to download the BibTeX entry for
+the books and articles you find.
 
 \section{Jydske Bank}
 \label{sec:jydske-bank}

@@ -2,7 +2,7 @@
 
 \chapter{Standard Query Language, Databases and Webservers}
 
-\mycitation{You got to be carefully taught}{South Pacific}{Rogers and
+\mycitation{You've got to be carefully taught}{South Pacific}{Rogers and
   Hammerstein} 
 
 \section{SQL}
@@ -15,15 +15,17 @@ Today SQL has grown into the \textit{de-facto} standard for
 communicating with a relational database, which is being enforced with
 the modern ODBC and JDBC drivers which provides a ``tunnel'' between
 the client program and the database where the client can send a
-SQL-command and get the result back, without caring about \textit{how}
-the data are transmitted.
+SQL-command and get the result back without caring about \textit{how}
+the data are transmitted, much in the same way that the TCP/IP
+protocol allow one computer to send a data-stream to another computer
+without concering about how the data is sent.
 
 Unfortunately this is as much abstraction as you will get from these
 ``SQL drivers'' -- the ability to execute a SQL-command and retrieve
 the result.  Any further abstraction from plain SQL is still left to
 the application programmer which means that even the state-of-the-art
 applications talk to the database in a command-line fashion.   The SQL
-looks like this (liftet from the MySQL tutorial):
+looks like this (lifted from the MySQL tutorial):
 
 \begin{verbatim}
 
@@ -67,9 +69,9 @@ which then returns the table shown in figure~\vref{fig:mysql-tutorial-example-ou
 \begin{verbatim}
 \end{verbatim}
 
-The table shown here was originally in ASCII; inside an application
-program it is common to take a row at a time retrieving a structure
-with the content of each field.
+The table shown here was originally in ASCII (manually put into a
+table for presentation purposes); inside an application program it is
+common forthe application to work with a row at a time.
 
 
 \subsection{SQL - really a standard?}
@@ -79,7 +81,7 @@ SQL has evolved over the years.  The latest ANSI standard is SQL92,
 which is discussed in~\cite{understanding-the-new-sql}, \textsf{as
   well as the standard bodies online}, and it provides several levels
 of compliancy a given SQL-database can adhere to.  Even so, there are
-several facilites which is not covered by the standard:
+several facilites which are still not covered by the standard:
 
 \begin{itemize}
 \item \textbf{unique numbers} -- having a row or function which
@@ -105,7 +107,7 @@ underlying database.
 
 
 
-\subsection{SQL - getting started}
+\section{SQL -- getting started}
 \label{sec:sql-getting-started}
 
 I was reintroduced to SQL rather abruptly in October 1999, where I
@@ -118,14 +120,14 @@ PHP3+MySQL based WACO system~\cite{mez-waco}, pointed me towards
 \myurl{http://sunsite.auc.dk/mysql/Manual\_chapter/manual\_Tutorial.html\#Tutorial}{the
   tutorial in the MySQL reference manual}, which was what he had used.
 
+Even though several databases were availabe, I decided to dvelwe into
+MySQL since it had excellent Perl support which I had chosen for
+developing the Cactus system (see~\vref{sec:cactus-choice-of-language}
+for reasons), and was OpenSource software available on Linux.
+
 The MySQL tutorial is reasonable for a person knowledgeable in SQL to
 get acquainted with the MySQL database, but it falls a bit short of
 being a generic introduction.
-
-I decided to dvelwe into MySQL since it had excellent Perl support,
-which I had chosen for developing the Cactus system
-(see~\vref{sec:cactus-choice-of-language} for reasons), and was
-OpenSource software available on Linux.
 
 
 A \textit{much} better choice for me was
@@ -144,6 +146,8 @@ MySQL.  He has numerous examples, and several references and
 evaluations of other texts.  Additionally the text is sprinkled with
 thumbnail photos, which links to a large version along with a link to
 another part of his site.
+
+\textsf{a swkveen shot?}
 
 This in addition with the comments from the readers to the text, makes
 this a very valuable resource for users.  The SQL-introduction is
@@ -164,7 +168,7 @@ SQL-database.  At least the following options exist:
 \item[JDBC] -- The ``\myurl{http://www.javasoft.com/jdbc}{JDBC Data
     Access API}'' does the same thing for Java-programs as ODBC do for
   Windows-programs.
-\item[Perl DBI] -- The ``Perl Database Interface'' allows Perl
+\item[\myurl{\textsf{??}}Perl DBI] -- The ``Perl Database Interface'' allows Perl
   programs to speak to Adabas, DBMaker, Fulcrum, Informix, Interbase,
   Oracle, Solid, Empress, Sybase, Illustra, Ovrimos, PostgreSQL,
   QBase.
@@ -173,9 +177,10 @@ SQL-database.  At least the following options exist:
     interface modules for Python}.  Currently are Informix, Interbase,
   MySQL, Oracle, Sybase and the generic ODBC interface supported.
 \item[Vendor dependant] -- Each vendor have their own way of moving
-  HTML (and some XML) in the database itself.  These are usually not
-  portable, and therefore not interesting from a generalist point of
-  view.  The databases surveyed 
+  HTML response (and some XML) into the database itself, basically
+  allowing the database server to respond to webrequests, but these are
+  more often than not very slow.
+
   
 \end{description}
 
@@ -184,6 +189,17 @@ SQL-database.  At least the following options exist:
 \label{sec:what-databases-are-available}
 
 
+\section{What database should we use?}
+
+Recommendations:
+
+JDBC support is gaining widespread use in general, meaning that java
+programs can interface very easily.
+
+If the implementation language and platform is fixed (like perl on
+solaris, or visual C on Windows) look at the driver support available
+and choose the DB from that.  For development purposes the Java +
+MySQL comination has worked well for me.
 
 %%% Local Variables: 
 %%% mode: latex

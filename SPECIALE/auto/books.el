@@ -12,5 +12,6 @@
      "mez-waco"
      "goedelescherbach"
      "tanenbaumoperatingsystems"
-     "knuthliterateprogramming"))))
+     "knuthliterateprogramming"
+     "Dybvig:1996:SPL"))))
 

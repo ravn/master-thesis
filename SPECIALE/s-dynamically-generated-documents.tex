@@ -8,41 +8,49 @@
 %   Concepts'' (chapter \vref{cha:terms-and-concepts}).  Please refer to
 %   it to clarify matters.}
 
+\mycitation{\textsf{404 Document not found}}{A}{B}
+
 !!! PUT SAMPLE OF FILENAME INSTEAD OF TT-FILENAME-/TT in SOMEWHERE.
 
 
 \section{The way it started: Handmade web-pages in a filesystem on a web-server}
 
-\textsf{Badly phrased ...}  The original capabilities of a web server
-was : \textsf{Nice figure... Mention URL}
+Back in the old days when the world wide web was designed, a web
+server could basically do only two things:
+
+
 
 \begin{itemize}
-\item A underlying file system containing a lot of \textit{static}
-files.  These files were either pages written in HTML, or images in
-GIF or JPEG formats.
-
-\item The \textit{Common Gateway Interface}.  If a given script
-complied to this, the web-server could start it with user-provided
-parameters, and return the result as any kind of file.
+\item Serve \textit{static} files directly from an underlying file
+  system.  These files were either pages written in HTML, or images in
+  GIF or JPEG formats.
+  
+\item Call a program complying to the \textit{Common Gateway
+    Interface} with user-submitted parameters, and return its output
+  as the document to send.
 \end{itemize}
 
-That's all.  
+That was all!
 
-Such web servers still exist - for example
-\myurl{http://hoohoo.ncsa.uiuc.edu/}{the NCSA server} which has been
-unmaintained since 1996 (NCSA recommend that the Apache server should
-be used instead).  Even so
-\myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February 2000
-  Netcraft survey} reported that \textsf{17172} NCSA servers were
-active, and could be reached from Netcraft.
+\begin{my-detour}
 
-In August 1995 the number of
-\myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
-  running NSCA was 10835}, meaning that number has increased slightly
-in that period.  For comparison the total number of public webservers
-on the Internet in the same period grew from 19 thousand to 11
-million, with Apache and Microsoft Internet Information Server
-accounting for 8.8 million of these.
+Such web servers
+  still exist - for example \myurl{http://hoohoo.ncsa.uiuc.edu/}{the
+    NCSA server} (which has been unmaintained since 1996. NCSA
+  recommend that the Apache server should be used instead).  Even so
+  \myurl{http://www.netcraft.com/Survey/Reports/0002/}{the February
+    2000 Netcraft survey} reported that 17172 NCSA servers were
+  active, and could be reached from Netcraft.
+  
+  In August 1995 the number of
+  \myurl{http://www.netcraft.com/Survey/Reports/9508/ALL/}{webservers
+    running the NSCA server was 10835}, meaning that number has
+  increased slightly in that period.  For comparison the total number
+  of public webservers on the Internet in the same period grew from 19
+  thousand to 11 million, with Apache and Microsoft Internet
+  Information Server accounting for 8.8 million of these.   
+\end{my-detour}
+
 
 Even with such a simple model, it works well for even \textit{very}
 large web-sites which only generates few documents dynamically.
@@ -52,43 +60,51 @@ filesystem can reach impressive numbers.  \textsf{Where was this -
 look for statistics}.  On a modern PC Apache has no problem saturating
 a 10Mbps Ethernet connection (\textsf{what about a 100Mbps
 connection)}, meaning that even for very large and demanding sites the
-bottleneck will not be within the webserver software.
+bottleneck will be determined by the
+hardware!\footnote{\textsf{Greenspun talks about SCHLOW
+    webdatabaserservers - write a bit about that}}
 
 On a related note: The ftp-server \texttt{ftp.cdrom.com} serves a lot
-of files everyday.  On March 14'th 2000
+of files every day.  On March 14 2000
 \myurl{http://www.emsphone.com/stats/cdrom.html}{the transfer
-  statistics} said that the average output was 79.3 Mbit/s (with a
-peak of 95.8 Mbit/s).  The average output on a yearly basis was 86.2
-Mbit/s, which is 933 Gb/day in average).
-\myurl{ftp://ftp.cdrom.com/.message}{This lone machine runs FreeBSD}
-(see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).  A
-ftp-session have a notably larger overhead than a http-session, so it
-is not unreasonable to expect similar performance from a suitably
-tuned web-server for static files.
+  statistics} said that the average output that day was 79.3 Mbit/s
+(with a peak of 95.8 Mbit/s).  The average output on a yearly basis
+was 86.2 Mbit/s, which is 933 Gb/day in average).
+\myurl{ftp://ftp.cdrom.com/.message}{This single machine runs FreeBSD}
+(see \myurl{http://www.freebsd.org}{www.freebsd.org} for details).
+Since an ftp-session have a notably larger overhead than an
+http-session, it is not unreasonable to expect similar performance
+from a suitably tuned web-server when serving static files.
 
-For the occasional dynamically generated document CGI-scripts turned
-out to work well.  All kinds of documents - images, webpages, progress
-reports - could be generated comparatively easy in the favorit
-language of the CGI-script author.  Libraries to deal with the
-decoding of parameters, and encoding of the generated result, were
-soon abundant, providing for many enhancements to the original
-``static web site''.
+CGI-scripts is another matter.  For the occasional dynamically
+generated document CGI-scripts turned out to work well.  All kinds of
+documents -- images, webpages, progress reports -- could be generated
+comparatively easy in the favorit language of the CGI-script author.
+Libraries to deal with the decoding of parameters, and encoding of the
+generated result were soon abundant, providing for many enhancements
+to the original ``static web site'' model.
 
+\myimage{gr/xerox-1}{The original Xerox PARC Map Viewer}{xerox-1}
 \label{sec:map-generation-first-web-application} One of the first
-demonstrations of dynamically generated images was the \textsf{map
-generator somewhere on the web (this ??? quick hack has since been
-superceeded by professional map companies which produce high quality
-maps on demand)}.
+demonstrations of dynamically generated images was the
+\myurl{http://mapweb.parc.xerox.com/map}{Xerox PARC Map Viewer} (see
+figure~\vref{fig:xerox-1}) which allowed the user to navigate a
+virtual atlas, where each ``window'' to the map was generated on
+demand.  This initial quick hack has since been superceeded by
+professional map companies which produce maps of an uneven quality on
+demand, like \myurl{http://maps.yahoo.com/py/maps.py}{Yahoo Maps} (USA
+only) and \myurl{http://www.mapquest.com}{MapQuest} (covers Europe
+too).
 
 
-\textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
+% \textsf{a reference to the problems with CGI?  From CGI.pm perhaps}
 
-Unfortunately, there are a few short-comings with CGI-scripts:
+The problems with CGI-scripts is due to several reasons:
 
 \begin{itemize}
-\item \textbf{Runs as a subprocess} -- the script is executed with the
-  same permissions as the webserver itself, including access to
-  \texttt{/etc/passwd} and other possibly sensitive files.  Such
+\item \textbf{Script run as a subprocess} -- the script is executed
+  with the same permissions as the webserver itself, including access
+  to \texttt{/etc/passwd} and other possibly sensitive files.  Such
   scripts had to be \textit{trusted} or - for ISP's - inspected before
   installation to ensure that the script would behave properly.
 
@@ -98,17 +114,20 @@ Unfortunately, there are a few short-comings with CGI-scripts:
   
 \item \textbf{Incompatible platforms} -- the CGI-programmer may not
   have access to a C-compiler which can generate binary code for the
-  webserver.
-
-  This has caused interpreted programs like Perl to be very popular.  These do
-  not require recompilation for a given platform, and are for most
-  purposes as fast as the equivalent programs written in C.   Recently
-  Java servlets has shown as a popular and well-supported alternative
-  to CGI-scripts.
+  machine running the webserver.
+  
+  This has caused interpreted languages like Perl to be very popular.
+  Perl programs can be run immediately on a given platform without
+  needing to be recompiled, and are for most purposes as fast as the
+  equivalent programs written in C or C++.  Recently Java Servlets
+  (see section~\vref{sec:java-servlets}) have appeared as a popular
+  and well-supported alternative to CGI-scripts, which is being
+  supported by more and more web servers.
   
 \item \textbf{Slow} -- the overhead just for invoking the CGI-program
   in a subprocess is substantial even for moderate load on the web
-  server, since the web-server must ``fork'' a new process.
+  server, since the web-server must ``fork'' a new process for each
+  request.
 
   This has been addressed by putting the execution environment inside
   the web server, using threads instead of processes, and caching
@@ -116,10 +135,38 @@ Unfortunately, there are a few short-comings with CGI-scripts:
 
 \end{itemize}
 
-Several solutions to the above problems have emerged.  Java Servlets
-are discussed in section~\vref{sec:CGI-servlets},  PHP3 scripts in
-section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
+Several solutions to the above problems have emerged.  Of these, Java
+Servlets are discussed in section~\vref{sec:CGI-servlets}, PHP3
+scripts in section~\vref{sec:CGI-php3}, and Perl (with the mod\_perl
 acceleration module) in section~\vref{sec:CGI-modperl}).
+
+Server side scripting never really took off before the PHP3 and ASP
+languages provided ``persistent connections'' to a database servers,
+which was unavailable to the standard CGI-scripts.
+
+Persistent connections provide a real performance boost!  Database
+connections are notoriously ``expensive'' to establish, so needing to
+open one for each and every CGI-script were a true performance
+bottleneck.  Just by keeping the connection open (and for ASP-scripts
+- retain the particular database connection for the session) was
+extremely beneficial.  That combined with a very simple way to switch
+between code and HTML plus that every user could use it without
+needing to ask the webmaster to install a potentially dangerous
+CGI-script, meant that the ability to generate webpages dynamically
+became available to everyone.
+
+
+
+\section{When a site grows, it becomes hard to maintain}
+\label{sec:when-a-site-grows-it-becomes-hard-to-maintain}
+
+\framepage{15cm}{This section needs to be written.
+  
+  Talk about the growth of the net, and broken links, both externally
+  and internally
+
+  Jakob Nielsen.  Start of next section should be rewritten
+  }
 
 \section{Navigational structure should not be maintained by the author}
 
@@ -133,48 +180,61 @@ manually is at best a tedious pain, because it is hard, repetitive,
 mindless labour, which should be left to a computer.
 
 \myimage{gr/flug-1}{The Fyns GNU/Linux User Group web-site.  The side
-  bar and the top graphic was added
-  automatically}{flug-1}
+  bar and the top graphic was added automatically by a script by
+  Tobias Bardino}{flug-1}
 
 Figure~\vref{fig:flug-1} shows a sample page from the Fyns GNU/Linux
 User Group web-site, showing the way FLUG chose to do it.  The
-framework is added to the HTML-file with a small perl script which
-must be run to publish each page.
+framework shown is added to the HTML-file with a small perl script
+which must be run to create each page.
 
-\textsf{Does it hang together?}.
-The most simple version of this, is to say that every web page on the
-site must have a static header usually containing at least a link to the entry
-page and a search engine, but where the header is the same for every
-page.
+This is a typical static framework for a site, where every web page
+basically is ``inserted'' in the home page since the set of links is
+identical for all pages.  Usually this involves a link to a search
+engine for the site.
 
-In the original webservers this required that every webpage was
+In the original web servers this required that every web page was
 modified to include the snippet of HTML which produced this header,
 which is a relatively easy task with a modern scripting language like
-Perl.  Note that care must be taken not to change the modification times of the
-files, since failing to do so invalidates local copies in browsers
-and webcaches, even though that the contents of the pages \textsf{is}
-unchanged.  (Modern webservers allow a webpage to include other files
-with \textsf{Server Side Includes}, which takes care of all this - except
-doing it unconditionally on every page.  The user must still remember
-to insert the appropriate command sequence in the server).
+Perl.  Note that care must be taken not to change the modification
+times of the files, since failing to do so invalidates local copies in
+browsers and webcaches, even though that the contents of the pages
+\textsf{is} unchanged.  (Modern webservers allow a webpage to include
+other files with
+\myurl{http://www.apache.org/docs/mod/mod\_include.html}{Server Side
+  Includes}, which takes care of all this - except doing it
+unconditionally on every page.  The user must still remember to insert
+the appropriate command sequence in the server).
 
 \myimage{gr/intel-1}{The web page for drivers for the Intel VS440FX
   motherboard}{intel-1}%
 %
-Many modern websites put a given page in a
-\textit{context} where the navigational framework reflect this
-context.  See figure\vref{fig:intel-1} for a sample from
+Many modern websites put a given page in a \textit{context} where the
+navigational framework reflect this context.  See
+figure\vref{fig:intel-1} for a sample from
 \myurl{http://support.intel.com/support/motherboards/desktop/VS440fx/software.htm}{Intel
-  regarding the VS440FX motherboard}.  This requires more discipline
-for the web author writing each page, but can still be implemented by
-including the appropriate HTML-snippet, since these are the same for
-all pages regarding this motherboard.
+  regarding the VS440FX motherboard}, where the actual web page has a
+top bar with generic links, a column with links specific to
+motherboards in general, and a review form at the bottom asking
+whether this information was useful to the reader (this question is
+asked on every page with technical content).  My personal experience
+with the Intel site is that their search engine is efficient, but that
+the link column is too uninformative - you often have to actually
+follow the link to see what is there.  An expanded view would be nice.
 
-\textsf{Reference to INTEL.COM with navigational fraework for
-  motherboard vs440fx}.
+This site layout require a bit more discipline for the web author
+writing each page, but is still easily implementable since it can
+still be implemented by including the appropriate HTML-snippet, as
+these are the same for all pages regarding this motherboard.  A way to
+easily ensure this, would be to let the name of the physical file
+determine the virtual location in the web server hierachi - the shown
+file could have been named
+\texttt{motherboards/vs440fx/drivers.html}.  This may be difficult to
+manage (if the webmasters work on different machines) and it is not
+very easy to change if the global layout of the web server changes.
 
 In order to ensure integrity in the navigational framework for a site
-this site, it should be created automatically.  Doing so requires
+this size, it should be created automatically.  Doing so requires
 meta-data about the individual pages in order to place them correct in
 the framework.
 
@@ -193,42 +253,51 @@ basic rule is still that
   information for categorizing a given webdocument}. }
 \end{center}
 
+(Computers are simply not good enough yet to guess this themselves).
 
+\textsf{check spelling of altavista} Incidentially this is also the
+reason why Internet search engines like AltaVista needs elaborate
+information extraction techniques in order to remain useful.
+AltaVista (which is discussed in section~\vref{sec:alta-vista}) was
+the first Internet Search engine to cover \textit{all} webpages.  It
+was immediately a great success since the Internet had already grown
+to a size where help was essential to find any page if you didn't have
+a direct URL to it already.
 
-\textsf{check spelling of altavista}
-Incidentially this is also the reason why Internet search engines like
-needs elaborate information extraction techniques in order
-to remain useful.  AltaVista (which is discussed in
-section~\vref{sec:alta-vista}) was the first Internet Search engine
-for \textit{all} webpages. \textsf{Check precise way to do it and
-  expand the text a bit.  Web pages were considered in isolation or
-  compared with the rest of the site?}
+\textsf{Check precise way to do it and expand the text a bit.  Web
+  pages were considered in isolation or compared with the rest of the
+  site?}
 
 It didn't take long for web authors (especially those with adult
 material) to realize that the best way to get their web pages
 frequently returned in a top position at AltaVista was by putting as
 many potential search terms in META-tags in each and every of their
 web pages, showing that just blindly extracting keywords
-\textsf{uncrititically} is too simple a method.  The Google search
-engine (see~\vref{sec:google}) uses \textsf{heuristics} to assert the
-quality of the results, and is - in my opinion - the only usable
-search engine for the net today.
+\textsf{uncrititically} is too simple a method.  Additionally this
+drives users away -- when they feel that they are not getting ``the
+best results'' from the search engine they will look for another one
+that can.  The Google search engine (see~\vref{sec:google}) was such
+an engine, and users quickly started to use it. Recently links to
+Amazon.com and Fatbrain.com have begun to crop up in the top of the
+search results on Google, and as a direct result users are going
+elsewhere.  I have been recommended
+\myurl{http://www.alltheweb.com}{AllTheWeb} as a good alternative. 
 
-The search engines failed because they had no control over authors and
+
+AltaVista failed then, because they had no control over authors and
 the authors had a desire for ``breaking the system''.  For further
-reading, Douglas Hofstaedter talks a lot about the impossibility of
+reading, Douglas Hofstadter talks a lot about the impossibility of
 building an unbreakable system for automatic detection of bad input
 in~\cite{goedelescherbach}.
 
-
-\textsf{Screen shot of webpage here}
-
+\myimage{gr/mip-1}{The MIP Recently Changed Pages.  The last of the
+  system pages and the first user pages are shown.}{mip-1}
 An example of a document generated from meta-data which has been
 automatically extracted, is the MIP ``Recently Changed Pages'' (see
-figure~\vref{fig:mip-recently-changed-pages}) the original version of
-which I wrote while working for MIP as a student programmer.  The
+figure~\vref{fig:mip-1}) the original version of
+which I wrote while working for MIP.  The
 script traverses three disjunkt set of web pages on the server -
-System pages, Sysop pages and user pages (one set per user) - and
+System pages, Sysop pages and User pages (one set per user) - and
 generates a list for each set sorted by title.  Each file listed has
 its age in days next to it.
 
@@ -247,15 +316,17 @@ The meta-information extracted was:
 \end{itemize}
 
 To me this is just about all the useful information a flat
-Unix-filesystem can provide.  Additionally nothing is guaranteed about
-the contents of a HTML-file - even the title is not even always
-there, making it unreliable to rely on authors providing the
-information expected by any automatic process.
+Unix-filesystem can provide.  Additionally nothing at all is
+guaranteed about the contents of a HTML-file - even the title is not
+even always there! 
 
 If more meta-data than the above is needed, the authors must be
 involved and as a part of their web-authoring, deliberately and
 carefully ensure that the meta-information needed by the automatic
 processes is correct and up-to-date.
+
+\framebox{\textsf{Is there an Internet Library effort out there?}}
+
 
 The \textit{Yggdrasil system} (see section~\vref{sec:yggdrasil}) was
 my first attempt to generate a navigational framework from information
@@ -272,90 +343,143 @@ sorted by date'' were generated to help users locate documents.
 
 This was on a closed Intranet, where the users were interested in
 using this as a tool.  The incentive for ``breaking the system'' was
-very low.
+very low, and the tool worked well.
 
 Yggdrasil worked very well initially especially when its very low
 amount of meta-information is taken in consideration.
 
-\textsf{Screen shot from Yahoo} \textsf{vref{fig}}An example of a good
-site built with meta-information is
-\myurl{http://www.yahoo.com}{Yahoo} which started as a directory over
-web pages where the maintainers manually categorized \textit{many} web
-sites, and used this information to regularily generate static
-navigational pages .  This works really well - I often use Yahoo as an
-electronic librarian, allowing me to find a website on a given topic I
-have never seen before (and Google to find it again at a later date) - 
+\myimage{gr/yahoo-1}{The British Yahoo site}{yahoo-1}An example of a
+good site built with meta-information is
+\myurl{http://www.yahoo.com}{Yahoo} (see figure~\vref{fig:yahoo-1}
+which started as a directory over web pages where the maintainers
+added meta-data to a lot of web-sites by categorizing them manually,
+and use this information to regularily generate static navigational
+pages.  At a time Yahoo really suffered by a lot of broken links as
+the meta-data was not maintained, but today Yahoo usually links to a
+page that \textit{is} there.
 
-The question is then \textit{where} should the author put the meta-data?
+\framebox{Internet Librarians?  A comment?}
 
-\section{Avoid chaos - keep information in its place}
+\section{Avoid chaos by keeping information together}
+
+Given there is a need for meta-data about the documents, the question
+is then \textit{where} should the authors put the meta-data?
+
 
 In the programming world, a very visible example of meta-data is the
 documentation for programs.  Experience has shown that it is
 notoriously hard for programmers to keep the documentation up-to-date,
-since it is usually considered a \textsf{get good quote from somewhere
-  :-)}, which is not felt a part of the ``creative, fun'' process of
-writing programs.  If the writing of documentation was well
-established as an integrated part of program development, and the
-programming language itself helped as much as it could, it would be
-much easier for the programmers to keep the documentation updated.
+since it is usually considered a part of the coding process that is
+not really necessary and definitively not felt to be a part of the
+``creative, fun'' process of writing programs!  If the writing of
+documentation was well established as an integrated part of program
+development, and the programming language itself helped as much as it
+possibly could, it would be easier for the programmers to keep the
+documentation synchronized with the code.
 
-Experience has shown (\textsf{references} man month) that
+Experience has shown (\framebox{\textsf{references man month}}) that
 documentation should be as close to the thing it documents as
-possible.  For programs, that means that the documentation should be
-\textit{in the same file} as the code.  This has traditionally been
-done by using comments embedded in the source code.
+possible.  For programs, this means that the documentation should be
+\textit{in the same file} as the code.  Comments are usually just that
+-- brief comments -- and are often meant to explain \textit{what} the
+code does instead of \textit{why}?  The abstraction level is not high
+enough.
+
+
 
 \framepage{15cm}{\textsf{grow terse - does not stand on its own - hard
     to maintain even for the author - abstraction layer: the idea was
     to \textit{hide} the code and just show the meta-data}}
 
-\textsf{Typical example is Tanenbaum Minix with source listing with
-  line numbers and a cross reference - bladre from og tilbage hele
-  tiden.  1991 technology?  Designed for teaching.  Well written
-  books, but horrible programmer \cite{tanenbaumoperatingsystems}}.
+Andrew S. Tanenbaum writes excellent books about Computer Science, and
+his Operating Systems book [\cite{tanenbaumoperatingsystems}] contains
+the complete source listing with line numbers of his Minix operating
+system, along with a cross-reference of all identifiers.  That was the
+best the printing industry could do in 1987 (and is typical for
+several other printed versions of source code), and that was not good
+enough for teaching.  It is very hard to get a grasp of what the code
+does, without long and careful studies, and much flapping back and
+forth.  My guess is that today Tanenbaum would write a hyperlinked
+book readable in a browser, perhaps even using the Literate
+Programming techniques discussed in
+section~\vref{sec:liteate-programming}.
 
-This observation is not new.  \textsf{New is that industry recognizes
-  the usefulness of documentation on the web, and the need for
-  programmers themselves to create such documentation.  In order to
-  gain wide acceptance such meta-data management systems must be
-  \textit{standards}, either as \textit{de-facto standards} or as a
-  standard body.  }
+The great news is that the industry recognizes the usefulness of
+documentation on the web, and the need for programmers themselves to
+create such documentation.  In order to gain wide acceptance such
+meta-data management systems must be \textit{standards}, either as
+\textit{de-facto standards} or defined by a standards body like ANSI
+or W3C.
+
+The rest of this section detours into other areas of computer science,
+where having several views on the data in question has proven
+beneficial.
 
 \subsection{Javadoc - embedding web-information in programs}
 \label{sec:javadoc}
 
-\textsf{Get a screen shot}
+\myimage{gr/acme-1}{The ACME documentation of \textsf{??}}{acme-1}
 
-This is perhaps the most visible meta-data management tool available
-to programmers today.  \textsf{JavaDoc} is a tool that creates
-documentation in form of HTML pages from Java source code with
-embedded comments, \textsf{where all definitions are parsed to give a
-  full overview of the Java source code}.
+This is perhaps the most visible and generally available meta-data
+tool for Java programmers today.
+\myurl{http://java.sun.com/products/jdk/1.2/docs/tooldocs/solaris/javadoc.html}{JavaDoc}
+is a tool that creates documentation in form of HTML pages from Java
+source code with embedded comments, where all definitions are parsed
+and hyperlinked to give a full overview of the Java source code in
+question.  See figure~\vref{fig:acme-1} for a JavaDoc rendered source
+code at \myurl{http://www.acme.com}{ACME labs.}
 
-Javadoc is a specialized tool which is only suitable for generating
-web-pages from Java source code, but as Sun both use it for their
-reference documentation (\textsf{url to that}) as well as ship it with
+JavaDoc is a specialized tool which is only suitable for generating
+web-pages from Java source code, but as Sun
+\myurl{http://java.sun.com/products/jdk/1.2/docs/api/overview-summary.html}{use
+  JavaDoc for their reference documentation} as well as ship it with
 every copy of Java Development Kit, it is a tool which is widely
-available.  Programmers with a need to document their code, will most
-likely use javadoc to do so.  \textsf{link to the java code at
-ACME.com}
+available.  Programmers who need to document their code, will most
+likely use JavaDoc to do so.
 
 Javadoc has also raised the expectations of the programmers, since
 they have become used to hyper-linked documentation in a browser to
 accompany any code they are to use.  This tendency is a good step in
 the right direction.
 
+Others recognize this too.  On March 13, 2000 a
+\myurl{http://relativity.yi.org/WebSite/opensource-javadoc/}{an open
+  letter pleading for the release of JavaDoc as OpenSource} was posted
+to the Internet.  They argued amongst other things that a number of
+bugs needed to be fixed, and new techology like XML/XSL should be
+employed too.  Hopefully this will influence Sun to help the
+developers as much as possible by opening up this source too.
+
 
 \subsection{The Plain Old Documentation format for Perl}
 \label{sec:perlpod}
 
-\textsf{list an example and say that this works well.  Just look at CPAN}
+The
+\myurl{http://www.cpan.org/doc/manual/html/pod/perlpod.html}{perlpod}
+format was designed to be simple to write and easy to use in Perl
+programs, and the overwhelming amount of documentation for Perl
+confirms that this goal was reached.  This format allows you  --
+with very elementary markup -- to put documentation and code in the
+same file, and you may leave out either one.
 
-\subsection{Literate Programming - Knuths approach \textsf{??}}
+All the info-files at
+\myurl{http://www.unixsnedkeren.dk}{Unixsnedkeren.dk} (the website for
+my small firm) have been written as POD files, and converted to HTML,
+with some finishing touches done with another Perlscript modified for
+the one I wrote for
+\myurl{http://www.fido.dk/faq/unix-faq/unix\_r23.htm}{the FAQ for the
+  Unix echo in the Danish Fidonet}.  Code truly lives forever.
+
+Due to the \textit{ad-hoc} code in both \unixcommand{pod2html} and my
+own code, I am convinced that another approach to rendering POD-files
+should be taken, and I have submitted patches to the
+\unixcommand{pod2docbook} command in order to create DocBook XML in
+addition to the current DocBook SGML.  
+
+
+\subsection{Literate Programming - Knuths approach to different views
+  of the source}
 \label{sec:literate-programming}
-
-\textsf{THIS MIGHT HAVE TO BE MOVED}
 
 \mycitation{I believe that the time is ripe for significantly better
   documentation of programs, and that we can best achieve this by
@@ -373,9 +497,9 @@ the right direction.
 Donald E. Knuth has written the {\TeX}-system used to typeset this
 report, and documented it by publishing the source code to the entire
 system in four books.  The {\TeX}-system has impressed since it is of
-an extremely high quality, both in code and documentation.
-\textsf{Knuth offers money to those who find bugs in his code - on an
-  exponential scheme}.
+an extremely high quality, both in code and documentation, and
+\myurl{http://truetex.com/knuthchk.htm}{actually offer money to those
+  who find errors in his code}.
 
 \textsf{references to the TeX book, MetaFont book, Literate
   Programming Book, nuweb (my observations)}
@@ -470,24 +594,34 @@ programming team where good, current documentation is critical.
 \subsection{Rational Rose - the other way around}
 \label{sec:rational-rose}
 
-\textsf{Talk to BNJ}.  Rational Rose - a UML development tool - uses
-another approach, \textsf{work on meta-data with hidden code in the
-  nodes, and generate code to actually run.  Allows
-  reverse-engineering to make code development easier.
-  Experiences from users}.  
+A software product which has been very successful in recent years, is
+the \myurl{http://www.rational.com/products/rose/index.jtmpl}{Rational
+  Rose visual modeling tool} which is used by several people at MIP to
+do software development.
 
+Rational Rose provides for a lot of things relevant to a large
+software project like reverse engineering of existing code, but also
+for
+\myurl{http://www.rational.com/sitewide/support/whitepapers/dynamic.jtmpl?doc\_key=350}{several
+  views of the document} depending on what abstraction level the
+authors are working on.  In this way they are able to provide the
+author an environment where the software model can be designed
+seperately from the writing of the code.
 
+Bo Nørregård Jørgensen told me that he would expect it to be
+beneficial to use Rational Rose in a software project when it has an
+underlying model and has 7 modules or more.
 
 \subsection{Compiling source code into an executable}
 \label{sec:compiling-source-into-an-executable}
 
-Most software projects does not consist of a single huge source file
-which would take ages to compile, but of several smaller files, which
-can be compiled individually and linked to an executable file.  If a
-file with source code is changed, it is not necessary to recompile
-each and every file but only those which depend on this particular
-source file, and then relink the executable to incorporate the
-changes.
+Most software projects known to me does not consist of a single huge
+source file which would take ages to compile, but of several smaller
+files, which can be compiled individually and linked to an executable
+file.  If a file with source code is changed, it is not necessary to
+recompile each and every file but only those which depend on this
+particular source file, and then relink the executable to incorporate
+the changes.
 
 This is possible because the authors has provided meta-data about the
 system, regarding which source files the system contains, which
@@ -501,16 +635,29 @@ Environment (like \myurl{http://www.borland.com/bcppbuilder/}{Borland
 to utilize the known relations built into \unixcommand{make} as well
 as allow the author to add new ones.
 
-In effect, adding meta-data allows the program development process to
-go faster.
+The real advantage comes in environments (multi-threaded, multi-CPU)
+where several compilations can run in parallel.  This can be done
+safely by using meta-data to localize compilations which are
+independent from one another and execute these simultaneously.  MIP
+have had a 24-CPU Silicon Graphics machine in which using a
+parallelizing ``make'' could reduce compilation times with a factor of
+20.   Not all software projects were easily parallelized - if the
+Makefile did not list all dependencies explicitely but expected that
+the normal compilation order would produce the unlisted files, the
+parallelized compilation would fail.
 
-\subsection{\textsf{anything else with meta-data?}}
+\medskip
+
+In effect, adding meta-data to the project allow the program
+development process to go faster.
 
 
 \section{Requiring multiple views of a document}
 \label{sec:requiring-multiple-views-of-a-document}
 
-\myimage{gr/zdnet-1}{The ZDNet presentation of a story}{zdnet-1}
+\myimage{gr/zdnet-1}{The ZDNet presentation of a story -- notice how
+  little of the initial screen that is dedicated to the story about
+  ``Microsoft may try to boost WinCE, Linux-style''}{zdnet-1}
 \myimage{gr/zdnet-2}{The ``Printer-friendly version'' of
   figure~\vref{fig:zdnet-1}}{zdnet-2}
 
@@ -522,48 +669,50 @@ figure~\vref{fig:zdnet-1}
   an example from ZDNet}, and figure~\vref{fig:zdnet-2} for the
 ``Printer-friendly version''.
 
-\textsf{websites realizing that they cannot just offer an
-  advertisement ladden service, without allowing for a reasonable
-  paper version.  Since their HTML cannot ``remove'' the ads for
-  printing, they have to offer two different version of each article.}
+It is interesting to notice that websites realize that they cannot
+just offer an advertisement ladden service, without allowing for a
+reasonable paper version.  Since their HTML cannot ``remove'' the ads
+for printing, they have to offer two different version of each
+article.
 
 \myimage{gr/nokia-1}{Browsing the Internet on the large [sic] display
   of a Nokia 9110}{nokia-1}
 
 These are two different \textit{views} of the same basic document.
 ZDNet are expecting their visitors to either see their documents on a
-CRT rendered by a reasonably capable browser or print them out on
-paper.  That will probably change within a few years when it becomes
-common for other devices than just traditional computers to be
-connected to the Internet.  Mobile phones using WAP do not have as
-much screen real estate (the Nokia 9110 is shown in
-figure~\vref{fig:nokia-1}) so such users may with good reason prefer
-short and crisp versions of the documents when they use a mobile
-phone.  Nokia is working with 3com to produce a hybrid between a Palm
-Pilot and a mobile phone.  Users have been known to request documents
-in a format suitable for reading on a Palm Pilot.  
+modern display unit with high resolution and millions of colors
+rendered by a reasonably capable browser or print them out on paper.
+That will probably change within a few years when it becomes common
+for other devices than just traditional computers to be connected to
+the Internet.  Mobile phones using WAP do not have as much screen real
+estate (the Nokia 9110 is shown in figure~\vref{fig:nokia-1}) so such
+users will probably prefer short and crisp versions of the documents
+when they use a mobile phone.  Nokia is working with 3com to produce a
+hybrid between a Palm Pilot and a mobile phone.
 
-This tendency might as a side-effect be beneficial for the blind
-computer users (see
+This tendency might as a side-effect be beneficial for the currently
+rather overlooked blind computer users (see
 \myurl{http://www.webring.org/cgi-bin/webring?ring=blind\&list}{the
-  Blind Webring} for more information) .  They must normally use
+  Blind Web-ring} for more information) .  They must normally use
 text-to-braille software or a ``screen reader'' in order to use
 computers, neither of which work well with web pages loaded with
 graphics, but when web authors must write for many kinds of media
 instead of just a particular version of a given browser, this will
-also be beneficial to these users.  Of course, it is possible to write
-ordinary HTML in a way that is usable by these users \textsf{statens
-  guide for webpublikationer}, but that is rare these days.
+also be beneficial to these users since it will be easy to write a
+renderer for their preferred format.  Of course, it is possible to
+write ordinary HTML in a way that is usable by these users, but that
+is rare these days.
 
+\framebox{A reference to the Jakob Nielsen site on web-accessability}
 
 \section{SGML/XML:  Generic formats for storing data and meta-data}
 \label{sec:sgml-and-xml-generic-formats}
 
-The problem of representing data in a generic way is not new at all,
-and was solved for the printing industry in the 1970'ies by the design
-of the Standard Generalized Markup Language (SGML) which is widely
-used.  SGML was deemed too complicated for web browsers, and a trimmed
-version was named XML and standardized in 1998.
+The problem of representing content in a generic way is not new at
+all, and was solved for the printing industry in the 1970'ies by the
+design of the Standard Generalized Markup Language (SGML) which is
+widely used.  SGML was deemed too complicated for web browsers, and a
+trimmed version was named XML and standardized in 1998.
 Chapter~\vref{cha:sgml-xml-and-dtd's} talks a lot more about this.
 
 For now it is sufficient to say that it is possible to store both data
@@ -584,8 +733,7 @@ free operating systems available on the Internet.
 Chapter~\vref{cha:on-demand-rendering} talks about rendering documents
 to a given format on demand (for example in a web browser).
 
-\textsf{Others? It seems to me that stuff is missing here.} 
-
+\framebox{Should I talk a little bit about O'Reilly?}
 
 % \framepage{15cm}{
 % Introduce publishing where HTML is just a backend amongst many (PDF,
@@ -625,8 +773,8 @@ well acquainted with SGML and XML.
 
 Computers should \textit{help} you do your work, and users are
 generally most productive with the tools they know.  Why should an
-author use SGML with an editor she loathes, if precisely the same result can be
-achieved by using a word processor she is familiar with?
+author use SGML with an editor she loathes, if almost the same result
+can be achieved by using a word processor she is familiar with?
 
 In order to automate the conversion from e.g. Word to the equivalent
 SGML file, it is important that the author uses only those

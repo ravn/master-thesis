@@ -22,45 +22,45 @@ A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
 Warning--there's a number but no series in understanding-the-new-sql
-You've used 10 entries,
+You've used 11 entries,
             2633 wiz_defined-function locations,
-            652 strings with 7253 characters,
-and the built_in function-call counts, 3574 in all, are:
-= -- 328
-> -- 138
-< -- 14
-+ -- 55
-- -- 42
-* -- 195
-:= -- 615
-add.period$ -- 41
-call.type$ -- 10
-change.case$ -- 47
-chr.to.int$ -- 10
-cite$ -- 11
-duplicate$ -- 188
-empty$ -- 317
-format.name$ -- 56
-if$ -- 742
+            661 strings with 7417 characters,
+and the built_in function-call counts, 3902 in all, are:
+= -- 358
+> -- 148
+< -- 15
++ -- 60
+- -- 45
+* -- 213
+:= -- 672
+add.period$ -- 44
+call.type$ -- 11
+change.case$ -- 52
+chr.to.int$ -- 11
+cite$ -- 12
+duplicate$ -- 208
+empty$ -- 348
+format.name$ -- 60
+if$ -- 810
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 66
-num.names$ -- 40
-pop$ -- 113
+missing$ -- 16
+newline$ -- 71
+num.names$ -- 44
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 44
+purify$ -- 48
 quote$ -- 0
-skip$ -- 145
+skip$ -- 159
 stack$ -- 0
-substring$ -- 63
-swap$ -- 15
+substring$ -- 70
+swap$ -- 16
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 75
+type$ -- 81
 warning$ -- 1
-while$ -- 30
+while$ -- 33
 width$ -- 0
-write$ -- 151
+write$ -- 165
 (There was 1 warning)

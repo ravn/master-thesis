@@ -1,5 +1,6 @@
 
 \chapter{Overview of technology available for Linux February 2000}
+
 \framepage{15cm}{
 Describe what products there are currently available for these
 categories. Evaluate as much as possible.   Conclude that currently
@@ -11,6 +12,9 @@ this is an area in great development.
 Apache, misc Servlet Javaservers (jetty, thttpd, java webserver,
 etc).  Look for comparisons.  Roxen (graphs).  Discuss whether several
 webservers should be run on the same machine to provide better services.
+
+Look at the netcraft search - differentiate between Internet server
+and intranet server, and internal product stuff.
 }
 
 \section{Database engines}
@@ -36,6 +40,8 @@ be of production quality.  The following overview was created March
   PostgresSQL (discuss features:  transactions, unique
   numbers, in-kernel code, speed, availablity, multi-host
   capabilities?). Any flat file RDBS?
+
+  Greenspuns evaluation of embedded webservers in databases
   }
 
 \subsection{Cloudscape - Informix}
@@ -61,10 +67,10 @@ is available - the \myurl{DB2 Personal Developer's Edition
 for free for non-commercial purposes.  
 
 \myurl{http://www-4.ibm.com/software/data/db2/extenders/xmlext/}{DB2
-  XML Extender} which ``let you store XML documents in DB2 databases
-and new functions that assist you in working with these structured
-documents.''.  It is available for AIX, Solaris and Windows NT.
-  \textsf{Evaluate?} 
+  XML Extender} is an interesting addition to DB2 which ``let you
+store XML documents in DB2 databases and new functions that assist you
+in working with these structured documents.''.  It is available for
+AIX, Solaris and Windows NT. 
 
   
 
@@ -108,7 +114,9 @@ The complete Oracle 8i product range is available for Linux, with a
 low-end version available for download.  The WebDB tool functions as a
 webserver-interface to any Oracle database.
 
-On \myurl{\textsf{??}}{the FLUG meeting ??} we were promised that we
+When
+\myurl{http://www.flug.dk/pages/foredrag/tidligere\_foredrag/tidligere\_foredrag.html}{Oracle
+  visited FLUG} we were promised that we
 could have all the Oracle software for Linux we needed (without
 official licenses), and that Oracle Denmark would provide the
 necessary support.  It is interesting that Oracle Denmark unofficially
@@ -135,10 +143,9 @@ Sybase \myurl{http://www.sybase.com/products/linux/}{has Sybase
 \subsection{Other approaches to database storage}
 
 \myurl{http://www.lr.dk}{Landbrugets r{\aa}dgivningscenter} uses a
-LDAP-server\footnote{\textsf{Light Directory Access Protocol?} - me
-  thinks} to provide easy access to commonly used web elements.
-
-\textsf{Others?}
+\myurl{http://www3.innosoft.com/ldapworld/ldapfaq.html}{Lightweight
+  Directory Access Protocol} serverto provide easy access to commonly
+used web elements.
 
 
 \section{Browsers}
@@ -172,20 +179,22 @@ an in-house system to a full-scale OpenSource model housed at
 http://www.mozilla.org.
 
 In the past two years, the OpenSource developers have basically
-rewritten the Communicator into a truly impressive product (this is
-based on the M14 milestone release).  A seperate beta-branch of the
-source code designated for the Netscape release was opened March
-2000. A tentative release is midsummer 2000.
+rewritten the Communicator from scratch into a truly impressive
+product (this is based on the M14 milestone release).  A seperate
+beta-branch of the source code designated for the Netscape release was
+opened March 2000. A tentative release is midsummer 2000.
+
+Mozilla is not yet suited for mainstream use.
 
 
 \subsection{Opera}
 \label{sec:opera}
 
-This Norwegian browser from \textsf{??} has been highly successful on
-Windows for providing a small and quick browser which goes well with
-users who think that Netscape and Internet Explorer are too big and
-slow for their machines. They have \textsf{a beta port under
-development what is the status?  XML?}.
+This \myurl{http://www.opera.com}{Norwegian browser} has been highly
+successful on Windows for providing a small and quick browser which
+goes well with users who think that Netscape and Internet Explorer are
+too big and slow for their machines.  Their Linux port is still in
+Alpha-testing, and unsuited for mainstream use.
 
 
 \subsection{HotJava 3.0}
@@ -193,51 +202,60 @@ development what is the status?  XML?}.
 
 HotJava is a Netscape 3.0 compatible browser written in Java.
 
-It is a bit slow, especially in updates, but has its force in its
-ability to execute Java applets (which is where Netscape is slow, and
-Microsoft does not comply with the standards).
+It is a bit slow, especially in screen updates, but has its force in
+its ability to execute Java applets (which is where Netscape is slow,
+and Microsoft does not comply with the standards).
 
 HotJava requires a Sun JDK-based Java implementation (clones do not
 provide all the functions they need), and I have tested version 1.1.2,
 1.1.4, and 3.0 under Linux, OS/2, Windows, Irix and Solaris, where it
 worked satisfactory.
 
-\textsf{There is no information regarding the status of parsing XML
-  internally.  Full access to the source is probably necessary before
-  any third-party implementations come}
+There is currently no information regarding the status of parsing XML
+internally.  Full access to the source is probably necessary before
+any third-party implementations come.  In a perfect world, Sun would
+release the source, but that is probably very unlikely.
 
-
-Rumours has it that development on this browser has ceased.  I have
-tried to extend version 1.1.4 to show TIFF files, but had to give up
-due to the miserable documentation combined with lack of the source.
+Rumours has it that development on this browser has ceased.  I tried
+to extend version 1.1.4 to show TIFF files, but had to give up due to
+the miserable documentation for HotJava combined with lack of the
+source.
 
 Other rumours has it that Sun will release the source for HotJava
 under their Community License (which basically makes the developers
 unpaid employees of Sun) like it has been done previously.  On March
-13 Sun released their first product under a true OpenSource license
+13, Sun released their first product under a true OpenSource license
 (the Forte product - previously Netbeans), which could indicate that
 they had evaluated their experience with previous releases, and found
 that nothing short of full OpenSource will do.
 
-Today there are so many OpenSource projects that the truly talented
-coders can choose freely what they want to develop on, and they choose
-projects where they can get return in recognition from their equals,
-and where they don't feel that they slave for a company.
+Remark: Today there are so many OpenSource projects that the truly
+talented coders can choose freely what they want to develop on, and
+they choose projects where they can get return in recognition from
+their equals, and where they don't feel that they slave for a company.
 
-Sun has a ``vote for the bug you want fixed'' system for
-Java\textsf{URL}, and the highest rated bug was ``Port Java to Linux''
-for a \textit{very} long time, and with four times the number of votes
-for number 2.  The Blackdown \textsf{Team} ported Java 1.1 to Linux,
-and collaborated with Sun on porting Java 1.2 to Linux.  It took very
-long time, and when they finally had it officially published on the
-Sun Java webpages, Sun did not give credit to the Blackdown Team - not
-on the web pages, not in the code.  The Blackdown Team was highly
-offended, said publicly so, and stopped working on the port!
+Sun has a
+\myurl{http://developer.java.sun.com/developer/bugParade/top25bugs.html}{``vote
+  for the bug you want fixed''} system for Java, and the
+highest rated bug was ``Port Java to Linux'' for a \textit{very} long
+time, and with four times the number of votes for number 2.  The
+\myurl{http://www.blackdown.org}{Blackdown Team} ported Java 1.1 to
+Linux, and collaborated with Sun on porting Java 1.2 to Linux.  It
+took very long time, and when they finally had it officially published
+on the Sun Java webpages, Sun did not give credit to the Blackdown
+Team - not on the web pages, not in the code [rumours have it they
+even removed comments crediting Blackdown].  The Blackdown Team was
+highly offended, said publicly so, and stopped working on the port!
 
 My personal guess is that this incident taught Sun that they must be
 very observant to the OpenSource culture they want to attract.  It
 must be nurtured and credited in order to create the symbiosis that
 the Mozilla project has demonstrated to be possible.
+
+In the same spirit \myurl{http://www.sourceforge.net}{SourceForge}
+are providing free hosting for OpenSource projects, and they have
+reached the point where people ask ``why don't we put this on
+SourceForge to get CVS''.
 
 \subsection{Microsoft Internet Explorer 5.0}
 \label{sec:microsoft-internet-explorer}
@@ -259,9 +277,9 @@ it much, but it was very, very similar to the Windows version.
 
 My personal guess is that Microsoft holds back Linux versions of the
 Internet Explorer with Outlook Express until they see a fortunate
-opportunity to release it.  \myurl{\textsf{??}}{A certain lawsuit
-  springs to mind} - I do not expect Microsoft want to be accused of
-monopolizing the Linux market too.
+opportunity to release it.  \myurl{http://www.idg.net/microsoft}{A
+  certain lawsuit springs to mind} - I do not expect Microsoft want to
+be accused of monopolizing the Linux market too.
 
 To summarize:  Microsoft Internet Explorer is not available for Linux
 at the time of writing.
@@ -272,13 +290,13 @@ at the time of writing.
 \label{sec:amaya}
 
 Amaya is the W3C testbed for HTML-development.  Is a nice browser
-combined with a reasonable editor.  \textsf{Does not do XML at all}.
-\textsf{Don't they have a testbed?}
+combined with a reasonable editor.  Version 2.4 do XHTML and HTML-4.0
+with CSS but not XML yet.
 
-\subsection{AWTviewer in fop}
-\label{sec:awtviewer}
+% \subsection{AWTviewer in fop}
+% \label{sec:awtviewer}
 
-\textsf{probably for fop stuff only}
+% \textsf{probably for fop stuff only}
 
 
 \subsection{StarOffice}
@@ -291,15 +309,23 @@ Java applet support.  It is an integrated part of the StarOffice
 program, which besides Linux is available for Windows, OS/2 and
 Solaris.
 
+As Sun recently bought StarDivision who had written StarOffice, the
+software currently being retargetet to Sun interests.  It is not
+evident yet what that might be, but it is not unreasonable that the
+thin Java client (connecting to a StarOffice server on a Solaris
+machine) is what Sun bought it for.
 
+Currently there is no sign for integrating XML support in StarOffice.
 
 \subsection{W3 - browsing inside Emacs}
 \label{sec:w3-browsing-inside-emacs}
 
-The W3-browser for Emacs (needs XEmacs to show images) is a reasonably
-good browser, which has its force in its tight integration with
-Emacs, and is an interesting alternative for those who live in Emacs
-anyway.  W3 is written in Lisp \textsf{XML future}
+The \myurl{ftp://ftp.cs.indiana.edu/pub/elisp/w3/}{W3-browser for
+  Emacs} (needs XEmacs to show images) is a reasonably good browser,
+which has its force in its tight integration with Emacs, and is an
+interesting alternative for those who live in Emacs anyway.  W3 is
+written in Lisp.  The next major version is expected to be rewritten
+around a generic XML parsing engine.
 
 
 \subsection{Lynx - browsing in textmode}
@@ -310,7 +336,8 @@ does text-mode only.  It is being steadily improved and hacked on,
 both because it is a nice browser for those who may not have a
 graphical login available, but also because it has a lot of options to
 help the programmer debug webservers and scripts.  Has only recently
-been superseded in usefulness by the ....; \textsf{perltools}
+been superseded in usefulness by the various tools in the Perl
+community. 
 
 
 \subsection{Perltools?}
@@ -328,6 +355,8 @@ wordview modified)?
 
 Show the XML->SQL->XML->HTML on the fly conversion possible with
 Cocoon .... Without auxillary code. All done in W3C style.
+
+WordPerfect 9 should be able to edit SGML directly.
 }
 
 

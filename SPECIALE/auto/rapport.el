@@ -12,6 +12,7 @@
      "sec:html-meta-tags"
      "cha:on-demand-rendering"
      "sec:emacs-with-psgml"
+     "sec:java-servlets"
      "sec:the-importance-of-a-web-cache")
     (TeX-run-style-hooks
      "graphicx"
@@ -27,7 +28,7 @@
      "bk11"
      "book"
      "11pt"
-     "draft"
+     "ddraft"
      "a4paper"
      "s-mycommands"))))
 

@@ -3,16 +3,18 @@
 \chapter{SGML, XML and DTD's}
 \label{cha:sgml-xml-and-dtd's}
 
-A major ingredient in developing large, complex systems is the ability
-to \textit{abstract} between different levels of the system.
+A major ingredient in developing large, complex systems with several
+layers of data and meta-data, is the ability to \textit{abstract}
+between different levels of the system.
 
 \begin{itemize}
-\item Operating systems provide the ``file'' abstraction, so the
+\item Operating systems understand the ``file'' abstraction, so the
   programmer does not have to think about the underlying hardware when
   reading and writing information.
 \item Expensive printers provide the PostScript language which is an
   abstraction for ``electronic paper''.  Any Postscript file can be
-  printed to any PostScript printer
+  printed to any PostScript printer, without considering the specifics
+  of the device.
 \item Programming languages, like C, provides the abstraction of a
   ``virtual machine''.  The programmer does not have to worry about
   how large an integer, and how the best way to implement a loop on
@@ -21,12 +23,13 @@ to \textit{abstract} between different levels of the system.
   abstraction level.
 \end{itemize}
 
-\myurl{http://www.sgmlsource.com/history/roots.htm}{SGML history}
+
 
 The same thing happened in the printing industry, where SGML (Standard
-General Markup Language) was developed in the late sixties and early
-seventies to facilitate a transfer from ``specific coding'' to
-``generic coding'' (Goldfarb mentions using ``heading'' instead of
+General Markup Language) was developed in
+\myurl{http://www.sgmlsource.com/history/roots.htm}{the late sixties
+and early seventies} to facilitate a transfer from ``specific coding''
+to ``generic coding'' (Goldfarb mentions using ``heading'' instead of
 ``format-17'').  This allows authors to concentrate on \textit{what}
 they write, instead of \textit{how} it is presented.  In Goldfarb's
 own words in 1971:
@@ -45,7 +48,7 @@ own words in 1971:
 
 Today, almost 30 years later, this is coming to the users of the world
 wide web, as the presenting technology moves into the web browsers -
-with XML being defined as a subset of SGML - and they become able to
+with XML being defined as a subset of SGML - and they will be able to
 fully present XML documents individually tailored to the users
 preferences.  This is a radical change from the current situation
 where HTML allows an information provider to be so specific in markup
@@ -107,19 +110,19 @@ Basically SGML (Standard General Markup Language) covers a large
 family of document markup languages, which all share that a given
 SGML-document \textit{must} comply to a DTD (Document Type
 Definition).  DSSSL is used to convert a SGML document into something
-else.  DSSSL's are written in a Scheme like language.
+else.  DSSSL's are written in a Scheme like language (see
+\cite{Dybvig:1996:SPL} for a reference manual).
 
 XML is a light-weight version of SGML designed to be embeddable in a
 browser.  XML-documents \textit{may} comply to a DTD, or be
 stand-alone (``DTD-less'').  XSL is used to convert a XML document
-into another XML document (XSLT) or into XSL-Formatting Objects (XSLFO).
+into another XML document (XSLT) or into the generic page description
+language XSL-Formatting Objects (XSLFO).
 
 XHTML is a XML-version designed to be parsable by HTML-4.0 browsers.
 
 
-\subsection{The author should not do layout}
-
-\textsf{I need articles here.}
+\section{The author should provide content, not do layout}
 
 SGML came originally to because the authors at IBM were not
 consistently marking their documents up, resulting in suboptimal
@@ -131,13 +134,14 @@ is what you get'' paradigm, where a great deal of effort has been
 spent on allowing the user to see exactly on screen what would be
 printed on paper.   Unfortunately the limited resolution and size of a modern
 computer monitor cannot show the whole page in high resolution, and
-the user must therefore work in small ``windows'' without being able
+the user must therefore work in small ``regions'' without being able
 to see the whole page, or perhaps even several pages \textsf{A tufte
   reference here?}.  Microsoft Word provides a draft mode where just
 the text is shown without markup;  WordPerfect provides a ``Reveal
 Codes'' mode where the user can edit the text along with the tags.
 
-The most recent versions of Word and WordPerfect have had styles built
+The most recent versions of Word and WordPerfect \textsf{wp9 should
+  have sgml builtin} have had styles built
 in, where the user could specify ``heading'' and similar categories
 for selected text, but have been very passive in helping users to
 employ these categories, meaning that most of these
@@ -162,18 +166,18 @@ I have seen a book where the author had prepared camera-ready copy for
 his {\LaTeX}-document.  The book was printed in A5, but he had handled
 this merely by increasing the margins of a normal page, and nothing
 else.  The result was that the layout looked awkward - the line
-spacing seemedq too large for the page.  This would not have happened
-if a professional layouter had produced the book.
+spacing seemed too large for the page.  This would not have happened
+if a professional layouter had produced the book!
 
 A layouter may also want to change the whole layout of a book, for
 example if a new edition is to be part of a series with another
 distinct style.  The publisher may want to turn the book into webpages
-on a CD-ROM, or into a Braille version for blind persons.  It might
+or a CD-ROM, or into a Braille version for blind persons.  It might
 even be read aloud by a computer.
 
 It should not bother the author during the writing process how the
 finished document will look, as long as she marks up the document
-appropriately.
+appropriately, providing suffiecent meta-data about the content.
 
 As the possible annotations are decided by the DTD, it is important to
 choose a DTD carefully.  A well annotated document can be used for
@@ -186,21 +190,21 @@ the world.
 % \textsf{!!} The \textsf{needs of blind people} are very different
 % from the \textsf{needs of mobile phone users}, yet 
 
-\subsection{The design and evolution of SGML}
+% \subsection{The design and evolution of SGML}
 
-\framepage{15cm}{{Look up SGML history when/where/whom/\emph{WHY}}.
-  What does SGML do well?  Why is it so?  Initially hard to write in.
-  Development of DTD's to use in applications, with Stylesheets (FOSI,
-  DSSSL (when)).  Development of tools for making writing easier
-  (complex, expensive, slow).  Use liking to printer drivers for
-  printers, which was sweeped away by PostScript for LaserPrinters
-  (bitmaps are too hard to handle - talk about Stibo rendering in 2400
-  dpi to guarantee idential prints).}
-
-
+% \framepage{15cm}{{Look up SGML history when/where/whom/\emph{WHY}}.
+%   What does SGML do well?  Why is it so?  Initially hard to write in.
+%   Development of DTD's to use in applications, with Stylesheets (FOSI,
+%   DSSSL (when)).  Development of tools for making writing easier
+%   (complex, expensive, slow).  Use liking to printer drivers for
+%   printers, which was sweeped away by PostScript for LaserPrinters
+%   (bitmaps are too hard to handle - talk about Stibo rendering in 2400
+%   dpi to guarantee idential prints).}
 
 
-\subsection{The \textsf{creation} of HTML}
+
+
+\section{The \textsf{creation} of HTML}
 
 \textsf{Look up creation of HTML on the net.  Look for reasons why HTML
   was chosen to be a SGML DTD instead of e.g. Windows Help, or
@@ -233,12 +237,12 @@ The W3C took a bold step in saying:  We need a new format - the
 eXtensible Markup Language.  XML!
 
 
-\subsection{The \textsf{creation} of XML}
+\section{The \textsf{creation} of XML}
 
-XML was as HTML built on SGML, but with a lot stricter syntax than
-HTML and a lot less facilities than SGML.  XML is a new standard - it
-was made a W3C \textsf{recommandation on ??????1999}, and the
-accompanying XSLT and XPath \textsf{recommandations?}\ldots
+XML was as HTML built on SGML, but with a much stricter syntax than
+HTML and a lot less facilities than in SGML.  XML is a new standard -
+it was made a W3C recommandation in 1998, and the
+accompanying XSLT and XPath in November 1999.
 
 \textsf{What was the design goals}
 
@@ -262,17 +266,16 @@ The resulting language for designing languages has these features:
 
 
 
-\subsection{XHTML - XML compliant HTML}
+\section{XHTML - XML compliant HTML}
 
-\myurl{http://www.w3.org/TR/xhtml1/}{The XHTML W3C recommandation}.
-\myurl{http://www.w3.org}
+[\myurl{http://www.w3.org/TR/xhtml1/}{The XHTML W3C recommandation}.]
 
-A big problem with XML is that it cannot be viewed by anything the
-majority of users have today.  It is possible, however, to specify a
-form of XML called \textit{XHTML} which bridges the gap between the two worlds
-of XML and HTML.  Doocuments corresponding to a XHTML DTD are parsable
-by HTML-4.0 compliant browsers if a few, simple guidelines are
-followed:
+A big problem with XML in general is that it cannot be viewed by
+anything the majority of users have today.  It is possible, however,
+to specify a form of XML called \textit{XHTML} which bridges the gap
+between the two worlds of XML and HTML.  Documents corresponding to a
+XHTML DTD are parsable by HTML-4.0 compliant browsers if a few, simple
+guidelines are followed:
 
 \begin{itemize}
 \item Elements (the HTML tags) must be closed correctly.
@@ -284,11 +287,10 @@ followed:
   must end with ``/$>$''.  I.e. a horizontal line is written as
   ``$<$hr /$>$'', where the space is important to make this acceptable
   to HTML-4.0 parsers.
-\item \textsf{More stuff... Netvwork lag}
+%\item \textsf{More stuff... Netvwork lag}
 \end{itemize}
 
-The well-formedness of an XHTML document is \textsf{achieved by using
-  tricks like}:
+The well-formedness of an XHTML document is achieved\textsf{...}
 
 \begin{verbatim}
 HTML: <hr noshade>
@@ -296,7 +298,8 @@ XML:  <hr noshade="" />
 \end{verbatim}
 
 
-\textsf{Why is this smart???}
+\textsf{Why is this smart???  Not only pure output but also input for
+  another XML transformation}  
 
 \textit{
 \textsf{XHTML} is an XML-variant designed to be viewable in HTML-4.0
@@ -318,12 +321,10 @@ not XML any more.
   WRITE XHTML?  WHAT DO W3C SUGGEST?  WHY DO THEY THINK THIS IS A GOOD
   IDEA}
 
-\subsection{What DTD should be used?}
+\section{Which dialect of SGML should be used?}
 
-The \textsf{Document Type Definition} (\emph{DTD}) defines the way a
-SGML/XML document should look in order to mechanism
-which defines , which specifies
-exactly
+The Document Type Definition (\emph{DTD}) defines exactly the way a
+SGML/XML document can look, when conforming to the DTD.
 
 \begin{itemize}
 \item which tags are valid
@@ -351,11 +352,12 @@ already done such work.
 The Cactus system uses the DocBook XML V3.1.7 DTD with the
 DocBook XSL \textsf{-------------------}
 
-\subsection{How can a *ML document be viewed?}
+\section{How can a *ML document be viewed?}
 
-In order to be viewed, a \textit{style sheet} must be applied to the
-document.  Style sheets convert the tags in the document to a given
-output format, and depends on (DTD, output format pairs).
+In order to be rendered into a view, a \textit{style sheet} must be
+applied to the document.  Style sheets convert the tags in the
+document to a given output format, and depends on (DTD, output format
+pairs).
 
 
 \textsf{GRAPH DEPICTING STYLE SHEETS BEING APPLIED FOR DIFFERENT
@@ -368,13 +370,10 @@ output format, and depends on (DTD, output format pairs).
 Commecial products usually have a viewer which can apply the style
 sheet directly \texttt{examples? Panorama? Framemaker+SGML}, but are
 due to licensing costs and supported user base rarely an option for
-general for documents targeting end-users.
-Table~\vref{tab:distribution-formats} discusses the current \textit{de
-  facto} document formats on the Internet.  
+general for documents targeting end-users, and I have not tried any of
+them.  Table~\vref{tab:distribution-formats} discusses the current
+\textit{de facto} document formats on the Internet.
 
-
-available: \textsf{Discuss this in a earlier chapter?  ``As discussed
-  in chapter foo...''}
 
 \begin{table}[htbp]
   \begin{center}
@@ -399,10 +398,12 @@ available: \textsf{Discuss this in a earlier chapter?  ``As discussed
       properly.  Anything else but Microsoft Word gives inferior
       results, and Word only runs on Windows.
       \\
+      PS & \\
+      PDF &\\
 
       \hline
     \end{tabular}
-    \caption{Document distribution format}
+    \caption{Frequently encountered document distribution formats}
     \label{tab:distribution-formats}
   \end{center}
 \end{table}
@@ -423,10 +424,11 @@ server side conversion to other formats.  The available Open Source
 software for this is surprisingly small, but that is rapidly
 changing.  Please note that XML style sheets still implies SGML style
 sheets, which is interesting because these are more mature due to
-longer use.
+longer use (see section\~vref{sec:docbook-xml-to-rtf} for more
+details). 
 
 
-\subsubsection{SGML style sheets}
+\subsection{SGML style sheets}
 
 \textsf{CONFIRM THE BEHAVIOUR WRITTEN BELOW IS EXCACT}
 
@@ -441,7 +443,7 @@ Clark, to do DSSSL conversions.  \textsf{long processing times later
 
 \textsf{Show a sample stylesheet}
 
-\subsubsection{XML style sheets}
+\subsection{XML style sheets}
 
 XSL - the XML style sheets - are written in XML too.  The tags in the
 name space ``xsl:'' describe what is to be done with the source XML
@@ -450,10 +452,12 @@ of subtrees, and several programming constructions like ``if'',
 ``while'' and ``foreach''.  New tags can be constructed, existing tags
 can be altered, and \textsf{yes?}
 
-This style sheet creates an outline of a DocBook document by looking
-for headline tags, and make a tree of them \textsf{Eh? }  Line breaks
-have been introduced for readability.  \textsf{Line numbers in this
-  listing  would be nice.  What about colour encoding?  Can it be done?}
+\textsf{a reference listing here}
+
+This style sheet - lifted from the DocBook distribution - creates an
+outline of a DocBook document by looking for headline tags, and make a
+tree of them \textsf{Eh? }  Line breaks have been introduced for
+readability.
 
 {\small
 \verbatiminput{x-outline.xsl}
@@ -467,11 +471,10 @@ have been introduced for readability.  \textsf{Line numbers in this
 Since the DocBook reference is very vague on this matter (the book
 went to press before the XSLT recommendation was finalized) the
 Internet has been a great help.
-Table~\vref{tab:leading-xslt-processors} lists the \textsf{tested XSLT
-  processors} which conforms to the W3C \textsf{XSLT-19991102}
-recommendation.  \textsf{emphasis on java due to platform indenpendance}
+Table~\vref{tab:leading-xslt-processors} lists the tested XSLT
+processors which conforms to the W3C XSLT-19991102 recommendation.  
 
-\textsf{Where should I talk about SAX?}
+% \textsf{Where should I talk about SAX?}
 
 \begin{table}[htbp]
   \begin{center}
@@ -496,14 +499,19 @@ recommendation.  \textsf{emphasis on java due to platform indenpendance}
 \end{table}
 
 During testing it showed very quickly that the Java tools are quick
-enough to use (\textsf{do a few benchmarks}), even though they are not
-yet tuned for optimal performance.  Additionally 
+enough to use for casual use (\textsf{do a few benchmarks}), even
+though they are not yet tuned for optimal performance.  Additionally
 
 
 Even so, implementations in C
 should only be considered by designers if Java clearly cannot do the
 job.  The advantages of Java over C (\textsf{reference big list,
-  probably at JavaSoft?}) are 
+  probably at JavaSoft?}) in program development
+
+\begin{itemize}
+\item Very hard to do pointer access
+\item A large set of tested libries
+\end{itemize}
 
 Xalan is at the time of this writing in a development state, and
 contains bugs which causes it to crash on some of my sample DocBook
@@ -518,8 +526,8 @@ high end XSLT-engine embedded as a servlet in Apache, which makes this
 a project to watch.  The technology is at the time of this writing
 still immature, but very promising.
 
-The platform independance of Java was indirectly prompting the
-implementation of remote \textsf{jobs?} in Cactus.  Very early in the
+The platform independance of Java indirectly prompted the
+implementation of remote filters in Cactus.  Very early in the
 evaluation Xalan threw the above mentioned exception when processing a
 medium sized DocBook document.  In order to rule out errors in the
 underlying Java environment on Asserballe (see
@@ -529,7 +537,7 @@ than one second instead of ten.  Experiments showed that Java programs
 consistently runs 15 times faster on Aalborg than on Asserballe.
 \textsf{and so what?}
 
-\texttt{incoming.xml}
+\textsf{\texttt{incoming.xml}}
 \begin{verbatim}
 <?xml version="1.0"?>
 <?xml-stylesheet href="incoming.xsl" type="text/xsl"?>
@@ -597,7 +605,7 @@ Testing
 \end{verbatim}
 
 
-\subsection{Converting documents to XML}
+\section{Converting documents to XML}
 
 XML is currently having the same problems that HTML had in its initial
 years, namely lack of software support.  The difference is that HTML
@@ -612,7 +620,7 @@ participant in the \textsf{definition of XML}, and has made
 Even so there is still a severe lack of conversion tools for the many
 files out there in non-SGML based formats like Word, Excel, {\LaTeX},
 {\TeX}, Lotus Notes, etc., which must be available before the
-documents can be converted.  Table~
+documents can be converted.    
 
 \begin{table}[htbp]
   \begin{center}
@@ -636,17 +644,17 @@ documents can be converted.  Table~
     \label{tab:conversion-tools-to-xml}
   \end{center}
 \end{table}
-
+\textsf{
 Due to the rather inflexible DTD-requirements in XML, it is most
 convenient that such a tool generates stand-alone XML (\textsf{SGML ok
   if it can be converted?  With what?}), which can be processed freely
 in the system.  This is hopefully something which gets resolved soon,
 since the validation of the tree structure in an XML document is as
 important as it being well-formed. \textsf{rewrite.}
-
+}
 \textsf{Move filter descriptions to Cactus chapter discussing
-  filters?} 
-\subsubsection{Majix - RTF/(DOC) to XML}
+  filters?  ... wordperf 9 should be ablt ot do sgml} 
+\subsection{Majix - RTF/(DOC) to XML}
 
 Majix \textsf{URL, company description} is an RTF (for Word 97
 documents) to XML converter.  I have created a configuration and a
@@ -671,7 +679,7 @@ Conclusion: The Majix software is currently best for personal end-user
 conversions.
 
 
-\subsubsection{pod2docbook - POD to XML}
+\subsection{pod2docbook - POD to XML}
 
 The POD format is created for writing documentation for the Perl
 programming language, and was created to be ``\ldots an idiot- proof
@@ -687,18 +695,18 @@ Conclusion:  This do a good job for documents written in POD, and will
 probably with time take over as the default formatter for printed
 versions of Perl documentation.
 
-\subsubsection{tex4h - convert {\TeX} to XML}
+\subsection{tex4h - convert {\TeX} to XML}
 
 \textsf{What daelen does it do}      
       
 \textsf{Conclusion:}
 
-\subsubsection{wordview with friends}
+\subsection{wordview with friends}
 
 \textsf{Parses binary stream and produces HTML, WML plus more.  }
 
 
-\subsection{Formatting HTML on the fly}
+\section{Rendering HTML on the fly}
 
 \textsf{look at docs.sun.com - what daelen do they do?  Render SGML to
   HTML on the fly?}
@@ -734,16 +742,18 @@ an inexpensive solution\footnote{``Inexpensive'' here is defined in
 with a rich set of prerendered documents in a flat file system may
 very well be optimal.  Personal experience has shown this to be a very
 robust solution which very rarely requires human intervention.
-\textsf{esr} Eric S. Raymond reports that a modern PC with Apache is
+\textsf{\textsf{esr} Eric S. Raymond reports that a modern PC with Apache is
 easily capable of saturating a 10Mbps ethernet connection.
+}
 
+\textsf{
 \textit{Dynamic rendering} is suitable whenever the data changes very
 often, or there is a wish for the user to be able to personalize their
-view of the presented documents (should frames be used or not?  do the
-user want large or small versions of images?), or if the conversion
+view of the presented documents , or if the conversion
 process is light and
-
-
+(should frames be used or not?  do the
+user want large or small versions of images?)
+}
 
 
 
@@ -767,6 +777,9 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.8  2000/03/18 06:06:51  ravn
+% Wrote a lot on the dynam,ically generated chapter with a lot of information regarding the need for meta-information stored in the files, plus added screen shos
+%
 % Revision 1.7  2000/03/14 19:29:50  ravn
 %
 % Updated after working athome.  Major restructuring and moving stuff around.
