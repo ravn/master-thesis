@@ -3,26 +3,93 @@
 \chapter{Sample implementation -- Cactus}
 \label{sec:cactus}
 
-\mycitation{The devil is real.  He lives inside C programs.}{Phillip
-  Greenspun}{\cite{phillipandalexsguidetowebpublishing} page 202}
+\mycitation{\textsf{if purchasers [of word95] need to read [word97]
+  files they can buy an upgrade }.}{William H. Gates III}{\textsf{??}}
+
+\section{Background}
+
+A major computer problem not solved satisfactory yet, is the ability
+for users to share information in spite of them using different
+hardware and software.   Even though the modern use of the Internet
+allow any two users to exchange files as attachments to
+email\footnote{\textsf{Email attachments were made standard...}}
+without any furter ado, it has not helped much in \textit{interpreting} the
+contents of these files.
+
+If a given user needs to use a given document, she needs software
+specific to the document format to interpret it.  If another user
+needs the document, she needs software too.
+
+The most prominent word processor document format today is the
+Microsoft Word format, which is so complicated that even Microsoft has
+trouble with it (hence the quotation of this chapter).  Basically you
+need Word to use this format -- all other solutions provide inferiour
+results.  If you only need to read and print documents Microsoft
+provides a Word Viewer program for this, which require Microsoft
+Windows.
+
+Unfortunately, this is no help for those users who does not have Word, notably Linux
+users.
+
+\textsf{presentation and internet thingie}
 
 
-squid:  http://www.squid-cache.org/
-\section{abstract}
 
-\begin{quotation}
-  The Cactus system fills a gap in the current integration of the web
-  with normal office procedures, as it provides easy web publishing
-  for occasional authors, by letting them submit documents in several
-  ways with their usual software.
 
-  The system automatically produces other versions of the documents on
-  demand of the users reading the documents, as well as provide the
-  navigational framework, relieving the local webmaster from these
-  tedious and error prone tasks.  
-\end{quotation}
+The Cactus system is an Open Source document conversion and
+presentation framework, which allows users to submit documents to a
+central server, which then uses a set of stored conversion filters to
+process the documents into other forms, notably HTML and other
+Internet formats.
+
+The version of Cactus described herein, have the following features:
+
+\begin{itemize}
+\item Convert documents to HTML versions viewable in a browser
+\item Windows and Unix clients can use Cactus as a virtual PostScript
+printer with automatic PDF conversion, and may download the result
+directly or view the HTML-conversion (making this accessible to
+platforms without Acrobat Reader).
+  
+\item Images can be resized and converted to a number of formats like
+  JPEG, TIFF, and PNG.
+\item Extensible and configurabele.  New filters can be installed to
+  convert from one MIME-type to another. 
+\end{itemize}
+
+
+This runs on a single Linux machine, but any number of Unix machines
+may requests jobs to do if more CPU-power is needed.   \textsf{The
+  necessary filters and a simple Java client must be installed on each}.
+
+
+
+
+
+\textsf{ingen dokumentstandard.  ingen wp-producenter der underst'tter
+  det, ingen interessei at goere noget ved det, ingen ting.
+
+  nu wp9 understoetter sgmlredigering, StarOffice er frit
+  tilgaengeligt paa mange platforme, osv osv}
+
+
+
+% \section{abstract}
+
+% \begin{quotation}
+%   The Cactus system fills a gap in the current integration of the web
+%   with normal office procedures, as it provides easy web publishing
+%   for occasional authors, by letting them submit documents in several
+%   ways with their usual software.
+
+%   The system automatically produces other versions of the documents on
+%   demand of the users reading the documents, as well as provide the
+%   navigational framework, relieving the local webmaster from these
+%   tedious and error prone tasks.  
+% \end{quotation}
 
 \subsection{System description}
+squid:  http://www.squid-cache.org/
 
 \framepage{15cm}{
 Cactus is a sample implementation of the following issues:
@@ -228,60 +295,88 @@ E.g. PNG to GIF,
 There are the following tasks:
 \begin{description}
   
-\item[Derivers] - derive another version of a given item.  In theory,
-  this is a reversible operation.  These should generally be designed
-  to be as fast as possible, since these will be called from
-  CGI-programs with users waiting.  Avoid compression (gzip should
-  maximally be level 1).
+\item[\textsf{Validators}] -- validates whether the content of the
+  item is conforming to the MIME-type provided and the data valid.  If
+  not, a MIME-type is synthesized according to filename and content.
 
-\item[Converters] - create another item from one or more originals.
-  This could be a multi-part MIME file which should be assembled into
-  a fresh original.  It could be a DVI file from several source files
-  (tex files and images).  These should generally be reasonably fast,
-  since their speed specifies how fast a new item can be made
-  available to the system.
-
-\item[Optimisers] - A deriver is usually designed for being usable in
-  a real-time interactive setting (also called being fast), which
-  normally means that the result is sub-optimal.  An optimiser
-  complements this by doing a suitable optimisation step whenever the
-  system is sufficiently idle.  This could be running "pngcrunch" on
-  PNG files (which yields 30\% on Ghostscript output), or "tifftotiff"
-  on TIFF files.  The idea is that the file is still the same basic
-  type, and can be used without further modification.  It is an
-  "in-place optimisation".  Some file formats are using the gzip
-  compression scheme internally.  These would not benefit further from
-  archiving.
+%   If
+%   not, or if a MIME-type is not provided, an guess is made to the
+%   MIME-type based on the filename and file content, and this
+%   synthesized MIME-type is then validated.  If that fails 
   
-\item[Archivers] - creates a long-term storage version of an item.
-  This would typically be running "gzip -9" on the content, creating a
-  new entry (with a new mimetype), and marking the item as decachable.
-  The dearchiving process must be fast, since it might be needed by a
-  deriver without notice.
-  
-\item[Validators] [spelling] - validates whether the content of the
-  item is consistent with the MIME-type, and is it conforming to the
-  standard.  (Can a gzip-stream be decompressed? is a PostScript file
-  parsing correctly? etc.).  If a type is unknown, guess MIME-type
-  from filename and/or contents, and validate it.  If all fails,
-  assign a type of application/octet-stream.
 
-\item[Examiner] - looks into an item to look for references and
-  encoded data.  A reference may be an URL or an emailaddress in a
-  signature.  Encoded data could be an uuencoded image in a Usenet
-  posting, or a pointer to a usenet article.
+% conforms with the is consistent with the MIME-type, and is it conforming to the
+%   standard.  (Can a gzip-stream be decompressed? is a PostScript file
+%   parsing correctly? etc.).  If a type is unknown, guess MIME-type
+%   from filename and/or contents, and validate it.  If all fails,
+%   assign a type of application/octet-stream.
+
+\item[Extractor] -- looks \textit{inside} an item to look for
+references, embedded files and other kinds of extractable data.  A
+reference may be an URL or an emailaddress in a signature.  Embedded
+data could be an uuencoded image in a Usenet posting.
+
+\item[Converters] -- create another version of a given item fast.  These
+  are intended for conversions of data with users waiting, like
+  \texttt{pnm} to \textit{uncompressed} \texttt{png}.  The generated
+  versions are stored in the database and compressed when the
+  system is otherwise idle. 
+
+%   These should generally be designed
+%   to be as fast as possible, since these will be called from
+%   CGI-programs with users waiting.  Avoid compression (gzip should
+%   maximally be level 1).
+
+\item[Derivers] -- create another item from one or more originals
+irreversibly, like generate \texttt{dvi}-files from several source
+files.  A deriver can ask for a conversion.  For efficiency reasons,
+several computers may run derivers for Cactus.
+
+%   This could be a multi-part MIME file which should be assembled into
+%   a fresh original.  It could be a DVI file from several source files
+%   (tex files and images).  These should generally be reasonably fast,
+%   since their speed specifies how fast a new item can be made
+%   available to the system.
+
+\item[Compressors] -- Reduce the size of a converted item if possible,
+by reencoding the data using any built-in compression schemes in the
+data format of the item.  Sample formats are \texttt{png} and
+\texttt{tiff}.
+  
+% A converter is usually designed for being usable in
+%   a real-time interactive setting (also called being fast), which
+%   normally means that the result is sub-optimal.  An optimiser
+%   complements this by doing a suitable optimisation step whenever the
+%   system is sufficiently idle.  This could be running "pngcrunch" on
+%   PNG files (which yields 30\% on Ghostscript output), or "tifftotiff"
+%   on TIFF files.  The idea is that the file is still the same basic
+%   type, and can be used without further modification.  It is an
+%   "in-place optimisation".  Some file formats are using the gzip
+%   compression scheme internally.  These would not benefit further from
+%   archiving.
+  
+\item[Archivers] -- moves compressed items which has not been used for
+a long time into long-term storage, leaving only the metadata.  This
+keeps the working data set small.
+
+%   This would typically be running "gzip -9" on the content, creating a
+%   new entry (with a new mimetype), and marking the item as decachable.
+%   The dearchiving process must be fast, since it might be needed by a
+%   deriver without notice.
+  
+
 \end{description}
 
 These are complemented by
 
 \begin{description}
-\item[Acquirers] - gathers items from "outside" Cactus and enters it
-  in the "incoming" table with an appropriate MIME-type.  An acquirer
-  could accept email, emulate a printer, retrieve Usenet articles,
-  etc.
+\item[Acquirers] -- gathers items from "outside" Cactus and enters it
+in the "incoming" table with an appropriate MIME-type, an expiration
+date, and \textsf{misc user information}.  An acquirer could accept
+email, emulate a printer, retrieve Usenet articles, etc.
 
 \item[Janitors] - cleans up whenever the system is otherwise idle, or
-  when the cache is full.  Derived items can be emptied of content,
+  when the cache is full.  Converted items can be emptied of content,
   originals can be archived.  Expired items can be purged completely
   from the database, along with all their derived items.
 
@@ -299,10 +394,10 @@ order to decide the order in which to do tasks, a price system must be
 developed which would guarantee that the system processes every item,
 that the system is still responsive while converting,
 
-
+\textsf{
 What to do when the system runs so full that archiving cannot be done
 fast enough.  Can data be moved to "outside storage?".
-
+}
 
 
 \subsection{The implementation of Cactus.}
