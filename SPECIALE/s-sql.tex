@@ -146,7 +146,7 @@ evaluations of other texts.  Additionally the text is sprinkled with
 thumbnail photos, which links to a large version along with a link to
 another part of his site.
 
-\textsf{a swkveen shot?}
+%\textsf{a swkveen shot?}
 
 This in addition with the comments from the readers to the text, makes
 this a very valuable resource for users.  The SQL-introduction is
@@ -184,21 +184,69 @@ SQL-database.  At least the following options exist:
 \end{description}
 
 
-\section{What databases are available?}
-\label{sec:what-databases-are-available}
+% \section{What databases are available?}
+% \label{sec:what-databases-are-available}
 
 
-\section{What database should we use?}
+\section{What database should be used?}
 
-Recommendations:
+That question does not have a defintive answer.  It depends on the
+needs as well as the environment in which it needs to run, as well as
+the needed capabilities of the database.  If the implementation
+language and platform is fixed (like Perl on solaris, or visual C on
+Windows) the most important parameter is most likely driver support
+for the given databases.
 
-JDBC support is gaining widespread use in general, meaning that java
-programs can interface very easily.
+For Windows development, it is important to look at ODBC and JDBC
+drivers, and their quality.  For other platforms there might be native
+platform interface drivers available, but otherwise the best bet is
+most likely to look for a Java JDBC-driver.
 
-If the implementation language and platform is fixed (like perl on
-solaris, or visual C on Windows) look at the driver support available
-and choose the DB from that.  For development purposes the Java +
-MySQL comination has worked well for me.
+When looking for the underlying database for Cactus, I wanted as broad
+a driver support as possible, in particular JDBC and Perl DBI, in
+order to have as much freedom as possible, while not having to
+purchase a commercial database.  Additionally I was rather
+inexperienced with databases and SQL at that time, which did not make
+the selection easier.
+
+The MySQL database is very popular amongst the web server developers
+as it is fast and freely available until you need it for a commercial
+purpose where the license fee is very moderate.   Due to the broad
+driver support, in particular within Perl, I chose it for Cactus and
+was very satisfied with it for quite a long time, until I found that I
+needed a facility that MySQL did not support, namely so-called
+\textit{sub-selects}, where a statement does work based on another
+query.   If MySQL had had this facility, I would have been able to
+issue a single SQL-command, and leave it at that.  Now a several page
+program had to be written to extract data, manipulate it accordingly,
+check for errors and store the result back in the database.
+
+If I had found out this earlier I would have switched the underlying
+database, and rewritten those parts which depended on the quirks of
+MySQL (written before I knew that databases were so different), in
+order to have to do less work when implementing and maintaining
+Cactus.  Now much of the functionality has been implemented outside
+the database, particularly in the initial loading of the tables.  The
+differences between the many SQL databases available on the market
+today makes it difficult to write advanced SQL which will run on very
+many different brands of databases without change.
+
+My recommendation to a person who needs to select a database, would be
+that great care should be taken to find out as quickly as possible
+what features and capabilities that is needed from the database, and
+then use that to do the choosing.  If a database is needed to do the
+evaluation, then choose an evaluation or an OpenSource database and
+write as general SQL as possible.
+
+Performance and tuning is also very important.  By telling the
+database to index one or more given columns response times may improve
+immensely both for insertion of data, but also for searching, but they
+may also turn worse if the index is inappropriate or includes more
+work than avoided by not having to search the database linearly.
+
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex

@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  4 MAY 2000 23:34
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  7 MAY 2000 05:32
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -148,10 +148,9 @@ LaTeX Info: Redefining \pageref on input line 1915.
 (s-dynamically-generated-documents.aux) (s-sample-websites.aux) (s-xml.aux)
 (s-docbook.aux) (s-sql.aux) (s-users-transparently.aux)
 (s-active-and-passive-data-acquisition.aux)
-(s-search-engines-and-data-mining.aux) (s-available-technologies.aux)
-(s-koncensus.aux) (s-cactus.aux) (s-conclusion.aux) (s-terms-and-concepts.aux)
-(s-tex-and-latex.aux) (s-report-writing-tools.aux)
-(s-available-hardware-and-software.aux))
+(s-search-engines-and-data-mining.aux) (s-koncensus.aux) (s-cactus.aux)
+(s-conclusion.aux) (s-terms-and-concepts.aux) (s-report-writing-tools.aux)
+(s-available-technologies.aux))
 \openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
@@ -170,14 +169,14 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 108.
 LaTeX Font Info:    ... okay on input line 108.
 LaTeX Font Info:    Try loading font information for OT1+bch on input line 108.
 
-
-(/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
+ (/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
 File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
 )
 Package hyperref Info: Link coloring ON on input line 108.
 \openout2 = `s-front-matter.aux'.
 
- (s-front-matter.tex
+
+(s-front-matter.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -195,268 +194,260 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 36.
-) [2]
-(rapport.toc [3
+) [2] (rapport.toc [3
 
 
-] [4] [5]
-Overfull \hbox (1.29184pt too wide) detected at line 105
+] [4]
+Overfull \hbox (1.29184pt too wide) detected at line 78
  []\OT1/bch/m/n/10.95 100
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 106
+Overfull \hbox (1.29184pt too wide) detected at line 79
  []\OT1/bch/m/n/10.95 101
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 107
+Overfull \hbox (1.29184pt too wide) detected at line 80
  []\OT1/bch/m/n/10.95 101
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 108
+Overfull \hbox (1.29184pt too wide) detected at line 81
+ []\OT1/bch/m/n/10.95 101
+ []
+
+[5]
+Overfull \hbox (1.29184pt too wide) detected at line 82
  []\OT1/bch/m/n/10.95 101
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 109
+Overfull \hbox (1.29184pt too wide) detected at line 83
  []\OT1/bch/m/n/10.95 101
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 110
- []\OT1/bch/m/n/10.95 101
+Overfull \hbox (1.29184pt too wide) detected at line 85
+ []\OT1/bch/m/n/10.95 103
  []
 
-[6]
-Overfull \hbox (1.29184pt too wide) detected at line 112
+
+Overfull \hbox (1.29184pt too wide) detected at line 86
+ []\OT1/bch/m/n/10.95 103
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 92
  []\OT1/bch/m/n/10.95 104
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 113
+Overfull \hbox (1.29184pt too wide) detected at line 93
  []\OT1/bch/m/n/10.95 104
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 119
+Overfull \hbox (1.29184pt too wide) detected at line 94
  []\OT1/bch/m/n/10.95 104
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 120
+Overfull \hbox (1.29184pt too wide) detected at line 95
  []\OT1/bch/m/n/10.95 104
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 121
+Overfull \hbox (1.29184pt too wide) detected at line 96
  []\OT1/bch/m/n/10.95 104
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 122
+Overfull \hbox (1.29184pt too wide) detected at line 97
+ []\OT1/bch/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 98
+ []\OT1/bch/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 99
+ []\OT1/bch/m/n/10.95 104
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 100
  []\OT1/bch/m/n/10.95 105
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 123
+Overfull \hbox (1.29184pt too wide) detected at line 101
  []\OT1/bch/m/n/10.95 105
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 124
- []\OT1/bch/m/n/10.95 105
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 125
- []\OT1/bch/m/n/10.95 105
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 126
- []\OT1/bch/m/n/10.95 105
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 127
- []\OT1/bch/m/n/10.95 105
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 128
- []\OT1/bch/m/n/10.95 106
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 130
+Overfull \hbox (1.29184pt too wide) detected at line 103
  []\OT1/bch/m/n/10.95 109
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 131
+Overfull \hbox (1.29184pt too wide) detected at line 104
  []\OT1/bch/m/n/10.95 109
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 132
+Overfull \hbox (1.29184pt too wide) detected at line 105
  []\OT1/bch/m/n/10.95 110
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 134
- []\OT1/bch/m/n/10.95 111
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 135
- []\OT1/bch/m/n/10.95 112
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 136
- []\OT1/bch/m/n/10.95 112
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 137
- []\OT1/bch/m/n/10.95 112
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 140
- []\OT1/bch/m/n/10.95 114
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 141
- []\OT1/bch/m/n/10.95 115
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 144
- []\OT1/bch/m/n/10.95 117
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 145
- []\OT1/bch/m/n/10.95 118
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 146
- []\OT1/bch/m/n/10.95 118
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 147
- []\OT1/bch/m/n/10.95 118
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 148
- []\OT1/bch/m/n/10.95 118
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 149
+Overfull \hbox (1.29184pt too wide) detected at line 109
  []\OT1/bch/m/n/10.95 119
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 150
- []\OT1/bch/m/n/10.95 119
- []
-
-[7]
-Overfull \hbox (1.29184pt too wide) detected at line 151
+Overfull \hbox (1.29184pt too wide) detected at line 110
  []\OT1/bch/m/n/10.95 119
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 152
- []\OT1/bch/m/n/10.95 119
+Overfull \hbox (1.29184pt too wide) detected at line 111
+ []\OT1/bch/m/n/10.95 120
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 154
+Overfull \hbox (1.29184pt too wide) detected at line 112
+ []\OT1/bch/m/n/10.95 120
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 113
  []\OT1/bch/m/n/10.95 121
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 156
+Overfull \hbox (1.29184pt too wide) detected at line 114
+ []\OT1/bch/m/n/10.95 121
+ []
+
+[6]
+Overfull \hbox (1.29184pt too wide) detected at line 116
+ []\OT1/bch/m/n/10.95 123
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 117
+ []\OT1/bch/m/n/10.95 123
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 118
+ []\OT1/bch/m/n/10.95 123
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 119
+ []\OT1/bch/m/n/10.95 124
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 120
+ []\OT1/bch/m/n/10.95 124
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 121
+ []\OT1/bch/m/n/10.95 124
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 122
+ []\OT1/bch/m/n/10.95 124
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 123
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 124
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 125
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 126
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 127
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 128
+ []\OT1/bch/m/n/10.95 125
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 129
  []\OT1/bch/m/n/10.95 126
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 158
+Overfull \hbox (1.29184pt too wide) detected at line 130
  []\OT1/bch/m/n/10.95 127
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 159
+Overfull \hbox (1.29184pt too wide) detected at line 131
  []\OT1/bch/m/n/10.95 127
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 160
+Overfull \hbox (1.29184pt too wide) detected at line 132
+ []\OT1/bch/m/n/10.95 127
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 133
+ []\OT1/bch/m/n/10.95 127
+ []
+
+
+Overfull \hbox (1.29184pt too wide) detected at line 134
  []\OT1/bch/m/n/10.95 128
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 161
- []\OT1/bch/m/n/10.95 128
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 162
- []\OT1/bch/m/n/10.95 129
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 163
- []\OT1/bch/m/n/10.95 129
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 164
+Overfull \hbox (1.29184pt too wide) detected at line 135
  []\OT1/bch/m/n/10.95 130
  []
 
 
-Overfull \hbox (1.29184pt too wide) detected at line 165
+Overfull \hbox (1.29184pt too wide) detected at line 136
  []\OT1/bch/m/n/10.95 130
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 166
- []\OT1/bch/m/n/10.95 130
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 167
- []\OT1/bch/m/n/10.95 131
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 168
- []\OT1/bch/m/n/10.95 134
- []
-
-
-Overfull \hbox (1.29184pt too wide) detected at line 169
- []\OT1/bch/m/n/10.95 134
  []
 
 )
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [8]
+ [7]
 \openout2 = `s-introduction.aux'.
 
- (s-introduction.tex
+ (s-introduction.tex [8
+
+
+]
 Chapter 1.
 LaTeX Font Info:    Try loading font information for OMS+bch on input line 68.
 (/usr/share/texmf/tex/latex/psnfss/omsbch.fd
@@ -464,10 +455,7 @@ File: OMSbch.fd
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
- [9
-
-
-]) [10]
+ [9]) [10]
 \openout2 = `s-dynamically-generated-documents.aux'.
 
 
@@ -521,62 +509,62 @@ Chapter 3.
 File: gr/slashdot-1.eps Graphic file (type eps)
 <gr/slashdot-1.eps>
 File: gr/slashdot-2.eps Graphic file (type eps)
- <gr/slashdot-2.eps> [31
+ <gr/slashdot-2.eps>
+File: gr/slashdot-3.eps Graphic file (type eps)
+ <gr/slashdot-3.eps> [31
 
 
 
 ]
-File: gr/slashdot-3.eps Graphic file (type eps)
- <gr/slashdot-3.eps> [32] [33]
 File: gr/fiw98Zoom.eps Graphic file (type eps)
 
-<gr/fiw98Zoom.eps>
-Underfull \vbox (badness 5316) has occurred while \output is active []
+<gr/fiw98Zoom.eps> [32]
+File: gr/amazon-1.eps Graphic file (type eps)
+ <gr/amazon-1.eps> [33]
+File: gr/amazon-2.eps Graphic file (type eps)
+ <gr/amazon-2.eps>
+Underfull \vbox (badness 1147) has occurred while \output is active []
 
  [34]
-File: gr/amazon-1.eps Graphic file (type eps)
-
-<gr/amazon-1.eps>
-File: gr/amazon-2.eps Graphic file (type eps)
- <gr/amazon-2.eps> [35] [36]
+[35]
 File: gr/b-and-o-1.eps Graphic file (type eps)
- <gr/b-and-o-1.eps> [37]
+ <gr/b-and-o-1.eps> [36] [37]
 File: gr/krak-1.eps Graphic file (type eps)
-
-<gr/krak-1.eps>
+ <gr/krak-1.eps>
 File: gr/krak-2.eps Graphic file (type eps)
  <gr/krak-2.eps>
 File: gr/krak-3.eps Graphic file (type eps)
- <gr/krak-3.eps> [38]
-File: gr/krak-4.eps Graphic file (type eps)
- <gr/krak-4.eps>
-File: gr/krak-5a.eps Graphic file (type eps)
 
-<gr/krak-5a.eps>
+<gr/krak-3.eps>
+File: gr/krak-4.eps Graphic file (type eps)
+ <gr/krak-4.eps> [38]
+File: gr/krak-5a.eps Graphic file (type eps)
+ <gr/krak-5a.eps>
 File: gr/krak-5b.eps Graphic file (type eps)
  <gr/krak-5b.eps>
 File: gr/krak-6.eps Graphic file (type eps)
- <gr/krak-6.eps> [39]
+
+<gr/krak-6.eps>
 File: gr/dsb-1.eps Graphic file (type eps)
  <gr/dsb-1.eps>
 File: gr/dsb-3.eps Graphic file (type eps)
-
-<gr/dsb-3.eps>
+ <gr/dsb-3.eps>
 File: gr/dsb-4.eps Graphic file (type eps)
  <gr/dsb-4.eps>
 File: gr/dsb-5.eps Graphic file (type eps)
  <gr/dsb-5.eps>
+[39]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/n' undefined
 (Font)              using `OT1/cmtt/m/n' instead on input line 446.
 
-
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
- [40]
-[41]
+[40]
 File: gr/yggdrasil-1.eps Graphic file (type eps)
- <gr/yggdrasil-1.eps> [42] [43] [44]) [45] [46] [47] [48]
+ <gr/yggdrasil-1.eps> [41] [42] [43]
+Underfull \vbox (badness 5490) has occurred while \output is active []
+
+ [44])
+[45] [46] [47] [48]
 \openout2 = `s-xml.aux'.
 
  (s-xml.tex
@@ -664,67 +652,78 @@ Overfull \hbox (51.33293pt too wide) in paragraph at lines 117--119
 rd-95 (claimed by au-thor), StarOf-fice, [] 
  []
 
-) [66]
+[66]
+Overfull \hbox (128.10855pt too wide) in paragraph at lines 151--151
+[][] \OT1/cmtt/m/n/10.95 <!-- java com.jclark.xsl.sax.Driver AMANDA-README.xml 
+docbook/html/docbook.xsl AMANDA-README.html -->[] 
+ []
+
+[67]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [70]
+Overfull \hbox (30.38086pt too wide) in paragraph at lines 151--151
+[][] \OT1/cmtt/m/n/10.95 <ulink url="ftp://ftp.amanda.org/pub/amanda">ftp://ftp
+.amanda.org/pub/amanda</ulink>[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [72])
+[73]
 \openout2 = `s-sql.aux'.
 
- (s-sql.tex
+ (s-sql.tex [74
+
+
+
+]
 Chapter 6.
-[67
+[75] [76]
 
+LaTeX Warning: Reference `sec:cactus-choice-of-language' on page 77 undefined o
+n input line 124.
 
-
-] [68] [69]) [70]
+[77] [78]) [79]
 \openout2 = `s-users-transparently.aux'.
 
- (s-users-transparently.tex) [71
+ (s-users-transparently.tex) [80
 
 
 ]
 \openout2 = `s-active-and-passive-data-acquisition.aux'.
 
 
-(s-active-and-passive-data-acquisition.tex) [72
+(s-active-and-passive-data-acquisition.tex) [81
 
 
 ]
 \openout2 = `s-search-engines-and-data-mining.aux'.
 
 
-(s-search-engines-and-data-mining.tex) [73
+(s-search-engines-and-data-mining.tex) [82
 
 
 ]
-\openout2 = `s-available-technologies.aux'.
-
- (s-available-technologies.tex
-[74
-
-
-
-]
-Chapter 7.
-[75] [76] [77] [78]
-Overfull \hbox (41.36063pt too wide) in paragraph at lines 272--279
-\OT1/bch/m/n/10.95 ports a re-cent ver-sion of XML with the XSL-stylesheets ([]
-.
- []
-
-[79]
-Underfull \hbox (badness 1622) in paragraph at lines 369--369
-[]\OT1/bch/m/n/10.95 XT, Xerces, Co-coon, SQL2xml, val-ida-tors (er-ror re-cov-
-er-ing?), con-vert-ers to XML
- []
-
-[80]) [81]
 \openout2 = `s-koncensus.aux'.
 
- (s-koncensus.tex [82
+ (s-koncensus.tex
+Chapter 7.
+[83
 
 
 
 ]
-Chapter 8.
-[83]
 Overfull \hbox (3.16942pt too wide) in paragraph at lines 116--118
 []\OT1/bch/m/n/10.95 The web pages would be gen-er-ated au-to-mat-i-cally when-
 ever the un-der-ly-ing files were changed. 
@@ -740,12 +739,16 @@ File: gr/faqomatic-1.eps Graphic file (type eps)
 
 
 ]
-Chapter 9.
+Chapter 8.
 File: gr/cactus-main.eps Graphic file (type eps)
 <gr/cactus-main.eps>
 
 LaTeX Warning: Reference `cha:cactus-sample-set-of-filters' on page 87 undefine
 d on input line 30.
+
+
+LaTeX Warning: Reference `cha:cactus-possible-candidates-for-filters' on page 8
+7 undefined on input line 33.
 
 [87] [88]
 File: gr/overview.eps Graphic file (type eps)
@@ -819,160 +822,147 @@ ed on input line 757.
 [100] [101] [102
 
 ]
-Chapter 10.
-
-LaTeX Warning: Reference `tab:cactus-main' on page 103 undefined on input line 
-807.
-
-
-Overfull \hbox (536.95923pt too wide) in paragraph at lines 805--808
-[]
- []
-
+Chapter 9.
 File: gr/cactus-splitted-email-from-jimm.eps Graphic file (type eps)
 <gr/cactus-splitted-email-from-jimm.eps>
 File: gr/cactus-original-from-lars.eps Graphic file (type eps)
  <gr/cactus-original-from-lars.eps>
 File: gr/cactus-documents-pr-user.eps Graphic file (type eps)
 
-<gr/cactus-documents-pr-user.eps> [103] [104]
+<gr/cactus-documents-pr-user.eps> [103]
 File: gr/viggo-2.eps Graphic file (type eps)
- <gr/viggo-2.eps> [105] [106]
+ <gr/viggo-2.eps> [104] [105] [106]
 [107] [108
 
 ]
-Chapter 11.
-[109] [110]
-Chapter 12.
-
-Overfull \hbox (54.2715pt too wide) in paragraph at lines 1023--1025
-\OT1/bch/m/n/10.95 ypx is from comp.sources.misc vol-ume 40 http://ftp.lth.se/a
-rchive/usenet/comp.sources.misc/volume40/ypx/ 
- []
-
-[111
-
-]
-Overfull \hbox (147.89142pt too wide) in paragraph at lines 1086--1091
-\OT1/bch/m/n/10.95 more CPU-power is needed. []. 
+Chapter 10.
+File: gr/cactus-20000506-3.eps Graphic file (type eps)
+<gr/cactus-20000506-3.eps> [109]
+Overfull \hbox (21.6393pt too wide) in paragraph at lines 1018--1018
+[]\OT1/cmtt/m/n/9 /usr/jdk118/bin/java com.jclark.xsl.sax.Driver {@source-name}
+ /home/cactus/src/docbook/html/docbook.xsl"[] 
  []
 
 
-Overfull \hbox (586.8149pt too wide) in paragraph at lines 1101--1102
-[][] 
+Overfull \hbox (7.46446pt too wide) in paragraph at lines 1032--1032
+[]\OT1/cmtt/m/n/9 /usr/jdk118/bin/java com.jclark.xsl.sax.Driver {@source-name}
+ /home/cactus/src/docbook/fo/docbook.xsl[] 
  []
 
-[112] [113] [114] [115] [116] [117] [118]) [119]
+[110]
+Overfull \hbox (54.71391pt too wide) in paragraph at lines 1061--1061
+[]\OT1/cmtt/m/n/9 SGML_CATALOG_FILES=/home/cactus/jade-1.2.1/dsssl/catalog:$HOM
+E/sgml/catalog:$HOME/sgml/docbook/db31/docbook.cat[] 
+ []
+
+
+Overfull \hbox (26.36424pt too wide) in paragraph at lines 1062--1062
+[]\OT1/cmtt/m/n/9 jade -t rtf -d $HOME/sgml/dsssl/docbook/print/docbook.dsl $HO
+ME/jade-1.2.1/pubtext/xml.dcl {@source-name}[] 
+ []
+
+File: gr/cactus-20000506-4.eps Graphic file (type eps)
+<gr/cactus-20000506-4.eps>
+File: gr/cactus-20000506-5.eps Graphic file (type eps)
+ <gr/cactus-20000506-5.eps>
+File: gr/cactus-20000506-6.eps Graphic file (type eps)
+
+<gr/cactus-20000506-6.eps>) [111] [112]
 \openout2 = `s-conclusion.aux'.
 
- (s-conclusion.tex [120
+ (s-conclusion.tex
+Chapter 11.
+[113
 
 
 
-]
-Chapter 13.
-) [121]
+]) [114]
 \openout2 = `s-terms-and-concepts.aux'.
 
- (s-terms-and-concepts.tex [122
-
-
-
-]
+ (s-terms-and-concepts.tex
 Appendix A.
-[123] [124]) [125]
-\openout2 = `s-tex-and-latex.aux'.
-
- (s-tex-and-latex.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 4.
-) [126
+[115
 
 
-]
+
+] [116]) [117]
 \openout2 = `s-report-writing-tools.aux'.
 
- (s-report-writing-tools.tex
-Appendix B.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 33.
+ (s-report-writing-tools.tex [118
 
-LaTeX Font Info:    No file OMScmtt.fd. on input line 33.
+
+
+]
+Appendix B.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 38.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 38.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 33.
+(Font)              for symbol `textbraceleft' on input line 38.
 
 
-Overfull \hbox (32.18916pt too wide) in paragraph at lines 30--35
+Overfull \hbox (32.18916pt too wide) in paragraph at lines 35--40
 \OT1/bch/m/n/10.95 as a bitmap font, which doesn't look good as a PDF-file at o
 ther res-o-lu-tions. Try $\OMS/cmtt/m/n/10.95 n$\OT1/cmtt/m/n/10.95 usepackage\
 OMS/cmtt/m/n/10.95 f\OT1/cmtt/m/n/10.95 times\OMS/cmtt/m/n/10.95 g
  []
 
-
-Overfull \hbox (35.19759pt too wide) in paragraph at lines 35--40
-\OT1/bch/m/n/10.95 verted to \OT1/cmtt/m/n/10.95 png \OT1/bch/m/n/10.95 in-stea
-d of \OT1/cmtt/m/n/10.95 eps\OT1/bch/m/n/10.95 . The tra-di-tional ap-proach wi
-th ``\OT1/cmtt/m/n/10.95 dvips\OT1/bch/m/n/10.95 '' and ``\OT1/cmtt/m/n/10.95 p
-stopdf\OT1/bch/m/n/10.95 '' [] 
+[119]
+Overfull \hbox (6.16017pt too wide) in paragraph at lines 84--87
+[]\OT1/bch/m/n/10.95 The pro-cess of em-bed-ding Postscript is fully de-scribed
+ in The L[]T[]X Graph-ics Com-pan-ion [[]][]. 
  []
 
-[127
+[120]) [121]
+\openout2 = `s-available-technologies.aux'.
+
+ (s-available-technologies.tex [122
 
 
 
 ]
-Overfull \hbox (63.76398pt too wide) in paragraph at lines 97--102
-\OT1/bch/m/n/10.95 to find the ap-pro-pri-ate \OT1/cmtt/m/n/10.95 tex\OT1/bch/m
-/n/10.95 -file. I used this trick which was de-duced from the [],
- []
-
-[128]
-Overfull \hbox (31.75024pt too wide) in paragraph at lines 155--159
-\OT1/bch/m/n/10.95 de-bug-ger, and in-tel-li-gent com-mands de-pend-ing on the 
-state of the files. [].
- []
-
-) [129]
-\openout2 = `s-available-hardware-and-software.aux'.
-
- (s-available-hardware-and-software.tex) [130
-
-
-] (rapport.bbl (rapport.brf)
+Appendix C.
+[123] [124] [125] [126]) [127] (rapport.bbl (rapport.brf)
 \tf@brf=\write5
 \openout5 = `rapport.brf'.
 
- [131
-
-] [132
+ [128
 
 ]
-Underfull \hbox (badness 5578) in paragraph at lines 15--15
+Underfull \hbox (badness 5578) in paragraph at lines 21--21
 []\OT1/bch/m/n/10.95 E.F. Codd.  A re-la-tional model of data for large shared 
 data banks.
  []
 
 
-Underfull \hbox (badness 3989) in paragraph at lines 15--15
+Underfull \hbox (badness 3989) in paragraph at lines 21--21
 \OT1/bch/m/n/10.95 http://www.acm.org/classics/nov95/, 1970.  The pa-per that d
 e-scribed re-
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 15--15
+Underfull \hbox (badness 2913) in paragraph at lines 21--21
 \OT1/bch/m/n/10.95 la-tional databases math-e-mat-i-cally. The his-tory is ex-p
 lained in http://www-
  []
 
-[133]) [134] (rapport.aux (s-front-matter.aux) (s-introduction.aux)
+[129
+
+])
+
+LaTeX Warning: Reference `sec:squid' on page 130 undefined on input line 175.
+
+[130] (rapport.aux (s-front-matter.aux) (s-introduction.aux)
 (s-dynamically-generated-documents.aux) (s-sample-websites.aux) (s-xml.aux)
 (s-docbook.aux) (s-sql.aux) (s-users-transparently.aux)
 (s-active-and-passive-data-acquisition.aux)
-(s-search-engines-and-data-mining.aux) (s-available-technologies.aux)
-(s-koncensus.aux) (s-cactus.aux) (s-conclusion.aux) (s-terms-and-concepts.aux)
-(s-tex-and-latex.aux) (s-report-writing-tools.aux)
-(s-available-hardware-and-software.aux))
+(s-search-engines-and-data-mining.aux) (s-koncensus.aux) (s-cactus.aux)
+(s-conclusion.aux) (s-terms-and-concepts.aux) (s-report-writing-tools.aux)
+(s-available-technologies.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -981,12 +971,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3137 strings out of 10891
- 44526 string characters out of 97329
- 108390 words of memory out of 263001
- 5931 multiletter control sequences out of 10000+0
- 27667 words of font info for 65 fonts, out of 400000 for 1000
+ 3128 strings out of 10891
+ 44414 string characters out of 97329
+ 107381 words of memory out of 263001
+ 5923 multiletter control sequences out of 10000+0
+ 26159 words of font info for 62 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
  33i,18n,31p,685b,526s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (134 pages, 475020 bytes).
+Output written on rapport.dvi (130 pages, 449960 bytes).

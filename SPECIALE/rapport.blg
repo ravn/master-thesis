@@ -20,44 +20,44 @@ A level-1 auxiliary file: s-tex-and-latex.aux
 A level-1 auxiliary file: s-report-writing-tools.aux
 A level-1 auxiliary file: s-available-hardware-and-software.aux
 Database file #1: books.bib
-You've used 14 entries,
+You've used 15 entries,
             2543 wiz_defined-function locations,
-            666 strings with 7786 characters,
-and the built_in function-call counts, 4119 in all, are:
-= -- 378
-> -- 134
-< -- 21
-+ -- 41
-- -- 36
-* -- 221
-:= -- 699
-add.period$ -- 53
-call.type$ -- 14
-change.case$ -- 62
-chr.to.int$ -- 14
-cite$ -- 14
-duplicate$ -- 207
-empty$ -- 351
-format.name$ -- 60
-if$ -- 844
+            672 strings with 7986 characters,
+and the built_in function-call counts, 4405 in all, are:
+= -- 404
+> -- 142
+< -- 23
++ -- 43
+- -- 38
+* -- 237
+:= -- 747
+add.period$ -- 57
+call.type$ -- 15
+change.case$ -- 66
+chr.to.int$ -- 15
+cite$ -- 15
+duplicate$ -- 223
+empty$ -- 376
+format.name$ -- 63
+if$ -- 903
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 84
-num.names$ -- 42
-pop$ -- 104
+missing$ -- 24
+newline$ -- 90
+num.names$ -- 45
+pop$ -- 110
 preamble$ -- 1
-purify$ -- 86
+purify$ -- 92
 quote$ -- 0
-skip$ -- 152
+skip$ -- 164
 stack$ -- 0
-substring$ -- 103
-swap$ -- 23
-text.length$ -- 21
+substring$ -- 110
+swap$ -- 25
+text.length$ -- 23
 text.prefix$ -- 10
 top$ -- 0
-type$ -- 68
+type$ -- 72
 warning$ -- 0
-while$ -- 30
-width$ -- 19
-write$ -- 204
+while$ -- 32
+width$ -- 20
+write$ -- 219

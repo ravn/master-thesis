@@ -1,26 +1,28 @@
 
-\chapter{Overview of technology available for Linux February 2000}
+\chapter{Overview of technologies available for Linux February 2000}
 
-\framepage{15cm}{
-Describe what products there are currently available for these
-categories. Evaluate as much as possible.   Conclude that currently
-this is an area in great development.
-}
+% \framepage{15cm}{
+% Describe what products there are currently available for these
+% categories. Evaluate as much as possible.   Conclude that currently
+% this is an area in great development.
+% }
+
+This appendix lists some of the technologies I have been looking at
+while working with Cactus and possible filters with it.   This is by
+no means complete.
 
 
+% \section{Webservers}
+% \framepage{15cm}{
+% Apache, misc Servlet Javaservers (jetty, thttpd, java webserver,
+% etc).  Look for comparisons.  Roxen (graphs).  Discuss whether several
+% webservers should be run on the same machine to provide better services.
 
+% Look at the netcraft search - differentiate between Internet server
+% and intranet server, and internal product stuff.
+% }
 
-\section{Webservers}
-\framepage{15cm}{
-Apache, misc Servlet Javaservers (jetty, thttpd, java webserver,
-etc).  Look for comparisons.  Roxen (graphs).  Discuss whether several
-webservers should be run on the same machine to provide better services.
-
-Look at the netcraft search - differentiate between Internet server
-and intranet server, and internal product stuff.
-}
-
-\section{Search engines}
+%\section{Search engines}
 
 
 
@@ -43,13 +45,13 @@ commercial vendors and Open Source projects, where the drivers should
 be of production quality.  The following overview was created March
 2000.
 
-\framepage{15cm}{
-  PostgresSQL (discuss features:  transactions, unique
-  numbers, in-kernel code, speed, availablity, multi-host
-  capabilities?). Any flat file RDBS?
+% \framepage{15cm}{
+%   PostgresSQL (discuss features:  transactions, unique
+%   numbers, in-kernel code, speed, availablity, multi-host
+%   capabilities?). Any flat file RDBS?
 
-  Greenspuns evaluation of embedded webservers in databases
-  }
+%   Greenspuns evaluation of embedded webservers in databases
+%   }
 
 \subsection{Cloudscape - Informix}
 \label{sec:cloudscape}
@@ -81,10 +83,11 @@ AIX, Solaris and Windows NT.
 
   
 
-\subsection{Informix - Informix}
-\label{sec:informix}
+% \subsection{Informix - Informix}
+% \label{sec:informix}
 
-http://www.informix.com/datablades/dbmodule/informix1.htm
+% Informix is also a 
+% http://www.informix.com/datablades/dbmodule/informix1.htm
 
  
 \subsection{Ingres - Ingres}
@@ -96,11 +99,11 @@ The
 free.  It uses Perl, gcc and Apache to provide webserver facilities.
 
 
-\subsection{mSQL - ?}
-\label{sec:msql}
+% \subsection{mSQL - ?}
+% \label{sec:msql}
 
-\textsf{Yes?  Looook for stuff - rememebr to get the mSQL/MySQL book
-  in the databse}
+% \textsf{Yes?  Looook for stuff - rememebr to get the mSQL/MySQL book
+%   in the databse}
 
 \subsection{MySQL - TCX}
 \label{sec:mysql}
@@ -155,14 +158,14 @@ Sybase \myurl{http://www.sybase.com/products/linux/}{has Sybase
 used web elements.
 
 
-\section{Browsers}
-\framepage{15cm}{
-MSIE5 (XML support, Solaris), Mozilla (alpha), Netscape (too old),
-HotJava 3.0 (no XML, can be expanded to do XML conversion
-internally?), Opera (?), Amaya (other W3C browsers?), AWTviewer in fop
-(can it do xml directly?),
-}
-\textsf{Consider rewriting this chapter!}
+\section{Available browsers}
+% \framepage{15cm}{
+% MSIE5 (XML support, Solaris), Mozilla (alpha), Netscape (too old),
+% HotJava 3.0 (no XML, can be expanded to do XML conversion
+% internally?), Opera (?), Amaya (other W3C browsers?), AWTviewer in fop
+% (can it do xml directly?),
+%}
+%\textsf{Consider rewriting this chapter!}
 
 \subsection{Netscape Communicator}
 \label{sec:netscape-communicator}
@@ -179,7 +182,7 @@ server.  If Java is important, consider HotJava.
 \label{sec:mozilla}
 
 \myurl{http://www.mozilla.org}{The Mozilla browser} has been under
-development since 1998, where Netscape -- inspired by the \textsf{the
+development since 1998, where Netscape -- inspired by the \myurl{http://www.tuxedo.org/~esr/writings/cathedral-bazaar/}{the
 Cathedral and the Bazaar} paper -- decided to switch development
 strategy for its incomplete source for Netscape Communicator 5.0 from
 an in-house system to a full-scale OpenSource model housed at
@@ -187,12 +190,9 @@ an in-house system to a full-scale OpenSource model housed at
 
 In the past two years, the OpenSource developers have basically
 rewritten the Communicator from scratch into a truly impressive
-product (this is based on the M14 milestone release).  A seperate
+product (this view is based on the M14 milestone release).  A seperate
 beta-branch of the source code designated for the Netscape release was
 opened March 2000. A tentative release is midsummer 2000.
-
-\textsf{Mozilla is not capable of rendering XML in the client}.
-
 
 \subsection{Opera}
 \label{sec:opera}
@@ -270,12 +270,12 @@ SourceForge to get CVS''.
 \label{sec:microsoft-internet-explorer}
 
 Microsoft has created a very nice browser which works well on Windows
-platforms, and which supports a recent version of XML with the
-XSL-stylesheets (\textsf{reference - dette afsnit er simpelthen ikke korrekt)}.  Since the XSLT standard was
-released January 2000, a release of MSIE50 can be expected ``rather
-soon'' which implements the XSLT standard, allowing the browser to
-render XML files on the client side.  For now, server side processing
-is still the only option.
+platforms.  The MSIE 5.5 beta supports a recent version of XML with
+the XSL-stylesheets but apparently is not implementing it correctly.
+Since the XSLT standard was released January 2000, a release of MSIE
+can be expected ``rather soon'' which implements the XSLT standard,
+allowing the browser to render XML files on the client side.  For now,
+server side processing still appears to be the only option.
 
 Microsoft Internet Explorer 5.0 is \textit{not} available for Linux.
 It is, however, available for Solaris and HP-UX so the codebase is
@@ -309,9 +309,7 @@ with CSS but not XML yet.
 \subsection{StarOffice}
 \label{sec:staroffice}
 
-\textsf{What can we do here?} - try  it out.
-
-StarOffice include a Netscape \textsf{3.0} compatible browser, with
+StarOffice include a Netscape compatible browser, with
 Java applet support.  It is an integrated part of the StarOffice
 program, which besides Linux is available for Windows, OS/2 and
 Solaris.
@@ -346,50 +344,41 @@ help the programmer debug webservers and scripts.  Has only recently
 been superseded in usefulness by the various tools in the Perl
 community.
 
-\textsf{Check if XML is being integrated in it?  UNlikelyt}
 
+% \section{XML utilities}
+% \framepage{15cm}{
+% XT, Xerces, Cocoon, SQL2xml, validators (error recovering?),
+% converters to XML (pod2docbook, tex4h, Perl with appropriate modules?,
+% wordview modified)?
 
-\subsection{Perltools?}
-\textsf{?}
+% Show the XML->SQL->XML->HTML on the fly conversion possible with
+% Cocoon .... Without auxillary code. All done in W3C style.
 
-\subsection{\textsf{OTHER BROWSERS?}}
-
-
-
-\section{XML utilities}
-\framepage{15cm}{
-XT, Xerces, Cocoon, SQL2xml, validators (error recovering?),
-converters to XML (pod2docbook, tex4h, Perl with appropriate modules?,
-wordview modified)?
-
-Show the XML->SQL->XML->HTML on the fly conversion possible with
-Cocoon .... Without auxillary code. All done in W3C style.
-
-WordPerfect 9 should be able to edit SGML directly.
-}
+% WordPerfect 9 should be able to edit SGML directly.
+% }
 
 
 
 
 
-\section{PDF utilities}
-\framepage{15cm}{
+% \section{PDF utilities}
+% \framepage{15cm}{
 
-PDF generated by pdflatex is good.  PDF generated by fop isn't.
-createpdf.adobe.com 
+% PDF generated by pdflatex is good.  PDF generated by fop isn't.
+% createpdf.adobe.com 
 
-pdfzone.  acroread (ok, heavy), xpdf (font problems with bitmaps, ugly
-but fast, gives best result with usepackage{times}, no anti-alias), gv
-(pretty good).  Distiller (check what it can do).  Use pdfinfo to get
-the number of pages in the pdffile.
+% pdfzone.  acroread (ok, heavy), xpdf (font problems with bitmaps, ugly
+% but fast, gives best result with usepackage{times}, no anti-alias), gv
+% (pretty good).  Distiller (check what it can do).  Use pdfinfo to get
+% the number of pages in the pdffile.
 
-Conclude that it is possible to have a 100\% Java solution for
-on-the-fly publishing XML to HTML and PDF through a webserver.
-Discuss why developers do it in Java, as opposed to any other language.
+% Conclude that it is possible to have a 100\% Java solution for
+% on-the-fly publishing XML to HTML and PDF through a webserver.
+% Discuss why developers do it in Java, as opposed to any other language.
 
-Very few utilites support creating PDF.  Discuss how to create PDF.
+% Very few utilites support creating PDF.  Discuss how to create PDF.
 
-}
+% }
 
 %%% Local Variables: 
 %%% mode: latex

@@ -31,5 +31,6 @@
      "roelofs:png-the-definitive-guide"
      "frisch:essential-system-administration"
      "franquin:det-var-kattens-viggo"
-     "bedre-blanketter"))))
+     "bedre-blanketter"
+     "walsh-muellner:docbook-the-definitive-guide"))))
 

@@ -1,5 +1,11 @@
 \begin{thebibliography}{aSRaFM97}
 
+\bibitem[aLM99]{walsh-muellner:docbook-the-definitive-guide}
+Norman~Walsh \and Leonard~Muellner.
+\newblock {\em DocBook: The Definitive Guide}, volume ISBN: 1-56592-580-7.
+\newblock O'Reilly, 1999.
+\newblock A concise reference manual, which is best for the experienced user.
+
 \bibitem[aSRaFM97]{goosens-rahtz-mittelbach:the-latex-graphics-companion}
 Michel~Goosens \and Sebastian Rahtz~\and Frank~Mittelbach.
 \newblock {\em The {\LaTeX} graphics companion}, volume ISBN: 0-201-85469-4.

@@ -121,7 +121,34 @@ author), StarOffice, \textsf{other texteditors}
 
 SQL to XML :: Coocncococns sql processsor
 
+\section{A sample DocBook XML document}
+\label{sec:amanda-readme.xml}
 
+I have marked up a DocBook XML version of the
+\myurl{ftp://ftp.amanda.org/pub/amanda/README}{README file for the
+  AMANDA backup system}, as part of the general transition to an
+SGML-based documentation set for AMANDA.  I have used it as a test
+document for the XML-publishing sample filter-set in
+\myvref{sec:xml-publishing}.
+
+There are a few caveats for HTML-knowledgable people:
+
+\begin{itemize}
+\item Each paragraph must be enclosed in a \tag{para}-tag.  Also
+  inside a \tag{listitem}-tag.
+\item \tag{sect1}, \tag{sect2} etc. encloses around the \textit{whole} section, and the
+  \tag{title}-tag shows the title of the section.
+\end{itemize}  
+In order to be processable by SGML tools like Jade (to get RTF output)
+it is necessary to have a \tag{!DOCTYPE} entry, which again requires
+-- for XML compatibility -- that the DTD is explicitly given.  This
+particular document conforms to
+\myurl{http://www.nwalsh.com/docbook/simple/index.html}{the
+  "Simplified" DocBk XML DTD}.
+
+
+
+\listinginput{1}{../sample/AMANDA-README.xml}
 
 %%% Local Variables: 
 %%% mode: latex

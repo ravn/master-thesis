@@ -1,10 +1,94 @@
 \chapter{Conclusion}
 
-\section{Conclusion}
-\framepage{15cm}{
-Databases are great, yea!  Webservers are great, yea!  Things must be
-powerful and easy for best results.
-}
+This thesis has discussed many topics regarding the current state of
+databases plus web publishing, and has demonstrated a new approach to
+integrating these tools in a normal working environment while
+requiring very little of the end-user, both in terms of software but
+also the effort in learning new programs and ways to work.
+
+\subsection*{Implementation languages}
+
+Even though I have not implemented Cactus fully, I am very satisfied
+with it, especially regarding the ease with which an application
+programmer can implement new filters, and the flexibility and power
+that is allowed in invoking these filters under Unix.  It is possible
+to develop and test filters outside of Cactus, and first moving inside
+when the individual parts of the filter have been tested and tried.
+
+The MySQL support in both Perl, PHP3 and Java have allowed me to
+choose freely amount all three platforms when choosing a language for
+a given task, giving a freedom of how to do things that has been very,
+very nice, as well as giving a lot of opportunities, especially with
+Java.
+
+The Cocoon technology allowing on-the-fly rendering of XML-documents
+to HTML has been fun to work with -- especially with the ability to do
+SQL-requests directly in the XML-file -- as well as being an
+intellectual challenge.  The XML and XSTL concepts are easy to work
+with, but I found the XPath language for doing expressions extremely
+nasty and \textit{very} hard to learn properly.
+
+
+
+\subsection*{Underlying database}
+
+The impact of building Cactus around a database has truly been
+\textit{incredible}, and has been the area in which I have learned the
+most, and even though the learning curve has been much steeper than
+anticipated, this is much overshadowed by the ease of which new things
+can be implemented -- the search engine took about 5 minutes -- and
+the amount of tedious administration which is handled transparently by
+the database.  Several programs running on multiple computers can do
+work without having to implement elaborate synchronization mechanisms,
+thus providing a design which is easy to extend to larger systems.
+
+The \textit{really} hard part was designing the database tables, and
+realising that a more complex model was required than just thinking
+``this is a file''.  The ability to script database maintenance
+meant it was easy to rebuild the database from scratch whenever the
+basic design changed.  
+
+I have regretted the actual \textit{choice} of database.  MySQL has a
+limitation that I have had to work around, namely the lack of
+sub-selects which means that derivers and data gatherers needs to
+implement the extract, do work, error check, and reinsert result
+themselves making them unnecessarily complex, which should properly be
+placed in the database.   A more suitable database for this purpose
+should be found, and the scripts adapted to work with it.
+
+
+\subsection*{The future of Cactus}
+
+My original intent was to have Cactus running for several months --
+preferably half a year -- to see how people would use it, get feedback
+and improve on it.  This I didn't do, primarily because it took much
+longer than expected to learn SQL well enough to have things work.  I
+do not expect the current installation to live long on MIP, but I
+intend to continue development into a more full-fledged software
+package, where other developers can help.
+
+It was demonstrated in \myvref{sec:xml-publishing} that Cactus can be
+used to automatically generate web documents in many formats from a
+single XML-source file, which was sent to the system as an email as
+the only publishing action the author had to do.
+
+It is my strong belief that this is the way that web publishing should
+work -- trouble-free to publish, and trouble-free to view.  I hope
+that my work can help in achieving that goal.
+
+
+
+
+\begin{center}
+
+\vspace{2cm}
+Odense 2000-05-07
+
+\vspace{2cm}
+Thorbj{\o}rn Ravn Andersen
+
+\end{center}
+
 
 %%% Local Variables: 
 %%% mode: latex

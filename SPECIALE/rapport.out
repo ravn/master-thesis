@@ -18,7 +18,6 @@
 \BOOKMARK [1]{section.2.6}{Multiple views of a web document}{chapter.2}
 \BOOKMARK [1]{section.2.7}{SGML/XML: Generic formats for storing data and meta-data}{chapter.2}
 \BOOKMARK [1]{section.2.8}{The user should use familiar tools to publish documents}{chapter.2}
-\BOOKMARK [1]{section.2.9}{Small search engines for a web site}{chapter.2}
 \BOOKMARK [0]{chapter.3}{Sample websites and projects}{}
 \BOOKMARK [1]{section.3.1}{slashdot.org - high volume information site for nerds}{chapter.3}
 \BOOKMARK [1]{section.3.2}{Valueclick.com}{chapter.3}
@@ -28,10 +27,9 @@
 \BOOKMARK [1]{section.3.6}{www.krak.dk}{chapter.3}
 \BOOKMARK [1]{section.3.7}{The Journey Planner - www.rejseplanen.dk}{chapter.3}
 \BOOKMARK [1]{section.3.8}{Searching for images - ftpsearch.lycos.com}{chapter.3}
-\BOOKMARK [1]{section.3.9}{Jydske Bank}{chapter.3}
-\BOOKMARK [1]{section.3.10}{3coms elektroniske papir}{chapter.3}
-\BOOKMARK [1]{section.3.11}{Yggdrasil - a simple navigational framework}{chapter.3}
-\BOOKMARK [1]{section.3.12}{The TOM browser - converting documents online}{chapter.3}
+\BOOKMARK [1]{section.3.9}{F\346llesbanken}{chapter.3}
+\BOOKMARK [1]{section.3.10}{Yggdrasil - a simple navigational framework}{chapter.3}
+\BOOKMARK [1]{section.3.11}{The TOM browser - converting documents online}{chapter.3}
 \BOOKMARK [0]{chapter.4}{SGML, XML and DTD's}{}
 \BOOKMARK [1]{section.4.1}{``HTML is a SGML DTD'' - the concepts}{chapter.4}
 \BOOKMARK [1]{section.4.2}{The author should provide content, not do layout}{chapter.4}
@@ -39,13 +37,12 @@
 \BOOKMARK [1]{section.4.4}{XHTML - XML compliant HTML}{chapter.4}
 \BOOKMARK [1]{section.4.5}{Which dialect of SGML should be used?}{chapter.4}
 \BOOKMARK [1]{section.4.6}{How can a *ML document be viewed?}{chapter.4}
-\BOOKMARK [2]{subsection.4.6.1}{SGML style sheets}{section.4.6}
-\BOOKMARK [2]{subsection.4.6.2}{XML style sheets}{section.4.6}
+\BOOKMARK [2]{subsection.4.6.1}{XML style sheets and Cocoon}{section.4.6}
 \BOOKMARK [1]{section.4.7}{Converting documents to XML}{chapter.4}
 \BOOKMARK [2]{subsection.4.7.1}{Majix - RTF/(DOC) to XML}{section.4.7}
 \BOOKMARK [2]{subsection.4.7.2}{pod2docbook - POD to XML}{section.4.7}
 \BOOKMARK [2]{subsection.4.7.3}{tex4h - convert TeX to XML}{section.4.7}
-\BOOKMARK [2]{subsection.4.7.4}{wordview with friends}{section.4.7}
+\BOOKMARK [2]{subsection.4.7.4}{wv}{section.4.7}
 \BOOKMARK [1]{section.4.8}{Rendering HTML on the fly}{chapter.4}
 \BOOKMARK [0]{chapter.5}{The DocBook and TEI DTD's}{}
 \BOOKMARK [1]{section.5.1}{DocBook considerations}{chapter.5}
@@ -53,6 +50,7 @@
 \BOOKMARK [1]{section.5.3}{Converting documents to other formats}{chapter.5}
 \BOOKMARK [2]{subsection.5.3.1}{SGML to XML}{section.5.3}
 \BOOKMARK [2]{subsection.5.3.2}{XML to RTF}{section.5.3}
+\BOOKMARK [1]{section.5.4}{A sample DocBook XML document}{chapter.5}
 \BOOKMARK [0]{chapter.6}{Standard Query Language, Databases and Webservers}{}
 \BOOKMARK [1]{section.6.1}{SQL}{chapter.6}
 \BOOKMARK [2]{subsection.6.1.1}{SQL - really a standard?}{section.6.1}
@@ -127,7 +125,8 @@
 \BOOKMARK [0]{chapter.11}{Cactus - sample filter sets}{}
 \BOOKMARK [1]{section.11.1}{Network Adobe Acrobat PDF-printer}{chapter.11}
 \BOOKMARK [1]{section.11.2}{Image conversion}{chapter.11}
-\BOOKMARK [1]{section.11.3}{XML publishing}{chapter.11}
+\BOOKMARK [1]{section.11.3}{Generating HTML, RTF and PDF from DocBook XML}{chapter.11}
+\BOOKMARK [2]{subsection.11.3.1}{text/x-fo to application/pdf (sent to file)}{section.11.3}
 \BOOKMARK [0]{chapter.12}{Cactus - possible candidates for filters}{}
 \BOOKMARK [1]{section.12.1}{Background}{chapter.12}
 \BOOKMARK [2]{subsection.12.1.1}{System description}{section.12.1}

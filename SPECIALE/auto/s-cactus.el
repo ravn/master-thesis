@@ -15,16 +15,7 @@
      "cha:cactus-sample-filter-sets"
      "sec:network-adobe-acrobat-pdf-printer"
      "sec:image-conversion"
-     "sec:xml-publishing"
-     "cha:cactus-possible-candidates-for-filters"
-     "sec:cactus-choice-of-language"
-     "sec:converters"
-     "sec:linux"
-     "sec:apache"
-     "sec:squid"
-     "sec:cocoon"
-     "sec:cactus-filters"
-     "sec:filter-ps-to-pdf")
+     "sec:xml-publishing")
     (TeX-run-style-hooks
      "../src/sql/incoming"
      "../src/sql/derivers"
