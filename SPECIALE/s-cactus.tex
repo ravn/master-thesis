@@ -6,23 +6,19 @@
 %   files they can buy an upgrade }.}{William H. Gates III}{\textsf{??}}
 
 
-\chapter{\textit{Cactus} - a web based document publication and data-driven
-  conversion framework}
+\chapter{\textit{Cactus} - a web based document publication
+  and data-driven conversion framework}
 
 
 %\label{sec:cactus}
 
-\textsf{Install a text/html -> text/plain, and application/pdf ->
-  application/eps filter, each eps can then be filtered to text/plain
-  with text2ps.  Make a search engine in the text/plain things, and
-  one that looks in any file}
 
 %\label{cha:cactus}
 
 
-In the previous chapters I have talked a lot about web
-publishing and how the computers can help the authors by
-letting them work with tools they know at the writing tasks
+The previous chapters have mentioned a lot about web
+publishing and how computers can help the authors by letting
+them work with the tools they know, at the writing tasks
 they know.
 
 The \textit{Cactus} system is my proof-of-concept
@@ -32,12 +28,12 @@ in question, and in a way which is basically transparent to
 the users by letting them use it as a simple service where
 they use the tools they know.
 
-This chapter explain the architecture of Cactus,
-\myvref{cha:cactus-sample-set-of-filters} list a small
-set of external filters I have implemented to provide
-\textsf{....}, and
-\myvref{cha:cactus-possible-candidates-for-filters}
-discuss a large number of possible filters I have been
+This chapter explain the Cactus architecture,
+\myvref{cha:cactus-sample-set-of-filters} list a small set
+of external filters I have implemented to provide basic
+image and printjob transformations, and
+\myvref{cha:cactus-possible-candidates-for-filters} discuss
+a large number of possible filters I have been
 investigating.
 
 The goals for Cactus were:
@@ -52,17 +48,20 @@ The goals for Cactus were:
 \item The software base required from the audience should be
   \textit{as small as possible}
   
-\item The system must run under \textit{Linux}
+\item The system must run under Unix, preferably Linux
   
 \item The amount of intrinsic knowledge hard-wired into the
   system should be as small as possible
 
+\item In order to let Cactus use as many external programs as
+  possible, the execution environment for these must be very
+  flexible. 
 \end{itemize}
 
-The above mentioned goals have been fullfilled to my
+The above mentioned goals have been fulfilled to my
 personal satisfaction even though the program turned out
 differently than I originally envisioned. Cactus is today a
-system which
+system which:
 
 \begin{itemize}
   
@@ -77,13 +76,16 @@ system which
 \item Provides a public service -- all information is
   available to everyone
   
-\item Allows documents to expire if they are not intended
-  for long term storage
+% \item Allows documents to expire if they are not intended
+%   for long term storage
 
+\item Capable of using most utilities which can be executed from a
+  command line, as filters.
 \end{itemize}
 
-Due to time constraints I have not implemented as much of
-the Cactus system as I would have liked to.  \textsf{...}
+Due to an underestimate of the effort needed to program the
+database, I have not implemented as much of
+the Cactus system as I would have liked to.  
 
 \section{Philosophy}
 \label{sec:cactus-philosophy}
@@ -174,13 +176,11 @@ The users view of Cactus is shown in
 \section{Design}
 \label{sec:cactus-design}
 
-The database tables are the heart of the Cactus system.  In
-addition to these, a large number of programs work on the
-data in the tables in order to do the various jobs needed
-when working with a potentially \textit{very} large dataset.
-I have identified the following types of programs which
-should be running all the time (and sleeping when they have
-nothing to do):
+Cactus is all about database tables, and several program
+working simultaneously on the data in the tables.  I have
+identified the following types of programs which should be
+running all the time (and sleeping when they have nothing to
+do):
 
 \begin{description}
   
@@ -202,18 +202,18 @@ nothing to do):
 %   assign a type of application/octet-stream.
   
 \item[Extractor] -- looks \textit{inside} an item to look
-  for references, embedded files and other kinds of
-  extractable data.  A reference may be an URL or an
-  emailaddress in a signature.  Embedded data could be an
+  for references, embedded files and other kinds of data
+  which can be extracted.  A reference may be an URL or an
+  email address in a signature.  Embedded data could be an
   uuencoded image in a Usenet posting.
   
 \item[Converters] -- create another version of a given item
   \textit{fast}.  These are intended for conversions of data
-  with users waiting, like \texttt{pnm} to
-  \texttt{png} (\textit{uncompressed} as the gzip algorithm is slow,
-  especially for large images).  The generated
-  versions are stored in the database and compressed when
-  the system is otherwise idle.
+  with users waiting, like \texttt{pnm} to \texttt{png}.
+  Compression schemes are normally rather time consuming and
+  compression should generally be postponed for idle
+  periods, where compressors are run.
+
 
 %   These should generally be designed
 %   to be as fast as possible, since these will be called from
@@ -223,6 +223,7 @@ nothing to do):
 \item[Derivers] -- create another item from one or more
   originals irreversibly, like generate \texttt{dvi}-files
   from one or more \texttt{tex}-files.
+
 % A deriver can ask for a conversion.
 %For efficiency reasons, several computers could run derivers for
 %Cactus.  
@@ -234,9 +235,11 @@ nothing to do):
 %   available to the system.
   
 \item[Compressors] -- Reduce the size of a converted item if
-  possible, by reencoding the data using any built-in
-  compression schemes in the data format of the item.
-  Sample formats are \texttt{png} and \texttt{tiff}.
+  possible, by employing any built-in compression schemes
+  defined in the format of the item.  Sample formats are
+  \texttt{png} which uses gzip-compression and \texttt{tiff}
+  which uses LZW-compression.  A compressor may not change
+  the MIME-type of an item.
   
 %\item[\textsf{Optimizers}] --
   
@@ -254,7 +257,7 @@ nothing to do):
   
 \item[Archivers] -- moves compressed items which has not
   been used for a long time into long-term storage, leaving
-  only the metadata.  This keeps the working data set small.
+  only the meta-data.  This keeps the database files small.
 
 %   This would typically be running "gzip -9" on the content, creating a
 %   new entry (with a new mimetype), and marking the item as decachable.
@@ -269,82 +272,91 @@ These are complemented by
 \begin{description}
 \item[Acquirers] -- gathers items from "outside" Cactus and
   enters it in the "incoming" table with an appropriate
-  MIME-type, an expiration date, and \textsf{misc user
-    information}.  An acquirer could accept email, emulate a
-  printer, retrieve Usenet articles, etc.
+  MIME-type and an owner.  Optionally an expiration date, a
+  suggested filename and a comment can be provided.An
+  acquirer could accept email, emulate a printer, retrieve
+  Usenet articles, etc.
   
 \item[Janitors] - cleans up whenever the system is otherwise
   idle, or when the cache is full.  Converted items can be
-  emptied of content, originals can be archived.  Expired
-  items can be purged completely from the database, along
-  with all their derived items.
+  emptied of content, originals can be archived by being
+  moved into off-line storage.  Expired items can be purged
+  completely from the database, along with all their derived
+  items.
   
-\item[Presenters] - extracts data, and present them.  This
-  could be a CGI-script presenting a given item as a
-  http-stream.  A PDF item could be presented as a window
-  with two frames, the leftmost containing a thumbnail pr
-  page, and the rightmost a high resolution version of a
-  given page.
+\item[Presenters] - extracts data from the database, and
+  present them.  Possible presenters could be CGI-scripts,
+  or  PHP3-documents.  
+  
 %  The page should be cut in smaller pieces to
 %  allow easier processing by Unix Netscape.
 \end{description}
 
-In an ideal world we have infinite storage and infinite CPU-speed, meaning that
-everything would be done instantly when we need it.  Since that is clearly not
-possible, a pricing system is implemented for derivers which are scheduled
-based on expected CPU-time used for this derivation.  The ``cheapest''
-derivations are then done first, leaving very expensive ones for times when the
-system is otherwise idle.  This pricing system would also be used to ask for
-immediate execution of conversions which users request directly.
+In an ideal world we have infinite storage and infinite
+CPU-speed, meaning that everything would be done instantly
+when we need it.  Since that is clearly not possible, it is
+necessary to find a fair schedule for doing things, without
+overloading the system.  Cactus uses a simple cost-based
+scheduler, based on expected CPU-time used for a given
+derivation.  The ``cheapest'' derivations are then done
+first, leaving very expensive ones for times when the system
+is otherwise idle.  This pricing system would also be used
+to ask for immediate execution of conversions which users
+request directly.
 
 % \ttextsf{ What to do when the system runs so full that
 %   archiving cannot be done fast enough.  Can data be moved
 %   to "outside storage?".  }
 
-
-None of this information is hardwired into Cactus.  All filters are stored in
-appropriate tables, as listed with the individual types.  Full descriptions of
-each are present in the implementation section.
-
+None of this information is hardwired into Cactus.  All
+filters are stored in appropriate tables, as listed with the
+individual types.  Full descriptions of each are present in
+the implementation section.
 
 \subsection{Data acquisition}
-
 
 \myimage{gr/gather}{The data pathways into the
   \texttt{incoming} table in Cactus. }{gather}
 
-\myvref{fig:gather} shows some of the possible ways to acquire
-data into Cactus [\textsf{``scanner'' in image}].  I have envisioned
-several ways to submit data to Cactus:
+Data can be acquired by just about any process that is able
+to open a connection to the Cactus database.
+\myvref{fig:gather} shows a combination of email, printing,
+voice modem and scanning.  Some possibilities might be:
+
 
 \begin{description}
 \item[Email] -- a user may easily submit any file, by
-  attaching it to an email which is sent to
-  \texttt{cactus@asserballe}. 
+  attaching it to an email which is sent to a virtual Cactus
+  user.  For the proof-of-concept implementation this was
+  \texttt{cactus@asserballe}
+  (\texttt{cactus\%asserballe@mip.sdu.dk} for users outside
+  of MIP).
 
 \item[Virtual Printer] -- Cactus provides a virtual
   PostScript printer accessible from both Windows and Unix,
   which acceps printjobs that are inserted directly in the
   database instead of being printed out.
+  
+\item[Scanner] -- A scanner may produce one or more sets of
+  images which belong together.
+  
+\item[A drag-and-drop directory] -- A Windows \textit{file
+    share} is provided in which users may put any file that
+  is then moved in the database by a periodically checking
+  daemon.  A similar directory is available to Unix users as
+  an NFS-exported directory where users may create their own
+  files, but not modify others.
 
-\item[Scanner] -- A scanner may produce a set of images
-  which belong together.  
-
-\item[A drag-and-drop directory] -- A Windows \textit{file share} is provided
-in which users may put any file that is then moved in the database by a
-periodic surveilling daemon.  A similar directory is available to Unix users as
-an NFS-exported directory where users may create their own files, but not
-modify others.  
-
-
-\item[Fax] -- A faxmodem may be connected and used to gather
-  faxes.  Information from the modem regarding phone number
-  of the sender (as well as any other provided by the phone
-  company) may be recorded along with the actual bitmap.
-  The bitmap may be printed directly, in order to emulate a
-  regular fax.  If OCR-filters are installed, a text
-  version may be generated which may be integrated in a full
-  text search facility
+  
+\item[Fax] -- A fax-modem may be connected and used to
+  gather faxes.  Information from the modem regarding phone
+  number of the sender (as well as any other provided by the
+  phone company) may be recorded along with the actual
+  bitmap.  The bitmap may be printed directly, in order to
+  emulate a regular fax.  If Optical Character
+  Recognition-filters are installed, a text version may be
+  generated which may be integrated in a full text search
+  facility
   
 \item[Voice mail] -- The same faxmodem may be used as an
   answering machine, and the recorded messages stored in
@@ -354,37 +366,45 @@ modify others.
 \end{description}
 
 Each of these must fill out as many fields in the
-\texttt{incoming} table as possible.  
+\texttt{incoming} table as possible (see
+\myvref{tab:sql-incoming}) in order to provide as much
+information as possible for later processing.  
 
-\textit{Note:} Only the email and printer data acquirers have been fully
-implemented in the proof-of-concept implementation.  The Scanner and
-Shared-directory acquirers are on an experimental stage, and is not suitable
-for production use.
+\textit{Note:} Only the email and printer data acquirers
+have been fully implemented in the proof-of-concept
+implementation.  The Scanner and Shared-directory acquirers
+are on an experimental stage, and is not suitable for
+production use.
 
 
 \subsection{Examining an item}
 
 Cactus in itself have no notion of an item besides it being
-a raw bitstream with a MIME-type.  With the addition of an \textit{examiner} for a given MIME-type
-Cactus can be made aware of whatever is inside an
-item.  An examiner must do two things, and print the
-findings back on \texttt{stdout} as lines of 
-(MIME-type, space, value):
+a raw bit stream with a MIME-type.  With the addition of an
+\textit{examiner} for a given MIME-type Cactus can be made
+aware of whatever is inside an item.  An examiner must do
+two things, and print the findings back on \texttt{stdout}
+as lines of (MIME-type, space, value):
 
 \begin{enumerate}
-\item Provide information about the item in question and report it
-  back to Cactus in order to have the attributes set in the database.
-  Each attribute should be listed as the MIME-type
-  \texttt{x-cactus}/\textit{attribute} followed by a value.
+\item Provide information about the item in question and
+  report it back to Cactus in order to have the attributes
+  set in the database.  Each attribute should be listed as
+  the MIME-type \texttt{x-cactus}/\textit{attribute}
+  followed by a value.
   
-\item Provide a full list of contained items within.  These should be
-  listed with a value that uniquely allows the corresponding extractor
-  to identify the item in question when given the MIME-type and the
-  value.
+\item Provide a full list of contained items within.  These
+  should be listed with a value that uniquely allows the
+  corresponding extractor to identify the item in question
+  when given the MIME-type and the value.
 \end{enumerate}
 
+\myimage{gr/items}{How the examiner update an item, and provide
+  information to the extractor.  \textsf{\textit{Note}}: The
+  ``Deriver'' box should have been named ``Extractor''.}{items}
+
 Examiners are found in the \texttt{examiners} table (see
-\myvref{tab:mysql-examiners}.  Figure~\myvref{fig:items}
+\myvref{tab:sql-examiners}.  Figure~\myvref{fig:items}
 show how an examiner examins an item and return a list of
 the contents, Cactus updates the item in question and
 forward a list of any contained objects to the appropriate
@@ -392,44 +412,38 @@ deriver which then in turn extracts the items the examiner
 found and inserts them in the database flagged for later
 examination.
 
-\myimage{gr/items}{How the examiner update an item, and
-  provide information to the deriver}{items}
-
-
-\subsection{Converters}
-
-Converters are currently implemented as \textit{derivers}.
-Converters should be used for reversible actions like
-PostScript to PDF and vice versa.
-
 \subsection{Derivers}
 
 A deriver derives a new item (with another MIME-type) from
 an existing item, based on an entry in the \texttt{derivers}
-table.
-\begin{description}
-\item[\{@source-dir\}]  -- is replaced with the name of the directory in which the source file resides.  
+table.  
 
-\textsf{....}
+If the source file was derived from a container, all other files in
+the container which had a filename will be present in the source
+directory as well.  In this way, files can refer to other files in the
+same container.  This is useful for multi-file submissions, like
+{\LaTeX}-files which may be split up in several parts, or use external
+images.  (Note:  The current implementation of the deriver launcher do
+only provide the single source file).
+
+This sample deriver creates a PostScript file from a DVI-file:
+
+\begin{verbatim}
+PRINTER= dvips -Z {@source-name} -o dummy.ps;mv *.ps {@dest-dir}
+\end{verbatim}
 
 
-\end{description}
 
-If the source file was derived from a container, all other files in the container which had a filename will be present in the source directory as well.
 
-The following guarantees apply:
 
-\begin{itemize}
-\item The \{@dest-dir\} will be writable -- the deriver should not write files anywhere else.
-\item There is no guarantee on the amount on free space in the file system.
-\item If a deriver uses for longer than \textsf{??} CPU seconds, or needs more than \textsf{??} megabytes of memory, it  will be terminated and the output discarded.  
-\item 
-\end{itemize}
 
-There is currently no means for a deriver to specify that a derivation could succeed later even if it fail now.
+\subsection{Converters}
 
-These rules are not enforced (as in a \textsf{chroot jail}) but merely guidelines 
+Converters are very similar to derivers, except that they
+work withshould be used for reversible actions like
+PostScript to PDF and vice versa.   All other attributes 
 
+A converter should 
 
 \subsection{Compressors}
 
@@ -441,17 +455,22 @@ The same conditions apply to compressors as to derivers,
 where the output file must contain an optimized version of
 the item.  If the generated file is empty it is ignored.
 
-A compressor command line for \texttt{image/png} files could
-be
+A sample compressor command line for \texttt{image/png} would be:
 
 \begin{verbatim}
-\textsf{pngcrush ....}
+pngcrush {@source-file} {@dest-dir}/dummy.png
 \end{verbatim}
 
-\subsection{Optimizers}
+It is up to the compressor to decide whether the output is better, and
+only leave the output file if 
+%\subsection{Optimizers}
 
 
 \subsection{Archivers}
+
+An archiver is used to move data away from the main database.  Derived
+items can safely have their data streams removed since these can be
+generated again from the original files.  
 
 
 \subsection{Janitors}
@@ -488,6 +507,31 @@ The easiest way to do this is as XML (with the addtional
 overhead of keeping the whole result in memory), since the
 programmer does not have to bother with iterating though the
 returned table. 
+
+\section{Executing external commands}
+
+The following guarantees apply:
+
+
+\begin{description}
+  
+\item[\{@source-dir\}] -- is replaced with the name of the directory
+  in which the source file resides.
+
+\textsf{....}
+
+
+\end{description}
+\begin{itemize}
+\item The \{@dest-dir\} will be writable -- the deriver should not write files anywhere else.
+\item There is no guarantee on the amount on free space in the file system.
+\item If a deriver uses for longer than \textsf{??} CPU seconds, or needs more than \textsf{??} megabytes of memory, it  will be terminated and the output discarded.  
+\item 
+\end{itemize}
+
+There is currently no means for a deriver to specify that a derivation could succeed later even if it fail now.
+
+These rules are not enforced but are merely guidelines.
 
 \section{SQL tables}
 
@@ -562,25 +606,37 @@ Hello done.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Implementation}
+\textsf{Install a text/html -> text/plain, and application/pdf ->
+  application/eps filter, each eps can then be filtered to text/plain
+  with text2ps.  Make a search engine in the text/plain things, and
+  one that looks in any file}
+
+\myimage{gr/cactus-ten-most-recent}{Ten most recent
+  submissions}{cactus-ten-most-recent}
+\myimage{gr/cactus-generated-pdf-from-lars}{cactus-generated-pdf-from-lars}{cactus-generated-pdf-from-lars}
+\myimage{gr/cactus-splitted-email-from-jimm}{cactus-splitted-email-from-jimm}{cactus-splitted-email-from-jimm}
+\myimage{gr/cactus-original-from-lars}{cactus-original-from-lars}{cactus-original-from-lars}
+\myimage{gr/cactus-splitted-email-from-lars}{cactus-splitted-email-from-lars}{cactus-splitted-email-from-lars}
+\myimage{gr/cactus-main}{cactus-main}{cactus-main}
+\myimage{gr/cactus-documents-pr-user}{cactus-main.pnm cactus-documents-pr-user}{cactus-main.pnm cactus-documents-pr-user}
+\input{../src/sql/compressors}
+\input{../src/sql/derivers}
+\input{../src/sql/examiners}
+\input{../src/sql/items}
+\input{../src/sql/mime}
+\input{../src/sql/users}
+\input{../src/sql/workqueue}
+\input{../src/sql/incoming}
+
 
 This section describes the proof-of-concept implementation of Cactus.  
 
 
 \label{sec:cactus-implementation}
- The
-  \filename{\~{}cactus/.procmailrc} contains
-\begin{verbatim}
-MAILDIR=work
-LOGFILE = _logfile
-VERBOSE = yes
-FROM=`formail -rt -xTo:`  
+The \filename{\~{}cactus/.procmailrc} contains
 
-:0 wc 
-| (cd /home/cactus/src/cactus; ./enter-document.pl message/rfc822 $FROM )
+\listinginput{10000}{procmailrc}
 
-:0 
-incoming-mail
-\end{verbatim}
   which means that the 
 \subsection{Hardware/software considerations}
 
@@ -619,6 +675,10 @@ modules with the literate programing extension?
 
 \section{Why the name \textit{Cactus}?}
 
+Please see~\myvref{fig:viggo-cactus} for a Danish explanation.
+
+\myimage{gr/viggo-2}{The origin of the name
+    Cactus}{viggo-cactus}
 
 
 \section{The design of Cactus}
@@ -681,6 +741,13 @@ expire if they are not intended for long term storage
 
 \chapter{Cactus - possible candidates for filters}
 \label{cha:cactus-possible-candidates-for-filters}
+
+
+
+
+
+
+
 
 
 % \subsection{Yggdrasil - a simple navigational framework}

@@ -1,4 +1,9 @@
-\begin{thebibliography}{GRM97}
+\begin{thebibliography}{aSRaFM97}
+
+\bibitem[aSRaFM97]{goosens-rahtz-mittelbach:the-latex-graphics-companion}
+Michel~Goosens \and Sebastian Rahtz~\and Frank~Mittelbach.
+\newblock {\em The {\LaTeX} graphics companion}, volume ISBN: 0-201-85469-4.
+\newblock Addison-Wesley, 1997.
 
 \bibitem[Cod70]{a-relational-model-of-data-for-large-shared-databanks}
 E.F. Codd.
@@ -26,7 +31,7 @@ Jr. Frederick P.~Brooks.
   ISBN 0-201-00650-2.
 \newblock Addison-Wesley, 1975.
 
-\bibitem[Gre98]{greenspun-sql}
+\bibitem[Gre98]{greenspun:sql-for-web-nerds}
 Phil Greenspun.
 \newblock Sql for web nerds.
 \newblock http://photo.net/sql/, 1998.
@@ -38,14 +43,6 @@ Phillip Greenspun.
   1-55860-534-7.
 \newblock Morgan Kaufmann Publishers, Inc, 1999.
 \newblock An excellent guide to running websites seen from an OpenSource view.
-
-\bibitem[GRM97]{the-latex-graphics-companion}
-Michel Goosens, Sebastian Rahtz, and Frank Mittelbach.
-\newblock {\em The {\LaTeX} graphics companion - Illustrating Documents with
-  {\TeX} and PostScript}.
-\newblock Addison-Wesley, 1997.
-\newblock Describes in great detail the intricacies of embedding graphics in
-  LaTeX documents.
 
 \bibitem[Hof79]{goedelescherbach}
 Douglas Hofstadter.

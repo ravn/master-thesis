@@ -13,6 +13,7 @@ rapport.pdf: rapport.tex Makefile
 	bibtex rapport
 	pdflatex rapport
 	pdflatex rapport
+	cp rapport.pdf ../public_html
 
 clean:
 	rm *.aux *.dvi *~

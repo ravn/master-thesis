@@ -5,8 +5,8 @@
      "sedgewick-algorithms-in-c"
      "understanding-the-new-sql"
      "applied-cryptography"
-     "the-latex-graphics-companion"
-     "greenspun-sql"
+     "goosens-mittelbach-samarin:the-latex-companion"
+     "greenspun:sql-for-web-nerds"
      "a-relational-model-of-data-for-large-shared-databanks"
      "a-guide-to-latex"
      "mez-waco"
@@ -25,5 +25,6 @@
      "christiansen-torkington:perl-cookbook"
      "goosens-rahtz-mittelbach:the-latex-graphics-companion"
      "franquin:vakse-viggo-4"
-     "brooks:the-mythical-man-month"))))
+     "brooks:the-mythical-man-month"
+     "goosens-rahtz:the-latex-web-companion"))))
 

@@ -14,15 +14,14 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces The data pathways into the \texttt  {incoming} table in Cactus. }}{84}{figure.9.2}}
 \newlabel{fig:gather}{{9.2}{84}{Data acquisition\relax }{figure.9.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3.2}Examining an item}{85}{subsection.9.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces How the examiner update an item, and provide information to the deriver}}{86}{figure.9.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces How the examiner update an item, and provide information to the extractor. \unhbox \voidb@x \setbox \@tempboxa \hbox {\color@begingroup \kern \fboxsep {{\sl  {\textit  {Note}}}}\kern \fboxsep \endgraf \endgroup }\@tempdima \fboxrule \advance \@tempdima \fboxsep \advance \@tempdima \dp \@tempboxa \hbox {\lower \@tempdima \hbox {\vbox {\hrule height\fboxrule \hbox {\vrule width\fboxrule \relax \vbox {\vskip \fboxsep \box \@tempboxa \vskip \fboxsep }\relax \vrule width\fboxrule }\hrule height\fboxrule }}}: The ``Deriver'' box should have been named ``Extractor''.}}{86}{figure.9.3}}
 \newlabel{fig:items}{{9.3}{86}{Examining an item\relax }{figure.9.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Converters}{86}{subsection.9.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.4}Derivers}{86}{subsection.9.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.3}Derivers}{86}{subsection.9.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.4}Converters}{86}{subsection.9.3.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3.5}Compressors}{87}{subsection.9.3.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.6}Optimizers}{87}{subsection.9.3.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.7}Archivers}{87}{subsection.9.3.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.8}Janitors}{87}{subsection.9.3.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.9}Presenters}{87}{subsection.9.3.9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.6}Archivers}{87}{subsection.9.3.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.7}Janitors}{87}{subsection.9.3.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3.8}Presenters}{87}{subsection.9.3.8}}
 \@writefile{toc}{\contentsline {section}{\numberline {9.4}SQL tables}{87}{section.9.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {9.5}Implementing a search engine}{88}{section.9.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {9.6}Overall view}{88}{section.9.6}}
@@ -38,64 +37,96 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {10}Implementation}{90}{chapter.10}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sec:cactus-implementation}{{10}{90}{Implementation\relax }{chapter.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.1}Hardware/software considerations}{90}{subsection.10.0.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.2}Data acquisition}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Email}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Printing}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Fax}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Scanning}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Voice mail}{90}{subsection.10.0.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.3}Derivers}{90}{subsection.10.0.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.4}Converters}{91}{subsection.10.0.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.5}Examiners}{91}{subsection.10.0.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.6}...}{91}{subsection.10.0.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.7}Database}{91}{subsection.10.0.7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.8}Web server}{91}{subsection.10.0.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.9}Making it all work under Linux}{91}{subsection.10.0.9}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.1}Why the name \textit  {Cactus}?}{91}{section.10.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.2}The design of Cactus}{91}{section.10.2}}
-\newlabel{sec:the-design-of-cactus}{{10.2}{91}{The design of Cactus\relax }{section.10.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.3}Overview}{91}{section.10.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Cactus - sample set of filters}{93}{chapter.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces Ten most recent submissions}}{90}{figure.10.1}}
+\newlabel{fig:cactus-ten-most-recent}{{10.1}{90}{Implementation\relax }{figure.10.1}{}}
+\newlabel{sec:cactus-implementation}{{10}{90}{Implementation\relax }{table.10.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.1}{\ignorespaces SQL table "compressors"}}{90}{table.10.1}}
+\newlabel{tab:sql-compressors}{{10.1}{90}{Implementation\relax }{table.10.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.2}{\ignorespaces cactus-generated-pdf-from-lars}}{91}{figure.10.2}}
+\newlabel{fig:cactus-generated-pdf-from-lars}{{10.2}{91}{Implementation\relax }{figure.10.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.3}{\ignorespaces cactus-splitted-email-from-jimm}}{91}{figure.10.3}}
+\newlabel{fig:cactus-splitted-email-from-jimm}{{10.3}{91}{Implementation\relax }{figure.10.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.2}{\ignorespaces SQL table "derivers"}}{91}{table.10.2}}
+\newlabel{tab:sql-derivers}{{10.2}{91}{Implementation\relax }{table.10.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.4}{\ignorespaces cactus-original-from-lars}}{92}{figure.10.4}}
+\newlabel{fig:cactus-original-from-lars}{{10.4}{92}{Implementation\relax }{figure.10.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.5}{\ignorespaces cactus-splitted-email-from-lars}}{92}{figure.10.5}}
+\newlabel{fig:cactus-splitted-email-from-lars}{{10.5}{92}{Implementation\relax }{figure.10.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.3}{\ignorespaces SQL table "examiners"}}{92}{table.10.3}}
+\newlabel{tab:sql-examiners}{{10.3}{92}{Implementation\relax }{table.10.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.6}{\ignorespaces cactus-main}}{93}{figure.10.6}}
+\newlabel{fig:cactus-main}{{10.6}{93}{Implementation\relax }{figure.10.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.7}{\ignorespaces cactus-main.pnm cactus-documents-pr-user}}{93}{figure.10.7}}
+\newlabel{fig:cactus-main.pnm cactus-documents-pr-user}{{10.7}{93}{Implementation\relax }{figure.10.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.4}{\ignorespaces SQL table "items"}}{94}{table.10.4}}
+\newlabel{tab:sql-items}{{10.4}{94}{Implementation\relax }{table.10.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.5}{\ignorespaces SQL table "mime"}}{94}{table.10.5}}
+\newlabel{tab:sql-mime}{{10.5}{94}{Implementation\relax }{table.10.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.6}{\ignorespaces SQL table "users"}}{95}{table.10.6}}
+\newlabel{tab:sql-users}{{10.6}{95}{Implementation\relax }{table.10.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.7}{\ignorespaces SQL table "workqueue"}}{95}{table.10.7}}
+\newlabel{tab:sql-workqueue}{{10.7}{95}{Implementation\relax }{table.10.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10.8}{\ignorespaces SQL table "incoming"}}{95}{table.10.8}}
+\newlabel{tab:sql-incoming}{{10.8}{95}{Implementation\relax }{table.10.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.1}Hardware/software considerations}{96}{subsection.10.0.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.2}Data acquisition}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Email}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Printing}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Fax}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Scanning}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsubsection}{Voice mail}{96}{subsection.10.0.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.3}Derivers}{96}{subsection.10.0.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.4}Converters}{96}{subsection.10.0.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.5}Examiners}{96}{subsection.10.0.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.6}...}{96}{subsection.10.0.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.7}Database}{96}{subsection.10.0.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.8}Web server}{96}{subsection.10.0.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.0.9}Making it all work under Linux}{96}{subsection.10.0.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.1}Why the name \textit  {Cactus}?}{97}{section.10.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10.8}{\ignorespaces The origin of the name Cactus}}{97}{figure.10.8}}
+\newlabel{fig:viggo-cactus}{{10.8}{97}{Why the name \textit {Cactus}?\relax }{figure.10.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.2}The design of Cactus}{97}{section.10.2}}
+\newlabel{sec:the-design-of-cactus}{{10.2}{97}{The design of Cactus\relax }{section.10.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.3}Overview}{98}{section.10.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Cactus - sample set of filters}{99}{chapter.11}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{cha:cactus-sample-set-of-filters}{{11}{93}{Cactus - sample set of filters\relax }{chapter.11}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Cactus - possible candidates for filters}{94}{chapter.12}}
+\newlabel{cha:cactus-sample-set-of-filters}{{11}{99}{Cactus - sample set of filters\relax }{chapter.11}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Cactus - possible candidates for filters}{100}{chapter.12}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{cha:cactus-possible-candidates-for-filters}{{12}{94}{Cactus - possible candidates for filters\relax }{chapter.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.1}Background}{94}{section.12.1}}
+\newlabel{cha:cactus-possible-candidates-for-filters}{{12}{100}{Cactus - possible candidates for filters\relax }{chapter.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.1}Background}{100}{section.12.1}}
 \citation{sedgewick-algorithms-in-c}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.1}System description}{95}{subsection.12.1.1}}
-\@writefile{brf}{\backcite{sedgewick-algorithms-in-c}{{95}{12.1.1}{subsection.12.1.1}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.2}Background}{95}{subsection.12.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.3}Installation}{95}{subsection.12.1.3}}
-\@writefile{toc}{\contentsline {subsubsection}{"Ease of publishing" is crucial}{96}{Item.13}}
-\@writefile{toc}{\contentsline {subsubsection}{Document preparation and conversion must be fully automatic}{96}{Item.13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.4}The implementation of Cactus.}{97}{subsection.12.1.4}}
-\newlabel{sec:cactus-choice-of-language}{{12.1.4}{98}{The implementation of Cactus}{subsection.12.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.5}Converters}{98}{subsection.12.1.5}}
-\newlabel{sec:converters}{{12.1.5}{98}{Converters\relax }{subsection.12.1.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Microsoft Word}{98}{subsection.12.1.5}}
-\@writefile{toc}{\contentsline {subsubsection}{{T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m } and {\LaTeX  }}{100}{Hfootnote.112}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.6}MySQL}{100}{subsection.12.1.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.2}Programs}{101}{section.12.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.1}Linux - an operating system}{101}{subsection.12.2.1}}
-\newlabel{sec:linux}{{12.2.1}{101}{Linux - an operating system\relax }{subsection.12.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.2}Apache - a high performance web server}{101}{subsection.12.2.2}}
-\newlabel{sec:apache}{{12.2.2}{101}{Apache - a high performance web server\relax }{subsection.12.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.3}Squid - a high performance web cache}{101}{subsection.12.2.3}}
-\newlabel{sec:squid}{{12.2.3}{101}{Squid - a high performance web cache\relax }{subsection.12.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.4}Cocoon}{102}{subsection.12.2.4}}
-\newlabel{sec:cocoon}{{12.2.4}{102}{Cocoon\relax }{subsection.12.2.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.3}Filters}{102}{section.12.3}}
-\newlabel{sec:cactus-filters}{{12.3}{102}{Filters\relax }{section.12.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.1}ps to pdf}{102}{subsection.12.3.1}}
-\newlabel{sec:filter-ps-to-pdf}{{12.3.1}{102}{ps to pdf\relax }{subsection.12.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.4}Scanning in mail}{102}{section.12.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.1}System description}{101}{subsection.12.1.1}}
+\@writefile{brf}{\backcite{sedgewick-algorithms-in-c}{{101}{12.1.1}{subsection.12.1.1}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.2}Background}{101}{subsection.12.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.3}Installation}{101}{subsection.12.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{"Ease of publishing" is crucial}{102}{Item.13}}
+\@writefile{toc}{\contentsline {subsubsection}{Document preparation and conversion must be fully automatic}{102}{Item.13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.4}The implementation of Cactus.}{103}{subsection.12.1.4}}
+\newlabel{sec:cactus-choice-of-language}{{12.1.4}{104}{The implementation of Cactus}{subsection.12.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.5}Converters}{104}{subsection.12.1.5}}
+\newlabel{sec:converters}{{12.1.5}{104}{Converters\relax }{subsection.12.1.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Microsoft Word}{104}{subsection.12.1.5}}
+\@writefile{toc}{\contentsline {subsubsection}{{T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m } and {\LaTeX  }}{106}{Hfootnote.112}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.6}MySQL}{106}{subsection.12.1.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.2}Programs}{107}{section.12.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.1}Linux - an operating system}{107}{subsection.12.2.1}}
+\newlabel{sec:linux}{{12.2.1}{107}{Linux - an operating system\relax }{subsection.12.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.2}Apache - a high performance web server}{107}{subsection.12.2.2}}
+\newlabel{sec:apache}{{12.2.2}{107}{Apache - a high performance web server\relax }{subsection.12.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.3}Squid - a high performance web cache}{107}{subsection.12.2.3}}
+\newlabel{sec:squid}{{12.2.3}{107}{Squid - a high performance web cache\relax }{subsection.12.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.4}Cocoon}{108}{subsection.12.2.4}}
+\newlabel{sec:cocoon}{{12.2.4}{108}{Cocoon\relax }{subsection.12.2.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.3}Filters}{108}{section.12.3}}
+\newlabel{sec:cactus-filters}{{12.3}{108}{Filters\relax }{section.12.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.1}ps to pdf}{108}{subsection.12.3.1}}
+\newlabel{sec:filter-ps-to-pdf}{{12.3.1}{108}{ps to pdf\relax }{subsection.12.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.4}Scanning in mail}{108}{section.12.4}}
 \@setckpt{s-cactus}{
-\setcounter{page}{103}
+\setcounter{page}{109}
 \setcounter{equation}{0}
 \setcounter{enumi}{5}
 \setcounter{enumii}{0}

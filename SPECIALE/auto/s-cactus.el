@@ -19,5 +19,14 @@
      "sec:squid"
      "sec:cocoon"
      "sec:cactus-filters"
-     "sec:filter-ps-to-pdf"))))
+     "sec:filter-ps-to-pdf")
+    (TeX-run-style-hooks
+     "../src/sql/compressors"
+     "../src/sql/derivers"
+     "../src/sql/examiners"
+     "../src/sql/items"
+     "../src/sql/mime"
+     "../src/sql/users"
+     "../src/sql/workqueue"
+     "../src/sql/incoming"))))
 

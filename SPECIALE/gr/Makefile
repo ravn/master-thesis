@@ -3,6 +3,9 @@ M= #Makefile
 %.pnm: %.tiff $(M)
 	tifftopnm $<  >$@
 
+%.pnm: %.png $(M)
+	pngtopnm $<  >$@
+
 %.pnm: %.jpg $(M)
 	djpeg $<  >$@
 

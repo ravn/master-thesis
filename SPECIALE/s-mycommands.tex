@@ -23,8 +23,12 @@
 %\newcommand{\myurl}[2]{\begin{underline}{#2}\end{underline}\footnote{{#1}}}
 %\newcommand{\myurl}[2]{\href{#1}{#2}}
 % \hfil magic by Soeren Sandmann <sandmann@daimi.au.dk>
-\newcommand{\myurl}[2]{{\href{#1}{#2}}\footnote{\ldots{#2}\ldots \hfil\penalty1000\hfilneg\hskip-5em\hbox{}\hskip5em%
-{\href{#1}{\tt #1}}}}
+
+% working but includes the underlined text
+% \newcommand{\myurl}[2]{{\href{#1}{#2}}\footnote{\ldots{#2}\ldots \hfil\penalty1000\hfilneg\hskip-5em\hbox{}\hskip5em%
+% {\href{#1}{\tt #1}}}}
+
+\newcommand{\myurl}[2]{{\href{#1}{#2}}\footnote{{\href{#1}{\tt #1}}}}
 
 % \tag{hr}  ->  <hr>
 \newcommand{\tag}[1]{$<$#1$>$}
@@ -41,7 +45,7 @@
 % the if seperates between pdf and non pdf.
 \newcommand{\myimage}[3]{
 %  \begin{figure}[htbp]
-  \begin{figure}[thbp]
+  \begin{figure}[tbhp]
     \begin{center}
       
 %       \ifx\pdfoutput\undefined
