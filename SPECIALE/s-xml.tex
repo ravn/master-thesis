@@ -373,6 +373,74 @@ than one second instead of ten.  Experiments showed that Java programs
 consistently runs 15 times faster on Aalborg than on Asserballe.
 \textsf{and so what?}
 
+\texttt{incoming.xml}
+\begin{verbatim}
+<?xml version="1.0"?>
+<?xml-stylesheet href="incoming.xsl" type="text/xsl"?>
+
+<?cocoon-process type="sql"?>
+<?cocoon-process type="xslt"?>
+
+<page>
+
+ <connectiondefs>
+  <connection name="foo_connection">
+   <driver>org.gjt.mm.mysql.Driver</driver>
+   <dburl>jdbc:mysql://localhost/Cactus</dburl>
+   <username>XXXXXXXXX</username>
+   <password>XXXXXXXXX</password>
+  </connection>
+ </connectiondefs> 
+ 
+ <query connection="foo_connection" tag-case="lower">
+  select when, mime, user, how, filename, comment,length(item) as l  from incoming
+ </query>
+
+Testing 
+</page>
+\end{verbatim}
+
+\texttt{incoming.xsl}
+\begin{verbatim}
+<?xml version="1.0" ?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<?cocoon-process type="xslt"?>
+
+<xsl:template match="page">
+<html>
+<head>
+<title><xsl:value-of select="title"/></title>
+</head>
+<body bgcolor="#ffffff">
+<img src="gr/organ_pipe_cactus-single.jpg" align="left" />
+<xsl:apply-templates/>
+</body>
+</html>
+</xsl:template>
+
+<xsl:template match="ROWSET">
+<table border="0" bgcolor="#F0F0F0">
+<tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>filename</th><th>comment</th><th>iteml</th></tr>
+<xsl:apply-templates/>
+</table>
+</xsl:template>
+
+
+<xsl:template match="ROW">
+<tr> 
+<td><xsl:value-of select="when"/></td>
+<td><xsl:value-of select="mime"/></td>
+<td><xsl:value-of select="user"/></td>
+<td><xsl:value-of select="how"/></td>
+<td><xsl:value-of select="filename"/></td>
+<td><xsl:value-of select="comment"/></td>
+<td><xsl:value-of select="l"/></td>
+</tr>
+</xsl:template>
+</xsl:stylesheet>
+\end{verbatim}
+
+
 \subsection{Converting documents to XML}
 
 XML is currently having the same problems that HTML had in its initial
@@ -523,6 +591,7 @@ process is light and
 
 
 
+
 \framepage{15cm}{
 The history and usage of SGML.  Creation of XML.  Describe document
 validation, and conversion (XSLT) to XML and other formats.  Freedom
@@ -542,6 +611,9 @@ a small, powerful style sheet.
 }
 
 % $Log$
+% Revision 1.1.1.1  2000/03/02 21:55:31  ravn
+% Speciale files
+%
 % Revision 1.3  2000/02/26 22:07:33  ravn
 % Filled stuff on the various XSLT processors and described the findings hereof.
 %

@@ -13,3 +13,6 @@ rapport.pdf: rapport.tex Makefile
 	bibtex rapport
 	pdflatex rapport
 	pdflatex rapport
+
+clean:
+	rm *.aux *.dvi *~

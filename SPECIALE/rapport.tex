@@ -26,7 +26,18 @@
 %\usepackage{parskip}
 % \usepackage{draft}
 \usepackage{verbatim}
-\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[%pdftex,
+  pdftitle={Database backed Websites},
+  pdfauthor={Thorbjoern Ravn Andersen},
+  pdfsubject={pdfsubject},
+  pdfkeywords={pdfkeywords},
+  pdfpagemode={UseOutlines},
+  bookmarks,bookmarksopen,
+  pdfstartview={FitH},
+  colorlinks,linkcolor={blue},citecolor={blue},
+  urlcolor={red}
+]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -331,7 +342,7 @@ Very few utilites support creating PDF.  Discuss how to create PDF.
 % the moment?  Man pages in DocBook on Solaris (look on machine).  IE50
 % cannot show ``simple'' DocBook XML yet but it is the goal of that project.
 \include{s-xml}
-\include{docbook}
+\include{s-docbook}
 
 \section{Can users transparently harness the power of XML for
 webpublishing?}
@@ -378,6 +389,7 @@ powerful and easy for best results.
 \section{Bibliography with Web references}
 Full reference with a lot of annotated URL's.
 
+\includegraphics{gr/familie.eps}
 \bibliography{books}
 \end{document}
 
@@ -387,6 +399,12 @@ Full reference with a lot of annotated URL's.
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % $Log$
+% Revision 1.2  2000/03/03 01:27:43  ravn
+%
+%
+% Entered stuff in CVS.  The notes on databases have been added, and the
+% section moved to s-sample-databases (me thinks).
+%
 % Revision 1.1.1.1  2000/03/02 21:55:31  ravn
 % Speciale files
 %

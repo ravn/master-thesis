@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  2 MAR 2000 23:52
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  4 MAR 2000 19:18
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/article.cls
 Document Class: article 1999/01/07 v1.4a Standard LaTeX document class
@@ -30,21 +30,42 @@ Package: verbatim 1997/04/30 v1.5k LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
-(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
-Package: hyperref 1999/04/13 6.56 Hypertext links for LaTeX
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 1999/04/13 6.56 Hypertext links for LaTeX
+
 (/usr/share/texmf/tex/latex/hyperref/nameref.sty
 Package: nameref 1999/02/17 Cross-referencing by name of section
 )
-\@linkdim=\dimen103
+\@linkdim=\dimen105
 
 (/usr/share/texmf/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 1999/03/30 v0.3 PDFDocEncoding (Heiko Oberdiek)
 )
+Package hyperref Info: option bookmarks set true on input line 715.
+Package hyperref Info: option bookmarksopen set true on input line 715.
+Package hyperref Info: option colorlinks set true on input line 715.
 Package hyperref Info: Bookmarks ON on input line 732.
 Package hyperref Info: Hyper figures OFF on input line 744.
 Package hyperref Info: Link nesting OFF on input line 749.
@@ -58,15 +79,15 @@ Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
  names
 )
 \Fld@menulength=\count87
-\Field@Width=\dimen104
-\Fld@charsize=\dimen105
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
 \Choice@toks=\toks17
 \Field@toks=\toks18
 Package hyperref Info: Hyper figures OFF on input line 1244.
 Package hyperref Info: Link nesting OFF on input line 1249.
 Package hyperref Info: Hyper index ON on input line 1252.
 Package hyperref Info: backreferencing OFF on input line 1259.
-Package hyperref Info: Link coloring OFF on input line 1264.
+Package hyperref Info: Link coloring ON on input line 1262.
 \c@Item=\count88
 \c@Hfootnote=\count89
 \OddToc=\count90
@@ -75,25 +96,25 @@ LaTeX Info: Redefining \pageref on input line 1915.
 )
 *hyperref using default driver hypertex*
 (/usr/share/texmf/tex/latex/hyperref/hypertex.def) (rapport.aux
-(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (docbook.aux)
+(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (s-docbook.aux)
 (s-cactus.aux) (s-konsensus.aux) (s-available-hardware-and-software.aux))
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 70.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1bch.fd
 File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
@@ -101,28 +122,39 @@ File: OT1bch.fd 1996/01/27 Fontinst v1.504 font definitions for OT1/bch.
 
 Package hyperref Warning:  draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 59.
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: dvips.def on input line 125.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+Package hyperref Info: Link coloring ON on input line 70.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 60.
+(Font)              <17.28> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 60.
+(Font)              <12> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 60.
+(Font)              <8> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 60.
-LaTeX Font Info:    Try loading font information for OMS+bch on input line 93.
+(Font)              <6> on input line 71.
+LaTeX Font Info:    Try loading font information for OMS+bch on input line 104.
+
+
 (/usr/share/texmf/tex/latex/psnfss/omsbch.fd
 File: OMSbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
  [1
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 165.
+(Font)              <7> on input line 176.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 165.
+(Font)              <5> on input line 176.
  [2]
 \openout2 = `s-terms-and-concepts.aux'.
 
@@ -167,48 +199,59 @@ he style sheet di-rectly \OT1/cmtt/m/n/10 examples? Panorama?|
 
 [9]
 File: x-outline.xsl  (verbatim)
- [10] [11] [12]) [13]
-\openout2 = `docbook.aux'.
+ [10] [11]
+Overfull \hbox (91.99011pt too wide) in paragraph at lines 423--423
+[]\OT1/cmtt/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>f
+ilename</th><th>comment</th><th>iteml</th></tr>[] |
+ []
 
- (docbook.tex) [14
+[12] [13]) [14]
+\openout2 = `s-docbook.aux'.
+
+ (s-docbook.tex) [15
 
 
-] [15
+] [16
 
 ]
 \openout2 = `s-cactus.aux'.
 
- (s-cactus.tex [16
+ (s-cactus.tex [17
 
-] [17]
-[18] [19] [20]) [21]
+] [18] [19] [20]
+[21]) [22]
 \openout2 = `s-konsensus.aux'.
 
 
 No file s-konsensus.tex.
 \openout2 = `s-available-hardware-and-software.aux'.
 
-(s-available-hardware-and-software.tex) [22
+(s-available-hardware-and-software.tex) [23
 
 
 
 
-] (rapport.bbl) [23
+] (rapport.bbl
+Overfull \hbox (102.32626pt too wide) in paragraph at lines 392--1
+[][] |
+ []
 
-] (rapport.aux
-(s-terms-and-concepts.aux) (s-sample-websites.aux) (s-xml.aux) (docbook.aux)
-(s-cactus.aux) (s-konsensus.aux) (s-available-hardware-and-software.aux))
+) [24
+
+] (rapport.aux (s-terms-and-concepts.aux) (s-sample-websites.aux)
+(s-xml.aux) (s-docbook.aux) (s-cactus.aux) (s-konsensus.aux)
+(s-available-hardware-and-software.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1619 strings out of 10891
- 21304 string characters out of 97329
- 66549 words of memory out of 263001
- 4555 multiletter control sequences out of 10000+0
+ 2071 strings out of 10891
+ 27248 string characters out of 97329
+ 72789 words of memory out of 263001
+ 4991 multiletter control sequences out of 10000+0
  19529 words of font info for 48 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
- 30i,12n,27p,261b,370s stack positions out of 300i,100n,500p,50000b,4000s
+ 30i,13n,27p,261b,378s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (23 pages, 70636 bytes).
+Output written on rapport.dvi (24 pages, 79628 bytes).

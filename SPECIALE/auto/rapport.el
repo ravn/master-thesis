@@ -15,6 +15,7 @@
      '("framepage" 2))
     (TeX-run-style-hooks
      "hyperref"
+     "graphicx"
      "verbatim"
      "isolatin1"
      "fullpage"
@@ -27,7 +28,7 @@
      "s-terms-and-concepts"
      "s-sample-websites"
      "s-xml"
-     "docbook"
+     "s-docbook"
      "s-cactus"
      "s-konsensus"
      "s-available-hardware-and-software"))))
