@@ -14,5 +14,6 @@
      "tanenbaumoperatingsystems"
      "knuthliterateprogramming"
      "Dybvig:1996:SPL"
-     "phillipandalexsguidetowebpublishing"))))
+     "phillipandalexsguidetowebpublishing"
+     "sewell:weaving-a-program"))))
 

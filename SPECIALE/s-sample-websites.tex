@@ -7,6 +7,8 @@ documentation online.  photo.net (reread).  Sun's docs.sun.com
 (DocBook SGML)
 
 Talk about standard search engines on web pages.
+
+http://www.useit.com/alertbox/991017.html
 }
 
 
@@ -58,12 +60,27 @@ all the answers are stored in the same way as a story.
 
 
 \section{Valueclick.com}
-\framepage{15cm}{
   
-  Banner provider.  Check their online specs. Interview Ask for
-  details, about how the NT-cluster was replaced with a small Linuxbox
-  with MySQL and a squid in http-accelleration mode.  Explain the
-  problems with having fat processes serving slow modems.  }
+ValueClick is one of several banner-ad sellers on the Internet.
+Banner ads are animated images which advertise for a given website.
+The advertiser pay ValueClick for a certain amount of
+``\textit{click-throughs}'' (users who actually click the image to go
+to the advertised site) as opposed to the traditional number of
+exposures.  The former is harder to track than the latter.
+
+ValueClick claims on their web that they send out 40 million banner
+ads every day -- that is 460 ads a second -- so it is vital for
+business that the counters for each advertiser is accurately updated.
+From private email I have learned that their original NT-cluster based
+solutions were not good enough for several reasons, most notably the
+webservers having to wait for the browsers to accept every byte sent
+to them, before they could service the next.  By handling this and
+other similar problems, a single Linux based Pentium machine could
+outperform the rest of the server park.
+
+Today ValueClick is based on a large number of FreeBSD machines which
+use MySQL as their database server, and apparently works very well.
+
 
 
 % \section{Politiken}
@@ -80,8 +97,8 @@ pioneered the virtual Internet bookstore, where the potential buyers
 use their browser to see the virtual inventory of literally millions
 of books, and order their selections.  These are processed by Amazon
 and forwarded to subcontracters who deliver the purchased goods by
-mail to the buyers.  The concept has since been copied \textsf{by
-  several others}.  
+mail to the buyers.  The concept has since been copied by several
+other bookstores.
 
 \myimage{gr/amazon-1}{The frontpage of Amazon.co.uk.  An ISBN-number
   has been entered in the very prominent search box}{amazon-1}
@@ -153,7 +170,8 @@ ruins search engines for the ordinary users.
 Conclusion: The Amazon family of sites are very good, and do what they
 can to improve with the help of visitors.  Amazon have been able to
 keep their leader status in the virtual bookshop niche, by living up
-to the customers expectations.  Hopefully, they will make money one day.
+to the customers expectations.  Hopefully, they will make money one
+day.
 
 
 
@@ -298,18 +316,17 @@ university, and ``Route on map'' (Rute på kort) gives a visual route
 between the two locations, along with an estimate of the distance and
 time it will take.
 
-\myimage{gr/krak-5a}{???????????????????????
-  University'' reference}{krak-5a}
+\myimage{gr/krak-5a}{The entry box where the starting and ending point
+  is entered}{krak-5a}
 
 This map is shown in figure~\vref{fig:krak-5b}, and is perfectly
 adequate for a person driving a car.  For cyclists it is often a good
 idea to look for short-cuts, if you are well known in the area.
 
-\myimage{gr/krak-5b}{???????????????????????
-  University'' reference}{krak-5b}
+\myimage{gr/krak-5b}{The route from my home to the University}{krak-5b}
 
-\myimage{gr/krak-6}{???????????????????????
-  University'' reference}{krak-6}
+%\myimage{gr/krak-6}{???????????????????????
+%  University'' reference}{krak-6}
 
 If you need step-by-step directions, Krak can provide that too.
 Select the ``\textsf{???}'' button and print out the directions.
@@ -326,14 +343,10 @@ stations, and major bus stops.  Figure~\vref{fig:dsb-1} shows the initial
 form where the two end points for the journey as well as the arrival
 or departure time is indicated.  Please note that the two surrounding
 frames (left side and top - the scroll bare on the right indicates the
-actual area available) leave only \textsf{70\% of the area} to the
+actual area available) leave only about 70\% of the area to the
 application itself.
 
 \myimage{gr/dsb-1}{Rejseplanen1}{dsb-1}
-
-% \textsf{Figure~\vref{fig:dsb-2} is the same as the previous figure}???
-
-% \myimage{gr/dsb-2}{Rejseplanen2}{dsb-2}
 
 \myimage{gr/dsb-3}{Rejseplanen3}{dsb-3}
 \myimage{gr/dsb-4}{Rejseplanen4}{dsb-4}
@@ -399,6 +412,10 @@ META-tags (see~\vref{sec:html-meta-tags}), in order to present the
 \item Word in the body of the text
 \end{enumerate}
 
+\myimage{gr/alltheweb-2}{AllTheWeb search for ``background icons''}{alltheweb-2}
+
+\myimage{gr/alltheweb-1}{And what hit 15 was linking to in \cite{fig:alltheweb-2}}{alltheweb-1}
+
 \framepage{15cm}{
 \textsf{Check if there still is companies which boost your presence on
   web search engines}
@@ -415,6 +432,7 @@ META-tags (see~\vref{sec:html-meta-tags}), in order to present the
   after being driven away from search engines.   Why does google
   tick?}
 }
+
 \myurl{\textsf{http://ftpsearch.lycos.com}}{\texttt{ftpsearch.lycos.com}}
 is a unique service provided as a byproduct of the main search engine
 at \myurl{http://www.lycos.dk}{www.lycos.dk} where you may search for
@@ -455,15 +473,62 @@ THe only java-solution for home banking.  Any comments?
 \textsf{Beskriv projekt fra Jyllandspostudklip}
 
 
-\section{Cactus -- document capture and conversion}
+\section{Yggdrasil - a simple navigational framework}
+\label{sec:yggdrasil}
 
-\framepage{15cm}{
-Two out of four methods are implemented (email, printer).  (Increase
-blob limit in DBI::MySQL).  Sample PDF viewer, perhaps simple XLS viewer.
+\myimage{gr/yggdrasil-1}{Typical Yggdrasil navigational
+  screen}{yggdrasil-1}  
 
-Demonstrate that Cocoon can provide the navigational framework.
-}
+The Yggdrasil system was designed to provide a simple, consistent
+navigational framework around a dynamic set of web pages provided by
+users, as well as providing a "recently changed pages"-list plus an
+overview of pages written by each person.  This was a very successful
+idea in the start, but gradually lost momentum due to these factors:
 
+The development platform was changed from Unix to NT, which made it
+much more difficult for the users to access their web-directories, as
+these were no more a part of their home directory\footnote{The Apache
+  webserver uses the ~/public\_html directory for the users personal
+  web pages.  The transition to NT meant that the users - in addition
+  to their normal file manipulations - should telnet to a Unix server,
+  and change the file attributes every time the file was updated.  }
+
+The internal document format became Microsoft Word, which at that time
+could not be converted to HTML.  Such documents were therefore unable
+to be published.
+
+The users could trigger an update by sending an empty email to the
+system, as well as rely on an automatic nightly update.  The trigger
+mechanism was not brought along when the email system was converted to
+NT.
+
+New users was not informed about the system.
+
+
+
+\section{The TOM browser - converting documents online}
+\label{sec:tom}
+
+\myurl{http://wheel.compose.cs.cmu.edu:8001/cgi-bin/browse}{The TOM
+  browser} is a document conversion system which allows users to
+upload files and provide URL's to document on the web, which is then
+converted to one of numerous formats.  The default is to autodetect
+the file type, and convert to a viewable format.
+
+
+
+
+
+% \section{Cactus -- document capture and conversion}
+
+% \framepage{15cm}{
+% Two out of four methods are implemented (email, printer).  (Increase
+% blob limit in DBI::MySQL).  Sample PDF viewer, perhaps simple XLS viewer.
+
+% Demonstrate that Cocoon can provide the navigational framework.
+
+% A full description is available in~\section{site:cactus}
+% }
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "rapport"

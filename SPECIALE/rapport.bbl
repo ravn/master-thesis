@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
@@ -82,6 +82,14 @@ Robert Sedgewick.
 \newblock {\em Algorithms in C}.
 \newblock Addison-Wesley, 1990.
 \newblock ISBN 0-201-51425-7.
+
+\bibitem[Sewel(1989)]{sewell:weaving-a-program}
+Wayne Sewel.
+\newblock {\em Weaving a Program -- Literate Programming in Web}, volume ISBN:
+  0-442-31946-0.
+\newblock Van Nostrand Reinholdt, New York, 1989.
+\newblock A good introduction to the original WEB system, as well as the CWEB
+  dialect for C programming.
 
 \bibitem[Tanenbaum(1987)]{tanenbaumoperatingsystems}
 Andrew~S. Tanenbaum.

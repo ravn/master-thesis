@@ -26,10 +26,10 @@
      "fullpage"
      "charter"
      "latex2e"
-     "bk10"
+     "bk11"
      "book"
-     "10pt"
-     "draft"
+     "11pt"
+     "ddraft"
      "a4paper"
      "s-mycommands"))))
 
