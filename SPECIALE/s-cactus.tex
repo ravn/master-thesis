@@ -27,12 +27,11 @@ the users by letting them use it as a simple service where
 they use the tools they know.
 
 This chapter explain the Cactus architecture,
-\myvref{cha:cactus-sample-set-of-filters} list a small set
+\myvref{cha:cactus-sample-filter-sets} list a small set
 of external filters I have implemented to provide basic
-image and printjob transformations, and
-\myvref{cha:cactus-possible-candidates-for-filters} discuss
-a large number of possible filters I have been
-investigating.
+image and printjob transformations, after which I talk about the
+functionality of Cactus which has been considered but omitted in this
+initial proof-of-concept prototype.
 
 The goals for Cactus were:
 
@@ -169,14 +168,14 @@ Cactus works. A normal document publication would be like this:
   
 \item Go to the Cactus home page and locate the upload.  There is a
   list of recent uploads pr user, and a quick list listing the very
-  most recent uploads (see~\myvref{tab:cactus-ten-most-recent} on
-  page~\pageref{tab:cactus-ten-most-recent}).  [An unimplemented
+  most recent uploads (see~\myvref{fig:cactus-ten-most-recent} on
+  page~\pageref{fig:cactus-ten-most-recent}).  [An unimplemented
   option is to email the user when the requested document conversions
   have been completed]
 
 \item The status page for the item shows all the files that Cactus
-  have generated (see \myvref{tab:cactus-splitted-email-from-lars} on
-  page~\pageref{tab:cactus-splitted-email-from-lars}).  The versions
+  have generated (see \myvref{fig:cactus-splitted-email-from-lars} on
+  page~\pageref{fig:cactus-splitted-email-from-lars}).  The versions
   needed of each item can be viewed and downloaded.  URLs to items can
   be mailed to others for them to view, and other versions of items
   can be downloaded if so needed.
@@ -715,14 +714,14 @@ which is currently unimplemented.
 
 \input{../src/sql/items}
 
-\item[MIME] -- This table (see \myvref{fig:sql-mime}) contains the mimetypes known to the system.
+\item[MIME] -- This table contains the mimetypes known to the system.
   When an unknown MIME type is encountered it is created.  All MIME
   types should be entered in lowercase to facilitate compliancy with
   the MIME standard.
 
 \input{../src/sql/mime}
 
-\item[Users] -- This table (see \myvref{fig:sql-users}) contains all users known to the system.  If
+\item[Users] -- This table contains all users known to the system.  If
   an unknown user comes in, she is created.  No external way of
   validating users is implemented yet.  For full names it would
   feasible to create entries from the global user list from the
@@ -732,7 +731,7 @@ which is currently unimplemented.
 
 \input{../src/sql/users}
 
-\item[Workqueue] -- This table (see \myvref{fig:sql-workqueue})
+\item[Workqueue] -- This table 
 contains scheduled derivations.  Since some derivations are much, much
 more time consuming than others, I have chosen to have an attribute
 containing ``expected CPU-time usage'' calculated by the Cactus
@@ -753,8 +752,10 @@ flunctuate.
 
 A search engine can very easily be implemented, by using the SQL
 ``\texttt{LIKE '\%search-term\%'}'' syntax, which can be embedded in
-any of the supported languages and shown.   See
-\myvref{sec:cactus-implementation-search} for an example.
+any of the supported languages and shown.
+
+% See
+% \myvref{sec:cactus-implementation-search} for an example.
 
 For a production version the calling program should ensure that the
 search term does not contain any meta-characters that may allow a
@@ -926,10 +927,24 @@ expire if they are not intended for long term storage
 \label{cha:cactus-sample-filter-sets}
 
 This chapter lists several sample filter sets which provide a glimpse
-of the possible ways to use the Cactus system. 
+of the possible ways to use the Cactus system, even with the current
+limitation of a single input and output file.
 
-\section{Network Adobe Acrobat PDF-printer}
+The filters described here are listed in 
+\texttt{src/sql/default_derivers.txt}, which is loaded when the
+database is rebuilt.
+
+
+\section{``Print to PDF'' functionality}
 \label{sec:network-adobe-acrobat-pdf-printer}
+
+\myimage{gr/cactus-20000507-1}{Cactus view of a web page printed directly from
+  Netscape}{cactus-20000507-1}
+
+\myimage{gr/cactus-20000507-2}{The PDF-version of the printed web page
+  }{cactus-20000507-2}
+
+
 
 The Adobe Acrobat Portable Document Format is well suited for sharing
 electronic versions of printable documents, and the Adobe approach to
@@ -940,36 +955,143 @@ Alternatively \myurl{http://www.ghostscript.com}{the GhostScript
   system} can be used to create PDF-files from PostScript files, and
 vice versa.
 
-By using the Cactus virtual printer, any user can very easily send a
-PostScript file to Cactus, and by providing a \textsf{conversion?}
-between PostScript and PDF-file Cactus can provide the same
-functionality as Adobe Distiller with GNU tools only.
+By configuring a computer to submit PostScript jobs to the virtual
+printer provided by Cactus and using GhostScript in two simple filters,
+a similar functionality is achieved.
 
-\textsf{the filters}
+\subsection*{application/postscript to application/pdf (to file)}
+% By using the Cactus virtual printer, any user can very easily send a
+% PostScript file to Cactus, and by providing a \textsf{conversion?}
+% between PostScript and PDF-file Cactus can provide the same
+% functionality as Adobe Distiller with GNU tools only.
 
-Note:  If Adobe Destiller is available, it can be used with this
-filter:
+\begin{verbatim}
+    "ps2pdf {@source-name} {@dest-dir}/{@source-name}"
+\end{verbatim}
 
-\textsf{adobe filter}
+If Adobe Distiller is available on the Cactus host, it can be used
+with this filter (note that this prints to stdout):
 
-Future possibilities:
+\begin{verbatim}
+    "distill < {@source-name} "
+\end{verbatim}
 
-\textsf{conclusion}
-\section{Image conversion}
+
+\subsection*{application/pdf to application/postscript (to stdout)}
+% By using the Cactus virtual printer, any user can very easily send a
+% PostScript file to Cactus, and by providing a \textsf{conversion?}
+% between PostScript and PDF-file Cactus can provide the same
+% functionality as Adobe Distiller with GNU tools only.
+
+\begin{verbatim}
+    "/usr/local/Acrobat4/bin/acroread -toPostScript <{@source-name}"
+\end{verbatim}
+
+Using Acrobat Reader to generate the PostScript produces better
+looking results, and smaller PostScript files than using
+\texttt{pdf2ps}.  Additionally, Postscript jobs which make HP-printers
+restart, usually print without error if converted to PDF and then
+printed from the Acrobat Reader.  I have found that it is important to
+have the very latest version of the Acrobat Reader installed at all
+times to ensure full compatability with the PDF-files generated on
+Windows, (as well as being able to read the files on
+\myurl{http://www.adobe.com}{the Adobe web site}).
+
+\subsection*{Comments}
+
+\begin{itemize}
+\item For Windows users it is important to use a \textit{simple}
+  PostScript driver, like the one for the Apple LaserWriter.  Other,
+  newer PostScript drivers may use printer specific commands to
+  initialize the printer.  If desired, the
+  \myurl{http://www.adobe.com/support/downloads/pdrvwin.htm}{Adobe
+    PostScript printer drivers} may be downloaded and used for this
+  purpose -- note however that embedding True Type fonts requires
+  using at least GhostScript 6.0 on the Cactus host for proper
+  rendering.
+   
+\item The filters also work on emails.  See
+  \myvref{fig:cactus-splitted-email-from-lars} and
+  \myvref{fig:cactus-generated-pdf-from-lars} for the PDF-conversion
+  of an Encapsulated Postscript file.
+
+\end{itemize}
+
+Even though these are very simple filters, they allow the user to
+create PDF-files from any of their programs just by printing to a
+virtual printer using a PostScript driver.  I expect this to be a \textit{very}
+common use of Cactus in a production environment.
+
+\section{Image conversion to GIF, PNG and JPEG}
 \label{sec:image-conversion}
 
-The image conversion facility is currently very simple
+\myimage{gr/cactus-20000507-3}{An email containing a scanned image in
+  BMP format}{cactus-20000507-3}
+
+The philosophy behind the pbmplus package (as mentioned in
+\myvref{sec:cactus-philosophy}) complements Cactus very well.  With a
+few basic filters it is possible to do a wide range of image
+conversions.  Due to the number of filters I have quoted the
+unmodified definitions in \texttt{src/sql/default_derivers.txt} below
+(Two lines have been wrapped to fit the margins).
+
+\begin{verbatim}
+    # PNM-> PNG, GIF,JPEG
+    #image/x-portable-anymap,image/png,t,"pnmtopng -compression 1 {@source-name}"
+    image/x-portable-anymap,image/png,t,"pnmtopng  {@source-name}"
+    image/x-portable-anymap,image/gif,t,
+      "<{@source-name} ppmquant -fs -quiet 200|ppmtogif -quiet"
+    image/x-portable-anymap,image/jpeg,t,
+      "pnmdepth 255 {@source-name} |cjpeg -maxmemory 16m"
+    #
+    # TIFF -> PNM
+    image/x-tiff,image/x-portable-anymap,t,"tifftopnm {@source-name} "
+    image/tiff,image/x-portable-anymap,t,"tifftopnm {@source-name} "
+    #
+    # GIF -> PNM
+    image/gif,image/x-portable-anymap,t,"giftopnm {@source-name} "
+    #
+    # JPEG -> PNM
+    image/jpeg,image/x-portable-anymap,t,"djpeg {@source-name} "
+    #
+    # BMP -> PNM
+    image/bmp,image/x-portable-anymap,t,"bmptoppm {@source-name} "
+\end{verbatim}
 
 
-Future possibilities:
+\myvref{fig:cactus-20000507-3} shows the result of using the ``Scan to
+e-mail'' facility in the software accompanying the HP ScanJet 6350C to
+send an email to the Cactus system.  The enclosed BMP file -- which a
+standard web browser cannot preview directly -- is converted to GIF,
+JPEG and PNG.
 
+
+\begin{itemize}
+\item BMP is highly inefficient for scanned images -- the JPEG file is 20
+  times smaller.
+
+\item It is possible to use the general pbmplus philosophy to convert
+  images.  All recognized image formats have a deriver to the
+  \texttt{image/x-portable-anymap} format, and just the ones which can be
+  shown by a browser have a deriver to that format.   This works well.
+\item The Cactus loop detection mechanism ensures that just the
+  necessary derivers are invoked.
+\end{itemize}
+
+This works well, but requires that an entry exist for each and every
+format supported.  Cactus does not yet support wildcards in the
+MIME-types which would be handy here, since the ImageMagick package
+has a generic \texttt{convert} command which accepts a very large
+amount of image formats and can convert them to PPM.
+
+It would also be nice to have a preview facility of the image in a
+thumb nail view, as well as a rescaling facility.  This was considered
+but found to be too cumbersome as long as Cactus just works with the
+main MIME-type.
 
 \section{Generating HTML, RTF and PDF from DocBook XML}
 \label{sec:xml-publishing}
 
-\myimage{gr/cactus-20000506-3}{The sample DocBook document listed in
-  \myvref{sec:amanda-readme.xml} with derived
-  versions}{cactus-20000506-3}
 
 % \begin{table}[tbp]
 %   \begin{center}
@@ -1010,6 +1132,10 @@ reasonably fast.  The sample DocBook document listed in
 creating the tree of derived items shown in
 \myvref{fig:cactus-20000506-3}, where each filter has been applied accordingly.
 
+\myimage{gr/cactus-20000506-3}{The sample DocBook document listed in
+  \myvref{sec:amanda-readme.xml} with derived
+  versions}{cactus-20000506-3}
+
 The filters must be on a single line, but have been wrapped and resized for legibility
 \subsection*{text/xml to text/html (sent to stdout)}
 {\footnotesize
@@ -1024,6 +1150,9 @@ apply the HTML-version of the
 Sheets} and print the resulting HTML file to standard out.  See
 \myvref{fig:cactus-20000506-4} for the result --  Note that a table of
   contents is generated and inserted at the beginning of the document.  
+
+\myimage{gr/cactus-20000506-4}{The HTML version.}{cactus-20000506-4}
+
 
 \subsection*{text/xml to text/x-fo (sent to stdout)}
   {\footnotesize
@@ -1049,12 +1178,15 @@ pdflatex '&/home/cactus/src/passivetex/pdffotex' {@source-name}</dev/null
 Currently the best results for rendering FO for printing is
 \myurl{http://users.ox.ac.uk/~rahtz/passivetex/}{Sebastian Rahtz'
   PassiveTeX} with the \myurl{}{PDF-\TeX} variant of {\TeX} to produce
-PDF files directly.     Setting \texttt{TEXINPUTS} informs {\TeX}
-where to find the files needed by the \texttt{pdffotex}-format.
+PDF files directly.  It must be called twice to get cross references
+right.  Setting \texttt{TEXINPUTS} informs {\TeX} where to find the
+files needed by the \texttt{pdffotex}-format.
+
+\myimage{gr/cactus-20000506-5}{The PDF version.}{cactus-20000506-5}
 
 See \myvref{fig:cactus-20000506-5} -- The red print is
-  generated by the default DocBook XSL rule, which says that unknown
-  tags are shown like that.
+  the default for unimplemented tags in the DocBook XSL style sheet.
+  
 \subsection*{text/xml to text/rtf (sent to stdout)}
   {\footnotesize
 \begin{verbatim}
@@ -1074,16 +1206,131 @@ parsing XML-files.  The easiest way of getting a full SGML environment
 is to install the files from the CD accompanying the DocBook guide
 \cite{walsh-muellner:docbook-the-definitive-guide}.
 
+\myimage{gr/cactus-20000506-6}{The RTF version.}{cactus-20000506-6}
+
+
 See \myvref{fig:cactus-20000506-6} for the rendered output -- This is loaded in
   StarOffice 5.1 under Solaris, and has worked flawlessly in the word
   processors I have tried, including Word 97.
 
-\myimage{gr/cactus-20000506-4}{The HTML version.}{cactus-20000506-4}
+\chapter{Cactus - what does the future bring?}
 
-\myimage{gr/cactus-20000506-5}{The PDF version.}{cactus-20000506-5}
+I have had a lot of ideas myself and was suggested even more while
+developing Cactus.  Many of these were excellent, but was postponed
+due to time constraints.  This overview should bring an idea what I
+envisioned when I started.
 
-\myimage{gr/cactus-20000506-6}{The RTF version.}{cactus-20000506-6}
+\subsection*{Generate data on demand}
 
+Currently Cactus generates all possible derivations of each item by
+applying all possible derivers when a given item is extracted, unless
+such a MIME-type already has been derived from the original.
+
+This generates a lot of formats that are never needed, so Cactus
+should allow on-the-fly derivation of a given item to a given
+MIME-type, while the browser waits.  If the derivation will take too
+long (estimated from the cost variables stored with each deriver) the
+user is notified and the derivation scheduled for background
+execution.  When the item is ready, the user is sent an email with the
+URL to the item.
+
+Cactus should always try to generate \texttt{text/html},
+\texttt{text/xml} and \texttt{image/png} versions of every item since
+these are considered the standard formats which the user usually
+selects.
+
+When user preferences are implemented, the users should be able to
+specify what standard derivations they expect and generate those
+instead.
+
+\subsection*{Multi-file and container support}
+
+Proper support of containers must be implemented.  The current state
+of a single file without any of the other files in the original
+container is not satisfactory, since it does not allow for the more
+complex uses of Cactus, where multi-file documents are submitted
+either as several attachments to the same email or as a ZIP-file.
+
+For this to work, the validation mechanism must be fully implemented first.
+
+\subsection*{Email notification}
+
+Users should receive an email notification when documents they
+submitted themselves are ready.  The email should contain the precise
+URL to the page describing all derivations of the item.
+
+Multiple submissions should be collected together to avoid too many
+small email in the mailbox, with a user definable time limit like 5
+minutes or half an hour.
+
+
+\subsection*{External documents}
+
+Cactus should be able to deal with external documents directly.  The
+meta-information is stored in the database, but the item is only
+physically present elsewhere.
+
+\subsection*{Active document surveillance}
+
+Cactus should be able to put surveillance to an external document,
+allowing the content in the database to be updated automatically to
+reflect the new status.  The original submitter of the item may
+optionally be notified of the new status.
+
+This includes URL's extracted from documents, and Usenet references.
+Possible uses could be that Cactus watched a discussion thread on a
+news server, allowing the user to only look by when a new posting
+enters a given thread.   Cactus should also be able to present a
+threaded view of the whole discussion, similarly to the Usenet
+interface at Deja.
+
+
+
+\subsection*{Voice mail integration}
+
+Cactus should be interfaced to a standard voice-mail capable modem,
+allowing Cactus to create MP3 versions of messages which may be stored
+in Cactus, and the URL to it emailed (in the usual fashion) to the recipient.
+
+
+\subsection*{Microsoft Word filters}
+
+The wv program should be fully ported to produce 100\% valid DocBook XML with SVG
+graphics (or TEI if the state of the FO style sheets for DocBook does
+not improve).  This is largely independent of Cactus as such, but will
+be an extremely important application.
+
+
+\subsection*{A more generic search engine}
+
+A search engine can be implemented in several ways -- I made a quick
+implemention of a simple SQL-based search based on the title of the
+document.  Another approach could be to blindly let a standard search
+engine index all the possible pages, but that would definitively be
+overkill and incrementing the counters without reason.
+
+A reasonable compromise between indexing every thing and only indexing
+on what we know to be meta-data, would be:
+
+\begin{itemize}
+\item Create a lot of filters to \texttt{text/plain}.  For example
+  could
+  \myurl{http://research.compaq.com/SRC/virtualpaper/pstotext.html}{pstotext}
+  be used to extract the text for each page in a PostScript file.
+
+\item
+  Index the text pages, and let the search results point back to the
+  original file from which the text was generated.
+\end{itemize}
+
+It would then be possible to locate a word in a PostScript file by
+finding it in the text version, and then link back to the originating
+page.  The \texttt{pstotext} authors claim it to be one of the best
+tools for doing this, since it takes great care in converting the
+letters-with-attributes back to ISO-Latin characters.  (The authors
+wrote this utility for their
+\myurl{http://research.compaq.com/SRC/virtualpaper/home.html}{Virtual
+Paper} project -- it is worth a look)
 
 
 

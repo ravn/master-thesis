@@ -1,33 +1,75 @@
 % $Id$
 
 \chapter{The DocBook and TEI DTD's}
-% \mycitation{Read the manual before entering the cave -- you might get
-%   killed otherwise.}{The NetHack game}{\myurl{http://www.nethack.org}{www.nethack.org}}
 
 \section{DocBook considerations}
 \label{sec:docbook}
 
+Having discussed the merits of SGML and XML, the next step is finding
+and deciding on a suitable DTD for the documents.  My findings are
+that there currently is two trends on the Internet regarding
+DTD-development:
 
-\myurl{http://www.docbook.org}{DocBook} is a DTD designed for
-documenting software.  Used by Sun, FreeBSD, O'Reilly and others.
+\begin{itemize}
+\item Small DTD's designed for a specific purpose
+\item Large DTD's designed for a wider array of possible applications
+\end{itemize}
+
+Since we are interested in translating to and from this document
+format, and we prefer not to have to maintain these translations
+ourselves, it is only the large DTD's that are interesting.
+
+I have been looking for such large, well-maintained DTD's on the
+Internet for almost a year now, and this is an extra-ordinarily rare
+thing.  I have basically only found three possible candidates:
+
+\begin{description}
+\item[\myurl{http://www.docbook.org}{DocBook}] -- A DTD designed for
+writing technical documentation.  It is being used by a steadily
+increasing number of companies and OpenSource projects.
 
 
-\textsf{
-The SGML is converted to HTML by applying a HTML style sheet for
-DocBook, and sending it through jade with request for a sgml
-conversion.  The stylesheet generates a HTML file pr section in a
-chapter which is rather too much.  The HTML is \textit{very} ugly - all
-induced line breaks are \textit{within} the tags to avoid introducing any
-artificial whitespace.  The HTML is Lynx-compatible.
-}
+\item[\myurl{http://www.uic.edu/orgs/tei/}{TEI}] -- Text Encoding
+  Initiative.  A DTD intended to be used with ``preparation and interchange of electronic texts for scholarly research, and to satisfy a broad range of
+uses by the language industries more generally.''
 
-\textsf{screen shot}
-The generated navigation tags are a little troublesome in Lynx, but
-nice in Netscape.  A ``up'', ``next'' and ``previous'' are available
-combined with a ``Top title''-$>$''Chapter title'' -$>$ ``Section title''
-navigation bar at the top.
+\item[\myurl{http://www.openebook.org/faq.htm}{eBook}] -- the eBook
+  format is intended for ``Authors, editors, publishers and content
+  owners who want to have their titles in a format that is "eBook
+  ready," which then can be used by a variety of electronic book
+  publishing systems and reading devices.''
+\end{description}
 
-The localization code is manually maintained.
+% \textsf{
+% The SGML is converted to HTML by applying a HTML style sheet for
+% DocBook, and sending it through jade with request for a sgml
+% conversion.  The stylesheet generates a HTML file pr section in a
+% chapter which is rather too much.  The HTML is \textit{very} ugly - all
+% induced line breaks are \textit{within} the tags to avoid introducing any
+% artificial whitespace.  The HTML is Lynx-compatible.
+
+
+I have concentrated on the DocBook format simply because it had the
+best documentation (DocBook: The Definitive Guide which was published
+in late 1999 \cite{walsh-muellner:docbook-the-definitive-guide}), and
+appeared to fulfill the needs for the document conversion utilities I
+wanted to have.
+
+Even though DocBook originally was designed for SGML, the principal
+developer Normal Walsh, has done a lot of work on developing two XML
+versions -- one with full functionality, and the other with a limited
+subset intended for rendering inside a XML-capable browser.   This is
+intended to be fully present when the official version 4.0 version of
+DocBook is released around third quarter 2000.
+
+
+
+
+% nice in Netscape.  A ``up'', ``next'' and ``previous'' are available
+% combined with a ``Top title''-$>$''Chapter title'' -$>$ ``Section title''
+% navigation bar at the top.
+
+% The localization code is manually maintained.
 
 It is possible to have a DocBook XML-file which can be processed both
 with XSL-stylesheets \textit{and} DSSSL-stylesheets, by letting the
@@ -44,8 +86,11 @@ DocBook is listed below:
 
 If the \texttt{standalone="yes"} field is set in the \tag{?xml?}-tag
 instead, it means that the XML-tools will not validate the contents
-against the DTD \textsf{does this increase performance?}, but still
-apply the style sheets.
+against the DTD, allowing both for faster performance, but also
+without requiring anything installed on the rendering machine but the
+style sheets.  Since a full installation of DocBook with all
+supporting DTD's and entity-lists is a large and complex affair, this
+is a very pleasant feature.
 
 \begin{table}[htbp]
   \begin{center}
@@ -54,16 +99,22 @@ apply the style sheets.
 Format & Command \\
 \hline
   XHTML-1.0 & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/xhtml/docbook.xsl \$@\\
-  HTML-\textsf{4.0} & java com.jclark.xsl.sax.Driver \$$<$
+  HTML-4.0 & java com.jclark.xsl.sax.Driver \$$<$
   ../docbook/html/docbook.xsl \$@ \\
 
   XSL-FO & java com.jclark.xsl.sax.Driver \$$<$ ../docbook/fo/docbook.xsl \$@ \\
-  RTF & jade -t rtf -d \$(HOME)/sgml/dsssl/docbook/print/docbook.dsl \$(HOME)/jade/pubtext/xml.dcl \$$<$\\
+  RTF & jade -t rtf -d .../docbook/print/docbook.dsl .../jade/pubtext/xml.dcl \$$<$\\
   MIF (Frame) & \\
-  {\TeX} & \\
-  PDF (from FO) & java org.apache.fop.apps.CommandLine $< $@\\
-  PDF (from FO) & tex '\&pdffotex' document.fo \\
-  PDF (via {\TeX} & \\
+  {\TeX} & Use \texttt{jade} with the \texttt{-t tex} option.  Note
+  that the special {\TeX}-dialect \texttt{jadetex} must be used to
+  process this output.\\
+  
+  PDF (from FO) & \texttt{tex '\&pdffotex' document.fo}  (Note:  This
+  makes much prettier output than FOP)\\
+  
+  PDF (from FO) & \texttt{java org.apache.fop.apps.CommandLine \$$<$
+  \$@}   \\
+  
   OThers? & \\
 \hline
     \end{tabular}
@@ -72,54 +123,61 @@ Format & Command \\
   \end{center}
 \end{table}
 
-Generally XSL conversions (commands starting with java) are fast
-enough to be done ``on-the-fly'', where DSSSL conversions (commands
-starting with jade) are \textsf{too slow for this (timing?)}.
+Table \myvref{tab:output-formats-possible-for-a-docbook-xml-document}
+lists several of the possible formats which a DocBook document can be
+rendered to.  See \myvref{sec:xml-publishing} for a functioning set of
+Cactus filters implementing a DocBook publishing engine.  
+
+Most of these transformations are currently rather slow, currently
+making them unsuitable for ``on-the-fly'' rendering.  XSL-conversions
+are feasible (those implemented in Java), but the
+DSSSL-transformations are simply too slow.
 
 
-\section{TEI -- Text Encoding Initiative}
-\label{sec:tei}
+% \section{TEI -- \myurl{http://www.uic.edu/orgs/tei/}{Text Encoding
+%     Initiative}} --
+% \label{sec:tei}
 
 
 
-\section{Converting documents to other formats}
-\label{sec:docbook-converting-documents-to-other-formats}
+% \section{Converting documents to other formats}
+% \label{sec:docbook-converting-documents-to-other-formats}
 
 
-\subsection{SGML to XML}
-\label{docbook-converting-sgml-to-xml}
+% \subsection{SGML to XML}
+% \label{docbook-converting-sgml-to-xml}
 
-\begin{alltt}
-  sx -biso-8859-1 -xlower input.sgml $>$ output.xml
-\end{alltt}
+% \begin{alltt}
+%   sx -biso-8859-1 -xlower input.sgml $>$ output.xml
+% \end{alltt}
 
-The DTD for the document \textit{must} be registered in the
-\textsf{catalog}.  Even so a number of warnings and errors may be
-printed, since some SGML-constructions cannot be represented in XML,
-and some entities are unknown.  This must be handled manually - SX is
-not a tool do this perfectly.
+% The DTD for the document \textit{must} be registered in the
+% \textsf{catalog}.  Even so a number of warnings and errors may be
+% printed, since some SGML-constructions cannot be represented in XML,
+% and some entities are unknown.  This must be handled manually - SX is
+% not a tool do this perfectly.
 
 
-\subsection{XML to RTF}
-\label{sec:docbook-xml-to-rtf}
+% \subsection{XML to RTF}
+% \label{sec:docbook-xml-to-rtf}
 
-Use \texttt{jade} with the appropriate stylesheet and \textsf{....}
+% Use \texttt{jade} with the appropriate stylesheet and \textsf{....}
 
-\begin{alltt}
-         jade -t rtf -d docbook.dsl xml.dcl inputfile.xml
-\end{alltt}
+% \begin{alltt}
+%          jade -t rtf -d docbook.dsl xml.dcl inputfile.xml
+% \end{alltt}
 
-where \texttt{docbook.dsl} is one of the stylesheets from the
-\textsf{DocBook Modular StyleSheets}
-(\texttt{dsssl/docbook/print/docbook.dsl}) and \texttt{xml.dcl} comes
-from the Jade distribution (\texttt{pubtext/xml.dcl})
+% where \texttt{docbook.dsl} is one of the stylesheets from the
+% \textsf{DocBook Modular StyleSheets}
+% (\texttt{dsssl/docbook/print/docbook.dsl}) and \texttt{xml.dcl} comes
+% from the Jade distribution (\texttt{pubtext/xml.dcl})
 
-The resulting RTF-file is compatible with Word-97, Word-95 (claimed by
-author), StarOffice, \textsf{other texteditors} 
+% The resulting RTF-file is compatible with Word-97, Word-95 (claimed by
+% author), StarOffice, \textsf{other texteditors} 
 
-\textsf{other backends}
+% \textsf{other backends}
 
-SQL to XML :: Coocncococns sql processsor
+% SQL to XML :: Coocncococns sql processsor
 
 \section{A sample DocBook XML document}
 \label{sec:amanda-readme.xml}

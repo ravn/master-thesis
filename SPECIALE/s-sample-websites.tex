@@ -12,7 +12,7 @@
 % http://www.useit.com/alertbox/991017.html
 % }
 
-\textsf{Beskriv projekt fra Jyllandspostudklip}
+%\textsf{Beskriv projekt fra Jyllandspostudklip}
 
 \section{slashdot.org - high volume information site for nerds}
 
@@ -446,7 +446,7 @@ them to look in their paper copy.
 \section{Searching for images - \texttt{ftpsearch.lycos.com}}
 \label{sec:searching-for-images-ftpsearch-lycos-com}
 
-\textsf{snapshot?}
+\myimage{gr/ftp-search-1}{The Lycos FTP search engine}{ftp-search-1}
 
 Many sites provide a ``Search the Internet'' facility, and they
 usually gather the underlying database by using \textit{spiders} to
@@ -454,10 +454,11 @@ examine, retrieve and index all the web-pages they can.
 
 A few allow more than that.  An interesting by-product of the basic
 web indexing scheme is the Lycos FTP-search facility at
-\myurl{http://ftpsearch.lycos.com}{\textsf{http://ftpsearch.lycos.com}},
-which among many things allow searching for \textit{images} based on
-the filenames of the images found in web pages along with the
-surrounding text, and keywords embedded in the images.
+\myurl{http://ftpsearch.lycos.com}{http://ftpsearch.lycos.com} (see
+\myvref{fig:ftp-search-1}, which among many things allow searching for
+\textit{images} based on the filenames of the images found in web
+pages along with the surrounding text, and keywords embedded in the
+images.
 
 This works quite well -- most of the cactii images for my project was
 found this way.
@@ -482,16 +483,17 @@ found this way.
 % basic search facilities it allows you to download the BibTeX entry for
 % the books and articles you find.
 
-\section{F{\ae}llesbanken}
+\section{Home banking -- sample bank: F{\ae}llesbanken}
 \label{sec:faellesbanken}
 
-\textsf{schnaps/shot}
+% NB...  fejlstavning i filnavn...
+\myimage{gr/faelleskasssen-1}{Web banking in F{\ae}llesbanken}{faelleskassen-1}
 
 \myurl{http://www.w57.dk}{Jan Bertelsen} reports that the Home Banking
 facility provided by the Danish bank F{\ae}llesbanken is Java based,
-allowing him to use it with his Linux computer at home.  His
-experience is basically that it works well but is slow, especially
-when cryptography is used.
+allowing him to use it with his Linux computer at home (see
+\myvref{fig:faelleskassen-1}).  His experience is basically that it
+works well but is slow, especially when cryptography is used.
 
 The reported slowness is most likely due to him using the stock
 Netscape browser Java implementation, which is infamous for its
@@ -511,9 +513,6 @@ could run under OS/2 or OS/2's Java.
 
 \section{Yggdrasil - a simple navigational framework}
 \label{sec:yggdrasil}
-
-\myimage{gr/yggdrasil-1}{Typical Yggdrasil navigational
-  screen}{yggdrasil-1}  
 
 Based on an idea by Anders Stengaard S{\o}rensen, I designed and
 implemented the Yggdrasil system to improve the use of the Intranet at
@@ -555,6 +554,10 @@ overview where documents are sorted according to their revision date.
 It is very easy to see which documents have been added since a given
 date.
 \end{quotation}
+
+\myimage{gr/yggdrasil-1}{Typical Yggdrasil navigational
+  screen}{yggdrasil-1}  
+
 
 Several prototypes were constructed, and the version in use when I
 left AMROSE, scanned all the individual web pages on the system,
@@ -615,7 +618,8 @@ project, as discussed in \myvref{cha:cactus}.
 \section{The TOM browser - converting documents online}
 \label{sec:tom}
 
-\textsf{screendump}
+\myimage{gr/tom-server-1}{The TOM Conversion server}{tom-server-1}
+
 \myurl{http://wheel.compose.cs.cmu.edu:8001/cgi-bin/browse}{The TOM
   browser} is a document conversion system which allows users to
 upload files and provide URL's to document on the web, which is then
@@ -623,7 +627,9 @@ converted to one of numerous formats.  The default is to autodetect
 the file type, and convert to a viewable format.
 
 I discovered this site so late that I did not have time to investigate
-it fully, but I find it so interesting that I wanted it to be listed here.
+it fully, but I find it so interesting that I wanted it to be listed
+here.  It is similar to the Cactus idea but on a much narrower basis,
+as it is a single item conversion scheme.
 
 
 

@@ -78,20 +78,21 @@ common forthe application to work with a row at a time.
 \label{sec:how-standardized-is-sql}
 
 SQL has evolved over the years.  The latest ANSI standard is SQL92,
-which is discussed in~\cite{understanding-the-new-sql}, \textsf{as
-  well as the standard bodies online}, and it provides several levels
-of compliancy a given SQL-database can adhere to.  Even so, there are
-several facilites which are still not covered by the standard:
+which is discussed in~\cite{understanding-the-new-sql}, and it
+provides several levels of compliancy a given SQL-database can adhere
+to.  Even so, there are several facilites which are still not covered
+by the standard:
 
 \begin{itemize}
 \item \textbf{unique numbers} -- having a row or function which
   generates a unique number every time it is called.  This is called
-  \textit{sequence numbers} in Oracle, and \textsf{?} in MySQL.
+  \textit{sequence numbers} in Oracle.
 \item \textbf{date and time functions} -- querying for the current
   date and handling date/time fields in the database is not standard.
   Additionally it is common for a vendor to have additional formats
   for timestamps which is incompatible with other vendors.
-\item \textsf{others?}
+\item \textsf{Stored procedures} -- the methods for extending the core
+  SQL-engine varies wildly from vendor to vendor.
 \end{itemize}
 
 These vendor specific extensions from SQL92 are normally done in order
@@ -121,8 +122,10 @@ PHP3+MySQL based WACO system~\cite{mez-waco}, pointed me towards
 
 Even though several databases were availabe, I decided to dvelwe into
 MySQL since it had excellent Perl support which I had chosen for
-developing the Cactus system (see~\myvref{sec:cactus-choice-of-language}
-for reasons), and was OpenSource software available on Linux.
+developing the Cactus system,
+%(see~\myvref{sec:cactus-choice-of-language}
+%for reasons)
+and was OpenSource software available on Linux.
 
 The MySQL tutorial is reasonable for a person knowledgeable in SQL to
 get acquainted with the MySQL database, but it falls a bit short of
@@ -167,7 +170,7 @@ SQL-database.  At least the following options exist:
 \item[JDBC] -- The ``\myurl{http://www.javasoft.com/jdbc}{JDBC Data
     Access API}'' does the same thing for Java-programs as ODBC do for
   Windows-programs.
-\item[DBI] -- The \myurl{\textsf{??}}{``Perl Database Interface''}
+\item[DBI] -- The \myurl{http://theoryx5.uwinnipeg.ca/mod_perl/cpan-search?join=and;arrange=file;download=auto;stem=no;case=clike;site=ftp.funet.fi;age=\&request=cat\&catinfo=709}{``Perl Database Interface''}
   allows Perl programs to speak to Adabas, DBMaker, Fulcrum, Informix,
   Interbase, Oracle, Solid, Empress, Sybase, Illustra, Ovrimos,
   PostgreSQL, QBase.
