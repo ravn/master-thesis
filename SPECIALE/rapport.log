@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  15 MAR 2000 05:35
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 1999.11.10)  15 MAR 2000 10:02
 **\nonstopmode\input{rapport.tex}
 (rapport.tex (/usr/share/texmf/tex/latex/base/book.cls
 Document Class: book 1999/01/07 v1.4a Standard LaTeX document class
@@ -186,67 +186,76 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 \openout2 = `s-sample-websites.aux'.
 
- (s-sample-websites.tex [11
+ (s-sample-websites.tex
+
+LaTeX Warning: Reference `fig:slashdot-1' on page 11 undefined on input line 28
+.
 
 
-] [12] [13] [14] [15]
-[16] [17] [18] [19]) [20]
+LaTeX Warning: Reference `fig:slashdot-1' on page 11 undefined on input line 28
+.
+
+[11
+
+
+] [12] [13] [14] [15] [16] [17] [18] [19] [20]) [21]
 \openout2 = `s-available-technologies.aux'.
 
- (s-available-technologies.tex
+
+(s-available-technologies.tex [22
+
+
+
+]
 Chapter 4.
-[21
-
-
-
-] [22]
+[23] [24]
 Overfull \hbox (15.32828pt too wide) in paragraph at lines 167--173
 \OT1/bch/m/n/10 Com-mu-ni-ca-tor 5.0 from an in-house sys-tem to a full-scale O
 pen-Source model housed at http://www.mozilla.org. |
  []
 
-[23]
+[25]
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/n' undefined
 (Font)              using `OT1/cmss/m/n' instead on input line 292.
 
-[24]) [25]
+[26]) [27]
 \openout2 = `s-xml.aux'.
 
- (s-xml.tex [26
+ (s-xml.tex [28
 
 
 
 ]
 Chapter 5.
-[27] [28]
+[29] [30]
 Overfull \hbox (131.36002pt too wide) in paragraph at lines 209--209
 [][]\OT1/bch/m/n/8 ...The w3c have notes and DTD's de-scrib-ing the first ver-s
 ions of HTML...-- \OT1/cmtt/m/n/8 http://www.w3.org/History/19921103-hypertext/
 hypertext/WWW/MarkUp/MarkUp.html| |
  []
 
-[29]
+[31]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 306.
 
 
-[30]
+[32]
 Overfull \hbox (4.82918pt too wide) in paragraph at lines 367--373
 []\OT1/bch/m/n/10 Commecial prod-ucts usu-ally have a viewer which can ap-ply t
 he style sheet di-rectly \OT1/cmtt/m/n/10 examples? Panorama?|
  []
 
-[31]
+[33]
 File: x-outline.xsl  (verbatim)
- [32] [33]
+ [34] [35]
 Overfull \hbox (91.99011pt too wide) in paragraph at lines 578--578
 []\OT1/cmtt/m/n/10 <tr><th>when</th><th>mime</th><th>user</th><th>how</th><th>f
 ilename</th><th>comment</th><th>iteml</th></tr>[] |
  []
 
-[34] [35]) [36]
+[36] [37]) [38]
 \openout2 = `s-docbook.aux'.
 
  (s-docbook.tex
@@ -256,13 +265,13 @@ the stylesheets from the \OT1/cmss/b/n/10 Doc-Book Mod-u-lar StyleSheets \OT1/b
 ch/m/n/10 (\OT1/cmtt/m/n/10 dsssl/docbook/print/docbook.dsl\OT1/bch/m/n/10 )|
  []
 
-) [37
+) [39
 
 
 ]
 \openout2 = `s-sql.aux'.
 
- (s-sql.tex [38
+ (s-sql.tex [40
 
 
 
@@ -274,31 +283,31 @@ Overfull \hbox (34.6683pt too wide) in paragraph at lines 78--83
 QL92, which is dis-cussed in [[]],|
  []
 
-[39]
+[41]
 Overfull \hbox (24.32993pt too wide) in paragraph at lines 119--119
 [][]\OT1/bch/m/n/8 ...the tu-to-rial in the MySQL ref-er-ence man-ual...-- \OT1
 /cmtt/m/n/8 http://sunsite.auc.dk/mysql/Manual[]chapter/manual[]Tutorial.html#T
 utorial| |
  []
 
-[40]) [41]
+[42]) [43]
 \openout2 = `s-users-transparently.aux'.
 
- (s-users-transparently.tex) [42
+ (s-users-transparently.tex) [44
 
 
 ]
 \openout2 = `s-active-and-passive-data-acquisition.aux'.
 
 
-(s-active-and-passive-data-acquisition.tex) [43
+(s-active-and-passive-data-acquisition.tex) [45
 
 
 ]
 \openout2 = `s-search-engines-and-data-mining.aux'.
 
 
-(s-search-engines-and-data-mining.tex) [44
+(s-search-engines-and-data-mining.tex) [46
 
 
 ]
@@ -306,20 +315,20 @@ utorial| |
 
  (s-conclusion.tex
 Chapter 7.
-) [45
+) [47
 
 
 
 ]
 \openout2 = `s-cactus.aux'.
 
- (s-cactus.tex [46
+ (s-cactus.tex [48
 
 
 
 ]
 Appendix A.
-[47] [48] [49] [50] [51] [52]) [53]
+[49] [50] [51] [52] [53] [54]) [55]
 \openout2 = `s-konsensus.aux'.
 
 
@@ -329,7 +338,7 @@ No file s-konsensus.tex.
 (s-tex-and-latex.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 4.
-) [54
+) [56
 
 
 
@@ -345,17 +354,17 @@ Overfull \hbox (31.18759pt too wide) in paragraph at lines 42--44
   [[]]. |
  []
 
-[55
+[57
 
 
 
-]) [56]
+]) [58]
 \openout2 = `s-available-hardware-and-software.aux'.
 
- (s-available-hardware-and-software.tex) [57
+ (s-available-hardware-and-software.tex) [59
 
 
-] (rapport.bbl [58
+] (rapport.bbl [60
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 7--13
@@ -363,15 +372,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
 a banks.
  []
 
-) [59
+) [61
 
-] [60
+] [62
 
-] (rapport.toc [61] [62])
+] (rapport.toc [63] [64])
 \tf@toc=\write3
 \openout3 = `rapport.toc'.
 
- [63] (rapport.aux (s-front-matter.aux)
+ [65] (rapport.aux (s-front-matter.aux)
 (s-introduction.aux) (s-terms-and-concepts.aux)
 (s-dynamically-generated-documents.aux) (s-standards.aux)
 (s-sample-websites.aux) (s-available-technologies.aux) (s-xml.aux)
@@ -388,12 +397,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1229 strings out of 10891
- 15123 string characters out of 97329
- 68091 words of memory out of 263001
- 4102 multiletter control sequences out of 10000+0
+ 1234 strings out of 10891
+ 15184 string characters out of 97329
+ 68120 words of memory out of 263001
+ 4106 multiletter control sequences out of 10000+0
  22848 words of font info for 56 fonts, out of 400000 for 1000
  14 hyphenation exceptions out of 1000
  33i,12n,40p,261b,513s stack positions out of 300i,100n,500p,50000b,4000s
 
-Output written on rapport.dvi (63 pages, 179824 bytes).
+Output written on rapport.dvi (65 pages, 181224 bytes).
