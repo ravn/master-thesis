@@ -10,16 +10,17 @@
      "sec:allow-fast-access-to-data")
     (TeX-add-symbols
      '("myimage" 3)
+     '("mycitation" 3)
      '("tag" 1)
      '("myurl" 2)
      '("ntcommand" 1)
      '("unixcommand" 1)
      '("framepage" 2))
     (TeX-run-style-hooks
-     "hyperref"
      "graphicx"
      "verbatim"
      "varioref"
+     "alltt"
      "isolatin1"
      "fullpage"
      "charter"
@@ -32,6 +33,7 @@
      "s-sample-websites"
      "s-xml"
      "s-docbook"
+     "s-sql"
      "s-cactus"
      "s-konsensus"
      "s-tex-and-latex"

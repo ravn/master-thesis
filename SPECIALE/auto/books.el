@@ -3,6 +3,11 @@
   (lambda ()
     (LaTeX-add-bibitems
      "sedgewick-algorithms-in-c"
-     "understandingthenewsql"
-     "appliedcryptography"))))
+     "understanding-the-new-sql"
+     "applied-cryptography"
+     "the-latex-graphics-companion"
+     "greenspun-sql"
+     "a-relational-model-of-data-for-large-shared-databanks"
+     "a-guide-to-latex"
+     "mez-waco"))))
 

@@ -1,7 +1,50 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
+
+\bibitem[Codd(1970)]{a-relational-model-of-data-for-large-shared-databanks}
+E.F. Codd.
+\newblock A relational model of data for large shared data banks.
+\newblock http://www.acm.org/classics/nov95/, 1970.
+\newblock The paper that described relational databases mathematically. The
+  history is explained in
+  http://www-4.ibm.com/software/data/pubs/papers/bontempo/.
+
+\bibitem[Damsbo(1999)]{mez-waco}
+Martin Damsbo.
+\newblock Web access course organizer.
+\newblock http://www.mip.sdu.dk/~mez/waco, 1999.
+\newblock MIP Intranet.
+
+\bibitem[Goosens et~al.(1997)Goosens, Rahtz, and
+  Mittelbach]{the-latex-graphics-companion}
+Michel Goosens, Sebastian Rahtz, and Frank Mittelbach.
+\newblock {\em The {\LaTeX} graphics companion - Illustrating Documents with
+  {\TeX} and PostScript}.
+\newblock Addison-Wesley, 1997.
+\newblock Describes in great detail the intricacies of embedding graphics in
+  LaTeX documents.
+
+\bibitem[Greenspun(1998)]{greenspun-sql}
+Phil Greenspun.
+\newblock Sql for web nerds.
+\newblock http://photo.net/sql/, 1998.
+\newblock Excellent introductory text to SQL.
+
+\bibitem[Kopka and Daly(1999)]{a-guide-to-latex}
+Helmut Kopka and Patrick~W. Daly.
+\newblock {\em A guide to {\LaTeX}}, volume ISBN: 0-201-39825-7.
+\newblock Addison-Wesley, 1999.
+\newblock An excellent book for the {\LaTeX} author. I have used it a lot.
+
+\bibitem[Melton and Simon(1997)]{understanding-the-new-sql}
+Jim Melton and Alan~R. Simon.
+\newblock {\em Understanding the New SQL: A Complete Guide}.
+\newblock Number ISBN 1-55860-245-3. Morgan Kaufmann Publishers, San Francisco,
+  California, 1997.
+\newblock A good introduction and reference to SQL-92. Defines the requirements
+  for the various levels of SQL 92 compliancy .
 
 \bibitem[Sedgewick(1990)]{sedgewick-algorithms-in-c}
 Robert Sedgewick.
